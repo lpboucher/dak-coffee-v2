@@ -1,0 +1,25 @@
+{
+  "connection": "default",
+  "collectionName": "related",
+  "info": {
+    "name": "related",
+    "description": ""
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "products": {
+      "collection": "product"
+    }
+  }
+}

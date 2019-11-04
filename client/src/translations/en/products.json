@@ -1,0 +1,151 @@
+{
+    "equipment": {
+        "chemex-coffee-brewer": {
+            "name": "Classic Chemex 3-Cups",
+            "description": "CHEMEX® delivers the purest flavor experience. Known as a pristine coffeemaker, Chemex employs all of the chemically correct methods for brewing. It is simple, easy to use with timeless, elegant design.Its hourglass shaped flask is made entirely of glass, a chemically inert material that does not absorb odors or chemical residues. This CHEMEX® needs to be used with CHEMEX® Unfolded Half Moon Filters FP-2, available here.",
+            "details": "Made of non-porous Borosilicate glass which will not absorb odors or chemical residues. Includes a polished wood collar with leather tie.;CHEMEX pour-over allows coffee to be covered and refrigerated for reheating without losing flavor;This product doesn’t come with the filters. Use CHEMEX® Unfolded Half Moon Filters FP-2, available here (link to product page of filters). ;Capacity: 1 Pint, Height: 8 1/4, Diameter: 3"
+        },
+        "aeropress": {
+            "name": "Aeropress",
+            "description": "The Aerobie AeroPress is a revolutionary new way to make perfect coffee every time. It really is so simple to use that once you own an AeroPress you won’t want to go back to instant coffee or using far more expensive coffee brewers. The AeroPress uses gentle air pressure which creates a smooth rich flavor with lower acidity and without bitterness. Its brewing system results in uniform extraction for the ultimate in full coffee flavor.",
+            "details": "The AeroPress comes with full instructions for use, just add your coffee and water!;It includes: 350 filters, filter cap, filter holder, stirrer and scoop.;Actual ‘press time’ is just 20 seconds.;Simple and quick to clean; there’s no washing-up of fiddly parts.;Everything you need to make professional coffee at home."
+        },
+        "kinto-brewer-stand": {
+            "name": "Brewer Stand Set 2-cups by Kinto",
+            "description": "For admirers of refined craft and slow coffee. The brewer stand set is perfect for those who want to indulge in a deeper, richer coffee time. The stand is designed so that you can use it with a scale to measure the amount of dripped coffee. The height of the stand can be adjusted, letting you use it with various vessels from a mug to a tall server.The set includes:- Brewer stand- Cotton paper filter 2 cups 20 pieces- Porcelain brewer 2 cups- 400 ml server- Glass holder",
+            "details": "[Stand] 18-8 Stainless steel (casting). W125 x D130 x H210 mm;[Brewer] Porcelain / Microwave and dishwasher safe. φ100 x H70 mm;[Server] Heat-resistant glass / Microwave and dishwasher safe. φ75 x H80 x W125 mm / 400 ml;[Holder] Heat-resistant glass / Microwave and dishwasher safe. φ80 x H60 mm;[Filter] Cotton pulp, Wood pulp. W100 x D105 mm"
+        },
+        "chemex-filters": {
+            "name": "Chemex Filters",
+            "description": "The CHEMEX® Bonded Filters will guarantee that your pour over brewing process will deliver the perfect cup of coffee, without any sediments or bitter elements. 100 filters per pack.",
+            "details": "Cone-shape ensures uniform extraction for pure coffee flavor;Thicker (20-30% more than the competition) specialty fiber filter design keep bitter elements, and grounds in their place (and out of your cup);Will fit most other cone-shaped filter coffeemakers;Fits CHEMEX® Coffeemakers CM-1, CM-1C, CM-1GH"
+        },
+        "kinto-coffee-server": {
+            "name": "Coffee server 300ml by Kinto",
+            "description": "Classic heat-resistant glass server that looks good and is built to stand the test of time.",
+            "details": "Heat-resistant glass;Maximum temperature differential: 120℃ / 248℉. φ75 x H80 x W125 mm / 400 ml"
+        },
+        "kinto-cold-carafe": {
+            "name": "Cold Brew Carafe by Kinto",
+            "description": "Stylish and clever. Place ground coffee or tea leaves in the filter and pour water to easily make cold brew coffee or tea. The mesh filter prevents fine powders from escaping. Heat-resistant glass build means hot liquids can be poured in right after brewing.",
+            "details": "The lid of this carafe opens automatically when the bottle is tipped, allowing the user to pour out from any direction.;Parts are easy to disassemble and wash.;φ85 x H270 mm / 1 L;[Body] Heat-resistant glass . Maximum temperature differential: 120℃ / 248℉ Microwave safe and dishwasher safe.;[Lid] Do not use in a microwave. Dishwasher safe."
+        },
+        "fellow-stag-kettle": {
+            "name": "Fellow Stagg Kettle",
+            "description": "Stagg Pour-Over Kettle’s beautifully functional design kicks your brewing up a notch. Enjoy an intuitive, steady pour with Stagg’s precision pour spout. Keep track of temperature with a built-in brew-range thermometer. Pour at an even, slow pace with Stagg’s counterbalanced handle that moves the center of mass back towards your hand.",
+            "details": "Gas, electric, and induction range compatible;1.0 Liter boiling capacity;Stainless steel body;New v1.2 stainless steel lid"
+        },
+        "gina-goat-story": {
+            "name": "Gina by Goat Story",
+            "description": "GINA is an award-winning smart coffee instrument that turns coffee brewing into a special experience. With a precision valve to control the drip, an integrated precision scale and a dedicated brewing app, it enables you to brew coffee with pour over, immersion and cold drip methods. Oh, and it even makes tea!",
+            "details": "Enables you to weigh coffee and water while brewing your drink.;Connects to your phone with Bluetooth technology.;The Gina App has numerous brewing recipes that you can follow or create your own easily.;Brews up to 750 ml / 25 oz of drink at once.;Allows to completely adjust water drop speed for a brewing technique of your choice.;Easy cleaning of ceramic and glass parts"
+        },
+        "porlex-coffee-grinder": {
+            "name": "Tall Hand Grinder by Porlex",
+            "description": "The porlex tall hand grinder is the ideal tool for both travel and home. The ceramic burrs create an even grind making sure your brews are consistent and delicious. The grinder holds up to 44 grams of coffee beans, it is suitbale for brewing 2-4 cups of coffee.",
+            "details": "Stainless Steel casing;Conical Ceramic Burrs;Easy to clean and resilient;φ49 x H185 mm;Fits in an aeropress;Made in Japan"
+        }
+    },
+    "coffee": {
+        "rutabo-coffee": {
+            "name": "rutabo",
+            "description": "This coffee is roasted for filter coffee. We use a shorter roast time at high temperatures to focus on the development of organic acids. The result is a coffee that is clean with a bright acidity and fruity sweetness that is typical of African natural-processed coffees.\n\nAt a highest altitude of 2,000m, Rushashi coffees are of very high quality and often find a place in the Rwanda Cup of Excellence. At the Rutabo village, the Bourbon variety is processed as Natural.",
+            "region": "Gakenke",
+            "country": "Rwanda",
+            "roast": "Filter",
+            "lot": "Rushashi",
+            "process": "Natural",
+            "variety": "Bourbon",
+            "drink": "Filter",
+            "taste": "Red Grape, Papaya, Strawberry",
+            "altitude": "1800m",
+            "harvest": "The Rushashi washing station is a cooperative where they pool resources together to improve the quality and the sustainability of their harvests.",
+            "500CAD": "(+ 14.50$)",
+            "500EUR": "(+ 10.50€)",
+            "1000CAD": "(+ 41.50$)",
+            "1000EUR": "(+ 30€)"
+        },
+        "esperanza-coffee": {
+            "name": "esperanza",
+            "description": "This coffee is roasted for espresso-based drinks. We use lower temperatures and a longer roasted time to allow the sugars to develop while making sure not to burn them. The result is a coffee that feels naturally sweet and that may just be the best cappuccino you have ever had!\n\nThis “Esperanza” micro lot benefits from lower temperatures allowing the cherries to develop more slowly, resulting in more complex flavours.",
+            "region": "Nueva Segovia",
+            "country": "Nicaragua",
+            "roast": "Espresso",
+            "lot": "Finca Samaria",
+            "process": "Red Honey",
+            "variety": "Catuai",
+            "drink": "Cappuccino",
+            "taste": "Floral, Brown Sugar, Clean",
+            "harvest": "These Catuai beans were harvested in the highest of the peralta farms in Nicaragua (Santa Maria de Lourdes).",
+            "altitude": "1500m",
+            "500CAD": "(+ 12.50$)",
+            "500EUR": "(+ 8.75€)",
+            "1000CAD": "(+ 36$)",
+            "1000EUR": "(+ 25€)"
+        },
+        "coffee-for-two-coffee": {
+            "name": "Coffee for two",
+            "description": "This month’s limited edition is roasted as an omni-roast coffee, equally delicious as a filter or espresso drink. We use a balanced roast at medium temperatures and times to draw from both organic acids and sugars present in the coffee. The result is a coffee that is very pleasant with a light acidity and tasting notes of almond, caramel and cacao butter. Quantities are limited, so get yours now!",
+            "region": "Chalatenango",
+            "country": "El Salvador",
+            "roast": "Omni",
+            "lot": "Finca Caracol",
+            "process": "Washed",
+            "variety": "Pacas",
+            "drink": "Filter or Espresso",
+            "taste": "Almond, Caramel, Cacao Butter",
+            "harvest": "The Chalatenango region in El Salvador is famous for its Pacamaras, particularly given the recent Cup of Excellence result.",
+            "altitude": "1700m",
+            "500CAD": "(+ 14$)",
+            "500EUR": "(+ 10€)",
+            "1000CAD": "(+ 40.50$)",
+            "1000EUR": "(+ 29€)"
+        },
+        "108blend-coffee": {
+            "name": "Blend no. 108",
+            "description": "This blend was developed for espressos but also goes well with milk-based drinks. The coffees selected for the blend bring their own unique attributes. The result is an espresso that feels naturally sweet with a lingering body.\n\nThe Nicaraguan was selected as the sugar carrier for this blend. To top it off, the Indonesian brings hints of floral aromas and a medium-body, long and clean aftertaste.",
+            "region": "Nueva Segovia & Bajawa",
+            "country": "Nicaragua & Indonesia",
+            "roast": "Espresso",
+            "lot": "Blend",
+            "process": "Y. Honey & Washed",
+            "variety": "Caturra & Mix",
+            "drink": "Espresso",
+            "taste": "Citrus, Nuts, Clean aftertaste",
+            "harvest": "The Bajawa is harvested by a collective of 50 farmers in Indonesia. Cherries are handpicked resulting in one of the most expensive coffees in Indonesia",
+            "altitude": "1700m",
+            "500CAD": "(+ 13.50$)",
+            "500EUR": "(+ 9.75€)",
+            "1000CAD": "(+ 39$)",
+            "1000EUR": "(+ 28€)"
+        },
+        "reko-coffee": {
+            "name": "Chelelektu",
+            "description": "Draft",
+            "region": "Yirgacheffe Kochere",
+            "country": "Ethiopia",
+            "roast": "Filter",
+            "lot": "Reko",
+            "process": "Fully washed",
+            "variety": "Heirloom",
+            "drink": "Cappuccino",
+            "taste": "Dark Chocolate, Blackberry, Mango, Honey",
+            "harvest": "This coffee is a washed processed Grade 1 from the Chelelektu Washing Station.",
+            "altitude": "1850m",
+            "500CAD": "(+ 13$)",
+            "500EUR": "(+ 10.50€)",
+            "1000CAD": "(+ 41.50$)",
+            "1000EUR": "(+ 30€)"
+        }
+    },
+    "subscription": {
+        "classics-subscription": {
+            "name": "The Classics",
+            "description": "Choose a roast and receive a selection of origin coffees in either filter or espresso roasts (or both, why not!)"
+        },
+        "roasters-subscription": {
+            "name": "The Roaster's Choice",
+            "description": "Let the roaster surprise you with his preferred roast of the month. This subscription will offer different assortments of filter/espresso/limited edition roasts, but our roaster never compromises the quality or taste, so this is truly the best way to familiarize yourself with fresh, new coffees!"
+        }
+    }
+}

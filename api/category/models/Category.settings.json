@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "categories",
+  "info": {
+    "name": "category",
+    "description": "Product categories"
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "products": {
+      "collection": "product",
+      "via": "categories",
+      "dominant": true
+    }
+  }
+}

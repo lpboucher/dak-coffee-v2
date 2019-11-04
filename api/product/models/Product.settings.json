@@ -1,0 +1,45 @@
+{
+  "connection": "default",
+  "collectionName": "equipment",
+  "info": {
+    "name": "product",
+    "description": "Content type for all products"
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "json"
+    },
+    "grouping": {
+      "model": "grouping",
+      "via": "products"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "thumb_image": {
+      "type": "string"
+    },
+    "main_image": {
+      "type": "string"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "products"
+    }
+  }
+}

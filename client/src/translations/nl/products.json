@@ -1,0 +1,151 @@
+{
+    "equipment": {
+        "chemex-coffee-brewer": {
+            "name": "Classic Chemex 3-Kops",
+            "description": "Voor de liefhebbers van koffie is slow koffie het beste. In alle rust worden de gemalen koffiebonen natgemaakt, komen de smaken vrij en drupt het zonder bittere oliën naar beneden. Hiermee is de koffie zo puur, dat het geschikt is voor ice-coffee of als smaakmaker bij gebak. Dankzij het speciale glas en de vorm trekt het alle smaken uit de koffiebonen en levert het een pure en verfijnde kop koffie op.",
+            "details": "Gemaakt van stevig Borosilicaatglas die geen geuren of chemische residuen zal absorberen. Inclusief een gepolijste houten kraag met lederen stropdas.;Met Chemex pour-over kan de koffie worden afgedekt en gekoeld, om later weer te verwarmen zonder dat de smaak verloren gaat.;Dit product komt zonder filters. Gebruik Chemex Unfolded Half Moon Filters FP-2, hier verkrijgbaar.;Capaciteit: 1 pint, hoogte: 21 cm, diameter: 7,62 cm."
+        },
+        "aeropress": {
+            "name": "Aeropress",
+            "description": "Met de AeroPress zet je in een handomdraai een fantastische kop koffie of espresso. Door het langere contact van de koffie met het water komt het beste uit de koffie naar boven. En dat proef je. Het handzame apparaat is lichtgewicht, gebruiksvriendelijk en makkelijk schoon te maken. De Aeropress is geschikt voor een reguliere snelfiltermaling. Het mooiste resultaat krijg je met koffie gemalen op een iets grovere maalgraad",
+            "details": "De AeroPress komt met gebruikersinstructies.;Het bevat: 350 filters, filter cap, filterhouder, roerstaafje en maatlepel.;De ‘press tijd’ is slechts 20 seconden.;Het is simpel schoon te maken, er zijn geen onhandige delen die moeilijk schoon te krijgen zijn.;Alles wat je nodig hebt voor een professionele koffie, gewoon bij jou thuis."
+        },
+        "kinto-brewer-stand": {
+            "name": "Brewer Stand Set 2-kops by Kinto",
+            "description": "Voor de aanbidders van verfijnde ambachtelijke en langzame koffie. De koffiestandaard set is perfect voor degene die wil genieten van een diepere en rijkere koffie. De standaard is zo ontworpen dat het met een schaal te gebruiken is om de hoeveelheid koffie te kunnen meten. De hoogte van de standaard kan worden aangepast, zodat deze in verschillende manieren uitgeserveerd kan worden, zoals in een mok of juist een glas. De set bevat: - Koffiestandaard - 20 papieren filters voor 2 kopjes - Porseleinen standaard voor 2 kopjes - 400 ml maatbeker - Glazen houder",
+            "details": "Standaard: 18-8 roestvrij staal. W125 x D130 x H210 mm;Koffiestandaard: Porselein / magnetron- en vaatwasbestendig. φ100 x H70 mm;Maatbeker: Hittebestendig glas / magnetron- en vaatwasbestendig. φ75 x H80 x W125 mm / 400 ml;Houder: Hittebestendig glas / magnetron- en vaatwasbestendig. φ80 x H60 mm;Filter: Gemaakt van katoen en hout pulp. W100 x D105 mm"
+        },
+        "chemex-filters": {
+            "name": "Chemex Filters",
+            "description": "De Chemex werkt met deze speciale papieren filters. Kenners en liefhebbers vermoeden dat dit het geheim van deze koffiezetter is. Filters geschikt voor de 3 kops variant en de doos bevat 100 papieren filters. Deze set bestaat uit 100 ongevouwen filters.",
+            "details": "Deze ongevouwen papieren filters in de vorm van een halve maan zijn speciaal gemaakt voor de Chemex Slow coffee makers en zijn nodig om op de perfecte koffiesmaak te komen.;Deze filters zijn geschikt voor de Chemex CM-1, CM-1C, CM-1GH;Ze zijn 20-30% zwaarder dan andere merken en verwijderen zelfs de meest fijne en ongewenste olie en vetten."
+        },
+        "kinto-coffee-server": {
+            "name": "Coffee server 300ml by Kinto",
+            "description": "Een klassiek hittebestendige glazen maatbeker dat er goed uitziet en gebouwd is om voor langere tijd mee te gaan.",
+            "details": "Hittebestendig glas;Maximale temperatuurverschillen: 120℃ / 248℉. φ75 x H80 x W125 mm / 400 ml"
+        },
+        "kinto-cold-carafe": {
+            "name": "Cold Brew Carafe by Kinto",
+            "description": "Het deksel wordt automatisch geopend wanneer de fles wordt gekanteld, zodat u vanuit elke richting kunt schenken. De cold brew-karaf wordt geleverd met een gaasfilter waarmee u eenvoudig heerlijke koude koffie en thee kunt zetten. Koud brouwen is een methode om koffiebonen of theeblaadjes gedurende enkele uren met koud water te laten trekken. In vergelijking met heet water verloopt de oxidatie langzamer in koud water en wordt minder tannine en cafeïne geëxtraheerd, wat meestal de bittere smaak geeft. Met de CAPSULE cold brew-karaf kunt u heerlijke koude koffie en thee zetten in eenvoudige stappen. Vul de filter met gemalen koffiebonen of theebladeren, maak de binnen en buiten deksels vast, voeg water toe en laat het trekken. Geniet van de zachtere smaak en de unieke smaken van koud brouwen.",
+            "details": "Grootte: 1 liter;Afmetingen: φ85 x H270 mm;Materiaal fles: hittebestendig glas (magnetron en vaatwasser bestendig);Materiaal deksel: ABS-hars, roestvrij staal, silicone (vaatwasserbestendig);Materiaal binnendeksel en filter: PP, PET (vaatwasserbestendig)"
+        },
+        "fellow-stag-kettle": {
+            "name": "Fellow Stagg Kettle",
+            "description": "De Fellow Stagg Kettle is een geweldige opschenkkan om filterkoffie mee te zetten. Heb je moeite met het perfectioneren van je V60 recept of juist zin in een kop thee gezet op exact de juiste temperatuur? Met de ingebouwde thermometer kun je precies zien op welke temperatuur je water is en met de precisie-uitloop schenk je gecontroleerd.De ketel heeft tijdens het schenken de perfecte balans dankzij zijn uniek vormgegeven handvat dat er ook nog eens tof uitziet!",
+            "details": "Geschikt voor gas en elektrisch;1 liter capaciteit;RVS behuizing;Nieuwe v1.2 deksel"
+        },
+        "gina-goat-story": {
+            "name": "Gina by Goat Story",
+            "description": "GINA is een award-winnende, super slim koffie-instrument dat koffiezetten verandert in een bijzondere experience. Met een precisie klep kun je het druppelen perfect regelen, en dankzij de geïntegreerde precisie schaal en een speciale zet-app kun je de koffie zetten met een pour over methode, immersion methode of met een koude drip methode. En nog beter: het maakt zelfs thee!",
+            "details": "Zorgt ervoor dat u de de koffie en het water kunt wegen tijdens het zetten van de koffie.;Verbindt met uw telefoon via Bluetooth-technologie.;De Gina-app heeft talloze recepten die u eenvoudig kunt volgen of zelf kunt maken.;Zet in één keer maximaal 750 ml koffie.;Pas de snelheid van de doorlooptijd volledig zelf aan voor een zetmethode naar keuze.;Eenvoudig reiniging van keramische en glazen onderdelen"
+        },
+        "porlex-coffee-grinder": {
+            "name": "Tall Hand Grinder by Porlex",
+            "description": "The porlex tall hand grinder is the ideal tool for both travel and home. The ceramic burrs create an even grind making sure your brews are consistent and delicious. The grinder holds up to 44 grams of coffee beans, it is suitbale for brewing 2-4 cups of coffee.",
+            "details": "Stainless Steel casing;Conical Ceramic Burrs;Easy to clean and resilient;φ49 x H185 mm;Fits in an aeropress;Made in Japan"
+        }
+    },
+    "coffee": {
+        "rutabo-coffee_250g": {
+            "name": "rutabo",
+            "description": "Deze koffie wordt gebrand voor filterkoffie. We gebruiken hiervoor een korte branding op hoge temperaturen zodat de organische zuren zich goed ontwikkelen. Het resultaat is een ‘schone’ koffie met een heldere zuurgraad en fruitige zoetheid die erg typerend is voor natuurlijk verwerkte Afrikaanse koffie.\n\nIn het dorp Rutabo wordt de Bourbon-variëteit verwerkt als natural. Dit resulteert in een heerlijke, evenwichtige koffie met bessenachtige zoetheid.",
+            "region": "Gakenke",
+            "country": "Rwanda",
+            "roast": "Filter",
+            "lot": "Rushashi",
+            "process": "Natural",
+            "variety": "Bourbon",
+            "drink": "Filter",
+            "taste": "Red Grape, Papaya, Strawberry",
+            "altitude": "1800m",
+            "harvest": "Het Rushashi-wasstation in Rwanda is een coöperatie waar ze continu bezig zijn met het verbeteren van de kwaliteit én de duurzaamheid van hun oogsten.",
+            "500CAD": "(+ 14.50$)",
+            "500EUR": "(+ 10.50€)",
+            "1000CAD": "(+ 41.50$)",
+            "1000EUR": "(+ 30€)"
+        },
+        "esperanza-coffee_250g": {
+            "name": "esperanza",
+            "description": "Deze koffiebonen zijn gebrand voor koffie op espresso-basis. Door lagere temperaturen en een langere roostertijd te gebruiken, kunnen de suikers karamelliseren zonder te verbranden. Het resultaat is een heerlijke, van nature zoete koffie die zomaar eens jouw lekkerste cappuccino ooit kan zijn.\n\nNueva Segovia is een regio in Nicaragua die bekend staat om het produceren van koffie van de hoogste kwaliteit. Het microperceel 'Esperanza' vormt hierop geen uitzondering. Door de ligging op 1500 meter hoogte en bijbehorende lagere temperaturen ontwikkelen de kersen zich langzamer. Dit resulteert in meer complexe smaken.",
+            "region": "Nueva Segovia",
+            "country": "Nicaragua",
+            "roast": "Espresso",
+            "lot": "Finca Samaria",
+            "process": "Red Honey",
+            "variety": "Catuai",
+            "drink": "Cappuccino",
+            "taste": "Floral, Brown Sugar, Clean",
+            "harvest": "Deze bonen werden geoogst op de hoogste Peralta-boerderijen in Nicaragua.",
+            "altitude": "1500m",
+            "500CAD": "(+ 12.50$)",
+            "500EUR": "(+ 8.75€)",
+            "1000CAD": "(+ 36$)",
+            "1000EUR": "(+ 25€)"
+        },
+        "coffee-for-two-coffee_250g": {
+            "name": "Coffee for two",
+            "description": "De limited edition van deze maand is gebrand als een omni-roast en is heerlijk als espresso en filterkoffie. De koffiebonen worden medium gebrand qua temperatuur en duur om zo de juiste reactie tussen de organische zuren en suikers te laten ontstaan. Het resultaat is een zeer aangename koffie met een lichte zuurgraad en heerlijke amandel-, karamel- en cacaobotersmaak.",
+            "region": "Chalatenango",
+            "country": "El Salvador",
+            "roast": "Omni",
+            "lot": "Finca Caracol",
+            "process": "Washed",
+            "variety": "Pacas",
+            "drink": "Filter or Espresso",
+            "taste": "Almond, Caramel, Cacao Butter",
+            "harvest": "De Chalatenango-regio in El Salvador staat, helemaal na de goede resultaten op de Cup of Excellence, bekend om haar Pacamaras-kersen. Gezien hun start in 2011 is de Finca El Caracol boerderij een jonge, nieuw speler op de markt. Ze cultiveren een Pacas-variëteit die op hoogtes van 1700 m groeit en een indrukwekkende koffiekwaliteit oplevert.",
+            "altitude": "1700m",
+            "500CAD": "(+ 14$)",
+            "500EUR": "(+ 10€)",
+            "1000CAD": "(+ 40.50$)",
+            "1000EUR": "(+ 29€)"
+        },
+        "108blend-coffee_250g": {
+            "name": "Blend no. 108",
+            "description": "Deze blend is ontwikkeld voor espresso's maar past ook goed bij koffies op melk-basis. De koffiebonen die voor deze melange zijn geselecteerd, hebben hun eigen unieke kenmerken. Het resultaat is een espresso die van nature zoet is en lekker lang blijft hangen.\n\nDe Yellow Honey werd gekozen als de suikerdrager voor deze blend. De Indonesische Washed voegt hier vervolgens bloemige aroma’s, een medium-body en een heerlijk lange, schone nasmaak aan toe.",
+            "region": "Nueva Segovia & Bajawa",
+            "country": "Nicaragua & Indonesia",
+            "roast": "Espresso",
+            "lot": "Blend",
+            "process": "Y. Honey & Washed",
+            "variety": "Caturra & Mix",
+            "drink": "Espresso",
+            "taste": "Citrus, Nuts, Clean aftertaste",
+            "harvest": "The Bajawa is harvested by a collective of 50 farmers in Indonesia. Cherries are handpicked resulting in one of the most expensive coffees in Indonesia",
+            "altitude": "1700m",
+            "500CAD": "(+ 13.50$)",
+            "500EUR": "(+ 9.75€)",
+            "1000CAD": "(+ 39$)",
+            "1000EUR": "(+ 28€)"
+        },
+        "reko-coffee_250g": {
+            "name": "Chelelektu",
+            "description": "Draft",
+            "region": "Yirgacheffe Kochere",
+            "country": "Ethiopia",
+            "roast": "Filter",
+            "lot": "Reko",
+            "process": "Fully washed",
+            "variety": "Heirloom",
+            "drink": "Cappuccino",
+            "taste": "Dark Chocolate, Blackberry, Mango, Honey",
+            "harvest": "This coffee is a washed processed Grade 1 from the Chelelektu Washing Station.",
+            "altitude": "1850m",
+            "500CAD": "(+ 13$)",
+            "500EUR": "(+ 10.50€)",
+            "1000CAD": "(+ 41.50$)",
+            "1000EUR": "(+ 30€)"
+        }
+    },
+    "subscription": {
+        "classics-subscription": {
+            "name": "Onze Klassiekers",
+            "description": "Kies je favoriete branding en ontvang een selectie heerlijke, single origin filterbonen of espressobonen. Of allebei. Waarom niet?"
+        },
+        "roasters-subscription": {
+            "name": "Roaster's Choice",
+            "description": "Laat je verrassen door onze meesterbrander. Elke maand kiest hij de lekkerste filter, espresso of limited edition koffiebonen voor jou uit. Altijd van de hoogste kwaliteit. Altijd met een heerlijk volle smaak. Wil jij de allerlekkerste nieuwe koffies leren kennen? Dan is dit jouw abonnement."
+        }
+    }
+}

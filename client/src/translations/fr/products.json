@@ -1,0 +1,131 @@
+{
+    "equipment": {
+        "chemex-coffee-brewer": {
+            "name": "Chemex Classique 3-Tasses",
+            "description": "La cafetière Chemex se distingue par sa gourde en forme de sablier entièrement fabriquée en verre, un matériel inerte qui n’absorbe pas les odeurs ni les résidus chimiques. Elle ne contient aucune pièce mobile; elle est donc bonne à vie. Les filtres Chemex sont fabriqués en papier filtre de la plus haute qualité.",
+            "details": "Fait en verre borosilicate non poreux qui n’absorbe pas les odeurs ni les résidus chimiques;Peut être couvert et réfrigéré, puis réchauffé sans que le café ne perde de goût;Filtres Chemex non inclus; utiliser les filtres Chemex FP-2 pour un résultat optimal (en vente ici);Capacité de 500 ml"
+        },
+        "aeropress": {
+            "name": "Aeropress",
+            "description": "L’AeroPress (fabriqué par Aerobie) propose une façon révolutionnaire de préparer le café. Son usage est d’une grande simplicité. Avec cet appareil, on se sert de la pression d’air pour créer des saveurs riches et intenses présentant peu d’acidité et aucune amertume. L’extraction uniforme donne un café des plus savoureux.",
+            "details": "Recommandations d’usage incluses : il faut de l’eau et du café, c’est tout;350 filtres et cuillère fournis;20 secondes pour préparer un café;Facile et rapide à nettoyer;Du café professionnel à la maison"
+        },
+        "kinto-brewer-stand": {
+            "name": "Kit dripper Slow Coffee Style noir de Kinto (2 tasses)",
+            "description": "D’aspect brut, cet ensemble est idéal pour les adeptes d’une infusion lente (slow coffee). Le pied est conçu de manière à pouvoir être utilisé avec une balance; on peut ainsi mesurer précisément la quantité de café obtenu. La hauteur du pied est réglable et permet d’accueillir le récipient de son choix, que l’on décide de faire le café directement dans une tasse ou dans une carafe.",
+            "details": "Pied en fonte;Brasseur en porcelaine (va au micro-ondes et au lave-vaisselle);20 filtres en papier faits à partir de pulpes de coton et de bois;Carafe thermorésistante de 400 ml (va au micro-ondes et au lave-vaisselle);Repose-filtre thermorésistant (va au micro-ondes et au lave-vaisselle)"
+        },
+        "chemex-filters": {
+            "name": "Filtres Chemex",
+            "description": "Les filtres Chemex garantissent une extraction impeccable sans résidus ni amertume.",
+            "details": "Forme de cône assurant une extraction parfaite;Plus épais (de 20 % à 30 %) que les autres filtres sur le marché;Peuvent être utilisés sur d’autres machines à café en forme de cône;Conçus pour les Chemex CM-1, CM-1C et CM-1GH"
+        },
+        "kinto-coffee-server": {
+            "name": "Coffee server 300ml by Kinto",
+            "description": "Classic heat-resistant glass server that looks good and is built to stand the test of time.",
+            "details": "Heat-resistant glass;Maximum temperature differential: 120℃ / 248℉. φ75 x H80 x W125 mm / 400 ml"
+        },
+        "kinto-cold-carafe": {
+            "name": "Carafe Cold Brew 1L de Kinto",
+            "description": "Cette carafe est dotée d’un couvercle intelligent qui s’ouvre automatiquement lorsqu’on penche la bouteille. On peut donc se servir sans se soucier du sens de versement.\n\nLe filtre permet de réaliser les thés et cafés glacés directement dans la carafe. L’infusion à froid est lente. Cette méthode diffuse moins de tanin et de caféine/théine, qui donnent habituellement un goût amer.\n\nLe verre résistant à la chaleur est facile d’entretien; il n’absorbe pas les odeurs et ne se tache pas.",
+            "details": "Couvercle intelligent qui s’ouvre automatiquement lorsqu’on penche la carafe;Verre thermorésistant; différence maximale de température : 120 ℃/248 ℉;Va au micro-ondes (le verre seulement) et au lave-vaisselle"
+        },
+        "fellow-stag-kettle": {
+            "name": "Bouilloire Fellow Stagg noire 1L",
+            "description": "Cette bouilloire d’un litre est particulièrement adaptée au slow coffee. Sa prise de main parfaite et son bec verseur ultra fin offrent confort et précision. Grâce à son couvercle muni d’un thermomètre, on obtient la température d’eau idéale.",
+            "details": "Compatible avec les cuisinières à gaz, électriques et à induction;Capacité de 1 litre;Corps et couvercle en acier inoxydable"
+        },
+        "gina-goat-story": {
+            "name": "Gina de Goat Story",
+            "description": "Gina est un instrument de café intelligent qui transforme le café en une expérience particulière. Muni d’une vanne de précision pour contrôler le goutte-à-goutte, d’une balance intégrée et d’une application mobile dédiée pour l’infusion, il permet de préparer du café selon plusieurs méthodes : infusion à froid, filtre et immersion. On peut également y faire du thé.",
+            "details": "Permet de peser le café et l’eau;Se connecte à votre téléphone avec la technologie Bluetooth;Application Gina proposant de nombreuses recettes;Permet de préparer jusqu’à 750 ml de café à la fois;Permet de régler la vitesse du goutte-à-goutte;Nettoyage facile des pièces en céramique et en verre"
+        },
+        "porlex-coffee-grinder": {
+            "name": "Tall Hand Grinder de Porlex",
+            "description": "Le moulin à café Porlex Tall est idéal pour la maison et lors de vos déplacements.  Les bavures en céramique créent une mouture uniforme en s'assurant que vos infusions sont consistantes et délicieuses. Le moulin à café peut contenir jusqu'à 44 grammes de grains de café et il convient parfaitement à la préparation entre 2 et 4 tasses de café.",
+            "details": "Boîtier en acier inoxydable;Bavures en céramique;Facile à nettoyer et résistant;Se glisse facilement dans un Aéropress;Fait au Japon"
+        }
+    },
+    "coffee": {
+        "rutabo-coffee_250g": {
+            "name": "rutabo",
+            "description": "Ce café est torréfié pour une infusion filtre. Nous utilisons une torréfaction de courte durée à température élevée afin que les acides organiques se développent pleinement. On obtient ainsi un café propre qui présente une vive acidité combinée à la douceur fruitée caractéristique des cafés naturels africains.\n\nPoussant à une altitude maximale de 2 000 mètres, les cafés de Rushashi sont de très grande qualité et se taillent souvent une place dans le palmarès rwandais du Cup of Excellence. Dans le village de Rutabo, on traite la variété Bourbon selon le procédé naturel. Il en ressort un café à la fois équilibré et complexe à la sucrosité de petits fruits",
+            "region": "Gakenke",
+            "country": "Rwanda",
+            "roast": "Filtre",
+            "lot": "Rushashi",
+            "process": "Naturel",
+            "variety": "Bourbon",
+            "drink": "Filtre",
+            "taste": "Raisin rouge, Papaye, Fraise",
+            "altitude": "1800m",
+            "harvest": "La station de lavage de Rushashi, au Rwanda, est une coopérative où les ressources sont regroupées dans le but d’améliorer la qualité des récoltes et de favoriser la pérennité des activités des cultivateurs."
+        },
+        "esperanza-coffee_250g": {
+            "name": "esperanza",
+            "description": "Ce café est torréfié pour les boissons à base d’espresso. Nous utilisons des températures plus basses et un temps de torréfaction plus long pour permettre aux sucres de se développer, tout en évitant de les brûler. Il en résulte un café qui semble naturellement doux. Jamais vous n’aurez savouré un cappuccino aussi savoureux!\n\nAprès la récolte tardive, cette variété Catuai a été transformée selon la méthode de miellage Red Honey, grâce à laquelle on obtient des arômes de sucre plus intenses tout en assurant une uniformité dans l’ensemble de la récolte.",
+            "region": "Nueva Segovia",
+            "country": "Nicaragua",
+            "roast": "Espresso",
+            "lot": "Finca Samaria",
+            "process": "Red Honey",
+            "variety": "Catuai",
+            "drink": "Cappuccino",
+            "taste": "Floral, Cassonade, Doux",
+            "harvest": "Ces grains ont été cultivés sur les plus hauts plateaux des terroirs Peralta, au Nicaragua.",
+            "altitude": "1500m"
+        },
+        "coffee-for-two-coffee_250g": {
+            "name": "Coffee for two",
+            "description": "L’édition limitée du mois est un café que nous avons torréfié de manière qu’il soit polyvalent; il est tout aussi délicieux en espresso qu’en café filtre. Nous utilisons une torréfaction équilibrée à des températures et des durées moyennes afin de faire ressortir les acides organiques et les sucres présents dans le café. Il en résulte un café agréable en bouche qui présente une légère acidité portée par des notes d’amande, de caramel et de beurre de cacao.",
+            "region": "Chalatenango",
+            "country": "El Salvador",
+            "roast": "Omni",
+            "lot": "Finca Caracol",
+            "process": "Lavé",
+            "variety": "Pacas",
+            "drink": "Filtre ou Espresso",
+            "taste": "Amande, Caramel, Beurre de Cacaco",
+            "harvest": "La région de Chalatenango, au Salvador, est reconnue pour son Pacamara, comme en témoignent les derniers résultats du Cup of Excellence.",
+            "altitude": "1700m"
+        },
+        "108blend-coffee_250g": {
+            "name": "Mélange no. 108",
+            "description": "Ce mélange a été confectionné pour les espressos, mais il convient aussi bien aux boissons à base de lait. Les cafés sélectionnés apportent chacun leur spécificité. Le tout donne un espresso naturellement sucré avec une finale plus corsée qui reste en bouche.\n\nLe mélange est composé de deux cafés d’origine pure : un avec le procédé Yellow Honey du Nicaragua et un lavé d’Indonésie. Le café nicaraguayen apporte la sucrosité tandis que le café indonésien enveloppe le tout d’une complexité florale.",
+            "region": "Nueva Segovia & Bajawa",
+            "country": "Nicaragua & Indonésie",
+            "roast": "Espresso",
+            "lot": "Mélange",
+            "process": "Y. Honey & Lavé",
+            "variety": "Caturra & Mix",
+            "drink": "Espresso",
+            "taste": "Agrumes, Noix",
+            "harvest": "Le Bajawa est récolté par une collective composée d’une cinquantaine de cultivateurs en Indonésie. Les cerises sont cueillies à la main, ce qui donne lieu à l’un des cafés de la meilleure qualité et les plus dispendieux d’Indonésie.",
+            "altitude": "1700m"
+        },
+        "reko-coffee_250g": {
+            "name": "Chelelektu",
+            "description": "Draft",
+            "region": "Yirgacheffe Kochere",
+            "country": "Ethiopia",
+            "roast": "Filtre",
+            "lot": "Reko",
+            "process": "Lavé",
+            "variety": "Heirloom",
+            "drink": "Cappuccino",
+            "taste": "Chocolat Noir, Mûre, Mangue, Miel",
+            "harvest": "Ce café est un grade 1 de la Station de Lavage Chelelektu.",
+            "altitude": "1850m"
+        }
+    },
+    "subscription": {
+        "classics-subscription": {
+            "name": "Nos classiques",
+            "description": "Choisissez une torréfaction et recevez une sélection de cafés d’origine pour une extraction filtre ou espresso (ou pourquoi pas les deux!)."
+        },
+        "roasters-subscription": {
+            "name": "Le choix du torréfacteur",
+            "description": "Laissez le maître torréfacteur vous surprendre avec son coup de cœur du mois. Vous obtiendrez ainsi un assortiment de torréfactions filtre, espresso et édition limitée. Sans jamais compromettre la qualité ni le goût, notre torréfacteur vous fera découvrir toutes les subtilités de ses cafés."
+        }
+    }
+}

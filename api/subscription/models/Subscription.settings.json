@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "subscription",
+  "info": {
+    "name": "subscription",
+    "description": "Coffee Subscriptions"
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "price": {
+      "type": "json"
+    },
+    "thumb_image": {
+      "type": "string"
+    }
+  }
+}
