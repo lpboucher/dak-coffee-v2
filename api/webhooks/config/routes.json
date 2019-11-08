@@ -1,0 +1,21 @@
+{
+    "routes": [
+      {
+        "method": "POST",
+        "path": "/webhooks/shipping",
+        "handler": "Webhooks.getShippingRates",
+        "config": {
+          "policies": []
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/webhooks/taxes",
+        "handler": "Webhooks.getTaxes",
+        "config": {
+          "policies": []
+        }
+      }
+    ]
+  }
+  
