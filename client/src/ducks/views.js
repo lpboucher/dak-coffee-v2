@@ -243,7 +243,7 @@ switch(action.type) {
                 ...state,
                 isProcessing: false,
                 processingText: ""
-            }
+            }*/
     case FETCH_CART_REQUEST:
     case FETCH_PRODUCTS_REQUEST:
             return {
@@ -257,7 +257,6 @@ switch(action.type) {
                 ...state,
                 isFetching: false
             }
-            */
     default:
         return state;
 }
