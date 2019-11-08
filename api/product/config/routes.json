@@ -55,6 +55,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/inventory",
+      "handler": "Product.snipcartFetch",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
