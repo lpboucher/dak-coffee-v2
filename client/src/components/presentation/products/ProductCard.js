@@ -10,10 +10,9 @@ import { Box, Image } from 'grommet';
 
 import { buildImageUrl } from '../../utils/Images/generateImage';
 
-const ProductCard = withRouter(({id, name, slug, type, thumb_image, price, currency, history}) => {
+const ProductCard = withRouter(({id, name, slug, type, thumb_image, price, stock, currency, history}) => {
     const imageSRC = buildImageUrl(`Products/Thumbs/${thumb_image}`, 'product_cards');
-    //adjust given snipcart inventory
-    const outOfStock = false;
+    const outOfStock = stock < 1;
     return (
         <Fragment>
             <WithHover height="75%" width="100%" onClick={() => !outOfStock ? history.push(`/shop/${slug}`) : null} isHoverable={!outOfStock}>
@@ -29,7 +28,6 @@ const ProductCard = withRouter(({id, name, slug, type, thumb_image, price, curre
             <Box height="25%">
                 <ProductCardInfo 
                     id={id}
-                    name={name}
                     slug={slug}
                     type={type}
                     price={price}

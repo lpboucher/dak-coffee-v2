@@ -1,18 +1,22 @@
 import React from 'react';
 
-import { Box } from 'grommet';
+import WithHover from '../../utils/WithHover';
 
-const AddToCart = ({id, name, price, url, description, selected=null, children, ...rest}) => {
+import { Add } from 'grommet-icons';
+
+const AddToCart = ({id, name, price, stock, url, description, selected=null, ...rest}) => {
     const { increments, varieties, roast } = price.eur;
     const options = increments ? increments.map((inc) => `${inc.option}${inc.increment}`) : null;
-    const prices = Object.keys(price).reduce((acc, curr) => { return { ...acc, [curr]: price[curr].value }; }, {})
+    const prices = Object.keys(price).reduce((acc, curr) => { return { ...acc, [curr]: price[curr].value.toFixed(2) }; }, {})
     return (
-        <Box
+        <>
+        {stock < 1 ? null :
+        <WithHover
             className="snipcart-add-item"
             data-item-id={id}
             data-item-name={name}
             data-item-price={JSON.stringify(prices)}
-            data-item-url={"http://localhost:1337/snipcartParser"}
+            data-item-url={"https://1d4b5b9f.ngrok.io/snipcartParser"}
             data-item-description={description}
             data-item-custom1-name={options ? "Weight" : null}
             data-item-custom1-options={options ? options.join('|'): null}
@@ -30,12 +34,13 @@ const AddToCart = ({id, name, price, url, description, selected=null, children, 
             background="mainDark"
             round="xsmall"
             align="center"
-            style={{color: 'white', cursor: 'pointer', textTransform: 'uppercase'}}
+            isHoverable={!(stock < 1)}
             {...rest}
         >
-            {children}
-            <item-line></item-line>
-        </Box>
+            {rest.children ? rest.children : <Add size="small" />}
+        </WithHover>
+        }
+        </>
     );
 };
 

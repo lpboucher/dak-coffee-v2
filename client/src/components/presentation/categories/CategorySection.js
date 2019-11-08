@@ -3,11 +3,11 @@ import { withTranslation } from 'react-i18next';
 import withResponsive from '../../HOCs/withResponsive';
 
 import { categorySectionLayout } from '../../layouts/globalResponsiveLayout';
-import ProductCard from '../products/ProductCard';
+import ProductCardContainer from '../../containers/products/ProductCardContainer';
 
 import { Box, Heading } from 'grommet';
 
-const CategorySection = ({name, slug, products, currency, media, t}) => {
+const CategorySection = ({slug, products, media, t}) => {
     const limitedProducts = 3;
     const layout = categorySectionLayout(media);
     const header = slug.split("_")[0] === "related" ? t(`sections.related.title`) : t(`sections.shop.${slug}`)
@@ -17,7 +17,7 @@ const CategorySection = ({name, slug, products, currency, media, t}) => {
             <Box direction="row" pad="large" wrap>
                 {products.slice(0,limitedProducts).map(product => 
                     <Box key={product.id} background="mainWhite" height="350px" width={layout.width} pad="medium" margin={'1%'}>
-                        <ProductCard currency={currency} {...product}/>
+                        <ProductCardContainer id={product.id}/>
                     </Box>
                 )}
             </Box>

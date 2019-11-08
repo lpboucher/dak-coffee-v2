@@ -44,8 +44,6 @@ const SubscriptionCard = ({id, name, slug, price, currency, t}) => {
                 <SubscriptionForm
                     withAllOptions={slug === "classics-subscription"}
                     id={id}
-                    name={name}
-                    price={price}
                 />
             }
         />

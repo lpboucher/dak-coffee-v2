@@ -1,35 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addItemToCart } from '../../../ducks/cart';
+import { getProduct } from '../../../ducks/products';
+import { getSubscription } from '../../../ducks/subscriptions';
+import { getDisplayCurrency } from '../../../ducks/views';
 
-import { Box } from 'grommet';
+import AddToCart from '../../presentation/global/AddToCart';
 
 class AddToCartContainer extends Component {
 
     render() {
-        const { item, addToCart } = this.props;
+        const { product, currency, ...rest } = this.props;
         return (
-            <Box
-                primary
-                color="mainDark"
-                margin="small"
-                pad="xsmall"
-                background="mainDark"
-                round="xsmall"
-                align="center"
-                style={{color: 'white', cursor: 'pointer', textTransform: 'uppercase'}}
-                onClick={() => addToCart(item)}
-            >
-                {this.props.children}
-            </Box>
+            <AddToCart currency={currency} {...product} {...rest} />
         );
     }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapStateToProps(state, ownProps) {
+    const { productId, subscriptionId } = ownProps;
     return {
-        addToCart: (item) => dispatch(addItemToCart(item)),
+        product: productId ? getProduct(state, productId) : getSubscription(state, subscriptionId),
+        currency: getDisplayCurrency(state)
     };
 }
 
-export default connect(null, mapDispatchToProps)(AddToCartContainer);
+export default connect(mapStateToProps, null)(AddToCartContainer);

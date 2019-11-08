@@ -4,13 +4,13 @@ import { withTranslation } from 'react-i18next';
 
 import { SelectAdapter } from '../../utils/Forms/FormHelpers';
 
-import AddToCart from '../global/AddToCart';
+import AddToCart from '../../containers/cart/AddToCartContainer';
 
 import { Box, Button } from "grommet";
 
 const required = value => (value ? undefined : "Please select all options");
 
-const SubscriptionForm = ({ id, name, price, withAllOptions, t}) => {
+const SubscriptionForm = ({ id, withAllOptions, t}) => {
     return (
     <Form
     onSubmit={values => console.log(values)}
@@ -41,11 +41,8 @@ const SubscriptionForm = ({ id, name, price, withAllOptions, t}) => {
           }
           <Field label={`${t("sections.subscription.form.quantity.label")}`} name="quantity" component={SelectAdapter} size="small" options={['500g', '1kg']} placeholder={`${t("sections.subscription.form.quantity.placeholder")}`} validate={required}/>
           <AddToCart
-                id={id}
-                name={name}
-                price={price}
+                subscriptionId={id}
                 selected={values}
-                //url={"https://581ce3d7.ngrok.io/"}
                 data-item-payment-interval="Month"
                 data-item-payment-interval-count="1"
                 fill="horizontal"

@@ -4,7 +4,7 @@ import withResponsive from '../../HOCs/withResponsive';
 //import { Form, Field } from 'react-final-form';
 
 //import ProductSpecs from './ProductSpecs';
-import AddToCart from '../../presentation/global/AddToCart';
+import AddToCart from '../../containers/cart/AddToCartContainer';
 //import { RadioGroupAdapter } from '../../utils/Forms/FormHelpers';
 
 import { Heading, Text, Button, Box, Tabs, Tab } from 'grommet';
@@ -68,12 +68,8 @@ const ProductDetails = ({id, name, slug, price, currency, type, media, t}) => {
                     </form>
             )}
                     />*/}
-                    <AddToCart
-                        id={id}
-                        name={name}
-                        slug={slug}
-                        price={price}
-                        //url={"https://581ce3d7.ngrok.io/"}
+                    <AddToCart 
+                        productId={id}
                         alignSelf={isMobile ? "center" : "start"}
                         pad="small"
                         margin="none"
