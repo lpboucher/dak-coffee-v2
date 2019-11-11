@@ -1,0 +1,13 @@
+{
+    "routes": [
+      {
+        "method": "POST",
+        "path": "/newsletter",
+        "handler": "Newsletter.add",
+        "config": {
+          "policies": []
+        }
+      }
+    ]
+  }
+  

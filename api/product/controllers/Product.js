@@ -29,7 +29,6 @@ const snipcartFetch = async (ctx) => {
     stock: product.stock,
     totalStock: product.totalStock
   }));
-  console.log(productsInv);
   ctx.send(productsInv);
 };
 
