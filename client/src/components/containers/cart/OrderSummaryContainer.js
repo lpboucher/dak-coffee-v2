@@ -19,7 +19,7 @@ class OrderSummaryContainer extends Component {
         const { currency, cartMeta, isFetching } = this.props;
         return (
             <>
-                {Object.keys(cartMeta).length < 1 || isFetching ?
+                {(Object.keys(cartMeta).length < 1 || !cartMeta.subTotal) || isFetching ?
                     <Loader pad={{horizontal: 'xlarge', vertical: 'medium'}} align={"end"} size={50}/>
                     :
                     <OrderSummary currency={currency} {...cartMeta} />
