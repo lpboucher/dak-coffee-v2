@@ -39,7 +39,7 @@
     "intros": {
         "subscription": {
             "title": "Maandabonnement",
-            "helper": "VANAF €25 | GRATIS VERZENDING | ZONDER VERPLICHTINGEN",
+            "helper": "VANAF {{price}} | GRATIS VERZENDING | ZONDER VERPLICHTINGEN",
             "description": "Kies voor een van onze abonnementen en ontvang elke maand verse, ambachtelijk gebrande koffiebonen thuis. Je kunt kiezen uit:\n\n<strong>ONZE KLASSIEKERS</strong>. Kies je favoriete branding en ontvang een selectie heerlijke, single origin filterbonen of espressobonen. Of allebei. Waarom niet?\n\n<strong>ROASTER’S CHOICE</strong>. Laat je verrassen door onze meesterbrander. Elke maand kiest hij de lekkerste filter, espresso of limited edition koffiebonen voor jou uit. Altijd van de hoogste kwaliteit. Altijd met een heerlijk volle smaak. Wil jij de allerlekkerste nieuwe koffies leren kennen? Dan is dit jouw abonnement.",
             "short description": "Ontvang elke maand de lekkerste koffie bij je thuis door te kiezen voor een van onze abonnementen. Je hebt de keuze tussen ‘onze klassiekers’ en ‘The Roaster’s Choice’.",
             "button": "Bestel nu"
@@ -113,7 +113,10 @@
         },
         "product": {
             "description": "Samenvatting",
-            "details": "Productspecificaties"
+            "price": "Vanaf ",
+            "details": "Productspecificaties",
+            "recommendation": "Branding: ",
+            "recyclable": "100% recyclebaar koffiezakken en doos"
         },
         "related": {
             "title": "gerelateerde producten"
@@ -173,7 +176,8 @@
                 "discount": "korting",
                 "total": "totaal (inclusief BTW)",
                 "free": "gratis",
-                "button": "bestelling plaatsen"
+                "button": "bestelling plaatsen",
+                "add": "In winkelmand"
             }
         },
         "checkout": {

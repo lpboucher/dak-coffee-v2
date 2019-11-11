@@ -39,7 +39,7 @@
     "intros": {
         "subscription": {
             "title": "Abonnement caféiné",
-            "helper": "À PARTIR DE €25 | LIVRAISON GRATUITE | SANS ENGAGEMENT",
+            "helper": "À PARTIR DE {{price}} | LIVRAISON GRATUITE | SANS ENGAGEMENT",
             "description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements. Voici les options qui s’offrent à vous:\n\n<strong>NOS CLASSIQUES</strong>. Choisissez une torréfaction et recevez une sélection de cafés d’origine pour une extraction filtre ou espresso (ou pourquoi pas les deux!).\n\n<strong>LE CHOIX DU TORRÉFACTEUR</strong>. Laissez le maître torréfacteur vous surprendre avec son coup de cœur du mois. Vous obtiendrez ainsi un assortiment de torréfactions filtre, espresso et édition limitée. Sans jamais compromettre la qualité ni le goût, notre torréfacteur vous fera découvrir toutes les subtilités de ses cafés. La formule idéale pour vous initier à de nouveaux arômes de cafés frais.",
             "short description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements. Choisissez entre nos classiques ou le choix du torréfacteur",
             "button": "Abonnez-vous"
@@ -112,7 +112,10 @@
         },
         "product": {
             "description": "Description",
-            "details": "Détails"
+            "price": "À partir de ",
+            "details": "Détails",
+            "recommendation": "Recommendé en",
+            "recyclable": "Sacs et boites 100% recyclables"
         },
         "related": {
             "title": "Vous aimerez aussi"
@@ -171,7 +174,8 @@
                 "taxes": "taxes",
                 "discount": "rabais",
                 "total": "total (incl. taxes)",
-                "button": "régler ma commande"
+                "button": "régler ma commande",
+                "add": "Ajouter au panier"
             }
         },
         "checkout": {
@@ -352,6 +356,7 @@
     },
     "newsletter": {
         "description": "Inscrivez-vous à notre infolettre pour connaître nos promotions exclusives, avoir des nouvelles et obtenir de judicieux conseils.",
+        "full": "Nouvelles caféinées juste ici.\n\nInscrivez-vous à notre infolettre pour connaître nos promotions exclusives, avoir des nouvelles et obtenir de judicieux conseils.",
         "registered": "Merci de vous inscrire!",
         "form": {
             "name": "Votre nom",

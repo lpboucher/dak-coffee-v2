@@ -47,7 +47,7 @@
         }
     },
     "coffee": {
-        "rutabo-coffee_250g": {
+        "rutabo-coffee": {
             "name": "rutabo",
             "description": "Ce café est torréfié pour une infusion filtre. Nous utilisons une torréfaction de courte durée à température élevée afin que les acides organiques se développent pleinement. On obtient ainsi un café propre qui présente une vive acidité combinée à la douceur fruitée caractéristique des cafés naturels africains.\n\nPoussant à une altitude maximale de 2 000 mètres, les cafés de Rushashi sont de très grande qualité et se taillent souvent une place dans le palmarès rwandais du Cup of Excellence. Dans le village de Rutabo, on traite la variété Bourbon selon le procédé naturel. Il en ressort un café à la fois équilibré et complexe à la sucrosité de petits fruits",
             "region": "Gakenke",
@@ -61,7 +61,7 @@
             "altitude": "1800m",
             "harvest": "La station de lavage de Rushashi, au Rwanda, est une coopérative où les ressources sont regroupées dans le but d’améliorer la qualité des récoltes et de favoriser la pérennité des activités des cultivateurs."
         },
-        "esperanza-coffee_250g": {
+        "esperanza-coffee": {
             "name": "esperanza",
             "description": "Ce café est torréfié pour les boissons à base d’espresso. Nous utilisons des températures plus basses et un temps de torréfaction plus long pour permettre aux sucres de se développer, tout en évitant de les brûler. Il en résulte un café qui semble naturellement doux. Jamais vous n’aurez savouré un cappuccino aussi savoureux!\n\nAprès la récolte tardive, cette variété Catuai a été transformée selon la méthode de miellage Red Honey, grâce à laquelle on obtient des arômes de sucre plus intenses tout en assurant une uniformité dans l’ensemble de la récolte.",
             "region": "Nueva Segovia",
@@ -75,7 +75,7 @@
             "harvest": "Ces grains ont été cultivés sur les plus hauts plateaux des terroirs Peralta, au Nicaragua.",
             "altitude": "1500m"
         },
-        "coffee-for-two-coffee_250g": {
+        "coffee-for-two-coffee": {
             "name": "Coffee for two",
             "description": "L’édition limitée du mois est un café que nous avons torréfié de manière qu’il soit polyvalent; il est tout aussi délicieux en espresso qu’en café filtre. Nous utilisons une torréfaction équilibrée à des températures et des durées moyennes afin de faire ressortir les acides organiques et les sucres présents dans le café. Il en résulte un café agréable en bouche qui présente une légère acidité portée par des notes d’amande, de caramel et de beurre de cacao.",
             "region": "Chalatenango",
@@ -89,7 +89,7 @@
             "harvest": "La région de Chalatenango, au Salvador, est reconnue pour son Pacamara, comme en témoignent les derniers résultats du Cup of Excellence.",
             "altitude": "1700m"
         },
-        "108blend-coffee_250g": {
+        "108blend-coffee": {
             "name": "Mélange no. 108",
             "description": "Ce mélange a été confectionné pour les espressos, mais il convient aussi bien aux boissons à base de lait. Les cafés sélectionnés apportent chacun leur spécificité. Le tout donne un espresso naturellement sucré avec une finale plus corsée qui reste en bouche.\n\nLe mélange est composé de deux cafés d’origine pure : un avec le procédé Yellow Honey du Nicaragua et un lavé d’Indonésie. Le café nicaraguayen apporte la sucrosité tandis que le café indonésien enveloppe le tout d’une complexité florale.",
             "region": "Nueva Segovia & Bajawa",
@@ -103,9 +103,9 @@
             "harvest": "Le Bajawa est récolté par une collective composée d’une cinquantaine de cultivateurs en Indonésie. Les cerises sont cueillies à la main, ce qui donne lieu à l’un des cafés de la meilleure qualité et les plus dispendieux d’Indonésie.",
             "altitude": "1700m"
         },
-        "reko-coffee_250g": {
+        "reko-coffee": {
             "name": "Chelelektu",
-            "description": "Draft",
+            "description": "Ce café est torréfié pour une infusion filtre. La région de Chelelektu possède de nombreuses variétés de cafés grâce aux différentes altitudes, qui varient entre 1 300 et 2 200 mètres. Nous obtenons un café équilibré avec des notes de mûres et de mangues.\n\nLa station de lavage de Chelelektu se situe dans la région de Kochere, en Éthiopie. Elle a été établi en 2010 et traite actuellement près de 1000 tonnes de cerises de café provenant de 360 ​​producteurs voisins.",
             "region": "Yirgacheffe Kochere",
             "country": "Ethiopia",
             "roast": "Filtre",

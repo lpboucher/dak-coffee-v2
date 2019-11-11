@@ -39,7 +39,7 @@
     "intros": {
         "subscription": {
             "title": "Monthly Coffee Subscription",
-            "helper": "FROM €25 | FREE SHIPPING | COMMITMENT FREE",
+            "helper": "FROM {{price}} | FREE SHIPPING | COMMITMENT FREE",
             "description": "Have your coffee delivered to your doorstep every month by opting for one of our subscriptions. Choose between:\n\n<strong>OUR CLASSICS</strong>: Choose a roast and receive a selection of origin coffees in either filter or espresso roasts (or both, why not!)\n\n<strong>THE ROASTER’S CHOICE</strong>: Let the roaster surprise you with his preferred roast of the month. This subscription will offer different assortments of filter/espresso/limited edition roasts, but our roaster never compromises the quality or taste, so this is truly the best way to familiarize yourself with fresh, new coffees!",
             "short description": "Have your coffee delivered to your doorstep every month by opting for one of our subscriptions. Choose between our classics or the roaster's choice.",
             "button": "Subscribe"
@@ -112,7 +112,10 @@
         },
         "product": {
             "description": "Description",
-            "details": "Details"
+            "price": "From ",
+            "details": "Details",
+            "recommendation": "Recommended as",
+            "recyclable": "100% recyclable bag, recyclable box"
         },
         "related": {
             "title": "you may also like"
@@ -171,7 +174,8 @@
                 "taxes": "tax (incl.)",
                 "discount": "discount",
                 "total": "total",
-                "button": "order"
+                "button": "order",
+                "add": "Add to Cart"
             }
         },
         "checkout": {
@@ -352,6 +356,7 @@
     },
     "newsletter": {
         "description": "Sign up to our newsletter to receive exclusive coffee promotions, news, stories, tips.",
+        "full": "Coffee news right here.\n\nSign up to our newsletter to receive exclusive coffee promotions, news, stories, tips.",
         "registered": "Thank you for signing up!",
         "form": {
             "name": "Your name",

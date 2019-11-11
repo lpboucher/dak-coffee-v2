@@ -21,10 +21,10 @@ import {
     REGISTER_SUCCESS,
     UPDATE_REQUEST,
     UPDATE_SUCCESS,
-    FETCH_SUCCESS,
+    FETCH_SUCCESS,*/
     NEWSLETTER_REQUEST,
     NEWSLETTER_SUCCESS,
-    NEWSLETTER_FAILURE*/
+    NEWSLETTER_FAILURE
 } from './user';
 
 /*import {
@@ -51,6 +51,8 @@ import {
 
 export const OPEN_CART = 'views/open_cart';
 export const CLOSE_CART = 'views/close_cart';
+export const SNIP_OPEN = 'views/snip_open';
+export const SNIP_CLOSE = 'views/snip_close';
 export const CHANGE_CURRENCY_REQUEST = 'views/change_currency_request';
 export const CHANGE_CURRENCY_SUCCESS = 'views/change_currency_success';
 /*export const OPEN_ERROR = 'views/open_error';
@@ -64,6 +66,14 @@ const SCROLL_HEIGHT = 'views/scroll_height'*/
 
 
 //Action Creators
+export const openSnipcart = () => dispatch => {
+    dispatch({type: SNIP_OPEN})
+}
+
+export const closeSnipcart = () => dispatch => {
+    dispatch({type: SNIP_CLOSE})
+}
+
 export const openCartSummary = () => dispatch => {
     dispatch({type: OPEN_CART})
 }
@@ -81,6 +91,25 @@ export const switchDisplayCurrency = (currency) => (dispatch) => {
     } catch (err) {
         console.log(err)
     }
+}
+
+export const closeAndNavigate = (path, router) => {
+    const { location, history } = router;
+    if (
+        location.hash === "#!/cart" ||
+        location.hash === "#!/orders" ||
+        location.hash === "#!/billing-address" ||
+        location.hash === "#!/shipping-address" ||
+        location.hash === "#!/shipping-method" ||
+        location.hash === "#!/payment-method" ||
+        location.hash === "#!/confirm" ||
+        location.hash.substr(0,location.hash.lastIndexOf("/")) === "#!/orders"
+        ) {
+            history.push(path);
+            window.Snipcart.api.modal.close();
+        } else {
+            history.push(path);
+        }
 }
 
 /*export const openMobileMenu = () => dispatch => {
@@ -117,6 +146,7 @@ export const closeError = () => dispatch => {
 
 //Reducer
 const initialState = {
+isSnipcartModalOpen: false,
 isCartOpen: false,
 isMobileOpen: false,
 isProcessing: true,
@@ -141,6 +171,7 @@ switch(action.type) {
     case CLOSE_CART:
         return { ...state, isCartOpen: false, error: initialState.error };
     case CHANGE_CURRENCY_REQUEST:
+    case NEWSLETTER_REQUEST:
         return { 
             ...state,
             isProcessing: true,
@@ -179,6 +210,23 @@ switch(action.type) {
         return {
             ...state,
             changingLoginStatus: false,
+        }
+    case NEWSLETTER_SUCCESS:
+    case NEWSLETTER_FAILURE:
+        return { 
+            ...state,
+            isProcessing: false,
+            error: {...state.error, ...action.payload},
+            processingText: "" };
+    case SNIP_OPEN:
+        return {
+            ...state,
+            isSnipcartModalOpen: true,
+        }
+    case SNIP_CLOSE:
+        return {
+            ...state,
+            isSnipcartModalOpen: false,
         }
     /*case OPEN_ERROR:
             return { ...state, showError: true, error: action.payload };
@@ -265,6 +313,8 @@ switch(action.type) {
 //Selectors
 export const isCartOpen = (state) => state.views.isCartOpen;
 
+export const isSnipOpen = (state) => state.views.isSnipcartModalOpen;
+
 export const isFetching = (state) => state.views.isFetching;
 
 export const isMobileOpen = (state) => state.views.isMobileOpen;
@@ -281,10 +331,8 @@ export const getMediaSize = (state) => state.browser.mediaType;
 
 /*export const hasError = (state) => state.views.showError;
 
-
-
+*/
 
 export const getError = (state) => state.views.error;
 
-*/
 

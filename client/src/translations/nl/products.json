@@ -47,7 +47,7 @@
         }
     },
     "coffee": {
-        "rutabo-coffee_250g": {
+        "rutabo-coffee": {
             "name": "rutabo",
             "description": "Deze koffie wordt gebrand voor filterkoffie. We gebruiken hiervoor een korte branding op hoge temperaturen zodat de organische zuren zich goed ontwikkelen. Het resultaat is een ‘schone’ koffie met een heldere zuurgraad en fruitige zoetheid die erg typerend is voor natuurlijk verwerkte Afrikaanse koffie.\n\nIn het dorp Rutabo wordt de Bourbon-variëteit verwerkt als natural. Dit resulteert in een heerlijke, evenwichtige koffie met bessenachtige zoetheid.",
             "region": "Gakenke",
@@ -57,7 +57,7 @@
             "process": "Natural",
             "variety": "Bourbon",
             "drink": "Filter",
-            "taste": "Red Grape, Papaya, Strawberry",
+            "taste": "Rode Druif, Papaya, Aardbei",
             "altitude": "1800m",
             "harvest": "Het Rushashi-wasstation in Rwanda is een coöperatie waar ze continu bezig zijn met het verbeteren van de kwaliteit én de duurzaamheid van hun oogsten.",
             "500CAD": "(+ 14.50$)",
@@ -65,7 +65,7 @@
             "1000CAD": "(+ 41.50$)",
             "1000EUR": "(+ 30€)"
         },
-        "esperanza-coffee_250g": {
+        "esperanza-coffee": {
             "name": "esperanza",
             "description": "Deze koffiebonen zijn gebrand voor koffie op espresso-basis. Door lagere temperaturen en een langere roostertijd te gebruiken, kunnen de suikers karamelliseren zonder te verbranden. Het resultaat is een heerlijke, van nature zoete koffie die zomaar eens jouw lekkerste cappuccino ooit kan zijn.\n\nNueva Segovia is een regio in Nicaragua die bekend staat om het produceren van koffie van de hoogste kwaliteit. Het microperceel 'Esperanza' vormt hierop geen uitzondering. Door de ligging op 1500 meter hoogte en bijbehorende lagere temperaturen ontwikkelen de kersen zich langzamer. Dit resulteert in meer complexe smaken.",
             "region": "Nueva Segovia",
@@ -75,7 +75,7 @@
             "process": "Red Honey",
             "variety": "Catuai",
             "drink": "Cappuccino",
-            "taste": "Floral, Brown Sugar, Clean",
+            "taste": "Bloemige smaak, bruine suiker",
             "harvest": "Deze bonen werden geoogst op de hoogste Peralta-boerderijen in Nicaragua.",
             "altitude": "1500m",
             "500CAD": "(+ 12.50$)",
@@ -83,7 +83,7 @@
             "1000CAD": "(+ 36$)",
             "1000EUR": "(+ 25€)"
         },
-        "coffee-for-two-coffee_250g": {
+        "coffee-for-two-coffee": {
             "name": "Coffee for two",
             "description": "De limited edition van deze maand is gebrand als een omni-roast en is heerlijk als espresso en filterkoffie. De koffiebonen worden medium gebrand qua temperatuur en duur om zo de juiste reactie tussen de organische zuren en suikers te laten ontstaan. Het resultaat is een zeer aangename koffie met een lichte zuurgraad en heerlijke amandel-, karamel- en cacaobotersmaak.",
             "region": "Chalatenango",
@@ -93,7 +93,7 @@
             "process": "Washed",
             "variety": "Pacas",
             "drink": "Filter or Espresso",
-            "taste": "Almond, Caramel, Cacao Butter",
+            "taste": "Amandel, Karamel, Cacaoboter",
             "harvest": "De Chalatenango-regio in El Salvador staat, helemaal na de goede resultaten op de Cup of Excellence, bekend om haar Pacamaras-kersen. Gezien hun start in 2011 is de Finca El Caracol boerderij een jonge, nieuw speler op de markt. Ze cultiveren een Pacas-variëteit die op hoogtes van 1700 m groeit en een indrukwekkende koffiekwaliteit oplevert.",
             "altitude": "1700m",
             "500CAD": "(+ 14$)",
@@ -101,7 +101,7 @@
             "1000CAD": "(+ 40.50$)",
             "1000EUR": "(+ 29€)"
         },
-        "108blend-coffee_250g": {
+        "108blend-coffee": {
             "name": "Blend no. 108",
             "description": "Deze blend is ontwikkeld voor espresso's maar past ook goed bij koffies op melk-basis. De koffiebonen die voor deze melange zijn geselecteerd, hebben hun eigen unieke kenmerken. Het resultaat is een espresso die van nature zoet is en lekker lang blijft hangen.\n\nDe Yellow Honey werd gekozen als de suikerdrager voor deze blend. De Indonesische Washed voegt hier vervolgens bloemige aroma’s, een medium-body en een heerlijk lange, schone nasmaak aan toe.",
             "region": "Nueva Segovia & Bajawa",
@@ -111,7 +111,7 @@
             "process": "Y. Honey & Washed",
             "variety": "Caturra & Mix",
             "drink": "Espresso",
-            "taste": "Citrus, Nuts, Clean aftertaste",
+            "taste": "Citrusvruchten, noten",
             "harvest": "The Bajawa is harvested by a collective of 50 farmers in Indonesia. Cherries are handpicked resulting in one of the most expensive coffees in Indonesia",
             "altitude": "1700m",
             "500CAD": "(+ 13.50$)",
@@ -119,7 +119,7 @@
             "1000CAD": "(+ 39$)",
             "1000EUR": "(+ 28€)"
         },
-        "reko-coffee_250g": {
+        "reko-coffee": {
             "name": "Chelelektu",
             "description": "Draft",
             "region": "Yirgacheffe Kochere",

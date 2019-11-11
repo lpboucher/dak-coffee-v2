@@ -1,13 +1,12 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { withRouter, NavLink } from 'react-router-dom';
 
 import { User } from 'grommet-icons';
 import { Box, Menu } from 'grommet';
 
-const Account = withRouter(({t, isLoggedIn, logout, history}) => {
+const Account = ({t, isLoggedIn, logout}) => {
     const subMenus = [
-        { label: `${t("nav.account")}`, onClick: () => {history.push('/account')} },
+        { label: `${t("nav.account")}`, className: 'snipcart-user-profile' },
         { label: `${t("nav.log out")}`, onClick: () => {logout()} },
     ];
     return (
@@ -25,6 +24,5 @@ const Account = withRouter(({t, isLoggedIn, logout, history}) => {
         </Box>
     );
 }
-)
 
 export default withTranslation()(Account);
