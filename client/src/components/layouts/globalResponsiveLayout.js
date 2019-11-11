@@ -427,3 +427,38 @@ export const orderSummaryLayout = (screenSize) => {
     return mediaQueries[screenSize]
 }
 
+export const newsletterFormLayout = (screenSize, isFull) => {
+    const mediaQueries = {
+        extraSmall: {width: '100%'},
+        small: {width: '100%'},
+        medium: {width: isFull ? '100%' : '40%'},
+        large: {width: isFull ? '100%' : '40%'},
+        infinity: {width: isFull ? '100%' : '40%'},
+    }
+    return mediaQueries[screenSize]
+}
+
+export const newsletterFullLayout = (screenSize, isFull) => {
+    const mediaQueries = {
+        extraSmall: {width: '100%', dir: isFull ? 'row' : 'column'},
+        small: {width: '100%', dir: isFull ? 'row' : 'column'},
+        medium: {width: isFull ? '50%' : '100%', dir: isFull ? 'row' : 'column'},
+        large: {width: isFull ? '50%' : '100%', dir: isFull ? 'row' : 'column'},
+        infinity: {width: isFull ? '50%' : '100%', dir: isFull ? 'row' : 'column'},
+    }
+    return mediaQueries[screenSize]
+}
+
+export const productSpecsLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {pad: 'medium', columns: '2', rows: 'auto'},
+        small: {columns: '2', rows: 'auto'},
+        medium: {columns: '50%', rows: '50%'},
+        large: {columns: '50%', rows: '50%'},
+        infinity: {columns: '50%', rows: '50%'}
+    }
+    return mediaQueries[screenSize]
+}
+
+
+
