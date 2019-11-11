@@ -1,8 +1,7 @@
 import React, { Component, Suspense, lazy} from 'react';
 import { connect } from 'react-redux';
 import withResponsive from '../HOCs/withResponsive';
-import withCart from '../HOCs/withSnipcart';
-//import { switchDisplayCurrency } from '../../../ducks/views';
+import { getDisplayCurrency } from '../../ducks/views';
 
 import Hero from '../presentation/global/Hero';
 import SubscriptionIntro from '../presentation/intros/Subscriptions';
@@ -13,27 +12,13 @@ import Loader from '../utils/SimpleLoader';
 const FeaturedProductsContainer = lazy(() => import('../containers/products/FeaturedProductsContainer'));
 const ValuesIntro = lazy(() => import('../presentation/intros/Values'));
 const BrewingIntro = lazy(() => import('../presentation/intros/Brewing'));
-
-/*const NewsletterContainer = lazy(() => import('../../container/Newsletter/NewsletterContainer'));*/
+const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
 const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565896327/Heros/HeaderV2_gujmqi.jpg'
 
 class Home extends Component {
-    /*componentDidMount() {
-        fetch('http://ip-api.com/json/')
-            .then(response => response.json())
-            .then(data => {
-                if(data.countryCode === 'US' || data.countryCode === 'CA') {
-                    this.props.switchCurrency('CAD')
-                }
-            });
-    }*/
-
     render() {
-        const { media, snipcartAPI } = this.props;
-        if (snipcartAPI) {
-            console.log(snipcartAPI.items.count())
-        }
+        const { media, currency } = this.props;
         const isNotSmall = media === "medium" || media === "large" || media === "infinity";
         return (
             <>
@@ -48,27 +33,23 @@ class Home extends Component {
                         }}
                     />
                 }
-                <SubscriptionIntro />
+                <SubscriptionIntro currency={currency} />
                 <LimitedEditionsIntro />
                 <Suspense fallback={<Loader />}>
                     <FeaturedProductsContainer collection='featured-products'/>
+                    <NewsletterContainer />
                     <ValuesIntro />
                     <BrewingIntro />
-                </Suspense>
-                    {/*
-                    
-                    <NewsletterContainer />
-                    */}
+                </Suspense>     
             </>
         );
     }
 }
 
-/*function mapDispatchToProps(dispatch) {
+function mapStateToProps(state) {
     return {
-        switchCurrency: (currency) => dispatch(switchDisplayCurrency(currency)),
+        currency: getDisplayCurrency(state),
     };
-}*/
+}
 
-//export default withResponsive(connect(null, mapDispatchToProps)(Home));
-export default withCart(withResponsive(Home));
+export default withResponsive(connect(mapStateToProps, null)(Home));

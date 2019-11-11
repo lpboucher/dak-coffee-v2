@@ -5,9 +5,10 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
 
-const thumb = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1568043681/Intros/SubscriptionSmallBox_2_vkenoo.jpg';
+const thumb = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/q_100/v1572972636/Intros/BoxSubscription_viuecy.jpg';
 
-const SubscriptionBanner = ({isMobile, t}) => {
+const SubscriptionBanner = ({isMobile, currency, t}) => {
+    const prices = {EUR: '€25', CAD: '$35'}
     const intro = 
         <IntroLayout 
             heading="intros.subscription.title" 
@@ -16,6 +17,7 @@ const SubscriptionBanner = ({isMobile, t}) => {
             btnLabel="intros.subscription.button"
             link="/subscriptions"
             isSmall={true}
+            options={{ price: prices[currency] }}
         />
     return (
         <TwoColLayout 
