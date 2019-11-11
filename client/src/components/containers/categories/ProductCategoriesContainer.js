@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCategories, getCategories } from '../../../ducks/categories';
+import { fetchCategories, getSortedCategories } from '../../../ducks/categories';
 
 import CategoryContainer from '../categories/CategoryContainer';
 
@@ -35,7 +35,7 @@ class ProductCategoriesContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        categoryIds: getCategories(state),
+        categoryIds: getSortedCategories(state),
     };
 }
 
