@@ -26,10 +26,10 @@ export const LOGOUT_SUCCESS = 'user/logout_success';
 export const LOGOUT_FAILURE = 'user/logout_failure';
 /*export const ORDERS_REQUEST = 'user/orders_request';
 export const ORDERS_SUCCESS = 'user/orders_success';
-export const ORDERS_FAILURE = 'user/orders_failure';
+export const ORDERS_FAILURE = 'user/orders_failure';*/
 export const NEWSLETTER_REQUEST = 'user/newsletter_request';
 export const NEWSLETTER_SUCCESS = 'user/newsletter_sucess';
-export const NEWSLETTER_FAILURE = 'user/newsletter_failure';*/
+export const NEWSLETTER_FAILURE = 'user/newsletter_failure';
 
 //Action Creators
 export const login = () => dispatch => {
@@ -54,6 +54,21 @@ export const logout = () => dispatch => {
         dispatch({ type: CLEAR_CART_SUCCESS });
     } catch(err) {
         dispatch({ type: LOGOUT_FAILURE });
+    }
+}
+
+export const addToNewsletter = (name, email) => async dispatch => {
+    dispatch({ type: NEWSLETTER_REQUEST, payload: "loading.newsletter.add" });
+    const language = i18n.language;
+    try {
+        const res = await axios.post(`/newsletter`, {name, email, language});
+        if (res === 'error') {
+            dispatch({ type: NEWSLETTER_FAILURE, payload: {newsletter: 'newsletter.error' }})
+        } else {
+            dispatch({ type: NEWSLETTER_SUCCESS, payload: {newsletter: 'newsletter.registered' }});
+        }
+    } catch(err) {
+        console.log(err)
     }
 }
 
