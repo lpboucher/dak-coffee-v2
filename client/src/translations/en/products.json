@@ -1,5 +1,6 @@
 {
     "equipment": {
+        "short": "Coffee equipment",
         "chemex-coffee-brewer": {
             "name": "Classic Chemex 3-Cups",
             "description": "CHEMEX® delivers the purest flavor experience. Known as a pristine coffeemaker, Chemex employs all of the chemically correct methods for brewing. It is simple, easy to use with timeless, elegant design.Its hourglass shaped flask is made entirely of glass, a chemically inert material that does not absorb odors or chemical residues. This CHEMEX® needs to be used with CHEMEX® Unfolded Half Moon Filters FP-2, available here.",
@@ -49,6 +50,7 @@
     "coffee": {
         "rutabo-coffee": {
             "name": "rutabo",
+            "short": "Rwandan coffee (filter)",
             "description": "This coffee is roasted for filter coffee. We use a shorter roast time at high temperatures to focus on the development of organic acids. The result is a coffee that is clean with a bright acidity and fruity sweetness that is typical of African natural-processed coffees.\n\nAt a highest altitude of 2,000m, Rushashi coffees are of very high quality and often find a place in the Rwanda Cup of Excellence. At the Rutabo village, the Bourbon variety is processed as Natural.",
             "region": "Gakenke",
             "country": "Rwanda",
@@ -67,6 +69,7 @@
         },
         "esperanza-coffee": {
             "name": "esperanza",
+            "short": "Nicaraguan coffee (espresso)",
             "description": "This coffee is roasted for espresso-based drinks. We use lower temperatures and a longer roasted time to allow the sugars to develop while making sure not to burn them. The result is a coffee that feels naturally sweet and that may just be the best cappuccino you have ever had!\n\nThis “Esperanza” micro lot benefits from lower temperatures allowing the cherries to develop more slowly, resulting in more complex flavours.",
             "region": "Nueva Segovia",
             "country": "Nicaragua",
@@ -85,6 +88,7 @@
         },
         "coffee-for-two-coffee": {
             "name": "Coffee for two",
+            "short": "El Salvador coffee (espresso/filter)",
             "description": "This month’s limited edition is roasted as an omni-roast coffee, equally delicious as a filter or espresso drink. We use a balanced roast at medium temperatures and times to draw from both organic acids and sugars present in the coffee. The result is a coffee that is very pleasant with a light acidity and tasting notes of almond, caramel and cacao butter. Quantities are limited, so get yours now!",
             "region": "Chalatenango",
             "country": "El Salvador",
@@ -103,6 +107,7 @@
         },
         "108blend-coffee": {
             "name": "Blend no. 108",
+            "short": "Blend (espresso)",
             "description": "This blend was developed for espressos but also goes well with milk-based drinks. The coffees selected for the blend bring their own unique attributes. The result is an espresso that feels naturally sweet with a lingering body.\n\nThe Nicaraguan was selected as the sugar carrier for this blend. To top it off, the Indonesian brings hints of floral aromas and a medium-body, long and clean aftertaste.",
             "region": "Nueva Segovia & Bajawa",
             "country": "Nicaragua & Indonesia",
@@ -121,6 +126,7 @@
         },
         "reko-coffee": {
             "name": "Chelelektu",
+            "short": "Ethiopian coffee (filter)",
             "description": "Draft",
             "region": "Yirgacheffe Kochere",
             "country": "Ethiopia",
@@ -141,10 +147,12 @@
     "subscription": {
         "classics-subscription": {
             "name": "The Classics",
+            "short": "Monthly coffee subscription",
             "description": "Choose a roast and receive a selection of origin coffees in either filter or espresso roasts (or both, why not!)"
         },
         "roasters-subscription": {
             "name": "The Roaster's Choice",
+            "short": "Monthly coffee subscription",
             "description": "Let the roaster surprise you with his preferred roast of the month. This subscription will offer different assortments of filter/espresso/limited edition roasts, but our roaster never compromises the quality or taste, so this is truly the best way to familiarize yourself with fresh, new coffees!"
         }
     }

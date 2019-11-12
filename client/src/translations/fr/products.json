@@ -1,5 +1,6 @@
 {
     "equipment": {
+        "short": "Équipement de café",
         "chemex-coffee-brewer": {
             "name": "Chemex Classique 3-Tasses",
             "description": "La cafetière Chemex se distingue par sa gourde en forme de sablier entièrement fabriquée en verre, un matériel inerte qui n’absorbe pas les odeurs ni les résidus chimiques. Elle ne contient aucune pièce mobile; elle est donc bonne à vie. Les filtres Chemex sont fabriqués en papier filtre de la plus haute qualité.",
@@ -49,6 +50,7 @@
     "coffee": {
         "rutabo-coffee": {
             "name": "rutabo",
+            "short": "Café Rwandais (filtre)",
             "description": "Ce café est torréfié pour une infusion filtre. Nous utilisons une torréfaction de courte durée à température élevée afin que les acides organiques se développent pleinement. On obtient ainsi un café propre qui présente une vive acidité combinée à la douceur fruitée caractéristique des cafés naturels africains.\n\nPoussant à une altitude maximale de 2 000 mètres, les cafés de Rushashi sont de très grande qualité et se taillent souvent une place dans le palmarès rwandais du Cup of Excellence. Dans le village de Rutabo, on traite la variété Bourbon selon le procédé naturel. Il en ressort un café à la fois équilibré et complexe à la sucrosité de petits fruits",
             "region": "Gakenke",
             "country": "Rwanda",
@@ -63,6 +65,7 @@
         },
         "esperanza-coffee": {
             "name": "esperanza",
+            "short": "Café Nicaraguin (espresso)",
             "description": "Ce café est torréfié pour les boissons à base d’espresso. Nous utilisons des températures plus basses et un temps de torréfaction plus long pour permettre aux sucres de se développer, tout en évitant de les brûler. Il en résulte un café qui semble naturellement doux. Jamais vous n’aurez savouré un cappuccino aussi savoureux!\n\nAprès la récolte tardive, cette variété Catuai a été transformée selon la méthode de miellage Red Honey, grâce à laquelle on obtient des arômes de sucre plus intenses tout en assurant une uniformité dans l’ensemble de la récolte.",
             "region": "Nueva Segovia",
             "country": "Nicaragua",
@@ -77,6 +80,7 @@
         },
         "coffee-for-two-coffee": {
             "name": "Coffee for two",
+            "short": "Café El Salvador (espresso/filtre)",
             "description": "L’édition limitée du mois est un café que nous avons torréfié de manière qu’il soit polyvalent; il est tout aussi délicieux en espresso qu’en café filtre. Nous utilisons une torréfaction équilibrée à des températures et des durées moyennes afin de faire ressortir les acides organiques et les sucres présents dans le café. Il en résulte un café agréable en bouche qui présente une légère acidité portée par des notes d’amande, de caramel et de beurre de cacao.",
             "region": "Chalatenango",
             "country": "El Salvador",
@@ -91,6 +95,7 @@
         },
         "108blend-coffee": {
             "name": "Mélange no. 108",
+            "short": "Mélange (espresso)",
             "description": "Ce mélange a été confectionné pour les espressos, mais il convient aussi bien aux boissons à base de lait. Les cafés sélectionnés apportent chacun leur spécificité. Le tout donne un espresso naturellement sucré avec une finale plus corsée qui reste en bouche.\n\nLe mélange est composé de deux cafés d’origine pure : un avec le procédé Yellow Honey du Nicaragua et un lavé d’Indonésie. Le café nicaraguayen apporte la sucrosité tandis que le café indonésien enveloppe le tout d’une complexité florale.",
             "region": "Nueva Segovia & Bajawa",
             "country": "Nicaragua & Indonésie",
@@ -105,6 +110,7 @@
         },
         "reko-coffee": {
             "name": "Chelelektu",
+            "short": "Café Ethiopien (filtre)",
             "description": "Ce café est torréfié pour une infusion filtre. La région de Chelelektu possède de nombreuses variétés de cafés grâce aux différentes altitudes, qui varient entre 1 300 et 2 200 mètres. Nous obtenons un café équilibré avec des notes de mûres et de mangues.\n\nLa station de lavage de Chelelektu se situe dans la région de Kochere, en Éthiopie. Elle a été établi en 2010 et traite actuellement près de 1000 tonnes de cerises de café provenant de 360 ​​producteurs voisins.",
             "region": "Yirgacheffe Kochere",
             "country": "Ethiopia",
@@ -121,10 +127,12 @@
     "subscription": {
         "classics-subscription": {
             "name": "Nos classiques",
+            "short": "Abonnement mensuel café",
             "description": "Choisissez une torréfaction et recevez une sélection de cafés d’origine pour une extraction filtre ou espresso (ou pourquoi pas les deux!)."
         },
         "roasters-subscription": {
             "name": "Le choix du torréfacteur",
+            "short": "Abonnement mensuel café",
             "description": "Laissez le maître torréfacteur vous surprendre avec son coup de cœur du mois. Vous obtiendrez ainsi un assortiment de torréfactions filtre, espresso et édition limitée. Sans jamais compromettre la qualité ni le goût, notre torréfacteur vous fera découvrir toutes les subtilités de ses cafés."
         }
     }

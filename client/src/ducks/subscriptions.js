@@ -24,7 +24,7 @@ switch (action.type) {
     return {
         ...state,
         ...action.payload.reduce((obj, subscription) => {
-            obj[subscription.id] = subscription
+            obj[subscription.id] = {...subscription, type: 'subscription'}
             return obj
         }, {})
     }

@@ -1,5 +1,6 @@
 {
     "equipment": {
+        "short": "Koffie accessoire",
         "chemex-coffee-brewer": {
             "name": "Classic Chemex 3-Kops",
             "description": "Voor de liefhebbers van koffie is slow koffie het beste. In alle rust worden de gemalen koffiebonen natgemaakt, komen de smaken vrij en drupt het zonder bittere oliën naar beneden. Hiermee is de koffie zo puur, dat het geschikt is voor ice-coffee of als smaakmaker bij gebak. Dankzij het speciale glas en de vorm trekt het alle smaken uit de koffiebonen en levert het een pure en verfijnde kop koffie op.",
@@ -49,6 +50,7 @@
     "coffee": {
         "rutabo-coffee": {
             "name": "rutabo",
+            "short": "Koffie uit Rwanda (filter)",
             "description": "Deze koffie wordt gebrand voor filterkoffie. We gebruiken hiervoor een korte branding op hoge temperaturen zodat de organische zuren zich goed ontwikkelen. Het resultaat is een ‘schone’ koffie met een heldere zuurgraad en fruitige zoetheid die erg typerend is voor natuurlijk verwerkte Afrikaanse koffie.\n\nIn het dorp Rutabo wordt de Bourbon-variëteit verwerkt als natural. Dit resulteert in een heerlijke, evenwichtige koffie met bessenachtige zoetheid.",
             "region": "Gakenke",
             "country": "Rwanda",
@@ -67,6 +69,7 @@
         },
         "esperanza-coffee": {
             "name": "esperanza",
+            "short": "Koffie uit Nicaragua (espresso)",
             "description": "Deze koffiebonen zijn gebrand voor koffie op espresso-basis. Door lagere temperaturen en een langere roostertijd te gebruiken, kunnen de suikers karamelliseren zonder te verbranden. Het resultaat is een heerlijke, van nature zoete koffie die zomaar eens jouw lekkerste cappuccino ooit kan zijn.\n\nNueva Segovia is een regio in Nicaragua die bekend staat om het produceren van koffie van de hoogste kwaliteit. Het microperceel 'Esperanza' vormt hierop geen uitzondering. Door de ligging op 1500 meter hoogte en bijbehorende lagere temperaturen ontwikkelen de kersen zich langzamer. Dit resulteert in meer complexe smaken.",
             "region": "Nueva Segovia",
             "country": "Nicaragua",
@@ -85,6 +88,7 @@
         },
         "coffee-for-two-coffee": {
             "name": "Coffee for two",
+            "short": "Koffie van El Salvador (espresso/filter)",
             "description": "De limited edition van deze maand is gebrand als een omni-roast en is heerlijk als espresso en filterkoffie. De koffiebonen worden medium gebrand qua temperatuur en duur om zo de juiste reactie tussen de organische zuren en suikers te laten ontstaan. Het resultaat is een zeer aangename koffie met een lichte zuurgraad en heerlijke amandel-, karamel- en cacaobotersmaak.",
             "region": "Chalatenango",
             "country": "El Salvador",
@@ -103,6 +107,7 @@
         },
         "108blend-coffee": {
             "name": "Blend no. 108",
+            "short": "Mélange (espresso)",
             "description": "Deze blend is ontwikkeld voor espresso's maar past ook goed bij koffies op melk-basis. De koffiebonen die voor deze melange zijn geselecteerd, hebben hun eigen unieke kenmerken. Het resultaat is een espresso die van nature zoet is en lekker lang blijft hangen.\n\nDe Yellow Honey werd gekozen als de suikerdrager voor deze blend. De Indonesische Washed voegt hier vervolgens bloemige aroma’s, een medium-body en een heerlijk lange, schone nasmaak aan toe.",
             "region": "Nueva Segovia & Bajawa",
             "country": "Nicaragua & Indonesia",
@@ -121,6 +126,7 @@
         },
         "reko-coffee": {
             "name": "Chelelektu",
+            "short": "Koffie uit Ethiopië (filter)",
             "description": "Draft",
             "region": "Yirgacheffe Kochere",
             "country": "Ethiopia",
@@ -141,10 +147,12 @@
     "subscription": {
         "classics-subscription": {
             "name": "Onze Klassiekers",
+            "short": "Maandelijks koffie-abonnement",
             "description": "Kies je favoriete branding en ontvang een selectie heerlijke, single origin filterbonen of espressobonen. Of allebei. Waarom niet?"
         },
         "roasters-subscription": {
             "name": "Roaster's Choice",
+            "short": "Maandelijks koffie-abonnement",
             "description": "Laat je verrassen door onze meesterbrander. Elke maand kiest hij de lekkerste filter, espresso of limited edition koffiebonen voor jou uit. Altijd van de hoogste kwaliteit. Altijd met een heerlijk volle smaak. Wil jij de allerlekkerste nieuwe koffies leren kennen? Dan is dit jouw abonnement."
         }
     }
