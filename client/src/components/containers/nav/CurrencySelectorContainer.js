@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getDisplayCurrency, switchDisplayCurrency } from '../../../ducks/views';
 
@@ -8,7 +8,7 @@ class CurrencySelectorContainer extends Component {
    
     render() {
         return (
-            <CurrencySelector switchCurrency={this.props.switchCurrency} {...this.props}/>
+            <CurrencySelector {...this.props}/>
         );
     }
 }

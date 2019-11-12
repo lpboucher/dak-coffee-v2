@@ -1,5 +1,6 @@
 //import { clearCart } from './cart';
 import { fetchCartItems } from './cart';
+import i18n from "i18next";
 
 //Action Types
 /*import { 
@@ -55,6 +56,8 @@ export const SNIP_OPEN = 'views/snip_open';
 export const SNIP_CLOSE = 'views/snip_close';
 export const CHANGE_CURRENCY_REQUEST = 'views/change_currency_request';
 export const CHANGE_CURRENCY_SUCCESS = 'views/change_currency_success';
+export const CHANGE_LANGUAGE_REQUEST = 'views/change_language_request';
+export const CHANGE_LANGUAGE_SUCCESS = 'views/change_language_success';
 /*export const OPEN_ERROR = 'views/open_error';
 export const CLOSE_ERROR = 'views/close_error';
 export const OPEN_MOBILE = 'views/open_mobile';
@@ -90,26 +93,24 @@ export const switchDisplayCurrency = (currency) => (dispatch) => {
         dispatch(fetchCartItems())
     } catch (err) {
         console.log(err)
+        dispatch({type: CHANGE_CURRENCY_SUCCESS, payload: 'EUR'})
+        dispatch(fetchCartItems())
     }
 }
 
-export const closeAndNavigate = (path, router) => {
-    const { location, history } = router;
-    if (
-        location.hash === "#!/cart" ||
-        location.hash === "#!/orders" ||
-        location.hash === "#!/billing-address" ||
-        location.hash === "#!/shipping-address" ||
-        location.hash === "#!/shipping-method" ||
-        location.hash === "#!/payment-method" ||
-        location.hash === "#!/confirm" ||
-        location.hash.substr(0,location.hash.lastIndexOf("/")) === "#!/orders"
-        ) {
-            history.push(path);
-            window.Snipcart.api.modal.close();
-        } else {
-            history.push(path);
+export const switchLanguage = (lang=null) => (dispatch) => {
+    if(!lang) {
+        window.Snipcart.setLang(i18n.language);
+    } else {
+        dispatch({type: CHANGE_LANGUAGE_REQUEST, payload: "loading.language"})
+        try {
+            window.Snipcart.setLang(lang);
+            i18n.changeLanguage(lang);
+            dispatch({type: CHANGE_LANGUAGE_SUCCESS});
+        } catch (err) {
+            console.log(err);
         }
+    }
 }
 
 /*export const openMobileMenu = () => dispatch => {
@@ -170,6 +171,7 @@ switch(action.type) {
         return { ...state, isCartOpen: true, error: initialState.error };
     case CLOSE_CART:
         return { ...state, isCartOpen: false, error: initialState.error };
+    case CHANGE_LANGUAGE_REQUEST:
     case CHANGE_CURRENCY_REQUEST:
     case NEWSLETTER_REQUEST:
         return { 
@@ -213,6 +215,7 @@ switch(action.type) {
         }
     case NEWSLETTER_SUCCESS:
     case NEWSLETTER_FAILURE:
+    case CHANGE_LANGUAGE_SUCCESS:
         return { 
             ...state,
             isProcessing: false,

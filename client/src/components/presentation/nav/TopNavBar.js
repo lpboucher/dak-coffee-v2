@@ -3,7 +3,7 @@ import React from 'react';
 import FullWidthEvenRowLayout from '../../layouts/FullWidthEvenRowLayout';
 import AccountContainer from '../../containers/nav/AccountContainer';
 import CartMenuContainer from '../../containers/nav/CartMenuContainer';
-import LanguageSelector from '../../presentation/nav/LanguageSelector';
+import LanguageSelectorContainer from '../../containers/nav/LanguageSelectorContainer';
 import CurrencySelectorContainer  from '../../containers/nav/CurrencySelectorContainer';
 /*import MobileMenu from '../../presentational/Navbar/MobileMenu';*/
 
@@ -12,7 +12,8 @@ const TopNavBar = ({loc}) => {
     <FullWidthEvenRowLayout loc={loc}>
         <AccountContainer />
         <CartMenuContainer />
-        <LanguageSelector />
+        <LanguageSelectorContainer />
+        
         <CurrencySelectorContainer />
         {/*<Account loggedIn={isUserLoggedIn} logout={logout}/>
         <CartCounter 
