@@ -460,5 +460,27 @@ export const productSpecsLayout = (screenSize) => {
     return mediaQueries[screenSize]
 }
 
+export const aboutProfilesLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}},
+        small: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}},
+        medium: {height: ['90%', '10%'], size: "", align:"start", pad: {top: '0px'}},
+        large: {height: ['90%', '10%'], size: "", align:"start", pad: {top: '0px'}},
+        infinity: {height: ['90%', '10%'], size: "", align:"start", pad: {top: '0px'}},
+    };
+    return mediaQueries[screenSize]
+}
+
+export const contactGridLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {width: '100%', size: "small", align:"center"},
+        small: {width: '100%', size: "small", align:"center"},
+        medium: {width: '50%', size: "", align:"start"},
+        large: {width: '50%', size: "", align:"start"},
+        infinity: {width: '50%', size: "", align:"start"}
+    };
+    return mediaQueries[screenSize]
+}
+
 
 

@@ -10,6 +10,13 @@ import ProductPage from './components/pages/Product';
 import SubscriptionPage from './components/pages/Subscriptions';
 import CartPage from './components/pages/Cart';
 import SubscribePage from './components/pages/Newsletter';
+import CoffeePage from './components/pages/Coffee';
+import AboutPage from './components/pages/About';
+import WholesalePage from './components/pages/Wholesale';
+import ContactPage from './components/pages/Contact';
+import FAQPage from './components/pages/terms/FAQ';
+import TermsPage from './components/pages/terms/Terms';
+import PrivacyPage from './components/pages/terms/Privacy';
 
 import './App.css';
 
@@ -23,6 +30,13 @@ const App = () => {
           <Route path="/subscriptions" component={SubscriptionPage} />
           <Route path="/cart" component={CartPage} />
           <Route path="/subscribe" component={SubscribePage} />
+          <Route path="/our-coffee" component={CoffeePage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/wholesale" component={WholesalePage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/faq" component={FAQPage} />
+          <Route path="/terms" component={TermsPage} />
+          <Route path="/privacy" component={PrivacyPage} />
         </Switch>
     </Layout>
   );
