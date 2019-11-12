@@ -386,6 +386,7 @@
     "loading": {
         "initial": "Chargement de l'application...",
         "account": "Chargement de votre compte...",
+        "language": "Changement de langue...",
         "update": "Mise à jour de votre compte...",
         "logout": "Déconnexion...",
         "new": "Création de votre compte...",

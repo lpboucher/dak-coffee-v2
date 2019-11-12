@@ -385,6 +385,7 @@
     },
     "loading": {
         "initial": "App wordt geladen...",
+        "language": "Schakeltaal...",
         "account": "Jouw account wordt geladen...",
         "update": "Jouw account wordt bijgewerkt...",
         "logout": "Afmelden...",

@@ -385,6 +385,7 @@
     },
     "loading": {
         "initial": "Loading app...",
+        "language": "Switching language...",
         "account": "Loading your account...",
         "update": "Updating your account...",
         "logout": "Logging out...",
