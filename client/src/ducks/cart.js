@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
+import i18n from "i18next";
 import { getDefaultLocationCurrency } from '../components/utils/Languages/detectLanguage';
 
 //import { getProduct, getProductIDBySlug } from './products';
 import { login } from './user';
 import { getProduct } from './products';
 import { getSubscription } from './subscriptions';
-import { switchDisplayCurrency, openCartSummary, closeCartSummary } from './views';
+import { switchDisplayCurrency, switchLanguage, openCartSummary, closeCartSummary } from './views';
 
 //Action Types
 export const UPDATE_CART_REQUEST = 'cart/update_cart_request';
@@ -27,12 +28,8 @@ export const initializeCart = () => async (dispatch) => {
         } else {
             dispatch(switchDisplayCurrency(await getDefaultLocationCurrency()))
         }
-        /*const defaultCurrency = await getDefaultLocationCurrency();
-        const cart = window.Snipcart.api.cart.get();
-        const hasItems = cart ? cart.items.length > 0 : null;
-        hasItems ? dispatch(switchDisplayCurrency(cart.currency)) : dispatch(switchDisplayCurrency(defaultCurrency))
-        */
       dispatch(login())
+      dispatch(switchLanguage())
     })
     window.Snipcart.api.configure('show_cart_automatically', false);
 }
@@ -93,6 +90,10 @@ export const fetchCartMeta = () => (dispatch) => {
         //dispatch({ type: FETCH_PRODUCTS_FAILURE});
     }
     dispatch({ type: UPDATE_CART_SUCCESS });
+}
+
+export const clearCart = () => (dispatch) => {
+    dispatch({ type: CLEAR_CART_SUCCESS })
 }
 
 const byIdDefault = {};

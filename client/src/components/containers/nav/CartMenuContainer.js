@@ -1,7 +1,7 @@
 import React, { Component, createRef } from 'react';
 import { connect } from 'react-redux';
 import { isCartOpen, isFetching, openCartSummary, closeCartSummary } from '../../../ducks/views';
-import { getCartQuantity, updateCart, updatingCart } from '../../../ducks/cart';
+import { getCartQuantity, updateCart, updatingCart, clearCart } from '../../../ducks/cart';
 
 import CartCounter from '../../presentation/nav/CartCounter';
 
@@ -17,14 +17,17 @@ class CartMenuContainer extends Component {
         window.Snipcart.subscribe('item.added', (item) => {
             this.props.updateCart();
         });
-        /*window.Snipcart.subscribe('user.loggedout', () => {
-            console.log('User logged out');
-         });*/
+        window.Snipcart.subscribe('order.completed', (data) => {
+            if(data.status === "Processed") {
+                this.props.clearCart();
+            }
+        });
     }
 
     componentWillUnmount() {
         window.Snipcart.unsubscribe('item.added');
         window.Snipcart.unsubscribe('item.adding');
+        window.Snipcart.unsubscribe('order.completed');
     }
    
     render() {
@@ -54,7 +57,8 @@ function mapDispatchToProps(dispatch) {
         openCart: () => dispatch(openCartSummary()),
         closeCart: () => dispatch(closeCartSummary()),
         updateCart: () => dispatch(updateCart()),
-        updating: () => dispatch(updatingCart())
+        updating: () => dispatch(updatingCart()),
+        clearCart: () => dispatch(clearCart())
     };
 }
 
