@@ -607,15 +607,21 @@ h4,
     white-space: nowrap;
     display: -webkit-box;
     display: flex;
-    background: #111;
+    background: #dcddde;
     font-size: 14px;
     padding: .714em 1.429em; }
   .snip-layout .snip-header__back--button {
     cursor: pointer;
     cursor: hand;
-    margin: auto; }
+    margin: auto;
+    background: #343434;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 3px; }
   .snip-layout .snip-header__back--button:hover {
-    color: #ffffff; }
+    background: #dcddde;
+    color: #222;
+    text-decoration: underline; }
   .snip-layout .snip-header__user-mail {
     color: #333; }
   .snip-layout .snip-header__title {
@@ -983,7 +989,7 @@ h4,
       left: -200px;
       width: 30%;
       height: 0.3em;
-      background-color: #efe778;
+      background-color: #a96c35;
       -webkit-animation: snip-loading 2s ease-in-out infinite;
       animation: snip-loading 2s ease-in-out infinite; }
     .snip-layout .snip-loader--bar.js-hidden {
@@ -1001,7 +1007,7 @@ h4,
   to {
     left: 100%; } }
   .snip-layout .snip-form--small {
-    padding: 10em 15%;
+    padding: 8em 15%;
     text-align: center; }
   .snip-layout .snip-form--discount {
     float: right;
