@@ -13,7 +13,7 @@ import NavbarLayout from './NavbarLayout';
 import MessageBar from '../presentation/global/MessageBar';
 import LogoBar from '../presentation/global/LogoBar';
 import TopNavBar from  '../presentation/nav/TopNavBar'
-import SubNavBar from '../presentation/nav/SubNavBar';
+import SubNavBar from '../containers/nav/SubNavContainer';
 import Footer from '../presentation/footer/Footer';
 
 import { Text, Box } from 'grommet';
