@@ -17,7 +17,6 @@ const getTaxes = (ctx) => {
   } else {
     taxes = [...taxes, ...aggregateItemTaxes(orderData.items.map(item => getTaxPerItem(item)))];
   }
-  console.log({'taxes': taxes});
   return {'taxes': taxes};
 };
 
@@ -25,10 +24,10 @@ const getShippingRates = (ctx) => {
   const orderData = ctx.request.body.content;
   const summary = { currency: orderData.currency, total: orderData.itemsTotal };
   let rates = [];
-  if (hasFreeOption(orderData.isRecurringOrder, summary)) {
+  if (hasFreeOption(orderData.items, summary)) {
     rates.push({'cost': 0, 'description': 'Free Shipping'});
   }
-  rates.push(calculateRatesPerRegion(orderData.billingAddress.country));
+  rates.push(calculateRatesPerRegion(orderData.shippingAddress.country));
   return {'rates': rates};
 };
 
@@ -73,9 +72,9 @@ const calculateRatesPerRegion = (country) => {
   return {'cost': 10, 'description': 'World Shipping'};
 };
 
-const hasFreeOption = (isRecurring, orderSummary) => {
+const hasFreeOption = (items, orderSummary) => {
   const { currency, total } = orderSummary;
-  return isRecurring || isAboveThreshold(currency, total);
+  return orderHasSubscriptions(items) || isAboveThreshold(currency, total);
 };
 
 const isAboveThreshold = (currency, total) => {
@@ -84,4 +83,8 @@ const isAboveThreshold = (currency, total) => {
 
 const isFromRegion = (region, country) => {
   return COUNTRIES[region].indexOf(country) !== -1;
+};
+
+const orderHasSubscriptions = (items) => {
+  return items.some(item => item.name === 'The Roaster\'s Choice' || item.name === 'The Classics');
 };
