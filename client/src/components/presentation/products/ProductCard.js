@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import ProductCardInfo from './ProductCardInfo';
@@ -14,7 +14,7 @@ const ProductCard = withRouter(({id, name, slug, type, thumb_image, price, stock
     const imageSRC = buildImageUrl(`Products/Thumbs/${thumb_image}`, 'product_cards');
     const outOfStock = stock < 1;
     return (
-        <Fragment>
+        <>
             <WithHover height="75%" width="100%" onClick={() => !outOfStock ? history.push(`/shop/${slug}`) : null} isHoverable={!outOfStock}>
                 <Image fit="contain" src={imageSRC} alt={`${name}`}/>
                 {outOfStock &&
@@ -34,7 +34,7 @@ const ProductCard = withRouter(({id, name, slug, type, thumb_image, price, stock
                     currency={currency}
                 />
             </Box>      
-        </Fragment>
+        </>
     );
 })
 
