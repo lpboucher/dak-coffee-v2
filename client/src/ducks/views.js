@@ -101,12 +101,13 @@ export const switchDisplayCurrency = (currency) => (dispatch) => {
 export const switchLanguage = (lang=null) => (dispatch) => {
     if(!lang) {
         window.Snipcart.setLang(i18n.language);
+        dispatch({type: CHANGE_LANGUAGE_SUCCESS, payload: i18n.language});
     } else {
         dispatch({type: CHANGE_LANGUAGE_REQUEST, payload: "loading.language"})
         try {
             window.Snipcart.setLang(lang);
             i18n.changeLanguage(lang);
-            dispatch({type: CHANGE_LANGUAGE_SUCCESS});
+            dispatch({type: CHANGE_LANGUAGE_SUCCESS, payload: lang});
         } catch (err) {
             console.log(err);
         }
@@ -162,6 +163,7 @@ error: {
     cart: ""
 },
 displayCurrency: "EUR",
+displayLang: "",
 showError: false
 };
 
@@ -215,12 +217,17 @@ switch(action.type) {
         }
     case NEWSLETTER_SUCCESS:
     case NEWSLETTER_FAILURE:
-    case CHANGE_LANGUAGE_SUCCESS:
         return { 
             ...state,
             isProcessing: false,
             error: {...state.error, ...action.payload},
             processingText: "" };
+    case CHANGE_LANGUAGE_SUCCESS:
+        return { 
+            ...state,
+            isProcessing: false,
+            processingText: "",
+            displayLang:  action.payload};
     case SNIP_OPEN:
         return {
             ...state,
@@ -329,6 +336,8 @@ export const isCheckingLoginStatus = (state) => state.views.changingLoginStatus;
 export const getProcessingText = (state) => state.views.processingText;
 
 export const getDisplayCurrency = (state) => state.views.displayCurrency;
+
+export const getDisplayLang = (state) => state.views.displayLang;
 
 export const getMediaSize = (state) => state.browser.mediaType;
 
