@@ -1,19 +1,40 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "article",
   "info": {
     "name": "article",
     "description": "List of blog articles"
   },
   "options": {
-    "timestamps": true
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
   },
   "attributes": {
-    "title": {
+    "title_en": {
       "type": "string"
     },
-    "content": {
+    "content_en": {
       "type": "richtext"
+    },
+    "thumbnail": {
+      "type": "string"
+    },
+    "content_fr": {
+      "type": "richtext"
+    },
+    "content_nl": {
+      "type": "richtext"
+    },
+    "title_fr": {
+      "type": "string"
+    },
+    "title_nl": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
