@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-import i18n from "i18next";
 import { getDefaultLocationCurrency } from '../components/utils/Languages/detectLanguage';
 
-//import { getProduct, getProductIDBySlug } from './products';
 import { login } from './user';
 import { getProduct } from './products';
 import { getSubscription } from './subscriptions';
@@ -52,7 +50,6 @@ export const updateCartItem = (id, options) => (dispatch) => {
     } catch(err) {
 
     }
-    //dispatch({ type: UPDATE_CART_SUCCESS });
 }
 
 export const removeCartItem = (id) => (dispatch) => {
@@ -63,7 +60,6 @@ export const removeCartItem = (id) => (dispatch) => {
     } catch(err) {
 
     }
-    //dispatch({ type: UPDATE_CART_SUCCESS });
 }
 
 export const fetchCartItems = (withSummary=false) => (dispatch) => {
@@ -213,41 +209,3 @@ export const getCartSummary = (state) => {
         subTotal: getCartSubTotal(state)
     }
 }
-
-/*export const getAllCartItems = (state) => state.cart.allIds.reduce((result, id) => [...result, ...getCartItem(state, id)['type'] === "cart_item" ? [getCartItem(state, id)] : []], []);
-
-export const getAllCartItemsWithTax = (state) => {
-    return state.cart.allIds.reduce((result, id) => {
-        const item = getCartItem(state, id);
-        const product = getProduct(state, item.product_id)
-        let newItem;
-        if (item.type === "cart_item") {
-            newItem = [{ ...item, tax_code: product.tax_code, recurring: product.recurring }]
-        } else if (item.type === "custom_item") {
-            newItem = [{ ...item }]
-        } else {
-            newItem = []
-        }
-        return [ ...result, ...newItem ]
-    }, []);
-}
-
-export const getAllCartMeta = (state) => state.cart.meta;
-
-export const getCartTotal = (state) => state.cart.meta.display_price;
-
-export const getCartSubtotal = (state) => {
-    const products = state.cart.allIds.filter(id => getCartItem(state, id)['type'] === "cart_item");
-    if (products) {
-        return products.reduce((sum, id) => sum + getCartItem(state, id)['value']['amount'], 0)
-    }
-}
-
-export const getCartDiscount = (state) => {
-    const promo = state.cart.allIds.find(id => getCartItem(state, id)['type'] === "promotion_item");
-    if (promo) {
-        return getCartItem(state, promo)['meta']['display_price']
-    }
-}
-
-*/

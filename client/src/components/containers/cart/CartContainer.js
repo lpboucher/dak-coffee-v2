@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-//import { fetchCartItems, getCartItems, getCartDiscount, getCartSubtotal,removeItem, updateItem, applyPromo } from '../../../ducks/cart';
 import { getCartItems } from '../../../ducks/cart';
-//import { getOrderTotal, getOrderTax, getShippingCosts } from '../../../ducks/checkout';
-//import { getError } from '../../../ducks/views';
 
 import Cart from '../../presentation/cart/Cart';
 

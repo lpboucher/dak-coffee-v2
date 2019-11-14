@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCollections, getCollections } from '../../../ducks/collections';
-//import { fetchInventories, getInventories } from '../../../ducks/inventories';
 import { getProductsByCollection } from '../../../ducks/products';
-//import { addToCart } from '../../../ducks/cart';
 
 import ProductGridLayout from '../../layouts/ProductGridLayout';
 
@@ -40,14 +38,12 @@ function mapStateToProps(state, ownProps) {
     return {
         productIds: getProductsByCollection(state, collection),
         collections: getCollections(state),
-        //inventories: getInventories(state)
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         fetchCollections: () => dispatch(fetchCollections()),
-        //addToCart: (id, quantity) => dispatch(addToCart(id, quantity))
     };
 }
 

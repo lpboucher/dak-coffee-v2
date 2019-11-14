@@ -4,7 +4,6 @@ import { withTranslation } from 'react-i18next';
 import Settings from '../../utils/Settings';
 
 const LanguageSelector = ({switchLanguage, i18n}) => {
-    //const langs = ['en', 'fr', 'nl'].filter(lang => lang !== i18n.language);
     const langs = {
         en: {label: "en", onClick: () => switchLanguage('en')},
         fr: {label: "fr", onClick: () => switchLanguage('fr')},

@@ -9,7 +9,7 @@ import NewsletterLayout from '../../layouts/NewsletterLayout';
 import { TextInputAdapter } from '../../utils/Forms/FormHelpers';
 import validation from '../../utils/Forms/newsletterValidation';
 
-import { Box, Text, Anchor, Button } from 'grommet';
+import { Text, Button } from 'grommet';
 
 const NewsletterSignUp = ({addToNewsletter, t, message, isFull=false}) => {
     const add = (values) => {

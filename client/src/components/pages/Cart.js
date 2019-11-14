@@ -2,15 +2,14 @@ import React from 'react';
 
 import CartContainer from '../containers/cart/CartContainer';
 import OrderSummaryContainer from '../containers/cart/OrderSummaryContainer';
-//import CategoryRowContainer from '../../container/Products/CategoryRowContainer';
+import RelatedContainer from '../containers/related/RelatedContainer';
 
 const Cart = () => {
     return (
     <>
         <CartContainer/>
         <OrderSummaryContainer />
-        {//<CategoryRowContainer name="You may also like" category='coffee-equipment' limit={3}/>
-        }  
+        <RelatedContainer relatedSlug={`related_cart`}/>
     </>
     );
 };

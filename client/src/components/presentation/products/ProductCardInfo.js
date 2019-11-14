@@ -2,7 +2,6 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 
 import { Box, Text } from 'grommet';
-//import AddToCart from '../../presentation/global/AddToCart';
 import AddToCart from '../../containers/cart/AddToCartContainer';
 
 const ProductCardInfo = ({id, slug, type, price, currency, t}) => {

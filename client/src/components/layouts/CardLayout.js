@@ -1,7 +1,7 @@
 import React from 'react';
 import withResponsive from '../HOCs/withResponsive';
 
-import { Box, Image, Heading, Text } from 'grommet';
+import { Box, Heading, Text } from 'grommet';
 
 import { cardLayout } from './globalResponsiveLayout';
 

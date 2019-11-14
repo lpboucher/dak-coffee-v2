@@ -8,12 +8,11 @@ export const FETCH_ARTICLES_FAILURE = 'articles/fetch_articles_failure';
 
 //Action Creators
 export const fetchArticles = () => async dispatch => {
-    //dispatch({ type: FETCH_CATEGORIES_REQUEST });
     try {
         const res = await axios.get(`/articles`);
         dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: res.data });
     } catch(err) {
-        //dispatch({ type: FETCH_COLLECTIONS_FAILURE});
+        console.log(err);
     }
 };
 

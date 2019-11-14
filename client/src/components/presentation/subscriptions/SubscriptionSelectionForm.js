@@ -6,7 +6,7 @@ import { SelectAdapter } from '../../utils/Forms/FormHelpers';
 
 import AddToCart from '../../containers/cart/AddToCartContainer';
 
-import { Box, Button } from "grommet";
+import { Box } from "grommet";
 
 const required = value => (value ? undefined : "Please select all options");
 
@@ -14,7 +14,7 @@ const SubscriptionForm = ({ id, withAllOptions, t}) => {
     return (
     <Form
     onSubmit={values => console.log(values)}
-    render={({ handleSubmit, form, submitting, invalid, pristine, values, errors }) => (
+    render={({ values }) => (
       <form>
         <Box width="75%" pad={{vertical: 'medium'}}>
           {withAllOptions && 

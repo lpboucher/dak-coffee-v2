@@ -10,10 +10,6 @@ const CartQuantity = ({quantity}) => {
             round
         >
             <Text size="xsmall">{quantity}</Text>
-
-            {/*<div className="snipcart-summary">
-                <span className="snipcart-total-items"></span>
-            </div>*/}
         </Box>
     );
 };
