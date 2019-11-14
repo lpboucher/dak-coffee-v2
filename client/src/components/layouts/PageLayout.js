@@ -1,13 +1,12 @@
-import React, { Fragment, Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { getProducts, fetchProducts } from '../../ducks/products';
 import { getSubscriptions, fetchSubscriptions } from '../../ducks/subscriptions';
-import { isProcessing, getProcessingText, switchDisplayCurrency } from '../../ducks/views';
+import { switchDisplayCurrency } from '../../ducks/views';
 import { initializeCart } from '../../ducks/cart';
-//import { hasError, getError, isProcessing, getProcessingText } from '../../ducks/views';
 
-//import ErrorModal from '../utils/ErrorModal';
-import FullLoader from '../utils/FullLoader';
+import ErrorContainer from '../containers/global/ErrorContainer';
+import LoaderContainer from '../containers/global/LoaderContainer';
 import NavbarLayout from './NavbarLayout';
 import MessageBar from '../presentation/global/MessageBar';
 import LogoBar from '../presentation/global/LogoBar';
@@ -20,7 +19,8 @@ const logo = <LogoBar loc="logo" />;
 const topNav = <TopNavBar loc="topNav"/>;
 const subNav = <SubNavBar loc="subNav"/>;
 
-class PageLayout extends Component {
+class PageLayout extends PureComponent {
+
     componentDidMount() {
         const { products, plans } = this.props;
         if (products.length < 1) this.props.fetchProducts();
@@ -33,40 +33,25 @@ class PageLayout extends Component {
     }
 
     render() {
-        //const { processing, error, children } = this.props;
-        const { processing, children } = this.props;
         return (
-            <Fragment>
-                {/*error.hasError &&
-                    <ErrorModal error={error.errorMsg.global} />
-                */}
-                {processing.isProcessing &&
-                    <FullLoader text={processing.processingText} />
-                }
+            <>
+                <ErrorContainer />
+                <LoaderContainer />
                 <NavbarLayout
                     message={message}
                     logo={logo}
                     topNav={topNav}
                     subNav={subNav}
                 />
-                {children}
+                {this.props.children}
                 <Footer />
-            </Fragment>
+            </>
         );
     }
 };
 
 function mapStateToProps(state) {
     return {
-        processing: {
-            isProcessing: isProcessing(state),
-            processingText: getProcessingText(state),
-        },
-        /*
-        error: {
-            hasError: hasError(state),
-            errorMsg: getError(state)
-        },*/
         products: getProducts(state),
         plans: getSubscriptions(state)
     }

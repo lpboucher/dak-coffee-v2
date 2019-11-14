@@ -21,7 +21,7 @@ import {
     FETCH_CART_REQUEST,
     FETCH_CART_SUCCESS,
     //PROMO_CART_FAILURE,
-    //FETCH_CART_FAILURE
+    FETCH_CART_FAILURE
 } from './cart';
 
 import {
@@ -221,6 +221,12 @@ switch(action.type) {
                 ...state,
                 isFetching: false
             }
+    case FETCH_CART_FAILURE:
+        return {
+            ...state,
+            error: {...state.error, ...action.payload},
+            showError: true
+        }
     default:
         return state;
 }
@@ -247,9 +253,7 @@ export const getDisplayLang = (state) => state.views.displayLang;
 
 export const getMediaSize = (state) => state.browser.mediaType;
 
-/*export const hasError = (state) => state.views.showError;
-
-*/
+export const hasError = (state) => state.views.showError;
 
 export const getError = (state) => state.views.error;
 
