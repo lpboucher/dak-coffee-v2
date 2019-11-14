@@ -45,6 +45,11 @@
             "name": "Tall Hand Grinder by Porlex",
             "description": "The porlex tall hand grinder is the ideal tool for both travel and home. The ceramic burrs create an even grind making sure your brews are consistent and delicious. The grinder holds up to 44 grams of coffee beans, it is suitbale for brewing 2-4 cups of coffee.",
             "details": "Stainless Steel casing;Conical Ceramic Burrs;Easy to clean and resilient;φ49 x H185 mm;Fits in an aeropress;Made in Japan"
+        },
+        "dak-tote-bag": {
+            "name": "Dak Tote Bag",
+            "description": "This cotton tote bag is perfect for carrying your every-day goods or run some errands (when you go to the market, school, whatever the occasion might be!). This reusable bag also contributes to the reduction of plastic bag use - so also good for the environment.",
+            "details": "Dimensions: 41 x 42 cm;Premium Quality: 300 gr./m2;Material: Cotton;Type of handles: Short;Bottom fold"
         }
     },
     "coffee": {
