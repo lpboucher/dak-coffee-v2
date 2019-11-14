@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import { getProducts, fetchProducts } from '../../ducks/products';
 import { getSubscriptions, fetchSubscriptions } from '../../ducks/subscriptions';
 import { isProcessing, getProcessingText, switchDisplayCurrency } from '../../ducks/views';
@@ -16,7 +15,10 @@ import TopNavBar from  '../presentation/nav/TopNavBar'
 import SubNavBar from '../containers/nav/SubNavContainer';
 import Footer from '../presentation/footer/Footer';
 
-import { Text, Box } from 'grommet';
+const message = <MessageBar text="announcement.text" loc="announce"/>;
+const logo = <LogoBar loc="logo" />;
+const topNav = <TopNavBar loc="topNav"/>;
+const subNav = <SubNavBar loc="subNav"/>;
 
 class PageLayout extends Component {
     componentDidMount() {
@@ -42,10 +44,10 @@ class PageLayout extends Component {
                     <FullLoader text={processing.processingText} />
                 }
                 <NavbarLayout
-                    message={<MessageBar text="announcement.text" loc="announce"/>}
-                    logo={<LogoBar loc="logo" />}
-                    topNav={<TopNavBar loc="topNav"/>}
-                    subNav={<SubNavBar loc="subNav"/>}
+                    message={message}
+                    logo={logo}
+                    topNav={topNav}
+                    subNav={subNav}
                 />
                 {children}
                 <Footer />
@@ -67,7 +69,6 @@ function mapStateToProps(state) {
         },*/
         products: getProducts(state),
         plans: getSubscriptions(state)
-        //cartItems: getCartItems(state)
     }
 }
 
