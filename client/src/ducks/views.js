@@ -34,6 +34,8 @@ export const OPEN_CART = 'views/open_cart';
 export const CLOSE_CART = 'views/close_cart';
 export const SNIP_OPEN = 'views/snip_open';
 export const SNIP_CLOSE = 'views/snip_close';
+export const OPEN_MOBILE = 'views/open_mobile';
+export const CLOSE_MOBILE = 'views/close_mobile';
 export const CHANGE_CURRENCY_REQUEST = 'views/change_currency_request';
 export const CHANGE_CURRENCY_SUCCESS = 'views/change_currency_success';
 export const CHANGE_LANGUAGE_REQUEST = 'views/change_language_request';
@@ -86,6 +88,14 @@ export const switchLanguage = (lang=null) => (dispatch) => {
     }
 }
 
+export const openMobileMenu = () => dispatch => {
+    dispatch({type: OPEN_MOBILE})
+}
+
+export const closeMobileMenu = () => dispatch => {
+    dispatch({type: CLOSE_MOBILE})
+}
+
 //Reducer
 const initialState = {
 isSnipcartModalOpen: false,
@@ -110,9 +120,29 @@ showError: false
 export default function reducer(state = initialState, action) {
 switch(action.type) {
     case OPEN_CART:
-        return { ...state, isCartOpen: true, error: initialState.error };
+        return { 
+            ...state,
+            isCartOpen: true,
+            error: initialState.error
+        };
     case CLOSE_CART:
-        return { ...state, isCartOpen: false, error: initialState.error };
+        return { 
+            ...state,
+            isCartOpen: false,
+            error: initialState.error
+        };
+    case OPEN_MOBILE:
+        return { 
+            ...state,
+            isMobileOpen: true,
+            error: initialState.error
+        };
+    case CLOSE_MOBILE:
+        return { 
+            ...state,
+            isMobileOpen: false,
+            error: initialState.error
+        };
     case CHANGE_LANGUAGE_REQUEST:
     case CHANGE_CURRENCY_REQUEST:
     case NEWSLETTER_REQUEST:
