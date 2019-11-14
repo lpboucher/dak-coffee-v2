@@ -23,8 +23,16 @@ if (process.env.NODE_ENV !== 'development') {
     LogRocket.init('3khpto/dak-coffee-roasters');
 }
 
-const store = createStore(reducers, {}, composeWithDevTools(responsiveStoreEnhancer, applyMiddleware(reduxThunk, LogRocket.reduxMiddleware())));
-console.log(i18n);
+if (process.env.NODE_ENV !== 'production') {
+    const whyDidYouRender = require('@welldone-software/why-did-you-render');
+    whyDidYouRender(React);
+}
+
+const middleware = process.env.NODE_ENV !== 'production' ?
+[require('redux-immutable-state-invariant').default(), reduxThunk, LogRocket.reduxMiddleware()] :
+[reduxThunk, LogRocket.reduxMiddleware()];
+
+const store = createStore(reducers, {}, composeWithDevTools(responsiveStoreEnhancer, applyMiddleware(...middleware)));
 ReactDOM.render(
 <Provider store={store}>
     <Router>
