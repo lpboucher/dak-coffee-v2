@@ -9,7 +9,6 @@ import { buildImageUrl } from '../../utils/Images/generateImage';
 
 const SingleArticle = ({id, thumb, content, title, language, media}) => {
     const isMobile = !(media === "medium" || media === "large" || media === "infinity");
-    console.log(title[language])
     const imageSRC = buildImageUrl(`Articles/Thumbs/${thumb}`);
     return (
         <>

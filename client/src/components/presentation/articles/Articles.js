@@ -11,7 +11,7 @@ const Articles = ({articles}) => {
         <Box pad={{bottom: '40px', top: "200px"}} margin={{horizontal: 'large'}} wrap>
             <VariableGrid>
                 {articles.map(id =>
-                    <ArticleContainer articleId={id} />
+                    <ArticleContainer key={id} articleId={id} />
                 )}
             </VariableGrid>
         </Box>
