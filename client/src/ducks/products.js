@@ -18,7 +18,7 @@ export const fetchProducts = () => async dispatch => {
         const res = await axios.get(`/products`);
         await dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: res.data });
     } catch(err) {
-        dispatch({ type: FETCH_PRODUCTS_FAILURE});
+        dispatch({ type: FETCH_PRODUCTS_FAILURE, payload: {global: "error.products.fetch"}});
     }
     dispatch(fetchProductInventory())
 };
@@ -29,7 +29,7 @@ export const fetchProductInventory = () => async dispatch => {
         const res = await axios.get(`/inventory`);
         dispatch({ type: FETCH_INVENTORY_SUCCESS, payload: res.data });
     } catch(err) {
-        dispatch({ type: FETCH_INVENTORY_FAILURE});
+        dispatch({ type: FETCH_INVENTORY_FAILURE, payload: {global: "error.products.fetch"}});
     }
 }
 

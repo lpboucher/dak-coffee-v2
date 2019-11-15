@@ -12,7 +12,7 @@ export const fetchArticles = () => async dispatch => {
         const res = await axios.get(`/articles`);
         dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: res.data });
     } catch(err) {
-        console.log(err);
+        dispatch({ type: FETCH_ARTICLES_FAILURE, payload: {global: "error.articles.fetch"} });
     }
 };
 

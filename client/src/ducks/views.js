@@ -27,8 +27,15 @@ import {
 import {
     FETCH_PRODUCTS_REQUEST,
     FETCH_PRODUCTS_SUCCESS,
-    FETCH_PRODUCTS_FAILURE
+    FETCH_PRODUCTS_FAILURE,
+    FETCH_INVENTORY_FAILURE
 } from './products';
+
+import {
+    FETCH_ARTICLES_FAILURE
+} from './articles';
+
+
 
 export const OPEN_CART = 'views/open_cart';
 export const CLOSE_CART = 'views/close_cart';
@@ -216,16 +223,18 @@ switch(action.type) {
             }
     case FETCH_CART_SUCCESS:
     case FETCH_PRODUCTS_SUCCESS:
-    case FETCH_PRODUCTS_FAILURE:
             return {
                 ...state,
-                isFetching: false
             }
+    case FETCH_PRODUCTS_FAILURE:
+    case FETCH_INVENTORY_FAILURE:
     case FETCH_CART_FAILURE:
+    case FETCH_ARTICLES_FAILURE:
         return {
             ...state,
             error: {...state.error, ...action.payload},
-            showError: true
+            showError: true,
+            isFetching: false
         }
     default:
         return state;
