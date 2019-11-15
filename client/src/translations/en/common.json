@@ -379,7 +379,8 @@
             "terms": "terms and conditions",
             "shipping": "shipping",
             "privacy": "privacy policy",
-            "brewing": "brewing guides"
+            "brewing": "brewing guides",
+            "newsletter": "newsletter"
         },
         "rights": "Dak Coffee Roasters 2019. All rights reserved."
     },
@@ -415,6 +416,12 @@
     "error": {
         "cart": {
             "update": "Unable to update cart, please try again..."
+        },
+        "products": {
+            "fetch": "It looks like we are unable to retrieve the products..."
+        },
+        "articles": {
+            "fetch": "We cannot seem to load the articles, maybe try again later?"
         }
     }
 }
