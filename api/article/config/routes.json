@@ -5,7 +5,8 @@
       "path": "/articles",
       "handler": "Article.find",
       "config": {
-        "policies": []
+        "policies": [],
+        "prefix": "/api"
       }
     },
     {
@@ -13,7 +14,8 @@
       "path": "/articles/count",
       "handler": "Article.count",
       "config": {
-        "policies": []
+        "policies": [],
+        "prefix": "/api"
       }
     },
     {
@@ -21,7 +23,8 @@
       "path": "/articles/:id",
       "handler": "Article.findOne",
       "config": {
-        "policies": []
+        "policies": [],
+        "prefix": "/api"
       }
     },
     {
@@ -29,7 +32,8 @@
       "path": "/articles",
       "handler": "Article.create",
       "config": {
-        "policies": []
+        "policies": [],
+        "prefix": "/api"
       }
     },
     {
@@ -37,7 +41,8 @@
       "path": "/articles/:id",
       "handler": "Article.update",
       "config": {
-        "policies": []
+        "policies": [],
+        "prefix": "/api"
       }
     },
     {
@@ -45,7 +50,8 @@
       "path": "/articles/:id",
       "handler": "Article.delete",
       "config": {
-        "policies": []
+        "policies": [],
+        "prefix": "/api"
       }
     }
   ]
