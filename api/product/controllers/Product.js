@@ -16,7 +16,7 @@ const snipcartParser = async (ctx) => {
         'eur': Math.round(product.price.eur.value * 100) / 100,
         'cad': Math.round(product.price.cad.value * 100) / 100,
       },
-      'url': 'https://316472d1.ngrok.io/snipcartParser',
+      'url': 'https://738666fa.ngrok.io/snipcartParser',
     };
   });
 };
