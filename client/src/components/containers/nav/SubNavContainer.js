@@ -7,6 +7,10 @@ import SubNavBar from '../../presentation/nav/SubNavBar';
 
 class SubNavContainer extends Component {
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.isSnipOpen !== this.props.isSnipOpen;
+    }
+
     componentDidMount() {
         window.Snipcart.subscribe('cart.opened', () => this.props.openSnip());
         window.Snipcart.subscribe('cart.closed', () => this.props.closeSnip());
@@ -17,9 +21,9 @@ class SubNavContainer extends Component {
       })
     }
       
-      componentWillUnmount() {
-          this.unlisten();
-      }
+    componentWillUnmount() {
+        this.unlisten();
+    }
    
     render() {
         return (

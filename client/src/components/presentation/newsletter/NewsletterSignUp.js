@@ -11,7 +11,13 @@ import validation from '../../utils/Forms/newsletterValidation';
 
 import { Text, Button } from 'grommet';
 
+
+
 const NewsletterSignUp = ({addToNewsletter, t, message, isFull=false}) => {
+    const nameField = <Field name='name' component={TextInputAdapter} type="text" placeholder={t("newsletter.form.name")}/>;
+    const emailField = <Field name='email' component={TextInputAdapter} type="text" placeholder={t("newsletter.form.email")}/>
+    const link = <Link to="/privacy"><Text size="xsmall">{t("newsletter.privacy")}</Text></Link>;
+    const button = <Button type="submit" label={t("newsletter.button")} color="mainWhite" alignSelf="start" style={{fontSize: '10px', lineHeight: '10px'}}/>;
     const add = (values) => {
         addToNewsletter(values.name, values.email);
       }
@@ -23,24 +29,10 @@ const NewsletterSignUp = ({addToNewsletter, t, message, isFull=false}) => {
                 render={({ handleSubmit, form, submitting, invalid, pristine, values, errors }) => (
                 <form onSubmit={handleSubmit}>
                     <NewsletterFormLayout
-                        nameField={
-                            <Field
-                                name='name'
-                                component={TextInputAdapter}
-                                type="text"
-                                placeholder={t("newsletter.form.name")}
-                            />
-                        }
-                        emailField={
-                            <Field
-                                name='email'
-                                component={TextInputAdapter}
-                                type="text"
-                                placeholder={t("newsletter.form.email")}
-                            />
-                        }
-                        link={<Link to="/privacy"><Text size="xsmall">{t("newsletter.privacy")}</Text></Link>}
-                        button={<Button type="submit" label={t("newsletter.button")} color="mainWhite" alignSelf="start" style={{fontSize: '10px', lineHeight: '10px'}}/>}
+                        nameField={nameField}
+                        emailField={emailField}
+                        link={link}
+                        button={button}
                         isFull={isFull}
                     />
                 </form>
