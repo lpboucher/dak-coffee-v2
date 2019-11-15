@@ -17,6 +17,12 @@ class CartMenuContainer extends Component {
         window.Snipcart.subscribe('item.added', (item) => {
             this.props.updateCart();
         });
+        window.Snipcart.subscribe('item.updated', (item) => {
+            this.props.updateCart();
+        });
+        window.Snipcart.subscribe('item.removed', (item) => {
+            this.props.updateCart();
+        });
         window.Snipcart.subscribe('order.completed', (data) => {
             if(data.status === "Processed") {
                 this.props.clearCart();

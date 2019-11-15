@@ -8,7 +8,6 @@ import HomePage from './components/pages/Home';
 import ShopPage from './components/pages/Shop';
 import ProductPage from './components/pages/Product';
 import SubscriptionPage from './components/pages/Subscriptions';
-import CartPage from './components/pages/Cart';
 import SubscribePage from './components/pages/Newsletter';
 import CoffeePage from './components/pages/Coffee';
 import AboutPage from './components/pages/About';
@@ -30,7 +29,6 @@ const App = () => {
           <Route path="/shop/:slug" component={ProductPage} />
           <Route path="/shop" component={ShopPage} />
           <Route path="/subscriptions" component={SubscriptionPage} />
-          <Route path="/cart" component={CartPage} />
           <Route path="/subscribe" component={SubscribePage} />
           <Route path="/our-coffee" component={CoffeePage} />
           <Route path="/about" component={AboutPage} />

@@ -16,14 +16,9 @@ const CartSummaryLayout = withRouter(({children, close, anchor, t}) => {
                     }
                 </Box>
                 <Box direction="row" fill="horizontal">
-                    <Link to="/cart" style={{width: '50%'}}>
-                        <Box fill align="center" pad="small" background="mainDark" margin={{right: '1px'}}>
+                    <Link to="#" className="snipcart-checkout" style={{width: '100%'}}>
+                        <Box fill align="center" pad="small" background="mainDark">
                             <Text color="mainWhite">{t("cart.to cart")}</Text>
-                        </Box>
-                    </Link>
-                    <Link to="#" className="snipcart-checkout" style={{width: '50%'}}>
-                        <Box fill align="center" pad="small" background="mainDark" margin={{left: '1px'}}>
-                            <Text color="mainWhite">{t("cart.to checkout")}</Text>
                         </Box>
                     </Link>
                 </Box>
