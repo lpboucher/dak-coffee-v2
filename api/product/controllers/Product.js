@@ -1,6 +1,5 @@
 'use strict';
 const snipcart = require('snipcart-api');
-snipcart.configure('SECRET_API_KEY', 'ST_MDY2MzFjNzMtMDEyMi00NmI2LWI3ZTktZDIzZWM3YWY3NzY3NjM3MDg2Mjg2MzYzMDMyMjkw');
 /**
  * Read the documentation () to implement custom controller functions
  */
@@ -16,12 +15,14 @@ const snipcartParser = async (ctx) => {
         'eur': Math.round(product.price.eur.value * 100) / 100,
         'cad': Math.round(product.price.cad.value * 100) / 100,
       },
-      'url': 'https://738666fa.ngrok.io/snipcartParser',
+      'url': 'https://dakcoffeeroasters.com/snipcartParser',
     };
   });
 };
 
 const snipcartFetch = async (ctx) => {
+  snipcart.configure('SECRET_API_KEY', strapi.config.currentEnvironment.snipcart);
+  console.log(strapi.config.currentEnvironment.snipcart);
   let products = await snipcart.api.products.getAll();
   let notRecurringProducts = products.data.items.filter(product => !isSubscription(product));
   let productsInv = notRecurringProducts.map(product => ({

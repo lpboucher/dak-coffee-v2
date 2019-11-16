@@ -1,11 +1,11 @@
 'use strict';
 const Mailchimp = require('mailchimp-api-v3');
-var mailchimp = new Mailchimp('fa13bdc10c6899b3d79c23c8c33e7408-us20');
 
 /**
  * A set of functions called "actions" for `Newsletter`
  */
 const add = async (ctx) => {
+  const mailchimp = new Mailchimp(strapi.config.currentEnvironment.mailchimp);
   const { name, email, language } = ctx.request.body;
   const listId = 'c1ea6cd510';
   let subscribeStatus;

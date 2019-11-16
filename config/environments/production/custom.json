@@ -1,3 +1,4 @@
 {
-  "myCustomConfiguration": "This configuration is accessible through strapi.config.environments.production.myCustomConfiguration"
+  "snipcart": "${process.env.SNIPCART_KEY}",
+  "mailchimp": "${process.env.MAILCHIMP_KEY}"
 }
