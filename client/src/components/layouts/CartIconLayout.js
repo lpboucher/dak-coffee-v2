@@ -11,7 +11,6 @@ const CartIconLayout = ({anchor, open, close, isOpen, quantity, icon, tooltip, m
         <div
             onMouseEnter={!isMobile ? open : null}
             onMouseLeave={!isMobile ? close : null}
-            onTouchStart={() => history.push('/cart')}
             aria-controls="example-collapse-text"
             aria-expanded={isOpen}
             style={{width: '40px'}}
@@ -23,7 +22,7 @@ const CartIconLayout = ({anchor, open, close, isOpen, quantity, icon, tooltip, m
                     {quantity}
                 </Stack>
                 :
-                <Link to="/cart">
+                <Link to="#" className="snipcart-checkout">
                     {icon}
                 </Link>
             }
