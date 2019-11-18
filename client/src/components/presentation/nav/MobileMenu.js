@@ -41,7 +41,7 @@ const MobileMenuLayout = ({close, t, history}) => {
                         dropBackground="darkGrey"
                         margin="none"
                         items={[
-                            {label: `${t("menu.blog.guides")}`, onClick:()=>{history.push('/brew'); close()}},
+                            //{label: `${t("menu.blog.guides")}`, onClick:()=>{history.push('/brew'); close()}},
                             {label: `${t("menu.blog.articles")}`, onClick:()=>{history.push('/blog'); close()}},
                         ]}
                     />
