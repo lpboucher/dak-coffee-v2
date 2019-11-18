@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import withResponsive from '../../HOCs/withResponsive';
 
 import ProductDetails from './ProductDetails';
 import TwoColLayout from '../../layouts/TwoColLayout';
@@ -6,21 +7,25 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import { Box, Image } from 'grommet';
 
 import { buildImageUrl } from '../../utils/Images/generateImage';
+import { singleProductLayout } from '../../layouts/globalResponsiveLayout';
 
-const SingleProduct = ({product, currency}) => {
+const SingleProduct = ({product, currency, media}) => {
     const imageSRC = buildImageUrl(`Products/Mains/${product.main_image}`, 'product_main');
+    const layout = singleProductLayout(media)
     return (
-        <Fragment>
+        <>
             <TwoColLayout 
-                left={<Box pad="large" height="600px">
+                left={<Box pad={layout.imagePad} height="600px">
                         <Image fit="contain" src={imageSRC}/>
                     </Box>}
-                right={<ProductDetails currency={currency} {...product}/>}
-                pad={{outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}}
+                right={<Box pad={layout.descPad}>
+                        <ProductDetails currency={currency} {...product}/>
+                    </Box>}
+                pad={layout.wrapperPad}
                 bgColor="mainWhite"
             />
-        </Fragment>
+        </>
     );
 };
 
-export default SingleProduct;
+export default withResponsive(SingleProduct);

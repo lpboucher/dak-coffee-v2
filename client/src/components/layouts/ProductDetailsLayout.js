@@ -11,7 +11,7 @@ const ProductDetailsLayout = ({heading, subHeading, price, hasSubHeading, childr
         <>
             <Heading level={1} size={layout.size} margin={layout.margin}>{heading}</Heading>
             {hasSubHeading &&
-                <Heading level={3} size={layout.size} margin={layout.margin}>{subHeading}</Heading>
+                <Heading level={layout.level} size={layout.size} margin={layout.margin}>{subHeading}</Heading>
             }
             <Text size={layout.size} margin={layout.margin} style={{fontSize: '16px'}}>{price}</Text>
             <Tabs justify="start" margin={layout.margin}>

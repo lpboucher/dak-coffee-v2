@@ -23,6 +23,7 @@ const ProductSpecs = ({specs, media}) => {
             {specs.map(spec => 
                 spec.isMain !== true && 
                     <IconedExplanation 
+                        key={spec.description}
                         icon={spec.icon}
                         description={spec.description}
                         spacing={{vertical: 'small'}}

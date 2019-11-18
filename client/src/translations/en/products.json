@@ -67,10 +67,10 @@
             "taste": "Red Grape, Papaya, Strawberry",
             "altitude": "1800m",
             "harvest": "The Rushashi washing station is a cooperative where they pool resources together to improve the quality and the sustainability of their harvests.",
-            "500CAD": "(+ 14.50$)",
-            "500EUR": "(+ 10.50€)",
-            "1000CAD": "(+ 41.50$)",
-            "1000EUR": "(+ 30€)"
+            "500CAD": "(29$)",
+            "500EUR": "(22€)",
+            "1000CAD": "(57.50$)",
+            "1000EUR": "(41.50€)"
         },
         "esperanza-coffee": {
             "name": "esperanza",
@@ -86,10 +86,10 @@
             "taste": "Floral, Brown Sugar, Clean",
             "harvest": "These Catuai beans were harvested in the highest of the peralta farms in Nicaragua (Santa Maria de Lourdes).",
             "altitude": "1500m",
-            "500CAD": "(+ 12.50$)",
-            "500EUR": "(+ 8.75€)",
-            "1000CAD": "(+ 36$)",
-            "1000EUR": "(+ 25€)"
+            "500CAD": "(26.50$)",
+            "500EUR": "(18.50€)",
+            "1000CAD": "(50$)",
+            "1000EUR": "(34.75€)"
         },
         "coffee-for-two-coffee": {
             "name": "Coffee for two",
@@ -105,10 +105,10 @@
             "taste": "Almond, Caramel, Cacao Butter",
             "harvest": "The Chalatenango region in El Salvador is famous for its Pacamaras, particularly given the recent Cup of Excellence result.",
             "altitude": "1700m",
-            "500CAD": "(+ 14$)",
-            "500EUR": "(+ 10€)",
-            "1000CAD": "(+ 40.50$)",
-            "1000EUR": "(+ 29€)"
+            "500CAD": "(29.50$)",
+            "500EUR": "(21€)",
+            "1000CAD": "(56$)",
+            "1000EUR": "(40€)"
         },
         "108blend-coffee": {
             "name": "Blend no. 108",
@@ -124,10 +124,10 @@
             "taste": "Citrus, Nuts, Clean aftertaste",
             "harvest": "The Bajawa is harvested by a collective of 50 farmers in Indonesia. Cherries are handpicked resulting in one of the most expensive coffees in Indonesia",
             "altitude": "1700m",
-            "500CAD": "(+ 13.50$)",
-            "500EUR": "(+ 9.75€)",
-            "1000CAD": "(+ 39$)",
-            "1000EUR": "(+ 28€)"
+            "500CAD": "(28.50$)",
+            "500EUR": "(20.50€)",
+            "1000CAD": "(54$)",
+            "1000EUR": "(38.75€)"
         },
         "reko-coffee": {
             "name": "Chelelektu",
@@ -143,10 +143,10 @@
             "taste": "Dark Chocolate, Blackberry, Mango, Honey",
             "harvest": "This coffee is a washed processed Grade 1 from the Chelelektu Washing Station.",
             "altitude": "1850m",
-            "500CAD": "(+ 13$)",
-            "500EUR": "(+ 10.50€)",
-            "1000CAD": "(+ 41.50$)",
-            "1000EUR": "(+ 30€)"
+            "500CAD": "(29$)",
+            "500EUR": "(22€)",
+            "1000CAD": "(57.50$)",
+            "1000EUR": "(41.50€)"
         }
     },
     "subscription": {

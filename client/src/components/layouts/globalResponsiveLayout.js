@@ -326,11 +326,11 @@ export const categorySectionLayout = (screenSize) => {
 
 export const productDetailsLayout = (screenSize) => {
     const mediaQueries = {
-        extraSmall: {size: 'small', margin: {horizontal: 'medium', vertical: 'small'}, formDir: 'column'},
-        small: {size: 'small', margin: {horizontal: 'medium', vertical: 'small'}, formDir: 'column'},
-        medium: {size: '', margin: {bottom: 'small'}, formDir: 'row'},
-        large: {size: '', margin: {bottom: 'small'}, formDir: 'row'},
-        infinity: {size: '', margin: {bottom: 'small'}, formDir: 'row'}
+        extraSmall: {level: 1, size: 'small', margin: {vertical: 'small'}, formDir: 'column'},
+        small: {level: 1, size: 'small', margin: {vertical: 'small'}, formDir: 'column'},
+        medium: {level: 3, size: '', margin: {bottom: 'small'}, formDir: 'row'},
+        large: {level: 3, size: '', margin: {bottom: 'small'}, formDir: 'row'},
+        infinity: {level: 3, size: '', margin: {bottom: 'small'}, formDir: 'row'}
     }
     return mediaQueries[screenSize]
 }
@@ -482,5 +482,15 @@ export const contactGridLayout = (screenSize) => {
     return mediaQueries[screenSize]
 }
 
+export const singleProductLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {imagePad: 'large', descPad: "large", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
+        small: {imagePad: 'large', descPad: "large", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
+        medium: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
+        large: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
+        infinity: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}}
+    };
+    return mediaQueries[screenSize]
+}
 
 
