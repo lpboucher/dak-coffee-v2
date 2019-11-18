@@ -9,7 +9,7 @@ import { buildImageUrl } from '../../utils/Images/generateImage';
 
 const SingleArticle = ({id, main, content, title, language, media}) => {
     const isMobile = !(media === "medium" || media === "large" || media === "infinity");
-    const imageSRC = buildImageUrl(`Articles/Thumbs/${main}`);
+    const imageSRC = buildImageUrl(`Articles/Headers/${main}`);
     return (
         <>
             <Hero
