@@ -35,6 +35,9 @@
     },
     "slug": {
       "type": "string"
+    },
+    "main_img": {
+      "type": "string"
     }
   }
 }

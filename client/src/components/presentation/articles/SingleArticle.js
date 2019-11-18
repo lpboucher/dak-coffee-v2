@@ -7,9 +7,9 @@ import { Box } from 'grommet';
 
 import { buildImageUrl } from '../../utils/Images/generateImage';
 
-const SingleArticle = ({id, thumb, content, title, language, media}) => {
+const SingleArticle = ({id, main, content, title, language, media}) => {
     const isMobile = !(media === "medium" || media === "large" || media === "infinity");
-    const imageSRC = buildImageUrl(`Articles/Thumbs/${thumb}`);
+    const imageSRC = buildImageUrl(`Articles/Thumbs/${main}`);
     return (
         <>
             <Hero
