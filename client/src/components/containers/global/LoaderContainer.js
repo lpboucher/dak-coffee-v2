@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { isProcessing, getProcessingText } from '../../../ducks/views';
 
 import FullLoader from '../../utils/FullLoader';
 
-class LoaderContainer extends PureComponent {
+class LoaderContainer extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         return nextProps.isProcessing !== this.props.isProcessing;

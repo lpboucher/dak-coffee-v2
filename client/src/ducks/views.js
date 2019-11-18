@@ -43,6 +43,8 @@ export const SNIP_OPEN = 'views/snip_open';
 export const SNIP_CLOSE = 'views/snip_close';
 export const OPEN_MOBILE = 'views/open_mobile';
 export const CLOSE_MOBILE = 'views/close_mobile';
+export const OPEN_PROMO = 'views/open_promo';
+export const CLOSE_PROMO = 'views/close_promo';
 export const CHANGE_CURRENCY_REQUEST = 'views/change_currency_request';
 export const CHANGE_CURRENCY_SUCCESS = 'views/change_currency_success';
 export const CHANGE_LANGUAGE_REQUEST = 'views/change_language_request';
@@ -103,6 +105,14 @@ export const closeMobileMenu = () => dispatch => {
     dispatch({type: CLOSE_MOBILE})
 }
 
+export const openPromotion = () => dispatch => {
+    dispatch({type: OPEN_PROMO})
+}
+
+export const closePromotion = () => dispatch => {
+    dispatch({type: CLOSE_PROMO})
+}
+
 //Reducer
 const initialState = {
 isSnipcartModalOpen: false,
@@ -110,6 +120,7 @@ isCartOpen: false,
 isMobileOpen: false,
 isProcessing: true,
 isFetching: false,
+isPromoOpen: false,
 changingLoginStatus: false,
 processingText: "loading.initial",
 error: {
@@ -149,6 +160,16 @@ switch(action.type) {
             ...state,
             isMobileOpen: false,
             error: initialState.error
+        };
+    case OPEN_PROMO:
+        return { 
+            ...state,
+            isPromoOpen: true,
+        };
+    case CLOSE_PROMO:
+        return { 
+            ...state,
+            isPromoOpen: false,
         };
     case CHANGE_LANGUAGE_REQUEST:
     case CHANGE_CURRENCY_REQUEST:
@@ -243,6 +264,8 @@ switch(action.type) {
 
 //Selectors
 export const isCartOpen = (state) => state.views.isCartOpen;
+
+export const isPromoOpen = (state) => state.views.isPromoOpen;
 
 export const isSnipOpen = (state) => state.views.isSnipcartModalOpen;
 

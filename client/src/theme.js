@@ -98,6 +98,11 @@ export const DakTheme = {
               height: "44px",
               maxWidth: "100%"
           },
+          large: {
+            size: "28px",
+            height: "40px",
+            maxWidth: "100%"
+        },
         },
         2: {
           xsmall: {

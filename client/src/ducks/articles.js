@@ -27,6 +27,7 @@ switch (action.type) {
                 content: {en: article.content_en, fr: article.content_fr, nl: article.content_nl},
                 title: {en: article.title_en, fr: article.title_fr, nl: article.title_nl},
                 thumb: article.thumbnail,
+                main: article.main_img,
                 id: article.id,
                 slug: article.slug
             }

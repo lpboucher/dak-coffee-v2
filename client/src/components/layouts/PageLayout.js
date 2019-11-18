@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { getProducts, fetchProducts } from '../../ducks/products';
 import { getSubscriptions, fetchSubscriptions } from '../../ducks/subscriptions';
-import { switchDisplayCurrency } from '../../ducks/views';
+import { switchDisplayCurrency, openPromotion } from '../../ducks/views';
 import { initializeCart } from '../../ducks/cart';
 
 import ErrorContainer from '../containers/global/ErrorContainer';
 import LoaderContainer from '../containers/global/LoaderContainer';
+import AnnouncementContainer from '../containers/global/AnnouncementContainer';
 import NavbarLayout from './NavbarLayout';
 import MessageBar from '../presentation/global/MessageBar';
 import LogoBar from '../presentation/global/LogoBar';
@@ -26,6 +27,7 @@ class PageLayout extends PureComponent {
         if (products.length < 1) this.props.fetchProducts();
         if (plans.length < 1) this.props.fetchSubscriptions();
         this.props.initialize();
+        setTimeout(() => this.props.openModal(), 5000);
     }
 
     componentWillUnmount() {
@@ -37,6 +39,7 @@ class PageLayout extends PureComponent {
             <>
                 <ErrorContainer />
                 <LoaderContainer />
+                <AnnouncementContainer />
                 <NavbarLayout
                     message={message}
                     logo={logo}
@@ -62,7 +65,8 @@ function mapDispatchToProps(dispatch) {
         fetchProducts: () => dispatch(fetchProducts()),
         fetchSubscriptions: () => dispatch(fetchSubscriptions()),
         switchCurrency: (curr) => dispatch(switchDisplayCurrency(curr)),
-        initialize: () => dispatch(initializeCart())
+        initialize: () => dispatch(initializeCart()),
+        openModal: () => dispatch(openPromotion())
     };
 }
 
