@@ -22,7 +22,6 @@ const snipcartParser = async (ctx) => {
 
 const snipcartFetch = async (ctx) => {
   snipcart.configure('SECRET_API_KEY', strapi.config.currentEnvironment.snipcart);
-  console.log(strapi.config.currentEnvironment.snipcart);
   let products = await snipcart.api.products.getAll();
   let notRecurringProducts = products.data.items.filter(product => !isSubscription(product));
   let productsInv = notRecurringProducts.map(product => ({
