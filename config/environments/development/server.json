@@ -8,7 +8,6 @@
     "enabled": false
   },
   "admin": {
-    "autoOpen": false,
-    "path": "/api/admin"
+    "autoOpen": false
   }
 }

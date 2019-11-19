@@ -2,7 +2,7 @@
     "routes": [
       {
         "method": "POST",
-        "path": "/api/webhooks/shipping",
+        "path": "/webhooks/shipping",
         "handler": "Webhooks.getShippingRates",
         "config": {
           "policies": []
@@ -10,7 +10,7 @@
       },
       {
         "method": "POST",
-        "path": "/api/webhooks/taxes",
+        "path": "/webhooks/taxes",
         "handler": "Webhooks.getTaxes",
         "config": {
           "policies": []
