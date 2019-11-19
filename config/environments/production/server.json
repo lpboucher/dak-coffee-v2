@@ -8,6 +8,10 @@
     "enabled": false
   },
   "admin": {
-    "autoOpen": false
+    "autoOpen": false,
+    "build": {
+      "host": "www.dakcoffeeroasters.com/admin",
+      "backend": "http://127.0.0.1:1337"
+    }
   }
 }
