@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/groupings",
+      "path": "/api/groupings",
       "handler": "Grouping.find",
       "config": {
         "policies": []
@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/groupings/count",
+      "path": "/api/groupings/count",
       "handler": "Grouping.count",
       "config": {
         "policies": []
@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/groupings/:id",
+      "path": "/api/groupings/:id",
       "handler": "Grouping.findOne",
       "config": {
         "policies": []
@@ -26,7 +26,7 @@
     },
     {
       "method": "POST",
-      "path": "/groupings",
+      "path": "/api/groupings",
       "handler": "Grouping.create",
       "config": {
         "policies": []
@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/groupings/:id",
+      "path": "/api/groupings/:id",
       "handler": "Grouping.update",
       "config": {
         "policies": []
@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/groupings/:id",
+      "path": "/api/groupings/:id",
       "handler": "Grouping.delete",
       "config": {
         "policies": []

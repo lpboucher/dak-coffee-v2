@@ -2,7 +2,7 @@
     "routes": [
       {
         "method": "POST",
-        "path": "/newsletter",
+        "path": "/api/newsletter",
         "handler": "Newsletter.add",
         "config": {
           "policies": []

@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/relateds",
+      "path": "/api/relateds",
       "handler": "Related.find",
       "config": {
         "policies": []
@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/relateds/count",
+      "path": "/api/relateds/count",
       "handler": "Related.count",
       "config": {
         "policies": []
@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/relateds/:id",
+      "path": "/api/relateds/:id",
       "handler": "Related.findOne",
       "config": {
         "policies": []
@@ -26,7 +26,7 @@
     },
     {
       "method": "POST",
-      "path": "/relateds",
+      "path": "/api/relateds",
       "handler": "Related.create",
       "config": {
         "policies": []
@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/relateds/:id",
+      "path": "/api/relateds/:id",
       "handler": "Related.update",
       "config": {
         "policies": []
@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/relateds/:id",
+      "path": "/api/relateds/:id",
       "handler": "Related.delete",
       "config": {
         "policies": []

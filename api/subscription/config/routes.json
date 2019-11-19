@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/subscriptions",
+      "path": "/api/subscriptions",
       "handler": "Subscription.find",
       "config": {
         "policies": []
@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/subscriptions/count",
+      "path": "/api/subscriptions/count",
       "handler": "Subscription.count",
       "config": {
         "policies": []
@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/subscriptions/:id",
+      "path": "/api/subscriptions/:id",
       "handler": "Subscription.findOne",
       "config": {
         "policies": []
@@ -26,7 +26,7 @@
     },
     {
       "method": "POST",
-      "path": "/subscriptions",
+      "path": "/api/subscriptions",
       "handler": "Subscription.create",
       "config": {
         "policies": []
@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/subscriptions/:id",
+      "path": "/api/subscriptions/:id",
       "handler": "Subscription.update",
       "config": {
         "policies": []
@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/subscriptions/:id",
+      "path": "/api/subscriptions/:id",
       "handler": "Subscription.delete",
       "config": {
         "policies": []
