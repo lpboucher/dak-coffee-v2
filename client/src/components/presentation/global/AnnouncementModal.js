@@ -1,13 +1,16 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
+import withResponsive from '../../HOCs/withResponsive';
 
 import FullImg from '../../utils/FullImg';
 import PromoContent from '../../presentation/promotions/PromoContent';
 
-import { Layer, Box, Text } from 'grommet';
+import { Layer, Box } from 'grommet';
 
-const AnnouncementModal = ({close, text, t}) => {
+const AnnouncementModal = ({close, media}) => {
+    const isMobile = media === "extraSmall" || media === "small";
     return (
+    <>
+    {!isMobile &&
         <Layer onEsc={() => close()} onClickOutside={() => close()} modal position="center">
             <Box width={'600px'} direction='row' wrap>
                 <Box width={'50%'}>
@@ -18,9 +21,11 @@ const AnnouncementModal = ({close, text, t}) => {
                 </Box>
             </Box>
         </Layer>
+    }
+    </>
     );
 };
 
-export default withTranslation()(AnnouncementModal);
+export default withResponsive(AnnouncementModal);
 
 
