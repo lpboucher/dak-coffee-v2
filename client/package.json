@@ -22,7 +22,6 @@
     "react-router-sitemap": "^1.2.0",
     "react-scripts": "3.2.0",
     "react-spinners": "^0.6.1",
-    "react-stripe-elements": "^5.0.1",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-responsive": "^4.3.8",
@@ -31,7 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "reload": "cp -r ~/dak-coffee-v2/client/build/. ~/dak-coffee-v2/public && sudo systemctl reload nginx",
+    "reload": "cp -r ~/dak-coffee-v2/client/build/. /var/www/dakcoffeeroasters.com/html && sudo systemctl reload nginx",
     "sitemap": "babel-node src/sitemap-generator.js",
     "prebuild": "npm run sitemap",
     "build": "react-scripts build",

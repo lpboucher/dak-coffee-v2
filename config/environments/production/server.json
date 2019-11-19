@@ -10,6 +10,6 @@
   },
   "admin": {
     "autoOpen": false,
-    "path": "/api/dashboard"
+    "path": "/dashboard"
   }
 }
