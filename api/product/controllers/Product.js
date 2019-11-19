@@ -15,7 +15,7 @@ const snipcartParser = async (ctx) => {
         'eur': Math.round(product.price.eur.value * 100) / 100,
         'cad': Math.round(product.price.cad.value * 100) / 100,
       },
-      'url': 'https://dakcoffeeroasters.com/snipcartParser',
+      'url': 'https://dakcoffeeroasters.com/api/snipcartParser',
     };
   });
 };
