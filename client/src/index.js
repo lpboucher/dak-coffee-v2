@@ -7,7 +7,6 @@ import reduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {responsiveStoreEnhancer} from 'redux-responsive';
 import LogRocket from 'logrocket';
-import {StripeProvider} from 'react-stripe-elements';
 import { I18nextProvider } from "react-i18next";
 import { Grommet } from 'grommet';
 import * as serviceWorker from './serviceWorker';
@@ -23,10 +22,11 @@ if (process.env.NODE_ENV !== 'development') {
     LogRocket.init('3khpto/dak-coffee-roasters');
 }
 
-if (process.env.NODE_ENV !== 'production') {
+/*if (process.env.NODE_ENV !== 'production') {
     const whyDidYouRender = require('@welldone-software/why-did-you-render/dist/no-classes-transpile/umd/whyDidYouRender.min.js');
-    whyDidYouRender(React);
-}
+    //whyDidYouRender(React);
+    whyDidYouRender(React, {include: [/\w+/]});
+}*/
 
 const middleware = process.env.NODE_ENV !== 'production' ?
 [require('redux-immutable-state-invariant').default(), reduxThunk, LogRocket.reduxMiddleware()] :
@@ -38,11 +38,9 @@ ReactDOM.render(
     <Router>
         <ScrollToTop>
             <I18nextProvider i18n={i18n}>
-                <StripeProvider apiKey="pk_test_hN24eKK8d78KlAVlKAcll8eu">
-                    <Grommet theme={DakTheme}>
-                        <App />
-                    </Grommet>
-                </StripeProvider>
+                <Grommet theme={DakTheme}>
+                    <App />
+                </Grommet>
             </I18nextProvider>
         </ScrollToTop>
     </Router>
