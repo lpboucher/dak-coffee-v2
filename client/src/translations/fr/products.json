@@ -127,6 +127,25 @@
             "taste": "Chocolat Noir, Mûre, Mangue, Miel",
             "harvest": "Ce café est un grade 1 de la Station de Lavage Chelelektu.",
             "altitude": "1850m"
+        },
+        "mile-high-coffee": {
+            "name": "Mile High Coffee",
+            "short": "Café colombien (filtre)",
+            "description": "L’édition limitée du mois est torréfiée pour une infusion filtre et se prête bien à une infusion avec un aeropress. Isolé par la présence des guérillas jusqu’en 2014, Santa Maria a conservé des variétés inhabituelles de haute qualité qu’on ne retrouve pas dans la région de Huila.\n\nComplexe comme le passé de sa région, ce café est fruité, sucré et surprenant.",
+            "region": "Huila",
+            "country": "Colombie",
+            "roast": "Filtre",
+            "lot": "La Victoria",
+            "process": "Lavé",
+            "variety": "Caturra & Typica",
+            "drink": "Filtre",
+            "taste": "Très sucré, Cassonade, Fruité",
+            "harvest": "Ce café unique provient de La Victoria, une association locale de café située dans le village de Santa Maria",
+            "altitude": "17000m",
+            "500CAD": "(29$)",
+            "500EUR": "(22€)",
+            "1000CAD": "(57.50$)",
+            "1000EUR": "(41.50€)"
         }
     },
     "subscription": {

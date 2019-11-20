@@ -147,6 +147,25 @@
             "500EUR": "(22€)",
             "1000CAD": "(57.50$)",
             "1000EUR": "(41.50€)"
+        },
+        "mile-high-coffee": {
+            "name": "Mile High Coffee",
+            "short": "Colombian coffee (filter)",
+            "description": "This new limited edition is roasted for filter coffees and is particularly enjoyable brewed with an aeropress. Isolated by the close proximity of guerilla groups up until 5 years ago, Santa Maria has retained some unusual and high quality coffee varietals as compared to the Huila region.\n\nComplex like its region’s history, this coffee is fruity, sweet and surprising.",
+            "region": "Huila",
+            "country": "Colombia",
+            "roast": "Filter",
+            "lot": "La Victoria",
+            "process": "Fully washed",
+            "variety": "Caturra & Typica",
+            "drink": "Filter",
+            "taste": "Very sweet, Dark Cane Sugar, Fruity",
+            "harvest": "This unique coffee is a group lot from the local La Victoria association, located in Santa Maria village",
+            "altitude": "17000m",
+            "500CAD": "(29$)",
+            "500EUR": "(22€)",
+            "1000CAD": "(57.50$)",
+            "1000EUR": "(41.50€)"
         }
     },
     "subscription": {
