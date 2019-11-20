@@ -8,10 +8,10 @@ require("babel-register")({
   
   async function generateSitemap() {
     try {
-        const res1 = await axios.get("https://dakcoffeeroasters.com/products");
+        const res1 = await axios.get("https://dakcoffeeroasters.com/api/products");
         const products = res1.data;
 
-        const res2 = await axios.get("https://dakcoffeeroasters.com/articles");
+        const res2 = await axios.get("https://dakcoffeeroasters.com/api/articles");
         const articles = res2.data;
         
         let productMap = [];
