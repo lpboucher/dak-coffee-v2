@@ -11,7 +11,7 @@ import { Box, Image } from 'grommet';
 import { buildImageUrl } from '../../utils/Images/generateImage';
 
 const ProductCard = withRouter(({id, name, slug, type, thumb_image, price, stock, currency, history}) => {
-    const imageSRC = buildImageUrl(`Products/Thumbs/${thumb_image}`, 'product_cards');
+    const imageSRC = buildImageUrl(`Products/Thumbs/${thumb_image}`);
     const outOfStock = stock < 1;
     return (
         <>

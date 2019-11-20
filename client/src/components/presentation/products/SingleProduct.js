@@ -10,7 +10,7 @@ import { buildImageUrl } from '../../utils/Images/generateImage';
 import { singleProductLayout } from '../../layouts/globalResponsiveLayout';
 
 const SingleProduct = ({product, currency, media}) => {
-    const imageSRC = buildImageUrl(`Products/Mains/${product.main_image}`, 'product_main');
+    const imageSRC = buildImageUrl(`Products/Mains/${product.main_image}`);
     const layout = singleProductLayout(media)
     return (
         <>
