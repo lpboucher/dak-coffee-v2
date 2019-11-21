@@ -84,6 +84,7 @@ export const switchDisplayCurrency = (currency) => (dispatch) => {
 export const switchLanguage = (lang=null) => (dispatch) => {
     if(!lang) {
         window.Snipcart.setLang(i18n.language);
+        i18n.changeLanguage(i18n.language.substr(0,2));
         dispatch({type: CHANGE_LANGUAGE_SUCCESS, payload: i18n.language});
     } else {
         dispatch({type: CHANGE_LANGUAGE_REQUEST, payload: "loading.language"})

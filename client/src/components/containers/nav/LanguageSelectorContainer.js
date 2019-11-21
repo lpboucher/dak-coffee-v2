@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { switchLanguage } from '../../../ducks/views';
+import { switchLanguage, getDisplayLang } from '../../../ducks/views';
 
 import LanguageSelector from '../../presentation/nav/LanguageSelector';
 
@@ -13,10 +13,16 @@ class LanguageSelectorContainer extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        displayLang: getDisplayLang(state)
+    };
+}
+
 function mapDispatchToProps(dispatch) {
     return {
         switchLanguage: (lang) => dispatch(switchLanguage(lang)),
     };
 }
 
-export default connect(null, mapDispatchToProps)(LanguageSelectorContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(LanguageSelectorContainer);
