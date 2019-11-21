@@ -9,6 +9,7 @@ import cartReducer from '../ducks/cart';
 import viewReducer from '../ducks/views';
 import productReducer from '../ducks/products';
 import articleReducer from '../ducks/articles';
+import termReducer from '../ducks/terms';
 
 export default combineReducers({
     user: userReducer,
@@ -20,5 +21,6 @@ export default combineReducers({
     categories: categoryReducer,
     subscriptions: subscriptionReducer,
     views: viewReducer,
-    articles: articleReducer
+    articles: articleReducer,
+    terms: termReducer
 });
