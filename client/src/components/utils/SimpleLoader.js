@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box } from 'grommet';
-import { ClipLoader } from 'react-spinners';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const Loader = ({pad="large", align="center", size=70}) => {
     return (
