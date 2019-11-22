@@ -14,7 +14,7 @@ const ProductCardInfo = ({id, slug, type, price, currency, t}) => {
                     <Text textAlign="center" weight="bold" style={{textTransform: 'uppercase'}}>{t(`products:${type}.${slug}.name`)}</Text>
                     <Text textAlign="center" color="grey">{`${price[displayCurr].symbol} ${price[displayCurr].value.toFixed(2)}`}</Text>
                 </Box>
-                <AddToCart productId={id} />
+                <AddToCart productId={id} currency={currency}/>
             </>
             :
             'Loading...'

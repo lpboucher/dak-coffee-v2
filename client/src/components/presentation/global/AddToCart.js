@@ -5,11 +5,12 @@ import WithHover from '../../utils/WithHover';
 
 import { Add } from 'grommet-icons';
 
-const AddToCart = ({id, name, price, slug, stock, url, description, type, selected=null, t,...rest}) => {
-    const { increments, varieties, roast } = price.eur;
+const AddToCart = ({id, name, price, slug, stock, url, description, type, currency, selected=null, t,...rest}) => {
+    const { increments, varieties, roast } = price[currency.toLowerCase()];
     const options = increments ? increments.map((inc) => `${inc.option}${inc.increment}`) : null;
     const prices = Object.keys(price).reduce((acc, curr) => { return { ...acc, [curr]: price[curr].value.toFixed(2) }; }, {});
-    const desc = type === 'equipment' ? t(`products:${type}.short`) : t(`products:${type}.${slug}.short`)
+    const desc = type === 'equipment' ? t(`products:${type}.short`) : t(`products:${type}.${slug}.short`);
+    const option1Name = (type === 'christmas-filter' || type === 'christmas-espresso') ? 'Coffee' : 'Weight';
     return (
         <>
         {stock < 1 ? null :
@@ -20,7 +21,7 @@ const AddToCart = ({id, name, price, slug, stock, url, description, type, select
             data-item-price={JSON.stringify(prices)}
             data-item-url={"https://dakcoffeeroasters.com/api/snipcartParser"}
             data-item-description={desc}
-            data-item-custom1-name={options ? "Weight" : null}
+            data-item-custom1-name={options ? option1Name : null}
             data-item-custom1-options={options ? options.join('|'): null}
             data-item-custom1-value={selected ? selected.quantity : null}
             data-item-custom2-name={varieties ? "Varieties" : null}
