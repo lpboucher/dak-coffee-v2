@@ -10,7 +10,8 @@
     },
     "menu": {
         "shop": "shop",
-        "subscriptions": "coffee subscriptions",
+        "christmas": "christmas",
+        "subscriptions": "subscriptions",
         "about": {
             "top": "who we are",
             "coffee": "our coffee",
@@ -29,6 +30,7 @@
     },
     "hero": {
         "home": "From farm to cup we take great pride in celebrating quality coffee.",
+        "christmas": "Coffee tastes better when shared.",
         "subscription": "Have quality coffee delivered to your doorstep. Go with the classics or opt for our roaster’s seasonal picks.",
         "coffee": "We are committed to offering you the best quality coffee, while reducing our footprint.",
         "team": "It's good because we care and pay great attention to every step from farm to roast to brew.",
@@ -108,7 +110,8 @@
         "shop": {
             "espresso-coffees": "Espresso Coffees",
             "filter-coffees": "Filter Coffees",
-            "coffee-equipment": "Equipment"
+            "coffee-equipment": "Equipment",
+            "christmas": "Christmas Packages"
         },
         "product": {
             "description": "Description",
@@ -352,6 +355,9 @@
                     }
                 }
             }
+        },
+        "christmas": {
+            "description": "We’ve put together packages for this special time of the year.\nTreat your loved ones to delicious specialty coffee & equipment so they can brew it at home.\nMerry Christmas.\n\n<strong>LAST ORDER DATES FOR PRE-CHRISTMAS DELIVERY.</strong>\nFor customers in The Netherlands: 15th December 2019\nFor European customers: 12th December 2019 (standard) and 15th December 2019 (express)\nFor Canadian customers: 10th December 2019"
         }
     },
     "newsletter": {
@@ -369,7 +375,7 @@
         "description": "Dak Coffee Roasters is a coffee roasting company based in Amsterdam. From farm to cup, we take great pride in celebrating quality coffee.",
         "menu": {
             "shop": "shop",
-            "subscription": "coffee subscription",
+            "subscription": "coffee subscriptions",
             "our-coffee": "our coffee",
             "about-us": "about us",
             "wholesale": "wholesale",

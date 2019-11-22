@@ -179,5 +179,46 @@
             "short": "Monthly coffee subscription",
             "description": "Let the roaster surprise you with his preferred roast of the month. This subscription will offer different assortments of filter/espresso/limited edition roasts, but our roaster never compromises the quality or taste, so this is truly the best way to familiarize yourself with fresh, new coffees!"
         }
+    },
+    "christmas": {
+        "selection-coffee": {
+            "name": "Classics selection",
+            "description": "This package includes:\n- 4 x 250g of our Classics (Rutabo, Chelelektu, Esperanza, Blend 108)\n- One branded Dak Coffee Roasters tote bag\n- The bundle will be packaged in a branded Dak Coffee Roasters box",
+            "short": "Christmas Package"
+        },
+        "full-selection-coffee": {
+            "name": "Full coffee selection",
+            "description": "This package includes:\n- 6 x 250g of our Full coffee selection (Rutabo, Chelelektu, Esperanza, Blend 108, Coffee For Two, Mile High Coffee)\n- One branded Dak Coffee Roasters tote bag\n- The bundle will be packaged in a branded Dak Coffee Roasters box",
+            "short": "Christmas Package"
+        }
+    },
+    "christmas-espresso": {
+        "espresso-tote": {
+            "name": "Espresso + Tote Bag",
+            "description": "This package includes:\n- 2 x 250g of our Esperanza / Blend 108 espresso coffees\n- One branded Dak Coffee Roasters tote bag\n- The bundle will be packaged in a branded Dak Coffee Roasters box\n\nSelect your coffee before adding to the cart:",
+            "short": "Christmas Package"
+        }
+    },
+    "christmas-filter": {
+        "filter-tote": {
+            "name": "Filter + Tote Bag",
+            "description": "This package includes:\n- 2 x 250g of our Rutabo / Chelelektu filter coffees\n- One branded Dak Coffee Roasters tote bag\n- The bundle will be packaged in a branded Dak Coffee Roasters box\n\nSelect your coffee before adding to the cart:",
+            "short": "Christmas Package"
+        },
+        "porlex-filter-tote": {
+            "name": "Grind your beans",
+            "description": "This package includes:\n- 2 x 250g of our Rutabo / Chelelektu filter coffees\n- One tall hand grinder by Porlex\n- One branded Dak Coffee Roasters tote bag\n- The bundle will be packaged in a branded Dak Coffee Roasters box\n\nSelect your coffee before adding to the cart:",
+            "short": "Christmas Package"
+        },
+        "aeropress-porlex-filter-tote": {
+            "name": "On the go",
+            "description": "This package includes:\n- 2 x 250g of our Rutabo / Chelelektu filter coffees\n- One Aeropress\n- One tall hand grinder by Porlex\n- One branded Dak Coffee Roasters tote bag\n- The bundle will be packaged in a branded Dak Coffee Roasters box\n\nSelect your coffee before adding to the cart:",
+            "short": "Christmas Package"
+        },
+        "chemex-porlex-filter": {
+            "name": "Pour over starter",
+            "description": "This package includes:\n- 2 x 250g of our Rutabo / Chelelektu filter coffees\n- One Classic Chemex 3-cups\n- One Pack of Chemex filters (100)\n- One tall hand grinder by Porlex\n- One branded Dak Coffee Roasters tote bag\n- The bundle will be packaged in a branded Dak Coffee Roasters box\n\nSelect your coffee before adding to the cart:",
+            "short": "Christmas Package"
+        }
     }
 }

@@ -7,7 +7,7 @@ const SubscriptionDescription = ({t}) => {
     return (
         <SimpleDescriptionLayout 
             heading={t("sections.subscription.title")}
-            description={t("sections.subscription.description")}
+            description={"sections.subscription.description"}
         />
     );
 };

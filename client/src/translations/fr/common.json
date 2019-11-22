@@ -10,7 +10,8 @@
     },
     "menu": {
         "shop": "boutique",
-        "subscriptions": "Abonnement caféiné",
+        "christmas": "noël",
+        "subscriptions": "Abonnement",
         "about": {
             "top": "à propos",
             "coffee": "notre café",
@@ -29,6 +30,7 @@
     },
     "hero": {
         "home": "Du terroir à votre tasse, c'est avec fierté que nous vous proposons un café de qualité.",
+        "christmas": "Le café a bien meilleur goût quand il est le fruit du partage.",
         "subscription": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements.",
         "coffee": "Nous nous engageons à vous offrir le meilleur café possible tout en réduisant notre empreinte.",
         "team": "Du terroir à votre tasse, c'est avec fierté que nous vous proposons un café de qualité.",
@@ -108,7 +110,8 @@
         "shop": {
             "espresso-coffees": "Cafés espressos",
             "filter-coffees": "Cafés filtres",
-            "coffee-equipment": "équipement"
+            "coffee-equipment": "équipement",
+            "christmas": "ensembles des fêtes"
         },
         "product": {
             "description": "Description",
@@ -352,6 +355,9 @@
                     }
                 }
             }
+        },
+        "christmas": {
+            "description": "Nous avons créés des ensembles de café spécialement pour les fêtes!\nEn espérant vous aider à gâter vos proches avec du délicieux café de spécialité ainsi qu’avec de l’équipement.\nJoyeux temps des fêtes. \n\n<strong>DERNIÈRES DATES DE COMMANDES POUR UNE LIVRAISON AVANT NOËL</strong>\nPour clients aux Pays-Bas: 15 décembre 2019\nPour clients en Europe: 12 décembre 2019 (livraison standard) et 15 décembre 2019 (livraison express)\nPour clients au Canada: 10 décembre 2019"
         }
     },
     "newsletter": {

@@ -47,9 +47,9 @@
             "details": "Boîtier en acier inoxydable;Bavures en céramique;Facile à nettoyer et résistant;Se glisse facilement dans un Aéropress;Fait au Japon"
         },
         "dak-tote-bag": {
-            "name": "Dak Tote Bag",
-            "description": "This cotton tote bag is perfect for carrying your every-day goods or run some errands (when you go to the market, school, whatever the occasion might be!). This reusable bag also contributes to the reduction of plastic bag use - so also good for the environment.",
-            "details": "Dimensions: 41 x 42 cm;Premium Quality: 300 gr./m2;Material: Cotton;Type of handles: Short;Bottom fold"
+            "name": "Sac réutilisable Dak",
+            "description": "Ce sac réutilisable est idéal pour faire vos courses ou peu importe l'occasion. Il contribue également à la réduction de plastique donc pas de plus vers un monde plus écologique.",
+            "details": "Dimensions: 41 x 42 cm;Qualité premium: 300 gr./m2;Matériel: Cotton;Type de ganses: Courtes;Pli dans le bas"
         }
     },
     "coffee": {
@@ -158,6 +158,47 @@
             "name": "Le choix du torréfacteur",
             "short": "Abonnement mensuel café",
             "description": "Laissez le maître torréfacteur vous surprendre avec son coup de cœur du mois. Vous obtiendrez ainsi un assortiment de torréfactions filtre, espresso et édition limitée. Sans jamais compromettre la qualité ni le goût, notre torréfacteur vous fera découvrir toutes les subtilités de ses cafés."
+        }
+    },
+    "christmas": {
+        "selection-coffee": {
+            "name": "Sélection Classique",
+            "description": "Cet ensemble comprend:\n- 4 x 250g de nos cafés Classiques (Rutabo, Chelelektu, Esperanza, Blend 108)\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.",
+            "short": "Boite noël"
+        },
+        "full-selection-coffee": {
+            "name": "Sélection Complète",
+            "description": "Cet ensemble comprend:\n- 6 x 250g de tous nos cafés (Rutabo, Chelelektu, Esperanza, Blend 108, Coffee For Two, Mile High Coffee)\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.",
+            "short": "Boite noël"
+        }
+    },
+    "christmas-espresso": {
+        "espresso-tote": {
+            "name": "Espresso + Sac Réutilisable",
+            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés espresso Esperanza / Blend 108\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
+            "short": "Boite noël"
+        }
+    },
+    "christmas-filter": {
+        "filter-tote": {
+            "name": "Filter + Sac Réutilisable",
+            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés Rutabo / Chelelektu filtre\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
+            "short": "Boite noël"
+        },
+        "porlex-filter-tote": {
+            "name": "Grind your beans",
+            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés Rutabo / Chelelektu filtre\n- Un moulin à main Porlex\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
+            "short": "Boite noël"
+        },
+        "aeropress-porlex-filter-tote": {
+            "name": "On the go",
+            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés Rutabo / Chelelektu filtre\n- Un Aéropress\n- Un moulin à main Porlex\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
+            "short": "Boite noël"
+        },
+        "chemex-porlex-filter": {
+            "name": "Pour over starter",
+            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés Rutabo / Chelelektu filtre\n- Un Chemex Classique 3-Tasses\n- Un paquet de filtres Chemex (100)\n- Un moulin à main Porlex\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
+            "short": "Boite noël"
         }
     }
 }
