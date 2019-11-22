@@ -9,8 +9,6 @@
   },
   "admin": {
     "autoOpen": false,
-    "build": {
-      "backend": "https://www.dakcoffeeroasters.com"
-    }
+    "path": "/api"
   }
 }
