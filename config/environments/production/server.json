@@ -9,6 +9,6 @@
   },
   "admin": {
     "autoOpen": false,
-    "path": "/api"
+    "path": "/"
   }
 }
