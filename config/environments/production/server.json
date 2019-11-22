@@ -1,14 +1,24 @@
 {
-  "host": "www.dakcoffeeroasters.com",
+  "host": "134.209.86.20",
   "port": 1337,
   "proxy": {
     "enabled": false
+  },
+  "autoReload": {
+    "enabled": true
   },
   "cron": {
     "enabled": false
   },
   "admin": {
-    "autoOpen": false,
-    "path": "/api/admin"
+    "path": "/admin",
+    "build": {
+      "host": "/admin",
+      "backend": "http://dakcoffeeroasters.com/api",
+      "plugins": {
+        "source": "backend",
+        "folder": "/api"
+      }
+    }
   }
 }
