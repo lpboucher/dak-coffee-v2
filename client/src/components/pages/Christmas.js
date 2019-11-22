@@ -21,7 +21,7 @@ const Christmas = () => {
         <SingleDescriptionLayout 
             description={"sections.christmas.description"}
         />
-        <CategoryContainer categoryId={'5dd7b930ab5af52142464e77'}/>
+        <CategoryContainer categoryId={'5dd80b1b0bd5c074cf9ae866'}/>
         <CategoryContainer categoryId={'5da86cbd7fed123fd9a3f0e8'}/>
         <NewsletterContainer />
     </>
