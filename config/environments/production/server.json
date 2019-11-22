@@ -8,11 +8,6 @@
     "enabled": false
   },
   "admin": {
-    "path": "/path",
-    "autoOpen": false,
-    "build": {
-      "host": "/host",
-      "backend": "/backend"
-    }
+    "autoOpen": false
   }
 }
