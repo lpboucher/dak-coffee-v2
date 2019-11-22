@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Settings from '../../utils/Settings';
+import NavItemWithDrop from '../nav/SubNavItemWithDrop';
+import DropItem from '../../utils/DropItem';
 
 const LanguageSelector = ({switchLanguage, displayLang}) => {
     const langs = {
@@ -10,12 +11,11 @@ const LanguageSelector = ({switchLanguage, displayLang}) => {
     }
     const items = Object.keys(langs).filter(lang => lang !== displayLang)
     return (
-        <Settings
-            label={displayLang}
-            items={items.map(item => langs[item])}
-            icon={false}
-            size="small"
-        />
+        <NavItemWithDrop label={displayLang}>
+            {items.map(item => 
+                <DropItem to="#" onClick={langs[item].onClick}>{langs[item].label}</DropItem>
+            )}
+        </NavItemWithDrop>
     );
 };
 
