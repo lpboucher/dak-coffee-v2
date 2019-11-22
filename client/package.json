@@ -35,7 +35,8 @@
     "build": "react-scripts build",
     "postbuild": "npm run reload",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "bundle": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
