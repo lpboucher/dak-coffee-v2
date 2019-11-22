@@ -8,10 +8,11 @@
     "enabled": false
   },
   "admin": {
+    "path": "/path",
     "autoOpen": false,
     "build": {
-      "host": "www.dakcoffeeroasters.com/admin",
-      "backend": "www.dakcoffeeroasters.com/api"
+      "host": "/host",
+      "backend": "/backend"
     }
   }
 }
