@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 import withResponsive from '../HOCs/withResponsive';
 
 import { Box, Heading, Text } from 'grommet';
@@ -18,4 +18,4 @@ const SingleDescriptionLayout = ({heading, description, media}) => {
     );
 };
 
-export default withResponsive(SingleDescriptionLayout);
+export default withTranslation()(withResponsive(SingleDescriptionLayout));
