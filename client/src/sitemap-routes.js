@@ -16,5 +16,6 @@ export default (
           <Route path="/privacy" />
           <Route path="/blog/:slug" />
           <Route path="/blog" />
+          <Route path="/christmas" />
         </Switch>
 );
