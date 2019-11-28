@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import withResponsive from '../HOCs/withResponsive';
 
 import Hero from '../presentation/global/Hero';
-import Profiles from '../presentation/intros/Profiles';
-import NewsletterContainer from '../containers/newsletter/NewsletterContainer';
+import Loader from '../utils/SimpleLoader';
+
+const Profiles = lazy(() => import('../presentation/intros/Profiles'));
+const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
 const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565717609/Heros/Header_Aboutus_qwdlkf.jpg';
 
@@ -24,8 +26,10 @@ const About = ({media}) => {
             }}
         />
     }
+    <Suspense fallback={<Loader />}>
         <Profiles />
         <NewsletterContainer />
+    </Suspense> 
     </>
     );
 };

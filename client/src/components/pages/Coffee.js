@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import withResponsive from '../HOCs/withResponsive';
 
 import Hero from '../presentation/global/Hero';
+import Loader from '../utils/SimpleLoader';
 import Ethics from '../presentation/intros/Ethics';
-import Coffee from '../presentation/intros/Coffee';
-import Packaging from '../presentation/intros/Packaging';
-import NewsletterContainer from '../containers/newsletter/NewsletterContainer';
+
+const Coffee = lazy(() => import('../presentation/intros/Coffee'));
+const Packaging = lazy(() => import('../presentation/intros/Packaging'));
+const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
 const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565717617/Heros/Header_Ourcoffee_jzxkoe.jpg';
 
@@ -27,9 +29,11 @@ const CoffeePage = ({media}) => {
         />
         }
         <Ethics />
-        <Coffee />
-        <Packaging />
-        <NewsletterContainer />
+        <Suspense fallback={<Loader />}>
+            <Coffee />
+            <Packaging />
+            <NewsletterContainer />
+        </Suspense> 
     </>
     );
 };

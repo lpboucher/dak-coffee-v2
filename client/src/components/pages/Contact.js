@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import withResponsive from '../HOCs/withResponsive';
 
 import Hero from '../presentation/global/Hero';
-import Contact from '../presentation/intros/Contact';
-import NewsletterContainer from '../containers/newsletter/NewsletterContainer';
+import Loader from '../utils/SimpleLoader';
+
+const Contact = lazy(() => import('../presentation/intros/Contact'));
+const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
 const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565717615/Heros/Header_Contactus_maq12p.jpg';
 
@@ -23,8 +25,11 @@ const ContactPage = ({media}) => {
             }}
         />
         }
-        <Contact />
-        <NewsletterContainer /> 
+        <Suspense fallback={<Loader />}>
+            <Contact />
+            <NewsletterContainer /> 
+        </Suspense> 
+        
     </>
     );
 };
