@@ -12,17 +12,10 @@ const CurrencySelector = ({displayCurrency, switchCurrency}) => {
     return (
         <NavItemWithDrop label={currencies[displayCurrency].label}>
             {items.map(item => 
-                <DropItem to="#" onClick={currencies[item].onClick}>{currencies[item].label}</DropItem>
+                <DropItem key={currencies[item].label} to="#" onClick={currencies[item].onClick}>{currencies[item].label}</DropItem>
             )}
         </NavItemWithDrop>
     );
 };
 
 export default CurrencySelector;
-
-{/*<Settings
-            label={currencies[displayCurrency].label}
-            items={items.map(item => currencies[item])}
-            icon={false}
-            size="small"
-        />*/}

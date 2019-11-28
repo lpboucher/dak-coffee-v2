@@ -13,7 +13,7 @@ const LanguageSelector = ({switchLanguage, displayLang}) => {
     return (
         <NavItemWithDrop label={displayLang}>
             {items.map(item => 
-                <DropItem to="#" onClick={langs[item].onClick}>{langs[item].label}</DropItem>
+                <DropItem key={langs[item].label} to="#" onClick={langs[item].onClick}>{langs[item].label}</DropItem>
             )}
         </NavItemWithDrop>
     );
