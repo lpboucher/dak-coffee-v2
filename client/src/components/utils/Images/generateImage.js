@@ -11,9 +11,9 @@ export const buildImageUrl = (
     return `${baseURI}/${repoName}/${resource}/${type}/${transformation}${version}/${path}`
 }
 
-const buildTransformationString = (transformation, prefix="t_") => {
+const buildTransformationString = (transformation) => {
     if (transformation === "") {
         return ""
     }
-    return `${prefix}${transformation}/`
+    return `${transformation}/`
 }

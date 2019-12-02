@@ -5,7 +5,7 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
 
-const thumb = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/q_100/v1572972636/Intros/BoxSubscription_viuecy.jpg';
+const thumb = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1572972636/Intros/BoxSubscription_viuecy.jpg';
 
 const SubscriptionBanner = ({isMobile, currency, t}) => {
     const prices = {EUR: '€25', CAD: '$35'}
