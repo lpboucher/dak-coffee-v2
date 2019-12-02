@@ -9,7 +9,7 @@ const SubscriptionContainer = lazy(() => import('../containers/subscriptions/Sub
 const RelatedContainer = lazy(() => import('../containers/related/RelatedContainer'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/v1568042393/Heros/SubscriptionHeader_ikwigv.jpg'
+const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1568042393/Heros/SubscriptionHeader_ikwigv.jpg'
 
 const Subscription = () => {
     return (

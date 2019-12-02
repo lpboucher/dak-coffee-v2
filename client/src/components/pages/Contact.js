@@ -7,7 +7,7 @@ import Loader from '../utils/SimpleLoader';
 const Contact = lazy(() => import('../presentation/intros/Contact'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565717615/Heros/Header_Contactus_maq12p.jpg';
+const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1575303120/Heros/Header_contactnew_pe5anw.jpg';
 
 const ContactPage = ({media}) => {
     const isNotSmall = media === "medium" || media === "large" || media === "infinity";

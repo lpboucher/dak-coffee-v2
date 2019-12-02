@@ -4,7 +4,7 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
 
-const wholesale = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1566036472/Intros/Wholesale_jzdvmw.jpg';
+const wholesale = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1566036472/Intros/Wholesale_jzdvmw.jpg';
 
 const Wholesale = () => {
     const intro = 

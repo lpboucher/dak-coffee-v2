@@ -4,7 +4,7 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
 
-const pack = "https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1566244655/Intros/eco-friendlypack_2_uecqwl.jpg";
+const pack = "https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1566244655/Intros/eco-friendlypack_2_uecqwl.jpg";
 
 const PackagingIntro = () => {
     const intro = 

@@ -13,7 +13,7 @@ const NewsletterContainer = lazy(() => import('../containers/newsletter/Newslett
 const ValuesIntro = lazy(() => import('../presentation/intros/Values'));
 const BrewingIntro = lazy(() => import('../presentation/intros/Brewing'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565896327/Heros/HeaderV2_gujmqi.jpg'
+const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1575302886/Heros/Header_website_ggq9on.jpg'
 
 class Home extends Component {
     render() {

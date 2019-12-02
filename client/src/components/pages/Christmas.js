@@ -7,7 +7,7 @@ import SingleDescriptionLayout from '../layouts/SingleDescriptionLayout';
 const CategoryContainer = lazy(() => import('../containers/categories/CategoryContainer'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/v1574416315/Heros/Header_Christmas_o2pk2d.jpg'
+const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1575303073/Heros/Header_xmasnewnew_ilud8m.jpg'
 
 const Christmas = () => {
     return (

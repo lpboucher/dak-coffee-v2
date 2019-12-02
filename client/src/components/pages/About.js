@@ -7,7 +7,7 @@ import Loader from '../utils/SimpleLoader';
 const Profiles = lazy(() => import('../presentation/intros/Profiles'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565717609/Heros/Header_Aboutus_qwdlkf.jpg';
+const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1565717609/Heros/Header_Aboutus_qwdlkf.jpg';
 
 const About = ({media}) => {
     const isNotSmall = media === "medium" || media === "large" || media === "infinity";

@@ -10,9 +10,9 @@ import { aboutProfilesLayout } from '../../layouts/globalResponsiveLayout';
 
 import { Box, Heading, Image } from 'grommet';
 
-const louis = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565720115/Intros/LP_aop9ug.jpg';
-const olivier = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565720115/Intros/Olivier_p7pok3.jpg';
-const veronique = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1565720116/Intros/Veronique_gfzqmg.jpg';
+const louis = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1565720115/Intros/LP_aop9ug.jpg';
+const olivier = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1565720115/Intros/Olivier_p7pok3.jpg';
+const veronique = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1565720116/Intros/Veronique_gfzqmg.jpg';
 
 const Profiles = ({t, media}) => {
     const layout = aboutProfilesLayout(media);

@@ -4,7 +4,7 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
 
-const ethics = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1574085323/Intros/Ourcoffee_c8d7oa.jpg';
+const ethics = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1574085323/Intros/Ourcoffee_c8d7oa.jpg';
 
 
 const Ethics = () => {
