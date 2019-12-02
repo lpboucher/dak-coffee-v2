@@ -7,7 +7,7 @@ import { initializeCart } from '../../ducks/cart';
 
 import ErrorContainer from '../containers/global/ErrorContainer';
 import LoaderContainer from '../containers/global/LoaderContainer';
-import AnnouncementContainer from '../containers/global/AnnouncementContainer';
+//import AnnouncementContainer from '../containers/global/AnnouncementContainer';
 import NavbarLayout from './NavbarLayout';
 import MessageBar from '../presentation/global/MessageBar';
 import LogoBar from '../presentation/global/LogoBar';
@@ -39,7 +39,8 @@ class PageLayout extends PureComponent {
             <>
                 <ErrorContainer />
                 <LoaderContainer />
-                <AnnouncementContainer />
+                {//<AnnouncementContainer />
+                }
                 <NavbarLayout
                     message={message}
                     logo={logo}
