@@ -166,6 +166,25 @@
             "500EUR": "(22€)",
             "1000CAD": "(57.50$)",
             "1000EUR": "(41.50€)"
+        },
+        "flores-coffee": {
+            "name": "Flores",
+            "short": "Indonesian coffee (espresso)",
+            "description": "This Indonesian coffee is roasted for espresso. The plantation is surrounded by indigenous vegetation, which gives this coffee its unique flavor. It has strong nutty, caramel and orange flavor with a medium body and a long but clean after taste.\n\nThis unique taste profile makes the Flores Bajawa one of the most expensive coffees in Indonesia.",
+            "region": "Bajawan",
+            "country": "Indonesia",
+            "roast": "Espresso",
+            "lot": "Flores",
+            "process": "Fully washed",
+            "variety": "Mix, S-795",
+            "drink": "Espresso",
+            "taste": "Nutty, orange, medium body",
+            "harvest": "This Bajawa coffee is grown by a group of 50 farmers from 1 subdistrict.",
+            "altitude": "16000m",
+            "500CAD": "(29$)",
+            "500EUR": "(22€)",
+            "1000CAD": "(57.50$)",
+            "1000EUR": "(41.50€)"
         }
     },
     "subscription": {

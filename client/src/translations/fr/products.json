@@ -146,6 +146,25 @@
             "500EUR": "(22€)",
             "1000CAD": "(57.50$)",
             "1000EUR": "(41.50€)"
+        },
+        "flores-coffee": {
+            "name": "Flores",
+            "short": "Café Indonesién (espresso)",
+            "description": "Ce café indonésien est torréfié en espresso. La plantation est entourée de végétation indigène à la région qui lui procure son goût unique. On perçoit des arômes de noix, caramel et orange avec un corps moyen et un arrière-goût très plaisant.\n\nCes goûts uniques contribuent à rendre le Flores Bajawa un des cafés les plus chers de l’Indonésie.",
+            "region": "Bajawan",
+            "country": "Indonésie",
+            "roast": "Espresso",
+            "lot": "Flores",
+            "process": "Lavé",
+            "variety": "Mix, S-795",
+            "drink": "Espresso",
+            "taste": "Noix, orange, corsé",
+            "harvest": "Ce café Bajawa est cultivé par un groupe de 50 fermiers provenant d'un même sous-district.",
+            "altitude": "16000m",
+            "500CAD": "(29$)",
+            "500EUR": "(22€)",
+            "1000CAD": "(57.50$)",
+            "1000EUR": "(41.50€)"
         }
     },
     "subscription": {
