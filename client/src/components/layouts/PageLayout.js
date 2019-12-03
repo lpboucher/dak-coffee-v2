@@ -4,7 +4,9 @@ import { getProducts, fetchProducts } from '../../ducks/products';
 import { getSubscriptions, fetchSubscriptions } from '../../ducks/subscriptions';
 import { switchDisplayCurrency, openPromotion } from '../../ducks/views';
 import { initializeCart } from '../../ducks/cart';
+import { schemaBuilder } from '../utils/SEO/schema';
 
+import SEO from '../utils/SEO/SEO';
 import ErrorContainer from '../containers/global/ErrorContainer';
 import LoaderContainer from '../containers/global/LoaderContainer';
 //import AnnouncementContainer from '../containers/global/AnnouncementContainer';
@@ -35,8 +37,15 @@ class PageLayout extends PureComponent {
     }
 
     render() {
+        const schema = schemaBuilder('WebSite', 'https://dakcoffeeroasters.com')
         return (
             <>
+                <SEO 
+                    title={'Specialty coffee, roasted in Amsterdam - Dak Coffee Roasters'}
+                    description={'Order or subscribe to premium varieties of high quality specialty coffee delivered right to your door'}
+                    keywords={['coffee', 'coffee beans']}
+                    schema={schema}
+                />
                 <ErrorContainer />
                 <LoaderContainer />
                 {//<AnnouncementContainer />

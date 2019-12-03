@@ -1,6 +1,9 @@
 import React from 'react';
 import withResponsive from '../../HOCs/withResponsive';
 
+import { schemaBuilder } from '../../utils/SEO/schema';
+
+import SEO from '../../utils/SEO/SEO';
 import ProductDetails from './ProductDetails';
 import TwoColLayout from '../../layouts/TwoColLayout';
 
@@ -11,9 +14,21 @@ import { singleProductLayout } from '../../layouts/globalResponsiveLayout';
 
 const SingleProduct = ({product, currency, media}) => {
     const imageSRC = buildImageUrl(`Products/Mains/${product.main_image}`, 'f_auto,q_auto');
-    const layout = singleProductLayout(media)
+    const layout = singleProductLayout(media);
+    const schema = schemaBuilder(
+        'Product',
+        `https://dakcoffeeroasters.com/shop/${product.slug}`,
+        product.name,
+        product.main_image,
+        currency,
+        product.price[currency.toLowerCase()]['value']
+        );
     return (
         <>
+            <SEO 
+                keywords={[product.type, product.name, ...product.categories.map(cat => cat.name)]}
+                schema={schema}
+            />
             <TwoColLayout 
                 left={<Box pad={layout.imagePad} height="600px">
                         <Image fit="contain" src={imageSRC}/>
