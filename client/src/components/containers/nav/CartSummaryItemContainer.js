@@ -11,7 +11,7 @@ class CartSummaryItemContainer extends Component {
 
     componentDidMount() {
         const { cartItem } = this.props;
-        new Image().src = buildImageUrl(`Products/Thumbs/${cartItem.image}`, 'product_cart_summary');
+        new Image().src = buildImageUrl(`Products/Thumbs/${cartItem.image}`, 'f_auto,q_auto');
     }
 
     render() {

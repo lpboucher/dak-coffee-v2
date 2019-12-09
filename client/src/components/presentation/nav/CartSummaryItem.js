@@ -7,7 +7,7 @@ import { buildImageUrl } from '../../utils/Images/generateImage';
 import FullWidthEvenRowLayout from '../../layouts/FullWidthEvenRowLayout';
 
 const CartSummaryItem = ({image, name, quantity, price, currency}) => {
-    const imageSRC = buildImageUrl(`Products/Thumbs/${image}`, 'product_cart_summary');
+    const imageSRC = buildImageUrl(`Products/Thumbs/${image}`, 'f_auto,q_auto');
     const displayCurr = currency.toLowerCase()
     return (
         <FullWidthEvenRowLayout height={'80px'}>
