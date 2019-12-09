@@ -67,10 +67,8 @@ const isCoffeeProduct = (itemFields) => {
 };
 
 const calculateRatesPerRegion = (country) => {
-  //temp black friday free shipping
-  if(isFromRegion('EU', country) || isFromRegion('NA', country)) return {'cost': 0, 'description': 'Black Friday'};
-  //if(isFromRegion('EU', country)) return {'cost': 3.5, 'description': 'EU Shipping'};
-  //if(isFromRegion('NA', country)) return {'cost': 7.5, 'description': 'NA Shipping'};
+  if(isFromRegion('EU', country)) return {'cost': 3.5, 'description': 'EU Shipping'};
+  if(isFromRegion('NA', country)) return {'cost': 7.5, 'description': 'NA Shipping'};
   return {'cost': 10, 'description': 'World Shipping'};
 };
 
