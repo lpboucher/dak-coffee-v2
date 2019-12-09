@@ -15,7 +15,6 @@ const CartIconLayout = ({anchor, open, close, isOpen, quantity, icon, tooltip, m
             aria-expanded={isOpen}
             style={{width: '40px'}}
             ref={anchor}
-            className={isMobile ? "snipcart-checkout" : ""}
         >
             {!isMobile ?
                 <Stack anchor="right" fill>
