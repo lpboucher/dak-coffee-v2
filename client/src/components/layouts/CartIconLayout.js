@@ -15,6 +15,7 @@ const CartIconLayout = ({anchor, open, close, isOpen, quantity, icon, tooltip, m
             aria-expanded={isOpen}
             style={{width: '40px'}}
             ref={anchor}
+            className={"snipcart-checkout"}
         >
             {!isMobile ?
                 <Stack anchor="right" fill>
@@ -22,9 +23,7 @@ const CartIconLayout = ({anchor, open, close, isOpen, quantity, icon, tooltip, m
                     {quantity}
                 </Stack>
                 :
-                <Link to="#" className="snipcart-checkout">
                     {icon}
-                </Link>
             }
             {isOpen && tooltip
             }
