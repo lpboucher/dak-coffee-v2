@@ -23,7 +23,7 @@ const CartIconLayout = ({anchor, open, close, isOpen, quantity, icon, tooltip, m
                     {quantity}
                 </Stack>
                 :
-                    {icon}
+                    icon
             }
             {isOpen && tooltip
             }
