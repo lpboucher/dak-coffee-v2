@@ -14,9 +14,6 @@ const SubNavbar = ({loc, t}) => {
                 <NavItem to="/shop">{t("menu.shop")}</NavItem>
             </Box>
             <Box pad="xsmall">
-                <NavItem to="/christmas">{t("menu.christmas")}</NavItem>
-            </Box>
-            <Box pad="xsmall">
                 <NavItem to="/subscriptions">{t("menu.subscriptions")}</NavItem>
             </Box>
             <Box pad="xsmall">

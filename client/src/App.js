@@ -18,7 +18,6 @@ import TermsPage from './components/pages/terms/Terms';
 import PrivacyPage from './components/pages/terms/Privacy';
 import BlogPage from './components/pages/Blog';
 import ArticlePage from './components/pages/Article';
-import ChristmasPage from './components/pages/Christmas';
 
 import './App.css';
 
@@ -40,7 +39,6 @@ const App = () => {
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/blog/:slug" component={ArticlePage} />
           <Route path="/blog" component={BlogPage} />
-          <Route path="/christmas" component={ChristmasPage} />
         </Switch>
     </Layout>
   );
