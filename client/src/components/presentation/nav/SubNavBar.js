@@ -32,11 +32,7 @@ const SubNavbar = ({loc, t}) => {
                 <NavItem to="/contact">{t("menu.contact")}</NavItem>
             </Box>
             <Box pad="xsmall">
-                <NavItemWithDrop label={t("menu.blog.top")}>
-                    {//<DropItem to="/blog">Test</DropItem>
-                    }
-                    <DropItem to="/blog">{t("menu.blog.articles")}</DropItem>
-                </NavItemWithDrop>
+                <NavItem to="/blog">{t("menu.blog.top")}</NavItem>
             </Box>
         </Box>
     );
