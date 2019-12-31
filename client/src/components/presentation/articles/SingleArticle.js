@@ -11,7 +11,7 @@ import { Box } from 'grommet';
 
 import { buildImageUrl } from '../../utils/Images/generateImage';
 
-const SingleArticle = ({id, main, content, title, language, slug, media}) => {
+const SingleArticle = ({id, main, content, title, language, slug, keywords, media}) => {
     const isMobile = !(media === "medium" || media === "large" || media === "infinity");
     const imageSRC = buildImageUrl(`Articles/Headers/${main}`);
     const schema = schemaBuilder(
@@ -23,6 +23,7 @@ const SingleArticle = ({id, main, content, title, language, slug, media}) => {
     return (
         <>
             <SEO 
+                keywords={keywords.split(",")}
                 schema={schema}
             />
             <Hero

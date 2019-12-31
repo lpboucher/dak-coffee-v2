@@ -38,6 +38,9 @@
     },
     "main_img": {
       "type": "string"
+    },
+    "keywords": {
+      "type": "string"
     }
   }
 }
