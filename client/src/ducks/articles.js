@@ -29,7 +29,8 @@ switch (action.type) {
                 thumb: article.thumbnail,
                 main: article.main_img,
                 id: article.id,
-                slug: article.slug
+                slug: article.slug,
+                keywords: article.keywords
             }
             return obj
         }, {})

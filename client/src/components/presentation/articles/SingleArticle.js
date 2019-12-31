@@ -23,7 +23,7 @@ const SingleArticle = ({id, main, content, title, language, slug, keywords, medi
     return (
         <>
             <SEO 
-                keywords={keywords ? keywords.split(",") : []}
+                keywords={keywords.split(",")}
                 schema={schema}
             />
             <Hero
