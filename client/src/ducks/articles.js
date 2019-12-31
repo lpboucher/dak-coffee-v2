@@ -9,7 +9,7 @@ export const FETCH_ARTICLES_FAILURE = 'articles/fetch_articles_failure';
 //Action Creators
 export const fetchArticles = () => async dispatch => {
     try {
-        const res = await axios.get(`/api/articles`);
+        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/articles`);
         dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: res.data });
     } catch(err) {
         dispatch({ type: FETCH_ARTICLES_FAILURE, payload: {global: "error.articles.fetch"} });

@@ -9,7 +9,7 @@ export const FETCH_TERMS_FAILURE = 'terms/fetch_terms_failure';
 //Action Creators
 export const fetchTerms = () => async dispatch => {
     try {
-        const res = await axios.get(`/api/terms`);
+        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/terms`);
         dispatch({ type: FETCH_TERMS_SUCCESS, payload: res.data });
     } catch(err) {
         dispatch({ type: FETCH_TERMS_FAILURE, payload: {global: "error.articles.fetch"} });

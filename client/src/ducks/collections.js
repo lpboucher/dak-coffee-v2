@@ -10,7 +10,7 @@ export const FETCH_COLLECTIONS_FAILURE = 'collections/fetch_collections_failure'
 export const fetchCollections = () => async dispatch => {
     //dispatch({ type: FETCH_COLLECTIONS_REQUEST });
     try {
-        const res = await axios.get(`/api/groupings`);
+        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/groupings`);
         dispatch({ type: FETCH_COLLECTIONS_SUCCESS, payload: res.data });
     } catch(err) {
         //dispatch({ type: FETCH_COLLECTIONS_FAILURE});

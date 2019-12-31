@@ -10,7 +10,7 @@ export const FETCH_RELATED_FAILURE = 'related/fetch_related_failure';
 export const fetchRelated = () => async dispatch => {
     //dispatch({ type: FETCH_COLLECTIONS_REQUEST });
     try {
-        const res = await axios.get(`/api/relateds`);
+        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/relateds`);
         dispatch({ type: FETCH_RELATED_SUCCESS, payload: res.data });
     } catch(err) {
         //dispatch({ type: FETCH_COLLECTIONS_FAILURE});

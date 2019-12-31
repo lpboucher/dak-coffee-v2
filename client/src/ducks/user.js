@@ -49,7 +49,7 @@ export const addToNewsletter = (name, email) => async dispatch => {
     dispatch({ type: NEWSLETTER_REQUEST, payload: "loading.newsletter.add" });
     const language = i18n.language;
     try {
-        const res = await axios.post(`/api/newsletter`, {name, email, language});
+        const res = await axios.post(`${process.env.REACT_APP_API_PREFIX}/newsletter`, {name, email, language});
         if (res === 'error') {
             dispatch({ type: NEWSLETTER_FAILURE, payload: {newsletter: 'newsletter.error' }})
         } else {

@@ -10,7 +10,7 @@ export const FETCH_CATEGORIES_FAILURE = 'collections/fetch_categories_failure';
 export const fetchCategories = () => async dispatch => {
     //dispatch({ type: FETCH_CATEGORIES_REQUEST });
     try {
-        const res = await axios.get(`/api/categories`);
+        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/categories`);
         dispatch({ type: FETCH_CATEGORIES_SUCCESS, payload: res.data });
     } catch(err) {
         //dispatch({ type: FETCH_COLLECTIONS_FAILURE});

@@ -10,7 +10,7 @@ export const FETCH_SUBSCRIPTIONS_FAILURE = 'subscriptions/fetch_subscriptions_fa
 export const fetchSubscriptions = () => async dispatch => {
     //dispatch({ type: FETCH_COLLECTIONS_REQUEST });
     try {
-        const res = await axios.get(`/api/subscriptions`);
+        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/subscriptions`);
         dispatch({ type: FETCH_SUBSCRIPTIONS_SUCCESS, payload: res.data });
     } catch(err) {
         //dispatch({ type: FETCH_COLLECTIONS_FAILURE});

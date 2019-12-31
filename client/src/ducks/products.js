@@ -15,8 +15,7 @@ export const FETCH_INVENTORY_FAILURE = 'products/fetch_inventory_failure';
 export const fetchProducts = () => async dispatch => {
     dispatch({ type: FETCH_PRODUCTS_REQUEST });
     try {
-        const res = await axios.get(`/api/products`);
-        console.log(`${process.env.REACT_APP_API_PREFIX}/products`);
+        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/products`);
         await dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: res.data });
     } catch(err) {
         dispatch({ type: FETCH_PRODUCTS_FAILURE, payload: {global: "error.products.fetch"}});
@@ -27,7 +26,7 @@ export const fetchProducts = () => async dispatch => {
 export const fetchProductInventory = () => async dispatch => {
     dispatch({ type: FETCH_INVENTORY_REQUEST });
     try {
-        const res = await axios.get(`/api/inventory`);
+        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/inventory`);
         dispatch({ type: FETCH_INVENTORY_SUCCESS, payload: res.data });
     } catch(err) {
         dispatch({ type: FETCH_INVENTORY_FAILURE, payload: {global: "error.products.fetch"}});
