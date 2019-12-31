@@ -1,4 +1,21 @@
 export const schemaBuilder = (type, url, name, image, currency, price) => {
+    let extensionToBase = {};
+    if (type === 'Product') {
+        extensionToBase = {
+            "name": `${name}`,
+            "image": `${image}`,
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": `${currency}`,
+                "price": `${price}`,
+            }
+        }
+    } else if (type === 'Article') {
+        extensionToBase = {
+            "name": `${name}`,
+            "image": `${image}`,
+        }
+    }
     const baseSchema = {
         "@context": "https://schema.org",
         "@type": `${type}`,
@@ -12,19 +29,10 @@ export const schemaBuilder = (type, url, name, image, currency, price) => {
                 "width": 131,
                 "height": 131
             }
-        }
+        },
     }
-    return type === 'Product' ? 
-    {
+    return {
         ...baseSchema,
-        "name": `${name}`,
-        "image": `${image}`,
-        "offers": {
-            "@type": "Offer",
-            "priceCurrency": `${currency}`,
-            "price": `${price}`,
-        }
+        ...extensionToBase
     } 
-    :
-    baseSchema;
 };

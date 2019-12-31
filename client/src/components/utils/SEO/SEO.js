@@ -7,7 +7,7 @@ const SEO = ({title, description, keywords, schema}) => {
             <html lang="en"/>
             <title>{title}</title>
             <meta name="description" content={description}/>
-            <meta name="keywords" content={keywords.join(",")}/>
+            <meta name="keywords" content={keywords ? keywords.join(",") : ''}/>
             <meta name="og:title" content={title}/>
             <meta name="og:description" content={description}/>
             <meta name="twitter:title" content={title}/>
