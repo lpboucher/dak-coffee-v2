@@ -24,6 +24,9 @@ const SingleArticle = ({id, main, content, title, language, slug, keywords, medi
         <>
             <SEO 
                 keywords={keywords.split(",")}
+                title={title[language]}
+                image={imageSRC}
+                url={`https://dakcoffeeroasters.com/blog/${slug}`}
                 schema={schema}
             />
             <Hero
