@@ -15,9 +15,6 @@ const MobileMenuLayout = ({close, t, history}) => {
                 <Box pad="xsmall" fill="horizontal" onClick={()=>{history.push('/shop'); close()}}>
                     <Button plain ><NavLink style={{textTransform: 'uppercase', padding: '6px'}} to="/shop">{t("menu.shop")}</NavLink></Button>
                 </Box>
-                <Box pad="xsmall" fill="horizontal" onClick={()=>{history.push('/christmas'); close()}}>
-                    <Button plain ><NavLink style={{textTransform: 'uppercase', padding: '6px'}} to="/shop">{t("menu.christmas")}</NavLink></Button>
-                </Box>
                 <Box pad="xsmall" fill="horizontal" onClick={()=>{history.push('/subscriptions'); close()}}>
                     <Button plain><NavLink style={{textTransform: 'uppercase', padding: '6px'}} to="/subscriptions">{t("menu.subscriptions")}</NavLink></Button>
                 </Box>
