@@ -1,8 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 import { withTranslation } from 'react-i18next';
 
 import { User } from 'grommet-icons';
 import { Box, Menu } from 'grommet';
+
+const UserIcon = styled(User)`
+    width: 20px;
+    height: 20px;
+`
+
+const UserWrapper = styled.div`
+    line-height: 20px;
+`
+
+const StyledMenu = styled(Menu)`
+    margin-top: -12px;
+    margin-bottom: -12px;
+`
 
 const Account = ({t, isLoggedIn, logout}) => {
     const subMenus = [
@@ -12,14 +27,14 @@ const Account = ({t, isLoggedIn, logout}) => {
     return (
         <Box direction="row" align="center" margin={{horizontal: '20px'}} style={{cursor: 'pointer'}}>
             {isLoggedIn ?
-                <Menu
-                    label={<User />}
+                <StyledMenu
+                    label={<UserIcon />}
                     items={subMenus}
                     icon={false}
                     size="xsmall"
                 />
                 :
-                <div className="snipcart-user-profile"><User /></div>
+                <UserWrapper className="snipcart-user-profile"><UserIcon /></UserWrapper>
             }
         </Box>
     );
