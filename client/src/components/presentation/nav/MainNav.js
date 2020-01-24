@@ -13,8 +13,11 @@ import Logo from '../../utils/Logo';
 import { logoLayout } from '../../layouts/globalResponsiveLayout';
 
 const MainNav = ({t, media}) => {
-    const layout = logoLayout(media)
+    const layout = logoLayout(media);
+    const isMobile = media === "small" || media === "medium" || media === "extraSmall";
     return (
+        <>
+        {!isMobile &&
         <Box direction="row" align="center" justify="around" margin={{'horizontal': '50px'}}>
             <Box pad="xsmall">
                 <NavItem to="/shop">{t("menu.shop")}</NavItem>
@@ -46,6 +49,8 @@ const MainNav = ({t, media}) => {
                 <CartMenuContainer />
             </Box>
         </Box>
+        }
+        </>
     );
 };
 

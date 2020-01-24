@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { isSnipOpen, openSnipcart, closeSnipcart } from '../../../ducks/views';
 
-import SubNavBar from '../../presentation/nav/SubNavBar';
+import MainNav from '../../presentation/nav/MainNav';
 
 class SubNavContainer extends Component {
 
@@ -27,7 +27,7 @@ class SubNavContainer extends Component {
    
     render() {
         return (
-            <SubNavBar {...this.props}/>
+            <MainNav {...this.props}/>
         );
     }
 }
