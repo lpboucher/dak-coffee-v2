@@ -8,7 +8,7 @@ export default class extends Component {
 
   render() {
     const { open } = this.state;
-    const { label, children } = this.props;
+    const { label, children, ...rest } = this.props;
     return (
         <MenuWithDrop
           label={label}
@@ -21,6 +21,7 @@ export default class extends Component {
                 {children}
             </Box>
           )}
+          {...rest}
         />
     );
   }

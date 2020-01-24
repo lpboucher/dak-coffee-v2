@@ -10,7 +10,7 @@ const Account = ({t, isLoggedIn, logout}) => {
         { label: `${t("nav.log out")}`, onClick: () => {logout()} },
     ];
     return (
-        <Box direction="row" align="center" style={{cursor: 'pointer'}}>
+        <Box direction="row" align="center" margin={{horizontal: '20px'}} style={{cursor: 'pointer'}}>
             {isLoggedIn ?
                 <Menu
                     label={<User />}

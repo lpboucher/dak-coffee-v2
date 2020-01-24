@@ -68,12 +68,12 @@ export const logoLayout = (screenSize) => {
         },
         large: {
             pad: {'left': '25vw', 'top': '15px'},
-            width: "120px",
+            width: "100px",
             align: "center"
         },
         infinity: {
             pad: {'left': '25vw', 'top': '15px'},
-            width: "120px",
+            width: "100px",
             align: "center"
         },
     }
@@ -95,11 +95,11 @@ export const heroLayout = (screenSize, height) => {
             height: height
         },
         large: {
-            pad: '160px',
+            pad: '112px',
             height: height
         },
         infinity: {
-            pad: '160px',
+            pad: '112px',
             height: height
         }
     }
