@@ -5,9 +5,9 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { Layer, Box, Menu, Button } from 'grommet';
 import { Close } from 'grommet-icons';
 
-const MobileMenuLayout = ({close, t, history}) => {
+const MobileMenu = ({close, t, history}) => {
     return (
-        <Layer full="horizontal" modal onEsc={close} onClickOutside={close}>
+        <Layer full modal onEsc={close} onClickOutside={close}>
             <Box flex="grow" justify="start" align="start" pad={{'horizontal': '20px', top: '20px'}} background="darkGrey">
                 <Box height="20px" alignSelf="end" onClick={close}>
                     <Close />
@@ -51,4 +51,4 @@ const MobileMenuLayout = ({close, t, history}) => {
     );
 };
 
-export default withRouter(withTranslation()(MobileMenuLayout));
+export default withRouter(withTranslation()(MobileMenu));

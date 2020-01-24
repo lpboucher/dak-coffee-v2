@@ -4,7 +4,7 @@ import { isMobileOpen, openMobileMenu, closeMobileMenu } from '../../../ducks/vi
 
 import MobileMenu from '../../presentation/nav/MobileMenu';
 
-import { Menu } from 'grommet-icons';
+import Burger from '../../utils/Burger';
 
 class MobileMenuContainer extends Component {
    
@@ -12,7 +12,7 @@ class MobileMenuContainer extends Component {
         const { isMobileOpen, openMenu, closeMenu } = this.props;
         return (
             <>
-                <Menu onClick={!isMobileOpen ? openMenu : closeMenu}/>
+                <Burger open={isMobileOpen} setOpen={openMenu} setClose={closeMenu} />
                 {isMobileOpen &&
                     <MobileMenu close={closeMenu}/>
                 }
