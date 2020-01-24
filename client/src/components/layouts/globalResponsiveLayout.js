@@ -95,11 +95,11 @@ export const heroLayout = (screenSize, height) => {
             height: height
         },
         large: {
-            pad: '112px',
+            pad: '102px',
             height: height
         },
         infinity: {
-            pad: '112px',
+            pad: '102px',
             height: height
         }
     }

@@ -13,7 +13,7 @@ const CartIconLayout = ({anchor, open, close, isOpen, quantity, icon, tooltip, m
             onMouseLeave={!isMobile ? close : null}
             aria-controls="example-collapse-text"
             aria-expanded={isOpen}
-            style={{width: '40px'}}
+            style={{width: '40px', lineHeight: '20px'}}
             ref={anchor}
             className={"snipcart-checkout"}
         >
