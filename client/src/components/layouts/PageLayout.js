@@ -17,6 +17,10 @@ import TopNavBar from  '../presentation/nav/TopNavBar'
 import SubNavBar from '../containers/nav/SubNavContainer';
 import Footer from '../presentation/footer/Footer';
 
+import ConfigBar from '../presentation/global/ConfigBar';
+import NavigationLayout from '../layouts/NavigationLayout';
+import MainNav from '../presentation/nav/MainNav';
+
 const message = <MessageBar text="announcement.text" loc="announce"/>;
 const logo = <LogoBar loc="logo" />;
 const topNav = <TopNavBar loc="topNav"/>;
@@ -50,12 +54,16 @@ class PageLayout extends PureComponent {
                 <LoaderContainer />
                 {//<AnnouncementContainer />
                 }
-                <NavbarLayout
+                <NavigationLayout>
+                    <ConfigBar />
+                    <MainNav />
+                </NavigationLayout>
+                {/*<NavbarLayout
                     message={message}
                     logo={logo}
                     topNav={topNav}
                     subNav={subNav}
-                />
+                />*/}
                 {this.props.children}
                 <Footer />
             </>
