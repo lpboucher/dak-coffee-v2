@@ -232,6 +232,10 @@ export const DakTheme = {
         size: "14px",
         height: "28px",
       },
+      mid: {
+        size: "20px",
+        height: "40px",
+      },
       large: {
         size: "26px",
         height: "52px",

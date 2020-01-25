@@ -113,6 +113,10 @@ export const introLayout = (screenSize, isSmall) => {
                 size: 'small',
                 margin: isSmall ? "medium" : {"horizontal": "large", "vertical": "small"}
             },
+            snap: {
+                size: 'small',
+                margin: isSmall ? "medium" : {"horizontal": "large", "vertical": "small"}
+            },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
             align: 'center',
@@ -120,6 +124,10 @@ export const introLayout = (screenSize, isSmall) => {
         },
         small: {
             main: {
+                size: 'small',
+                margin: isSmall ? "medium" : "large"
+            },
+            snap: {
                 size: 'small',
                 margin: isSmall ? "medium" : "large"
             },
@@ -133,6 +141,10 @@ export const introLayout = (screenSize, isSmall) => {
                 size: isSmall ? 'xsmall' : 'small',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
             },
+            snap: {
+                size: isSmall ? 'xsmall' : 'small',
+                margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
+            },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
             align: 'start',
@@ -143,6 +155,10 @@ export const introLayout = (screenSize, isSmall) => {
                 size: isSmall ? 'small' : '',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
             },
+            snap: {
+                size: isSmall ? 'small' : 'mid',
+                margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
+            },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : 'small', margin: {"bottom": "medium"}},
             align: 'start',
@@ -151,6 +167,10 @@ export const introLayout = (screenSize, isSmall) => {
         infinity: {
             main: {
                 size: isSmall ? 'small' : '',
+                margin: isSmall ? {"bottom": "medium"} : {"bottom": "medium"}
+            },
+            snap: {
+                size: isSmall ? 'small' : 'mid',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "medium"}
             },
             sub: { size: isSmall ? '10px' : 'small'},
