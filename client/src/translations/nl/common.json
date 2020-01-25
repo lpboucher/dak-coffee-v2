@@ -36,7 +36,10 @@
         "team": "Wij gaan altijd voor de hoogste kwaliteit.",
         "wholesale": "Er gaat niks boven een soepele, vruchtbare samenwerking. Daarom geven wij onszelf altijd 100%. Ongeacht hoe groot of klein de samenwerking ook is.",
         "contact": "Van boerderij tot boon, van branding tot bereiding. We besteden aandacht aan elk detail. En dat proef je.",
-        "account": "Welkom in jouw account."
+        "account": "Welkom in jouw account.",
+        "cta": {
+            "shop": "Shop your coffee"
+        }
     },
     "intros": {
         "subscription": {

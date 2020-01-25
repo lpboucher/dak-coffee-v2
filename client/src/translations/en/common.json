@@ -36,22 +36,25 @@
         "team": "It's good because we care and pay great attention to every step from farm to roast to brew.",
         "wholesale": "We partner with people who share our uncompromised, passion-driven approach to coffee.",
         "contact": "Collaboration is key. Whether big or small, we engage in passion-driven partnerships.",
-        "account": "Welcome to your account."
+        "account": "Welcome to your account.",
+        "cta": {
+            "shop": "Shop your coffee"
+        }
     },
     "intros": {
         "subscription": {
-            "title": "Monthly Coffee Subscription",
-            "helper": "FROM {{price}} | FREE SHIPPING | COMMITMENT FREE",
+            "title": "Coffee Subscriptions.",
+            "helper": "From {{price}}, free shipping, commitment free.",
             "description": "Have your coffee delivered to your doorstep every month by opting for one of our subscriptions. Choose between:\n\n<strong>OUR CLASSICS</strong>: Choose a roast and receive a selection of origin coffees in either filter or espresso roasts (or both, why not!)\n\n<strong>THE ROASTER’S CHOICE</strong>: Let the roaster surprise you with his preferred roast of the month. This subscription will offer different assortments of filter/espresso/limited edition roasts, but our roaster never compromises the quality or taste, so this is truly the best way to familiarize yourself with fresh, new coffees!",
             "short description": "Have your coffee delivered to your doorstep every month by opting for one of our subscriptions. Choose between our classics or the roaster's choice.",
             "button": "Subscribe"
         },
         "limited edition": {
-            "title": "Our Limited Edition",
+            "title": "Our Current Limited Edition Mile High Coffee",
             "subtitle": "coffee for two",
             "helper": "Almond, Caramel, Cacao butter",
-            "description": "This month’s limited edition is from the region of Chalatenango in El Salvador. You can expect tasting notes of almond, caramel and cacao butter. We’ve roasted this single origin coffee as an omni-roast, equally delicious if brewed as an espresso or as a filter coffee. We have limited quantities!\n\n<strong>Farm</strong>: Finca El Caracol | <strong>Country</strong>: El Salvador\n<strong>Region</strong>: Chalatenango | <strong>Process</strong>: Washed\n<strong>Altitude</strong>: 1700m | <strong>Variety</strong>: Pacamara",
-            "button": "Buy Coffee"
+            "description": "This new limited edition from Colombia is roasted for filter coffees and is particularly enjoyable brewed with an aeropress. Complex like its region’s history, this coffee is fruity, sweet and surprising.",
+            "button": "Order this coffee"
         },
         "values": {
             "title": "What we believe in",
