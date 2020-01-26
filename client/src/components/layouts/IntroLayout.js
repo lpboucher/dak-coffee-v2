@@ -34,7 +34,7 @@ const IntroSection = ({heading, subHeading, helperText, snap, description, summa
                 </Text>
             }
             {summaryText &&
-                <Text size={layout.main.size} margin={layout.main.margin} textAlign={layout.align} weight="bold">
+                <Text size={layout.snap.size} margin={layout.snap.margin} textAlign={layout.align} weight="bold">
                     {summary}
                 </Text>
             }

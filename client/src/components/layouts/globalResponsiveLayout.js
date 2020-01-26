@@ -530,7 +530,7 @@ export const coffeeRowLayout = (screenSize) => {
         small: {},
         medium: {},
         large: {},
-        infinity: {}
+        infinity: {width: '25%', }
     };
     return mediaQueries[screenSize]
 }
