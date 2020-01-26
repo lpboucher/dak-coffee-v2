@@ -7,14 +7,16 @@ import CoffeeCardContainer from '../containers/products/CoffeeCardContainer';
 
 import { Box } from 'grommet';
 
-//import { productGridLayout } from './globalResponsiveLayout';
+import { coffeeRowLayout } from './globalResponsiveLayout';
 
 const CoffeeRow = ({coffees, media, t}) => {
-    //const layout = productGridLayout(media)
+    const layout = coffeeRowLayout(media)
     return (
-    <Box pad="large" direction="row" background="mainWhite"> 
-        {coffees.map(id => (
-            <CoffeeCardContainer key={id} id={id}/>
+    <Box pad="large" direction="row" justify="evenly" background="mainWhite" wrap> 
+        {coffees.slice(0,4).map(id => (
+        <Box key={id} width="25%">
+            <CoffeeCardContainer id={id}/>
+        </Box>
         ))}
     </Box> 
     );

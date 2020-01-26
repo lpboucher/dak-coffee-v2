@@ -124,12 +124,12 @@ export const introLayout = (screenSize, isSmall) => {
         },
         small: {
             main: {
-                size: 'small',
+                size: 'mid',
                 margin: isSmall ? "medium" : "large"
             },
             snap: {
-                size: 'small',
-                margin: isSmall ? "medium" : "large"
+                size: 'mid',
+                margin: isSmall ? "small" : "medium"
             },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
@@ -138,12 +138,12 @@ export const introLayout = (screenSize, isSmall) => {
         },
         medium: {
             main: {
-                size: isSmall ? 'xsmall' : 'small',
+                size: isSmall ? 'small' : 'mid',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
             },
             snap: {
-                size: isSmall ? 'xsmall' : 'small',
-                margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
+                size: isSmall ? 'small' : 'mid',
+                margin: isSmall ? {"bottom": "small"} : {"bottom": "medium"}
             },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
@@ -509,6 +509,28 @@ export const singleProductLayout = (screenSize) => {
         medium: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
         large: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
         infinity: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}}
+    };
+    return mediaQueries[screenSize]
+}
+
+export const callToActionLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {align: 'center'},
+        small: {align: 'center'},
+        medium: {align: 'start'},
+        large: {align: 'start'},
+        infinity: {align: 'start'}
+    };
+    return mediaQueries[screenSize]
+}
+
+export const coffeeRowLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {},
+        small: {},
+        medium: {},
+        large: {},
+        infinity: {}
     };
     return mediaQueries[screenSize]
 }
