@@ -13,9 +13,11 @@ const ConfigBar = ({media}) => {
     const isMobile = media === "small" || media === "medium" || media === "extraSmall";
     return (
         <Box direction="row" justify="end" align="center" fill background="darkGrey">
-            <AccountContainer />
             {isMobile &&
-                <CartMenuContainer />
+                <>
+                    <AccountContainer />
+                    <CartMenuContainer />
+                </>
             }
             <CurrencySelectorContainer />
             <LanguageSelectorContainer />

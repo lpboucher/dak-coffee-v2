@@ -9,6 +9,7 @@ import NavItem from './SubNavItem';
 import NavItemWithDrop from './SubNavItemWithDrop'
 import DropItem from '../../utils/DropItem';
 import CartMenuContainer from '../../containers/nav/CartMenuContainer';
+import AccountContainer from '../../containers/nav/AccountContainer';
 import Logo from '../../utils/Logo';
 import { logoLayout } from '../../layouts/globalResponsiveLayout';
 
@@ -45,8 +46,13 @@ const MainNav = ({t, media}) => {
             <Box pad="xsmall">
                 <NavItem to="/blog">{t("menu.blog.top")}</NavItem>
             </Box>
-            <Box pad="xsmall">
-                <CartMenuContainer />
+            <Box direction="row">
+                <Box justify="center">
+                    <CartMenuContainer />
+                </Box>
+                <Box justify="center">
+                    <AccountContainer />
+                </Box>
             </Box>
         </Box>
         }
