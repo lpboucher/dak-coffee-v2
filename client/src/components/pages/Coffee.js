@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import withResponsive from '../HOCs/withResponsive';
 
+import SEO from '../utils/SEO/SEO';
 import Hero from '../presentation/global/Hero';
 import Loader from '../utils/SimpleLoader';
 import Ethics from '../presentation/intros/Ethics';
@@ -15,6 +16,7 @@ const CoffeePage = ({media}) => {
     const isNotSmall = media === "medium" || media === "large" || media === "infinity";
     return (
     <>
+        <SEO canon="https://www.dakcoffeeroasters.com/our-coffee" />
         { isNotSmall &&
         <Hero
             bgImage={header}

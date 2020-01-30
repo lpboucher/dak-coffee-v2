@@ -16,7 +16,7 @@ const SingleArticle = ({id, main, content, title, language, slug, keywords, medi
     const imageSRC = buildImageUrl(`Articles/Headers/${main}`);
     const schema = schemaBuilder(
         'Article',
-        `https://dakcoffeeroasters.com/blog/${slug}`,
+        `https://www.dakcoffeeroasters.com/blog/${slug}`,
         title[language],
         imageSRC,
         );
@@ -26,8 +26,9 @@ const SingleArticle = ({id, main, content, title, language, slug, keywords, medi
                 keywords={keywords.split(",")}
                 title={title[language]}
                 image={imageSRC}
-                url={`https://dakcoffeeroasters.com/blog/${slug}`}
+                url={`https://www.dakcoffeeroasters.com/blog/${slug}`}
                 schema={schema}
+                canon={`https://www.dakcoffeeroasters.com/blog/${slug}`}
             />
             <Hero
                     bgImage={imageSRC}

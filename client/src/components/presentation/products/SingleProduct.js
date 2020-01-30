@@ -17,7 +17,7 @@ const SingleProduct = ({product, currency, media}) => {
     const layout = singleProductLayout(media);
     const schema = schemaBuilder(
         'Product',
-        `https://dakcoffeeroasters.com/shop/${product.slug}`,
+        `https://www.dakcoffeeroasters.com/shop/${product.slug}`,
         product.name,
         product.main_image,
         currency,
@@ -28,6 +28,8 @@ const SingleProduct = ({product, currency, media}) => {
             <SEO 
                 keywords={[product.type, product.name, ...product.categories.map(cat => cat.name)]}
                 schema={schema}
+                canon={`https://www.dakcoffeeroasters.com/shop/${product.slug}`}
+                url={`https://www.dakcoffeeroasters.com/shop/${product.slug}`}
             />
             <TwoColLayout 
                 left={<Box pad={layout.imagePad} height="600px">

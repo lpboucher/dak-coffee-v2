@@ -1,10 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-const SEO = ({title, description, image, url, keywords, schema}) => {
+const SEO = ({title, description, image, url, keywords, schema, canon}) => {
     return (
         <Helmet>
             <html lang="en"/>
+            {canon && <link rel="canonical" href={canon} />}
             {title && <title>{title}</title>}
             {title && <meta name="og:title" content={title}/>}
             {title && <meta name="twitter:title" content={title}/>}

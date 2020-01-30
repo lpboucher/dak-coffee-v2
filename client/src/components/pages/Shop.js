@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import withResponsive from '../HOCs/withResponsive';
 import { getDisplayCurrency } from '../../ducks/views';
 
+import SEO from '../utils/SEO/SEO';
 import SubscriptionBanner from '../presentation/products/SubscriptionBanner';
 import CategoriesContainer from '../containers/categories/ProductCategoriesContainer';
 
@@ -16,6 +17,7 @@ class Shop extends Component {
         const layout = shopPageLayout(media);
         return (
             <>
+                <SEO canon="https://www.dakcoffeeroasters.com/shop" />
                 <Box pad={{top: layout.padTop}} margin={{bottom: "large", right: "large"}} width={layout.width}>
                     <SubscriptionBanner isMobile={media === "extraSmall" || media === "small"} currency={currency}/>
                 </Box>

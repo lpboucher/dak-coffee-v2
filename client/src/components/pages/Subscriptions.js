@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 
+import SEO from '../utils/SEO/SEO';
 import Hero from '../presentation/global/Hero';
 import Loader from '../utils/SimpleLoader';
 import SubscriptionDescription from '../presentation/subscriptions/SubscriptionDescription';
@@ -14,6 +15,7 @@ const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_au
 const Subscription = () => {
     return (
     <>
+        <SEO canon="https://www.dakcoffeeroasters.com/subscriptions" />
         <Hero
             bgImage={header}
             overlay={{

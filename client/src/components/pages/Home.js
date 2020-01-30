@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import withResponsive from '../HOCs/withResponsive';
 import { getDisplayCurrency } from '../../ducks/views';
 
+import SEO from '../utils/SEO/SEO';
 import Hero from '../presentation/global/Hero';
 import Loader from '../utils/SimpleLoader';
 import SubscriptionIntro from '../presentation/intros/Subscriptions';
@@ -21,6 +22,7 @@ class Home extends Component {
         const isNotSmall = media === "medium" || media === "large" || media === "infinity";
         return (
             <>
+                <SEO canon="https://www.dakcoffeeroasters.com" />
                 {isNotSmall &&
                     <Hero
                         bgImage={header}
