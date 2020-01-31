@@ -115,6 +115,10 @@ export const DakTheme = {
             height: "16px",
             maxWidth: "100%"
         },
+        smaller: {
+          size: "12px",
+          height: "24px",
+      },
           small: {
               size: "16px",
               height: "32px",
