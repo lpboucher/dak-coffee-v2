@@ -9,11 +9,11 @@ const NewsletterForm = ({nameField, emailField, link, button, media, isFull}) =>
     const layout = newsletterFormLayout(media, isFull);
     return (
         <Box direction="row" justify="around" wrap>
-            <Box width={layout.width} pad={{"top": "medium", "left": "medium", "right": "medium"}}>
+            <Box width={layout.width} pad={{"top": "small", "left": "medium", "right": "medium"}}>
                 {nameField}
                 {!isFull ? link : null}
             </Box>
-            <Box width={layout.width} pad={{"top": "medium", "left": "medium", "right": "medium"}} >
+            <Box width={layout.width} pad={{"top": "small", "left": "medium", "right": "medium"}} >
                 {emailField}
                 {isFull ? link : null}
                 {button}
