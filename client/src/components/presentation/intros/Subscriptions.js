@@ -4,7 +4,7 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
 
-const introImg = "https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1579957755/Intros/BoxShipping_igg0f9.png";
+const introImg = "https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1580466638/Intros/BoxShipping_2_mgcqjw.png";
 
 const SubscriptionIntro = ({currency}) => {
     const prices = {EUR: '€25', CAD: '$35'}

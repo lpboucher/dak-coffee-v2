@@ -4,15 +4,15 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
 
-const beans = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1572969989/Intros/BelieveinV2_cysbar.jpg';
+const beans = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1580468218/Intros/whatwebelievein_bfqcvy.jpg';
 
 const ValuesIntro = () => {
     const intro = 
         <IntroLayout 
             link="/about"
             heading="intros.values.title"
-            description="intros.values.description"
-            btnLabel="intros.values.button"
+            snap="intros.values.description"
+            ctaLabel="intros.values.button"
         />
     return (
         <TwoColLayout 

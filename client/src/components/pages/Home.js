@@ -12,7 +12,6 @@ const LimitedEditionsIntro = lazy(() => import('../presentation/intros/LimitedEd
 const FeaturedProductsContainer = lazy(() => import('../containers/products/FeaturedProductsContainer'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 const ValuesIntro = lazy(() => import('../presentation/intros/Values'));
-const BrewingIntro = lazy(() => import('../presentation/intros/Brewing'));
 
 const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1565717609/Heros/Header_Aboutus_qwdlkf.jpg'
 
@@ -42,7 +41,6 @@ class Home extends Component {
                     <FeaturedProductsContainer collection='featured-products'/>
                     <NewsletterContainer />
                     <ValuesIntro />
-                    <BrewingIntro /> 
                 </Suspense>    
             </>
         );
