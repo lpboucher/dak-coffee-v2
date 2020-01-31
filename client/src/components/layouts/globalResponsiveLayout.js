@@ -482,11 +482,11 @@ export const productSpecsLayout = (screenSize) => {
 
 export const aboutProfilesLayout = (screenSize) => {
     const mediaQueries = {
-        extraSmall: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}},
-        small: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}},
-        medium: {height: ['90%', '10%'], size: "", align:"start", pad: {top: '0px'}},
-        large: {height: ['90%', '10%'], size: "", align:"start", pad: {top: '0px'}},
-        infinity: {height: ['90%', '10%'], size: "", align:"start", pad: {top: '0px'}},
+        extraSmall: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}, width:'100%'},
+        small: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}, width:'50%'},
+        medium: {height: ['400px', ''], size: "small", align:"start", pad: {top: '0px'}, width:'50%'},
+        large: {height: ['400px', ''], size: "small", align:"start", pad: {top: '0px'}, width:'33%'},
+        infinity: {height: ['400px', ''], size: "small", align:"start", pad: {top: '0px'}, width:'33%'},
     };
     return mediaQueries[screenSize]
 }
@@ -526,13 +526,68 @@ export const callToActionLayout = (screenSize) => {
 
 export const coffeeRowLayout = (screenSize) => {
     const mediaQueries = {
-        extraSmall: {},
-        small: {},
-        medium: {},
-        large: {},
-        infinity: {width: '25%', }
+        extraSmall: {
+            pad: {horizontal: "large", top: '64px', bottom: '24px'},
+            itemWidth: '50%'
+        },
+        small: {
+            pad: {horizontal: "large", top: '64px', bottom: '24px'},
+            itemWidth: '50%'
+        },
+        medium: {
+            pad: 'large',
+            itemWidth: '25%'
+        },
+        large: {
+            pad: 'large',
+            itemWidth: '25%'
+        },
+        infinity: {
+            pad: 'large',
+            itemWidth: '25%'
+        },
     };
     return mediaQueries[screenSize]
 }
 
+export const coffeeCardLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {height: '300px'},
+        small: {height: '300px'},
+        medium: {height: '300px'},
+        large: {height: '300px'},
+        infinity: {height: '300px'}
+    };
+    return mediaQueries[screenSize]
+}
 
+export const coffeeCardInfoLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {fontSize: {
+            top: 'small',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+        small: {fontSize: {
+            top: 'small',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+        medium: {fontSize: {
+            top: 'small',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+        large: {fontSize: {
+            top: 'medium',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+        infinity: {fontSize: {
+            top: 'medium',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+    };
+    return mediaQueries[screenSize]
+}
