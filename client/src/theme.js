@@ -16,7 +16,7 @@ export const DakTheme = {
         zIndex: '1021',
       },
       font: {
-        family: 'Montserrat',
+        family: 'Montserrat, Century Gothic, sans-serif',
         size: '14px',
       },
       hover: {
