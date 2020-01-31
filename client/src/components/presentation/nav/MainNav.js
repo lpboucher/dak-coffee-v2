@@ -19,7 +19,7 @@ const MainNav = ({t, media}) => {
     return (
         <>
         {!isMobile &&
-        <Box direction="row" align="center" justify="around" margin={{'horizontal': '50px'}}>
+        <Box direction="row" align="center" justify="around" margin={media !== 'large' ? {'horizontal': '50px'} : ''}>
             <Box pad="xsmall">
                 <NavItem to="/shop">{t("menu.shop")}</NavItem>
             </Box>
@@ -45,14 +45,6 @@ const MainNav = ({t, media}) => {
             </Box>
             <Box pad="xsmall">
                 <NavItem to="/blog">{t("menu.blog.top")}</NavItem>
-            </Box>
-            <Box direction="row">
-                <Box justify="center">
-                    <CartMenuContainer />
-                </Box>
-                <Box justify="center">
-                    <AccountContainer />
-                </Box>
             </Box>
         </Box>
         }
