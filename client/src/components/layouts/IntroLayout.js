@@ -7,9 +7,12 @@ import { Box, Heading, Text, Button } from 'grommet';
 
 import { introLayout } from './globalResponsiveLayout';
 
-const IntroSection = ({heading, subHeading, helperText, description, btnLabel, link, options=null, children, isSmall=false, t, media}) => {
+import CallToAction from '../presentation/global/CallToAction';
+
+const IntroSection = ({heading, subHeading, helperText, snap, description, summaryText, btnLabel, ctaLabel, link, options=null, children, isSmall=false, t, media}) => {
     const helper = options ? t(helperText, options) : t(helperText);
     const subHead = options ? t(subHeading, options) : t(subHeading);
+    const summary = options ? t(summaryText, options) : t(summaryText);
     const layout = introLayout(media, isSmall);
     return (
         <Box margin={layout.around}>
@@ -20,15 +23,30 @@ const IntroSection = ({heading, subHeading, helperText, description, btnLabel, l
             {helperText &&
                 <Heading level={3} margin={layout.main.margin} size={layout.small.size} style={{fontWeight: '400'}} textAlign={layout.align}>{helper}</Heading>
             }
-            <Text size={layout.main.size} margin={layout.main.margin} textAlign={layout.align}>
-                <Trans i18nKey={description} />
-            </Text>
+            {snap &&
+                <Text size={layout.snap.size} margin={layout.snap.margin} textAlign={layout.align}>
+                    <Trans i18nKey={snap} />
+                </Text>
+            }
+            {description &&
+                <Text size={layout.main.size} margin={layout.main.margin} textAlign={layout.align}>
+                    <Trans i18nKey={description} />
+                </Text>
+            }
+            {summaryText &&
+                <Text size={layout.snap.size} margin={layout.snap.margin} textAlign={layout.align} weight="bold">
+                    {summary}
+                </Text>
+            }
             {btnLabel &&
             <Box alignSelf={layout.align}>
                 <Link to={link}>
                     <Button primary label={t(btnLabel)} alignSelf={layout.align} style={{color: 'white'}}/>
                 </Link>
             </Box>
+            }
+            {ctaLabel &&
+                <CallToAction link={link} label={ctaLabel} />
             }
         </Box>
     );

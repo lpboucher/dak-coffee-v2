@@ -36,12 +36,15 @@
         "team": "Wij gaan altijd voor de hoogste kwaliteit.",
         "wholesale": "Er gaat niks boven een soepele, vruchtbare samenwerking. Daarom geven wij onszelf altijd 100%. Ongeacht hoe groot of klein de samenwerking ook is.",
         "contact": "Van boerderij tot boon, van branding tot bereiding. We besteden aandacht aan elk detail. En dat proef je.",
-        "account": "Welkom in jouw account."
+        "account": "Welkom in jouw account.",
+        "cta": {
+            "shop": "Shop your coffee"
+        }
     },
     "intros": {
         "subscription": {
             "title": "Maandabonnement",
-            "helper": "VANAF {{price}} | GRATIS VERZENDING | ZONDER VERPLICHTINGEN",
+            "helper": "Vanaf {{price}}, gratis verzending, zonder verplichtingen",
             "description": "Kies voor een van onze abonnementen en ontvang elke maand verse, ambachtelijk gebrande koffiebonen thuis. Je kunt kiezen uit:\n\n<strong>ONZE KLASSIEKERS</strong>. Kies je favoriete branding en ontvang een selectie heerlijke, single origin filterbonen of espressobonen. Of allebei. Waarom niet?\n\n<strong>ROASTER’S CHOICE</strong>. Laat je verrassen door onze meesterbrander. Elke maand kiest hij de lekkerste filter, espresso of limited edition koffiebonen voor jou uit. Altijd van de hoogste kwaliteit. Altijd met een heerlijk volle smaak. Wil jij de allerlekkerste nieuwe koffies leren kennen? Dan is dit jouw abonnement.",
             "short description": "Ontvang elke maand de lekkerste koffie bij je thuis door te kiezen voor een van onze abonnementen. Je hebt de keuze tussen ‘onze klassiekers’ en ‘The Roaster’s Choice’.",
             "button": "Bestel nu"
@@ -50,12 +53,12 @@
             "title": "Onze Limited Edition",
             "subtitle": "coffee for two",
             "helper": "Amandel-, karamel- en cacaobotersmaak",
-            "description": "De limited edition van deze maand komt uit de regio van Chaletango in El Salvador. Laat je verrassen door zijn heerlijke amandel-, karamel- en cacaobotersmaak. Deze single origin koffie hebben we gebrand als een omni-roast en is perfect voor zowel espresso als  filterkoffie. Let op, we hebben hier maar een beperkte hoeveelheid van.\n\n<strong>Producent</strong>: Finca El Caracol | <strong>Land</strong>: El Salvador\n<strong>Regio</strong>: Chalatenango | <strong>Verwerkingsproces</strong>: Washed\n<strong>Hoogte</strong>: 1700m | <strong>Variëteit</strong>: Pacamara",
+            "description": "This new limited edition from Colombia is roasted for filter coffees and is particularly enjoyable brewed with an aeropress. Complex like its region’s history, this coffee is fruity, sweet and surprising.",
             "button": "Bestel koffie"
         },
         "values": {
             "title": "Wie we zijn. Waar we voor staan",
-            "description": "Bij Dak vinden we vijf zaken erg belangrijk: heerlijke koffie, maatwerk, creativiteit, het milieu en goede leefomstandigheden voor koffieboeren.\n\nOns doel is om jou te laten genieten van de hoogste kwaliteit koffie. Daarom worden al onze koffies met de grootste zorg geselecteerd. Om deze kwaliteit te waarborgen organiseren onze teams elke week nieuwe cupping-sessies (strenge proef -en controlesessies). Daarnaast hebben wij twee brandingssessies per week, zodat je koffie altijd gegarandeerd vers is. Continu testen en ontwikkelen houdt het niveau van onze koffie hoog en jouw smaakpapillen scherp.\n\nGoede koffie smaakt nog beter als het ook ethisch verantwoorde koffie is. Daarom hebben we bij DAK alleen partnerships met importeurs die onze waarden delen, werken we samen met exclusieve koffiegebieden* en doen we uitgebreid onderzoek naar de koffieboerderijen. Bovendien betalen we graag iets meer voor onze groene koffiebonen zodat de boeren eerlijk betaald krijgen en onze klanten gegarandeerd de hoogste kwaliteit genieten.",
+            "description": "Goede koffie smaakt nog beter als het ook ethisch verantwoorde koffie is. Daarom hebben we bij DAK alleen partnerships met importeurs die onze waarden delen, werken we samen met exclusieve koffiegebieden* en doen we uitgebreid onderzoek naar de koffieboerderijen.\n\nBovendien betalen we graag iets meer voor onze groene koffiebonen zodat de boeren eerlijk betaald krijgen en onze klanten gegarandeerd de hoogste kwaliteit genieten.",
             "button": "Lees verder"
         },
         "brewing": {

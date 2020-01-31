@@ -36,12 +36,15 @@
         "team": "Du terroir à votre tasse, c'est avec fierté que nous vous proposons un café de qualité.",
         "wholesale": "Collaborer, c’est la clé. Nos partenariats, petits ou grands, sont tous motivés par la passion commune du café.",
         "contact": "Nous avons à cœur chacune des étapes qui entrent en jeu dans le traitement du café.",
-        "account": "Bienvenue dans votre compte."
+        "account": "Bienvenue dans votre compte.",
+        "cta": {
+            "shop": "Voir les cafés"
+        }
     },
     "intros": {
         "subscription": {
             "title": "Abonnement caféiné",
-            "helper": "À PARTIR DE {{price}} | LIVRAISON GRATUITE | SANS ENGAGEMENT",
+            "helper": "À partir de {{price}}, livraison gratuite, sans engagement",
             "description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements. Voici les options qui s’offrent à vous:\n\n<strong>NOS CLASSIQUES</strong>. Choisissez une torréfaction et recevez une sélection de cafés d’origine pour une extraction filtre ou espresso (ou pourquoi pas les deux!).\n\n<strong>LE CHOIX DU TORRÉFACTEUR</strong>. Laissez le maître torréfacteur vous surprendre avec son coup de cœur du mois. Vous obtiendrez ainsi un assortiment de torréfactions filtre, espresso et édition limitée. Sans jamais compromettre la qualité ni le goût, notre torréfacteur vous fera découvrir toutes les subtilités de ses cafés. La formule idéale pour vous initier à de nouveaux arômes de cafés frais.",
             "short description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements. Choisissez entre nos classiques ou le choix du torréfacteur",
             "button": "Abonnez-vous"
@@ -50,12 +53,12 @@
             "title": "Notre édition limitée",
             "subtitle": "coffee for two",
             "helper": "Amandes, Caramel, Beurre de Cacao",
-            "description": "L’édition limitée du mois provient de la région de Chalatenango, au El Salvador. Elle vous charmera par ses notes d’amande, de caramel et de beurre de cacao. Nous avons torréfié ce café pur de manière qu’il soit polyvalent; il est tout aussi délicieux en espresso qu’en café filtre. Avis aux intéressés, les quantités sont limitées!\n\n<strong>Ferme</strong>: Finca El Caracol | <strong>Origine</strong>: El Salvador\n<strong>Région</strong>: Chalatenango | <strong>Procédé</strong>: Lavé\n<strong>Altitude</strong>: 1700m | <strong>Variété</strong>: Pacamara",
+            "description": "L’édition limitée du mois est torréfiée pour une infusion filtre et se prête bien à une infusion avec un aeropress. Complexe comme le passé de sa région, ce café est fruité, sucré et surprenant.",
             "button": "Commander"
         },
         "values": {
             "title": "Notre raison d’être et nos valeurs",
-            "description": "Cinq choses comptent plus que tout pour nous : la saveur exquise du café, l’environnement, les conditions sociales des cultivateurs, la créativité et la personnalisation.\n\nNotre principale considération est de vous offrir un café de grande qualité. Tous les cafés que nous torréfions ont été choisis avec soin. Chaque semaine, notre équipe effectue des séances de dégustation pour en contrôler la qualité. Aussi, nous procédons à la torréfaction deux fois par semaine afin que vous ayez accès au café le plus frais qui soit. En testant régulièrement nos produits et en misant sur le développement, nous nous assurons de garder vos papilles bien éveillées.\n\nUn bon café goûte encore meilleur quand il a été produit de manière éthique. Nous traitons uniquement avec des importateurs qui partagent nos valeurs, qui négocient l’exclusivité de certains lots et qui font des recherches poussées sur les producteurs. Nous sommes disposés à payer un prix fort pour nos grains de café vert de sorte que les cultivateurs obtiennent leur juste part et que nos clients aient accès à un café d’une qualité exceptionnelle.",
+            "description": "Un bon café goûte encore meilleur quand il a été produit de manière éthique. Nous traitons uniquement avec des importateurs qui partagent nos valeurs, qui négocient l’exclusivité de certains lots et qui font des recherches poussées sur les producteurs.\n\nNous sommes disposés à payer un prix fort pour nos grains de café vert de sorte que les cultivateurs obtiennent leur juste part et que nos clients aient accès à un café d’une qualité exceptionnelle.",
             "button": "En savoir plus"
         },
         "brewing": {

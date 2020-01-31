@@ -10,17 +10,11 @@ import SEO from '../utils/SEO/SEO';
 import ErrorContainer from '../containers/global/ErrorContainer';
 import LoaderContainer from '../containers/global/LoaderContainer';
 //import AnnouncementContainer from '../containers/global/AnnouncementContainer';
-import NavbarLayout from './NavbarLayout';
-import MessageBar from '../presentation/global/MessageBar';
-import LogoBar from '../presentation/global/LogoBar';
-import TopNavBar from  '../presentation/nav/TopNavBar'
 import SubNavBar from '../containers/nav/SubNavContainer';
 import Footer from '../presentation/footer/Footer';
 
-const message = <MessageBar text="announcement.text" loc="announce"/>;
-const logo = <LogoBar loc="logo" />;
-const topNav = <TopNavBar loc="topNav"/>;
-const subNav = <SubNavBar loc="subNav"/>;
+import ConfigBar from '../presentation/global/ConfigBar';
+import NavigationLayout from '../layouts/NavigationLayout';
 
 class PageLayout extends PureComponent {
 
@@ -50,12 +44,10 @@ class PageLayout extends PureComponent {
                 <LoaderContainer />
                 {//<AnnouncementContainer />
                 }
-                <NavbarLayout
-                    message={message}
-                    logo={logo}
-                    topNav={topNav}
-                    subNav={subNav}
-                />
+                <NavigationLayout>
+                    <ConfigBar />
+                    <SubNavBar />
+                </NavigationLayout>
                 {this.props.children}
                 <Footer />
             </>

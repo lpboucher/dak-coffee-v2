@@ -9,10 +9,10 @@ const NewsletterSectionLayout = ({form, children, media, isFull=false}) => {
     const layout = newsletterFullLayout(media, isFull);
     return ( 
         <Box direction={layout.dir} pad={isFull ? "large" : "small"} background="mainDark" wrap>
-            <Box width={layout.width} pad={isFull ? "large" : "small"}>
+            <Box width={layout.width} pad={isFull ? "large" : {horizontal: "small", top: "small"}}>
                 {children}
             </Box>
-            <Box width={layout.width} pad={isFull ? "large" : "small"} wrap={isFull}>
+            <Box width={layout.width} pad={isFull ? "large" : {horizontal: "small"}} wrap={isFull}>
                 {form}
             </Box>
         </Box>  

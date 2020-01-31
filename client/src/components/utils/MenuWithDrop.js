@@ -7,9 +7,10 @@ const MenuWithDrop = styled(DropButton)`
     color: #000;
     position: relative;
     padding: 0;
+    margin: 5px 20px;
 
     transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
-    color: #000;
+    color: ${({color}) => color ? color : '#000'};
     text-transform: uppercase;
 
     &::before {

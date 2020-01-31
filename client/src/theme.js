@@ -93,6 +93,11 @@ export const DakTheme = {
           height: "28px",
           maxWidth: "100%"
       },
+      mid: {
+        size: "18px",
+        height: "36px",
+        maxWidth: "100%"
+    },
           medium: {
               size: "22px",
               height: "44px",
@@ -110,6 +115,10 @@ export const DakTheme = {
             height: "16px",
             maxWidth: "100%"
         },
+        smaller: {
+          size: "12px",
+          height: "24px",
+      },
           small: {
               size: "16px",
               height: "32px",
@@ -231,6 +240,10 @@ export const DakTheme = {
       medium: {
         size: "14px",
         height: "28px",
+      },
+      mid: {
+        size: "20px",
+        height: "40px",
       },
       large: {
         size: "26px",

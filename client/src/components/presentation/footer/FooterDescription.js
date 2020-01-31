@@ -1,11 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import withResponsive from '../../HOCs/withResponsive';
 import { withTranslation } from 'react-i18next';
 
 import { Box, Paragraph } from 'grommet';
-import { Instagram } from 'grommet-icons';
+import { Instagram, FacebookOption } from 'grommet-icons';
 
 import { footerDescriptionLayout } from '../../layouts/globalResponsiveLayout';
+
+const WithPad = styled.a`
+ padding-right: 20px;
+`
 
 const FooterDescription = ({t, media}) => {
     const layout = footerDescriptionLayout(media);
@@ -15,10 +20,13 @@ const FooterDescription = ({t, media}) => {
             <Paragraph size="small" style={{"padding": layout.pad}}>
                 {t("footer.description")}
             </Paragraph>
-            <Box pad={{"horizontal": isLarge ? "20px 0px" : "0"}}>
-                <a href="http://www.instagram.com/dakcoffeeroasters" target="_blank" rel="noopener noreferrer">
+            <Box direction="row" pad={{"horizontal": isLarge ? "20px 0px" : "0"}}>
+                <WithPad href="https://www.instagram.com/dakcoffeeroasters" target="_blank" rel="noopener noreferrer">
                     <Instagram />
-                </a>
+                </WithPad>
+                <WithPad href="https://www.facebook.com/dakcoffeeroasters" target="_blank" rel="noopener noreferrer">
+                    <FacebookOption />
+                </WithPad>
             </Box>
         </Box>
     );

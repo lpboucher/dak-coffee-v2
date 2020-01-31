@@ -3,10 +3,11 @@ import { withTranslation } from 'react-i18next';
 import withResponsive from '../../HOCs/withResponsive';
 
 import { Box, Image, Stack, Text } from 'grommet';
+import CallToAction from '../global/CallToAction';
 
 import { heroLayout } from '../../layouts/globalResponsiveLayout';
 
-const Hero = ({bgImage, height="90vh", overlay, t, media}) => {
+const Hero = ({bgImage, height="80vh", overlay, t, media, ctaLink}) => {
     const layout = heroLayout(media, height);
     const isNotSmall = media === "medium" || media === "large" || media === "infinity"
     return (
@@ -21,6 +22,9 @@ const Hero = ({bgImage, height="90vh", overlay, t, media}) => {
         <Box animation={"slideRight"} height={overlay.height} width={overlay.width} justify={overlay.justify || "center"} background={`${overlay.withOpacity ? 'rgba(0,0,0,0.5)' : ''}`}>
             <Box width="50vw" pad={{'horizontal': 'large'}}>
                 <Text size="large" color='white' weight="bold" >{t(overlay.text)}</Text>
+                {overlay.cta &&
+                    <CallToAction link={ctaLink} label={overlay.cta} color="white" />
+                }
             </Box>
         </Box>
         }

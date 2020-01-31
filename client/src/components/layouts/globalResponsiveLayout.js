@@ -68,12 +68,12 @@ export const logoLayout = (screenSize) => {
         },
         large: {
             pad: {'left': '25vw', 'top': '15px'},
-            width: "120px",
+            width: "100px",
             align: "center"
         },
         infinity: {
             pad: {'left': '25vw', 'top': '15px'},
-            width: "120px",
+            width: "100px",
             align: "center"
         },
     }
@@ -95,11 +95,11 @@ export const heroLayout = (screenSize, height) => {
             height: height
         },
         large: {
-            pad: '160px',
+            pad: '102px',
             height: height
         },
         infinity: {
-            pad: '160px',
+            pad: '102px',
             height: height
         }
     }
@@ -113,6 +113,10 @@ export const introLayout = (screenSize, isSmall) => {
                 size: 'small',
                 margin: isSmall ? "medium" : {"horizontal": "large", "vertical": "small"}
             },
+            snap: {
+                size: 'small',
+                margin: isSmall ? "medium" : {"horizontal": "large", "vertical": "small"}
+            },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
             align: 'center',
@@ -120,8 +124,12 @@ export const introLayout = (screenSize, isSmall) => {
         },
         small: {
             main: {
-                size: 'small',
+                size: 'mid',
                 margin: isSmall ? "medium" : "large"
+            },
+            snap: {
+                size: 'mid',
+                margin: isSmall ? "small" : "medium"
             },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
@@ -130,8 +138,12 @@ export const introLayout = (screenSize, isSmall) => {
         },
         medium: {
             main: {
-                size: isSmall ? 'xsmall' : 'small',
+                size: isSmall ? 'small' : 'mid',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
+            },
+            snap: {
+                size: isSmall ? 'small' : 'mid',
+                margin: isSmall ? {"bottom": "small"} : {"bottom": "medium"}
             },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
@@ -143,6 +155,10 @@ export const introLayout = (screenSize, isSmall) => {
                 size: isSmall ? 'small' : '',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
             },
+            snap: {
+                size: isSmall ? 'small' : 'mid',
+                margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
+            },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : 'small', margin: {"bottom": "medium"}},
             align: 'start',
@@ -151,6 +167,10 @@ export const introLayout = (screenSize, isSmall) => {
         infinity: {
             main: {
                 size: isSmall ? 'small' : '',
+                margin: isSmall ? {"bottom": "medium"} : {"bottom": "medium"}
+            },
+            snap: {
+                size: isSmall ? 'small' : 'mid',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "medium"}
             },
             sub: { size: isSmall ? '10px' : 'small'},
@@ -462,11 +482,11 @@ export const productSpecsLayout = (screenSize) => {
 
 export const aboutProfilesLayout = (screenSize) => {
     const mediaQueries = {
-        extraSmall: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}},
-        small: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}},
-        medium: {height: ['90%', '10%'], size: "", align:"start", pad: {top: '0px'}},
-        large: {height: ['90%', '10%'], size: "", align:"start", pad: {top: '0px'}},
-        infinity: {height: ['90%', '10%'], size: "", align:"start", pad: {top: '0px'}},
+        extraSmall: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}, width:'100%'},
+        small: {height: ['400px', ''], size: "small", align:"center", pad: {top: '80px'}, width:'50%'},
+        medium: {height: ['400px', ''], size: "small", align:"start", pad: {top: '0px'}, width:'50%'},
+        large: {height: ['400px', ''], size: "small", align:"start", pad: {top: '0px'}, width:'33%'},
+        infinity: {height: ['400px', ''], size: "small", align:"start", pad: {top: '0px'}, width:'33%'},
     };
     return mediaQueries[screenSize]
 }
@@ -493,4 +513,81 @@ export const singleProductLayout = (screenSize) => {
     return mediaQueries[screenSize]
 }
 
+export const callToActionLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {align: 'center'},
+        small: {align: 'center'},
+        medium: {align: 'start'},
+        large: {align: 'start'},
+        infinity: {align: 'start'}
+    };
+    return mediaQueries[screenSize]
+}
 
+export const coffeeRowLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {
+            pad: {horizontal: "large", top: '64px', bottom: '24px'},
+            itemWidth: '50%'
+        },
+        small: {
+            pad: {horizontal: "large", top: '64px', bottom: '24px'},
+            itemWidth: '50%'
+        },
+        medium: {
+            pad: 'large',
+            itemWidth: '25%'
+        },
+        large: {
+            pad: 'large',
+            itemWidth: '25%'
+        },
+        infinity: {
+            pad: 'large',
+            itemWidth: '25%'
+        },
+    };
+    return mediaQueries[screenSize]
+}
+
+export const coffeeCardLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {height: '300px'},
+        small: {height: '300px'},
+        medium: {height: '300px'},
+        large: {height: '300px'},
+        infinity: {height: '300px'}
+    };
+    return mediaQueries[screenSize]
+}
+
+export const coffeeCardInfoLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {fontSize: {
+            top: 'small',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+        small: {fontSize: {
+            top: 'small',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+        medium: {fontSize: {
+            top: 'small',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+        large: {fontSize: {
+            top: 'medium',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+        infinity: {fontSize: {
+            top: 'medium',
+            mid: 'xsmall',
+            bottom: 'small',
+        }},
+    };
+    return mediaQueries[screenSize]
+}
