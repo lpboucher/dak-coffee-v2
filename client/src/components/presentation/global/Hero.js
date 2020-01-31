@@ -7,7 +7,7 @@ import CallToAction from '../global/CallToAction';
 
 import { heroLayout } from '../../layouts/globalResponsiveLayout';
 
-const Hero = ({bgImage, height="90vh", overlay, t, media, ctaLink}) => {
+const Hero = ({bgImage, height="80vh", overlay, t, media, ctaLink}) => {
     const layout = heroLayout(media, height);
     const isNotSmall = media === "medium" || media === "large" || media === "infinity"
     return (
