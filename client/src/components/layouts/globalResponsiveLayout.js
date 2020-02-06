@@ -326,9 +326,9 @@ export const shopPageLayout = (screenSize) => {
     const mediaQueries = {
         extraSmall : {padTop: '80px', width: '100%'},
         small : {padTop: '80px', width: '100%'},
-        medium : {padTop: '208px', width: '66%'},
-        large : {padTop: '208px', width: '66%'},
-        infinity : {padTop: '208px', width: '66%'},
+        medium : {padTop: '150px', width: '66%'},
+        large : {padTop: '150px', width: '66%'},
+        infinity : {padTop: '150px', width: '66%'},
     }
     return mediaQueries[screenSize]
 }
@@ -504,11 +504,11 @@ export const contactGridLayout = (screenSize) => {
 
 export const singleProductLayout = (screenSize) => {
     const mediaQueries = {
-        extraSmall: {imagePad: 'large', descPad: "large", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
-        small: {imagePad: 'large', descPad: "large", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
-        medium: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
-        large: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}},
-        infinity: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "208px", bottom: "large"}, inner:"large"}}
+        extraSmall: {imagePad: 'large', descPad: "large", wrapperPad: {outer: {horizontal: "large", top: "150px", bottom: "large"}, inner:"large"}},
+        small: {imagePad: 'large', descPad: "large", wrapperPad: {outer: {horizontal: "large", top: "150px", bottom: "large"}, inner:"large"}},
+        medium: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "150px", bottom: "large"}, inner:"large"}},
+        large: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "150px", bottom: "large"}, inner:"large"}},
+        infinity: {imagePad: 'large', descPad: "0px", wrapperPad: {outer: {horizontal: "large", top: "150px", bottom: "large"}, inner:"large"}}
     };
     return mediaQueries[screenSize]
 }
