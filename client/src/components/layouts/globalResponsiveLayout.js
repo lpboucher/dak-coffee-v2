@@ -117,6 +117,10 @@ export const introLayout = (screenSize, isSmall) => {
                 size: 'small',
                 margin: isSmall ? "medium" : {"horizontal": "large", "vertical": "small"}
             },
+            alert: {
+                size: 'small',
+                margin: {"bottom": "small"}
+            },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
             align: 'center',
@@ -130,6 +134,10 @@ export const introLayout = (screenSize, isSmall) => {
             snap: {
                 size: 'mid',
                 margin: isSmall ? "small" : "medium"
+            },
+            alert: {
+                size: 'mid',
+                margin: {"bottom": "small"}
             },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
@@ -145,6 +153,10 @@ export const introLayout = (screenSize, isSmall) => {
                 size: isSmall ? 'small' : 'mid',
                 margin: isSmall ? {"bottom": "small"} : {"bottom": "medium"}
             },
+            alert: {
+                size: isSmall ? 'small' : 'mid',
+                margin: {"bottom": "small"}
+            },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
             align: 'start',
@@ -159,6 +171,10 @@ export const introLayout = (screenSize, isSmall) => {
                 size: isSmall ? 'small' : 'mid',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
             },
+            alert: {
+                size: isSmall ? 'small' : 'mid',
+                margin: {"bottom": "small"}
+            },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : 'small', margin: {"bottom": "medium"}},
             align: 'start',
@@ -172,6 +188,10 @@ export const introLayout = (screenSize, isSmall) => {
             snap: {
                 size: isSmall ? 'small' : 'mid',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "medium"}
+            },
+            alert: {
+                size: isSmall ? 'small' : 'mid',
+                margin: {"bottom": "small"}
             },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : 'small', margin: {"bottom": "medium"}},
