@@ -14,13 +14,14 @@ const LinkNoHeight = styled(Link)`
     line-height: 0;
 `
 
-const CallToAction = ({color='#444444', link, label, t, media}) => {
+const CallToAction = ({color='#444444', link, label, options, t, media}) => {
     const layout = callToActionLayout(media);
+    const ctaLabel = options ? t(label, options) : t(label);
     return (
         <Box align="center" justify={layout.align} direction="row" margin={{top: '40px'}}>
             <Link to={link}>
                 <Text size="mid" color={color} weight="bold" margin={{right: '20px'}}>
-                        {t(label)}
+                        {ctaLabel}
                 </Text>
             </Link>
             <LinkNoHeight to={link} >
