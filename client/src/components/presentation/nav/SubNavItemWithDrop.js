@@ -13,6 +13,7 @@ export default class extends Component {
         <MenuWithDrop
           label={label}
           open={open}
+          noMargin={rest.noMargin}
           onClose={() => this.setState({ open: false })}
           onOpen={() => this.setState({ open: true })}
           dropAlign={{ top: 'bottom', left: 'left' }}

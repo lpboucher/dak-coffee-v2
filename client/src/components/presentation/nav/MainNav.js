@@ -8,8 +8,6 @@ import { Box } from 'grommet';
 import NavItem from './SubNavItem';
 import NavItemWithDrop from './SubNavItemWithDrop'
 import DropItem from '../../utils/DropItem';
-import CartMenuContainer from '../../containers/nav/CartMenuContainer';
-import AccountContainer from '../../containers/nav/AccountContainer';
 import Logo from '../../utils/Logo';
 import { logoLayout } from '../../layouts/globalResponsiveLayout';
 
@@ -27,7 +25,7 @@ const MainNav = ({t, media}) => {
                 <NavItem to="/subscriptions">{t("menu.subscriptions")}</NavItem>
             </Box>
             <Box pad="xsmall">
-                <NavItemWithDrop label={t("menu.about.top")}>
+                <NavItemWithDrop label={t("menu.about.top")} noMargin>
                     <DropItem to="/our-coffee">{t("menu.about.coffee")}</DropItem>
                     <DropItem to="/about">{t("menu.about.about")}</DropItem>
                 </NavItemWithDrop>
