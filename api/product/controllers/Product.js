@@ -33,7 +33,7 @@ const snipcartFetch = async (ctx) => {
 };
 
 const isSubscription = (item) => {
-  return item.name === 'The Classics' || item.name === 'The Roaster\'s Choice';
+  return item.name === 'The Classics' || item.name === 'The Roaster\'s Choice' || item.name === 'Dak Coffee Subscription';
 };
 
 module.exports = {
