@@ -216,6 +216,11 @@
             "name": "Roaster's Choice",
             "short": "Maandelijks koffie-abonnement",
             "description": "Laat je verrassen door onze meesterbrander. Elke maand kiest hij de lekkerste filter, espresso of limited edition koffiebonen voor jou uit. Altijd van de hoogste kwaliteit. Altijd met een heerlijk volle smaak. Wil jij de allerlekkerste nieuwe koffies leren kennen? Dan is dit jouw abonnement."
+        },
+        "dak-subscription": {
+            "name": "Dak Coffee Subscription",
+            "short": "Monthly coffee subscription",
+            "description": "Receive a selection of Dak coffees monthly automatically"
         }
     }
 }

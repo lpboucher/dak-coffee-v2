@@ -31,14 +31,15 @@
     "hero": {
         "home": "Wij willen iedereen laten genieten van échte koffie.",
         "christmas": "Wij willen iedereen laten genieten van échte koffie.",
-        "subscription": "Kies voor een van onze abonnementen en ontvang elke maand verse, ambachtelijk gebrande koffiebonen thuis.",
+        "subscription": "Ontvang elke maand verse koffiebonen thuis.",
         "coffee": "Wij doen er alles aan om allerhoogste kwaliteit koffie te leveren met een zo klein mogelijke ecologische voetafdruk.",
         "team": "Wij gaan altijd voor de hoogste kwaliteit.",
         "wholesale": "Er gaat niks boven een soepele, vruchtbare samenwerking. Daarom geven wij onszelf altijd 100%. Ongeacht hoe groot of klein de samenwerking ook is.",
         "contact": "Van boerderij tot boon, van branding tot bereiding. We besteden aandacht aan elk detail. En dat proef je.",
         "account": "Welkom in jouw account.",
         "cta": {
-            "shop": "Shop your coffee"
+            "shop": "Shop your coffee",
+            "subscription": "Vanaf {{price}} -"
         }
     },
     "intros": {
@@ -47,6 +48,13 @@
             "helper": "Vanaf {{price}}, gratis verzending, zonder verplichtingen",
             "description": "Kies voor een van onze abonnementen en ontvang elke maand verse, ambachtelijk gebrande koffiebonen thuis. Je kunt kiezen uit:\n\n<strong>ONZE KLASSIEKERS</strong>. Kies je favoriete branding en ontvang een selectie heerlijke, single origin filterbonen of espressobonen. Of allebei. Waarom niet?\n\n<strong>ROASTER’S CHOICE</strong>. Laat je verrassen door onze meesterbrander. Elke maand kiest hij de lekkerste filter, espresso of limited edition koffiebonen voor jou uit. Altijd van de hoogste kwaliteit. Altijd met een heerlijk volle smaak. Wil jij de allerlekkerste nieuwe koffies leren kennen? Dan is dit jouw abonnement.",
             "short description": "Ontvang elke maand de lekkerste koffie bij je thuis door te kiezen voor een van onze abonnementen. Je hebt de keuze tussen ‘onze klassiekers’ en ‘The Roaster’s Choice’.",
+            "button": "Bestel nu"
+        },
+        "subscriptionPage": {
+            "title": "Maandabonnement.",
+            "helper": "Vanaf {{price}}, gratis verzending, zonder verplichtingen.",
+            "alert": "The coffee box is shipped on the 5th of every month.",
+            "short description": "Ontvang elke maand de lekkerste koffie bij je thuis door te kiezen voor een van onze abonnementen.",
             "button": "Bestel nu"
         },
         "limited edition": {
@@ -154,9 +162,13 @@
             "shipping": "GRATIS VERZENDING",
             "button": "Bestel",
             "form": {
-                "varieties": {"label": "Aantal soorten", "placeholder": "Hoeveel soorten?"},
-                "roast": {"label": "Brand", "placeholder": "Espresso of Filter"},
-                "quantity": {"label": "Hoeveelheid gram", "placeholder": "Hoeveel gram?"}
+                "title": "abonnement aanpassen",
+                "varieties": {"helper": "Hoeveel soorten?", "label": "Aantal soorten", "placeholder": "Hoeveel soorten?"},
+                "roast": {"helper": "Espresso of Filter", "label": "Brand", "placeholder": "Espresso of Filter"},
+                "quantity": {"helper": "Hoeveel gram?", "label": "Hoeveelheid gram", "placeholder": "Hoeveel gram?"},
+                "permonth": "per maand",
+                "shipping": "gratis verzending",
+                "both": "beide"
             }
         },
         "cart": {

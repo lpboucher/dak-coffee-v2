@@ -31,14 +31,15 @@
     "hero": {
         "home": "From farm to cup we take great pride in celebrating quality coffee.",
         "christmas": "Coffee tastes better when shared.",
-        "subscription": "Have quality coffee delivered to your doorstep. Go with the classics or opt for our roaster’s seasonal picks.",
+        "subscription": "Have quality coffee delivered to your doorstep.",
         "coffee": "We are committed to offering you the best quality coffee, while reducing our footprint.",
         "team": "It's good because we care and pay great attention to every step from farm to roast to brew.",
         "wholesale": "We partner with people who share our uncompromised, passion-driven approach to coffee.",
         "contact": "Collaboration is key. Whether big or small, we engage in passion-driven partnerships.",
         "account": "Welcome to your account.",
         "cta": {
-            "shop": "Shop your coffee"
+            "shop": "Shop your coffee",
+            "subscription": "From {{price}} -, Get started"
         }
     },
     "intros": {
@@ -47,6 +48,13 @@
             "helper": "From {{price}}, free shipping, commitment free.",
             "description": "Have your coffee delivered to your doorstep every month by opting for one of our subscriptions. Choose between:\n\n<strong>OUR CLASSICS</strong>: Choose a roast and receive a selection of origin coffees in either filter or espresso roasts (or both, why not!)\n\n<strong>THE ROASTER’S CHOICE</strong>: Let the roaster surprise you with his preferred roast of the month. This subscription will offer different assortments of filter/espresso/limited edition roasts, but our roaster never compromises the quality or taste, so this is truly the best way to familiarize yourself with fresh, new coffees!",
             "short description": "Have your coffee delivered to your doorstep every month by opting for one of our subscriptions. Choose between our classics or the roaster's choice.",
+            "button": "Subscribe"
+        },
+        "subscriptionPage": {
+            "title": "Monthly Coffee Subscriptions.",
+            "helper": "From {{price}}/month, free shipping, commitment free.",
+            "alert": "The coffee box is shipped on the 5th of every month.",
+            "short description": "Receive coffee each month from our classic lineup and / or our limited editions. Skip or cancel anytime.",
             "button": "Subscribe"
         },
         "limited edition": {
@@ -154,9 +162,13 @@
             "shipping": "FREE SHIPPING",
             "button": "Submit",
             "form": {
-                "varieties": {"label": "Number of varieties", "placeholder": "How many varieties?"},
-                "roast": {"label": "Roast style", "placeholder": "Espresso or Filter"},
-                "quantity": {"label": "Quantity", "placeholder": "How much?"}
+                "title": "customize your subscription",
+                "varieties": {"helper": "choose your number of coffee varieties", "label": "Number of varieties", "placeholder": "How many varieties?"},
+                "roast": {"helper": "choose your roast style", "label": "Roast style", "placeholder": "Espresso or Filter"},
+                "quantity": {"helper": "choose your quantity", "label": "Quantity", "placeholder": "How much?"},
+                "permonth": "per month",
+                "shipping": "shipping included",
+                "both": "both"
             }
         },
         "cart": {

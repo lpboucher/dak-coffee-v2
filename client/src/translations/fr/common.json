@@ -31,14 +31,15 @@
     "hero": {
         "home": "Du terroir à votre tasse, c'est avec fierté que nous vous proposons un café de qualité.",
         "christmas": "Le café a bien meilleur goût quand il est le fruit du partage.",
-        "subscription": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements.",
+        "subscription": "Faites-vous livrer votre café à la porte tous les mois.",
         "coffee": "Nous nous engageons à vous offrir le meilleur café possible tout en réduisant notre empreinte.",
         "team": "Du terroir à votre tasse, c'est avec fierté que nous vous proposons un café de qualité.",
         "wholesale": "Collaborer, c’est la clé. Nos partenariats, petits ou grands, sont tous motivés par la passion commune du café.",
         "contact": "Nous avons à cœur chacune des étapes qui entrent en jeu dans le traitement du café.",
         "account": "Bienvenue dans votre compte.",
         "cta": {
-            "shop": "Voir les cafés"
+            "shop": "Voir les cafés",
+            "subscription": "À partir de {{price}} -, Inscrivez-vous"
         }
     },
     "intros": {
@@ -47,6 +48,13 @@
             "helper": "À partir de {{price}}, livraison gratuite, sans engagement",
             "description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements. Voici les options qui s’offrent à vous:\n\n<strong>NOS CLASSIQUES</strong>. Choisissez une torréfaction et recevez une sélection de cafés d’origine pour une extraction filtre ou espresso (ou pourquoi pas les deux!).\n\n<strong>LE CHOIX DU TORRÉFACTEUR</strong>. Laissez le maître torréfacteur vous surprendre avec son coup de cœur du mois. Vous obtiendrez ainsi un assortiment de torréfactions filtre, espresso et édition limitée. Sans jamais compromettre la qualité ni le goût, notre torréfacteur vous fera découvrir toutes les subtilités de ses cafés. La formule idéale pour vous initier à de nouveaux arômes de cafés frais.",
             "short description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements. Choisissez entre nos classiques ou le choix du torréfacteur",
+            "button": "Abonnez-vous"
+        },
+        "subscriptionPage": {   
+            "title": "Abonnement caféiné.",
+            "helper": "À partir de {{price}}, livraison gratuite, sans engagement.",
+            "alert": "La boite est envoyée le cinq de chaque mois.",
+            "short description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements.",
             "button": "Abonnez-vous"
         },
         "limited edition": {
@@ -154,9 +162,13 @@
             "shipping": "LIVRAISON GRATUITE",
             "button": "Soumettre",
             "form": {
-                "varieties": {"label": "Nombre of variétés", "placeholder": "Combien de variétés?"},
-                "roast": {"label": "Torréfaction", "placeholder": "Espresso ou Filtre"},
-                "quantity": {"label": "Quantité", "placeholder": "Combien de grammes?"}
+                "title": "Choisissez votre abonnement",
+                "varieties": {"helper": "choisissez le nombre de variétés", "label": "Nombre of variétés", "placeholder": "Combien de variétés?"},
+                "roast": {"helper": "choisissez la torréfaction", "label": "Torréfaction", "placeholder": "Espresso ou Filtre"},
+                "quantity": {"helper": "choisissez la quantité", "label": "Quantité", "placeholder": "Combien de grammes?"},
+                "permonth": "par mois",
+                "shipping": "livraison include",
+                "both": "les deux"
             }
         },
         "cart": {

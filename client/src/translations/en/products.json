@@ -216,6 +216,11 @@
             "name": "The Roaster's Choice",
             "short": "Monthly coffee subscription",
             "description": "Let the roaster surprise you with his preferred roast of the month. This subscription will offer different assortments of filter/espresso/limited edition roasts, but our roaster never compromises the quality or taste, so this is truly the best way to familiarize yourself with fresh, new coffees!"
+        },
+        "dak-subscription": {
+            "name": "Dak Coffee Subscription",
+            "short": "Monthly coffee subscription",
+            "description": "Receive a selection of Dak coffees monthly automatically"
         }
     },
     "christmas": {

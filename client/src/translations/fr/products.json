@@ -196,6 +196,11 @@
             "name": "Le choix du torréfacteur",
             "short": "Abonnement mensuel café",
             "description": "Laissez le maître torréfacteur vous surprendre avec son coup de cœur du mois. Vous obtiendrez ainsi un assortiment de torréfactions filtre, espresso et édition limitée. Sans jamais compromettre la qualité ni le goût, notre torréfacteur vous fera découvrir toutes les subtilités de ses cafés."
+        },
+        "dak-subscription": {
+            "name": "Dak Coffee Subscription",
+            "short": "Monthly coffee subscription",
+            "description": "Receive a selection of Dak coffees monthly automatically"
         }
     },
     "christmas": {
