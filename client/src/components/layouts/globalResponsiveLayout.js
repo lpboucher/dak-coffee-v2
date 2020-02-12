@@ -611,3 +611,14 @@ export const coffeeCardInfoLayout = (screenSize) => {
     };
     return mediaQueries[screenSize]
 }
+
+export const subscriptionSelectionButtonLayout = (screenSize) => {
+    const mediaQueries = {
+        extraSmall: {size: 'mid'},
+        small: {size: 'mid'},
+        medium: {size: 'mid'},
+        large: {size: 'medium'},
+        infinity: {size: 'mid'},
+    };
+    return mediaQueries[screenSize]
+}
