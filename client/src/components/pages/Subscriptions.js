@@ -8,7 +8,6 @@ import Loader from '../utils/SimpleLoader';
 import SubscriptionPageIntro from '../presentation/intros/SubscriptionPage';
 import SubscriptionSelectionLayout from '../layouts/SubscriptionSelectionLayout';
 
-const SubscriptionContainer = lazy(() => import('../containers/subscriptions/SubscriptionsContainer'));
 const RelatedContainer = lazy(() => import('../containers/related/RelatedContainer'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
@@ -16,7 +15,7 @@ const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_au
 
 const Subscription = () => {
     const currency = useSelector(state => getDisplayCurrency(state));
-    const prices = {EUR: '€22', CAD: '$40'};
+    const prices = {EUR: '€23', CAD: '$37'};
     return (
     <>
         <SEO canon="https://www.dakcoffeeroasters.com/subscriptions" />
@@ -31,11 +30,11 @@ const Subscription = () => {
                 options: { price: prices[currency] }
             }}
             ctaLink='/shop'
+            ctaOnPage
         />
-        <SubscriptionPageIntro />
+        <SubscriptionPageIntro currency={currency} />
         <SubscriptionSelectionLayout />
         <Suspense fallback={<Loader />}>
-            <SubscriptionContainer />
             <RelatedContainer relatedSlug="related_subscription"/>
             <NewsletterContainer />
         </Suspense> 

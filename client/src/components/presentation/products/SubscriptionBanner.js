@@ -8,7 +8,7 @@ import IntroLayout from '../../layouts/IntroLayout';
 const thumb = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1572972636/Intros/BoxSubscription_viuecy.jpg';
 
 const SubscriptionBanner = ({isMobile, currency, t}) => {
-    const prices = {EUR: '€25', CAD: '$35'}
+    const prices = {EUR: '€23', CAD: '$37'}
     const intro = 
         <IntroLayout 
             heading="intros.subscription.title" 

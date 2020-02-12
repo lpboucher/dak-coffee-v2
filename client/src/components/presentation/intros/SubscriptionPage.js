@@ -7,7 +7,7 @@ import IntroLayout from '../../layouts/IntroLayout';
 const introImg = "https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1580998386/Intros/dakbags_xfwwrv.png";
 
 const SubscriptionPageIntro = ({currency='EUR'}) => {
-    const prices = {EUR: '€22', CAD: '$35'}
+    const prices = {EUR: '€23', CAD: '$37'}
     const intro = 
         <IntroLayout 
             heading="intros.subscriptionPage.title" 
@@ -15,6 +15,7 @@ const SubscriptionPageIntro = ({currency='EUR'}) => {
             alert="intros.subscriptionPage.alert"
             summaryText="intros.subscriptionPage.helper"
             ctaLabel="intros.subscriptionPage.button"
+            ctaOnPage
             link="/subscriptions"
             options={{ price: prices[currency] }}
         />
