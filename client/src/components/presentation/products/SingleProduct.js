@@ -21,7 +21,9 @@ const SingleProduct = ({product, currency, media}) => {
         product.name,
         product.main_image,
         currency,
-        product.price[currency.toLowerCase()]['value']
+        product.price[currency.toLowerCase()]['value'],
+        product.stock !== 0,
+        product.slug
         );
     return (
         <>

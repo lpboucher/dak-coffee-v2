@@ -1,4 +1,6 @@
-export const schemaBuilder = (type, url, name, image, currency, price) => {
+export const schemaBuilder = (type, url, name, image, currency, price, hasStock, slug) => {
+    const dt = new Date();
+    const endOfYear = new Date(dt.getYear() + 1900, 11, 31);
     let extensionToBase = {};
     if (type === 'Product') {
         extensionToBase = {
@@ -8,7 +10,21 @@ export const schemaBuilder = (type, url, name, image, currency, price) => {
                 "@type": "Offer",
                 "priceCurrency": `${currency}`,
                 "price": `${price}`,
-            }
+                "priceValidUntil": `${endOfYear.toISOString()}`,
+                "availability": `http://schema.org/${hasStock ? 'InStock': 'OutOfStock'}`
+            },
+            "brand": {
+                "@type": "Organization",
+                "name": "Dak Coffee Roasters",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://dakcoffeeroasters.com/FaviconDak.png",
+                    "width": 131,
+                    "height": 131
+                }
+            },
+            "url": `${url}`,
+            "sku": `${slug}`
         }
     } else if (type === 'Article') {
         extensionToBase = {
