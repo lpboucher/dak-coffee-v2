@@ -7,7 +7,7 @@ import CallToAction from '../global/CallToAction';
 
 import { heroLayout } from '../../layouts/globalResponsiveLayout';
 
-const Hero = ({bgImage, height="80vh", overlay, t, media, ctaLink}) => {
+const Hero = ({bgImage, height="80vh", overlay, t, media, ctaLink, ctaOnPage}) => {
     const layout = heroLayout(media, height);
     const isNotSmall = media === "medium" || media === "large" || media === "infinity";
     return (
@@ -23,7 +23,7 @@ const Hero = ({bgImage, height="80vh", overlay, t, media, ctaLink}) => {
             <Box width="50vw" pad={{'horizontal': 'large'}}>
                 <Text size="large" color='white' weight="bold" >{t(overlay.text)}</Text>
                 {overlay.cta &&
-                    <CallToAction link={ctaLink} label={overlay.cta} options={overlay.options} color="white" />
+                    <CallToAction onPage={ctaOnPage} link={ctaLink} label={overlay.cta} options={overlay.options} color="white" />
                 }
             </Box>
         </Box>

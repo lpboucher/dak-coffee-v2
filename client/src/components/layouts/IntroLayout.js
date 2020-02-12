@@ -9,7 +9,7 @@ import { introLayout } from './globalResponsiveLayout';
 
 import CallToAction from '../presentation/global/CallToAction';
 
-const IntroSection = ({heading, subHeading, helperText, snap, description, summaryText, alert, btnLabel, ctaLabel, link, options=null, children, isSmall=false, t, media}) => {
+const IntroSection = ({heading, subHeading, helperText, snap, description, summaryText, alert, btnLabel, ctaLabel, ctaOnPage, link, options=null, children, isSmall=false, t, media}) => {
     const helper = options ? t(helperText, options) : t(helperText);
     const subHead = options ? t(subHeading, options) : t(subHeading);
     const summary = options ? t(summaryText, options) : t(summaryText);
@@ -51,7 +51,7 @@ const IntroSection = ({heading, subHeading, helperText, snap, description, summa
             </Box>
             }
             {ctaLabel &&
-                <CallToAction link={link} label={ctaLabel} />
+                <CallToAction onPage={ctaOnPage} link={link} label={ctaLabel} />
             }
         </Box>
     );
