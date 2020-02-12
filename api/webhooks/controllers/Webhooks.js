@@ -25,7 +25,12 @@ const getShippingRates = (ctx) => {
   const summary = { currency: orderData.currency, total: orderData.itemsTotal };
   let rates = [];
   if (hasFreeOption(orderData.items, summary)) {
-    rates = [...rates, {'cost': 0, 'description': 'Free Shipping'}];
+    if(isFromRegion('EU', orderData.shippingAddress.country)) {
+      rates = [...rates, {'cost': 0, 'description': 'Free Shipping'}];
+    }
+    if(isFromRegion('NA', orderData.shippingAddress.country)) {
+      rates = [...rates, {'cost': 0, 'description': 'Free Shipping (5-15 business days)'}, {'cost': 25, 'description': 'Express (2-5 business days)'}];
+    }
   }
   rates = [...rates, ...calculateRatesPerRegion(orderData.shippingAddress.country)];
   return {'rates': rates};
@@ -70,7 +75,7 @@ const calculateRatesPerRegion = (country) => {
   if(isFromRegion('EU', country)) return [{'cost': 3.5, 'description': 'EU Shipping'}];
   if(isFromRegion('NA', country)) return [
     {'cost': 7.5, 'description': 'Regular NA (ships 1st & 15th of each month)'},
-    {'cost': 15, 'description': 'NA Express'}
+    {'cost': 25, 'description': 'Express (2-5 business days)'}
   ];
   return [{'cost': 20, 'description': 'World Shipping'}];
 };
