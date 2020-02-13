@@ -12,6 +12,11 @@ const SubscriptionButton = styled(Box)`
     cursor: pointer;
     background-color: ${({checked}) => checked ? '#343434' : '#dcddde'};
     color: ${({checked}) => checked ? '#f7f8f9' : '#343434'};
+    margin: 0 12px;
+
+    &:first-of-type {
+        margin-left: 0;
+    }
 
     &:hover {
         background-color: ${({checked}) => !checked ? '#a96c35' : '#343434'};
@@ -35,7 +40,6 @@ const SubscriptionSelectionButton = ({name, value, label, ...rest}) => {
                     align="center"
                     justify="center"
                     pad="medium"
-                    margin={{horizontal: 'small'}}
                     width={rest.width}
                 >
                     {Array.isArray(label) ?
