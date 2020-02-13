@@ -39,7 +39,7 @@
         "account": "Welkom in jouw account.",
         "cta": {
             "shop": "Shop your coffee",
-            "subscription": "Vanaf {{price}} -"
+            "subscription": "Vanaf {{price}}."
         }
     },
     "intros": {

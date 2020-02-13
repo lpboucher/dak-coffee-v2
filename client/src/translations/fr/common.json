@@ -39,7 +39,7 @@
         "account": "Bienvenue dans votre compte.",
         "cta": {
             "shop": "Voir les cafés",
-            "subscription": "À partir de {{price}} -, Inscrivez-vous"
+            "subscription": "À partir de {{price}}. Inscrivez-vous"
         }
     },
     "intros": {

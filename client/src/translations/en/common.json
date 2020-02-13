@@ -39,7 +39,7 @@
         "account": "Welcome to your account.",
         "cta": {
             "shop": "Shop your coffee",
-            "subscription": "From {{price}} -, Get started"
+            "subscription": "From {{price}}. Get started"
         }
     },
     "intros": {
