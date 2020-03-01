@@ -204,6 +204,25 @@
             "500EUR": "(21€)",
             "1000CAD": "(56$)",
             "1000EUR": "(40€)"
+        },
+        "de-la-gente-filter": {
+            "name": "De La Gente",
+            "short": "Guatemalan coffee (filter)",
+            "description": "This Guatemalan coffee is roasted for filter. The Antigua valley of Guatemala is surrounded by three volcanoes. These volcanoes create a climate that is temperate all year round, with constant moisture levels, perfect for growing coffee!\n\nCoffees from Antigua are often characterized by a pleasant floral acidity, this coffee is not different, albeit with fruity aromas reminiscent of blueberries.",
+            "region": "Antigua",
+            "country": "Guatemala",
+            "roast": "Filter",
+            "lot": "De La Gente",
+            "process": "Natural",
+            "variety": "Bourbon, Catuai, Carimor",
+            "drink": "Filter",
+            "taste": "Blueberry, fruity, mild acidity",
+            "harvest": "Previously dominated by large fincas, small owners started harvesting their own coffee about 25 years ago",
+            "altitude": "1500m",
+            "500CAD": "(29.50$)",
+            "500EUR": "(21€)",
+            "1000CAD": "(56$)",
+            "1000EUR": "(40€)"
         }
     },
     "subscription": {

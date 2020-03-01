@@ -184,6 +184,25 @@
             "500EUR": "(21€)",
             "1000CAD": "(56$)",
             "1000EUR": "(40€)"
+        },
+        "de-la-gente-filter": {
+            "name": "De La Gente",
+            "short": "Café Guatémaltèque (filtre)",
+            "description": "Ce café guatémaltèque est torréfié en filtre. La vallée de l'Antigua est entourée de trois volcans. Ceux-ci contribuent à un climat tempéré avec des niveaux d'humidité constants, parfait pour la culture du café!\n\nLes cafés de l'Antigua sont reconnus pour leur acidité florale, ce café leur justice, avec des arômes additionelles de bleuets.",
+            "region": "Antigua",
+            "country": "Guatemala",
+            "roast": "Filtre",
+            "lot": "De La Gente",
+            "process": "Naturel",
+            "variety": "Bourbon, Catuai, Carimor",
+            "drink": "Filtre",
+            "taste": "Bleuets, fruits, acidité florale",
+            "harvest": "Alors que la région était dominée par de grandes fincas, les producteurs artisanaux ont commencé à récolter leur propre café il y a de cela seulement 25ans.",
+            "altitude": "1500m",
+            "500CAD": "(29.50$)",
+            "500EUR": "(21€)",
+            "1000CAD": "(56$)",
+            "1000EUR": "(40€)"
         }
     },
     "subscription": {
