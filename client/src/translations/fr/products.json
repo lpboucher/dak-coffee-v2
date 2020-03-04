@@ -203,6 +203,25 @@
             "500EUR": "(21€)",
             "1000CAD": "(56$)",
             "1000EUR": "(40€)"
+        },
+        "sonora-coffee": {
+            "name": "Sonora",
+            "short": "Café Costa Ricain (filter)",
+            "description": "Ce café costa ricain est torréfié en filtre. Ce café pousse sur une terre entourée d'arbres exotiques et de végétation qui, combinés au sol volcanique riche en nutriments, créent un environnement favorable au développement de café de haute qualité.\n\nHacienda Sonora produit seulement des cafés Naturel ou Miel. Ceux-ci présentent des notes subtiles de fermentation avec des arômes intenses de fruits.",
+            "region": "West Valley",
+            "country": "Costa Rica",
+            "roast": "Filtre",
+            "lot": "Hacienda Sonora",
+            "process": "Naturel",
+            "variety": "Catuai, Caturra, Bourbon, SL28",
+            "drink": "Filtre",
+            "taste": "Framboises, Menthe, Pêches, Caramel",
+            "harvest": "Les producteurs Alberto et Diego ont construit leur propre opération de fraisage pour avoir le contrôle sur la fermentation et la qualité. Sonora est 100% autosuffisante.",
+            "altitude": "1200m",
+            "500CAD": "(38$)",
+            "500EUR": "(26.50€)",
+            "1000CAD": "(72$)",
+            "1000EUR": "(50€)"
         }
     },
     "subscription": {
