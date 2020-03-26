@@ -2,6 +2,7 @@ import React, { Component, createRef } from 'react';
 import { connect } from 'react-redux';
 import { isCartOpen, isFetching, openCartSummary, closeCartSummary } from '../../../ducks/views';
 import { getCartQuantity, updateCart, updatingCart, clearCart } from '../../../ducks/cart';
+import { itemAdded, orderCompleted } from '../../utils/Tracking/snipcartEvents';
 
 import CartCounter from '../../presentation/nav/CartCounter';
 
@@ -16,6 +17,7 @@ class CartMenuContainer extends Component {
         });
         window.Snipcart.subscribe('item.added', (item) => {
             this.props.updateCart();
+            itemAdded(item);
         });
         window.Snipcart.subscribe('item.updated', (item) => {
             this.props.updateCart();
@@ -26,6 +28,7 @@ class CartMenuContainer extends Component {
         window.Snipcart.subscribe('order.completed', (data) => {
             if(data.status === "Processed") {
                 this.props.clearCart();
+                orderCompleted(data)
             }
         });
     }
@@ -33,14 +36,16 @@ class CartMenuContainer extends Component {
     componentWillUnmount() {
         window.Snipcart.unsubscribe('item.added');
         window.Snipcart.unsubscribe('item.adding');
+        window.Snipcart.unsubscribe('item.updated');
+        window.Snipcart.unsubscribe('item.removed');
         window.Snipcart.unsubscribe('order.completed');
     }
-   
+
     render() {
         const { isFetching } = this.props;
         return (
             <>
-                {!isFetching ? 
+                {!isFetching ?
                     <CartCounter cartRef={this.cartRef} {...this.props}/>
                     :
                     <Loader pad={"small"} size={25}/>
