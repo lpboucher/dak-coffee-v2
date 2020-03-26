@@ -9,6 +9,8 @@ import {responsiveStoreEnhancer} from 'redux-responsive';
 import LogRocket from 'logrocket';
 import { I18nextProvider } from "react-i18next";
 import { Grommet } from 'grommet';
+import TagManager from 'react-gtm-module';
+
 import * as serviceWorker from './serviceWorker';
 
 import App from './App';
@@ -21,6 +23,8 @@ import ScrollToTop from './components/utils/Routes/ScrollToTop';
 if (process.env.NODE_ENV !== 'development') {
     LogRocket.init('3khpto/dak-coffee-roasters');
 }
+
+TagManager.initialize({gtmId: 'GTM-PMXJ7MF'})
 
 /*if (process.env.NODE_ENV !== 'production') {
     const whyDidYouRender = require('@welldone-software/why-did-you-render/dist/no-classes-transpile/umd/whyDidYouRender.min.js');
