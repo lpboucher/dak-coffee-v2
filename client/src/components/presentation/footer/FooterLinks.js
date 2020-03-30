@@ -16,7 +16,7 @@ const FooterLinks = ({t, media}) => {
             <Box width={layout.width}><Link to="/contact" style={{'fontSize': '12px'}}>{t("footer.menu.contact")}</Link></Box>
             <Box width={layout.width}><Link to="/subscriptions" style={{'fontSize': '12px'}}>{t("footer.menu.subscription")}</Link></Box>
             <Box width={layout.width}><Link to="/faq" style={{'fontSize': '12px'}}>{t("footer.menu.faq")}</Link></Box>
-            <Box width={layout.width}><Link to="" style={{'fontSize': '12px'}}>{t("footer.menu.shipping")}</Link></Box>
+            <Box width={layout.width}><Link to="/shipping" style={{'fontSize': '12px'}}>{t("footer.menu.shipping")}</Link></Box>
             <Box width={layout.width}><Link to="/our-coffee" style={{'fontSize': '12px'}}>{t("footer.menu.our-coffee")}</Link></Box>
             <Box width={layout.width}><Link to="/blog" style={{'fontSize': '12px'}}>{t("footer.menu.blog")}</Link></Box>
             <Box width={layout.width}><Link to="/terms" style={{'fontSize': '12px'}}>{t("footer.menu.terms")}</Link></Box>
