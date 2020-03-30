@@ -6,7 +6,8 @@
     "cart": {
         "empty": "no items in cart",
         "to cart": "view cart",
-        "to checkout": "checkout"
+        "to checkout": "checkout",
+        "updating": "Updating cart..."
     },
     "menu": {
         "shop": "shop",

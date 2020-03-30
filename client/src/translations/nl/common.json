@@ -6,7 +6,8 @@
     "cart": {
         "empty": "geen product in winkelmand",
         "to cart": "winkelmand",
-        "to checkout": "afrekenen"
+        "to checkout": "afrekenen",
+        "updating": "Updating cart..."
     },
     "menu": {
         "shop": "shop",

@@ -139,43 +139,43 @@ showError: false
 export default function reducer(state = initialState, action) {
 switch(action.type) {
     case OPEN_CART:
-        return { 
+        return {
             ...state,
             isCartOpen: true,
             error: initialState.error
         };
     case CLOSE_CART:
-        return { 
+        return {
             ...state,
             isCartOpen: false,
             error: initialState.error
         };
     case OPEN_MOBILE:
-        return { 
+        return {
             ...state,
             isMobileOpen: true,
             error: initialState.error
         };
     case CLOSE_MOBILE:
-        return { 
+        return {
             ...state,
             isMobileOpen: false,
             error: initialState.error
         };
     case OPEN_PROMO:
-        return { 
+        return {
             ...state,
             isPromoOpen: true,
         };
     case CLOSE_PROMO:
-        return { 
+        return {
             ...state,
             isPromoOpen: false,
         };
     case CHANGE_LANGUAGE_REQUEST:
     case CHANGE_CURRENCY_REQUEST:
     case NEWSLETTER_REQUEST:
-        return { 
+        return {
             ...state,
             isProcessing: true,
             processingText: action.payload,
@@ -190,15 +190,19 @@ switch(action.type) {
             displayCurrency: action.payload
         }
     case UPDATE_CART_REQUEST:
-        return { 
+        return {
             ...state,
             isFetching: true,
+            isProcessing: true,
+            processingText: "cart.updating"
         }
     case UPDATE_CART_SUCCESS:
     case CLEAR_CART_SUCCESS:
         return {
             ...state,
             isFetching: false,
+            isProcessing: false,
+            processingText: ""
         }
     case LOGIN_REQUEST:
     case LOGOUT_REQUEST:
@@ -216,13 +220,13 @@ switch(action.type) {
         }
     case NEWSLETTER_SUCCESS:
     case NEWSLETTER_FAILURE:
-        return { 
+        return {
             ...state,
             isProcessing: false,
             error: {...state.error, ...action.payload},
             processingText: "" };
     case CHANGE_LANGUAGE_SUCCESS:
-        return { 
+        return {
             ...state,
             isProcessing: false,
             processingText: "",

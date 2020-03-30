@@ -6,7 +6,8 @@
     "cart": {
         "empty": "aucuns items dans le panier",
         "to cart": "mon panier",
-        "to checkout": "payer"
+        "to checkout": "payer",
+        "updating": "Mise a jour du panier..."
     },
     "menu": {
         "shop": "boutique",
@@ -50,7 +51,7 @@
             "short description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements. Choisissez entre nos classiques ou le choix du torréfacteur",
             "button": "Abonnez-vous"
         },
-        "subscriptionPage": {   
+        "subscriptionPage": {
             "title": "Abonnement caféiné.",
             "helper": "À partir de {{price}}, livraison gratuite, sans engagement.",
             "alert": "La boite est envoyée le cinq de chaque mois.",
