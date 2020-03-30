@@ -267,8 +267,7 @@
                 },
                 "no": "Nog geen bestellingen"
             }
-        }
-    },
+      },
     "faq": {
         "title": "Veelgestelde vragen",
         "categories": {
@@ -306,7 +305,7 @@
                 "title": "koffie-abonnementen",
                 "order-time": {
                     "question": "Wanneer ontvang ik mijn bestelling?",
-                    "answer": "De abonnementen worden elke maand op de 15e van de maand verzonden. Een paar dagen later zal deze bij jou thuis bezorgd worden."
+                    "answer": "De abonnementen worden elke maand op de 5e van de maand verzonden. Een paar dagen later zal deze bij jou thuis bezorgd worden."
                 },
                 "payment-time": {
                     "question": "Wanneer wordt het bedrag afgeschreven?",
@@ -436,4 +435,5 @@
             "update": "Kan winkelwagen niet bijwerken ..."
         }
     }
+}
 }
