@@ -6,7 +6,6 @@ import Hero from '../presentation/global/Hero';
 import Loader from '../utils/SimpleLoader';
 import Wholesale from '../presentation/intros/Wholesale';
 
-const PrivateLabel = lazy(() => import('../presentation/intros/PrivateLabel'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
 const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1575303121/Heros/Header_wholesalenew_puymio.jpg';
@@ -30,9 +29,8 @@ const WholesalePage = ({media}) => {
     }
         <Wholesale />
         <Suspense fallback={<Loader />}>
-            <PrivateLabel />
             <NewsletterContainer />
-        </Suspense> 
+        </Suspense>
     </>
     );
 };
