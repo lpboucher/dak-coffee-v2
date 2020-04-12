@@ -48,7 +48,7 @@
             "title": "Maandabonnement",
             "helper": "Vanaf {{price}}, gratis verzending, zonder verplichtingen",
             "description": "Kies voor een van onze abonnementen en ontvang elke maand verse, ambachtelijk gebrande koffiebonen thuis. Je kunt kiezen uit:\n\n<strong>ONZE KLASSIEKERS</strong>. Kies je favoriete branding en ontvang een selectie heerlijke, single origin filterbonen of espressobonen. Of allebei. Waarom niet?\n\n<strong>ROASTER’S CHOICE</strong>. Laat je verrassen door onze meesterbrander. Elke maand kiest hij de lekkerste filter, espresso of limited edition koffiebonen voor jou uit. Altijd van de hoogste kwaliteit. Altijd met een heerlijk volle smaak. Wil jij de allerlekkerste nieuwe koffies leren kennen? Dan is dit jouw abonnement.",
-            "short description": "Ontvang elke maand de lekkerste koffie bij je thuis door te kiezen voor een van onze abonnementen. Je hebt de keuze tussen ‘onze klassiekers’ en ‘The Roaster’s Choice’.",
+            "short description": "Ontvang elke maand de lekkerste koffie bij je thuis door te kiezen voor een van onze abonnementen.",
             "button": "Bestel nu"
         },
         "subscriptionPage": {

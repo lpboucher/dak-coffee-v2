@@ -48,7 +48,7 @@
             "title": "Abonnement caféiné",
             "helper": "À partir de {{price}}, livraison gratuite, sans engagement",
             "description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements. Voici les options qui s’offrent à vous:\n\n<strong>NOS CLASSIQUES</strong>. Choisissez une torréfaction et recevez une sélection de cafés d’origine pour une extraction filtre ou espresso (ou pourquoi pas les deux!).\n\n<strong>LE CHOIX DU TORRÉFACTEUR</strong>. Laissez le maître torréfacteur vous surprendre avec son coup de cœur du mois. Vous obtiendrez ainsi un assortiment de torréfactions filtre, espresso et édition limitée. Sans jamais compromettre la qualité ni le goût, notre torréfacteur vous fera découvrir toutes les subtilités de ses cafés. La formule idéale pour vous initier à de nouveaux arômes de cafés frais.",
-            "short description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements. Choisissez entre nos classiques ou le choix du torréfacteur",
+            "short description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements.",
             "button": "Abonnez-vous"
         },
         "subscriptionPage": {
