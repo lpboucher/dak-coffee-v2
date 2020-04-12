@@ -94,5 +94,5 @@ const isFromRegion = (region, country) => {
 };
 
 const orderHasSubscriptions = (items) => {
-  return items.some(item => item.name === 'The Classics' || item.name === 'The Roaster\'s Choice' || item.name === 'Dak Coffee Subscription');
+  return items.some(item => item.name === 'The Classics' || item.name === 'The Roaster\'s Choice' || item.name === 'Dak Subscription');
 };
