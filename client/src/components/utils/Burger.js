@@ -13,15 +13,15 @@ const StyledBurger = styled.button`
   padding: 0;
   z-index: 10;
   margin: 0 20px;
-  
+
   &:focus {
     outline: none;
   }
-  
+
   div {
     width: 1.5rem;
     height: 0.25rem;
-    background: #343434;
+    background: white;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
