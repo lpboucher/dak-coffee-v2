@@ -371,6 +371,7 @@
                 }
             }
         }
+    }
     },
     "newsletter": {
         "description": "Meld je aan voor onze nieuwsbrief en ontvang exclusieve koffiedeals, het laatste nieuws, smakelijke verhalen en handige tips.",
@@ -435,5 +436,4 @@
             "update": "Kan winkelwagen niet bijwerken ..."
         }
     }
-}
-}
+  }

@@ -27,7 +27,7 @@
         }
     },
     "announcement": {
-        "text": "Free shipping in Europe/North America on all subscriptions or orders above 50 EUR."
+        "text": "Free shipping in {{region}} on subscriptions or orders above {{threshold}}."
     },
     "hero": {
         "home": "From farm to cup we take great pride in celebrating quality coffee.",
@@ -45,21 +45,22 @@
     },
     "intros": {
         "subscription": {
-            "title": "Coffee Subscriptions.",
+            "title": "Coffee Subscriptions",
             "helper": "From {{price}}, free shipping, commitment free.",
             "description": "Have your coffee delivered to your doorstep every month by opting for one of our subscriptions. Choose between:\n\n<strong>OUR CLASSICS</strong>: Choose a roast and receive a selection of origin coffees in either filter or espresso roasts (or both, why not!)\n\n<strong>THE ROASTER’S CHOICE</strong>: Let the roaster surprise you with his preferred roast of the month. This subscription will offer different assortments of filter/espresso/limited edition roasts, but our roaster never compromises the quality or taste, so this is truly the best way to familiarize yourself with fresh, new coffees!",
             "short description": "Receive coffee each month from our classic lineup and / or our limited editions. Skip or cancel anytime.",
             "button": "Subscribe"
         },
         "subscriptionPage": {
-            "title": "Monthly Coffee Subscriptions.",
+            "title": "Monthly Coffee Subscriptions",
             "helper": "From {{price}}/month, free shipping, commitment free.",
             "alert": "The coffee box is shipped on the 5th of every month.",
             "short description": "Receive coffee each month from our classic lineup and / or our limited editions. Skip or cancel anytime.",
             "button": "Subscribe"
         },
         "limited edition": {
-            "title": "Our Current Limited Edition Mile High Coffee",
+            "title": "Our Current Limited Edition\n<i>Mile High Coffee</i>",
+            "soldOut": "Currently sold out",
             "subtitle": "coffee for two",
             "helper": "Almond, Caramel, Cacao butter",
             "description": "This new limited edition from Colombia is roasted for filter coffees and is particularly enjoyable brewed with an aeropress. Complex like its region’s history, this coffee is fruity, sweet and surprising.",
