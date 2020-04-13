@@ -28,7 +28,7 @@
         }
     },
     "announcement": {
-        "text": "Gratis verzending bij alle abonnementen en orders boven de €50,-."
+        "text": "Gratis verzending in {{region}} bij alle abonnementen en orders boven de {{threshold}}."
     },
     "hero": {
         "home": "Wij willen iedereen laten genieten van échte koffie.",
