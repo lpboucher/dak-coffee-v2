@@ -178,7 +178,7 @@ export const introLayout = (screenSize, isSmall) => {
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : 'small', margin: {"bottom": "medium"}},
             align: 'start',
-            around: {vertical: 'medium'}
+            around: {vertical: 'xsmall'}
         },
         infinity: {
             main: {
@@ -186,7 +186,7 @@ export const introLayout = (screenSize, isSmall) => {
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "medium"}
             },
             snap: {
-                size: isSmall ? 'small' : 'mid',
+                size: isSmall ? 'small' : 'medLarge',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "medium"}
             },
             alert: {
@@ -196,7 +196,7 @@ export const introLayout = (screenSize, isSmall) => {
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : 'small', margin: {"bottom": "medium"}},
             align: 'start',
-            around: {vertical: 'medium'}
+            around: {vertical: 'xsmall'}
         },
     }
     return mediaQueries[screenSize]
@@ -205,35 +205,35 @@ export const introLayout = (screenSize, isSmall) => {
 export const TwoCol = (screenSize, pad) => {
     const mediaQueries = {
         extraSmall: {
-            width: '100%', 
+            width: '100%',
             pad: {
                 outer: 'none',
                 inner: 'none'
             }
         },
         small: {
-            width: '100%', 
+            width: '100%',
             pad: {
                 outer: 'none',
                 inner: {vertical: 'medium', horizontal: 'large'}
             }
         },
         medium: {
-            width: '100%', 
+            width: '100%',
             pad: {
                 outer: 'none',
                 inner: {vertical: 'medium', horizontal: 'large'}
             }
         },
         large: {
-            width: '50%', 
+            width: '50%',
             pad: {
                 outer: pad.outer,
                 inner: pad.inner
             }
         },
         infinity: {
-            width: '50%', 
+            width: '50%',
             pad: {
                 outer: pad.outer,
                 inner: pad.inner
