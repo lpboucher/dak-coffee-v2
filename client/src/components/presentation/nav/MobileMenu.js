@@ -12,6 +12,9 @@ const MobileMenu = ({close, t, history}) => {
                 <Box height="20px" alignSelf="end" onClick={close}>
                     <Close />
                 </Box>
+                <Box pad="xsmall" fill="horizontal" onClick={()=>{history.push('/'); close()}}>
+                    <Button plain ><NavLink style={{textTransform: 'uppercase', padding: '6px'}} to="/">{t("menu.home")}</NavLink></Button>
+                </Box>
                 <Box pad="xsmall" fill="horizontal" onClick={()=>{history.push('/shop'); close()}}>
                     <Button plain ><NavLink style={{textTransform: 'uppercase', padding: '6px'}} to="/shop">{t("menu.shop")}</NavLink></Button>
                 </Box>
@@ -19,7 +22,7 @@ const MobileMenu = ({close, t, history}) => {
                     <Button plain><NavLink style={{textTransform: 'uppercase', padding: '6px'}} to="/subscriptions">{t("menu.subscriptions")}</NavLink></Button>
                 </Box>
                 <Box pad="xsmall" fill="horizontal">
-                    <Menu 
+                    <Menu
                         label={t("menu.about.top")}
                         dropBackground="darkGrey"
                         margin="none"
@@ -36,7 +39,7 @@ const MobileMenu = ({close, t, history}) => {
                     <Button plain><NavLink style={{textTransform: 'uppercase', padding: '6px'}}to="/contact">{t("menu.contact")}</NavLink></Button>
                 </Box>
                 <Box pad="xsmall" fill="horizontal">
-                    <Menu 
+                    <Menu
                         label={t("menu.blog.top")}
                         dropBackground="darkGrey"
                         margin="none"
