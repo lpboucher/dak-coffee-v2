@@ -11,7 +11,7 @@ import SubscriptionSelectionLayout from '../layouts/SubscriptionSelectionLayout'
 const RelatedContainer = lazy(() => import('../containers/related/RelatedContainer'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1580997312/Heros/Header_Subscription_lcfz3j.jpg'
+const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1580997312/Heros/BoxHeader_bumofc.jpg'
 
 const Subscription = () => {
     const currency = useSelector(state => getDisplayCurrency(state));
@@ -25,7 +25,7 @@ const Subscription = () => {
                 text: "hero.subscription",
                 loc: "left",
                 height: "50vh",
-                width: "40vw",
+                width: "32vw",
                 cta: "hero.cta.subscription",
                 options: { price: prices[currency] }
             }}
@@ -37,7 +37,7 @@ const Subscription = () => {
         <Suspense fallback={<Loader />}>
             <RelatedContainer relatedSlug="related_subscription"/>
             <NewsletterContainer />
-        </Suspense> 
+        </Suspense>
     </>
     );
 };

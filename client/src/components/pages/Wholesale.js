@@ -8,7 +8,7 @@ import Wholesale from '../presentation/intros/Wholesale';
 
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1575303121/Heros/Header_wholesalenew_puymio.jpg';
+const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1575303121/Heros/BunsHeader_s79x3w.jpg';
 
 const WholesalePage = ({media}) => {
     const isNotSmall = media === "medium" || media === "large" || media === "infinity";
@@ -20,7 +20,7 @@ const WholesalePage = ({media}) => {
             bgImage={header}
             overlay={{
                 text: "hero.wholesale",
-                loc: "bottom-right",
+                loc: "bottom-left",
                 height: "50vh",
                 width: "50vw",
                 withOpacity: false

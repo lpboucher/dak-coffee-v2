@@ -14,7 +14,7 @@ const FeaturedProductsContainer = lazy(() => import('../containers/products/Feat
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 const ValuesIntro = lazy(() => import('../presentation/intros/Values'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1565717609/Heros/Header_Aboutus_qwdlkf.jpg'
+const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto/v1565717609/Heros/DaybedHeader_bkct6u.jpg'
 
 class Home extends Component {
     render() {
@@ -28,10 +28,10 @@ class Home extends Component {
                         bgImage={header}
                         overlay={{
                             text: "hero.home",
-                            loc: "left",
-                            width: "100vw",
+                            loc: "bottom-left",
+                            width: "50vw",
                             height: "40vh",
-                            cta: "hero.cta.shop"
+                            cta: "hero.cta.shop",
                         }}
                         ctaLink='/shop'
                     />
@@ -43,7 +43,7 @@ class Home extends Component {
                     <FeaturedProductsContainer collection='featured-products'/>
                     <NewsletterContainer />
                     <ValuesIntro />
-                </Suspense>    
+                </Suspense>
             </>
         );
     }
