@@ -3,6 +3,7 @@ import withResponsive from '../../HOCs/withResponsive';
 
 import {Box} from 'grommet';
 
+import MessageContainer from '../../containers/nav/MessageContainer';
 import AccountContainer from '../../containers/nav/AccountContainer';
 import CartMenuContainer from '../../containers/nav/CartMenuContainer';
 import CurrencySelectorContainer from '../../containers/nav/CurrencySelectorContainer';
@@ -12,7 +13,8 @@ import MobileMenuContainer from '../../containers/nav/MobileMenuContainer';
 const ConfigBar = ({media}) => {
     const isMobile = media === "small" || media === "medium" || media === "extraSmall";
     return (
-        <Box direction="row" justify="end" align="center" fill background="darkGrey">
+        <Box direction="row" justify="end" align="center" fill background="mainDark">
+            <MessageContainer />
             <AccountContainer />
             <CartMenuContainer />
             <CurrencySelectorContainer />

@@ -10,8 +10,8 @@ const CurrencySelector = ({displayCurrency, switchCurrency}) => {
     }
     const items = Object.keys(currencies).filter(curr => curr !== displayCurrency)
     return (
-        <NavItemWithDrop label={currencies[displayCurrency].label}>
-            {items.map(item => 
+        <NavItemWithDrop color="white" label={currencies[displayCurrency].label}>
+            {items.map(item =>
                 <DropItem key={currencies[item].label} to="#" onClick={currencies[item].onClick}>{currencies[item].label}</DropItem>
             )}
         </NavItemWithDrop>

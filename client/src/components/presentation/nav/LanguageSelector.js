@@ -11,8 +11,8 @@ const LanguageSelector = ({switchLanguage, displayLang}) => {
     }
     const items = Object.keys(langs).filter(lang => lang !== displayLang)
     return (
-        <NavItemWithDrop label={displayLang}>
-            {items.map(item => 
+        <NavItemWithDrop color="white" label={displayLang}>
+            {items.map(item =>
                 <DropItem key={langs[item].label} to="#" onClick={langs[item].onClick}>{langs[item].label}</DropItem>
             )}
         </NavItemWithDrop>

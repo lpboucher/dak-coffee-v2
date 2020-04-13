@@ -14,6 +14,7 @@ export default class extends Component {
           label={label}
           open={open}
           noMargin={rest.noMargin}
+          color={rest.color ? rest.color : null}
           onClose={() => this.setState({ open: false })}
           onOpen={() => this.setState({ open: true })}
           dropAlign={{ top: 'bottom', left: 'left' }}
