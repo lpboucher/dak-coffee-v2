@@ -3,6 +3,8 @@ export const DakTheme = {
       colors: {
           'mainDark': '#343434',
           'lightGrey': '#f7f8f9',
+          //'lightGrey': '#f9f4f0',
+          //'lightGrey': '#fff9f4',
           'darkGrey': '#dcddde',
           'mainWhite': '#ffffff',
           'highlight': '#c5b6a4',
@@ -240,6 +242,10 @@ export const DakTheme = {
       medium: {
         size: "14px",
         height: "28px",
+      },
+      medLarge: {
+        size: "18px",
+        height: "36px",
       },
       mid: {
         size: "20px",
