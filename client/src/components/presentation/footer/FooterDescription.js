@@ -4,7 +4,7 @@ import withResponsive from '../../HOCs/withResponsive';
 import { withTranslation } from 'react-i18next';
 
 import { Box, Paragraph } from 'grommet';
-import { Instagram, FacebookOption } from 'grommet-icons';
+import { Instagram, FacebookOption, LinkedinOption, Pinterest } from 'grommet-icons';
 
 import { footerDescriptionLayout } from '../../layouts/globalResponsiveLayout';
 
@@ -26,6 +26,12 @@ const FooterDescription = ({t, media}) => {
                 </WithPad>
                 <WithPad href="https://www.facebook.com/dakcoffeeroasters" target="_blank" rel="noopener noreferrer">
                     <FacebookOption />
+                </WithPad>
+                <WithPad href="https://www.linkedin.com/company/13062828" target="_blank" rel="noopener noreferrer">
+                    <LinkedinOption />
+                </WithPad>
+                <WithPad href="https://pinterest.com/dakcoffeeroasters" target="_blank" rel="noopener noreferrer">
+                    <Pinterest />
                 </WithPad>
             </Box>
         </Box>
