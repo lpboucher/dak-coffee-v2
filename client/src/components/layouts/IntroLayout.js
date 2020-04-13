@@ -8,6 +8,7 @@ import { Box, Heading, Text, Button } from 'grommet';
 import { introLayout } from './globalResponsiveLayout';
 
 import CallToAction from '../presentation/global/CallToAction';
+import HeadingWithLB from '../utils/HeadingWithLB';
 
 const IntroSection = ({heading, subHeading, helperText, snap, description, summaryText, alert, btnLabel, ctaLabel, ctaOnPage, link, options=null, children, isSmall=false, t, media}) => {
     const helper = options ? t(helperText, options) : t(helperText);
@@ -16,7 +17,9 @@ const IntroSection = ({heading, subHeading, helperText, snap, description, summa
     const layout = introLayout(media, isSmall);
     return (
         <Box margin={layout.around}>
-            <Heading level={1} margin={layout.main.margin} size={layout.main.size} textAlign={layout.align}>{t(heading)}</Heading>
+            <HeadingWithLB level={1} margin={layout.main.margin} size={layout.main.size} textAlign={layout.align}>
+              <Trans i18nKey={heading} />
+            </HeadingWithLB>
             {subHeading &&
                 <Heading level={2} margin={layout.main.margin} size={layout.sub.size} textAlign={layout.align}>{subHead}</Heading>
             }
