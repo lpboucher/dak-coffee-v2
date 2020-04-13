@@ -10,6 +10,7 @@
         "updating": "Mise a jour du panier..."
     },
     "menu": {
+        "home": "home",
         "shop": "boutique",
         "christmas": "noël",
         "subscriptions": "Abonnement",

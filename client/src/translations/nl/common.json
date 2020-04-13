@@ -10,6 +10,7 @@
         "updating": "Updating cart..."
     },
     "menu": {
+        "home": "home",
         "shop": "shop",
         "christmas": "sinterklaas",
         "subscriptions": "abonnementen",
