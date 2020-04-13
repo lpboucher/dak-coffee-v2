@@ -26,8 +26,8 @@ const MainNav = ({t, media}) => {
             </Box>
             <Box pad="xsmall">
                 <NavItemWithDrop label={t("menu.about.top")} noMargin>
-                    <DropItem to="/our-coffee">{t("menu.about.coffee")}</DropItem>
                     <DropItem to="/about">{t("menu.about.about")}</DropItem>
+                    <DropItem to="/our-coffee">{t("menu.about.coffee")}</DropItem>
                 </NavItemWithDrop>
             </Box>
             <Box pad="small">
