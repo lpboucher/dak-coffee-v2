@@ -8,8 +8,8 @@ const introImg = "https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_
 
 const SubscriptionIntro = ({currency}) => {
     const prices = {EUR: '€23', CAD: '$37'}
-    const intro = 
-        <IntroLayout 
+    const intro =
+        <IntroLayout
             heading="intros.subscription.title"
             snap="intros.subscription.short description"
             summaryText="intros.subscription.helper"
@@ -18,10 +18,11 @@ const SubscriptionIntro = ({currency}) => {
             options={{ price: prices[currency] }}
         />
     return (
-        <TwoColLayout 
+        <TwoColLayout
             bgColor="darkGrey"
-            right={<FullImg imgLink={introImg} size="contain"/>}
+            right={<FullImg imgLink={introImg} size="contain" withMinHeight={false}/>}
             left={intro}
+            pad={{outer: "large", inner:{horizontal: "large", vertical: "medium"}}}
         />
     );
 };
