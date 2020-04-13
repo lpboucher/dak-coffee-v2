@@ -49,7 +49,7 @@ export const CHANGE_CURRENCY_REQUEST = 'views/change_currency_request';
 export const CHANGE_CURRENCY_SUCCESS = 'views/change_currency_success';
 export const CHANGE_LANGUAGE_REQUEST = 'views/change_language_request';
 export const CHANGE_LANGUAGE_SUCCESS = 'views/change_language_success';
-
+export const ACTIVATE_LOCATION = 'views/activate_location';
 
 //Action Creators
 export const openSnipcart = () => dispatch => {
@@ -98,6 +98,9 @@ export const switchLanguage = (lang=null) => (dispatch) => {
     }
 }
 
+export const trackLocation = (country) => dispatch => {
+  dispatch({type: ACTIVATE_LOCATION, payload: country})
+}
 export const openMobileMenu = () => dispatch => {
     dispatch({type: OPEN_MOBILE})
 }
@@ -133,7 +136,8 @@ error: {
 },
 displayCurrency: "EUR",
 displayLang: "",
-showError: false
+showError: false,
+clientLocation: "World"
 };
 
 export default function reducer(state = initialState, action) {
@@ -262,6 +266,11 @@ switch(action.type) {
             showError: true,
             isFetching: false
         }
+    case ACTIVATE_LOCATION:
+      return {
+        ...state,
+        clientLocation: action.payload,
+      }
     default:
         return state;
 }
@@ -287,6 +296,8 @@ export const getProcessingText = (state) => state.views.processingText;
 export const getDisplayCurrency = (state) => state.views.displayCurrency;
 
 export const getDisplayLang = (state) => state.views.displayLang;
+
+export const getLocation = (state) => state.views.clientLocation;
 
 export const getMediaSize = (state) => state.browser.mediaType;
 

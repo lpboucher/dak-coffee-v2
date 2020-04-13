@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { getDefaultLocationCurrency } from '../components/utils/Languages/detectLanguage';
+import { detectBrowserLocation, getDefaultLocationCurrency } from '../components/utils/Languages/detectLanguage';
 
 import { login } from './user';
 import { getProduct } from './products';
 import { getSubscription } from './subscriptions';
-import { switchDisplayCurrency, switchLanguage, openCartSummary, closeCartSummary } from './views';
+import { trackLocation, switchDisplayCurrency, switchLanguage, openCartSummary, closeCartSummary } from './views';
 
 //Action Types
 export const UPDATE_CART_REQUEST = 'cart/update_cart_request';
@@ -21,6 +21,7 @@ export const PROMO_CART_FAILURE = 'cart/promo_cart_failure';
 
 export const initializeCart = () => async (dispatch) => {
     window.Snipcart.subscribe('cart.ready', async (data) => {
+        dispatch(trackLocation(await detectBrowserLocation()))
         if (data.order && data.order.items.length > 0) {
             dispatch(switchDisplayCurrency(data.order.currency))
         } else {
@@ -119,7 +120,7 @@ const byId = (state = byIdDefault, action) => {
             return state
     }
 }
- 
+
 const allIdsDefault = [];
 const allIds = (state = allIdsDefault, action) => {
     switch (action.type) {

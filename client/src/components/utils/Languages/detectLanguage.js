@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const detectBrowserLocation = async () => {
     const geo = await axios.get('https://freegeoip.app/json/');
-    return geo.data.country;
+    return geo.data.country_code;
 }
 
 export const getDefaultLocationCurrency = async () => {
