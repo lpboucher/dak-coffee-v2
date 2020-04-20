@@ -11,10 +11,10 @@ const PromoContent = ({close, currency, history, t}) => {
   }
     return (
         <Box height={"100%"} fill={"horizontal"} pad={"medium"} justify={"around"} background={"#c5b6a3"}>
-            <Heading level={1} size={'promo'} textAlign={'left'}>{t("promo.name")}</Heading>
-            <Text>{t("promo.message", {prices: prices[currency]})}</Text>
+            <Heading color="black" level={1} size={'promo'} textAlign={'left'}>{t("promo.name")}</Heading>
+            <Text color="black">{t("promo.message", {prices: prices[currency]})}</Text>
             <Button primary onClick={()=>{close(); history.push('/shop')}}label={t("promo.cta")} alignSelf={"left"} style={{color: 'white'}}/>
-            <Text>{t("promo.expiration")}</Text>
+            <Text color="black">{t("promo.expiration")}</Text>
         </Box>
     );
 };
