@@ -242,7 +242,26 @@
             "500EUR": "(26.50€)",
             "1000CAD": "(72$)",
             "1000EUR": "(50€)"
-        }
+        },
+        "nemba-coffee": {
+          "name": "Nemba",
+          "short": "Burundi coffee (filter)",
+          "description": "This Burundi coffee is roasted for filter. All coffees from Burundi are Red Bourbon and are farmed by smallholders. The Burundi government tightly controls the coffee industry to maintain exceptionally high quality.\n\nThe Nemba washing station collects cherries from 3000+ nearby farmers. It is overseen by an agronomist who ensures good practice and quality harvesting.",
+          "region": "Kayanza",
+          "country": "Burundi",
+          "roast": "Filter",
+          "lot": "Nemba",
+          "process": "Natural",
+          "variety": "Red Bourbon",
+          "drink": "Filter",
+          "taste": "Blood orange, Blueberry, Strawberry, Chocolate, Mint",
+          "harvest": "The coffee industry is fueled by 2 million smallholders, making up 20% of the total population!",
+          "altitude": "1700m",
+          "500CAD": "(29$)",
+          "500EUR": "(22€)",
+          "1000CAD": "(57.50$)",
+          "1000EUR": "(41.50€)"
+      }
     },
     "subscription": {
         "classics-subscription": {

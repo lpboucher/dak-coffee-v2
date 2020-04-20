@@ -206,7 +206,7 @@
         },
         "sonora-coffee": {
             "name": "Sonora",
-            "short": "Café Costa Ricain (filter)",
+            "short": "Café Costa Ricain (filtre)",
             "description": "Ce café costa ricain est torréfié en filtre. Ce café pousse sur une terre entourée d'arbres exotiques et de végétation qui, combinés au sol volcanique riche en nutriments, créent un environnement favorable au développement de café de haute qualité.\n\nHacienda Sonora produit seulement des cafés Naturel ou Miel. Ceux-ci présentent des notes subtiles de fermentation avec des arômes intenses de fruits.",
             "region": "West Valley",
             "country": "Costa Rica",
@@ -222,7 +222,26 @@
             "500EUR": "(26.50€)",
             "1000CAD": "(72$)",
             "1000EUR": "(50€)"
-        }
+        },
+        "nemba-coffee": {
+          "name": "Nemba",
+          "short": "Café Burundais (filtre)",
+          "description": "Ce café burundais est torréfié en filtre. Tous les cafés en provenance du Burundi sont de la variété Bourbon Rouge et sont cultivés par des petites fermes. Le gouvernement Burundais contrôle étroitement la production pour assurer une qualité exceptionelle.\n\nLa station de lavage Nemba recoit les cerises de plus de 3000 fermiers des environs. Celle-ci est supervisée par un agronome qui s'assure de la qualité de la récolte et des grains de café.",
+          "region": "Kayanza",
+          "country": "Burundi",
+          "roast": "Filtre",
+          "lot": "Nemba",
+          "process": "Naturel",
+          "variety": "Bourbon Rouge",
+          "drink": "Filtre",
+          "taste": "Oranges sanguines, Bleuets, Fraises, Chocolat, Menthe",
+          "harvest": "L'industrie du café est soutenue par 2 millions de petites fermes, celles-ci composent près de 20% de la population totale du pays!",
+          "altitude": "1700m",
+          "500CAD": "(29$)",
+          "500EUR": "(22€)",
+          "1000CAD": "(57.50$)",
+          "1000EUR": "(41.50€)"
+      }
     },
     "subscription": {
         "classics-subscription": {
