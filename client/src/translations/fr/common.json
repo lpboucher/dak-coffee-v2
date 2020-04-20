@@ -30,6 +30,12 @@
     "announcement": {
         "text": "Livraison gratuite ({{region}}) sur les abonnements et les commandes de plus de {{threshold}}."
     },
+    "promo": {
+      "name": "Recevez un tote gratuit!",
+      "message": "Recevez un tote DAK gratuit à l'achat de {{prices}} et plus.",
+      "cta": "J'EN VEUX UN!",
+      "expiration": "Promotion valide jusqu'au 30 Avril 2020."
+    },
     "hero": {
         "home": "Du terroir à votre tasse, c'est avec fierté que nous vous proposons un café de qualité.",
         "christmas": "Le café a bien meilleur goût quand il est le fruit du partage.",

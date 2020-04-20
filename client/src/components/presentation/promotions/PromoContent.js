@@ -1,17 +1,22 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
 
 import { Box, Heading, Button, Text } from 'grommet';
 
-const PromoContent = ({close, history}) => {
+const PromoContent = ({close, currency, history, t}) => {
+  const prices = {
+    EUR: '€24',
+    CAD: '$35',
+  }
     return (
-        <Box height={"100%"} fill={"horizontal"} pad={"medium"} justify={"around"} background={"#ece7e3"}>
-            <Heading level={1} size={'large'} textAlign={'center'}>November Promotion</Heading>
-            <Text>Get a free 250g bag of our Rutabo filter coffee when ordering more than 30EUR.</Text>
-            <Button primary onClick={()=>{close(); history.push('/shop/rutabo-coffee')}}label={"SHOP NOW"} alignSelf={"center"} style={{color: 'white'}}/>
-            <Text>Promotion valid until 30th November 2019.</Text>
+        <Box height={"100%"} fill={"horizontal"} pad={"medium"} justify={"around"} background={"#c5b6a3"}>
+            <Heading level={1} size={'promo'} textAlign={'left'}>{t("promo.name")}</Heading>
+            <Text>{t("promo.message", {prices: prices[currency]})}</Text>
+            <Button primary onClick={()=>{close(); history.push('/shop')}}label={t("promo.cta")} alignSelf={"left"} style={{color: 'white'}}/>
+            <Text>{t("promo.expiration")}</Text>
         </Box>
     );
 };
 
-export default withRouter(PromoContent);
+export default withTranslation()(withRouter(PromoContent));

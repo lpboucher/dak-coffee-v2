@@ -30,6 +30,12 @@
     "announcement": {
         "text": "Free shipping in {{region}} on subscriptions or orders above {{threshold}}."
     },
+    "promo": {
+      "name": "Get a Free Tote Bag!",
+      "message": "Get a free DAK branded tote bag when you order {{prices}} or more.",
+      "cta": "I WANT ONE!",
+      "expiration": "Promotion valid until 30th April 2020."
+    },
     "hero": {
         "home": "From farm to cup we take great pride in celebrating quality coffee.",
         "christmas": "Coffee tastes better when shared.",

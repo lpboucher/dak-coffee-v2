@@ -6,7 +6,7 @@ import PromoContent from '../../presentation/promotions/PromoContent';
 
 import { Layer, Box } from 'grommet';
 
-const AnnouncementModal = ({close, media}) => {
+const AnnouncementModal = ({close, currency, media}) => {
     const isMobile = media === "extraSmall" || media === "small";
     return (
     <>
@@ -14,10 +14,10 @@ const AnnouncementModal = ({close, media}) => {
         <Layer onEsc={() => close()} onClickOutside={() => close()} modal position="center">
             <Box width={'600px'} direction='row' wrap>
                 <Box width={'50%'}>
-                    <FullImg imgLink={'https://res.cloudinary.com/dak-coffee-roasters/image/upload/dpr_2.0/v1574086663/Intros/promorutabo_jbpoie.jpg'} size={'cover'}/>
+                    <FullImg imgLink={'https://res.cloudinary.com/dak-coffee-roasters/image/upload/c_scale,w_400/v1587393255/Intros/bagwebsite_eteg6f.jpg'} size={'cover'}/>
                 </Box>
                 <Box width={'50%'}>
-                    <PromoContent close={close}/>
+                    <PromoContent currency={currency} close={close}/>
                 </Box>
             </Box>
         </Layer>

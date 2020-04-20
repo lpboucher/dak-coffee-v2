@@ -30,6 +30,12 @@
     "announcement": {
         "text": "Gratis verzending in {{region}} bij alle abonnementen en orders boven de {{threshold}}."
     },
+    "promo": {
+      "name": "Ontvang een gratis tote bag!",
+      "message": "Ontvang een gratis DAK tote bag vanaf {{prices}}.",
+      "cta": "JA, GRAAG!",
+      "expiration": "Promotie geldig tot 30 April 2020."
+    },
     "hero": {
         "home": "Wij willen iedereen laten genieten van échte koffie.",
         "christmas": "Wij willen iedereen laten genieten van échte koffie.",

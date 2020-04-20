@@ -9,7 +9,7 @@ import { schemaBuilder } from '../utils/SEO/schema';
 import SEO from '../utils/SEO/SEO';
 import ErrorContainer from '../containers/global/ErrorContainer';
 import LoaderContainer from '../containers/global/LoaderContainer';
-//import AnnouncementContainer from '../containers/global/AnnouncementContainer';
+import AnnouncementContainer from '../containers/global/AnnouncementContainer';
 import SubNavBar from '../containers/nav/SubNavContainer';
 import Footer from '../presentation/footer/Footer';
 
@@ -34,7 +34,7 @@ class PageLayout extends PureComponent {
         const schema = schemaBuilder('WebSite', 'https://dakcoffeeroasters.com')
         return (
             <>
-                <SEO 
+                <SEO
                     title={'Specialty coffee, roasted in Amsterdam - Dak Coffee Roasters'}
                     description={'Order or subscribe to premium varieties of high quality specialty coffee delivered right to your door'}
                     keywords={['coffee', 'coffee beans']}
@@ -42,7 +42,7 @@ class PageLayout extends PureComponent {
                 />
                 <ErrorContainer />
                 <LoaderContainer />
-                {//<AnnouncementContainer />
+                {<AnnouncementContainer />
                 }
                 <NavigationLayout>
                     <ConfigBar />

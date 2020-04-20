@@ -85,6 +85,11 @@ export const DakTheme = {
     heading: {
       level: {
         1: {
+          promo: {
+            size: "22px",
+            height: "33px",
+            maxWidth: "100%"
+        },
           xsmall: {
             size: "10px",
             height: "20px",

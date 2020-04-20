@@ -1,17 +1,17 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { isPromoOpen, closePromotion } from '../../../ducks/views';
+import { isPromoOpen, closePromotion, getDisplayCurrency } from '../../../ducks/views';
 
 import AnnouncementModal from '../../presentation/global/AnnouncementModal';
 
 class AnnoucementContainer extends PureComponent {
 
     render() {
-        const { isPromoOpen, close } = this.props;
+        const { isPromoOpen, close, currency } = this.props;
         return (
             <>
                 {isPromoOpen &&
-                    <AnnouncementModal close={close} />
+                    <AnnouncementModal currency={currency} close={close} />
                 }
             </>
         );
@@ -23,6 +23,7 @@ class AnnoucementContainer extends PureComponent {
 function mapStateToProps(state) {
     return {
         isPromoOpen: isPromoOpen(state),
+        currency: getDisplayCurrency(state),
     }
 }
 
