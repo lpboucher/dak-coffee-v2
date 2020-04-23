@@ -15,7 +15,7 @@ import { buildImageUrl } from '../../utils/Images/generateImage';
 import { coffeeCardLayout } from '../../layouts/globalResponsiveLayout';
 
 const WithHover = styled(Box)`
-    cursor: pointer;
+    cursor: ${({isHoverable}) => isHoverable ? 'pointer' : 'initial'};
     padding: 0 12px;
     &:hover ${CardHover}:before {
     border-bottom: 1px solid #a96c35;
@@ -27,11 +27,11 @@ const CoffeeCard = withRouter(({id, name, slug, type, thumb_image, price, stock,
     const layout = coffeeCardLayout(media);
     const outOfStock = stock < 1;
     return (
-        <WithHover height={layout.height} width="100%" >
-            <Box height="75%" onClick={() => !outOfStock ? history.push(`/shop/${slug}`) : null} isHoverable={!outOfStock}>
+        <WithHover height={layout.height} width="100%" isHoverable={!outOfStock}>
+            <Box height="75%" width="100%" onClick={() => !outOfStock ? history.push(`/shop/${slug}`) : null}>
                 <Image fit="contain" src={imageSRC} alt={`${name}`}/>
                 {outOfStock &&
-                    <OutOfStock fill>
+                    <OutOfStock>
                         <Box align="start" pad="small">
                             <SoldOut height="48px" />
                         </Box>
@@ -39,14 +39,14 @@ const CoffeeCard = withRouter(({id, name, slug, type, thumb_image, price, stock,
                 }
             </Box>
             <Box>
-                <CoffeeCardInfo 
+                <CoffeeCardInfo
                     id={id}
                     slug={slug}
                     type={type}
                     price={price}
                     currency={currency}
                 />
-            </Box>   
+            </Box>
         </WithHover>
     );
 })
