@@ -4,7 +4,7 @@ import withResponsive from '../HOCs/withResponsive';
 import { Link } from 'react-router-dom';
 
 import CoffeeCardContainer from '../containers/products/CoffeeCardContainer';
-import ProductSlider from './new/ProductsSliderLayout';
+//import ProductSlider from './new/ProductsSliderLayout';
 
 import { Box } from 'grommet';
 
