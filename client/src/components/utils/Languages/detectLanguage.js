@@ -1,9 +1,10 @@
 import axios from 'axios';
 
 export const detectBrowserLocation = async () => {
+  console.log(process.env.REACT_APP_GEO_KEY);
   try {
-    const geo = await axios.get('https://freegeoip.app/json/');
-    return geo.data.country_code;
+    const geo = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_GEO_KEY}`);
+    return geo.data.country_code2;
   } catch(err) {
     return 'NL'
   }
