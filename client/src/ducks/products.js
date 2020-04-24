@@ -59,7 +59,7 @@ const byId = (state = {}, action) => {
             return state
     }
 }
-    
+
 const allIds = (state = [], action) => {
     switch (action.type) {
         case FETCH_PRODUCTS_SUCCESS:
@@ -76,6 +76,16 @@ export default combineReducers({
 
 //Selectors
 export const getProduct = (state, id) => state.products.byId[id];
+
+export const getProductFeature = (state, id) => {
+  const product = getProduct(state, id);
+  if (product) return {
+    name: product.name,
+    thumb_image: product.thumb_image,
+    stock: product.stock,
+    slug: product.slug
+  }
+}
 
 export const getProducts = (state) => state.products.allIds;
 

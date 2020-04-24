@@ -137,7 +137,8 @@
             "price": "À partir de ",
             "details": "Détails",
             "recommendation": "Recommendé en",
-            "recyclable": "Sacs et boites 100% recyclables"
+            "recyclable": "Sacs et boites 100% recyclables",
+            "read-more": "En apprendre plus sur ce café"
         },
         "related": {
             "title": "Vous aimerez aussi"

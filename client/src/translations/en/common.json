@@ -138,7 +138,8 @@
             "price": "From ",
             "details": "Details",
             "recommendation": "Recommended as",
-            "recyclable": "100% recyclable bag, recyclable box"
+            "recyclable": "100% recyclable bag, recyclable box",
+            "read-more": "Read more about this coffee"
         },
         "related": {
             "title": "you may also like"

@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { withTranslation } from 'react-i18next';
 
-import { User } from 'grommet-icons';
 import { Box, Menu } from 'grommet';
+import { ReactComponent as User} from '../../../assets/icons/user.svg';
 
 const UserIcon = styled(User)`
-    width: 20px;
-    height: 20px;
+    fill: white;
+    width: 30px;
+    height: 30px;
 `
 
 const UserWrapper = styled.div`

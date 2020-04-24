@@ -5,11 +5,12 @@ import CartQuantity from './CartQuantity';
 import CartIconLayout from '../../layouts/CartIconLayout';
 import CartSummaryContainer from '../../containers/nav/CartSummaryContainer';
 
-import { Cart } from 'grommet-icons';
+import { ReactComponent as Cart} from '../../../assets/icons/shoppingcart.svg';
 
 const CartIcon = styled(Cart)`
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    fill: white;
 `
 
 const CartCounter = ({cartRef, cartQuantity, openCart, closeCart, isCartOpen}) => {
