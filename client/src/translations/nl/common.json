@@ -137,7 +137,8 @@
             "price": "Vanaf ",
             "details": "Productspecificaties",
             "recommendation": "Branding: ",
-            "recyclable": "100% recyclebaar koffiezakken en doos"
+            "recyclable": "100% recyclebaar koffiezakken en doos",
+            "read-more": "Lees meer over deze koffie"
         },
         "related": {
             "title": "gerelateerde producten"
