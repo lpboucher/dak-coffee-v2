@@ -7,8 +7,8 @@ import { ReactComponent as User} from '../../../assets/icons/user.svg';
 
 const UserIcon = styled(User)`
     fill: white;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 `
 
 const UserWrapper = styled.div`

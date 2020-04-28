@@ -8,8 +8,8 @@ import CartSummaryContainer from '../../containers/nav/CartSummaryContainer';
 import { ReactComponent as Cart} from '../../../assets/icons/shoppingcart.svg';
 
 const CartIcon = styled(Cart)`
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     fill: white;
 `
 
