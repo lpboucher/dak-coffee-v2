@@ -13,28 +13,28 @@ const ProductSpecs = ({specs, media}) => {
     const isMobile = media === "extraSmall" || media === "small";
     return (
         <Box pad={layout.pad}>
-            <IconedExplanation 
-                icon={main.icon}
-                description={main.description}
-                spacing={{vertical: 'small'}}
-                margin={{vertical: "small"}}
-                size={"small"}
-                mobile={isMobile}
-            />
             <Grid columns={layout.columns} rows={layout.rows}>
-            {specs.map(spec => 
-                spec.isMain !== true && 
-                    <IconedExplanation 
+            {specs.map(spec =>
+                spec.isMain !== true &&
+                    <IconedExplanation
                         key={spec.description}
                         icon={spec.icon}
                         description={spec.description}
-                        spacing={{vertical: 'small'}}
+                        spacing={{vertical: 'xsmall'}}
                         margin="none"
                         size={"small"}
                         mobile={isMobile}
                     />
-            )}            
+            )}
             </Grid>
+            <IconedExplanation
+                icon={main.icon}
+                description={main.description}
+                spacing={{vertical: 'xsmall'}}
+                margin={{vertical: "small"}}
+                size={"small"}
+                mobile={isMobile}
+            />
         </Box>
     );
 };
