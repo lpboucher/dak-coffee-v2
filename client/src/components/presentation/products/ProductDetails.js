@@ -44,7 +44,7 @@ const ProductDetails = ({id, name, slug, price, currency, type, media, t}) => {
                 <>
                     <ProductSpecs
                         recommendation={`${t("sections.product.recommendation")} ${t(`${identifier}.drink`)}`}
-                        process={t(`${identifier}.process`)}
+                        process={`${t(`${identifier}.process`)} | ${t(`${identifier}.variety`)}`}
                         harvest={t(`${identifier}.harvest`)}
                         altitude={t(`${identifier}.altitude`)}
                         tasting_notes={t(`${identifier}.taste`)}
