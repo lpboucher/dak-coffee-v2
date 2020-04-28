@@ -261,6 +261,25 @@
           "500EUR": "(22€)",
           "1000CAD": "(57.50$)",
           "1000EUR": "(41.50€)"
+      },
+      "cayo-coffee": {
+        "name": "Cayo",
+        "short": "Peruvian coffee (espresso)",
+        "description": "This Peruvian coffee is roasted for espresso. At 2200m in the heart of the Andes, Valle del Pauran is not a typical coffee climate. However, micro climates provide shelter areas from the cold, windy mountains, where coffee can grow.\n\nMost farmers in the region have small lots (1-1.5 hectares) and focus on a high quality product. Fredy & Felipe often participate in the Cup of Excellence fo Peru.",
+        "region": "Valle de Pauran",
+        "country": "Peru",
+        "roast": "Espresso",
+        "lot": "Fredy & Felipe",
+        "process": "Washed",
+        "variety": "Typica, Bourbon",
+        "drink": "Espresso",
+        "taste": "White tea, Mandarin, Hazelnut",
+        "harvest": "Fredy & Felipe entered the Specialty Coffee market because their coffees had such unique flavor profiles compared to other coffees from the region",
+        "altitude": "2200m",
+        "500CAD": "(29.50$)",
+        "500EUR": "(20.00€)",
+        "1000CAD": "(56$)",
+        "1000EUR": "(37.80€)"
       }
     },
     "subscription": {

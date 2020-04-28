@@ -241,6 +241,25 @@
           "500EUR": "(22€)",
           "1000CAD": "(57.50$)",
           "1000EUR": "(41.50€)"
+      },
+      "cayo-coffee": {
+        "name": "Cayo",
+        "short": "Café Péruvien (espresso)",
+        "description": "Ce café péruvien est torréfié en espresso. À 2200m d'altitude dans les Andes, la Vallée del Pauran n'est pas le climat typique pour le café. Par contre, plusieurs micro climats offrent des endroits protégés du froid et du vent des montagnes où le café peut être récolté.\n\nLa plupart des fermiers de la région possèdent des petits lots (1-1.5 hectares) et focusent sur un produit de qualité. Fredy & Felipe participate régulièrement à Cup of Excellence au Pérou.",
+        "region": "Vallée de Pauran",
+        "country": "Pérou",
+        "roast": "Espresso",
+        "lot": "Fredy & Felipe",
+        "process": "Lavé",
+        "variety": "Typica, Bourbon",
+        "drink": "Espresso",
+        "taste": "Thé blanc, Mandarines, Noisettes",
+        "harvest": "Fredy & Felipe se sont lancés dans le marché de spécialité puisque leurs cafés ont toujours des goûts plus uniques et rechercheés que les autres cafés de la région",
+        "altitude": "2200m",
+        "500CAD": "(29.50$)",
+        "500EUR": "(20.00€)",
+        "1000CAD": "(56$)",
+        "1000EUR": "(37.80€)"
       }
     },
     "subscription": {
