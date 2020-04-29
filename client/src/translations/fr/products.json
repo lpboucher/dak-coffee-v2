@@ -278,46 +278,5 @@
             "short": "Monthly coffee subscription",
             "description": "Receive a selection of Dak coffees monthly automatically"
         }
-    },
-    "christmas": {
-        "selection-coffee": {
-            "name": "Sélection Classique",
-            "description": "Cet ensemble comprend:\n- 4 x 250g de nos cafés Classiques (Rutabo, Chelelektu, Esperanza, Blend 108)\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.",
-            "short": "Boite noël"
-        },
-        "full-selection-coffee": {
-            "name": "Sélection Complète",
-            "description": "Cet ensemble comprend:\n- 6 x 250g de tous nos cafés (Rutabo, Chelelektu, Esperanza, Blend 108, Coffee For Two, Mile High Coffee)\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.",
-            "short": "Boite noël"
-        }
-    },
-    "christmas-espresso": {
-        "espresso-tote": {
-            "name": "Espresso + Sac Réutilisable",
-            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés espresso Esperanza / Blend 108\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
-            "short": "Boite noël"
-        }
-    },
-    "christmas-filter": {
-        "filter-tote": {
-            "name": "Filter + Sac Réutilisable",
-            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés Rutabo / Chelelektu filtre\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
-            "short": "Boite noël"
-        },
-        "porlex-filter-tote": {
-            "name": "Grind your beans",
-            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés Rutabo / Chelelektu filtre\n- Un moulin à main Porlex\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
-            "short": "Boite noël"
-        },
-        "aeropress-porlex-filter-tote": {
-            "name": "On the go",
-            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés Rutabo / Chelelektu filtre\n- Un Aéropress\n- Un moulin à main Porlex\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
-            "short": "Boite noël"
-        },
-        "chemex-porlex-filter": {
-            "name": "Pour over starter",
-            "description": "Cet ensemble comprend:\n- 2 x 250g de nos cafés Rutabo / Chelelektu filtre\n- Un Chemex Classique 3-Tasses\n- Un paquet de filtres Chemex (100)\n- Un moulin à main Porlex\n- Un sac réutilisable Dak\n- L'ensemble sera emballé dans une boite Dak Coffee Roasters.\n\nVeuillez choisir votre café:",
-            "short": "Boite noël"
-        }
     }
 }

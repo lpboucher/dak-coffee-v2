@@ -18,18 +18,7 @@ const ProductDetails = ({id, name, slug, price, currency, type, media, t}) => {
             {"label": `500g ${t(`${identifier}.500${currency}`)}`,"value": "500g"},
             {"label": `1kg ${t(`${identifier}.1000${currency}`)}`,"value": "1kg"}
         ],
-        'christmas-espresso': [
-            {"label": "Esperanza","value": "Esperanza"},
-            {"label": "Blend 108","value": "Blend 108"},
-            {"label": "Esperanza+Blend","value": "Both"},
-        ],
-        'christmas-filter': [
-            {"label": "Rutabo","value": "Rutabo"},
-            {"label": "Chelelektu","value": "Chelelektu"},
-            {"label": "Rutabo+Chelelektu","value": "Both"},
-        ],
         'equipment': [],
-        'christmas': []
     }
     return (
         <>

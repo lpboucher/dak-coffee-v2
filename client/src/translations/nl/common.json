@@ -12,7 +12,6 @@
     "menu": {
         "home": "home",
         "shop": "shop",
-        "christmas": "sinterklaas",
         "subscriptions": "abonnementen",
         "about": {
             "top": "over ons",
@@ -38,7 +37,6 @@
     },
     "hero": {
         "home": "Wij willen iedereen laten genieten van échte koffie.",
-        "christmas": "Wij willen iedereen laten genieten van échte koffie.",
         "subscription": "Ontvang elke maand verse koffiebonen thuis.",
         "coffee": "Wij doen er alles aan om allerhoogste kwaliteit koffie te leveren met een zo klein mogelijke ecologische voetafdruk.",
         "team": "Wij gaan altijd voor de hoogste kwaliteit.",
