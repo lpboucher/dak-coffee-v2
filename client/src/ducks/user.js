@@ -1,7 +1,6 @@
 //import { combineReducers } from 'redux';
 import axios from 'axios';
 import i18n from "i18next";
-import LogRocket from 'logrocket';
 
 import {
     UPDATE_CART_REQUEST,
@@ -25,9 +24,6 @@ export const login = () => dispatch => {
     try {
         const user = window.Snipcart.api.user.current();
         dispatch({ type: LOGIN_SUCCESS, payload: user });
-        LogRocket.identify(user.id, {
-            email: user.email,
-          });
     } catch(err) {
         dispatch({ type: LOGIN_FAILURE });
     }
