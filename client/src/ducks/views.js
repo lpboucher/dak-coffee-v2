@@ -28,7 +28,6 @@ import {
     FETCH_PRODUCTS_REQUEST,
     FETCH_PRODUCTS_SUCCESS,
     FETCH_PRODUCTS_FAILURE,
-    FETCH_INVENTORY_FAILURE
 } from './products';
 
 import {
@@ -257,7 +256,6 @@ switch(action.type) {
                 ...state,
             }
     case FETCH_PRODUCTS_FAILURE:
-    case FETCH_INVENTORY_FAILURE:
     case FETCH_CART_FAILURE:
     case FETCH_ARTICLES_FAILURE:
         return {

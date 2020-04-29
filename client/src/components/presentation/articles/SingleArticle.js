@@ -15,7 +15,6 @@ const SingleArticle = ({id, main, content, title, language, slug, keywords, medi
         'Article',
         `https://www.dakcoffeeroasters.com/blog/${slug}`,
         title[language],
-        imageSRC,
         );
     return (
         <>
