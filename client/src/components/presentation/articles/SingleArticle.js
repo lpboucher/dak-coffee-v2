@@ -9,11 +9,8 @@ import Hero from '../global/Hero';
 
 import { Box } from 'grommet';
 
-import { buildImageUrl } from '../../utils/Images/generateImage';
-
 const SingleArticle = ({id, main, content, title, language, slug, keywords, media}) => {
     const isMobile = !(media === "medium" || media === "large" || media === "infinity");
-    const imageSRC = buildImageUrl(`Articles/Headers/${main}`);
     const schema = schemaBuilder(
         'Article',
         `https://www.dakcoffeeroasters.com/blog/${slug}`,
@@ -22,16 +19,15 @@ const SingleArticle = ({id, main, content, title, language, slug, keywords, medi
         );
     return (
         <>
-            <SEO 
+            <SEO
                 keywords={keywords.split(",")}
                 title={title[language]}
-                image={imageSRC}
                 url={`https://www.dakcoffeeroasters.com/blog/${slug}`}
                 schema={schema}
                 canon={`https://www.dakcoffeeroasters.com/blog/${slug}`}
             />
             <Hero
-                    bgImage={imageSRC}
+                    bgImage={`Articles/Headers/${main}`}
                     height="90vh"
                     overlay={{
                         text: title[language],

@@ -7,13 +7,12 @@ import SEO from '../../utils/SEO/SEO';
 import ProductDetails from './ProductDetails';
 import TwoColLayout from '../../layouts/TwoColLayout';
 
-import { Box, Image } from 'grommet';
+import { Box } from 'grommet';
+import CloudImage from '../../utils/CloudImage';
 
-import { buildImageUrl } from '../../utils/Images/generateImage';
 import { singleProductLayout } from '../../layouts/globalResponsiveLayout';
 
 const SingleProduct = ({product, currency, media}) => {
-    const imageSRC = buildImageUrl(`Products/Mains/${product.main_image}`, 'f_auto,q_auto');
     const layout = singleProductLayout(media);
     const schema = schemaBuilder(
         'Product',
@@ -27,15 +26,15 @@ const SingleProduct = ({product, currency, media}) => {
         );
     return (
         <>
-            <SEO 
+            <SEO
                 keywords={[product.type, product.name, ...product.categories.map(cat => cat.name)]}
                 schema={schema}
                 canon={`https://www.dakcoffeeroasters.com/shop/${product.slug}`}
                 url={`https://www.dakcoffeeroasters.com/shop/${product.slug}`}
             />
-            <TwoColLayout 
+            <TwoColLayout
                 left={<Box pad={layout.imagePad} height="600px">
-                        <Image fit="contain" src={imageSRC}/>
+                        <CloudImage img={`Products/Mains/${product.main_image}`} maxWidth={720} fit="contain"/>
                     </Box>}
                 right={<Box pad={layout.descPad}>
                         <ProductDetails currency={currency} {...product}/>

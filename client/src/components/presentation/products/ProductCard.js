@@ -7,12 +7,9 @@ import OutOfStock from '../../utils/OutOfStock';
 import { ReactComponent as SoldOut } from '../../../assets/icons/soldout.svg';
 import CloudImage from '../../utils/CloudImage';
 
-import { Box, Image } from 'grommet';
-
-import { buildImageUrl } from '../../utils/Images/generateImage';
+import { Box } from 'grommet';
 
 const ProductCard = withRouter(({id, name, slug, type, thumb_image, price, stock, currency, history}) => {
-    const imageSRC = buildImageUrl(`Products/Thumbs/${thumb_image}`, 'f_auto,q_auto');
     const outOfStock = stock < 1;
     return (
         <>

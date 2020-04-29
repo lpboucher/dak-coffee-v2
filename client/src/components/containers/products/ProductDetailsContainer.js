@@ -7,15 +7,7 @@ import SingleProduct from '../../presentation/products/SingleProduct';
 
 import Loader from '../../utils/SimpleLoader';
 
-import { buildImageUrl } from '../../utils/Images/generateImage';
-
 class ProductDetailsContainer extends Component {
-
-    componentDidMount() {
-        const { product } = this.props;
-        if(product && Object.keys(product).length > 0) { 
-            new Image().src = buildImageUrl(`Products/Mains/${product.main_image}`, 'product_main') };
-    }
 
     renderProduct() {
     const { product, currency } = this.props;
@@ -23,7 +15,7 @@ class ProductDetailsContainer extends Component {
 
     return <Loader />
     }
-    
+
     render() {
         return (
             <>
