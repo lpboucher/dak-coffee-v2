@@ -377,7 +377,7 @@
                     }
                 }
             }
-        },
+        }
     },
     "newsletter": {
         "description": "Sign up to our newsletter to receive exclusive coffee promotions, news, stories, tips.",
