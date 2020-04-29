@@ -14,7 +14,7 @@ const FeaturedProductsContainer = lazy(() => import('../containers/products/Feat
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 const ValuesIntro = lazy(() => import('../presentation/intros/Values'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto/v1565717609/Heros/DaybedHeader_bkct6u.jpg'
+const header = 'Heros/Header_mainpage_n4krkg.jpg'
 
 class Home extends Component {
     render() {

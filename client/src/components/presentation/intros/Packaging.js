@@ -1,10 +1,10 @@
 import React from 'react';
 
 import TwoColLayout from '../../layouts/TwoColLayout';
-import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
+import CloudImage from '../../utils/CloudImage';
 
-const pack = "https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1566244655/Intros/Ecofriendly2020_2_xlh71n.jpg";
+const pack = "Intros/Ecopackaging_rk8afi.jpg";
 
 const PackagingIntro = () => {
     const intro =
@@ -12,10 +12,11 @@ const PackagingIntro = () => {
             heading="intros.packaging.title"
             description="intros.packaging.description"
         />
+    const img = <CloudImage img={pack} maxWidth={575} padding="24px 48px"/>
     return (
         <TwoColLayout
             bgColor="lightGrey"
-            left={<FullImg imgLink={pack}/>}
+            left={img}
             right={intro}
         />
     );

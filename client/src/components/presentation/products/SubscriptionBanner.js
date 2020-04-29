@@ -2,10 +2,10 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 
 import TwoColLayout from '../../layouts/TwoColLayout';
-import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
+import CloudImage from '../../utils/CloudImage';
 
-const thumb = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1572972636/Intros/BoxShipping_2_mgcqjw.png';
+const thumb = 'Intros/BoxShipping_2_mgcqjw.png';
 
 const SubscriptionBanner = ({isMobile, currency, t}) => {
     const prices = {EUR: '€23', CAD: '$37'}
@@ -19,10 +19,11 @@ const SubscriptionBanner = ({isMobile, currency, t}) => {
             isSmall={true}
             options={{ price: prices[currency] }}
         />
+    const img = <CloudImage img={thumb} maxWidth={400} maxHeight={"250px"} minHeight={isMobile ? 400 : null} fit="contain"/>
     return (
         <TwoColLayout
             bgColor="darkGrey"
-            left={<FullImg imgLink={thumb} withMinHeight={isMobile} size="contain"/>}
+            left={img}
             right={intro}
             pad={{outer: "small", inner: "medium"}}
         />

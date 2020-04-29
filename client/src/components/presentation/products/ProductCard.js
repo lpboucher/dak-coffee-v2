@@ -5,6 +5,7 @@ import ProductCardInfo from './ProductCardInfo';
 import WithHover from '../../utils/WithHover';
 import OutOfStock from '../../utils/OutOfStock';
 import { ReactComponent as SoldOut } from '../../../assets/icons/soldout.svg';
+import CloudImage from '../../utils/CloudImage';
 
 import { Box, Image } from 'grommet';
 
@@ -16,7 +17,7 @@ const ProductCard = withRouter(({id, name, slug, type, thumb_image, price, stock
     return (
         <>
             <WithHover height="75%" width="100%" onClick={() => !outOfStock ? history.push(`/shop/${slug}`) : null} isHoverable={!outOfStock}>
-                <Image fit="contain" src={imageSRC} alt={`${name}`}/>
+                <CloudImage img={`Products/Thumbs/${thumb_image}`} maxWidth={415} fit="contain"/>
                 {outOfStock &&
                     <OutOfStock fill>
                         <Box align="start" pad="small">
@@ -26,14 +27,14 @@ const ProductCard = withRouter(({id, name, slug, type, thumb_image, price, stock
                 }
             </WithHover>
             <Box height="25%">
-                <ProductCardInfo 
+                <ProductCardInfo
                     id={id}
                     slug={slug}
                     type={type}
                     price={price}
                     currency={currency}
                 />
-            </Box>      
+            </Box>
         </>
     );
 })

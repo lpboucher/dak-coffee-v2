@@ -8,7 +8,7 @@ import Loader from '../utils/SimpleLoader';
 const Profiles = lazy(() => import('../presentation/intros/Profiles'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1565896327/Heros/BlacktableHeader_jfgusd.jpg';
+const header = 'Heros/BlacktableHeader_jfgusd.jpg';
 
 const About = ({media}) => {
     const isNotSmall = media === "medium" || media === "large" || media === "infinity";

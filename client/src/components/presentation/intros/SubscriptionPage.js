@@ -1,16 +1,16 @@
 import React from 'react';
 
 import TwoColLayout from '../../layouts/TwoColLayout';
-import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
+import CloudImage from '../../utils/CloudImage';
 
-const introImg = "https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto/v1580998386/Intros/dakbags_xfwwrv.png";
+const introImg = "Intros/dakbags_xfwwrv.png";
 
 const SubscriptionPageIntro = ({currency='EUR'}) => {
     const prices = {EUR: '€23', CAD: '$37'}
-    const intro = 
-        <IntroLayout 
-            heading="intros.subscriptionPage.title" 
+    const intro =
+        <IntroLayout
+            heading="intros.subscriptionPage.title"
             snap="intros.subscriptionPage.short description"
             alert="intros.subscriptionPage.alert"
             summaryText="intros.subscriptionPage.helper"
@@ -19,10 +19,11 @@ const SubscriptionPageIntro = ({currency='EUR'}) => {
             link="/subscriptions"
             options={{ price: prices[currency] }}
         />
+    const img = <CloudImage img={introImg} maxWidth={575} fit="contain" padding="24px 48px"/>
     return (
-        <TwoColLayout 
+        <TwoColLayout
             bgColor="mainWhite"
-            left={<FullImg imgLink={introImg} size="contain"/>}
+            left={img}
             right={intro}
         />
     );

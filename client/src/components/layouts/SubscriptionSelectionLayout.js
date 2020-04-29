@@ -1,16 +1,17 @@
 import React from 'react';
 
 import TwoColLayout from './TwoColLayout';
-import FullImg from '../utils/FullImg';
 import SubscriptionSelection from '../presentation/subscriptions/SubscriptionSelection';
+import CloudImage from '../utils/CloudImage';
 
-const introImg = "https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1580466638/Intros/BoxShipping_2_mgcqjw.png";
+const introImg = "Intros/BoxShipping_2_mgcqjw.png";
 
 const SubscriptionSelectionLayout = () => {
+    const img = <CloudImage img={introImg} maxWidth={720} fit="contain"/>
     return (
-        <TwoColLayout 
+        <TwoColLayout
             bgColor="lightGrey"
-            right={<FullImg imgLink={introImg} size="contain"/>}
+            right={img}
             left={<SubscriptionSelection />}
         />
     );

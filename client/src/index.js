@@ -6,7 +6,6 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {responsiveStoreEnhancer} from 'redux-responsive';
-import LogRocket from 'logrocket';
 import { I18nextProvider } from "react-i18next";
 import { Grommet } from 'grommet';
 import TagManager from 'react-gtm-module';
@@ -20,10 +19,6 @@ import { DakTheme } from './theme';
 
 import ScrollToTop from './components/utils/Routes/ScrollToTop';
 
-if (process.env.NODE_ENV !== 'development') {
-    LogRocket.init('3khpto/dak-coffee-roasters');
-}
-
 TagManager.initialize({gtmId: 'GTM-PMXJ7MF'})
 
 /*if (process.env.NODE_ENV !== 'production') {
@@ -33,8 +28,8 @@ TagManager.initialize({gtmId: 'GTM-PMXJ7MF'})
 }*/
 
 const middleware = process.env.NODE_ENV !== 'production' ?
-[require('redux-immutable-state-invariant').default(), reduxThunk, LogRocket.reduxMiddleware()] :
-[reduxThunk, LogRocket.reduxMiddleware()];
+[require('redux-immutable-state-invariant').default(), reduxThunk] :
+[reduxThunk];
 
 const store = createStore(reducers, {}, composeWithDevTools(responsiveStoreEnhancer, applyMiddleware(...middleware)));
 ReactDOM.render(

@@ -8,7 +8,7 @@ import Wholesale from '../presentation/intros/Wholesale';
 
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1575303121/Heros/BunsHeader_s79x3w.jpg';
+const header = 'Heros/Header_wholesale_vtbksn.jpg';
 
 const WholesalePage = ({media}) => {
     const isNotSmall = media === "medium" || media === "large" || media === "infinity";

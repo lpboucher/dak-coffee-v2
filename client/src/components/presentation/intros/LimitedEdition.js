@@ -1,10 +1,10 @@
 import React from 'react';
 
 import TwoColLayout from '../../layouts/TwoColLayout';
-import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
+import CloudImage from '../../utils/CloudImage';
 
-const limited = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1580466638/Intros/milehighillustration_ehbosh.png';
+const limited = 'Intros/milehighillustration_ehbosh.png';
 
 const LimitedEditionsIntro = () => {
     const intro =
@@ -15,10 +15,11 @@ const LimitedEditionsIntro = () => {
             ctaLabel="intros.limited edition.button"
             link="/shop"
         />
+    const img = <CloudImage img={limited} maxWidth={575} fit="contain" padding="24px 48px"/>
     return (
         <TwoColLayout
             bgColor="mainWhite"
-            left={<FullImg imgLink={limited} size="contain" withMinHeight={false}/>}
+            left={img}
             right={intro}
             pad={{outer: "large", inner:{horizontal: "large", vertical: "medium"}}}
         />

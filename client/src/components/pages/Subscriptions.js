@@ -11,7 +11,7 @@ import SubscriptionSelectionLayout from '../layouts/SubscriptionSelectionLayout'
 const RelatedContainer = lazy(() => import('../containers/related/RelatedContainer'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1580997312/Heros/BoxHeader_bumofc.jpg'
+const header = 'Heros/Header_subscription_lmfxp5.jpg'
 
 const Subscription = () => {
     const currency = useSelector(state => getDisplayCurrency(state));

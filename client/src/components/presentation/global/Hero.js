@@ -2,8 +2,9 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import withResponsive from '../../HOCs/withResponsive';
 
-import { Box, Image, Stack, Text } from 'grommet';
+import { Box, Stack, Text } from 'grommet';
 import CallToAction from '../global/CallToAction';
+import CloudImage from '../../utils/CloudImage';
 
 import { heroLayout } from '../../layouts/globalResponsiveLayout';
 
@@ -13,10 +14,7 @@ const Hero = ({bgImage, height="76vh", overlay, t, media, ctaLink, ctaOnPage}) =
     return (
     <Stack anchor={overlay.loc} style={{paddingTop: layout.pad}}>
         <Box height={layout.height} width="full">
-            <Image
-                fit="cover"
-                src={bgImage}
-            />
+            <CloudImage img={bgImage} maxWidth={1500}/>
         </Box>
         {isNotSmall &&
         <Box animation={"slideRight"} height={overlay.height} width={overlay.width} justify={overlay.justify || "center"} background={`${overlay.withOpacity ? 'rgba(0,0,0,0.5)' : ''}`}>

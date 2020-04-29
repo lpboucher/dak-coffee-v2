@@ -10,7 +10,7 @@ const Coffee = lazy(() => import('../presentation/intros/Coffee'));
 const Packaging = lazy(() => import('../presentation/intros/Packaging'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 
-const header = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1565717617/Heros/Header_Ourcoffee_jzxkoe.jpg';
+const header = 'Heros/Header_Ourcoffee_jzxkoe.jpg';
 
 const CoffeePage = ({media}) => {
     const isNotSmall = media === "medium" || media === "large" || media === "infinity";
@@ -35,7 +35,7 @@ const CoffeePage = ({media}) => {
             <Coffee />
             <Packaging />
             <NewsletterContainer />
-        </Suspense> 
+        </Suspense>
     </>
     );
 };

@@ -7,10 +7,9 @@ import CoffeeCardInfo from './CoffeeCardInfo';
 import OutOfStock from '../../utils/OutOfStock';
 import { ReactComponent as SoldOut } from '../../../assets/icons/soldout.svg';
 
-import { Box, Image } from 'grommet';
+import { Box, Stack } from 'grommet';
 import { CardHover } from './CoffeeCardInfo';
-
-import { buildImageUrl } from '../../utils/Images/generateImage';
+import CloudImage from '../../utils/CloudImage';
 
 import { coffeeCardLayout } from '../../layouts/globalResponsiveLayout';
 
@@ -23,13 +22,12 @@ const WithHover = styled(Box)`
 `
 
 const CoffeeCard = withRouter(({id, name, slug, type, thumb_image, price, stock, currency, history, media}) => {
-    const imageSRC = buildImageUrl(`Products/Thumbs/${thumb_image}`, 'f_auto,q_auto');
     const layout = coffeeCardLayout(media);
     const outOfStock = stock < 1;
     return (
         <WithHover height={layout.height} width="100%" isHoverable={!outOfStock}>
             <Box height="75%" width="100%" onClick={() => !outOfStock ? history.push(`/shop/${slug}`) : null}>
-                <Image fit="contain" src={imageSRC} alt={`${name}`}/>
+                <CloudImage img={`Products/Thumbs/${thumb_image}`} maxWidth={500} fit="contain"/>
                 {outOfStock &&
                     <OutOfStock>
                         <Box align="start" pad="small">
@@ -38,7 +36,7 @@ const CoffeeCard = withRouter(({id, name, slug, type, thumb_image, price, stock,
                     </OutOfStock>
                 }
             </Box>
-            <Box>
+            <Box width="100%">
                 <CoffeeCardInfo
                     id={id}
                     slug={slug}

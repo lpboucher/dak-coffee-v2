@@ -1,22 +1,22 @@
 import React from 'react';
 
 import TwoColLayout from '../../layouts/TwoColLayout';
-import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
+import CloudImage from '../../utils/CloudImage';
 
-const ethics = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1574085323/Intros/Ourcoffee_c8d7oa.jpg';
-
+const ethics = 'Intros/Coffeebeans_short_laidrq.jpg';
 
 const Ethics = () => {
-    const intro = 
-        <IntroLayout 
-            heading="intros.ethics.title" 
+    const intro =
+        <IntroLayout
+            heading="intros.ethics.title"
             description="intros.ethics.description"
         />
+    const img = <CloudImage img={ethics} maxWidth={575} fit="cover" padding="24px 48px"/>
     return (
-        <TwoColLayout 
+        <TwoColLayout
             bgColor="lightGrey"
-            left={<FullImg imgLink={ethics}/>}
+            left={img}
             right={intro}
         />
     );

@@ -1,10 +1,10 @@
 import React from 'react';
 
 import TwoColLayout from '../../layouts/TwoColLayout';
-import FullImg from '../../utils/FullImg';
 import IntroLayout from '../../layouts/IntroLayout';
+import CloudImage from '../../utils/CloudImage';
 
-const wholesale = 'https://res.cloudinary.com/dak-coffee-roasters/image/upload/f_auto,q_auto:low/v1565720115/Intros/Privatelabel_bh1cd6.jpg';
+const wholesale = 'Intros/wholesalepartner_jfq91s.jpg';
 
 const Wholesale = () => {
     const intro =
@@ -12,10 +12,11 @@ const Wholesale = () => {
         heading="intros.wholesale.title"
         description="intros.wholesale.description"
         />
+    const img = <CloudImage img={wholesale} maxWidth={575} fit="contain" padding="24px 48px"/>
     return (
         <TwoColLayout
             bgColor="lightGrey"
-            left={<FullImg imgLink={wholesale}/>}
+            left={img}
             right={intro}
         />
     );
