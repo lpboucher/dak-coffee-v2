@@ -42,7 +42,7 @@ class PageLayout extends PureComponent {
                 />
                 <ErrorContainer />
                 <LoaderContainer />
-                {<AnnouncementContainer />
+                {//<AnnouncementContainer />
                 }
                 <NavigationLayout>
                     <ConfigBar />
