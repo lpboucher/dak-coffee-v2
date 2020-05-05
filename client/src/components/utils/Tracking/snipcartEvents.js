@@ -45,7 +45,7 @@ export const cartOpened = () => {
 export const orderCompleted = (order) => {
   TagManager.dataLayer({
     dataLayer: {
-      event: 'snipcartEvent',
+      event: 'orderPlaced',
       eventCategory: 'Order Update',
       eventAction: 'New Order Completed',
       ecommerce: {
@@ -62,7 +62,7 @@ export const orderCompleted = (order) => {
               products: createProductsFromItems(order.items),
               userId: order.user.id
           }
-      }
+      },
     }
   });
 }
