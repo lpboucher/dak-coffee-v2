@@ -36,7 +36,7 @@ const CoffeeCard = withRouter(({id, name, slug, type, thumb_image, price, stock,
                     </OutOfStock>
                 }
             </Box>
-            <Box width="100%">
+            <Box width="100%" align="center">
                 <CoffeeCardInfo
                     id={id}
                     slug={slug}

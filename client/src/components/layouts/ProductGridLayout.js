@@ -12,15 +12,14 @@ import { productGridLayout } from './globalResponsiveLayout';
 const ProductGrid = ({products, media, t}) => {
     const layout = productGridLayout(media)
     return (
-    <Box pad="large" background="lightGrey">
+    <Box pad="large" background={layout.background}>
         <Link to="/shop" style={{textAlign: 'center'}}>
             <Heading level='1' size={layout.size} textAlign="center">{t("sections.featured.title")}</Heading>
-        </Link>   
+        </Link>
         <Grid
             columns={layout.columns}
             rows={layout.rows}
             gap='medium'
-            background="lightGrey"
             margin="medium"
             areas={layout.areas}
         >
@@ -29,14 +28,14 @@ const ProductGrid = ({products, media, t}) => {
                 gridArea={index === 0 ? "main" : `product${index}`}
                 background="mainWhite"
             >
-                <ProductCardContainer id={id}/>   
-            </Box> 
+                <ProductCardContainer id={id}/>
+            </Box>
         ))}
         </Grid>
         <Link to="/shop" style={{textAlign: 'center'}}>
             <Button primary label={t("sections.featured.button")} alignSelf="center"></Button>
         </Link>
-    </Box> 
+    </Box>
     );
 };
 

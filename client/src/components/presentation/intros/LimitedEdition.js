@@ -1,4 +1,5 @@
 import React from 'react';
+import withResponsive from '../../HOCs/withResponsive';
 
 import TwoColLayout from '../../layouts/TwoColLayout';
 import IntroLayout from '../../layouts/IntroLayout';
@@ -6,7 +7,8 @@ import CloudImage from '../../utils/CloudImage';
 
 const limited = 'Intros/milehighillustration_ehbosh.png';
 
-const LimitedEditionsIntro = () => {
+const LimitedEditionsIntro = ({media}) => {
+  const isMobile = media === "extraSmall" || media === "small";
     const intro =
         <IntroLayout
             heading="intros.limited edition.title"
@@ -18,7 +20,7 @@ const LimitedEditionsIntro = () => {
     const img = <CloudImage img={limited} maxWidth={575} fit="contain" padding="24px 48px"/>
     return (
         <TwoColLayout
-            bgColor="mainWhite"
+            bgColor={isMobile ? "lightGrey" : "mainWhite"}
             left={img}
             right={intro}
             pad={{outer: "large", inner:{horizontal: "large", vertical: "medium"}}}
@@ -26,4 +28,4 @@ const LimitedEditionsIntro = () => {
     );
 };
 
-export default LimitedEditionsIntro;
+export default withResponsive(LimitedEditionsIntro);

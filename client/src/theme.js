@@ -105,6 +105,11 @@ export const DakTheme = {
         height: "36px",
         maxWidth: "100%"
     },
+    midL: {
+      size: "20px",
+      height: "40px",
+      maxWidth: "100%"
+  },
           medium: {
               size: "22px",
               height: "44px",

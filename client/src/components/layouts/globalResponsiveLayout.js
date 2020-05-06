@@ -84,23 +84,33 @@ export const heroLayout = (screenSize, height) => {
     const mediaQueries = {
         extraSmall: {
             pad: '0px',
-            height: '50vh'
+            height: '50vh',
+            overlaySize: 'medLarge',
+            overlayColor: 'black'
         },
         small: {
             pad: '0px',
-            height: '50vh'
+            height: '50vh',
+            overlaySize: 'medLarge',
+            overlayColor: 'black'
         },
         medium: {
             pad: '0px',
-            height: height
+            height: height,
+            overlaySize: 'large',
+            overlayColor: 'white'
         },
         large: {
             pad: '102px',
-            height: height
+            height: height,
+            overlaySize: 'large',
+            overlayColor: 'white'
         },
         infinity: {
             pad: '102px',
-            height: height
+            height: height,
+            overlaySize: 'large',
+            overlayColor: 'white'
         }
     }
     return mediaQueries[screenSize]
@@ -110,11 +120,11 @@ export const introLayout = (screenSize, isSmall) => {
     const mediaQueries = {
         extraSmall: {
             main: {
-                size: 'small',
+                size: 'mid',
                 margin: isSmall ? "medium" : {"horizontal": "large", "vertical": "small"}
             },
             snap: {
-                size: 'small',
+                size: 'medium',
                 margin: isSmall ? "medium" : {"horizontal": "large", "vertical": "small"}
             },
             alert: {
@@ -128,11 +138,11 @@ export const introLayout = (screenSize, isSmall) => {
         },
         small: {
             main: {
-                size: 'mid',
+                size: 'midL',
                 margin: isSmall ? "medium" : "large"
             },
             snap: {
-                size: 'mid',
+                size: 'medLarge',
                 margin: isSmall ? "small" : "medium"
             },
             alert: {
@@ -146,11 +156,11 @@ export const introLayout = (screenSize, isSmall) => {
         },
         medium: {
             main: {
-                size: isSmall ? 'small' : 'mid',
+                size: isSmall ? 'small' : 'midL',
                 margin: isSmall ? {"bottom": "medium"} : {"bottom": "large"}
             },
             snap: {
-                size: isSmall ? 'small' : 'mid',
+                size: isSmall ? 'small' : 'medLarge',
                 margin: isSmall ? {"bottom": "small"} : {"bottom": "medium"}
             },
             alert: {
@@ -159,7 +169,7 @@ export const introLayout = (screenSize, isSmall) => {
             },
             sub: { size: isSmall ? '10px' : 'small'},
             small: { size: isSmall ? 'xsmall' : '12px', margin: {"bottom": "medium"}},
-            align: 'start',
+            align: 'center',
             around: {vertical: 'medium'}
         },
         large: {
@@ -279,7 +289,7 @@ export const footerLinksLayout = (screenSize) => {
 export const productGridLayout = (screenSize) => {
     const mediaQueries = {
         extraSmall: {
-            size: 'small',
+            size: 'mid',
             columns: ["auto"],
             rows: ["300px", "300px", "300px", "300px", "300px"],
             areas: [
@@ -288,10 +298,11 @@ export const productGridLayout = (screenSize) => {
                 { name: 'product2', start: [0, 2], end: [0, 2] },
                 { name: 'product3', start: [0, 3], end: [0, 3] },
                 { name: 'product4', start: [0, 4], end: [0, 4] },
-            ]
+            ],
+            background: 'mainWhite'
         },
         small: {
-            size: 'small',
+            size: 'midL',
             columns: ["auto"],
             rows: ["300px", "300px", "300px", "300px", "300px"],
             areas: [
@@ -300,7 +311,8 @@ export const productGridLayout = (screenSize) => {
                 { name: 'product2', start: [0, 2], end: [0, 2] },
                 { name: 'product3', start: [0, 3], end: [0, 3] },
                 { name: 'product4', start: [0, 4], end: [0, 4] },
-            ]
+            ],
+            background: 'mainWhite'
         },
         medium: {
             size: '',
@@ -312,7 +324,8 @@ export const productGridLayout = (screenSize) => {
                 { name: 'product2', start: [0, 2], end: [0, 2] },
                 { name: 'product3', start: [0, 3], end: [0, 3] },
                 { name: 'product4', start: [0, 4], end: [0, 4] },
-            ]
+            ],
+            background: 'lightGrey'
         },
         large: {
             size: '',
@@ -324,7 +337,8 @@ export const productGridLayout = (screenSize) => {
                 { name: 'product2', start: [1, 1], end: [1, 1] },
                 { name: 'product3', start: [2, 0], end: [2, 0] },
                 { name: 'product4', start: [2, 1], end: [2, 1] },
-            ]
+            ],
+            background: 'lightGrey'
         },
         infinity: {
             size: '',
@@ -336,7 +350,8 @@ export const productGridLayout = (screenSize) => {
                 { name: 'product2', start: [1, 1], end: [1, 1] },
                 { name: 'product3', start: [2, 0], end: [2, 0] },
                 { name: 'product4', start: [2, 1], end: [2, 1] },
-            ]
+            ],
+            background: 'lightGrey'
         },
     }
     return mediaQueries[screenSize]
@@ -535,11 +550,11 @@ export const singleProductLayout = (screenSize) => {
 
 export const callToActionLayout = (screenSize) => {
     const mediaQueries = {
-        extraSmall: {align: 'center'},
-        small: {align: 'center'},
-        medium: {align: 'start'},
-        large: {align: 'start'},
-        infinity: {align: 'start'}
+        extraSmall: {align: 'center', size: 'medLarge'},
+        small: {align: 'center', size: 'mid'},
+        medium: {align: 'center', size: 'mid'},
+        large: {align: 'start', size: 'mid'},
+        infinity: {align: 'start', size: 'mid'}
     };
     return mediaQueries[screenSize]
 }
@@ -548,7 +563,7 @@ export const coffeeRowLayout = (screenSize) => {
     const mediaQueries = {
         extraSmall: {
             pad: {horizontal: "large", top: '64px', bottom: '24px'},
-            itemWidth: '50%'
+            itemWidth: '100%'
         },
         small: {
             pad: {horizontal: "large", top: '64px', bottom: '24px'},
@@ -556,7 +571,7 @@ export const coffeeRowLayout = (screenSize) => {
         },
         medium: {
             pad: 'large',
-            itemWidth: '25%'
+            itemWidth: '50%'
         },
         large: {
             pad: 'large',
@@ -572,7 +587,7 @@ export const coffeeRowLayout = (screenSize) => {
 
 export const coffeeCardLayout = (screenSize) => {
     const mediaQueries = {
-        extraSmall: {height: '300px'},
+        extraSmall: {height: '400px'},
         small: {height: '300px'},
         medium: {height: '300px'},
         large: {height: '300px'},
@@ -587,27 +602,37 @@ export const coffeeCardInfoLayout = (screenSize) => {
             top: 'small',
             mid: 'xsmall',
             bottom: 'small',
-        }},
+        },
+      textAlign: 'center',
+      containerWidth: '80%'},
         small: {fontSize: {
             top: 'small',
             mid: 'xsmall',
             bottom: 'small',
-        }},
+        },
+        textAlign: 'start',
+        containerWidth: '100%'},
         medium: {fontSize: {
             top: 'small',
             mid: 'xsmall',
             bottom: 'small',
-        }},
+        },
+        textAlign: 'start',
+        containerWidth: '100%'},
         large: {fontSize: {
             top: 'medium',
             mid: 'xsmall',
             bottom: 'small',
-        }},
+        },
+        textAlign: 'start',
+        containerWidth: '100%'},
         infinity: {fontSize: {
             top: 'medium',
             mid: 'xsmall',
             bottom: 'small',
-        }},
+        },
+        textAlign: 'start',
+        containerWidth: '100%'},
     };
     return mediaQueries[screenSize]
 }

@@ -20,7 +20,7 @@ const StyledBurger = styled.button`
 
   div {
     width: 1.5rem;
-    height: 0.25rem;
+    height: 0.05rem;
     background: white;
     border-radius: 10px;
     transition: all 0.3s linear;

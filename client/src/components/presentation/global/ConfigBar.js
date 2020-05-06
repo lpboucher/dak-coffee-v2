@@ -13,6 +13,12 @@ import MobileMenuContainer from '../../containers/nav/MobileMenuContainer';
 const ConfigBar = ({media}) => {
     const isMobile = media === "small" || media === "medium" || media === "extraSmall";
     return (
+      <>
+      {isMobile &&
+      <Box background="lightGrey">
+        <MessageContainer size="xsmall"/>
+      </Box>
+      }
         <Box direction="row" justify="end" align="center" fill background="mainDark">
             {!isMobile &&
               <MessageContainer />
@@ -25,6 +31,7 @@ const ConfigBar = ({media}) => {
                 <MobileMenuContainer />
             }
         </Box>
+      </>
     );
 };
 

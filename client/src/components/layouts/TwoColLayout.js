@@ -5,14 +5,14 @@ import { Box } from 'grommet';
 
 import { TwoCol } from './globalResponsiveLayout';
 
-const TwoColLayout = ({bgColor, left, right, pad={outer: "large", inner:"large"}, media}) => {
+const TwoColLayout = ({bgColor, left, right, pad={outer: "large", inner:"large"}, noPad=false, media}) => {
     const layout = TwoCol(media, pad)
     return (
             <Box direction='row' pad={layout.pad.outer} background={bgColor} wrap>
-                <Box pad={layout.pad.inner} width={layout.width}>
+                <Box pad={!noPad ? layout.pad.inner : 'none'} width={layout.width}>
                     {left}
                 </Box>
-                <Box pad={layout.pad.inner} width={layout.width}>
+                <Box pad={!noPad ? layout.pad.inner : 'none'} width={layout.width}>
                     {right}
                 </Box>
             </Box>

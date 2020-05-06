@@ -20,7 +20,7 @@ const CallToAction = ({color='#444444', link, onPage, label, options, t, media})
     return (
         <Box align="center" justify={layout.align} direction="row" margin={{top: '40px'}}>
             <Link to={!onPage ? link : null} onClick={onPage ? () => window.scrollTo({top: 1324,behavior: 'smooth'}) : null}>
-                <Text size="mid" color={color} weight="bold" margin={{right: '20px'}}>
+                <Text size={layout.size} color={color} weight="bold" margin={{right: '20px'}}>
                         {ctaLabel}
                 </Text>
             </Link>

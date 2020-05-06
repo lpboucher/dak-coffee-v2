@@ -14,7 +14,8 @@ const FeaturedProductsContainer = lazy(() => import('../containers/products/Feat
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
 const ValuesIntro = lazy(() => import('../presentation/intros/Values'));
 
-const header = 'Heros/Header_mainpage_n4krkg.jpg'
+const header = 'Heros/Header_mainpage_n4krkg.jpg';
+const headerSmall = 'Heros/mobileheader_l26qwl.jpg'
 
 class Home extends Component {
     render() {
@@ -23,7 +24,7 @@ class Home extends Component {
         return (
             <>
                 <SEO canon="https://www.dakcoffeeroasters.com" />
-                {isNotSmall &&
+                {isNotSmall ?
                     <Hero
                         bgImage={header}
                         overlay={{
@@ -34,6 +35,18 @@ class Home extends Component {
                             cta: "hero.cta.shop",
                         }}
                         ctaLink='/shop'
+                    />
+                    :
+                    <Hero
+                        bgImage={headerSmall}
+                        overlay={{
+                            text: "hero.home",
+                            loc: "top",
+                            width: "100vw",
+                            height: "40vh",
+                        }}
+                        height="90vh"
+                        override
                     />
                 }
                 <CoffeeProductsContainer collection='coffee-products'/>
