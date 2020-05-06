@@ -5,9 +5,10 @@ html {
   font-family: Avenir, sans-serif;
 }
 
-body {
+html, body {
   overflow-x: hidden;
 }
+
 *,
 *::before,
 *::after {
