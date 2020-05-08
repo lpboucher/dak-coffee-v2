@@ -20,23 +20,35 @@ const snipcartParser = async (ctx) => {
   });
 };
 
-const snipcartFetch = async (ctx) => {
+const snipcartFetch = async () => {
   snipcart.configure('SECRET_API_KEY', strapi.config.currentEnvironment.snipcart);
   let products = await snipcart.api.products.getAll();
   let notRecurringProducts = products.data.items.filter(product => !isSubscription(product));
-  let productsInv = notRecurringProducts.map(product => ({
+  return notRecurringProducts.map(product => ({
     id: product.userDefinedId,
     stock: product.stock,
     totalStock: product.totalStock
   }));
-  ctx.send(productsInv);
 };
 
 const isSubscription = (item) => {
   return item.name === 'The Classics' || item.name === 'The Roaster\'s Choice' || item.name === 'Dak Coffee Subscription';
 };
 
+const getProductsWithInventory = async (ctx) => {
+  let products = await strapi.services.product.find(ctx.query);
+  let inventory = await snipcartFetch();
+  let productsWithInventory = products.map(product => {
+    const currentProductInv = inventory.find(inv => inv.id === product.id);
+    return {
+      ...currentProductInv,
+      ...product
+    };
+  });
+  ctx.send(productsWithInventory);
+};
+
 module.exports = {
   snipcartParser,
-  snipcartFetch
+  getProductsWithInventory
 };

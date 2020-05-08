@@ -58,8 +58,8 @@
     },
     {
       "method": "GET",
-      "path": "/inventory",
-      "handler": "Product.snipcartFetch",
+      "path": "/productsinventory",
+      "handler": "Product.getProductsWithInventory",
       "config": {
         "policies": []
       }

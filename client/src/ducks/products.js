@@ -7,31 +7,17 @@ import { getCollectionBySlug } from './collections';
 export const FETCH_PRODUCTS_REQUEST = 'products/fetch_products_request';
 export const FETCH_PRODUCTS_SUCCESS = 'products/fetch_products_success';
 export const FETCH_PRODUCTS_FAILURE = 'products/fetch_products_failure';
-export const FETCH_INVENTORY_REQUEST = 'products/fetch_inventory_request';
-export const FETCH_INVENTORY_SUCCESS = 'products/fetch_inventory_success';
-export const FETCH_INVENTORY_FAILURE = 'products/fetch_inventory_failure';
 
 //Action Creators
 export const fetchProducts = () => async dispatch => {
     dispatch({ type: FETCH_PRODUCTS_REQUEST });
     try {
-        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/products`);
-        await dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: res.data });
+        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/productsinventory`);
+        dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: res.data });
     } catch(err) {
         dispatch({ type: FETCH_PRODUCTS_FAILURE, payload: {global: "error.products.fetch"}});
     }
-    dispatch(fetchProductInventory())
 };
-
-export const fetchProductInventory = () => async dispatch => {
-    dispatch({ type: FETCH_INVENTORY_REQUEST });
-    try {
-        const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/inventory`);
-        dispatch({ type: FETCH_INVENTORY_SUCCESS, payload: res.data });
-    } catch(err) {
-        dispatch({ type: FETCH_INVENTORY_FAILURE, payload: {global: "error.products.fetch"}});
-    }
-}
 
 //Reducers
 const byId = (state = {}, action) => {
@@ -44,17 +30,6 @@ const byId = (state = {}, action) => {
                 return obj
             }, {}),
         }
-        case FETCH_INVENTORY_SUCCESS:
-            return {
-                ...state,
-                ...action.payload.reduce((obj, product) => {
-                    obj[product.id] = {
-                        ...state[product.id],
-                        ...product
-                    }
-                    return obj
-                }, {}),
-            }
         default:
             return state
     }
