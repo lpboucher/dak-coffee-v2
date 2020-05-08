@@ -59,7 +59,7 @@
         "subscriptionPage": {
             "title": "Abonnement caféiné.",
             "helper": "À partir de {{price}}, livraison gratuite, sans engagement.",
-            "alert": "La boite est envoyée le cinq de chaque mois.",
+            "alert": "La boite est envoyée les 5 et 20 de chaque mois.",
             "short description": "Faites-vous livrer votre café à la porte tous les mois en optant pour l’un de nos abonnements.",
             "button": "Abonnez-vous"
         },

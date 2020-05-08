@@ -59,7 +59,7 @@
         "subscriptionPage": {
             "title": "Maandabonnement.",
             "helper": "Vanaf {{price}}, gratis verzending, zonder verplichtingen.",
-            "alert": "The coffee box is shipped on the 5th of every month.",
+            "alert": "The coffee box is shipped on the 5th, 20th of every month.",
             "short description": "Ontvang elke maand de lekkerste koffie bij je thuis door te kiezen voor een van onze abonnementen.",
             "button": "Bestel nu"
         },

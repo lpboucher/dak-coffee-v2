@@ -59,7 +59,7 @@
         "subscriptionPage": {
             "title": "Monthly Coffee Subscriptions",
             "helper": "From {{price}}/month, free shipping, commitment free.",
-            "alert": "The coffee box is shipped on the 5th of every month.",
+            "alert": "The coffee box is shipped on the 5th and 20th of every month.",
             "short description": "Receive coffee each month from our classic lineup and / or our limited editions. Skip or cancel anytime.",
             "button": "Subscribe"
         },
