@@ -1,8 +1,5 @@
 'use strict';
 const snipcart = require('snipcart-api');
-/**
- * Read the documentation () to implement custom controller functions
- */
 
 const snipcartParser = async (ctx) => {
   let products = await strapi.services.product.find(ctx.query);
