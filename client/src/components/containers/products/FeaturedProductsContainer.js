@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { fetchCollections, getCollections } from '../../../ducks/collections';
 import { getProductsByCollection } from '../../../ducks/products';
 
@@ -7,44 +7,24 @@ import ProductGridLayout from '../../layouts/ProductGridLayout';
 
 import Loader from '../../utils/SimpleLoader';
 
-class FeaturedProductsContainer extends Component {
-    
-    componentDidMount() {
-        const { collections } = this.props;
-        if (collections && collections.length < 1) {
-            this.props.fetchCollections();
-        }
-      };
+const FeaturedProductsContainer = ({collection}) => {
+  const collections = useSelector(state => getCollections(state), shallowEqual);
+  const productIds = useSelector(state => getProductsByCollection(state, collection));
 
-      renderProducts() {
-        const { productIds } = this.props;
-        if(productIds && productIds.length > 0) {return <ProductGridLayout products={productIds}/>
-    };
+  const dispatch = useDispatch();
 
-        return <Loader />
+  useEffect(() => {
+    if (collections && collections.length < 1) dispatch(fetchCollections())
+  }, [collections, dispatch]);
+
+  return (
+      <>
+      {productIds && productIds.length > 0 ?
+          <ProductGridLayout products={productIds}/>
+          :
+          <Loader />
       }
-    
-    render() {
-        return (
-            <>
-                {this.renderProducts()}
-            </>
-        );
-    }
+      </>
+  )
 }
-
-function mapStateToProps(state, ownProps) {
-    const { collection } = ownProps;
-    return {
-        productIds: getProductsByCollection(state, collection),
-        collections: getCollections(state),
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        fetchCollections: () => dispatch(fetchCollections()),
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(FeaturedProductsContainer);
+export default FeaturedProductsContainer;
