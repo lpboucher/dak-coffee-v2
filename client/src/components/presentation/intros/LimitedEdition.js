@@ -5,7 +5,7 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import IntroLayout from '../../layouts/IntroLayout';
 import CloudImage from '../../utils/CloudImage';
 
-const limited = 'Intros/milehighillustration_ehbosh.png';
+const limited = 'Intros/belavistaimage_izwhdv.jpg';
 
 const LimitedEditionsIntro = ({media}) => {
   const isMobile = media === "extraSmall" || media === "small";

@@ -64,11 +64,12 @@
             "button": "Bestel nu"
         },
         "limited edition": {
-            "title": "Onze Limited Edition",
+            "title": "Onze Limited Edition\n<i>Bela Vista</i>",
             "subtitle": "coffee for two",
-            "helper": "Amandel-, karamel- en cacaobotersmaak",
-            "description": "This new limited edition from Colombia is roasted for filter coffees and is particularly enjoyable brewed with an aeropress. Complex like its region’s history, this coffee is fruity, sweet and surprising.",
-            "button": "Bestel koffie"
+            "helper": "Apricot-, Iced Tea- en Citrusmaak",
+            "button": "Bestel koffie",
+            "soldOut": "This item ships on May 28th",
+            "description": "This new limited edition from Brazil is roasted for filter coffees and is fresh and light. It is the perfect coffee to enjoy the start of summer."
         },
         "values": {
             "title": "Wie we zijn. Waar we voor staan",

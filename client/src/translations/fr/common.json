@@ -64,11 +64,12 @@
             "button": "Abonnez-vous"
         },
         "limited edition": {
-            "title": "Notre édition limitée",
-            "subtitle": "coffee for two",
-            "helper": "Amandes, Caramel, Beurre de Cacao",
-            "description": "L’édition limitée du mois est torréfiée pour une infusion filtre et se prête bien à une infusion avec un aeropress. Complexe comme le passé de sa région, ce café est fruité, sucré et surprenant.",
-            "button": "Commander"
+            "title": "Notre édition limitée\n<i>Bela Vista</i>",
+            "helper": "Apricot, Thé glacé, Agrumes",
+            "description": "L’édition limitée du mois provient du Brésil et est torréfiée pour une infusion filtre. C'est un café léger avec des arômes de fruits et agrumes, parfait pour l'été!",
+            "button": "Pré-commander",
+            "soldOut": "Cet item sera livré à partir du 28 Mai",
+            "subtitle": ""
         },
         "values": {
             "title": "Notre raison d’être et nos valeurs",

@@ -280,6 +280,25 @@
         "500EUR": "(20.00€)",
         "1000CAD": "(56$)",
         "1000EUR": "(37.80€)"
+      },
+      "bela-vista-coffee": {
+        "name": "Bela Vista",
+        "short": "Brazilian coffee (filter)",
+        "description": "This Brazilian coffee is roasted for filter. The plot is located at 1250m in the Mantiqueira mountains in the rural area of São Gonçalo do Sapucai, in Minas Gerais.\n\nAdemir Franciso has been involved with coffee all his life, initially by working for other coffee producers and strting in 1994, on their own farm.",
+        "region": "Sul de Minas",
+        "country": "Brazil",
+        "roast": "Filter",
+        "lot": "Bela Vista",
+        "process": "Natural",
+        "variety": "Yellow Catuai",
+        "drink": "Filter",
+        "taste": "Apricot, Iced tea, Citrus",
+        "harvest": "Ademir Franciso has only started producing specialty coffee in 2010, his lot produces about 250 bags (70kg) per year",
+        "altitude": "1250m",
+        "500CAD": "(34$)",
+        "500EUR": "(24.00€)",
+        "1000CAD": "(65$)",
+        "1000EUR": "(46€)"
       }
     },
     "subscription": {

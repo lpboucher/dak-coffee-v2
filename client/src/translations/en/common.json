@@ -64,12 +64,12 @@
             "button": "Subscribe"
         },
         "limited edition": {
-            "title": "Our Current Limited Edition\n<i>Mile High Coffee</i>",
-            "soldOut": "Currently sold out",
-            "subtitle": "coffee for two",
-            "helper": "Almond, Caramel, Cacao butter",
-            "description": "This new limited edition from Colombia is roasted for filter coffees and is particularly enjoyable brewed with an aeropress. Complex like its region’s history, this coffee is fruity, sweet and surprising.",
-            "button": "Order this coffee"
+            "title": "Our Current Limited Edition\n<i>Bela Vista</i>",
+            "soldOut": "This item ships on May 28th",
+            "subtitle": "",
+            "helper": "Apricot, Iced Tea, Citrus",
+            "description": "This new limited edition from Brazil is roasted for filter coffees and is fresh and light. It is the perfect coffee to enjoy the start of summer.",
+            "button": "Pre-order this coffee"
         },
         "values": {
             "title": "What we believe in",
