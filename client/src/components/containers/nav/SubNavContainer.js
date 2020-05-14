@@ -13,6 +13,7 @@ class SubNavContainer extends Component {
     }
 
     componentDidMount() {
+      if( navigator.userAgent !== 'ReactSnap') {
         window.Snipcart.subscribe('cart.opened', () => {
           this.props.openSnip();
           cartOpened();
@@ -22,13 +23,16 @@ class SubNavContainer extends Component {
             if (action === "PUSH" && this.props.isSnipOpen) {
                 window.Snipcart.api.modal.close();
             }
-      })
+        })
+      }
     }
 
     componentWillUnmount() {
+      if( navigator.userAgent !== 'ReactSnap') {
         this.unlisten();
         window.Snipcart.unsubscribe('cart.opened');
         window.Snipcart.unsubscribe('cart.closed');
+      }
     }
 
     render() {

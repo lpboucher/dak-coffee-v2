@@ -20,6 +20,7 @@ export const PROMO_CART_FAILURE = 'cart/promo_cart_failure';
 //Action Creators
 
 export const initializeCart = () => async (dispatch) => {
+  if( navigator.userAgent !== 'ReactSnap') {
     window.Snipcart.subscribe('cart.ready', async (data) => {
         dispatch(trackLocation(await detectBrowserLocation()))
         if (data.order && data.order.items.length > 0) {
@@ -47,6 +48,7 @@ export const initializeCart = () => async (dispatch) => {
       dispatch(switchLanguage())
     })
     window.Snipcart.api.configure('show_cart_automatically', false);
+  }
 }
 
 export const updatingCart = () => (dispatch) => {

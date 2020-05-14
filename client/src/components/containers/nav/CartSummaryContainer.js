@@ -12,9 +12,9 @@ import Loader from '../../utils/SimpleLoader';
 class CartSummaryContainer extends Component {
 
     componentDidMount() {
-        const { products, plans } = this.props;
-        if (products.length < 1) this.props.fetchProducts();
-        if (plans.length < 1) this.props.fetchSubscriptions();
+        const { products, plans, isFetching } = this.props;
+        if (products.length < 1  && !isFetching) this.props.fetchProducts();
+        if (plans.length < 1 && !isFetching) this.props.fetchSubscriptions();
     }
 
     render() {

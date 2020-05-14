@@ -10,20 +10,24 @@ import Loader from '../../utils/SimpleLoader';
 class AccountContainer extends Component {
 
     componentDidMount() {
+      if( navigator.userAgent !== 'ReactSnap') {
         window.Snipcart.subscribe('authentication.success', (email) => {
-            this.props.login()
+          this.props.login()
         });
+      }
     }
 
     componentWillUnmount() {
+      if( navigator.userAgent !== 'ReactSnap') {
         window.Snipcart.unsubscribe('authentication.success');
+      }
     }
-   
+
     render() {
         const { isLoggedIn, isChecking } = this.props;
         return (
             <>
-                {!isChecking ? 
+                {!isChecking ?
                     <Account isLoggedIn={isLoggedIn} logout={this.props.logout}/>
                     :
                     <Loader pad={"small"} size={25}/>

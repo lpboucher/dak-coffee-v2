@@ -12,6 +12,7 @@ class CartMenuContainer extends Component {
     cartRef = createRef();
 
     componentDidMount() {
+      if( navigator.userAgent !== 'ReactSnap') {
         window.Snipcart.subscribe('item.adding', (ev, item, items) => {
             this.props.updating();
         });
@@ -31,14 +32,17 @@ class CartMenuContainer extends Component {
                 orderCompleted(data)
             }
         });
+      }
     }
 
     componentWillUnmount() {
+      if( navigator.userAgent !== 'ReactSnap') {
         window.Snipcart.unsubscribe('item.added');
         window.Snipcart.unsubscribe('item.adding');
         window.Snipcart.unsubscribe('item.updated');
         window.Snipcart.unsubscribe('item.removed');
         window.Snipcart.unsubscribe('order.completed');
+      }
     }
 
     render() {
