@@ -1,16 +1,20 @@
-const addPX = (measure1, measure2) => {
+const addPX = (measure1, measure2="0px") => {
   return `${parseInt(measure1, 10) + parseInt(measure2, 10)}px`;
 };
 
 export const layout = {
-  barHeight: "50px",
-  navigationHeight: "50px",
-  baseWrapperPadding: "24px",
+  barHeight: "40px",
+  navigationHeight: "80px",
+  baseWrapperPadding: "18px",
+  sectionPadding:"18px",
+  cardHeight: "400px",
+  cardTop: "75%",
+  cardBottom: "25%",
   get headerHeight() {
     return addPX(this.barHeight, this.navigationHeight)
   },
   get topOffset() {
-    return addPX(this.headerHeight, this.baseWrapperPadding)
+    return addPX(this.headerHeight)
   },
 };
 
