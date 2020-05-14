@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Main } from 'grommet';
 
+import { layout } from '../../../layout';
+
 const BackBoneLayout = ({
   header,
   main,
@@ -9,7 +11,7 @@ const BackBoneLayout = ({
 }) => (
   <>
     {header}
-    <Main pad={'medium'}>
+    <Main pad={{horizontal: layout.baseWrapperPadding}}>
       {main}
     </Main>
     {footer}

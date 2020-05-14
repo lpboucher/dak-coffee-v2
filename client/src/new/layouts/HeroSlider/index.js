@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Box } from 'grommet'
-import { ReactComponent as Arrow} from '../../../assets/icons/arrow.svg';
 
 import SliderLayout from '../Share/Slider';
 

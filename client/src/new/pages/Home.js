@@ -9,6 +9,7 @@ import Loader from '../../components/utils/SimpleLoader';
 import SubscriptionIntro from '../../components/presentation/intros/Subscriptions';
 import CoffeeProductsContainer from '../../components/containers/products/CoffeeProductsContainer';
 import HeroSlider from '../components/HeroSlider';
+import ProductsListingContainer from '../containers/Products/ProductsListing';
 
 /*const LimitedEditionsIntro = lazy(() => import('../../components/presentation/intros/LimitedEdition'));
 const FeaturedProductsContainer = lazy(() => import('../../components/containers/products/FeaturedProductsContainer'));
@@ -38,7 +39,7 @@ class Home extends Component {
                         ctaLink='/shop'
                     />
                       */}
-                <CoffeeProductsContainer collection='coffee-products'/>
+                <ProductsListingContainer collection='coffee-products'/>
                 <SubscriptionIntro currency={currency} />
                 {/*<Suspense fallback={<Loader />}>
                     <LimitedEditionsIntro />
