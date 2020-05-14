@@ -590,8 +590,8 @@ export const coffeeCardLayout = (screenSize) => {
         extraSmall: {height: '400px'},
         small: {height: '300px'},
         medium: {height: '300px'},
-        large: {height: '300px'},
-        infinity: {height: '300px'}
+        large: {height: '300px', skeleton: '200px'},
+        infinity: {height: '300px', skeleton: '200px'}
     };
     return mediaQueries[screenSize]
 }

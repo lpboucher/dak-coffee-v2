@@ -9,6 +9,8 @@ import { Box, Text, Button } from 'grommet';
 import { coffeeCardInfoLayout } from '../../layouts/globalResponsiveLayout';
 import AddToCart from '../../containers/cart/AddToCartContainer';
 
+import Skeleton from 'react-loading-skeleton';
+
 export const CardHover = styled(Box)`
   position: relative;
   width: 100%;
@@ -39,10 +41,15 @@ const CoffeeCardInfo = ({id, slug, type, price, currency, t, media}) => {
         <Box height="100%" width={layout.containerWidth} direction="row" align="center" justify="around" style={{position: 'relative'}}>
             {price ?
             <>
-                <CardHover isHidden={media === "extraSmall"}>
-                    <TruncateText textAlign={layout.textAlign} size={layout.fontSize.top} weight="bold" style={{textTransform: 'uppercase'}}>{t(`products:${type}.${slug}.name`)} - {type === "coffee" ? t(`products:${type}.${slug}.country`) : "Mystery"}</TruncateText>
-                    <TruncateText textAlign={layout.textAlign} size={layout.fontSize.mid} color="grey">{type === "coffee" ? t(`products:${type}.${slug}.taste`) : "Guess"}</TruncateText>
-                    <Text textAlign={layout.textAlign} weight="bold" size={layout.fontSize.bottom} color="mainDark">{type === "coffee" ? `${lowerPrice} - ${upperPrice}` : `${price[displayCurr].symbol} ${price[displayCurr].value.toFixed(2)}`}</Text>
+                <CardHover  >
+                    <Skeleton />
+                    <Skeleton />
+                    <TruncateText textAlign="start" size={layout.fontSize.top} weight="bold" style={{textTransform: 'uppercase'}}>{
+                    //t(`products:${type}.${slug}.name`)} - {t(`products:${type}.${slug}.country`)
+                    <Skeleton />
+                    }</TruncateText>
+                    {/*<TruncateText textAlign="start" size={layout.fontSize.mid} color="grey">{t(`products:${type}.${slug}.taste`)}</TruncateText>
+            <Text textAlign="start" weight="bold" size={layout.fontSize.bottom} color="mainDark">{`${lowerPrice} - ${upperPrice}`}</Text>*/}
                 </CardHover>
                 <AddToCart productId={id} currency={currency} absolute/>
             </>

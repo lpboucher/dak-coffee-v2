@@ -8,11 +8,12 @@ import Hero from '../presentation/global/Hero';
 import Loader from '../utils/SimpleLoader';
 import SubscriptionIntro from '../presentation/intros/Subscriptions';
 import CoffeeProductsContainer from '../containers/products/CoffeeProductsContainer';
+import HeroSliderLayout from '../layouts/new/HeroSliderLayout';
 
-const LimitedEditionsIntro = lazy(() => import('../presentation/intros/LimitedEdition'));
+/*const LimitedEditionsIntro = lazy(() => import('../presentation/intros/LimitedEdition'));
 const FeaturedProductsContainer = lazy(() => import('../containers/products/FeaturedProductsContainer'));
 const NewsletterContainer = lazy(() => import('../containers/newsletter/NewsletterContainer'));
-const ValuesIntro = lazy(() => import('../presentation/intros/Values'));
+const ValuesIntro = lazy(() => import('../presentation/intros/Values'));*/
 
 const header = 'Heros/Header_mainpage_n4krkg.jpg';
 
@@ -23,27 +24,15 @@ class Home extends Component {
         return (
             <>
                 <SEO canon="https://www.dakcoffeeroasters.com" />
-                {isNotSmall &&
-                    <Hero
-                        bgImage={header}
-                        overlay={{
-                            text: "hero.home",
-                            loc: "bottom-left",
-                            width: "50vw",
-                            height: "40vh",
-                            cta: "hero.cta.shop",
-                        }}
-                        ctaLink='/shop'
-                    />
-                }
+                <HeroSliderLayout />
                 <CoffeeProductsContainer collection='coffee-products'/>
                 <SubscriptionIntro currency={currency} />
-                <Suspense fallback={<Loader />}>
+                {/*<Suspense fallback={<Loader />}>
                     <LimitedEditionsIntro />
                     <FeaturedProductsContainer collection='featured-products'/>
                     <NewsletterContainer />
                     <ValuesIntro />
-                </Suspense>
+        </Suspense>*/}
             </>
         );
     }

@@ -13,6 +13,8 @@ import CloudImage from '../../utils/CloudImage';
 
 import { coffeeCardLayout } from '../../layouts/globalResponsiveLayout';
 
+import Skeleton from 'react-loading-skeleton';
+
 const WithHover = styled(Box)`
     cursor: ${({isHoverable}) => isHoverable ? 'pointer' : 'initial'};
     padding: 0 12px;
