@@ -12,6 +12,7 @@ const SkeletonCardList = ({count, height, width}) => {
           .fill()
           .map((item, index) => (
         <ProductCardLayout
+          key={`skel${index}_${count}`}
           feature={<Skeleton height={height}/>}
           info={
             <>

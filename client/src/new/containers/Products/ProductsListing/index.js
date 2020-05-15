@@ -20,9 +20,9 @@ const ProductsListingContainer = ({collection}) => {
 
     return (
       <>
-      { //productIds && productIds.length > 0 ?
-        //<ProductsListing productIds={productIds} />
-        //:
+      { productIds && productIds.length > 0 ?
+        <ProductsListing productIds={productIds} />
+        :
         <SkeletonCardList count={9} height={"300px"} />
       }
       </>
