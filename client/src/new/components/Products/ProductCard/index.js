@@ -1,20 +1,22 @@
 import React from 'react';
 
-import { getDisplayedProductTitle } from '../../../services/productDisplayService';
+import { getDisplayedProductTitle, getDisplayedProductPrice } from '../../../services/productDisplayService';
 
 import ProductCardLayout from '../../../layouts/Products/ProductCard';
 import CloudImage from '../../../../components/utils/CloudImage';
 import ProductCardInfo from '../ProductCardInfo';
 
-const ProductCard = ({thumb_image, type, slug}) => {
+const ProductCard = ({id, thumb_image, type, slug, price, currency}) => {
   const productTitle = getDisplayedProductTitle(type, slug);
+  const productPrice = getDisplayedProductPrice(price[currency.toLowerCase()]);
   const productImage = <CloudImage
                           img={`Products/Thumbs/${thumb_image}`}
                           maxWidth={500}
                           fit='contain'
                         />
   const info = <ProductCardInfo
-                  displayedPrice={"10 EUR"}
+                  id={id}
+                  displayedPrice={productPrice}
                   title={productTitle}
                   subTitle={productTitle}
                 />

@@ -9,8 +9,8 @@ export const getDisplayedProductTitle = (type, slug) => {
   return title;
 }
 
-export const getDisplayedProductPrice = () => {
-
+export const getDisplayedProductPrice = (price) => {
+  return `${price.symbol} ${price.value.toFixed(2)}`
 }
 
 /*const displayCurr = currency.toLowerCase();
