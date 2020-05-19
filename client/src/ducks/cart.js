@@ -228,3 +228,8 @@ export const getCartSummary = (state) => {
         subTotal: getCartSubTotal(state)
     }
 }
+
+// new
+export const getCartItemToAdd = (state, id) => {
+  return getProduct(state, id) || getSubscription(state, id);
+}
