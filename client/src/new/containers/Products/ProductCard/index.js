@@ -4,13 +4,20 @@ import { getProduct } from '../../../../ducks/products';
 import { getDisplayCurrency } from '../../../../ducks/views';
 
 import ProductCard from '../../../components/Products/ProductCard';
+import SkeletonCardInfo from '../../../components/Share/Skeletons/SkeletonCardInfo';
 
 const ProductCardContainer = ({productId}) => {
     const product = useSelector(state => getProduct(state, productId));
     const currency = useSelector(state => getDisplayCurrency(state));
 
     return (
-       <ProductCard {...product} />
+      <>
+      { product ?
+       <ProductCard currency={currency} {...product} />
+       :
+        <SkeletonCardInfo height={"300px"} />
+      }
+      </>
     )
 }
 
