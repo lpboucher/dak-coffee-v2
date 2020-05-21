@@ -16,6 +16,7 @@ export const layout = {
   get topOffset() {
     return addPX(this.headerHeight)
   },
+  footerNavLinkWidth: "33%"
 };
 
 /*const themes = {
