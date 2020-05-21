@@ -34,6 +34,7 @@ const isSubscription = (item) => {
 
 const getProductsWithInventory = async (ctx) => {
   let products = await strapi.services.product.find(ctx.query);
+  let total = await strapi.services.product.count();
   let inventory = await snipcartFetch();
   let productsWithInventory = products.map(product => {
     const currentProductInv = inventory.find(inv => inv.id === product.id);
@@ -42,7 +43,7 @@ const getProductsWithInventory = async (ctx) => {
       ...product
     };
   });
-  ctx.send(productsWithInventory);
+  ctx.send({products: productsWithInventory, count: total});
 };
 
 const getRightRoastProducts = async (ctx) => {
