@@ -13,10 +13,21 @@ export const fetchProducts = () => async dispatch => {
     dispatch({ type: FETCH_PRODUCTS_REQUEST });
     try {
         const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/productsinventory`);
-        dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: res.data });
+        dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: res.data.products, count: res.data.count });
     } catch(err) {
         dispatch({ type: FETCH_PRODUCTS_FAILURE, payload: {global: "error.products.fetch"}});
     }
+};
+
+// new
+export const fetchAllProducts = () => async dispatch => {
+  dispatch({ type: FETCH_PRODUCTS_REQUEST });
+  try {
+      const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/productsinventory`);
+      dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: res.data.products, count: res.data.count });
+  } catch(err) {
+      dispatch({ type: FETCH_PRODUCTS_FAILURE, payload: {global: "error.products.fetch"}});
+  }
 };
 
 //Reducers
@@ -44,9 +55,19 @@ const allIds = (state = [], action) => {
     }
 }
 
+const total = (state = 0, action) => {
+  switch (action.type) {
+      case FETCH_PRODUCTS_SUCCESS:
+      return action.count || 0;
+      default:
+      return state
+  }
+}
+
 export default combineReducers({
     byId,
     allIds,
+    total,
 })
 
 //Selectors
