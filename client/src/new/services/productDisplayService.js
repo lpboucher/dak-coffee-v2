@@ -9,6 +9,13 @@ export const getDisplayedProductTitle = (type, slug) => {
   return title;
 }
 
+export const getDisplayedProductDescription = (type, slug) => {
+  if (type === "equipment") {
+    return i18n.t(`products:${type}.short`)
+  }
+  return i18n.t(`products:${type}.${slug}.short`)
+}
+
 export const getDisplayedProductPrice = (price) => {
   return `${price.symbol} ${price.value.toFixed(2)}`
 }
