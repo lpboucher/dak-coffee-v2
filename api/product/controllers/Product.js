@@ -32,6 +32,7 @@ const isSubscription = (item) => {
   return item.name === 'The Classics' || item.name === 'The Roaster\'s Choice' || item.name === 'Dak Coffee Subscription';
 };
 
+// to be deleted once update script is live, also need to delete route
 const getProductsWithInventory = async (ctx) => {
   let products = await strapi.services.product.find(ctx.query);
   let total = await strapi.services.product.count();
@@ -80,6 +81,17 @@ const getRightRoastCoffeeById = async (ctx) => {
     currency: 'EUR'
   };
   ctx.send({data: sanitized});
+const getProducts = async (ctx) => {
+  let products = await strapi.services.product.find(ctx.query);
+  let total = await strapi.services.product.count();
+  ctx.send({products: products, count: total});
+};
+
+const getProduct = async (ctx) => {
+  const { id } = ctx.params;
+  let product = await strapi.services.product.findOne({id: id});
+  let total = await strapi.services.product.count();
+  ctx.send({product: product, count: total});
 };
 
 module.exports = {
@@ -87,4 +99,6 @@ module.exports = {
   getProductsWithInventory,
   getRightRoastProducts,
   getRightRoastCoffeeById
+  getProducts,
+  getProduct
 };
