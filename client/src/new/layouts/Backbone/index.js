@@ -6,21 +6,19 @@ import { layout } from '../../../layout';
 
 const BackBoneLayout = ({
   header,
+  metas = [],
   main,
-  footer
+  footer,
+  layers = []
 }) => (
   <>
     {header}
+    {metas.map(meta => meta)}
     <Main pad={{horizontal: layout.baseWrapperPadding}}>
       {main}
     </Main>
     {footer}
-      {/*<Layer full="vertical" position="right" animation="slide" modal={false}>
-          Your cart
-      </Layer>
-      <Layer full="horizontal" position="bottom" animation="slide" modal={false}>
-          In your cart
-  </Layer>*/}
+    {layers.map(layer => layer)}
   </>
 )
 

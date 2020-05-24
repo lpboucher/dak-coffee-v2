@@ -82,4 +82,5 @@ const user = (state = initialState, action) => {
 export default user;
 
 //Selectors
+//new
 export const getLoggedInStatus = (state) => state.user.session !== "";

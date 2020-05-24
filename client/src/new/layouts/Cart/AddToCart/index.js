@@ -1,10 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { Box } from 'grommet';
 
+const AddBox = styled(Box)`
+  cursor: pointer;
+`
+
 const SnipcartAdd = ({id, name, prices, description, options, ...rest}) => {
   return (
-      <Box
+      <AddBox
           className="snipcart-add-item"
           data-item-id={id}
           data-item-name={name}
@@ -23,7 +28,7 @@ const SnipcartAdd = ({id, name, prices, description, options, ...rest}) => {
           {...rest}
       >
           {rest.children}
-      </Box>
+      </AddBox>
   );
 };
 

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { openPromotion } from '../../../ducks/views';
-import { initializeCart } from '../../../ducks/cart';
+import React from 'react';
+import { useSnipcartCart, useSnipcartEvents } from '../../hooks/useSnipcart';
+import { itemAdded, orderCompleted } from '../../../components/utils/Tracking/snipcartEvents';
+import { initializeCart, updateCart, updatingCart, clearCart } from '../../../ducks/cart';
 import { schemaBuilder } from '../../../components/utils/SEO/schema';
 
 import SEO from '../../../components/utils/SEO/SEO';
@@ -10,21 +10,16 @@ import BackBone from '../../components/Backbone';
 
 const BackBoneContainer = ({children}) => {
   const schema = schemaBuilder('WebSite', 'https://dakcoffeeroasters.com');
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(initializeCart());
-    //toast.success("Wow so easy !");
-    setTimeout(() => openPromotion(), 5000);
-  }, [dispatch]);
+  useSnipcartCart(initializeCart);
 
-  useEffect(() => {
-    return () => {
-      if( navigator.userAgent !== 'ReactSnap') {
-        window.Snipcart.unsubscribe('cart.ready');
-      }
-    }
-  }, []);
+  useSnipcartEvents(
+    updatingCart,
+    updateCart,
+    clearCart,
+    itemAdded,
+    orderCompleted
+  );
 
   return (
     <>

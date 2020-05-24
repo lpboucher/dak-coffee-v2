@@ -9,6 +9,7 @@ import Loader from '../../components/utils/SimpleLoader';
 import SubscriptionIntro from '../../components/presentation/intros/Subscriptions';
 import CoffeeProductsContainer from '../../components/containers/products/CoffeeProductsContainer';
 import HeroSlider from '../components/HeroSlider';
+import Quote from '../components/Share/Quote';
 import ProductsListingContainer from '../containers/Products/ProductsListing';
 
 /*const LimitedEditionsIntro = lazy(() => import('../../components/presentation/intros/LimitedEdition'));
@@ -39,7 +40,8 @@ class Home extends Component {
                         ctaLink='/shop'
                     />
                       */}
-                <ProductsListingContainer collection='coffee-products'/>
+                <Quote quote="hero.home"/>
+                <ProductsListingContainer productTypes={["coffee"]}/>
                 <SubscriptionIntro currency={currency} />
                 {/*<Suspense fallback={<Loader />}>
                     <LimitedEditionsIntro />

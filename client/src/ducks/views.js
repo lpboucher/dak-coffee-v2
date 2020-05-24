@@ -21,7 +21,8 @@ import {
     FETCH_CART_REQUEST,
     FETCH_CART_SUCCESS,
     //PROMO_CART_FAILURE,
-    FETCH_CART_FAILURE
+    FETCH_CART_FAILURE,
+    INITIALIZE_CART_SUCCESS
 } from './cart';
 
 import {
@@ -59,27 +60,27 @@ export const closeSnipcart = () => dispatch => {
     dispatch({type: SNIP_CLOSE})
 }
 
+// new
 export const openCartSummary = () => dispatch => {
     dispatch({type: OPEN_CART})
 }
 
+// new
 export const closeCartSummary = () => dispatch => {
     dispatch({type: CLOSE_CART})
 }
 
-export const switchDisplayCurrency = (currency) => (dispatch) => {
-    dispatch({type: CHANGE_CURRENCY_REQUEST, payload: "loading.currency"})
-    try {
-        const newCurrency = window.Snipcart.api.cart.currency(currency);
-        dispatch({type: CHANGE_CURRENCY_SUCCESS, payload: newCurrency.toUpperCase()})
-        dispatch(fetchCartItems())
-    } catch (err) {
-        console.log(err)
-        dispatch({type: CHANGE_CURRENCY_SUCCESS, payload: 'EUR'})
-        dispatch(fetchCartItems())
-    }
+//new
+export const switchOption = (type, key) => (dispatch) => {
+  if (type === "language") {
+    dispatch(switchLanguage(key))
+  }
+  if (type === "currency") {
+    dispatch(switchDisplayCurrency(key))
+  }
 }
 
+// new
 export const switchLanguage = (lang=null) => (dispatch) => {
     if(!lang) {
         window.Snipcart.setLang(i18n.language);
@@ -95,6 +96,20 @@ export const switchLanguage = (lang=null) => (dispatch) => {
             console.log(err);
         }
     }
+}
+
+//new
+export const switchDisplayCurrency = (currency) => (dispatch) => {
+  dispatch({type: CHANGE_CURRENCY_REQUEST, payload: "loading.currency"})
+  try {
+      const newCurrency = window.Snipcart.api.cart.currency(currency);
+      dispatch({type: CHANGE_CURRENCY_SUCCESS, payload: newCurrency.toUpperCase()})
+      dispatch(fetchCartItems())
+  } catch (err) {
+      console.log(err)
+      dispatch({type: CHANGE_CURRENCY_SUCCESS, payload: 'EUR'})
+      dispatch(fetchCartItems())
+  }
 }
 
 export const trackLocation = (country) => dispatch => {
@@ -119,12 +134,11 @@ export const closePromotion = () => dispatch => {
 //Reducer
 const initialState = {
 isSnipcartModalOpen: false,
-isCartOpen: false,
 isMobileOpen: false,
 isProcessing: true,
+//to be removed once fetching is specific to products
 isFetching: false,
 isPromoOpen: false,
-changingLoginStatus: false,
 processingText: "loading.initial",
 error: {
     global: "",
@@ -134,9 +148,17 @@ error: {
     cart: ""
 },
 displayCurrency: "EUR",
-displayLang: "",
+displayLang: "EN",
 showError: false,
-clientLocation: "World"
+clientLocation: "World",
+//new
+addingToCart: {
+  productId: "",
+  adding: false
+},
+changingLoginStatus: false,
+isCartOpen: false,
+isCartLoaded: false
 };
 
 export default function reducer(state = initialState, action) {
@@ -192,11 +214,25 @@ switch(action.type) {
             processingText: "",
             displayCurrency: action.payload
         }
+    case FETCH_CART_REQUEST:
+          return {
+            ...state,
+            addingToCart: {
+              ...state.addingToCart,
+              productId: "",
+              adding: true
+            },
+        }
     case UPDATE_CART_REQUEST:
         return {
             ...state,
             isFetching: true,
             isProcessing: true,
+            addingToCart: {
+              ...state.addingToCart,
+              productId: action.payload,
+              adding: true
+            },
             processingText: "cart.updating"
         }
     case UPDATE_CART_SUCCESS:
@@ -205,7 +241,12 @@ switch(action.type) {
             ...state,
             isFetching: false,
             isProcessing: false,
-            processingText: ""
+            processingText: "",
+            addingToCart: {
+              ...state.addingToCart,
+              productId: "",
+              adding: false
+            },
         }
     case LOGIN_REQUEST:
     case LOGOUT_REQUEST:
@@ -244,7 +285,6 @@ switch(action.type) {
             ...state,
             isSnipcartModalOpen: false,
         }
-    case FETCH_CART_REQUEST:
     case FETCH_PRODUCTS_REQUEST:
             return {
                 ...state,
@@ -269,14 +309,17 @@ switch(action.type) {
         ...state,
         clientLocation: action.payload,
       }
+    case INITIALIZE_CART_SUCCESS:
+      return {
+        ...state,
+        isCartLoaded: true,
+      }
     default:
         return state;
 }
 }
 
 //Selectors
-export const isCartOpen = (state) => state.views.isCartOpen;
-
 export const isPromoOpen = (state) => state.views.isPromoOpen;
 
 export const isSnipOpen = (state) => state.views.isSnipcartModalOpen;
@@ -287,13 +330,7 @@ export const isMobileOpen = (state) => state.views.isMobileOpen;
 
 export const isProcessing = (state) => state.views.isProcessing;
 
-export const isCheckingLoginStatus = (state) => state.views.changingLoginStatus;
-
 export const getProcessingText = (state) => state.views.processingText;
-
-export const getDisplayCurrency = (state) => state.views.displayCurrency;
-
-export const getDisplayLang = (state) => state.views.displayLang;
 
 export const getLocation = (state) => state.views.clientLocation;
 
@@ -302,5 +339,28 @@ export const getMediaSize = (state) => state.browser.mediaType;
 export const hasError = (state) => state.views.showError;
 
 export const getError = (state) => state.views.error;
+
+// new
+export const isAdding = (state) => state.views.addingToCart;
+
+export const getActiveOption = (state, optionType) => {
+  if (optionType === "language") {
+    return getDisplayLang(state)
+  }
+  if (optionType === "currency") {
+    return getDisplayCurrency(state)
+  }
+}
+
+export const isCartLoaded = (state) => state.views.isCartLoaded;
+
+export const getDisplayLang = (state) => state.views.displayLang;
+
+export const getDisplayCurrency = (state) => state.views.displayCurrency;
+
+//to use for bottom of screen pop-up
+export const isCartOpen = (state) => state.views.isCartOpen;
+
+export const isCheckingLoginStatus = (state) => state.views.changingLoginStatus;
 
 

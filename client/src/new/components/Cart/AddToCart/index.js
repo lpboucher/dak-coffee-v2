@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SnipcartAdd from '../../../layouts/Cart/AddToCart'
-import { Add } from 'grommet-icons';
+import AddButtonContainer from '../../../containers/Cart/AddToCart/AddButton';
 
 import { getCartProductPrice, getCartProductOptions } from '../../../services/productDataService';
 import { getDisplayedProductDescription } from '../../../services/productDisplayService';
@@ -21,7 +21,7 @@ const AddToCart = ({id, name, price, slug, type, currency}) => {
         description={translatedDescription}
         options={cartOptions}
       >
-        <Add size="small" />
+          <AddButtonContainer id={id} />
       </SnipcartAdd>
   );
 };

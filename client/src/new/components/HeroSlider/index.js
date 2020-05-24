@@ -12,9 +12,9 @@ const HeroSlider = () => {
       <HeroSliderLayout
         slides={
         [
-          <Image fit="cover" src={header}/>,
-          <Image fit="cover" src={header}/>,
-          <Image fit="cover" src={header}/>
+          <Image key="1" fit="cover" src={header}/>,
+          <Image key="2" fit="cover" src={header}/>,
+          <Image key="3" fit="cover" src={header}/>
         ]
       }
       />

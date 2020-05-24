@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { detectBrowserLocation, getDefaultLocationCurrency } from '../components/utils/Languages/detectLanguage';
+import { toast } from 'react-toastify';
 
 import { login } from './user';
 import { getProduct } from './products';
@@ -16,47 +17,28 @@ export const FETCH_CARTMETA_REQUEST = 'cart/fetch_cartmeta_request'
 export const FETCH_CARTMETA_SUCCESS = 'cart/fetch_cartmeta_success'
 export const CLEAR_CART_SUCCESS = 'cart/clear_cart_success';
 export const PROMO_CART_FAILURE = 'cart/promo_cart_failure';
+export const INITIALIZE_CART_SUCCESS = 'cart/initialize_cart_success';
 
 //Action Creators
-
-export const initializeCart = () => async (dispatch) => {
-  if( navigator.userAgent !== 'ReactSnap') {
-    window.Snipcart.subscribe('cart.ready', async (data) => {
-        dispatch(trackLocation(await detectBrowserLocation()))
-        if (data.order && data.order.items.length > 0) {
-            dispatch(switchDisplayCurrency(data.order.currency))
-        } else {
-            dispatch(switchDisplayCurrency(await getDefaultLocationCurrency()))
-        }
-      window.Snipcart.execute('registerLocale', 'en', {
-        bill_me_later:
-          "No Credit Card or PayPal Account?",
-        bill_me_later_action:
-          "Pay by bank transfer",
-        bill_me_later_explanation:
-          "An invoice will be sent to you by email with our bank details.",
-      });
-      window.Snipcart.execute('registerLocale', 'nl', {
-        bill_me_later:
-          "Met iDeal Betalen?",
-        bill_me_later_action:
-          "Betalen via overschrijving",
-        bill_me_later_explanation:
-          "Je ontvangt een factuur met bankgegevens.",
-      });
-      dispatch(login())
-      dispatch(switchLanguage())
-    })
-    window.Snipcart.api.configure('show_cart_automatically', false);
+//new
+export const initializeCart = ({order}) => async (dispatch) => {
+  dispatch(trackLocation(await detectBrowserLocation()));
+  if (order && order.items.length > 0) {
+      dispatch(switchDisplayCurrency(order.currency));
+  } else {
+      dispatch(switchDisplayCurrency(await getDefaultLocationCurrency()));
   }
+  dispatch(login());
+  dispatch(switchLanguage());
+  dispatch({ type: INITIALIZE_CART_SUCCESS });
 }
-
-export const updatingCart = () => (dispatch) => {
-    dispatch({ type: UPDATE_CART_REQUEST });
+//new
+export const updatingCart = (id) => (dispatch) => {
+    dispatch({ type: UPDATE_CART_REQUEST, payload: id });
 }
-
-export const updateCart = () => (dispatch) => {
-    dispatch(fetchCartItems(true));
+//new add, addtocart action
+export const updateCart = (item) => (dispatch) => {
+    dispatch(fetchCartItems(item, true));
 }
 
 export const updateCartItem = (id, options) => (dispatch) => {
@@ -81,15 +63,12 @@ export const removeCartItem = (id) => (dispatch) => {
     }
 }
 
-export const fetchCartItems = (withSummary=false) => (dispatch) => {
+export const fetchCartItems = (newItem=null) => (dispatch) => {
     dispatch({ type: FETCH_CART_REQUEST });
     try {
         const newCart = window.Snipcart.api.items.all();
+        newItem && toast.success(`added ${newItem.name} to cart`)
         dispatch({ type: FETCH_CART_SUCCESS, payload: newCart });
-        if (withSummary) {
-            dispatch(openCartSummary());
-            setTimeout(() => dispatch(closeCartSummary()), 1500)
-        }
     } catch(err) {
         //dispatch({ type: FETCH_PRODUCTS_FAILURE});
     }
@@ -201,6 +180,7 @@ export const getCartItemFromProducts = (state, id) => {
     }
 }
 
+//new
 export const getCartQuantity = (state) => {
     const items = getCartItems(state);
     if (items && items.length > 0) {
@@ -208,6 +188,7 @@ export const getCartQuantity = (state) => {
     }
 }
 
+//new
 export const getCartTotal = (state) => {
     const items = getCartItems(state);
     if (items && items.length > 0) {

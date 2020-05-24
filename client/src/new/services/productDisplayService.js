@@ -1,5 +1,5 @@
 import i18n from "i18next";
-import { capitalize } from '../utils/formats';
+import { capitalize, toCurrency } from '../utils/formats';
 
 export const getDisplayedProductTitle = (type, slug) => {
   let title = capitalize(i18n.t(`products:${type}.${slug}.name`));
@@ -17,7 +17,7 @@ export const getDisplayedProductDescription = (type, slug) => {
 }
 
 export const getDisplayedProductPrice = (price) => {
-  return `${price.symbol} ${price.value.toFixed(2)}`
+  return toCurrency(price.symbol, price.value)
 }
 
 /*const displayCurr = currency.toLowerCase();
