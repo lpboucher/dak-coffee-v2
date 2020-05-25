@@ -7,7 +7,6 @@ const CartReviewListLayout = ({children}) => {
     <Box
       justify="between"
       background="mainWhite"
-      animation="slideUp"
       >
         {children}
     </Box>
