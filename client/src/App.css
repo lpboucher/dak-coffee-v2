@@ -9,6 +9,11 @@ html, body {
   overflow-x: hidden;
 }
 
+.ct-text,
+.ct-heading {
+  font-family: Montserrat;
+}
+
 *,
 *::before,
 *::after {

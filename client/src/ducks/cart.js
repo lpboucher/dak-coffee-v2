@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { detectBrowserLocation, getDefaultLocationCurrency } from '../components/utils/Languages/detectLanguage';
-import { toast } from 'react-toastify';
+import { notify } from '../new/services/notifications';
 
 import { login } from './user';
 import { getProduct } from './products';
@@ -67,7 +67,9 @@ export const fetchCartItems = (newItem=null) => (dispatch) => {
     dispatch({ type: FETCH_CART_REQUEST });
     try {
         const newCart = window.Snipcart.api.items.all();
-        newItem && toast.success(`added ${newItem.name} to cart`)
+        console.log(newItem);
+        //newItem && toast.success(`added ${newItem.name} to cart`)
+        newItem && notify.cart.add(newItem);
         dispatch({ type: FETCH_CART_SUCCESS, payload: newCart });
     } catch(err) {
         //dispatch({ type: FETCH_PRODUCTS_FAILURE});
@@ -97,18 +99,18 @@ const byId = (state = byIdDefault, action) => {
         case FETCH_CART_SUCCESS:
             return {
                 ...action.payload.reduce((obj, product) => {
-                    obj[product.uniqueId] = {
-                        id: product.uniqueId,
-                        name: product.name,
-                        quantity: product.quantity,
-                        price: product.price,
-                        unitPrice: product.unitPrice,
-                        productId: product.id,
-                        isRecurring: product.isRecurring,
-                        totalPrice: product.totalPrice,
-                        totalPriceWithoutDiscountsAndTaxes: product.totalPriceWithoutDiscountsAndTaxes
-                    }
-                    return obj
+                  const previous = obj[product.id];
+                  obj[product.id] = {
+                    id: product.id,
+                    name: product.name,
+                    unitPrice: product.unitPrice,
+                    isRecurring: product.isRecurring,
+                    quantity: !previous ? product.quantity : product.quantity + previous.quantity,
+                    price: !previous ? product.price : product.price + previous.price,
+                    totalPrice: !previous ? product.totalPrice : product.totalPrice + previous.totalPrice,
+                    totalPriceWithoutDiscountsAndTaxes: !previous ? product.totalPriceWithoutDiscountsAndTaxes : product.totalPriceWithoutDiscountsAndTaxes + previous.totalPriceWithoutDiscountsAndTaxes,
+                  }
+                  return obj
                 }, {}),
             }
         case CLEAR_CART_SUCCESS:
@@ -122,7 +124,7 @@ const allIdsDefault = [];
 const allIds = (state = allIdsDefault, action) => {
     switch (action.type) {
         case FETCH_CART_SUCCESS:
-            return action.payload.map(product => product.uniqueId)
+            return [...new Set(action.payload.map(product => product.id))]
         case CLEAR_CART_SUCCESS:
             return allIdsDefault
         default:
@@ -161,13 +163,13 @@ export const getCartItemFromProducts = (state, id) => {
     const cartItem = getCartItem(state, id);
     let product;
     if (cartItem && !cartItem.isRecurring) {
-        product = getProduct(state, cartItem.productId);
+        product = getProduct(state, cartItem.id);
     } else if (cartItem && cartItem.isRecurring) {
-        product = getSubscription(state, cartItem.productId);
+        product = getSubscription(state, cartItem.id);
     }
     if (product) {
         return {
-            id: cartItem.productId,
+            id: cartItem.id,
             name: product.name,
             price: {
                 unit: cartItem.unitPrice,
