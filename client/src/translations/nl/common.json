@@ -129,7 +129,8 @@
         "shop": {
             "espresso-coffees": "Espresso koffies",
             "filter-coffees": "Filter koffies",
-            "coffee-equipment": "Accessoires"
+            "coffee-equipment": "Accessoires",
+            "merchandise": "Merch"
         },
         "product": {
             "description": "Samenvatting",

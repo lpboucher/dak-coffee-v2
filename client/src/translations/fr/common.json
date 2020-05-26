@@ -128,7 +128,8 @@
         "shop": {
             "espresso-coffees": "Cafés espressos",
             "filter-coffees": "Cafés filtres",
-            "coffee-equipment": "équipement"
+            "coffee-equipment": "équipement",
+            "merchandise": "Marchandise"
         },
         "product": {
             "description": "Description",
