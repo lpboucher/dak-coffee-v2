@@ -27,8 +27,6 @@ export const initializeCart = () => async (dispatch) => {
         } else {
             dispatch(switchDisplayCurrency(await getDefaultLocationCurrency()))
         }
-      dispatch(login())
-      dispatch(switchLanguage())
       window.Snipcart.execute('registerLocale', 'en', {
         bill_me_later:
           "No Credit Card or PayPal Account?",
@@ -45,6 +43,8 @@ export const initializeCart = () => async (dispatch) => {
         bill_me_later_explanation:
           "Je ontvangt een factuur met bankgegevens.",
       });
+      dispatch(login())
+      dispatch(switchLanguage())
     })
     window.Snipcart.api.configure('show_cart_automatically', false);
 }
