@@ -1,4 +1,19 @@
 {
+    "merchandise": {
+      "short": "Koffie merch",
+      "mile-high-print": {
+        "name": "Mile High Print",
+        "description": "Deze print is gedrukt op hoogwaardig Gmund g/m2 papier (100% katoen). Formaat: A5 - 14,8cm x 21cm"
+    },
+    "coffee-for-two-print": {
+      "name": "Coffee for Two Print",
+      "description": "Deze print is gedrukt op hoogwaardig Gmund g/m2 papier (100% katoen). Formaat: A5 - 14,8cm x 21cm"
+    },
+    "bela-vista-print": {
+    "name": "Bela Vista Print",
+    "description": "Deze print is gedrukt op hoogwaardig Gmund g/m2 papier (100% katoen). Formaat: A5 - 14,8cm x 21cm"
+    }
+    },
     "equipment": {
         "short": "Koffie accessoire",
         "chemex-coffee-brewer": {

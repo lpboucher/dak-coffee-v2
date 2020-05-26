@@ -11,6 +11,7 @@ const ProductDetails = ({id, name, slug, price, currency, type, media, t}) => {
     const identifier = `products:${type}.${slug}`;
     const isCoffee = type === 'coffee';
     const isEquipment = type === "equipment";
+    const isMerchandise = type === "merchandise";
     const displayCurr = currency.toLowerCase();
     const formOptions = {
         'coffee': [
@@ -49,7 +50,7 @@ const ProductDetails = ({id, name, slug, price, currency, type, media, t}) => {
                     </>
                 }
                 {
-                  isEquipment &&
+                  isEquipment || isMerchandise &&
                   <Text margin={{bottom: "medium"}}>{t(`${identifier}.description`)}</Text>
                 }
                 </Tab>

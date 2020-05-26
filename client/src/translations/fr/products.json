@@ -1,5 +1,20 @@
 {
-    "equipment": {
+  "merchandise": {
+    "short": "Illustrations",
+    "mile-high-print": {
+      "name": "Illustration de Mile High",
+      "description": "Cette illustration a été imprimée sur du papier de haute qualité Gmund 300 g/m2 paper (100% cotton). Dimensions: A5 - 14,8cm x 21cm"
+  },
+  "coffee-for-two-print": {
+    "name": "Illustration de Coffee for Two",
+    "description": "Cette illustration a été imprimée sur du papier de haute qualité Gmund 300 g/m2 paper (100% cotton). Dimensions: A5 - 14,8cm x 21cm"
+  },
+  "bela-vista-print": {
+  "name": "Illustration de Bela Vista",
+  "description": "Cette illustration a été imprimée sur du papier de haute qualité Gmund 300 g/m2 paper (100% cotton). Dimensions: A5 - 14,8cm x 21cm"
+  }
+  },
+  "equipment": {
         "short": "Équipement de café",
         "chemex-coffee-brewer": {
             "name": "Chemex Classique 3-Tasses",

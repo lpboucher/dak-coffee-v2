@@ -9,7 +9,7 @@ const AddToCart = ({id, name, price, slug, stock, url, description, type, curren
     const { increments, varieties, roast } = price[currency.toLowerCase()];
     const options = increments ? increments.map((inc) => `${inc.option}${inc.increment}`) : null;
     const prices = Object.keys(price).reduce((acc, curr) => { return { ...acc, [curr]: price[curr].value.toFixed(2) }; }, {});
-    const desc = type === 'equipment' ? t(`products:${type}.short`) : t(`products:${type}.${slug}.short`);
+    const desc = type === 'equipment' || type === 'merchandise' ? t(`products:${type}.short`) : t(`products:${type}.${slug}.short`);
     const option1Name = 'Weight';
     return (
         <>

@@ -1,5 +1,20 @@
 {
-    "equipment": {
+  "merchandise": {
+    "short": "Coffee merch",
+    "mile-high-print": {
+        "name": "Mile High Print",
+        "description": "This limited edition print has been printed on high quality Gmund 300 g/m2 paper (100% cotton). Dimensions: A5 - 14,8cm x 21cm"
+    },
+    "coffee-for-two-print": {
+      "name": "Coffee for Two Print",
+      "description": "This limited edition print has been printed on high quality Gmund 300 g/m2 paper (100% cotton). Dimensions: A5 - 14,8cm x 21cm"
+    },
+    "bela-vista-print": {
+    "name": "Bela Vista Print",
+    "description": "This limited edition print has been printed on high quality Gmund 300 g/m2 paper (100% cotton). Dimensions: A5 - 14,8cm x 21cm"
+    }
+  },
+  "equipment": {
         "short": "Coffee equipment",
         "chemex-coffee-brewer": {
             "name": "Classic Chemex 3-Cups",
