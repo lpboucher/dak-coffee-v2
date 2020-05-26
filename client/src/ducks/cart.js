@@ -29,6 +29,22 @@ export const initializeCart = () => async (dispatch) => {
         }
       dispatch(login())
       dispatch(switchLanguage())
+      Snipcart.execute('registerLocale', 'en', {
+        bill_me_later:
+          "No Credit Card or PayPal Account?",
+        bill_me_later_action:
+          "Pay by bank transfer",
+        bill_me_later_explanation:
+          "An invoice will be sent to you by email with our bank details.",
+      });
+      Snipcart.execute('registerLocale', 'nl', {
+        bill_me_later:
+          "Met iDeal Betalen?",
+        bill_me_later_action:
+          "Betalen via overschrijving",
+        bill_me_later_explanation:
+          "Je ontvangt een factuur met bankgegevens.",
+      });
     })
     window.Snipcart.api.configure('show_cart_automatically', false);
 }
