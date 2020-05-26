@@ -29,7 +29,7 @@ export const initializeCart = () => async (dispatch) => {
         }
       dispatch(login())
       dispatch(switchLanguage())
-      Snipcart.execute('registerLocale', 'en', {
+      window.Snipcart.execute('registerLocale', 'en', {
         bill_me_later:
           "No Credit Card or PayPal Account?",
         bill_me_later_action:
@@ -37,7 +37,7 @@ export const initializeCart = () => async (dispatch) => {
         bill_me_later_explanation:
           "An invoice will be sent to you by email with our bank details.",
       });
-      Snipcart.execute('registerLocale', 'nl', {
+      window.Snipcart.execute('registerLocale', 'nl', {
         bill_me_later:
           "Met iDeal Betalen?",
         bill_me_later_action:
