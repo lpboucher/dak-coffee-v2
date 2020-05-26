@@ -12,7 +12,11 @@
     "bela-vista-print": {
     "name": "Bela Vista Print",
     "description": "This limited edition print has been printed on high quality Gmund 300 g/m2 paper (100% cotton). Dimensions: A5 - 14,8cm x 21cm"
-    }
+    },
+    "print-bundle": {
+      "name": "Limited Edition print bundle",
+      "description": "This bundle contains all 3 limited edition prints. Dimensions: A5 - 14,8cm x 21cm"
+      }
   },
   "equipment": {
         "short": "Coffee equipment",

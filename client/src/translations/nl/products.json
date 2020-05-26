@@ -12,7 +12,11 @@
     "bela-vista-print": {
     "name": "Bela Vista Print",
     "description": "Deze print is gedrukt op hoogwaardig Gmund g/m2 papier (100% katoen). Formaat: A5 - 14,8cm x 21cm"
-    }
+    },
+    "print-bundle": {
+      "name": "Limited Edition print bundle",
+      "description": "Deze bundel bevat alle 3 prints. Dimensions: A5 - 14,8cm x 21cm"
+      }
     },
     "equipment": {
         "short": "Koffie accessoire",

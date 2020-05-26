@@ -12,7 +12,11 @@
   "bela-vista-print": {
   "name": "Illustration de Bela Vista",
   "description": "Cette illustration a été imprimée sur du papier de haute qualité Gmund 300 g/m2 paper (100% cotton). Dimensions: A5 - 14,8cm x 21cm"
-  }
+  },
+  "print-bundle": {
+    "name": "Paquet de 3 Illustrations",
+    "description": "Ce paquet contient les 3 illustrations d'éditions limitées. Dimensions: A5 - 14,8cm x 21cm"
+    }
   },
   "equipment": {
         "short": "Équipement de café",
