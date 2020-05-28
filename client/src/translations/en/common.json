@@ -65,11 +65,11 @@
         },
         "limited edition": {
             "title": "Our Current Limited Edition\n<i>Bela Vista</i>",
-            "soldOut": "This item ships on May 28th",
+            "soldOut": "Now available",
             "subtitle": "",
             "helper": "Apricot, Iced Tea, Citrus",
             "description": "This new limited edition from Brazil is roasted for filter coffees and is fresh and light. It is the perfect coffee to enjoy the start of summer.",
-            "button": "Pre-order this coffee"
+            "button": "Buy this coffee"
         },
         "values": {
             "title": "What we believe in",
