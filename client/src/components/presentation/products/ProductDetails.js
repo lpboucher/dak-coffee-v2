@@ -50,7 +50,7 @@ const ProductDetails = ({id, name, slug, price, currency, type, media, t}) => {
                     </>
                 }
                 {
-                  isEquipment || isMerchandise &&
+                  (isEquipment || isMerchandise) &&
                   <Text margin={{bottom: "medium"}}>{t(`${identifier}.description`)}</Text>
                 }
                 </Tab>
