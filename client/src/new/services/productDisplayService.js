@@ -1,5 +1,5 @@
 import i18n from "i18next";
-import { capitalize, toCurrency } from '../utils/formats';
+import { capitalize, toCurrency } from '../services/formats';
 
 export const getDisplayedProductTitle = (type, slug) => {
   let title = capitalize(i18n.t(`products:${type}.${slug}.name`));

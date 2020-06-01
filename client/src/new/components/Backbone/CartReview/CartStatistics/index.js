@@ -3,7 +3,7 @@ import React from 'react';
 import CartStatisticsLayout from '../../../../layouts/Backbone/CartReview/CartStatistics';
 
 import { BY_CODE } from '../../../../constants/symbols';
-import { toCurrency } from '../../../../utils/formats';
+import { toCurrency } from '../../../../services/formats';
 
 const CartStatistics = ({quantity, total, currency}) => {
   const currencySymbol = BY_CODE[currency];

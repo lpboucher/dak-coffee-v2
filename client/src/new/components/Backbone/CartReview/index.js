@@ -5,7 +5,7 @@ import CartReviewListContainer from '../../../containers/Backbone/CartReview/Car
 import CartStatisticsContainer from '../../../containers/Backbone/CartReview/CartStatistics';
 
 import { BY_CODE } from '../../../constants/symbols';
-import { toCurrency } from '../../../utils/formats';
+import { toCurrency } from '../../../services/formats';
 
 const CartReview = ({quantity, total, currency, isOpen, open, close}) => {
   const currencySymbol = BY_CODE[currency];

@@ -9,7 +9,6 @@ import CartReviewItem from '../../../../components/Backbone/CartReview/CartRevie
 const CartReviewItemContainer = ({itemId}) => {
     const product = useSelector(state => getCartItemFromProducts(state, itemId));
     const currency = useSelector(state => getDisplayCurrency(state));
-    console.log(product);
 
     return (
       <>

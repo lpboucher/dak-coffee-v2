@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { getDisplayedProductTitle, getDisplayedProductPrice } from '../../../../services/productDisplayService';
-import { toCurrency } from '../../../../utils/formats';
+import { toCurrency } from '../../../../services/formats';
 import { BY_CODE } from '../../../../constants/symbols';
 
 import CartReviewItemLayout from '../../../../layouts/Backbone/CartReview/CartReviewItem';

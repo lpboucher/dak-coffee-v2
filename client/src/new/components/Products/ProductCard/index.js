@@ -3,7 +3,7 @@ import React from 'react';
 import { getDisplayedProductTitle, getDisplayedProductPrice } from '../../../services/productDisplayService';
 
 import ProductCardLayout from '../../../layouts/Products/ProductCard';
-import CloudImage from '../../../../components/utils/CloudImage';
+import CloudImage from '../../../utils/images/CloudImage';
 import ProductCardInfo from '../ProductCardInfo';
 
 const ProductCard = ({id, thumb_image, type, slug, price, currency}) => {
