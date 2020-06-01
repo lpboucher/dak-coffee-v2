@@ -123,10 +123,12 @@ export const closeMobileMenu = () => dispatch => {
     dispatch({type: CLOSE_MOBILE})
 }
 
+// new
 export const openPromotion = () => dispatch => {
     dispatch({type: OPEN_PROMO})
 }
 
+// new
 export const closePromotion = () => dispatch => {
     dispatch({type: CLOSE_PROMO})
 }
