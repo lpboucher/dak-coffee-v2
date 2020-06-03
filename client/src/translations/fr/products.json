@@ -199,9 +199,9 @@
             "taste": "Bleuets, fruits, acidité florale",
             "harvest": "Alors que la région était dominée par de grandes fincas, les producteurs artisanaux ont commencé à récolter leur propre café il y a de cela seulement 25ans.",
             "altitude": "1500m",
-            "500CAD": "(29.50$)",
+            "500CAD": "(30.40$)",
             "500EUR": "(21€)",
-            "1000CAD": "(56$)",
+            "1000CAD": "(57.60$)",
             "1000EUR": "(40€)"
         },
         "de-la-gente-filter": {
@@ -218,9 +218,9 @@
             "taste": "Bleuets, fruits, acidité florale",
             "harvest": "Alors que la région était dominée par de grandes fincas, les producteurs artisanaux ont commencé à récolter leur propre café il y a de cela seulement 25ans.",
             "altitude": "1500m",
-            "500CAD": "(29.50$)",
+            "500CAD": "(30.40$)",
             "500EUR": "(21€)",
-            "1000CAD": "(56$)",
+            "1000CAD": "(57.60$)",
             "1000EUR": "(40€)"
         },
         "sonora-coffee": {
@@ -256,9 +256,9 @@
           "taste": "Oranges sanguines, Bleuets, Fraises, Chocolat, Menthe",
           "harvest": "L'industrie du café est soutenue par 2 millions de petites fermes, celles-ci composent près de 20% de la population totale du pays!",
           "altitude": "1700m",
-          "500CAD": "(29$)",
+          "500CAD": "(32.30$)",
           "500EUR": "(22€)",
-          "1000CAD": "(57.50$)",
+          "1000CAD": "(61.20$)",
           "1000EUR": "(41.50€)"
       },
       "cayo-coffee": {
@@ -275,10 +275,10 @@
         "taste": "Thé blanc, Mandarines, Noisettes",
         "harvest": "Fredy & Felipe se sont lancés dans le café de spécialité puisque leurs cafés ont toujours des goûts plus uniques et rechercheés que les autres cafés de la région.",
         "altitude": "2200m",
-        "500CAD": "(29.50$)",
-        "500EUR": "(20.00€)",
-        "1000CAD": "(56$)",
-        "1000EUR": "(37.80€)"
+        "500CAD": "(30.40$)",
+        "500EUR": "(21€)",
+        "1000CAD": "(57.60$)",
+        "1000EUR": "(40€)"
       },
       "bela-vista-coffee": {
         "name": "Bela Vista",
@@ -294,11 +294,30 @@
         "taste": "Apricot, Iced tea, Citrus",
         "harvest": "Ademir Franciso has only started producing specialty coffee in 2010, his lot produces about 250 bags (250 x 70kg) per year",
         "altitude": "1250m",
-        "500CAD": "(34$)",
+        "500CAD": "(35$)",
         "500EUR": "(24.00€)",
-        "1000CAD": "(65$)",
+        "1000CAD": "(66.60$)",
         "1000EUR": "(46€)"
-      }
+      },
+      "paraiso-coffee": {
+        "name": "El Mirador (Bientot disponible)",
+        "short": "Café Colombien (espresso)",
+        "description": "Ce café Colombien est torréfié en espresso. 'Le Paradis' se trouve à environ 12km de Gigante dans la région de Huila. La ferme est située exactement au sommet d'une montagne avec une vue magnifique sur la vallée de la rivière Magdalena.\n\nFinca El Paraiso consiste en 14 hectares de terres dont 7 hectares situés sur une réserve naturelle. Ernedis Rodriguez récolte les variétés Caturra and Castillo de haute qualité.",
+        "region": "Huila",
+        "country": "Colombie",
+        "roast": "Espresso",
+        "lot": "El Paraiso",
+        "process": "Lavé",
+        "variety": "Caturra",
+        "drink": "Espresso",
+        "taste": "Orange, Chocolat au lait, Sucre Brun",
+        "harvest": "Finca El Paraiso est une ferme familiale. Les deux filles d'Ernedis sont très impliquées sur la ferme avec des postes en contrôle de qualité et en opérations.",
+        "altitude": "1800m",
+        "500CAD": "(28.50$)",
+        "500EUR": "(20.00€)",
+        "1000CAD": "(54$)",
+        "1000EUR": "(37.80€)"
+    }
     },
     "subscription": {
         "classics-subscription": {
