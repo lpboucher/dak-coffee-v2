@@ -1,7 +1,7 @@
 const SHIPPING_ZONES = {
   '0': ['NL'],
   '1': ['AT', 'BE', 'CH', 'DE', 'DK', 'FR', 'GB', 'IE', 'LU', 'SE'],
-  '2': ['BG', 'CY', 'CZ', 'EE', 'ES', 'FI', 'GR', 'HR', 'HU', 'IT', 'LT', 'LV', 'MT', 'NO', 'PL', 'PT', 'RO', 'SI', 'SK'],
+  '2': ['BG', 'CY', 'CZ', 'EE', 'ES', 'FI', 'GR', 'HR', 'HU', 'IT', 'LT', 'LV', 'MT', 'NO', 'PL', 'PT', 'RO', 'RU', 'SI', 'SK'],
   '3': ['US', 'CA'],
 };
 
