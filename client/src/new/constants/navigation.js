@@ -1,4 +1,9 @@
-export const TOP_NAV = ["Shop", "Subscriptions", "About", "Blog"];
+export const TOP_NAV = [
+  {label:"Shop", target: "/shop"},
+  {label:"Subscriptions", target: "/subscriptions"},
+  {label:"About", target: "/about"},
+  {label:"Blog", target: "/blog"}
+];
 
 export const MENU_OPTIONS = {
   language: [

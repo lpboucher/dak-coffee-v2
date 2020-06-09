@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNewsletter } from '../../hooks/newsletter/useNewsletter';
 import { Form, Field } from 'react-final-form';
 
 import NewsletterLayout from '../../layouts/Newsletter';
@@ -7,16 +8,17 @@ import { TextInputAdapter } from '../../utils/forms/FormHelpers';
 
 import { newsletterValidation } from '../../services/formValidation';
 
-const Newsletter = ({ addToNewsletter, error }) => {
+const Newsletter = () => {
   const { t } = useTranslation();
+  const { add, error } = useNewsletter();
   const nameField = <Field name="name" component={TextInputAdapter} type="text" placeholder={t("newsletter.form.name")}/>;
   const emailField = <Field name="email" component={TextInputAdapter} type="text" placeholder={t("newsletter.form.email")}/>
-  const add = ({name, email}) => {
-      addToNewsletter(name, email);
+  const addRecipient = ({name, email}) => {
+      add(name, email);
     }
     return (
       <Form
-        onSubmit={add}
+        onSubmit={addRecipient}
         validate={newsletterValidation}
         render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>

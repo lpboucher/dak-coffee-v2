@@ -4,7 +4,7 @@ import { Box } from 'grommet';
 
 import {layout} from '../../../../layout';
 
-const ProductsListingLayout = ({children}) => {
+const ProductsListingLayout = ({children, moreButton, showMore}) => {
     return (
     <Box
       direction="row"
@@ -14,6 +14,11 @@ const ProductsListingLayout = ({children}) => {
       wrap
       >
         {children}
+        {showMore &&
+        <Box margin={{horizontal: 'auto'}}>
+          {moreButton}
+        </Box>
+        }
     </Box>
     );
 };

@@ -67,7 +67,6 @@ export const fetchCartItems = (newItem=null) => (dispatch) => {
     dispatch({ type: FETCH_CART_REQUEST });
     try {
         const newCart = window.Snipcart.api.items.all();
-        console.log(newItem);
         //newItem && toast.success(`added ${newItem.name} to cart`)
         newItem && notify.cart.add(newItem);
         dispatch({ type: FETCH_CART_SUCCESS, payload: newCart });
@@ -159,60 +158,58 @@ export const getCartItem = (state, id) => state.cart.byId[id];
 
 export const getCartItems = (state) => state.cart.allIds;
 
-export const getCartItemFromProducts = (state, id) => {
-    const cartItem = getCartItem(state, id);
-    let product;
-    if (cartItem && !cartItem.isRecurring) {
-        product = getProduct(state, cartItem.id);
-    } else if (cartItem && cartItem.isRecurring) {
-        product = getSubscription(state, cartItem.id);
-    }
-    if (product) {
-        return {
-            id: cartItem.id,
-            name: product.name,
-            price: {
-                unit: cartItem.unitPrice,
-                ...product.price
-            },
-            total: cartItem.totalPrice,
-            quantity: cartItem.quantity,
-            image: product.thumb_image
-        }
-    }
+export const getCartItemToAdd = (state, id) => {
+  return getProduct(state, id) || getSubscription(state, id);
 }
 
-//new
+export const getProductFromCartItem = (state, id) => {
+  const cartItem = getCartItem(state, id);
+  let product;
+  if (cartItem && !cartItem.isRecurring) {
+      product = getProduct(state, cartItem.id);
+  } else if (cartItem && cartItem.isRecurring) {
+      product = getSubscription(state, cartItem.id);
+  }
+  console.log(product);
+  if (product) {
+      return {
+          id: cartItem.id,
+          name: product.name,
+          price: {
+              unit: cartItem.unitPrice,
+              ...product.price
+          },
+          total: cartItem.totalPrice,
+          quantity: cartItem.quantity,
+          image: product.thumb_image
+      }
+  }
+}
+
 export const getCartQuantity = (state) => {
-    const items = getCartItems(state);
-    if (items && items.length > 0) {
-        return items.reduce((sum, id) => sum + getCartItem(state, id)['quantity'], 0)
-    }
+  const items = getCartItems(state);
+  if (items && items.length > 0) {
+      return items.reduce((sum, id) => sum + getCartItem(state, id)['quantity'], 0)
+  }
 }
 
-//new
 export const getCartTotal = (state) => {
-    const items = getCartItems(state);
-    if (items && items.length > 0) {
-        return items.reduce((sum, id) => sum + getCartItem(state, id)['totalPrice'], 0)
-    }
+  const items = getCartItems(state);
+  if (items && items.length > 0) {
+      return items.reduce((sum, id) => sum + getCartItem(state, id)['totalPrice'], 0)
+  }
 }
 
 export const getCartSubTotal = (state) => {
-    const items = getCartItems(state);
-    if (items && items.length > 0) {
-        return items.reduce((sum, id) => sum + getCartItem(state, id)['totalPriceWithoutDiscountsAndTaxes'], 0)
-    }
+  const items = getCartItems(state);
+  if (items && items.length > 0) {
+      return items.reduce((sum, id) => sum + getCartItem(state, id)['totalPriceWithoutDiscountsAndTaxes'], 0)
+  }
 }
 
 export const getCartSummary = (state) => {
-    return {
-        total: getCartTotal(state),
-        subTotal: getCartSubTotal(state)
-    }
-}
-
-// new
-export const getCartItemToAdd = (state, id) => {
-  return getProduct(state, id) || getSubscription(state, id);
+  return {
+      total: getCartTotal(state),
+      subTotal: getCartSubTotal(state)
+  }
 }

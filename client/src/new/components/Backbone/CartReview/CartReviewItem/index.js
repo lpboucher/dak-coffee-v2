@@ -1,18 +1,20 @@
 import React from 'react';
+import { useSingleCartItem } from '../../../../hooks/cart/useCart';
+import { useCurrency } from '../../../../hooks/global/useCurrency';
 
 import { getDisplayedProductTitle, getDisplayedProductPrice } from '../../../../services/productDisplayService';
-import { toCurrency } from '../../../../services/formats';
-import { BY_CODE } from '../../../../constants/symbols';
 
 import CartReviewItemLayout from '../../../../layouts/Backbone/CartReview/CartReviewItem';
 
-const CartReviewItem = ({id, name, thumb_image, quantity, type, slug, price, total, currency}) => {
+const CartReviewItem = ({itemId}) => {
+  const { name, image, quantity, type, slug, price, total } = useSingleCartItem(itemId);
+  const { currency, toCurrency } = useCurrency();
   const productTitle = getDisplayedProductTitle(type, slug);
   const productPrice = getDisplayedProductPrice(price[currency.toLowerCase()]);
-  const totalPrice = toCurrency(BY_CODE[currency], total);
+  const totalPrice = toCurrency(total);
   return (
     <CartReviewItemLayout
-      image={thumb_image}
+      image={`Products/Thumbs/${image}`}
       name={name}
       price={productPrice ? productPrice : "..."}
       total={totalPrice ? totalPrice : "..."}

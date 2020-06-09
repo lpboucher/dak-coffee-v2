@@ -1,12 +1,14 @@
 import React from 'react';
+import { useModal } from '../../../hooks/global/useModal';
 
 import AnnouncementModalLayout from '../../../layouts/Backbone/AnnouncementModal';
 
-import Newsletter from '../../../containers/Newsletter';
+import Newsletter from '../../../components/Newsletter';
 
 const modalContent = <Newsletter />
 
-const AnnouncementModal = ({open, close, isOpen}) => {
+const AnnouncementModal = () => {
+  const { open, close, isOpen } = useModal();
   return (
     <AnnouncementModalLayout
       isOpen={isOpen}

@@ -1,13 +1,19 @@
 import React from 'react';
+import { useCartItems } from '../../../../hooks/cart/useCart';
 
 import CartReviewListLayout from '../../../../layouts/Backbone/CartReview/CartReviewList';
-import CartReviewItemContainer from '../../../../containers/Backbone/CartReview/CartReviewItem';
+import CartReviewItem from '../CartReviewItem';
 
-const CartReviewList = ({cartItemIds}) => (
-  <CartReviewListLayout>
-    { cartItemIds.map(id => <CartReviewItemContainer key={id} itemId={id} /> )}
-  </CartReviewListLayout>
-)
+const CartReviewList = () => {
+  const { cartItemIds } = useCartItems();
+  return (
+    <CartReviewListLayout>
+      {cartItemIds.map(id =>
+        <CartReviewItem key={id} itemId={id} />
+      )}
+    </CartReviewListLayout>
+  )
+}
 
 
 export default CartReviewList;

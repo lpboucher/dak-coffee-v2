@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Box, Text } from 'grommet';
 import Skeleton from 'react-loading-skeleton';
 
-import AddToCart from '../../../containers/Cart/AddToCart';
+import AddToCart from '../../../components/Cart/AddToCart';
 
 const TruncateText = styled(Text)`
     text-overflow: ellipsis;
@@ -33,12 +33,11 @@ const ProductCardInfo = ({id, displayedPrice, title, subTitle, helper}) => {
                 {subTitle || <Skeleton />}
               </TruncateText>
               <Text textAlign="start" weight="bold" size="xsmall" color="mainDark">
-                {displayedPrice || <Skeleton />}
+                {helper}
               </Text>
             </Box>
             <AddToCart productId={id} />
           </Box>
-
         </>
     );
 };

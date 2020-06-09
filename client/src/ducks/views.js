@@ -43,8 +43,8 @@ export const SNIP_OPEN = 'views/snip_open';
 export const SNIP_CLOSE = 'views/snip_close';
 export const OPEN_MOBILE = 'views/open_mobile';
 export const CLOSE_MOBILE = 'views/close_mobile';
-export const OPEN_PROMO = 'views/open_promo';
-export const CLOSE_PROMO = 'views/close_promo';
+export const OPEN_MODAL = 'views/open_promo';
+export const CLOSE_MODAL = 'views/close_promo';
 export const CHANGE_CURRENCY_REQUEST = 'views/change_currency_request';
 export const CHANGE_CURRENCY_SUCCESS = 'views/change_currency_success';
 export const CHANGE_LANGUAGE_REQUEST = 'views/change_language_request';
@@ -124,13 +124,13 @@ export const closeMobileMenu = () => dispatch => {
 }
 
 // new
-export const openPromotion = () => dispatch => {
-    dispatch({type: OPEN_PROMO})
+export const openModal = () => dispatch => {
+    dispatch({type: OPEN_MODAL})
 }
 
 // new
-export const closePromotion = () => dispatch => {
-    dispatch({type: CLOSE_PROMO})
+export const closeModal = () => dispatch => {
+    dispatch({type: CLOSE_MODAL})
 }
 
 //Reducer
@@ -140,7 +140,7 @@ isMobileOpen: false,
 isProcessing: true,
 //to be removed once fetching is specific to products
 isFetching: false,
-isPromoOpen: false,
+isModalOpen: false,
 processingText: "loading.initial",
 error: {
     global: "",
@@ -189,15 +189,15 @@ switch(action.type) {
             isMobileOpen: false,
             error: initialState.error
         };
-    case OPEN_PROMO:
+    case OPEN_MODAL:
         return {
             ...state,
-            isPromoOpen: true,
+            isModalOpen: true,
         };
-    case CLOSE_PROMO:
+    case CLOSE_MODAL:
         return {
             ...state,
-            isPromoOpen: false,
+            isModalOpen: false,
         };
     case CHANGE_LANGUAGE_REQUEST:
     case CHANGE_CURRENCY_REQUEST:
@@ -322,7 +322,7 @@ switch(action.type) {
 }
 
 //Selectors
-export const isPromoOpen = (state) => state.views.isPromoOpen;
+export const isModalOpen = (state) => state.views.isModalOpen;
 
 export const isSnipOpen = (state) => state.views.isSnipcartModalOpen;
 

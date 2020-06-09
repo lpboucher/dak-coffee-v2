@@ -3,10 +3,16 @@ import { capitalize, toCurrency } from '../services/formats';
 
 export const getDisplayedProductTitle = (type, slug) => {
   let title = capitalize(i18n.t(`products:${type}.${slug}.name`));
+  let subtitle = "";
+  let helper = "";
   if (type === 'coffee') {
-    title += " - " + capitalize(i18n.t(`products:${type}.${slug}.country`));
+    title += " - " + getTranslatedItem(type, slug, "country");
+    subtitle += getTranslatedItem(type, slug, "process") + ", " + getTranslatedItem(type, slug, "lot");
+    helper += getTranslatedItem(type, slug, "variety") + ", " + getTranslatedItem(type, slug, "altitude");
+  } else if (type === 'equipment') {
+    subtitle += getDisplayedProductDescription(type, slug);
   }
-  return title;
+  return {title, subtitle, helper};
 }
 
 export const getDisplayedProductDescription = (type, slug) => {
@@ -19,6 +25,8 @@ export const getDisplayedProductDescription = (type, slug) => {
 export const getDisplayedProductPrice = (price) => {
   return toCurrency(price.symbol, price.value)
 }
+
+const getTranslatedItem = (type, slug, key) => capitalize(i18n.t(`products:${type}.${slug}.${key}`))
 
 /*const displayCurr = currency.toLowerCase();
     const currentPrice = price[displayCurr];

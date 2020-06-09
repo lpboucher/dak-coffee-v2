@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import Headroom from 'react-headroom';
 import { Header, Box } from 'grommet';
@@ -29,7 +30,9 @@ const HeaderLayout = ({
         height={layout.navigationHeight}
         pad={{horizontal: layout.baseWrapperPadding}}
       >
+        <Link to="/">
         {logo}
+        </Link>
         {navigation}
         {settings}
       </Header>

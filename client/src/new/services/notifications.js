@@ -7,8 +7,8 @@ const options = {
 
 export const notify = {
   cart: {
-    add: ({quantity, name, price}) => {
-      cogoToast.success(`${quantity}x ${name} +${price.toFixed(2)}`, {...options, heading: 'Added to Cart'})
+    add: ({quantityStep, name, price}) => {
+      cogoToast.success(`${quantityStep}x ${name} +${price.toFixed(2)}`, {...options, heading: 'Added to Cart'})
     },
   },
   error: {

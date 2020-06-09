@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { openModal, closeModal, isModalOpen } from '../../../../ducks/views';
 
-const ModalContainer = ({renderModal}) => {
+import { openModal, closeModal, isModalOpen } from '../../../ducks/views';
+
+export const useModal = () => {
   const dispatch = useDispatch();
 
   const open = () => dispatch(openModal());
@@ -9,8 +10,9 @@ const ModalContainer = ({renderModal}) => {
 
   const isOpen = useSelector(state => isModalOpen(state));
 
-  return renderModal({open, close, isOpen})
+  return {
+    open,
+    close,
+    isOpen
+  }
 }
-
-export default ModalContainer;
-

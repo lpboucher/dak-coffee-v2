@@ -1,12 +1,16 @@
 import React from 'react';
+import { useAddProductToCart } from '../../../hooks/cart/useCart';
+import { useCurrency } from '../../../hooks/global/useCurrency';
 
 import SnipcartAdd from '../../../layouts/Cart/AddToCart'
-import AddButtonContainer from '../../../containers/Cart/AddToCart/AddButton';
+import AddToCartButton from '../../../components/Cart/AddToCart/AddButton'
 
 import { getCartProductPrice, getCartProductOptions } from '../../../services/productDataService';
 import { getDisplayedProductDescription } from '../../../services/productDisplayService';
 
-const AddToCart = ({id, name, price, slug, type, currency}) => {
+const AddToCart = ({productId}) => {
+  const { name, price, slug, type } = useAddProductToCart(productId);
+  const { currency } = useCurrency();
   const priceString = getCartProductPrice(price);
   const translatedDescription = getDisplayedProductDescription(type, slug);
   // need to also add data interval for subscriptions
@@ -14,14 +18,14 @@ const AddToCart = ({id, name, price, slug, type, currency}) => {
   const cartOptions = getCartProductOptions(price[currency.toLowerCase()], type);
   return (
       <SnipcartAdd
-        id={id}
+        id={productId}
         name={name}
         slug={slug}
         prices={priceString}
         description={translatedDescription}
         options={cartOptions}
       >
-          <AddButtonContainer id={id} />
+          <AddToCartButton id={productId}/>
       </SnipcartAdd>
   );
 };

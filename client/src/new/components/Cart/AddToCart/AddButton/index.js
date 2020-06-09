@@ -1,13 +1,14 @@
 import React from 'react';
+import { useCart } from '../../../../hooks/cart/useCart';
 
 import ClipLoader from 'react-spinners/ClipLoader';
 import { Add } from 'grommet-icons';
 
-
-const AddButton = ({isAdding}) => {
+const AddToCartButton = ({id}) => {
+  const { productAdding } = useCart(id);
   return (
       <>
-        {isAdding ?
+        {productAdding ?
           <ClipLoader size={12} color='white'/>
           :
           <Add size="small" />
@@ -16,4 +17,4 @@ const AddButton = ({isAdding}) => {
   );
 };
 
-export default AddButton;
+export default AddToCartButton;

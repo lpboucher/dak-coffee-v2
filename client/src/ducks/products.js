@@ -132,3 +132,18 @@ export const getProductsFromTypes = (state, types) => {
       return false;
   });
 };
+
+export const getSortedProducts = (state) => {
+  const products = getAllProducts(state);
+  if (products) {
+    const sortedProducts = products.sort((a,b) => {
+      return compareIsCoffee(a,b) || compareIsSubscription(a,b);
+    });
+    return sortedProducts.map(product => product.id);
+  }
+}
+
+const compareIsCoffee = (a, b) => (a.type === 'coffee' ? 0 : 1) - (b.type === 'coffee' ? 0 : 1);
+
+const compareIsSubscription = (a, b) => (a.type === 'subscription' ? 0 : 1) - (b.type === 'subscription' ? 0 : 1);
+

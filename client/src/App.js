@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
-import BackboneContainer from './new/containers/Backbone';
+import Backbone from './new/components/Backbone';
 
 import HomePage from './new/pages/Home';
 import ShopPage from './components/pages/Shop';
@@ -24,7 +24,7 @@ import './App.css';
 
 const App = () => {
   return (
-    <BackboneContainer>
+    <Backbone>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop/:slug" component={ProductPage} />
@@ -42,7 +42,7 @@ const App = () => {
           <Route path="/blog/:slug" component={ArticlePage} />
           <Route path="/blog" component={BlogPage} />
         </Switch>
-    </BackboneContainer>
+    </Backbone>
   );
 }
 
