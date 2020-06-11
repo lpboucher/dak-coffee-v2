@@ -9,7 +9,10 @@ import { layout } from '../../../layout';
 
 const SliderContainer = styled(Box)`
   & .slick-slider,
-  & .slick-list {
+  & .slick-list,
+  & .slick-track,
+  & .slick-slide,
+  & .slick-slide > div {
     height: 100%
   }
 `

@@ -8,7 +8,7 @@ const ProductsListingLayout = ({children, moreButton, showMore}) => {
     return (
     <Box
       direction="row"
-      justify="between"
+      justify="around"
       background="mainWhite"
       pad={{vertical: layout.sectionPadding}}
       wrap

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Layer } from 'grommet';
+import { Box } from 'grommet';
 
 const CartStatisticsLayout = ({numberOfItems, total}) => {
   return (

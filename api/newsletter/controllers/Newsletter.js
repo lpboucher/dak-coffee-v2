@@ -10,9 +10,8 @@ const add = async (ctx) => {
   const mailchimp = new Mailchimp(strapi.config.currentEnvironment.mailchimp);
   const { name, email, language } = ctx.request.body;
   const listId = 'c1ea6cd510';
-  generateSnipcartPromo();
   try {
-    const res = await mailchimp.post({
+    await mailchimp.post({
       path : `/lists/${listId}/members`,
       body: {
         'email_address': email,
@@ -24,14 +23,11 @@ const add = async (ctx) => {
         }
       }
     });
-    console.log(res);
-
+    const promoCode = await generateSnipcartPromo();
+    ctx.send({registered: true, promoCode: promoCode});
   } catch(err) {
-    /*if (err.title === 'Member Exists') {
-    }*/
-    console.log(err);
+    ctx.send({error: err.title});
   }
-  //ctx.send(subscribeStatus);
 };
 
 const generateSnipcartPromo = async () => {
@@ -50,7 +46,7 @@ const generateSnipcartPromo = async () => {
       maxNumberOfUsages: 1
     }
   });
-  console.log(discount.data);
+  return discount.data;
 };
 
 module.exports = {

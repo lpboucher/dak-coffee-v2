@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Box, Text } from 'grommet';
+import { Add } from 'grommet-icons';
 import Skeleton from 'react-loading-skeleton';
 
-import AddToCart from '../../../components/Cart/AddToCart';
+import AddToCart from '../../../components/Cart/AddProduct';
 
 const TruncateText = styled(Text)`
     text-overflow: ellipsis;
@@ -16,6 +17,14 @@ const TruncateText = styled(Text)`
 
 const FixedText = styled(Text)`
   width: 100px;
+`
+
+const AddBox = styled(Box)`
+  cursor: pointer;
+  text-transform: uppercase;
+   &:hover {
+     background: lightgrey;
+   }
 `
 
 const ProductCardInfo = ({id, displayedPrice, title, subTitle, helper}) => {
@@ -36,7 +45,13 @@ const ProductCardInfo = ({id, displayedPrice, title, subTitle, helper}) => {
                 {helper}
               </Text>
             </Box>
-            <AddToCart productId={id} />
+            <AddToCart
+              productId={id}
+              addButton={
+              <AddBox background="mainDark" pad="xsmall" align="center" margin={{vertical: "small"}} round="xsmall">
+                <Add size="small" />
+              </AddBox>}
+            />
           </Box>
         </>
     );

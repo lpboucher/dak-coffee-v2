@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Box, Layer } from 'grommet';
+import { Layer } from 'grommet';
 
 const CartReviewWrapper = styled(Layer)`
   min-height: inherit;

@@ -52,6 +52,8 @@ export const getCategory = (state, id) => state.categories.byId[id];
 
 export const getCategories = (state) => state.categories.allIds;
 
+export const getAllCategories = (state) => state.categories.allIds.map(id => getCategory(state, id));
+
 export const getSortedCategories = (state) => {
     return state.categories.allIds.sort((a, b) => {
         if ( getCategory(state, a).order < getCategory(state, b).order) {

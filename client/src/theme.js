@@ -3,6 +3,10 @@ export const DakTheme = {
       colors: {
           "mainDark": "#343434",
           "mainWhite": "#ffffff",
+          "secondary": "#eceae5",
+          "minor-1": "#efefef",
+          "minor-2": "#dddfde",
+          "minor-3": "#f7f6f4",
           // new above
           'lightGrey': '#f7f8f9',
           //'lightGrey': '#f9f4f0',

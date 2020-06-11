@@ -5,7 +5,7 @@ import { notify } from '../new/services/notifications';
 import { login } from './user';
 import { getProduct } from './products';
 import { getSubscription } from './subscriptions';
-import { trackLocation, switchDisplayCurrency, switchLanguage, openCartSummary, closeCartSummary } from './views';
+import { trackLocation, switchDisplayCurrency, switchLanguage } from './views';
 
 //Action Types
 export const UPDATE_CART_REQUEST = 'cart/update_cart_request';
@@ -170,7 +170,6 @@ export const getProductFromCartItem = (state, id) => {
   } else if (cartItem && cartItem.isRecurring) {
       product = getSubscription(state, cartItem.id);
   }
-  console.log(product);
   if (product) {
       return {
           id: cartItem.id,

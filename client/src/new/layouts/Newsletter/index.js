@@ -12,7 +12,7 @@ const NewsletterButton = styled(Button)`
   background: ${({isLink, theme}) => isLink ? theme.global.colors.mainDark : theme.global.colors.mainWhite};
 `
 
-const NewsletterLayout = ({name, email, privacyLabel, submitLabel, description, error}) => {
+const NewsletterLayout = ({name, email, privacyLabel, submitLabel, description}) => {
     return (
       <>
       <Box direction="row" justify="around" wrap>
@@ -29,14 +29,13 @@ const NewsletterLayout = ({name, email, privacyLabel, submitLabel, description, 
             label={submitLabel}
             color="mainWhite"
             alignSelf="start"
-          />
+            />
         </Box>
       </Box>
       <Box>
         <Text textAlign="center">
           {description}
         </Text>
-        <Text textAlign="center" color="red">{error}</Text>
       </Box>
       </>
     );

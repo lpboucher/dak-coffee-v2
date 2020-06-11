@@ -16,6 +16,14 @@ import {
   closeCartSummary
 } from '../../../ducks/views';
 
+import {
+  getDisplayedProductDescription
+} from '../../services/productDisplayService';
+
+import {
+  getCartProductPrice
+} from '../../services/productDataService';
+
 export const useCart = (id = null) => {
   const dispatch = useDispatch();
 
@@ -49,7 +57,7 @@ export const useSingleCartItem = (itemId) => {
   const productItem = useSelector(state => getProductFromCartItem(state, itemId));
 
   return {
-    ...productItem
+    ...productItem,
   }
 }
 
@@ -64,7 +72,16 @@ export const useCartItems = () => {
 export const useAddProductToCart = (productId) => {
   const productToAdd = useSelector(state => getCartItemToAdd(state, productId));
 
+  let priceString = "";
+  let translatedDescription = "";
+  if (productToAdd) {
+    priceString = getCartProductPrice(productToAdd.price);
+    translatedDescription = getDisplayedProductDescription(productToAdd.type, productToAdd.slug);
+  }
+
   return {
-    ...productToAdd
+    ...productToAdd,
+    priceStr: priceString,
+    description: translatedDescription
   }
 }

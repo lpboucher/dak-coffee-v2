@@ -9,7 +9,6 @@ const SliderLayout = ({children, arrows, ...settings}) => {
         slidesToScroll: 1,
         nextArrow: arrows ? arrows.next : null,
         prevArrow: arrows ? arrows.prev : null,
-        cssEase: 'cubic-bezier(0.165, 0.840, 0.440, 1.000)',
         ...settings
     };
     return (

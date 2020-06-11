@@ -11,7 +11,7 @@ const ProductsListing = () => {
   const [count, setCount] = useState(9);
   const { sortedProductsIds, productCount } = useProducts([], count);
   const onShowMoreClicked = () => setCount(Math.min(count*2, productCount));
-  const ShowMore = <Button onClick={onShowMoreClicked} primary label="Show More" type="button" />
+  const ShowMore = <Button onClick={onShowMoreClicked} primary label="Load More Products" type="button" />
   return (
     <>
       { sortedProductsIds && sortedProductsIds.length > 0 ?

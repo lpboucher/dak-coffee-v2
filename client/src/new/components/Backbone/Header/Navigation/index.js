@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 import { Nav } from 'grommet';
 
@@ -44,7 +43,6 @@ const MenuLink = styled(NavLink)`
 `
 
 const Navigation = () => {
-  const { t } = useTranslation();
   return (
       <Nav direction="row" flex={{grow: 0.5}} justify="around" align="center">
         {TOP_NAV.map(item =>

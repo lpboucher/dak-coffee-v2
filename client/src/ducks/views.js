@@ -138,9 +138,9 @@ const initialState = {
 isSnipcartModalOpen: false,
 isMobileOpen: false,
 isProcessing: true,
+isModalOpen: false,
 //to be removed once fetching is specific to products
 isFetching: false,
-isModalOpen: false,
 processingText: "loading.initial",
 error: {
     global: "",
@@ -201,12 +201,16 @@ switch(action.type) {
         };
     case CHANGE_LANGUAGE_REQUEST:
     case CHANGE_CURRENCY_REQUEST:
+        return {
+          ...state,
+          isProcessing: true,
+          processingText: action.payload,
+          error: initialState.error
+      };
     case NEWSLETTER_REQUEST:
         return {
             ...state,
             isProcessing: true,
-            processingText: action.payload,
-            error: initialState.error
          };
     case CHANGE_CURRENCY_SUCCESS:
         return {
@@ -269,8 +273,8 @@ switch(action.type) {
         return {
             ...state,
             isProcessing: false,
-            error: {...state.error, ...action.payload},
-            processingText: "" };
+            isModalOpen: false
+        };
     case CHANGE_LANGUAGE_SUCCESS:
         return {
             ...state,

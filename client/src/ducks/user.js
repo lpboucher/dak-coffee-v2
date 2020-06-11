@@ -1,6 +1,7 @@
 //import { combineReducers } from 'redux';
 import axios from 'axios';
 import i18n from "i18next";
+import { notify } from '../new/services/notifications';
 
 import {
     UPDATE_CART_REQUEST,
@@ -46,10 +47,13 @@ export const addToNewsletter = (name, email) => async dispatch => {
     const language = i18n.language;
     try {
         const res = await axios.post(`${process.env.REACT_APP_API_PREFIX}/newsletter`, {name, email, language});
-        if (res === 'error') {
-            dispatch({ type: NEWSLETTER_FAILURE, payload: {newsletter: 'newsletter.error' }})
+        if (res.data.error) {
+            const errorKey = res.data.error === "Member Exists" ? 'newsletter.error.existing' : 'newsletter.error.unexpected';
+            notify.newsletter.error(errorKey);
+            dispatch({ type: NEWSLETTER_FAILURE })
         } else {
-            dispatch({ type: NEWSLETTER_SUCCESS, payload: {newsletter: 'newsletter.registered' }});
+            notify.newsletter.add(res.data.promoCode.code);
+            dispatch({ type: NEWSLETTER_SUCCESS });
         }
     } catch(err) {
         console.log(err)

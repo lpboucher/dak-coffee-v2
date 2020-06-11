@@ -5,12 +5,13 @@ import { Form, Field } from 'react-final-form';
 
 import NewsletterLayout from '../../layouts/Newsletter';
 import { TextInputAdapter } from '../../utils/forms/FormHelpers';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 import { newsletterValidation } from '../../services/formValidation';
 
 const Newsletter = () => {
   const { t } = useTranslation();
-  const { add, error } = useNewsletter();
+  const { add, isProcessing } = useNewsletter();
   const nameField = <Field name="name" component={TextInputAdapter} type="text" placeholder={t("newsletter.form.name")}/>;
   const emailField = <Field name="email" component={TextInputAdapter} type="text" placeholder={t("newsletter.form.email")}/>
   const addRecipient = ({name, email}) => {
@@ -26,9 +27,9 @@ const Newsletter = () => {
               name={nameField}
               email={emailField}
               privacyLabel={t("newsletter.privacy")}
-              submitLabel={t("newsletter.button")}
+              submitLabel={isProcessing ? <ClipLoader size={15} color='black'/> : t("newsletter.button")}
               description={t("newsletter.description")}
-              error={t(error.newsletter)}
+              isProcessing={isProcessing}
             />
         </form>
         )}

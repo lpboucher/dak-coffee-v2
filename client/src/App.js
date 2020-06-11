@@ -5,7 +5,8 @@ import { Switch, Route } from 'react-router-dom';
 import Backbone from './new/components/Backbone';
 
 import HomePage from './new/pages/Home';
-import ShopPage from './components/pages/Shop';
+import ShopPage from './new/pages/Shop';
+
 import ProductPage from './components/pages/Product';
 import SubscriptionPage from './components/pages/Subscriptions';
 import SubscribePage from './components/pages/Newsletter';

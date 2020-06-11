@@ -389,7 +389,11 @@
             "email": "Your email"
         },
         "privacy": "Read our privacy policy",
-        "button": "Sign up"
+        "button": "Sign up",
+        "error": {
+          "existing": "Already subscribed. Check our newsletter for offers.",
+          "unexpected": "An error occurred. Please try again later."
+        }
     },
     "footer": {
         "description": "Dak Coffee Roasters is a coffee roasting company based in Amsterdam. From farm to cup, we take great pride in celebrating quality coffee.",

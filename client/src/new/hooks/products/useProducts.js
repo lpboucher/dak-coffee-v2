@@ -1,7 +1,17 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useCallback, useEffect } from "react"
 
-import { fetchProducts, getProductsFromTypes, getProduct, getSortedProducts } from '../../../ducks/products';
+import {
+  fetchProducts,
+  getProductsFromTypes,
+  getProduct,
+  getSortedProducts
+} from '../../../ducks/products';
+
+import {
+  getDisplayedProductTitle,
+  getMedallion
+} from '../../services/productDisplayService';
 
 export const useProducts = (productTypes = [], limit = null) => {
   const dispatch = useDispatch();
@@ -29,7 +39,14 @@ export const useProducts = (productTypes = [], limit = null) => {
 export const useSingleProduct = (productId) => {
   const product = useSelector(state => getProduct(state, productId));
 
+  const { title, subtitle, helper } = getDisplayedProductTitle(product.type, product.slug);
+  const medallion = getMedallion(product.type);
+
   return {
-    ...product
+    ...product,
+    medallion,
+    displayedTitle: title,
+    displayedSubtitle: subtitle,
+    displayedHelper: helper,
   }
 }

@@ -1,5 +1,8 @@
+import React from 'react';
 import i18n from "i18next";
 import { capitalize, toCurrency } from '../services/formats';
+
+import { LimitedEdition } from '../utils/medallion/ProductMedallions';
 
 export const getDisplayedProductTitle = (type, slug) => {
   let title = capitalize(i18n.t(`products:${type}.${slug}.name`));
@@ -7,8 +10,8 @@ export const getDisplayedProductTitle = (type, slug) => {
   let helper = "";
   if (type === 'coffee') {
     title += " - " + getTranslatedItem(type, slug, "country");
-    subtitle += getTranslatedItem(type, slug, "process") + ", " + getTranslatedItem(type, slug, "lot");
-    helper += getTranslatedItem(type, slug, "variety") + ", " + getTranslatedItem(type, slug, "altitude");
+    subtitle += getTranslatedItem(type, slug, "taste");
+    helper += getTranslatedItem(type, slug, "process") + ", " + getTranslatedItem(type, slug, "variety");
   } else if (type === 'equipment') {
     subtitle += getDisplayedProductDescription(type, slug);
   }
@@ -26,7 +29,14 @@ export const getDisplayedProductPrice = (price) => {
   return toCurrency(price.symbol, price.value)
 }
 
-const getTranslatedItem = (type, slug, key) => capitalize(i18n.t(`products:${type}.${slug}.${key}`))
+const getTranslatedItem = (type, slug, key) => capitalize(i18n.t(`products:${type}.${slug}.${key}`));
+
+export const getMedallion = (type) => {
+  const dict = {
+    coffee: <LimitedEdition width="100px"/>
+  }
+  return dict[type] || null;
+}
 
 /*const displayCurr = currency.toLowerCase();
     const currentPrice = price[displayCurr];
