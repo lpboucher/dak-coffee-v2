@@ -1,49 +1,50 @@
 import { useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux"
 import { useQuery } from './useQuery';
 
-import { fetchCategories, getCategories, getAllCategories } from '../../../ducks/categories';
+import {
+  getActiveFilters,
+  addFilters,
+  removeFilter,
+  clearFilters
+} from '../../../ducks/views';
 
-export const useCategoryFilters = () => {
+export const useQueryFilters = (dataType) => {
+  const { query, updateQuery, removeQuery } = useQuery("filter");
   const dispatch = useDispatch();
-  const history = useHistory();
-  let { query } = useQuery("filter");
 
-  const categoryIds = useSelector(state => getCategories(state));
-  const allCategories = useSelector(state => getAllCategories(state));
-
-  const allCategoryNames = allCategories.map(cat => cat.name);
+  const filters = useSelector((state) => getActiveFilters(state, dataType));
 
   useEffect(() => {
-    if (categoryIds && categoryIds.length < 1) {
-      dispatch(fetchCategories());
+    if (query && query.length > 0) {
+      dispatch(addFilters(dataType, query));
     }
   }, []);
 
-  const selectedCategories = allCategoryNames.filter(cat => query.includes(cat));
-  console.log(selectedCategories);
+  useEffect(() => {
+    if (filters && filters.length > 0) {
+      updateQuery(filters);
+    } else {
+      removeQuery()
+    }
+  }, [filters]);
 
-  const updateFilters = useCallback((filter) => {
-    query.push(filter);
-    update(new URLSearchParams({filter: query.join()}).toString());
+  const add = useCallback((newFilters) => {
+    dispatch(addFilters(dataType, newFilters))
   }, [])
 
-  const resetFilters = useCallback(() => {
-    query = [""];
-    update("");
+  const remove = useCallback((removedFilter) => {
+    dispatch(removeFilter(dataType, removedFilter))
   }, [])
 
-  const update = useCallback((query) => {
-    history.push({
-      search: query,
-    })
+  const clear = useCallback(() => {
+    dispatch(clearFilters(dataType))
   }, [])
 
   return {
-    allCategories: allCategoryNames,
-    selectedCategories,
-    updateFilters,
-    resetFilters,
+    activeFilters: filters,
+    add,
+    remove,
+    clear
   }
 }

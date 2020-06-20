@@ -18,6 +18,15 @@ export const getDisplayedProductTitle = (type, slug) => {
   return {title, subtitle, helper};
 }
 
+export const getStaticProductPrice = (type, price) => {
+  const dict = {
+    coffee: `From ${getDisplayedProductPrice(price)}`,
+    subscription: `From ${getDisplayedProductPrice(price)}`,
+    equipment: getDisplayedProductPrice(price),
+  }
+  return dict[type] || null;
+}
+
 export const getDisplayedProductDescription = (type, slug) => {
   if (type === "equipment") {
     return i18n.t(`products:${type}.short`)
@@ -29,6 +38,15 @@ export const getDisplayedProductPrice = (price) => {
   return toCurrency(price.symbol, price.value)
 }
 
+export const getPriceIncrements = (priceObj) => {
+  return priceObj.increments.reduce((obj, inc) => {
+    const priceStr = inc.increment.replace(/[+\[\]]+/g, "");
+    const incPrice = priceStr ? parseFloat(priceStr) + priceObj.value : priceObj.value;
+    obj[inc.option] = incPrice;
+    return obj;
+  }, {})
+}
+
 const getTranslatedItem = (type, slug, key) => capitalize(i18n.t(`products:${type}.${slug}.${key}`));
 
 export const getMedallion = (type) => {
@@ -37,6 +55,15 @@ export const getMedallion = (type) => {
   }
   return dict[type] || null;
 }
+
+export const sortProductsByCoffeeAndSubscriptions = (products) => {
+  // products parameter should be array of product objects, not only ids
+  return products.sort((a,b) => compareIsCoffee(a,b) || compareIsSubscription(a,b))
+}
+
+const compareIsCoffee = (a, b) => (a.type === 'coffee' ? 0 : 1) - (b.type === 'coffee' ? 0 : 1);
+
+const compareIsSubscription = (a, b) => (a.type === 'subscription' ? 0 : 1) - (b.type === 'subscription' ? 0 : 1);
 
 /*const displayCurr = currency.toLowerCase();
     const currentPrice = price[displayCurr];

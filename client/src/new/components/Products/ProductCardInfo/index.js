@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Box, Text } from 'grommet';
 import { Add } from 'grommet-icons';
 import Skeleton from 'react-loading-skeleton';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 import AddToCart from '../../../components/Cart/AddProduct';
 
@@ -27,7 +28,7 @@ const AddBox = styled(Box)`
    }
 `
 
-const ProductCardInfo = ({id, displayedPrice, title, subTitle, helper}) => {
+const ProductCardInfo = ({id, adding, displayedPrice, title, subTitle, helper}) => {
     return (
         <>
           <Box direction="row" justify="between">
@@ -49,7 +50,11 @@ const ProductCardInfo = ({id, displayedPrice, title, subTitle, helper}) => {
               productId={id}
               addButton={
               <AddBox background="mainDark" pad="xsmall" align="center" margin={{vertical: "small"}} round="xsmall">
-                <Add size="small" />
+                {adding ?
+                  <ClipLoader size={12} color="white"/>
+                  :
+                  <Add size="small" />
+                }
               </AddBox>}
             />
           </Box>

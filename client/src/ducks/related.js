@@ -53,6 +53,6 @@ export const getRelated = (state, id) => state.related.byId[id];
 export const getRelateds = (state) => state.related.allIds;
 
 export const getRelatedBySlug = (state, slug) => {
-    const relatedId = state.related.allIds.find(id => state.related.byId[id].slug === slug);
-    return getRelated(state, relatedId);
+  const relatedId = state.related.allIds.find(id => state.related.byId[id].slug === slug);
+  return getRelated(state, relatedId);
 }

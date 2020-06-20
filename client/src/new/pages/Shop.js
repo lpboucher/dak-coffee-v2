@@ -1,14 +1,12 @@
 import React from 'react';
 
 import SEO from '../../components/utils/SEO/SEO';
-import Filters from '../components/Share/Filters';
-import ProductsListing from '../components/Products/ProductsListing';
+import ProductsListing from '../components/Products/FilteredProducts';
 
 const Shop = () => {
   return (
     <>
-        <SEO canon="https://www.dakcoffeeroasters.com" />
-        <Filters />
+        <SEO canon="https://www.dakcoffeeroasters.com/shop" />
         <ProductsListing />
     </>
   );

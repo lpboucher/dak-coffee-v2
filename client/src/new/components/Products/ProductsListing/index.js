@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useProducts } from '../../../hooks/products/useProducts';
+import React from 'react';
+import { useProductsWithLimit } from '../../../hooks/products/useProducts';
 
 import ProductsListingLayout from '../../../layouts/Products/ProductsListing';
 import ProductCard from '../../../components/Products/ProductCard';
@@ -7,18 +7,16 @@ import SkeletonCardList from '../../../components/Share/Skeletons/SkeletonCardLi
 
 import { Button } from 'grommet';
 
-const ProductsListing = () => {
-  const [count, setCount] = useState(9);
-  const { sortedProductsIds, productCount } = useProducts([], count);
-  const onShowMoreClicked = () => setCount(Math.min(count*2, productCount));
-  const ShowMore = <Button onClick={onShowMoreClicked} primary label="Load More Products" type="button" />
+const ProductsListing = ({limit=null}) => {
+  const { sortedProductsIds, activeCount, productCount, showMore } = useProductsWithLimit(limit);
+  const ShowMore = <Button onClick={showMore} primary label="Load More Products" type="button" />
   return (
     <>
       { sortedProductsIds && sortedProductsIds.length > 0 ?
       <>
         <ProductsListingLayout
           moreButton={ShowMore}
-          showMore={count < productCount}
+          showMore={limit && activeCount < productCount}
         >
           {sortedProductsIds.map((id, index) => (
             <ProductCard key={id} id={id} position={index}/>

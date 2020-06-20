@@ -11,7 +11,7 @@ const Home = () => {
         <SEO canon="https://www.dakcoffeeroasters.com" />
         <HeroSlider />
         <Quote quote="hero.home"/>
-        <ProductsListing />
+        <ProductsListing limit={9}/>
     </>
   );
 }

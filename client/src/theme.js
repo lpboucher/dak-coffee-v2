@@ -60,8 +60,8 @@ export const DakTheme = {
       color: 'mainWhite',
       extend: {
         textTransform: "uppercase",
-        marginTop: "10px",
-        marginBottom: "10px"
+        /*marginTop: "10px",
+        marginBottom: "10px"*/
       },
       padding: {
         horizontal: '20px',
@@ -280,18 +280,18 @@ export const DakTheme = {
     },
     textInput: {
       container: {
-        extend: {
+        /*extend: {
           borderBottom: "1px solid #dcddde"
-        }
+        }*/
       },
       placeholder: {
         extend: {
           color: "mainDark"
         }
       },
-      extend: {
+      /*extend: {
         margin: "10px 0"
-      }
+      }*/
     },
     tabs: {
       panel: {

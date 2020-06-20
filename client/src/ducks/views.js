@@ -49,6 +49,9 @@ export const CHANGE_CURRENCY_REQUEST = 'views/change_currency_request';
 export const CHANGE_CURRENCY_SUCCESS = 'views/change_currency_success';
 export const CHANGE_LANGUAGE_REQUEST = 'views/change_language_request';
 export const CHANGE_LANGUAGE_SUCCESS = 'views/change_language_success';
+export const ADD_FILTERS = 'views/add_filters';
+export const REMOVE_FILTERS = 'views/remove_filters';
+export const CLEAR_FILTERS = 'views/clear_filters';
 export const ACTIVATE_LOCATION = 'views/activate_location';
 
 //Action Creators
@@ -133,6 +136,18 @@ export const closeModal = () => dispatch => {
     dispatch({type: CLOSE_MODAL})
 }
 
+export const addFilters = (dataType, filters) => dispatch => {
+  dispatch({type: ADD_FILTERS, data: dataType, payload: filters });
+}
+
+export const removeFilter = (dataType, filter) => dispatch => {
+  dispatch({type: REMOVE_FILTERS, data: dataType, payload: filter });
+}
+
+export const clearFilters = (dataType) => dispatch => {
+  dispatch({type: CLEAR_FILTERS, data: dataType });
+}
+
 //Reducer
 const initialState = {
 isSnipcartModalOpen: false,
@@ -160,7 +175,10 @@ addingToCart: {
 },
 changingLoginStatus: false,
 isCartOpen: false,
-isCartLoaded: false
+isCartLoaded: false,
+filters: {
+  products: []
+}
 };
 
 export default function reducer(state = initialState, action) {
@@ -310,6 +328,30 @@ switch(action.type) {
             showError: true,
             isFetching: false
         }
+    case ADD_FILTERS:
+      return {
+          ...state,
+          filters: {
+            ...state.filters,
+            [action.data]: [...new Set([...state.filters[action.data], ...action.payload])]
+          }
+      }
+    case REMOVE_FILTERS:
+      return {
+          ...state,
+          filters: {
+            ...state.filters,
+            [action.data]: state.filters[action.data].filter(f => f !== action.payload),
+          }
+      }
+    case CLEAR_FILTERS:
+      return {
+          ...state,
+          filters: {
+            ...state.filters,
+            [action.data]: initialState.filters[action.data],
+          }
+      }
     case ACTIVATE_LOCATION:
       return {
         ...state,
@@ -368,5 +410,7 @@ export const getDisplayCurrency = (state) => state.views.displayCurrency;
 export const isCartOpen = (state) => state.views.isCartOpen;
 
 export const isCheckingLoginStatus = (state) => state.views.changingLoginStatus;
+
+export const getActiveFilters = (state, dataType) => state.views.filters[dataType];
 
 

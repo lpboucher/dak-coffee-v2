@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 import axios from 'axios';
 
+import { sortProductsByCoffeeAndSubscriptions } from '../new/services/productDisplayService';
+
 import { getCollectionBySlug } from './collections';
+import { getAllCategories } from './categories';
+import { getActiveFilters } from './views';
 
 //Action Types
 export const FETCH_PRODUCTS_REQUEST = 'products/fetch_products_request';
@@ -94,6 +98,7 @@ export const getProductsByCollection = (state, slug) => {
 }
 
 //new
+// input selectors only select state data
 export const getProduct = (state, id) => state.products.byId[id] || null;
 
 export const getProducts = (state) => state.products.allIds;
@@ -101,6 +106,8 @@ export const getProducts = (state) => state.products.allIds;
 export const getProductCount = (state) => state.products.total;
 
 export const getAllProducts = (state) => state.products.allIds.map(id => getProduct(state, id));
+
+// selectors that modify their data should use reselect, createselector
 
 export const getProductFeature = (state, id) => {
   const product = getProduct(state, id);
@@ -134,16 +141,29 @@ export const getProductsFromTypes = (state, types) => {
 };
 
 export const getSortedProducts = (state) => {
-  const products = getAllProducts(state);
+  const products = getAllSortedProducts(state);
   if (products) {
-    const sortedProducts = products.sort((a,b) => {
-      return compareIsCoffee(a,b) || compareIsSubscription(a,b);
-    });
-    return sortedProducts.map(product => product.id);
+    return products.map(product => product.id);
   }
 }
 
-const compareIsCoffee = (a, b) => (a.type === 'coffee' ? 0 : 1) - (b.type === 'coffee' ? 0 : 1);
+export const getAllSortedProducts = (state) => {
+  const products = getAllProducts(state);
+  if (products) {
+    return sortProductsByCoffeeAndSubscriptions(products);
+  }
+}
 
-const compareIsSubscription = (a, b) => (a.type === 'subscription' ? 0 : 1) - (b.type === 'subscription' ? 0 : 1);
+export const getFilteredProducts = (state, withSort = false) => {
+  const products = withSort ? getAllSortedProducts(state) : getAllProducts(state);
+  const filters = getActiveFilters(state, "products");
+  if (products) {
+    if (filters.length < 1) return products.map(product => product.id)
+
+    const filteredProducts = products.filter(product => {
+      return product.categories.some(category => filters.includes(category.name))
+    });
+    return filteredProducts.map(product => product.id);
+  }
+}
 
