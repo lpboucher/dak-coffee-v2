@@ -342,6 +342,25 @@
         "500EUR": "(20.00€)",
         "1000CAD": "(54$)",
         "1000EUR": "(37.80€)"
+    },
+    "mirador-coffee": {
+      "name": "El Mirador",
+      "short": "Colombian coffee (filter)",
+      "description": "This Colombian Pink bourbon coffee is roasted for filter. The micro lot - Polo Calderon Artunduaga in Pitalito station is truly special. The area is known as the cradle of specialty coffee of Colombia, as many small farmers started focusing on quality and good processes almost 20 years ago.",
+      "region": "Huila",
+      "country": "Colombia",
+      "roast": "Filter",
+      "lot": "Polo Calderon Artunduaga",
+      "process": "Washed",
+      "variety": "Pink Bourbon",
+      "drink": "Filter",
+      "taste": "Caramel, Jasmine, Pomegranate",
+      "harvest": "Pink Bourbon is a rare and coveted find. A hybrid of Red and Yellow Bourbon, this varietal stands out in every way—from the striking pink colour of its ripe coffee cherries to the sweetly complex flavour of its beans.",
+      "altitude": "1750m",
+      "500CAD": "(42.00$)",
+      "500EUR": "(28.50€)",
+      "1000CAD": "(79$)",
+      "1000EUR": "(54.00€)"
     }
     },
     "subscription": {

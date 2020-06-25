@@ -322,6 +322,25 @@
         "500EUR": "(20.00€)",
         "1000CAD": "(54$)",
         "1000EUR": "(37.80€)"
+    },
+    "mirador-coffee": {
+      "name": "El Mirador",
+      "short": "Café Colombien (filtre)",
+      "description": "Ce Pink Bourbon Colombien est torréfié en filtre. Le micro lot - Polo Calderon Artunduaga de la station Pitalito est extrêmement spécial. La région est reconnue comme étant le sanctuaire du café de Spécialité en Colombie, puisque plusieurs fermiers indépendants ont commencé à prioriser la qualité et les méthodes de processing il y a déjà 20 ans.",
+      "region": "Huila",
+      "country": "Colombia",
+      "roast": "Filtre",
+      "lot": "Polo Calderon Artunduaga",
+      "process": "Lavé",
+      "variety": "Pink Bourbon",
+      "drink": "Filtre",
+      "taste": "Caramel, Jasmine, Pomegrenade",
+      "harvest": "Pink Bourbon est une variété rare et prisée. Une hybride de Bourbon rouge et jaune, cette variété se démarque par la couleur rose éclatante de ses cerises ainsi qu'à la complexité de ses saveurs.",
+      "altitude": "1750m",
+      "500CAD": "(42.00$)",
+      "500EUR": "(28.50€)",
+      "1000CAD": "(79$)",
+      "1000EUR": "(54.00€)"
     }
     },
     "subscription": {
