@@ -33,7 +33,7 @@ const CoffeeCardInfo = ({id, slug, type, price, currency, t, media}) => {
     const lowerPrice = type === "coffee" ? `${currentPrice.symbol}${currentPrice.value.toFixed(2)}` : null;
     const upperIncrement = type === "coffee" ? currentPrice.increments[currentPrice.increments.length - 1] : null;
     const incrPrice = type === "coffee" ? parseFloat(upperIncrement.increment.replace('[','').replace('+','').replace(']','')) + currentPrice.value : null;
-    const upperPrice = type === "coffee" `${currentPrice.symbol}${incrPrice.toFixed(2)}` : null;
+    const upperPrice = type === "coffee" ? `${currentPrice.symbol}${incrPrice.toFixed(2)}` : null;
     const layout = coffeeCardInfoLayout(media);
     return (
         <Box height="100%" width={layout.containerWidth} direction="row" align="center" justify="around" style={{position: 'relative'}}>
