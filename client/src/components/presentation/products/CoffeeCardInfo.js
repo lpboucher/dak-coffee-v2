@@ -30,19 +30,19 @@ const TruncateText = styled(Text)`
 const CoffeeCardInfo = ({id, slug, type, price, currency, t, media}) => {
     const displayCurr = currency.toLowerCase();
     const currentPrice = price[displayCurr];
-    const lowerPrice = `${currentPrice.symbol}${currentPrice.value.toFixed(2)}`;
-    const upperIncrement = currentPrice.increments[currentPrice.increments.length - 1];
-    const incrPrice = parseFloat(upperIncrement.increment.replace('[','').replace('+','').replace(']','')) + currentPrice.value;
-    const upperPrice = `${currentPrice.symbol}${incrPrice.toFixed(2)}`;
+    const lowerPrice = type === "coffee" ? `${currentPrice.symbol}${currentPrice.value.toFixed(2)}` : null;
+    const upperIncrement = type === "coffee" ? currentPrice.increments[currentPrice.increments.length - 1] : null;
+    const incrPrice = type === "coffee" ? parseFloat(upperIncrement.increment.replace('[','').replace('+','').replace(']','')) + currentPrice.value : null;
+    const upperPrice = type === "coffee" `${currentPrice.symbol}${incrPrice.toFixed(2)}` : null;
     const layout = coffeeCardInfoLayout(media);
     return (
         <Box height="100%" width={layout.containerWidth} direction="row" align="center" justify="around" style={{position: 'relative'}}>
             {price ?
             <>
                 <CardHover isHidden={media === "extraSmall"}>
-                    <TruncateText textAlign={layout.textAlign} size={layout.fontSize.top} weight="bold" style={{textTransform: 'uppercase'}}>{t(`products:${type}.${slug}.name`)} - {t(`products:${type}.${slug}.country`)}</TruncateText>
-                    <TruncateText textAlign={layout.textAlign} size={layout.fontSize.mid} color="grey">{t(`products:${type}.${slug}.taste`)}</TruncateText>
-                    <Text textAlign={layout.textAlign} weight="bold" size={layout.fontSize.bottom} color="mainDark">{`${lowerPrice} - ${upperPrice}`}</Text>
+                    <TruncateText textAlign={layout.textAlign} size={layout.fontSize.top} weight="bold" style={{textTransform: 'uppercase'}}>{t(`products:${type}.${slug}.name`)} - {type === "coffee" ? t(`products:${type}.${slug}.country`) : "Mystery"}</TruncateText>
+                    <TruncateText textAlign={layout.textAlign} size={layout.fontSize.mid} color="grey">{type === "coffee" ? t(`products:${type}.${slug}.taste`) : "Guess"}</TruncateText>
+                    <Text textAlign={layout.textAlign} weight="bold" size={layout.fontSize.bottom} color="mainDark">{type === "coffee" ? `${lowerPrice} - ${upperPrice}` : `${price[displayCurr].symbol} ${price[displayCurr].value.toFixed(2)}`}</Text>
                 </CardHover>
                 <AddToCart productId={id} currency={currency} absolute/>
             </>
