@@ -16,7 +16,11 @@
     "print-bundle": {
       "name": "Limited Edition print bundle",
       "description": "This bundle contains all 3 limited edition prints. Dimensions: A5 - 14,8cm x 21cm"
-      }
+    },
+    "mystery-coffee": {
+      "name": "Mystery Coffee",
+      "description": "Our mystery coffees are carefully chosen. You can expect a unique and funky coffee. Once the raffle ends and the coffee profile is revealed, the coffee will be added to our current lineup.\n\nHow it works\n\n1. Guess the origin and/or tasting notes\n\n2. Share your answers on instagram by tagging us @dakcoffeeroasters (via story or post).\n\n3. The ones sharing their answers will be entered in a raffle to win a EUR 100 for our webshop.\n\nYou need to share your answers by the 19th of July 2020. The raffle will take place on the 20th July 2020. We will also reveal the mystery coffee on that date.\n\nYou do not need to have the right answers to enter the raffle, it is simply for fun and to share answers with other coffee lovers!"
+    }
   },
   "equipment": {
         "short": "Coffee equipment",
