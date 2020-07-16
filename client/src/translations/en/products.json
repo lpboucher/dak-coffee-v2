@@ -365,7 +365,6 @@
       "500EUR": "(28.50€)",
       "1000CAD": "(79$)",
       "1000EUR": "(54.00€)"
-    }
     },
     "chelichele-coffee": {
       "name": "Chelichele",
@@ -385,6 +384,7 @@
       "500EUR": "(22.80€)",
       "1000CAD": "(64.80$)",
       "1000EUR": "(43.20€)"
+  }
   },
     "subscription": {
         "classics-subscription": {
