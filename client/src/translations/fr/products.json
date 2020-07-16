@@ -345,6 +345,25 @@
       "500EUR": "(28.50€)",
       "1000CAD": "(79$)",
       "1000EUR": "(54.00€)"
+    },
+    "chelichele-coffee": {
+      "name": "Chelichele",
+      "short": "Café Éthiopien (filtre)",
+      "description": "Ce café éthiopien est torréfié en filtre. C'est un naturel qui explose de saveurs florales, de confitures de fruits et d'aromes de chocolat. Les méthodes de récolte en Éthiopie demeurent traditionnelles. Les fermiers de la région de Yirgacheffe intercalent les plants de café avec d'autres plantes alimentaires pour maximiser l'utilisation des terres et pour subvenir à leurs familles.",
+      "region": "Yirgacheffe",
+      "country": "Éthiopie",
+      "roast": "Filtre",
+      "lot": "Chelichele",
+      "process": "(Slow dried) Naturel",
+      "variety": "Local Landraces",
+      "drink": "Filtre",
+      "taste": "Floral, Confiture aux fruits, Chocolat au Lait",
+      "harvest": "This coffee is produced by various farmers delivering to Worka Chelichele Washing Station.",
+      "altitude": "1950m",
+      "500CAD": "(32.40$)",
+      "500EUR": "(22.80€)",
+      "1000CAD": "(64.80$)",
+      "1000EUR": "(43.20€)"
     }
     },
     "subscription": {

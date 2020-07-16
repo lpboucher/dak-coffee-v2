@@ -367,6 +367,25 @@
       "1000EUR": "(54.00€)"
     }
     },
+    "chelichele-coffee": {
+      "name": "Chelichele",
+      "short": "Ethiopian coffee (filter)",
+      "description": "This Ethiopian coffee is roasted for filter. It is a Natural coffee that is bursting with delicate floral, jammy berry and warming chocolate aromas. Farming methods in the region remain largely traditional. Yirgacheffe farmers typically intercrop their coffee plants with other food crops. This method is common because it maximizes land use and provides food for their families.",
+      "region": "Yirgacheffe",
+      "country": "Ethiopia",
+      "roast": "Filter",
+      "lot": "Chelichele",
+      "process": "Slow dried Natural",
+      "variety": "Local Landraces",
+      "drink": "Filter",
+      "taste": "Floral, Jammy berry, Milk Chocolate",
+      "harvest": "This coffee is produced by various farmers delivering to Worka Chelichele Washing Station.",
+      "altitude": "1950m",
+      "500CAD": "(32.40$)",
+      "500EUR": "(22.80€)",
+      "1000CAD": "(64.80$)",
+      "1000EUR": "(43.20€)"
+  },
     "subscription": {
         "classics-subscription": {
             "name": "The Classics",
