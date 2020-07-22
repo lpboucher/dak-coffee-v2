@@ -63,6 +63,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/trr/products",
+      "handler": "Product.getRightRoastProducts",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

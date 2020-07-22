@@ -48,7 +48,25 @@ const getProductsWithInventory = async (ctx) => {
   ctx.send(productsWithInventory);
 };
 
+const getRightRoastProducts = async (ctx) => {
+  let coffees = await strapi.services.product.find({type: 'coffee'});
+  let inventory = await snipcartFetch();
+  let coffeesWithInventory = coffees.map(coffee => {
+    const currentProductInv = inventory.find(inv => inv.id === coffee.id);
+    return {
+      ...currentProductInv,
+      ...coffee
+    };
+  });
+  let byId = coffeesWithInventory.reduce((obj, coffee) => {
+    obj[coffee.id] = coffee;
+    return obj;
+  }, {});
+  ctx.send(byId);
+};
+
 module.exports = {
   snipcartParser,
-  getProductsWithInventory
+  getProductsWithInventory,
+  getRightRoastProducts
 };
