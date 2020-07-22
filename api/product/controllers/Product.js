@@ -50,16 +50,14 @@ const getProductsWithInventory = async (ctx) => {
 
 const getRightRoastProducts = async (ctx) => {
   let coffees = await strapi.services.product.find({type: 'coffee'});
-  let inventory = await snipcartFetch();
   let sanitized = coffees.map((oneCoffee) => {
-    const currentProductInv = inventory.find(inv => inv.id === oneCoffee.id);
     return {
       id: oneCoffee.id,
       name: oneCoffee.name,
       description: oneCoffee.description,
       quantity: '250g',
-      stock_status: currentProductInv.stock !== 0 ? 'InStock' : 'OutStock',
-      stock_quantity: currentProductInv.stock,
+      stock_status: 'InStock',
+      stock_quantity: 25,
       price: oneCoffee.price['eur'],
     };
   });
