@@ -26,8 +26,8 @@ const snipcartFetch = async () => {
   let notRecurringProducts = products.data.items.filter(product => !isSubscription(product));
   return notRecurringProducts.map(product => ({
     id: product.userDefinedId,
-    stock: product.stock,
-    totalStock: product.totalStock
+    stock: product.stock || 25,
+    totalStock: product.totalStock || 25
   }));
 };
 
@@ -56,10 +56,10 @@ const getRightRoastProducts = async (ctx) => {
     return {
       id: oneCoffee.id,
       name: oneCoffee.name,
-      description: oneCoffee.name,
+      description: oneCoffee.description,
       quantity: '250g',
-      stock_status: !currentProductInv.stock || currentProductInv.stock === 0 ? 'InStock' : 'OutStock',
-      stock_quantity: currentProductInv.stock ? currentProductInv.stock : 25,
+      stock_status: currentProductInv.stock !== 0 ? 'InStock' : 'OutStock',
+      stock_quantity: currentProductInv.stock,
       price: oneCoffee.price['eur'],
     };
   });
