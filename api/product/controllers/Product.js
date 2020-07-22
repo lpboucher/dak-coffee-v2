@@ -51,21 +51,23 @@ const getProductsWithInventory = async (ctx) => {
 const getRightRoastProducts = async (ctx) => {
   let coffees = await strapi.services.product.find({type: 'coffee'});
   let inventory = await snipcartFetch();
-  let byId = coffees.reduce((obj, coffee) => {
-    const currentProductInv = inventory.find(inv => inv.id === coffee.id);
-    obj[coffee.id] = {...coffee, ...currentProductInv};
+  let sanitized = coffees.map((oneCoffee) => {
+    const currentProductInv = inventory.find(inv => inv.id === oneCoffee.id);
+    return {
+      id: oneCoffee.id,
+      name: oneCoffee.name,
+      description: oneCoffee.name,
+      quantity: '250g',
+      stock_status: !currentProductInv.stock || currentProductInv.stock === 0 ? 'InStock' : 'OutStock',
+      stock_quantity: currentProductInv.stock ? currentProductInv.stock : 25,
+      price: oneCoffee.price['eur'],
+    };
+  });
+  let byId = sanitized.reduce((obj, coffee) => {
+    obj[coffee.id] = coffee;
     return obj;
   }, {});
-
-  let sanitized = byId.map(oneCoffee => ({
-    name: oneCoffee.name,
-    description: oneCoffee.name,
-    quantity: '250g',
-    stock_status: !oneCoffee.stock || oneCoffee.stock === 0 ? 'InStock' : 'OutStock',
-    stock_quantity: oneCoffee.stock ? oneCoffee.stock : 25,
-    price: oneCoffee.price['eur'],
-  }));
-  ctx.send(sanitized);
+  ctx.send(byId);
 };
 
 module.exports = {
