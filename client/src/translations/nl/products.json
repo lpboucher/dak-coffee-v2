@@ -384,6 +384,25 @@
       "500EUR": "(24.70€)",
       "1000CAD": "(70.20$)",
       "1000EUR": "(46.80€)"
+    },
+    "borazon-coffee": {
+      "name": "Borazon",
+      "short": "Costa Rican coffee (filter)",
+      "description": "Don Luis Eduardo Campos has been growing coffee since 1984. It was 10 years ago that he started thinking about an anaerobic fermentation process to extract the naturally-occurring flavours in his coffee.\n\nAfter years of research and testing, the process now yields an exceptional coffee. Luis Eduardo handpicks cherries with a very sugar content, as these sugars power the fermentation process. After picking, the coffee is de-pulped and placed in steel tanks where there is no CO2.",
+      "region": "Alajuela",
+      "country": "Costa Rica",
+      "roast": "Filter",
+      "lot": "Cordillera del Fuego",
+      "process": "Anaerobic",
+      "variety": "Caturra",
+      "drink": "Filter",
+      "taste": "Cinnamon, Ginger, Cookies, Raspberry",
+      "harvest": "Along with experimental processing. Don Luis is also progressive in farming. He is a member of NAMA, an organisation whose objective is to reduce emissions of green house gases within the coffee sector.",
+      "altitude": "1700m",
+      "500CAD": "(47.00$)",
+      "500EUR": "(31.35€)",
+      "1000CAD": "(89.00$)",
+      "1000EUR": "(59.40€)"
     }
     },
     "subscription": {
