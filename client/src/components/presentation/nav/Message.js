@@ -22,9 +22,7 @@ const Message = ({t, currency, location, ...rest}) => {
     }
     return (
         <Text size={rest && rest.size ? rest.size : null} margin={{left: 'medium', right: 'auto'}}>
-          {//t("announcement.text", {region: loc, threshold: shippingThresholds[currency][loc]} )
-          }
-          Please note we are currently on holiday. Next roasting date will be August 1st.
+          {t("announcement.text", {region: loc, threshold: shippingThresholds[currency][loc]} )}
         </Text>
     );
 }
