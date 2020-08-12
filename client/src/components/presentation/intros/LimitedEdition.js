@@ -15,7 +15,7 @@ const LimitedEditionsIntro = ({media}) => {
             subHeading="intros.limited edition.soldOut"
             snap="intros.limited edition.description"
             ctaLabel="intros.limited edition.button"
-            link="/shop/bela-vista-coffee"
+            link={null}
         />
     const img = <CloudImage img={limited} maxWidth={575} fit="contain" padding="24px 48px"/>
     return (
