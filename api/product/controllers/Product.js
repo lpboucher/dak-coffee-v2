@@ -60,7 +60,8 @@ const getRightRoastProducts = async (ctx) => {
       weight: '250g',
       stock_status: 'in_stock',
       price: oneCoffee.price['eur']['value'],
-      regular_price: `${oneCoffee.price['eur']['symbol']} ${oneCoffee.price['eur']['value']}`,
+      regular_price: `${oneCoffee.price['eur']['symbol']}${oneCoffee.price['eur']['value']}`,
+      currency: 'EUR'
     };
   });
   ctx.send({data: sanitized});
