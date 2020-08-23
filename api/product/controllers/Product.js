@@ -54,18 +54,16 @@ const getRightRoastProducts = async (ctx) => {
     return {
       id: oneCoffee.id,
       name: oneCoffee.name,
+      slug: oneCoffee.slug,
+      permalink: `https://dakcoffeeroasters.com/shop/${oneCoffee.slug}`,
       description: oneCoffee.description,
-      quantity: '250g',
-      stock_status: 'InStock',
-      stock_quantity: 25,
-      price: oneCoffee.price['eur'],
+      weight: '250g',
+      stock_status: 'in_stock',
+      price: oneCoffee.price['eur']['value'],
+      regular_price: `${oneCoffee.price['eur']['symbol']} ${oneCoffee.price['eur']['value']}`,
     };
   });
-  let byId = sanitized.reduce((obj, coffee) => {
-    obj[coffee.id] = coffee;
-    return obj;
-  }, {});
-  ctx.send(byId);
+  ctx.send({data: sanitized});
 };
 
 module.exports = {
