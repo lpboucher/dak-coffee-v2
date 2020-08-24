@@ -67,8 +67,26 @@ const getRightRoastProducts = async (ctx) => {
   ctx.send({data: sanitized});
 };
 
+const getRightRoastCoffeeById = async (ctx) => {
+  let coffee = await strapi.services.product.findOne({type: 'coffee', ...ctx.params});
+  let sanitized = {
+    id: coffee.id,
+    name: coffee.name,
+    slug: coffee.slug,
+    permalink: `https://dakcoffeeroasters.com/shop/${coffee.slug}`,
+    description: coffee.description,
+    weight: '250g',
+    stock_status: 'in_stock',
+    price: coffee.price['eur']['value'],
+    regular_price: `${coffee.price['eur']['symbol']}${coffee.price['eur']['value']}`,
+    currency: 'EUR'
+  };
+  ctx.send({data: sanitized});
+};
+
 module.exports = {
   snipcartParser,
   getProductsWithInventory,
-  getRightRoastProducts
+  getRightRoastProducts,
+  getRightRoastCoffeeById
 };
