@@ -403,6 +403,25 @@
     "500EUR": "(31.35€)",
     "1000CAD": "(89.00$)",
     "1000EUR": "(59.40€)"
+  },
+  "pitalito-coffee": {
+    "name": "The Connoisseur",
+    "short": "Colombian coffee (filter)",
+    "description": "This Triple Geisha is a microlot from three dedicated farmers from Pitalito. Silvio Gomez Chaux, Lenis Valderama and Carlos Imbachi. Silvio Gomez Chaux is the largest contributor to this unique lot.",
+    "region": "Huila",
+    "country": "Colombia",
+    "roast": "Filter",
+    "lot": "Pitalito",
+    "process": "Washed",
+    "variety": "Geisha",
+    "drink": "Filter",
+    "taste": "Floral, Bergamot, Lemon, Orange Blossom, Honeysuckle",
+    "harvest": "This coffee is truly unique with a beautiful complexity. It combines the character of a washed Ethiopian with the soft honey & citrus-fruity notes we know from really good Colombians.",
+    "altitude": "1750m",
+    "500CAD": "(55.50$)",
+    "500EUR": "(37.05€)",
+    "1000CAD": "(105.30$)",
+    "1000EUR": "(70.20€)"
   }
   },
     "subscription": {
