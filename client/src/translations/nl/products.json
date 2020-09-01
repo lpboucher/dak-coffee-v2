@@ -422,6 +422,25 @@
       "500EUR": "(37.05€)",
       "1000CAD": "(105.30$)",
       "1000EUR": "(70.20€)"
+    },
+    "palmera-coffee": {
+      "name": "Palmera",
+      "short": "Costa Rican coffee (espresso)",
+      "description": "The farm and mill at Union De Cafetaleros are located high up in the mountain creating a cool micro-climate that is ideal for growing coffee. The climate in Tarrazu consists of two well-defined seasons (rain, dry) that fit perfectly with the harvest, perfect for growing high quality coffee.",
+      "region": "Tarrazu",
+      "country": "Costa Rica",
+      "roast": "Espresso",
+      "lot": "Union De Cafetaleros",
+      "process": "Honey",
+      "variety": "Red Catuai",
+      "drink": "Espresso",
+      "taste": "Vanilla, Orange, Milk Chocolate, Raspberry",
+      "harvest": "Situated at a high altitude, this lot delivers a lot of sweetness with the clean cup that is typical of Costa Rican coffees.",
+      "altitude": "1700m",
+      "500CAD": "(33.55$)",
+      "500EUR": "(22.35€)",
+      "1000CAD": "(63.55$)",
+      "1000EUR": "(42.30€)"
     }
     },
     "subscription": {
