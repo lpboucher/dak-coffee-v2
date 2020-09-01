@@ -5,17 +5,17 @@ import TwoColLayout from '../../layouts/TwoColLayout';
 import IntroLayout from '../../layouts/IntroLayout';
 import CloudImage from '../../utils/CloudImage';
 
-const limited = 'Intros/belavistaimage_izwhdv.jpg';
+const limited = 'Intros/Connoisseur_home_tpvlqj.jpg';
 
 const LimitedEditionsIntro = ({media}) => {
   const isMobile = media === "extraSmall" || media === "small";
     const intro =
         <IntroLayout
             heading="intros.limited edition.title"
-            subHeading="intros.limited edition.soldOut"
+            subHeading="intros.limited edition.helper"
             snap="intros.limited edition.description"
             ctaLabel="intros.limited edition.button"
-            link={null}
+            link={"/shop/pitalito-coffee"}
         />
     const img = <CloudImage img={limited} maxWidth={575} fit="contain" padding="24px 48px"/>
     return (

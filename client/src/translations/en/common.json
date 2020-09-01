@@ -64,11 +64,11 @@
             "button": "Subscribe"
         },
         "limited edition": {
-            "title": "Our Current Limited Edition\n<i>Bela Vista</i>",
+            "title": "Our Current Limited Edition\n<i>The Connoisseur</i>",
             "soldOut": "Currently Sold Out",
             "subtitle": "",
-            "helper": "Apricot, Iced Tea, Citrus",
-            "description": "This new limited edition from Brazil is roasted for filter coffees and is fresh and light. It is the perfect coffee to enjoy the start of summer.",
+            "helper": "Floral, Bergamot, Lemon, Orange Blossom",
+            "description": "This new limited edition from Colombia is roasted for filter coffees and is complex and surprising. The Geisha variety needs no introduction and this one is no exception.",
             "button": "Buy this coffee"
         },
         "values": {
