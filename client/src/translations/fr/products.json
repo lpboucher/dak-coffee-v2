@@ -440,6 +440,25 @@
       "500EUR": "(25.65€)",
       "1000CAD": "(72.90$)",
       "1000EUR": "(48.60€)"
+    },
+    "la-pila-coffee": {
+      "name": "La Pila",
+      "short": "Guatemalan coffee (filter)",
+      "description": "Fraijanes is in the heart of Guatemala and has a distinct geography and history. Coffees from Fraijanes have bright and persistent acidity and they tend to be aromatic with a medium body. This one is no different!",
+      "region": "Fraijanes",
+      "country": "Guatemala",
+      "roast": "Filter",
+      "lot": "La Pila",
+      "process": "Natural",
+      "variety": "Bourbon, Red Catuai, Yellow, Catuai, Pache",
+      "drink": "Filter",
+      "taste": "Floral, Strawberry Jam, Sweet Cherries",
+      "harvest": "The farm is owned and operated by Rodolfo & Reina. They participate in regional competitions, winning awards in the top 3 places every year for the past 5 years.",
+      "altitude": "1750m",
+      "500CAD": "(40.60$)",
+      "500EUR": "(27.00€)",
+      "1000CAD": "(77.00$)",
+      "1000EUR": "(51.30€)"
     }
     },
     "subscription": {

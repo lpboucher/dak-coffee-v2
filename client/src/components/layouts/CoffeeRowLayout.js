@@ -13,7 +13,7 @@ import { coffeeRowLayout } from './globalResponsiveLayout';
 const CoffeeRow = ({coffees, media, t}) => {
     const layout = coffeeRowLayout(media);
     // prod
-    const selectedCoffees = ["5f4e31d34205fd6fd7210fa0", "5f10320f3a971a1ed112384c", "5ef464093a971a1ed1123848", "5ed7b704b8375c3a888f5acc"];
+    const selectedCoffees = ["5f4e31d34205fd6fd7210fa0", "5f6091aa27854a51fa489849", "5ef464093a971a1ed1123848", "5ed7b704b8375c3a888f5acc"];
     // dev
     // const selectedCoffees =  ["5db9a0a0ab6bee8d8e4e3902", "5db9a240646d6f8e7d7f3813", "5db9a46f4440f38ecc4c362a", "5db9a56a4440f38ecc4c362b"];
     //const filteredCoffees = coffees.filter(coffee => selectedCoffees.indexOf(coffee) !== -1);
