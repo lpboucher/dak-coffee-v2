@@ -441,6 +441,25 @@
     "500EUR": "(22.35€)",
     "1000CAD": "(63.55$)",
     "1000EUR": "(42.30€)"
+  },
+  "las-brisas-coffee": {
+    "name": "Las Brisas",
+    "short": "El Salvadoran coffee (filter)",
+    "description": "Producer Carlos Pola has dedicated his life to revolutionizing specialty coffee production. The farm has its own lab for experimenting with new processing methods, quality control and educating farm workers in specialty coffee.",
+    "region": "Apaneca-Ilamatepec",
+    "country": "El Salvador",
+    "roast": "Filter",
+    "lot": "Las Brisas",
+    "process": "Black Honey Anaerobic",
+    "variety": "H2 Farm Hybrid",
+    "drink": "Filter",
+    "taste": "Caramel, Dark Chocolate, Plum, Red Grapes",
+    "harvest": "This lot has fermented in the tanks for 72 hours and the result is unique. A delicious coffee with tasting notes of plum, red grapes, dark chocolate & caramel.",
+    "altitude": "1750m",
+    "500CAD": "(38.50$)",
+    "500EUR": "(25.65€)",
+    "1000CAD": "(72.90$)",
+    "1000EUR": "(48.60€)"
   }
   },
     "subscription": {
