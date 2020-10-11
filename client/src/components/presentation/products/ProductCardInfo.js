@@ -12,6 +12,10 @@ const ProductCardInfo = ({id, slug, type, price, currency, t}) => {
             <>
                 <Box flex="grow" margin={{right: "-48px"}}>
                     <Text textAlign="center" weight="bold" style={{textTransform: 'uppercase'}}>{t(`products:${type}.${slug}.name`)}</Text>
+                    {
+                      type === "coffee" &&
+                      <Text textAlign="center" color="grey">{t(`products:${type}.${slug}.country`)} - {t(`products:${type}.${slug}.process`)}</Text>
+                    }
                     <Text textAlign="center" color="grey">{`${price[displayCurr].symbol} ${price[displayCurr].value.toFixed(2)}`}</Text>
                 </Box>
                 <AddToCart productId={id} currency={currency}/>
