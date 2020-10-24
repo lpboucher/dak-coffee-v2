@@ -5,12 +5,9 @@ import { itemAdded, orderCompleted } from '../../services/eventTracking';
 import { initializeCart, updateCart, updatingCart, clearCart } from '../../ducks/cart';
 import { schemaBuilder } from '../../utils/seo/schema';
 
-import 'react-toastify/dist/ReactToastify.min.css';
-
 import SEO from '../../utils/seo/SEO';
 import BackBoneLayout from '../../layouts/Backbone';
 import Header from './Header';
-import { ToastContainer } from 'react-toastify';
 import Newsletter from '../Newsletter';
 import Footer from './Footer';
 import AnnouncementModal from '../../components/Backbone/AnnouncementModal';
@@ -41,9 +38,6 @@ const BackBone = ({children}) => {
       />
       <BackBoneLayout
         header={<Header />}
-        metas={[
-          <ToastContainer key="notification" position="bottom-right" />
-        ]}
         main={children}
         footer={[
           <Newsletter type={pathname === "/subscribe" ? "full" : null}/>,

@@ -108,4 +108,12 @@ export const DakTheme = {
       color: 'mainDark'
     },
   },
+  carousel: {
+    icons: {
+      color: "primary"
+    },
+    animation: {
+      duration: 800
+    }
+  },
 };

@@ -1,21 +1,21 @@
 import React from 'react';
-import Slider from "react-slick";
+import { Box, Carousel } from 'grommet';
 
-const SliderLayout = ({children, arrows, ...settings}) => {
+import { layout } from '../../../layout';
+
+const SliderLayout = ({children, ...settings}) => {
     const slideSettings = {
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplaySpeed: 5000,
-        nextArrow: arrows ? arrows.next : null,
-        prevArrow: arrows ? arrows.prev : null,
-        ...settings
-    };
+      controls: "selectors",
+      play: 8000,
+      ...settings
+  };
+  const boxHeight = `calc(85vh - ${layout.topOffset})`;
     return (
-        <Slider {...slideSettings}>
+      <Box height={boxHeight}>
+        <Carousel fill {...slideSettings}>
           {children}
-        </Slider>
+        </Carousel>
+      </Box>
     );
 };
 

@@ -1,26 +1,26 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
 import Backbone from './components/Backbone';
-
-import HomePage from './pages/Home';
-import ShopPage from './pages/Shop';
-import ProductPage from './pages/Product';
-import ContactPage from './pages/Contact';
-import AboutPage from './pages/About';
-import NewsletterPage from './pages/Newsletter';
-import PrivacyPage from './pages/Privacy';
-import TermsPage from './pages/Terms';
-import ShippingPage from './pages/Shipping';
-import BlogPage from './pages/Blog';
-import FAQPage from './pages/FAQ';
-
 import './App.css';
+
+const HomePage = lazy(() => import('./pages/Home'));
+const ShopPage = lazy(() => import('./pages/Shop'));
+const ProductPage = lazy(() => import('./pages/Product'));
+const ContactPage = lazy(() => import('./pages/Contact'));
+const AboutPage = lazy(() => import('./pages/About'));
+const NewsletterPage = lazy(() => import('./pages/Newsletter'));
+const PrivacyPage = lazy(() => import('./pages/Privacy'));
+const TermsPage = lazy(() => import('./pages/Terms'));
+const ShippingPage = lazy(() => import('./pages/Shipping'));
+const BlogPage = lazy(() => import('./pages/Blog'));
+const FAQPage = lazy(() => import('./pages/FAQ'));
 
 const App = () => {
   return (
     <Backbone>
+      <Suspense fallback={<p>Loading...</p>}>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop/:model/:slug" component={ProductPage} />
@@ -37,6 +37,7 @@ const App = () => {
           <Route path="/blog/:slug" component={ArticlePage} />
   <Route path="/subscriptions" component={SubscriptionPage} />*/}
         </Switch>
+      </Suspense>
     </Backbone>
   );
 }

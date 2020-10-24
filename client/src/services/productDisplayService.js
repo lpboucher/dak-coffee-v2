@@ -9,9 +9,7 @@ import {
   FilterRoast
 } from '../utils/medallion/ProductMedallions';
 
-import {
-  Fruit
-} from '../utils/medallion/FlavorMedallions';
+import { FLAVORS } from "../constants/flavors";
 
 export const getPriceInCurrency = (priceArr = [], activeCurrency) => {
   return priceArr.find(onePrice => onePrice.base.currency === activeCurrency.toLowerCase());
@@ -111,13 +109,10 @@ export const getMedallion = (categories, restrictSingleCategory=null) => {
 export const getTastingNotesWithMedallion = ({type, ...coffee}) => {
   if (type === "coffee") {
     const { origin } = coffee;
-    const individualFlavors = getTranslatedItem(origin.tasting_notes).split(",");
-    const dict = {
-      "apricot": <Fruit width="20px"/>,
-    }
-    return individualFlavors.map(flavor => {
-      // return { label: flavor, icon: dict[flavor.toLowerCase()] }
-      return { label: flavor, icon: dict["apricot"] }
+    const individualFlavors = origin.tasting_notes["en"].split(",");
+    const translatedFlavors = getTranslatedItem(origin.tasting_notes).split(",");
+    return individualFlavors.map((flavor, index) => {
+      return { label: translatedFlavors[index], icon: FLAVORS[flavor.toLowerCase().trim()] }
     })
   }
   return null;
