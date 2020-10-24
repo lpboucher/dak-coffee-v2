@@ -34,11 +34,11 @@ const AnnouncementModalLayout = ({isOpen, open, close, modalAnnounce, modalConte
         <>
           {isOpen ?
               <Layer onEsc={() => close()} onClickOutside={() => close()} modal position="center">
-                  <Box background="mainDark" width='600px' height="400px" wrap justify="center">
-                      <Box height="150px" justify="center" align="center">
+                  <Box background="mainDark" width='600px' height="350px" wrap justify="center">
+                      <Box height="150px" justify="evenly" align="center">
                           {modalAnnounce}
                       </Box>
-                      <Box height="250px">
+                      <Box height="200px">
                           {modalContent}
                       </Box>
                   </Box>

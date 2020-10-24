@@ -29,16 +29,8 @@ const CardMedallion = styled.div`
 const CardContainer = styled(Box)`
   position: relative;
 
-  &:nth-child(6n+1), &:nth-child(6n+2), &:nth-child(6n+3) {
-    > ${Feature} {
+  & > ${Feature} {
       background: #f7f6f4;
-    }
-  }
-
-  &:nth-child(6n+4), &:nth-child(6n+5), &:nth-child(6n+6) {
-    > ${Feature} {
-      background: #dddfde;
-    }
   }
 
   &:hover {

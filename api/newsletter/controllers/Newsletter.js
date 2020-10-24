@@ -42,7 +42,7 @@ const generateSnipcartPromo = async () => {
       trigger: 'Code',
       code: code,
       type: 'Rate',
-      rate: 15.0,
+      rate: 10.0,
       maxNumberOfUsages: 1
     }
   });

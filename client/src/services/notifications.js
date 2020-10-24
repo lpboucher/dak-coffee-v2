@@ -14,7 +14,7 @@ export const notify = {
   },
   newsletter: {
     add: (code) => {
-      cogoToast.success(i18n.t("", {code: code, discount: "15%"}), {...options, hideAfter: 8, heading: 'Subscribed!'})
+      cogoToast.success(i18n.t("newsletter.subscribed", {code: code, discount: "10%"}), {...options, hideAfter: 8, heading: 'Subscribed!'})
     },
     error: (messageKey) => {
       cogoToast.error(`${i18n.t(messageKey)}`, {...options, heading: 'Error'})

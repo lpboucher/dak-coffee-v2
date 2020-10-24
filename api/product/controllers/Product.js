@@ -81,6 +81,8 @@ const getRightRoastCoffeeById = async (ctx) => {
     currency: 'EUR'
   };
   ctx.send({data: sanitized});
+};
+
 const getProducts = async (ctx) => {
   let products = await strapi.services.product.find(ctx.query);
   let total = await strapi.services.product.count();
@@ -98,7 +100,7 @@ module.exports = {
   snipcartParser,
   getProductsWithInventory,
   getRightRoastProducts,
-  getRightRoastCoffeeById
+  getRightRoastCoffeeById,
   getProducts,
   getProduct,
 };
