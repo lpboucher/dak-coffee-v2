@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { detectBrowserLocation, getDefaultLocationCurrency } from '../components/utils/Languages/detectLanguage';
-import { notify } from '../new/services/notifications';
+import { detectBrowserLocation, getDefaultLocationCurrency } from '../utils/languages/detectLanguage';
+import { notify } from '../services/notifications';
 
 import { login } from './user';
 import { getProduct } from './products';

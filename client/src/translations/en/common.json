@@ -453,5 +453,13 @@
         "articles": {
             "fetch": "We cannot seem to load the articles, maybe try again later?"
         }
-    }
+    },
+    "subscription-dropdown-header": "How it works",
+    "coffee-dropdown-header": "Read more about this coffee",
+    "coffee-tasting-dropdown-header": "Tasting Notes",
+    "coffee-characteristics-dropdown-header": "Characteristics",
+    "equipment-dropdown-header": "Product information",
+    "merchandise-dropdown-header": "Product information",
+    "altitude": "Altitude of",
+    "recyclable-coffee-bags": "Delivered in a 100% recyclable bag and recyclable box"
 }

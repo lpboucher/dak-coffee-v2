@@ -17,7 +17,7 @@ import reducers from './reducers';
 import i18n from './i18n';
 import { DakTheme } from './theme';
 
-import ScrollToTop from './components/utils/Routes/ScrollToTop';
+import ScrollToTop from './utils/routes/ScrollToTop';
 
 TagManager.initialize({gtmId: 'GTM-PMXJ7MF'})
 

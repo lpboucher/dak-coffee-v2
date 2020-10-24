@@ -1,7 +1,7 @@
 //import { combineReducers } from 'redux';
 import axios from 'axios';
 import i18n from "i18next";
-import { notify } from '../new/services/notifications';
+import { notify } from '../services/notifications';
 
 import {
     UPDATE_CART_REQUEST,

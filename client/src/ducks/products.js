@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import axios from 'axios';
 
-import { sortProductsByCoffeeAndSubscriptions, sortCategories } from '../new/services/productDisplayService';
+import { sortProductsByCoffeeAndSubscriptions, sortCategories } from '../services/productDisplayService';
 
 import { getCollectionBySlug } from './collections';
 import { getAllCategories } from './categories';
