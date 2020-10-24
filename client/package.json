@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://8cb0a7fb.ngrok.io",
+  "proxy": "https://da1091085aaa.ngrok.io",
   "dependencies": {
     "axios": "^0.19.0",
     "cogo-toast": "^4.2.3",
@@ -25,7 +25,6 @@
     "react-router-dom": "^5.1.2",
     "react-router-sitemap": "^1.2.0",
     "react-scripts": "3.2.0",
-    "react-slick": "^0.25.2",
     "react-spinners": "^0.6.1",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
@@ -38,11 +37,11 @@
     "reload": "cp -r ~/dak-coffee-v2/client/build/. /var/www/dakcoffeeroasters.com/html && sudo systemctl reload nginx",
     "sitemap": "babel-node src/sitemap-generator.js",
     "prebuild": "npm run sitemap",
-    "build": "react-scripts build && npm run snapshot",
+    "build": "react-scripts build",
+    "postbuild": "npm run reload",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "bundle": "source-map-explorer 'build/static/js/*.js'",
-    "snapshot": "react-snap || true"
+    "bundle": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
