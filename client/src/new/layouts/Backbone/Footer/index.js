@@ -1,13 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useResponsive } from '../../../hooks/utils/useResponsive';
 
 import { Link } from 'react-router-dom';
 import { Box, Paragraph } from 'grommet';
 
 import { layout } from '../../../../layout';
 
-const FooterLink = styled(Link)`
+const {
+  footerDescriptionWidth,
+  footerDescriptionWidth_small,
+  socialPad,
+  socialPad_small
+} = layout;
+
+export const FooterLink = styled(Link)`
   font-size: 12px;
+  width: ${layout.footerNavLinkWidth};
+`
+
+const WithOrder = styled(Box)`
+  order: ${({order}) => order};
 `
 
 const IconLink = styled.a`
@@ -19,34 +32,33 @@ const FooterLayout = ({
   socialIcons,
   navigationLinks,
   disclaimerText
-}) => (
-  <>
-    <Box direction="row" pad="small" background="lightGrey">
-      <Box width="33%" pad="medium">
-            <Paragraph size="small">
-                {description}
-            </Paragraph>
-            <Box direction="row" pad="small">
-              {socialIcons.map(({key, link, icon}) =>
-                <IconLink key={key} href={link} target="_blank" rel="noopener noreferrer">{icon}</IconLink>
-              )}
-            </Box>
-        </Box>
-        <Box direction="row" wrap pad="medium">
-            {navigationLinks.map(({target, identifier}) =>
-              <Box key={identifier} width={layout.footerNavLinkWidth}>
-                <FooterLink to={target}>{identifier}</FooterLink>
-              </Box>
+}) => {
+  const { lessThan } = useResponsive();
+  return (
+    <>
+      <Box wrap={lessThan.medium} direction="row" pad="medium" background="lightGrey">
+        <WithOrder width={lessThan.medium ? footerDescriptionWidth_small : footerDescriptionWidth} pad="medium">
+          <Paragraph size="small">
+              {description}
+          </Paragraph>
+          <Box direction="row" pad={{top: lessThan.medium ? socialPad_small : socialPad}}>
+            {socialIcons.map(({key, link, icon}) =>
+              <IconLink key={key} href={link} target="_blank" rel="noopener noreferrer">{icon}</IconLink>
             )}
-        </Box>
-    </Box>
-    <Box pad="small">
-      <Paragraph size="small" alignSelf="center">
+          </Box>
+        </WithOrder>
+        <WithOrder fill="horizontal" direction="row" wrap pad="medium">
+          {navigationLinks.map(nav => nav)}
+        </WithOrder>
+      </Box>
+      <Box pad="small">
+        <Paragraph size="small" alignSelf="center">
           {disclaimerText}
-      </Paragraph>
-    </Box>
-  </>
-)
+        </Paragraph>
+      </Box>
+    </>
+  )
+}
 
 export default FooterLayout;
 

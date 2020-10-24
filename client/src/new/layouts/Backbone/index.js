@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Main } from 'grommet';
 
@@ -13,12 +13,12 @@ const BackBoneLayout = ({
 }) => (
   <>
     {header}
-    {metas.map(meta => meta)}
+    {metas.map((meta, index) => <Fragment key={`meta${index}`}>{meta}</Fragment>)}
     <Main pad={{horizontal: layout.baseWrapperPadding}}>
       {main}
     </Main>
-    {footer}
-    {layers.map(layer => layer)}
+    {footer.map((f, index) => <Fragment key={`footer${index}`}>{f}</Fragment>)}
+    {layers.map((layer, index) => <Fragment key={`layer${index}`}>{layer}</Fragment>)}
   </>
 )
 

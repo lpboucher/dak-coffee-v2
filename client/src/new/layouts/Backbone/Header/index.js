@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useResponsive } from '../../../hooks/utils/useResponsive';
 
 import Headroom from 'react-headroom';
 import { Header, Box } from 'grommet';
@@ -14,31 +15,40 @@ const HeaderLayout = ({
   logo,
   navigation,
   settings
-}) => (
-  <HeaderContainer>
-    <Box width="100%" direction="column">
-      <Box
-        background="mainDark"
-        height={layout.barHeight}
-        justify="center"
-        pad={{horizontal: layout.baseWrapperPadding}}
-      >
-        {message}
+}) => {
+  const { greaterThan } = useResponsive();
+  return (
+    <HeaderContainer>
+      <Box width="100%" direction="column">
+        <Box
+          background="mainDark"
+          height={layout.barHeight}
+          justify="center"
+          pad={{horizontal: layout.baseWrapperPadding}}
+        >
+          {message}
+        </Box>
+        <Header
+          background="mainWhite"
+          height={layout.navigationHeight}
+          pad={{horizontal: layout.baseWrapperPadding}}
+        >
+          <Box
+          pad={{horizontal: "small"}}
+        >
+            {greaterThan.extraSmall &&
+              <Link to="/">
+                {logo}
+              </Link>
+            }
+          </Box>
+          {greaterThan.medium && navigation}
+          {settings}
+        </Header>
       </Box>
-      <Header
-        background="mainWhite"
-        height={layout.navigationHeight}
-        pad={{horizontal: layout.baseWrapperPadding}}
-      >
-        <Link to="/">
-        {logo}
-        </Link>
-        {navigation}
-        {settings}
-      </Header>
-    </Box>
-  </HeaderContainer>
-)
+    </HeaderContainer>
+  )
+}
 
 export default HeaderLayout;
 

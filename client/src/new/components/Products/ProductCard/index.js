@@ -2,43 +2,59 @@ import React from 'react';
 
 import { useSingleProduct } from '../../../hooks/products/useProducts';
 import { useCart } from '../../../hooks/cart/useCart';
-import { useCurrency } from '../../../hooks/global/useCurrency';
-
-import { getDisplayedProductPrice } from '../../../services/productDisplayService';
 
 import ProductCardLayout from '../../../layouts/Products/ProductCard';
 import CloudImage from '../../../utils/images/CloudImage';
 import ProductCardInfo from '../ProductCardInfo';
+import Skeleton from 'react-loading-skeleton';
 
-const ProductCard = ({id}) => {
-  const { currency } = useCurrency();
-  const { thumb_image, price, medallion, displayedTitle, displayedSubtitle, displayedHelper, slug } = useSingleProduct(id);
+const ProductCard = ({id, selected}) => {
+  const {
+    images,
+    price,
+    medallion,
+    displayedTitle,
+    displayedSubtitle,
+    displayedHelper,
+    slug,
+    type,
+    displayedPrice
+  } = useSingleProduct(id, selected);
   const { productAdding } = useCart(id);
-  const productPrice = price && getDisplayedProductPrice(price[currency.toLowerCase()]);
-  const productImage = <CloudImage
-                          img={`Products/Thumbs/${thumb_image}`}
+  const linkQuery = {
+    coffee: "?quantity=250g",
+    subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`
+  }
+  const productImage = images && <CloudImage
+                          img={`Products/Thumbs/${images.thumb}`}
                           maxWidth={500}
                           fit='contain'
                         />
   const info = <ProductCardInfo
                   id={id}
-                  displayedPrice={productPrice}
+                  displayedPrice={displayedPrice}
                   title={displayedTitle}
                   subTitle={displayedSubtitle}
                   helper={displayedHelper}
                   adding={productAdding}
+                  selected={selected ? {quantity: "2x250g", roast: selected} : null}
                 />
   return (
+    <>
+  {images && price ?
     <ProductCardLayout
       feature={productImage}
       info={info}
       medallion={medallion}
-      linkTarget={`shop/${slug}`}
+      linkTarget={`/shop/${type}/${slug}${linkQuery[type] || ""}`}
       isClickable={true}
     />
+    :
+    <Skeleton height={300} width={400}/>
+  }
+  </>
   )
 }
-
 
 export default ProductCard;
 

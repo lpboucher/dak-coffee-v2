@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import axios from 'axios';
 
 //Action Types
+export const FETCH_SUBSCRIPTION_SUCCESS = 'subscriptions/fetch_subscription_success';
 export const FETCH_SUBSCRIPTIONS_REQUEST = 'subscriptions/fetch_subscriptions_request';
 export const FETCH_SUBSCRIPTIONS_SUCCESS = 'subscriptions/fetch_subscriptions_success';
 export const FETCH_SUBSCRIPTIONS_FAILURE = 'subscriptions/fetch_subscriptions_failure';
@@ -28,6 +29,11 @@ switch (action.type) {
             return obj
         }, {})
     }
+    case FETCH_SUBSCRIPTION_SUCCESS:
+        return {
+            ...state,
+            [action.payload.id]: { ...action.payload }
+        }
     default:
         return state
     }
@@ -37,6 +43,8 @@ const allIds = (state = [], action) => {
     switch (action.type) {
       case FETCH_SUBSCRIPTIONS_SUCCESS:
         return action.payload.map(subscription => subscription.id)
+      case FETCH_SUBSCRIPTION_SUCCESS:
+        return [...new Set([ ...state, action.payload.id ])]
       default:
         return state
     }

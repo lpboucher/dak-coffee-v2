@@ -1,61 +1,84 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Box, Heading, Button } from 'grommet';
+import { useResponsive } from '../../../hooks/utils/useResponsive';
 
-import {layout} from '../../../../layout';
+import { Box, Heading, Text, Button } from 'grommet';
+
 import SimpleDropdown from '../../../components/Share/Dropdowns/Simple';
 import IconedDropdown from '../../../components/Share/Dropdowns/Iconed';
 
-import { ReactComponent as Bean} from '../../../../assets/icons/coffeebean.svg';
-import { ReactComponent as Altitude} from '../../../../assets/icons/altitude.svg';
-import { ReactComponent as Packaging} from '../../../../assets/icons/packaging.svg';
+import { layout } from '../../../../layout';
+
+const {
+  productNameFontSize,
+} = layout;
 
 export const AddButton = styled(Button)`
   border-radius: 0;
+  background: ${({theme}) => theme.global.colors.primary};
+  border: 2px solid ${({theme}) => theme.global.colors.primary};
+  min-width: ${({width}) => width};
+  padding: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 12px;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 2px ${({theme}) => theme.global.colors.primary};
+  }
 `
 
 export const PriceBox = styled(Box)`
-  width: 30%;
-  margin-left: 1px;
+  margin-left: 24px;
+  border: 1px solid grey;
+  background: none;
+`
+
+const DescBox = styled(Box)`
+  min-height: 100px;
+`
+
+const SpacedHeading = styled(Heading)`
+  letter-spacing: 1.2px;
+`
+
+const LightText = styled(Text)`
+  font-weight: 400;
 `
 
 const ProductDetailsLayout = ({
   title,
   staticPrice,
   description,
-  mainDropdown,
-  characteristics,
-  more,
-  hasProductOptions,
+  infoDropdowns,
   form
 }) => {
-    return (
+  const { mediaType } = useResponsive();
+  return (
     <Box fill>
-      <Heading level={1}>{title}</Heading>
-      <Heading level={3}>{staticPrice}</Heading>
-      <Heading level={5}>{description}</Heading>
+      <DescBox pad={{horizontal: "small"}} justify="around">
+        <SpacedHeading level={1} size={layout[`productNameFontSize_${mediaType}`] || productNameFontSize} responsive={false}>{title}</SpacedHeading>
+        <LightText>{staticPrice}</LightText>
+        <LightText>{description}</LightText>
+      </DescBox>
       {form}
-      <Box pad="small">
-        <SimpleDropdown
-          title={hasProductOptions ? "Tasting Notes" : "Product Information"}
-          text={mainDropdown}
-        />
-      </Box>
-      <Box pad="small">
-        <IconedDropdown
-          title="Characteristics"
-          elements={[
-            { icon: <Bean width="36px" />, text: "test 1" },
-            { icon: <Altitude width="36px" />, text: "test 2" },
-            {icon: <Packaging width="36px" />, text: "test 3" },
-          ]} />
-      </Box>
-      <Box pad="small">
-        <SimpleDropdown title="Ream More about this coffee" text="This coffee bla bla bla" />
+      <Box pad={{horizontal: "small", top: "small"}}>
+        {infoDropdowns.map(oneDropdown =>
+        <Box key={`${oneDropdown.type}-${oneDropdown.title}`} pad={{top: "medium"}}>
+          {oneDropdown.type === "iconed" ?
+          <IconedDropdown
+              title={oneDropdown.title}
+              elements={oneDropdown.content}
+              panelDirection={oneDropdown.direction ? oneDropdown.direction : "column"}/>
+          :
+          <SimpleDropdown title={oneDropdown.title} text={oneDropdown.content} />
+          }
+        </Box>
+        )}
       </Box>
     </Box>
-    );
+  );
 };
 
 export default ProductDetailsLayout;

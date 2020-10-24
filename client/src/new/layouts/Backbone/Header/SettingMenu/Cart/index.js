@@ -24,17 +24,17 @@ const CartLayout = ({quantity, showItems, open, close}) => {
             onMouseEnter={() => open()}
             onMouseLeave={() => close()}
             aria-controls="example-collapse-text"
-            className={"snipcart-checkout"}
+            className="snipcart-checkout"
         >
           {showItems ?
             <Stack anchor="right" fill>
                 <CartIcon />
                 <Box
-                    background="darkHighlight"
+                    background="primary"
                     pad={{ horizontal: 'xsmall' }}
                     round
                 >
-                  <Text size="xsmall">
+                  <Text color="mainWhite" size="xsmall" weight="bold">
                     {quantity}
                   </Text>
                 </Box>

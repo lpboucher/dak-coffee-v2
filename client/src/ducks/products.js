@@ -1,11 +1,15 @@
 import { combineReducers } from 'redux';
 import axios from 'axios';
 
-import { sortProductsByCoffeeAndSubscriptions } from '../new/services/productDisplayService';
+import { sortProductsByCoffeeAndSubscriptions, sortCategories } from '../new/services/productDisplayService';
 
 import { getCollectionBySlug } from './collections';
 import { getAllCategories } from './categories';
 import { getActiveFilters } from './views';
+import { getSimilar } from './similar';
+import { getSubscriptions } from './subscriptions';
+
+import { FETCH_SUBSCRIPTION_SUCCESS, FETCH_SUBSCRIPTIONS_SUCCESS } from './subscriptions';
 
 //Action Types
 export const FETCH_PRODUCTS_REQUEST = 'products/fetch_products_request';
@@ -14,27 +18,53 @@ export const FETCH_PRODUCTS_FAILURE = 'products/fetch_products_failure';
 export const FETCH_PRODUCT_SUCCESS = 'products/fetch_product_success';
 
 //Action Creators
-export const fetchProducts = (query = []) => async dispatch => {
-  let path = `/products`;
-  if (query.length > 0) {
-    path += `?${query.join("&")}`
-  }
+export const fetchCoffees = () => async dispatch => {
+  const type = "coffees"
+  let path = `/${type}`;
+  let query = "?isActive=true";
+  dispatch(fetchSome(`${path}${query}`, type));
+};
+
+export const fetchAll = () => async dispatch => {
+  const type = "all"
+  let path = `/products/${type}`;
+  let query = "?isActive=true";
+  dispatch(fetchSome(`${path}${query}`, "products"));
+};
+
+export const fetchSome = (path, type) => async dispatch => {
   dispatch({ type: FETCH_PRODUCTS_REQUEST });
   try {
       const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}${path}`);
-      dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: res.data.products, count: res.data.count });
+      dispatch({ type: FETCH_PRODUCTS_SUCCESS, payload: res.data[type], dataType: [type] });
+      dispatch({ type: FETCH_SUBSCRIPTIONS_SUCCESS, payload: Array.isArray(res.data.subscriptions) ? res.data.subscriptions : [res.data.subscriptions] });
   } catch(err) {
       dispatch({ type: FETCH_PRODUCTS_FAILURE, payload: {global: "error.products.fetch"}});
   }
 };
 
-export const fetchOneProduct = (id) => async dispatch => {
-  const path = `/products/${id}`;
+export const fetchOne = (id, path) => async dispatch => {
+  const idPath = `${path}/${id}`;
   dispatch({ type: FETCH_PRODUCTS_REQUEST });
   try {
-      const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}${path}`);
-      console.log(res);
-      dispatch({ type: FETCH_PRODUCT_SUCCESS, payload: res.data.product, count: res.data.count });
+      const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}${idPath}`);
+      dispatch({ type: FETCH_PRODUCT_SUCCESS, payload: res.data.product });
+      if (res.data.subscription != null) {
+        dispatch({ type: FETCH_SUBSCRIPTION_SUCCESS, payload: res.data.subscription });
+      }
+  } catch(err) {
+      dispatch({ type: FETCH_PRODUCTS_FAILURE, payload: {global: "error.products.fetch"}});
+  }
+};
+
+export const fetchOneById = (id) => async dispatch => {
+  dispatch({ type: FETCH_PRODUCTS_REQUEST });
+  try {
+      const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/products/${id}`);
+      dispatch({ type: FETCH_PRODUCT_SUCCESS, payload: res.data.product });
+      if (res.data.subscription != null) {
+        dispatch({ type: FETCH_SUBSCRIPTION_SUCCESS, payload: res.data.subscription });
+      }
   } catch(err) {
       dispatch({ type: FETCH_PRODUCTS_FAILURE, payload: {global: "error.products.fetch"}});
   }
@@ -66,44 +96,22 @@ const allIds = (state = [], action) => {
         case FETCH_PRODUCTS_SUCCESS:
         return action.payload.map(product => product.id)
         case FETCH_PRODUCT_SUCCESS:
-        return [ ...state, action.payload.id ]
+        return [...new Set([ ...state, action.payload.id ])]
         default:
         return state
     }
 }
 
-const total = (state = 0, action) => {
-  switch (action.type) {
-      case FETCH_PRODUCTS_SUCCESS:
-      case FETCH_PRODUCT_SUCCESS:
-      return action.count || 0;
-      default:
-      return state
-  }
-}
-
 export default combineReducers({
     byId,
     allIds,
-    total,
 })
 
 //Selectors
-//old
-export const getProductsByCollection = (state, slug) => {
-    const collection = getCollectionBySlug(state, slug);
-    if(collection) {
-        return collection.products.map(product => product.id);
-    }
-}
-
-//new
 // input selectors only select state data
 export const getProduct = (state, id) => state.products.byId[id] || null;
 
 export const getProducts = (state) => state.products.allIds;
-
-export const getProductCount = (state) => state.products.total;
 
 export const getAllProducts = (state) => state.products.allIds.map(id => getProduct(state, id));
 
@@ -143,7 +151,22 @@ export const getProductsFromTypes = (state, types) => {
 export const getSortedProducts = (state) => {
   const products = getAllSortedProducts(state);
   if (products) {
-    return products.map(product => product.id);
+    return products.map(product => {
+      return product.type === "subscription" ? [product.id, product.id] : product.id;
+    }).flat();
+  }
+}
+
+export const getSortedProductsFromCollection = (state, collection) => {
+  const subscriptions = getSubscriptions(state);
+  const foundCollection = getCollectionBySlug(state, collection);
+  if (foundCollection) {
+    return foundCollection.products.map(product =>
+      subscriptions.includes(product) ?
+        [{id: product, selected: "espresso-coffee"}, {id: product, selected: "filter-coffee"}]
+        :
+        {id: product}
+    ).flat();
   }
 }
 
@@ -154,16 +177,25 @@ export const getAllSortedProducts = (state) => {
   }
 }
 
-export const getFilteredProducts = (state, withSort = false) => {
-  const products = withSort ? getAllSortedProducts(state) : getAllProducts(state);
+export const getFilteredProductsByCategories = (state) => {
+  const categories = getAllCategories(state);
   const filters = getActiveFilters(state, "products");
-  if (products) {
-    if (filters.length < 1) return products.map(product => product.id)
 
-    const filteredProducts = products.filter(product => {
-      return product.categories.some(category => filters.includes(category.name))
+  if (categories) {
+    if (filters.length < 1) return sortCategories(categories);
+
+    const filteredCategoryProducts = categories.filter(category => {
+      return filters.includes(category.slug)
     });
-    return filteredProducts.map(product => product.id);
+
+    return sortCategories(filteredCategoryProducts);
+  }
+}
+
+export const getProductsFromSimilar = (state, slug) => {
+  const foundSimilar = getSimilar(state, slug);
+  if (foundSimilar) {
+    return foundSimilar.products;
   }
 }
 

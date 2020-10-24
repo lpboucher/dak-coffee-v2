@@ -1,38 +1,30 @@
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import common_en from './translations/en/common.json';
-import common_fr from './translations/fr/common.json';
-import common_nl from './translations/nl/common.json';
-import products_en from './translations/en/products.json';
-import products_fr from './translations/fr/products.json';
-import products_nl from './translations/nl/products.json';
+import translateEN from './translations/en.json';
+import translateFR from './translations/fr.json';
+import translateNL from './translations/nl.json';
 
 i18n.use(LanguageDetector).init({
-    interpolation: { 
+    interpolation: {
         escapeValue: false,
         format: function(value, format, lng) {
             if (format === 'bold') return value.bold();
             return value;
         }
     },
-    ns: ["common"],
-    defaultNS: "common",
     fallbackLng: "en",
     load: "languageOnly",
     resources: {
         en: {
-            common: common_en,
-            products: products_en
+          translation: translateEN
         },
         fr: {
-            common: common_fr,
-            products: products_fr
+          translation: translateFR
         },
         nl: {
-            common: common_nl,
-            products: products_nl
-        },
+          translation: translateNL
+        }
     },
 });
 

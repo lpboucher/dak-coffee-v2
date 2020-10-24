@@ -2,7 +2,6 @@ import React from 'react';
 
 import SEO from '../../components/utils/SEO/SEO';
 import HeroSlider from '../components/HeroSlider';
-import Quote from '../components/Share/Quote';
 import ProductsListing from '../components/Products/ProductsListing';
 
 const Home = () => {
@@ -10,8 +9,7 @@ const Home = () => {
     <>
         <SEO canon="https://www.dakcoffeeroasters.com" />
         <HeroSlider />
-        <Quote quote="hero.home"/>
-        <ProductsListing limit={9}/>
+        <ProductsListing compilation="home" limit={9}/>
     </>
   );
 }

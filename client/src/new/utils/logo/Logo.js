@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Logo = ({height}) => {
+const Logo = ({height, width}) => {
     return (
-    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" height={height} viewBox="0 0 467.05 44.96">
+    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 467.05 44.96">
       <defs>
         <clipPath id="clip-path" transform="translate(-56.44 -205.28)">
           <rect className="cls-1" x="56.44" y="205.28" width="145.68" height="43.91"/>

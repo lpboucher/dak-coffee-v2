@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useResponsive } from '../../hooks/utils/useResponsive';
 
 import { Box } from 'grommet'
 
@@ -18,15 +19,20 @@ const SliderContainer = styled(Box)`
 `
 
 const HeroSliderLayout = ({slides}) => {
-    const boxHeight = `calc(100vh - ${layout.topOffset})`;
-    const slideSettings = {dots: true}
-    return (
-      <SliderContainer height={boxHeight}>
-        <SliderLayout {...slideSettings}>
-          {slides.map(slide => slide)}
-        </SliderLayout>
-      </SliderContainer>
-    );
+  const { greaterThan } = useResponsive();
+  const boxHeight = `calc(85vh - ${layout.topOffset})`;
+  const slideSettings = {dots: true, autoplay: true};
+  return (
+    <>
+      {greaterThan.small &&
+        <SliderContainer height={boxHeight}>
+          <SliderLayout {...slideSettings}>
+            {slides.map(slide => slide)}
+          </SliderLayout>
+        </SliderContainer>
+      }
+    </>
+  );
 };
 
 export default HeroSliderLayout;

@@ -16,6 +16,15 @@ export const fetchArticles = () => async dispatch => {
     }
 };
 
+export const fetchOneArticle = (slug) => async dispatch => {
+  try {
+      const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/articles/${slug}`);
+      dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: [res.data] });
+  } catch(err) {
+      dispatch({ type: FETCH_ARTICLES_FAILURE, payload: {global: "error.articles.fetch"} });
+  }
+};
+
 //Reducers
 const byId = (state = {}, action) => {
 switch (action.type) {

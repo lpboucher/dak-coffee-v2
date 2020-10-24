@@ -1,19 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useAddProductToCart, useCart } from '../../../hooks/cart/useCart';
-import { useCurrency } from '../../../hooks/global/useCurrency';
-
-import { getCartProductOptions } from '../../../services/productDataService';
+import { useAddProductToCart } from '../../../hooks/cart/useCart';
 
 const AddBox = styled.div``
 
 const AddToCart = ({productId, addButton, selected}) => {
-  const { name, price, priceStr, description, type } = useAddProductToCart(productId);
-  const { productAdding } = useCart(productId)
-  const { currency } = useCurrency();
-  // need to also add data interval for subscriptions
-  // DO NOT FORGET TO ADD TYPE PROPERTY ON SUBSCRIPTION DATA
-  const cartOptions = price ? getCartProductOptions(price[currency.toLowerCase()], type, selected) : null;
+  const { name, price, priceStr, description, cartOptions } = useAddProductToCart(productId, selected);
   return (
     <>
       {price &&

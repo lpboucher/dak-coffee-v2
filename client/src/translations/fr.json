@@ -1,0 +1,108 @@
+{
+  "header-message": "Livraison gratuite {{region}} sur les commandes de {{threshold}}+",
+  "menu": "Menu",
+  "navigation": {
+    "home": "Accueil",
+    "shop": "Boutique",
+    "subscriptions": "Abonnements",
+    "about": "À propos",
+    "blog": "Blog",
+    "terms": "Termes et conditions",
+    "wholesale": "Vente en gros",
+    "newsletter": "Infolettre",
+    "privacy": "Politique de confidentialité",
+    "our-coffee": "Notre café",
+    "shipping": "Livraison",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "account": "Mon compte",
+    "log-out": "Déconnexion"
+  },
+  "slides": {
+    "limited-edition": {
+      "title": "Nouvelle Édition Limitée.",
+      "text": "Un Triple Geisha de la Colombie avec des saveurs florales, de bergamot, de citron et d'orange."
+    },
+    "dak-introduction": {
+      "title": "Test.",
+      "text": "Un Autre Triple Geisha de la Colombie avec des saveurs florales, de bergamot, de citron et d'orange."
+    }
+  },
+  "load-more": "Plus de produits",
+  "related-products": "Vous aimerez aussi",
+  "newsletter": {
+    "heading": "Nouvelles caféinées juste ici.",
+    "description": "Inscrivez-vous à notre infolettre pour connaître nos promotions exclusives, avoir des nouvelles et obtenir de judicieux conseils.",
+    "sign-up": "S'inscrire",
+    "privacy": "Politique de confidentialité des données",
+    "subscribed": "Merci! Utilisez {{code}} pour un rabais de {{discount}}"
+  },
+  "form": {
+    "name": "Votre nom",
+    "email": "Votre email"
+  },
+  "footer": {
+    "description": "Dak Coffee Roasters est une compagnie de torréfaction de café établie à Amsterdam. Du terroir à votre tasse, c'est avec fierté que nous vous proposons un café de qualité.",
+    "rights": "Dak Coffee Roasters 2020. All rights reserved."
+  },
+  "contact": {
+    "general": {
+      "name": "Informations générales",
+      "description": "Nous nous engageons à répondre dans un délai de 24h.",
+      "email": "info@dakcoffeeroasters.com"
+    },
+    "marketing": {
+      "name": "Relations publiques & Marketing",
+      "description": "Pour toutes demandes de relations publiques et marketing.",
+      "email": "marketing@dakcoffeeroasters.com"
+    }
+  },
+  "dropdown": {
+    "subscription": "Comment ça fonctionne?",
+    "coffee": "En apprendre plus sur ce café",
+    "coffee-tasting": "Saveurs",
+    "coffee-characteristics": "Charactéristiques",
+    "equipment": "Plus d'information",
+    "merchandise": "Plus d'information"
+  },
+  "cart": {
+    "add": "Ajouter au panier",
+    "adding": "Ajout...",
+    "added": "Ajouté au panier",
+    "items-in-cart": "Items dans le panier:",
+    "items-in-cart-mobile": "Items:",
+    "total": "Total:"
+  },
+  "shop": {
+    "all": "Voir les cafés",
+    "one": "Voir ce café"
+  },
+  "promotions": {
+    "get-%-off": "Recevez {{discount}} de rabais",
+    "newsletter" : "Inscrivez-vous à notre infolettre pour {{discount}} de rabais sur votre première commande"
+  },
+  "filters": {
+    "all": "Tous",
+    "clear": "Aucuns"
+  },
+  "price": {
+    "from": "À PARTIR DE"
+  },
+  "faq": {
+    "heading": "foire aux questions",
+    "company": "La compagnie",
+    "shop": "Boutique en ligne"
+  },
+  "about": {
+    "founders": {
+      "title": "Founders",
+      "description": "Dak Coffee Roasters est établie à Amsterdam, aux Pays-Bas. Nous faisons actuellement la torréfaction du café à Amsterdam Roasters, la première coopérative de café aux Pays-Bas.\n\nNous travaillons également en collaboration avec des partenaires à Montréal pour optimiser le processus d’envoi, ce qui nous permet d’offrir la livraison gratuite pour les abonnements en Amérique du Nord. Notre représentant Olivier Daigneault, installé à Montréal, est responsable des dégustations de nos cafés ainsi que de la distribution. N’hésitez pas à entrer en contact avec lui ici."
+    },
+    "coffee": {
+      "title": "Our coffee",
+      "description": "We believe the only way to identify unique flavors is to continually try new and innovative roasting profiles. For that reason, we are creative with our roasts and also do our best to sample-roast as often as we can!\n\nOnce a week, we order new green coffee samples. These samples are roasted in a very simple manner to limit the effect, the roast might have on the flavor of the origin. After sample-roasting, we conduct regular cupping sessions. Here, the new origin samples are tasted, and we identify the origins we want to order in larger quantities.\n\nIn order to identify the roast profiles that will eventually go on the shelves, we repeat the process of roasting the selected beans. However, this time we let our creativity run wild and test different combinations of roasting lengths, temperatures and airflow, to create unique roasts for specific beverages.\n\nFinally, a final cupping session with the bean in question, roasted in many different ways, allow us to decide on and finalize the roast profile that best highlight the unique flavor profile of its origin."
+    }
+  },
+  "altitude": "Altitude",
+  "recyclable-coffee-bags": "Livré dans un sac et une boîte 100% recyclables"
+}

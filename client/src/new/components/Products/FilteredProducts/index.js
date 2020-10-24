@@ -1,4 +1,5 @@
 import React from 'react';
+import { useResponsive } from '../../../hooks/utils/useResponsive';
 import { useCategories } from '../../../hooks/categories/useCategories';
 import { useFilteredProducts } from '../../../hooks/products/useProducts';
 
@@ -8,20 +9,27 @@ import ProductCard from '../../../components/Products/ProductCard';
 import SkeletonCardList from '../../../components/Share/Skeletons/SkeletonCardList';
 
 const FilteredProductsListing = () => {
-  const { categories } = useCategories();
-  const { productIds } = useFilteredProducts();
+  const { greaterThan } = useResponsive();
+  const { categoryOptions } = useCategories();
+  const { categoryProducts } = useFilteredProducts();
   return (
     <>
-      <Filter filterType="products" allOptions={categories.map(cat => cat.name)}/>
-      { productIds && productIds.length > 0 ?
-      <>
-        <ProductsListingLayout
-          showMore={false}
-        >
-          {productIds.map((id, index) => (
-            <ProductCard key={`${index}-${id}`} id={id} position={index}/>
-          ))}
-        </ProductsListingLayout>
+      {greaterThan.medium && <Filter filterType="products" allOptions={categoryOptions}/>}
+      { categoryProducts && categoryProducts.length > 0 ?
+        <>
+          {categoryProducts.map(category =>
+            (category.products.length > 0 &&
+              <ProductsListingLayout
+                key={`filter-${category.slug}`}
+                showMore={false}
+                heading={category.displayName}
+              >
+                {category.products.map((id, index) => (
+                  <ProductCard key={`${index}-${category.slug}-${id}`} id={id} position={index}/>
+                ))}
+              </ProductsListingLayout>
+            )
+          )}
       </>
       :
       <SkeletonCardList count={9} height={300} />

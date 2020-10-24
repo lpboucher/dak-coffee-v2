@@ -1,25 +1,27 @@
 import React from 'react';
 import { useCurrency } from '../hooks/global/useCurrency';
-import { useSingleProduct } from '../hooks/products/useProducts';
+import { useSingleProductPage } from '../hooks/products/useProducts';
 
 import { schemaBuilder } from '../utils/seo/schema';
 
 import SEO from '../utils/seo/SEO';
 import SingleProduct from '../components/Products/SingleProduct';
-import RelatedProducts from '../components/Products/RelatedProducts';
+import SimilarProducts from '../components/Products/SimilarProducts';
+import SkeletonSingleProduct from '../components/Share/Skeletons/SkeletonSingleProduct';
 
 const Product = ({ match }) => {
-  const { slug } = match.params;
+  const { slug, model } = match.params;
   const { currency } = useCurrency();
-  const { id, name, main_image, price, type, categories } = useSingleProduct(null, slug);
-  const schema = schemaBuilder(
+  const { id, name, images, price, type } = useSingleProductPage(slug, model);
+  const priceInCurrency = price && price.find(onePrice => onePrice.base.currency === currency.toLowerCase());
+  const schema = images && schemaBuilder(
     'Product',
     `https://www.dakcoffeeroasters.com/shop/${slug}`,
     name,
-    main_image,
+    images.main,
     currency,
-    price && price[currency.toLowerCase()]['value'],
-    // product.stock !== 0, make sure to readd
+    price && priceInCurrency.base.value,
+    true,
     slug
   );
   return (
@@ -27,13 +29,17 @@ const Product = ({ match }) => {
     {price &&
       <>
         <SEO
-          keywords={[type, name, ...categories.map(cat => cat.name)]}
+          keywords={[type, name]}
           schema={schema}
           canon={`https://www.dakcoffeeroasters.com/shop/${slug}`}
           url={`https://www.dakcoffeeroasters.com/shop/${slug}`}
         />
-        <SingleProduct id={id} image={main_image} />
-        <RelatedProducts slug={`related_${slug}`} />
+        {id && images ?
+        <SingleProduct id={id} image={images.main} />
+        :
+        <SkeletonSingleProduct />
+        }
+        <SimilarProducts slug={slug} />
       </>
     }
     </>

@@ -9,8 +9,8 @@ const Account = () => {
   const { t } = useTranslation();
   const { isLoggedIn, isStatusChanging, logout } = useLogIn();
     const subMenus = [
-        { label: `${t("nav.account")}`, className: 'snipcart-user-profile' },
-        { label: `${t("nav.log out")}`, onClick: () => {logout()} },
+        { label: `${t("navigation.account")}`, className: 'snipcart-user-profile' },
+        { label: `${t("navigation.log-out")}`, onClick: () => {logout()} },
     ];
     return (
     <>

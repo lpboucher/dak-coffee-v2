@@ -1,4 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from "react"
+
+import {
+  fetchOneById
+} from '../../../ducks/products';
 
 import {
   getCartQuantity,
@@ -17,12 +22,18 @@ import {
 } from '../../../ducks/views';
 
 import {
-  getDisplayedProductDescription
+  getDisplayedProductTitle,
+  getDisplayedProductDescription,
+  getDisplayedProductPrice,
+  getPriceInCurrency
 } from '../../services/productDisplayService';
 
 import {
-  getCartProductPrice
+  getCartProductPrice,
+  getCartProductOptions
 } from '../../services/productDataService';
+
+import { useCurrency } from '../global/useCurrency';
 
 export const useCart = (id = null) => {
   const dispatch = useDispatch();
@@ -54,10 +65,28 @@ export const useCart = (id = null) => {
 }
 
 export const useSingleCartItem = (itemId) => {
+  const { currency, toCurrency } = useCurrency();
+  const dispatch = useDispatch();
   const productItem = useSelector(state => getProductFromCartItem(state, itemId));
+
+  if (productItem && productItem.price) {
+    const priceInCurrency = getPriceInCurrency(productItem.price, currency);
+    var { title } = getDisplayedProductTitle(productItem);
+    var productPrice = getDisplayedProductPrice(priceInCurrency.base);
+    var totalPrice = toCurrency(productItem.total);
+  }
+
+  useEffect(() => {
+    if (!productItem) {
+      dispatch(fetchOneById(itemId));
+    }
+  }, []);
 
   return {
     ...productItem,
+    name: title,
+    productPrice,
+    totalPrice
   }
 }
 
@@ -69,19 +98,23 @@ export const useCartItems = () => {
   }
 }
 
-export const useAddProductToCart = (productId) => {
+export const useAddProductToCart = (productId, selected=null) => {
+  const { currency } = useCurrency();
   const productToAdd = useSelector(state => getCartItemToAdd(state, productId));
 
-  let priceString = "";
-  let translatedDescription = "";
   if (productToAdd) {
-    priceString = getCartProductPrice(productToAdd.price);
-    translatedDescription = getDisplayedProductDescription(productToAdd.type, productToAdd.slug);
+    const priceInCurrency = getPriceInCurrency(productToAdd.price, currency);
+    var priceString = getCartProductPrice(productToAdd.price);
+    var { title } = getDisplayedProductTitle(productToAdd);
+    var translatedDescription = getDisplayedProductDescription(productToAdd.type, productToAdd.slug);
+    var cartOptions = getCartProductOptions(priceInCurrency, productToAdd.type, selected);
   }
 
   return {
     ...productToAdd,
     priceStr: priceString,
-    description: translatedDescription
+    description: translatedDescription,
+    name: title,
+    cartOptions,
   }
 }

@@ -1,0 +1,108 @@
+{
+  "header-message": "Gratis verzending in {{region}} bij orders de {{threshold}}+",
+  "menu": "Menu",
+  "navigation": {
+    "home": "Home",
+    "shop": "Shop",
+    "subscriptions": "Abonnementen",
+    "about": "Over ons",
+    "blog": "Blog",
+    "terms": "Algemene voorwaarden",
+    "wholesale": "Groothandel",
+    "newsletter": "Newsletter",
+    "privacy": "Privacybeleid",
+    "our-coffee": "Onze koffie",
+    "shipping": "Shipping",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "account": "Dashboard",
+    "log-out": "Uitloggen"
+  },
+  "slides": {
+    "limited-edition": {
+      "title": "Nieuw limited edition.",
+      "text": "Triple Geisha from Colombia, with floral, bergamot, lemon and orange blossom notes"
+    },
+    "dak-introduction": {
+      "title": "Test.",
+      "text": "Another Triple Geisha from Colombia, with floral, bergamot, lemon and orange blossom notes"
+    }
+  },
+  "load-more": "Laad meer producten",
+  "related-products": "Gerelateerde producten",
+  "newsletter": {
+    "heading": "Koffie nieuws hier.",
+    "description": "Meld je aan voor onze nieuwsbrief en ontvang exclusieve koffiedeals, het laatste nieuws, smakelijke verhalen en handige tips.",
+    "sign-up": "Inschrijven",
+    "privacy": "Lees ons privacybereid",
+    "subscribed": "Dank Je! Gebruik code {{code}} voor {{discount}} korting"
+  },
+  "form": {
+    "name": "Naam",
+    "email": "Emailadres"
+  },
+  "footer": {
+    "description": "Dak Coffee Roasters is een koffiebranderij in Amsterdam. Wij willen iedereen laten genieten van échte koffie.",
+    "rights": "Dak Coffee Roasters 2020. All rights reserved."
+  },
+  "contact": {
+    "general": {
+      "name": "Algemene Vragen",
+      "description": "We do our best to respond to e-mails wthin 24 hours",
+      "email": "info@dakcoffeeroasters.com"
+    },
+    "marketing": {
+      "name": "PR & Marketing",
+      "description": "For press enquiries or partnerships.",
+      "email": "marketing@dakcoffeeroasters.com"
+    }
+  },
+  "dropdown": {
+    "subscription": "Hoe het werkt",
+    "coffee": "Lees meer over deze koffie",
+    "coffee-tasting": "Smaak Tonen",
+    "coffee-characteristics": "Kenmerken",
+    "equipment": "Productspecificaties",
+    "merchandise": "Productspecificaties"
+  },
+  "cart": {
+    "add": "In winkelmand",
+    "adding": "Toevoegen...",
+    "added": "Toegevoegd.",
+    "items-in-cart": "In winkelmand:",
+    "items-in-cart-mobile": "Items:",
+    "total": "Totaal:"
+  },
+  "shop": {
+    "all": "Bestel koffies",
+    "one": "Bestel koffie"
+  },
+  "promotions": {
+    "get-%-off": "Krijg {{discount}} korting",
+    "newsletter" : "Meld je aan voor onze nieuwsbrief en krijg {{discount}} korting"
+  },
+  "filters": {
+    "all": "Alle",
+    "clear": "Geen"
+  },
+  "price": {
+    "from": "VANAF"
+  },
+  "faq": {
+    "heading": "Veelgestelde vragen",
+    "company": "Het bedrijf",
+    "shop": "Online shop"
+  },
+  "about": {
+    "founders": {
+      "title": "Founders",
+      "description": "Dak Coffee Roasters is gevestigd in Amsterdam, Nederland. Op dit moment wordt onze koffie gebrand bij Amsterdam Roasters in Amsterdam Noord, het eerste koffiecollectief in Nederland. Daarnaast werken we samen met partners in Montreal, Canada. Hier werken we aan het optimaliseren van ons verzendproces, zodat we koffie-abonnementen in Noord-Amerika kunnen aanbieden met gratis verzending. Onze vertegenwoordiger Olivier Daigneault is gevestigd in Montreal en is beschikbaar voor koffieproeverijen en distributie."
+    },
+    "coffee": {
+      "title": "Onze koffie",
+      "description": "Goede koffie smaakt nog beter als het ook ethisch verantwoorde koffie is. Daarom hebben we bij DAK alleen partnerships met importeurs die onze waarden delen, werken we samen met exclusieve koffiegebieden* en doen we uitgebreid onderzoek naar de koffieboerderijen.\n\nBovendien betalen we graag iets meer voor onze groene koffiebonen zodat de boeren eerlijk betaald krijgen en onze klanten gegarandeerd de hoogste kwaliteit genieten."
+    }
+  },
+  "altitude": "Hoogte tot",
+  "recyclable-coffee-bags": "Ook onze verzenddozen zijn 100% recyclebaar"
+}

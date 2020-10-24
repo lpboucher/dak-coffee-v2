@@ -16,10 +16,19 @@ export const fetchTerms = () => async dispatch => {
     }
 };
 
+export const fetchOneTerm = (slug) => async dispatch => {
+  try {
+      const res = await axios.get(`${process.env.REACT_APP_API_PREFIX}/terms/${slug}`);
+      dispatch({ type: FETCH_TERMS_SUCCESS, payload: [res.data] });
+  } catch(err) {
+      dispatch({ type: FETCH_TERMS_FAILURE, payload: {global: "error.articles.fetch"} });
+  }
+};
+
 //Reducers
 const byId = (state = {}, action) => {
 switch (action.type) {
-    case FETCH_TERMS_SUCCESS:
+  case FETCH_TERMS_SUCCESS:
     return {
         ...state,
         ...action.payload.reduce((obj, term) => {

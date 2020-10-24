@@ -4,17 +4,17 @@ import i18n from "i18next";
 const options = {
   position: 'bottom-right',
   hideAfter: 3
-}
+};
 
 export const notify = {
   cart: {
-    add: ({quantityStep, name, price}) => {
-      cogoToast.success(`${quantityStep}x ${name} +${price.toFixed(2)}`, {...options, heading: 'Added to Cart'})
+    add: ({quantityStep, name, unitPrice}) => {
+      cogoToast.success(`${quantityStep}x ${name} +${unitPrice.toFixed(2)}`, {...options, heading: i18n.t("cart.added")})
     },
   },
   newsletter: {
     add: (code) => {
-      cogoToast.success(`Thank you! Use ${code} for a 15% discount`, {...options, hideAfter: 8, heading: 'Subscribed!'})
+      cogoToast.success(i18n.t("", {code: code, discount: "15%"}), {...options, hideAfter: 8, heading: 'Subscribed!'})
     },
     error: (messageKey) => {
       cogoToast.error(`${i18n.t(messageKey)}`, {...options, heading: 'Error'})

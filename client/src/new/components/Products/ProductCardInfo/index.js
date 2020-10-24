@@ -2,17 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Box, Text } from 'grommet';
-import { Add } from 'grommet-icons';
 import Skeleton from 'react-loading-skeleton';
 import ClipLoader from 'react-spinners/ClipLoader';
 
 import AddToCart from '../../../components/Cart/AddProduct';
 
+import Cart from "../../../utils/icons/Cart";
+
 const TruncateText = styled(Text)`
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    text-transform: uppercase;
+    text-transform: inherit;
     flex-grow:1;
 `
 
@@ -22,38 +23,41 @@ const FixedText = styled(Text)`
 
 const AddBox = styled(Box)`
   cursor: pointer;
+  border-radius: 3px;
   text-transform: uppercase;
+  background: ${({theme}) => theme.global.colors.mainDark};
    &:hover {
-     background: lightgrey;
+     background: ${({theme}) => theme.global.colors.primary};
    }
 `
 
-const ProductCardInfo = ({id, adding, displayedPrice, title, subTitle, helper}) => {
+const ProductCardInfo = ({id, adding, displayedPrice, title, subTitle, helper, selected}) => {
     return (
         <>
           <Box direction="row" justify="between">
-            <TruncateText textAlign="start" size="medium" weight="bold" >
+            <TruncateText textAlign="start" weight="bold" >
               {title || <Skeleton />}
             </TruncateText>
             <FixedText textAlign="end">{displayedPrice}</FixedText>
           </Box>
           <Box direction="row" align="center" justify="between">
             <Box>
-              <TruncateText textAlign="start" size="small" color="grey">
-                {subTitle || <Skeleton />}
+              <TruncateText textAlign="start" size="small">
+                {helper || <Skeleton />}
               </TruncateText>
-              <Text textAlign="start" weight="bold" size="xsmall" color="mainDark">
-                {helper}
-              </Text>
+              <TruncateText textAlign="start" weight="bold" size="xsmall">
+                {subTitle}
+              </TruncateText>
             </Box>
             <AddToCart
               productId={id}
+              selected={selected}
               addButton={
-              <AddBox background="mainDark" pad="xsmall" align="center" margin={{vertical: "small"}} round="xsmall">
+              <AddBox direction="row" pad={{vertical: "6px", horizontal: "12px"}} align="center" margin={{vertical: "small"}} round="xsmall">
                 {adding ?
-                  <ClipLoader size={12} color="white"/>
+                    <ClipLoader size={20} color="white"/>
                   :
-                  <Add size="small" />
+                    <Cart height="20" width="20" color="#ffffff" />
                 }
               </AddBox>}
             />

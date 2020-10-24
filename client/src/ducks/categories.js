@@ -54,6 +54,19 @@ export const getCategories = (state) => state.categories.allIds;
 
 export const getAllCategories = (state) => state.categories.allIds.map(id => getCategory(state, id));
 
+export const getCategoriesWithProducts = (state) => {
+  const allCategories = getAllCategories(state);
+  return allCategories.filter(category => category.products.length > 0);
+}
+
+export const getProductCategories = (state, productId) => {
+  const allCategories = getAllCategories(state);
+  if (allCategories) {
+    const categoriesWithProduct = allCategories.filter(cat => cat.products.includes(productId));
+    return categoriesWithProduct.map(cat => cat.slug);
+  }
+}
+
 export const getSortedCategories = (state) => {
     return state.categories.allIds.sort((a, b) => {
         if ( getCategory(state, a).order < getCategory(state, b).order) {

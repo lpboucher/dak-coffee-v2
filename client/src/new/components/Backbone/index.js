@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSnipcartCart, useSnipcartEvents } from '../../hooks/utils/useSnipcart';
 import { itemAdded, orderCompleted } from '../../services/eventTracking';
 import { initializeCart, updateCart, updatingCart, clearCart } from '../../../ducks/cart';
@@ -10,9 +11,11 @@ import SEO from '../../utils/seo/SEO';
 import BackBoneLayout from '../../layouts/Backbone';
 import Header from './Header';
 import { ToastContainer } from 'react-toastify';
+import Newsletter from '../Newsletter';
 import Footer from './Footer';
 import AnnouncementModal from '../../components/Backbone/AnnouncementModal';
 import CartReview from '../../components/Backbone/CartReview';
+import MobileMenu from '../../components/Backbone/MobileMenu';
 
 const BackBone = ({children}) => {
   const schema = schemaBuilder('WebSite', 'https://dakcoffeeroasters.com');
@@ -26,6 +29,7 @@ const BackBone = ({children}) => {
     itemAdded,
     orderCompleted
   );
+  const { pathname } = useLocation();
 
   return (
     <>
@@ -41,10 +45,14 @@ const BackBone = ({children}) => {
           <ToastContainer key="notification" position="bottom-right" />
         ]}
         main={children}
-        footer={<Footer />}
+        footer={[
+          <Newsletter type={pathname === "/subscribe" ? "full" : null}/>,
+          <Footer/>
+        ]}
         layers={[
           <CartReview key="cart" />,
-          <AnnouncementModal key="modal" />
+          <AnnouncementModal key="modal" />,
+          <MobileMenu key="mobileMenu" />
         ]}
       />
     </>

@@ -174,13 +174,10 @@ export const getProductFromCartItem = (state, id) => {
       return {
           id: cartItem.id,
           name: product.name,
-          price: {
-              unit: cartItem.unitPrice,
-              ...product.price
-          },
+          price: product.price.map(onePrice => ({...onePrice, unit: cartItem.unitPrice})),
           total: cartItem.totalPrice,
           quantity: cartItem.quantity,
-          image: product.thumb_image
+          image: product.images.thumb
       }
   }
 }

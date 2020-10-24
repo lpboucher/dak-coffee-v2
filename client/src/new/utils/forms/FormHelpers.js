@@ -1,6 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Field } from 'react-final-form';
 import { FormField, TextInput, RadioButton, RadioButtonGroup, CheckBox, Select } from "grommet";
+
+const StyledFormField = styled(FormField)`
+  border-bottom: ${({withBorder}) => withBorder ? '1px solid white' : 'none'};
+  margin: 20px;
+`;
 
 export const Condition = ({ when, is, children }) => (
     <Field name={when} subscription={{ value: true }}>
@@ -9,7 +15,7 @@ export const Condition = ({ when, is, children }) => (
   )
 
 export const TextInputAdapter = ({ input: {name, onChange, value, ...restInput}, meta, placeholder, ...rest }) => (
-    <FormField error={meta.modified && meta.error ? meta.error : ""} {...rest} >
+    <StyledFormField error={meta.modified && meta.error ? meta.error : ""} {...rest} >
         <TextInput
         {...restInput}
         placeholder={placeholder}
@@ -17,7 +23,7 @@ export const TextInputAdapter = ({ input: {name, onChange, value, ...restInput},
         onChange={onChange}
         value={value}
         />
-    </FormField>
+    </StyledFormField>
 )
 
 export const RadioAdapter = ({ input: {checked, name, onChange, value, ...restInput}, meta, label,...rest }) => (

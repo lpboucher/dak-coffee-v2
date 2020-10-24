@@ -10,7 +10,7 @@ export const useCurrency = () => {
 
   const currencySymbol = BY_CODE[currency];
 
-  const displayAsCurrency = (amount) => toCurrency(currencySymbol, amount)
+  const displayAsCurrency = (amount) => toCurrency(currency, amount)
 
   return {
     currency,

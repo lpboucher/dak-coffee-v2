@@ -2,53 +2,85 @@ import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
 
 import {
-  fetchProducts,
-  getProductsFromTypes,
+  fetchOne,
+  fetchAll,
   getProduct,
-  getSortedProducts,
-  getFilteredProducts,
-  getProducts,
-  getProductBySlug
+  getSortedProductsFromCollection,
+  getFilteredProductsByCategories,
+  getProductBySlug,
+  getProductsFromSimilar,
 } from '../../../ducks/products';
 
 import {
-  fetchRelated,
-  getRelatedBySlug,
-  getRelateds,
-} from '../../../ducks/related';
+  fetchAllSimilar,
+  getSimilars,
+} from '../../../ducks/similar';
+
+import {
+  fetchOneCollection,
+  fetchOneCollectionProducts,
+  getCollectionBySlug
+} from "../../../ducks/collections";
+
+import { getCategories, fetchCategories, getProductCategories } from "../../../ducks/categories";
+
+import {
+  getAllFetched
+} from "../../../ducks/views";
 
 import { useCurrency } from '../global/useCurrency';
 
 import {
+  getPriceInCurrency,
+  hasPricingOptions,
   getDisplayedProductTitle,
   getDisplayedProductPrice,
   getStaticProductPrice,
   getDisplayedProductDescription,
   getPriceIncrements,
-  getMedallion
+  getProductOptions,
+  getMedallion,
+  getCoffeeCharacteristics,
+  getLongProductDescription,
+  getTastingNotesWithMedallion,
+  getTranslatedItem
 } from '../../services/productDisplayService';
 
-export const useProductsWithLimit = (limit = null) => {
+export const useCompilationProductsWithLimit = (compilation, limit = null) => {
   const [count, setCount] = useState(limit);
   const dispatch = useDispatch();
 
-  const sortedProductsIds = useSelector(state => getSortedProducts(state));
-
-  const productsLength = sortedProductsIds.length;
+  const collection = useSelector(state => getCollectionBySlug(state, compilation));
+  const categories = useSelector(state => getCategories(state));
+  let allSortedProductsIds = useSelector(state => getSortedProductsFromCollection(state, compilation));
 
   useEffect(() => {
-    if (sortedProductsIds && productsLength < 1) {
-      dispatch(fetchProducts());
+    if (!collection) {
+      dispatch(fetchOneCollection(compilation));
     }
   }, []);
 
-  const upperLimit = limit == null ? productsLength : count;
+  useEffect(() => {
+    if (!allSortedProductsIds || (allSortedProductsIds && allSortedProductsIds.length < 1)) {
+      dispatch(fetchOneCollectionProducts(compilation));
+    }
+  }, []);
 
-  const showMore = () => setCount(Math.min(count+limit));
+  useEffect(() => {
+    if (categories && categories.length < 1) {
+      dispatch(fetchCategories());
+    }
+  }, []);
+
+  if (allSortedProductsIds) {
+    var upperLimit = limit == null ? allSortedProductsIds.length : count;
+    var showMore = () => setCount(Math.min(count+limit));
+    var sortedProductsIds = allSortedProductsIds.slice(0, upperLimit);
+  }
 
   return {
-    sortedProductsIds: sortedProductsIds.slice(0, upperLimit),
-    productCount: productsLength,
+    sortedProductsIds,
+    productCount: allSortedProductsIds ? allSortedProductsIds.length : 0,
     activeCount: count,
     showMore,
   }
@@ -56,56 +88,51 @@ export const useProductsWithLimit = (limit = null) => {
 
 export const useFilteredProducts = () => {
   const dispatch = useDispatch();
-  const products = useSelector(state => getProducts(state));
-  const productIds = useSelector(state => getFilteredProducts(state, true));
+  const fetched = useSelector(state => getAllFetched(state));
+  const productCategories = useSelector(state => getFilteredProductsByCategories(state));
+
+  let categoryProducts = [];
 
   useEffect(() => {
-    if (products && products.length < 1) {
-      dispatch(fetchProducts());
+    const needToFetch = !fetched.includes("products") || !(fetched.includes("coffees") && fetched.includes("merchandises") && fetched.includes("equipment"))
+    if (needToFetch) {
+      // dispatch(fetchProducts());
+      dispatch(fetchAll());
     }
   }, []);
 
+  if (productCategories && productCategories.length > 0) {
+    categoryProducts = productCategories.map(cat => {
+      return {
+        ...cat,
+        displayName: getTranslatedItem(cat.display),
+      }
+    })
+  }
+
   return {
-    productIds,
+    categoryProducts,
   }
 }
 
-export const useProductsByTypes = (productTypes = []) => {
-  const dispatch = useDispatch();
-
-  const productIds = useSelector(state => getProductsFromTypes(state, productTypes));
-
-  useEffect(() => {
-    if (productIds && productIds.length < 1) {
-      dispatch(fetchProducts());
-    }
-  }, []);
-
-  return {
-    productIds,
-  }
-}
-
-export const useSingleProduct = (productId=null, slug=null) => {
-  const dispatch = useDispatch();
+export const useSingleProduct = (productId, selected) => {
   const { currency } = useCurrency();
-  const products = useSelector(state => getProducts(state));
-  const product = useSelector(state => slug ? getProductBySlug(state, slug) : getProduct(state, productId));
-
-  useEffect(() => {
-    if (products && products.length < 1) {
-      dispatch(fetchProducts());
-    }
-  }, []);
+  const product = useSelector(state => getProduct(state, productId));
+  const categories = useSelector(state => getProductCategories(state, productId));
 
   if (product && product.price) {
-    const priceInCurrency = product.price[currency.toLowerCase()];
-    var { title, subtitle, helper } = getDisplayedProductTitle(product.type, product.slug);
-    var description = getDisplayedProductDescription(product.type, product.slug);
-    var formattedPrice = getDisplayedProductPrice(priceInCurrency);
-    var staticPrice = getStaticProductPrice(product.type, priceInCurrency);
-    var cartPrice = product.type !== "equipment" ? getPriceIncrements(priceInCurrency) : priceInCurrency.value;
-    var medallion = getMedallion(product.type);
+    const priceInCurrency = getPriceInCurrency(product.price, currency);
+    var hasPriceOptions = hasPricingOptions(product.type)
+    var { title, subtitle, helper } = getDisplayedProductTitle(product, selected);
+    var description = getDisplayedProductDescription(product.short);
+    var longDescription = getLongProductDescription(product);
+    var staticPrice = getStaticProductPrice(product.type, priceInCurrency.base);
+    var characteristics = getCoffeeCharacteristics(product);
+    var tastingNotes = getTastingNotesWithMedallion(product);
+    var cartPrice = getPriceIncrements(product.type, priceInCurrency);
+    var medallion = getMedallion(categories, selected);
+    var additionalOptions = getProductOptions(product.type);
+    var formattedPrice = getDisplayedProductPrice(priceInCurrency.base);
   }
 
   return {
@@ -117,23 +144,52 @@ export const useSingleProduct = (productId=null, slug=null) => {
     displayedHelper: helper,
     displayedPrice: formattedPrice,
     staticPrice: staticPrice,
-    cartPrice: cartPrice
+    cartPrice: cartPrice,
+    tastingNotes,
+    longDescription,
+    hasPriceOptions,
+    additionalOptions,
+    characteristics,
+    categories
   }
 }
 
-export const useRelatedProducts = (slug) => {
+export const useSingleProductPage = (slug, model) => {
   const dispatch = useDispatch();
-
-  const relatedIds = useSelector(state => getRelateds(state));
-  const related = useSelector(state => getRelatedBySlug(state, slug));
+  const product = useSelector(state => getProductBySlug(state, slug));
 
   useEffect(() => {
-    if (relatedIds && relatedIds.length < 1) {
-      dispatch(fetchRelated());
+    if (!product) {
+      dispatch(fetchOne(slug, `/products/${model}`));
     }
   }, []);
 
   return {
-    relatedProductIds: related ? related.products.map(product => product.id) : null
+    ...product,
+  }
+}
+
+export const useSimilarProducts = (slug) => {
+  const dispatch = useDispatch();
+
+  const fetched = useSelector(state => getAllFetched(state));
+  const similarIds = useSelector(state => getProductsFromSimilar(state, slug));
+  const similars = useSelector(state => getSimilars(state));
+
+  useEffect(() => {
+    if (similars && similars.length < 1) {
+      dispatch(fetchAllSimilar());
+    }
+  }, []);
+
+  useEffect(() => {
+    const needToFetch = !fetched.includes("products") || !(fetched.includes("coffees") && fetched.includes("merchandises") && fetched.includes("equipment"))
+    if (needToFetch) {
+      dispatch(fetchAll());
+    }
+  }, []);
+
+  return {
+    similarProductIds: similarIds
   }
 }

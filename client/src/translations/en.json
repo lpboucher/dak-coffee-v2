@@ -1,0 +1,108 @@
+{
+  "header-message": "Free shipping in {{region}} on orders of {{threshold}}+",
+  "menu": "Menu",
+  "navigation": {
+    "home": "Home",
+    "shop": "Shop",
+    "subscriptions": "Subscriptions",
+    "about": "About",
+    "blog": "Blog",
+    "terms": "Terms",
+    "wholesale": "Wholesale",
+    "newsletter": "Newsletter",
+    "privacy": "Privacy",
+    "our-coffee": "Our coffee",
+    "shipping": "Shipping",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "account": "Account Settings",
+    "log-out": "Log out"
+  },
+  "slides": {
+    "limited-edition": {
+      "title": "New limited edition.",
+      "text": "Triple Geisha from Colombia, with floral, bergamot, lemon and orange blossom notes"
+    },
+    "dak-introduction": {
+      "title": "Test.",
+      "text": "Another Triple Geisha from Colombia, with floral, bergamot, lemon and orange blossom notes"
+    }
+  },
+  "load-more": "Load More Products",
+  "related-products": "You may also like",
+  "newsletter": {
+    "heading": "Coffee news right here.",
+    "description": "Sign up to our newsletter to receive exclusive coffee promotions, news, stories, tips.",
+    "sign-up": "Sign up",
+    "privacy": "Read our privacy policy",
+    "subscribed": "Thank you! Use {{code}} for a {{discount}} discount"
+  },
+  "form": {
+    "name": "Your name",
+    "email": "Your email"
+  },
+  "footer": {
+    "description": "Dak Coffee Roasters is a coffee roasting company based in Amsterdam. From farm to cup, we take great pride in celebrating quality coffee.",
+    "rights": "Dak Coffee Roasters 2020. All rights reserved."
+  },
+  "contact": {
+    "general": {
+      "name": "General Inquiries",
+      "description": "We do our best to respond to e-mails wthin 24 hours.",
+      "email": "info@dakcoffeeroasters.com"
+    },
+    "marketing": {
+      "name": "Press & Marketing",
+      "description": "For press enquiries or partnerships.",
+      "email": "marketing@dakcoffeeroasters.com"
+    }
+  },
+  "dropdown": {
+    "subscription": "How it works",
+    "coffee": "Read more about this coffee",
+    "coffee-tasting": "Tasting Notes",
+    "coffee-characteristics": "Characteristics",
+    "equipment": "Product information",
+    "merchandise": "Product information"
+  },
+  "cart": {
+    "add": "Add to cart",
+    "adding": "Adding...",
+    "added": "Added to my cart",
+    "items-in-cart": "Items in cart:",
+    "items-in-cart-mobile": "Items:",
+    "total": "Total:"
+  },
+  "shop": {
+    "all": "Shop our coffees",
+    "one": "Shop this coffee"
+  },
+  "promotions": {
+    "get-%-off": "Get {{discount}} Off",
+    "newsletter" : "Register for our newsletter and get {{discount}} off your first order"
+  },
+  "filters": {
+    "all": "All",
+    "clear": "Clear"
+  },
+  "price": {
+    "from": "FROM"
+  },
+  "faq": {
+    "heading": "frequently asked questions",
+    "company": "The company",
+    "shop": "Web shop"
+  },
+  "about": {
+    "founders": {
+      "title": "Founders",
+      "description": "Based in Amsterdam, Dak Coffee Roasters was founded in 2019 by Louis-Philippe Boucher. Originally from Montreal, Canada, his passion for coffee began during his early years at University, studying and working full-time.<br>After working many years in the Finance and Venture Capital industry, Louis-Philippe decided to make the big move and leave everything behind to follow his passion. Much like with wine and beer, he wants people to discover the breadth and understand the complexity of flavors that coffee can offer.\n\nCoffee philosophy: Louis-Philippe used to be one of those people adding tons of cream and sugar to his coffee. That all changed when he lived in Milan and was introduced to the world of Italian espresso. This experience sparked a journey to discover and appreciate the many ways coffee can be brewed, served and enjoyed. He truly believes that every coffee beverage is unique in its own way and deserves a dedicated roast that celebrates it."
+    },
+    "coffee": {
+      "title": "Our coffee",
+      "description": "We believe the only way to identify unique flavors is to continually try new and innovative roasting profiles. For that reason, we are creative with our roasts and also do our best to sample-roast as often as we can!\n\nOnce a week, we order new green coffee samples. These samples are roasted in a very simple manner to limit the effect, the roast might have on the flavor of the origin. After sample-roasting, we conduct regular cupping sessions. Here, the new origin samples are tasted, and we identify the origins we want to order in larger quantities.\n\nIn order to identify the roast profiles that will eventually go on the shelves, we repeat the process of roasting the selected beans. However, this time we let our creativity run wild and test different combinations of roasting lengths, temperatures and airflow, to create unique roasts for specific beverages.\n\nFinally, a final cupping session with the bean in question, roasted in many different ways, allow us to decide on and finalize the roast profile that best highlight the unique flavor profile of its origin."
+    }
+  },
+  "altitude": "Altitude of",
+  "recyclable-coffee-bags": "Delivered in a 100% recyclable bag and recyclable box"
+}

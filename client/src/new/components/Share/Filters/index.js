@@ -1,53 +1,51 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useQueryFilters } from '../../../hooks/utils/useFilters';
 
-import FiltersLayout from '../../../layouts/Share/Filters';
+import FiltersLayout, { OneCategory } from '../../../layouts/Share/Filters';
 import Skeleton from 'react-loading-skeleton';
 
-import { Button } from 'grommet';
-
-const OneFilter = ({filterName, selected, add, remove}) => (
-  <Button
-    onClick={() => !selected ? add([filterName]) : remove(filterName)}
-    label={filterName}
-    plain={!selected}
-    primary={selected}
+const OneFilter = ({filter, selected, add, remove}) => (
+  <OneCategory
+    onClick={() => !selected ? add([filter]) : remove(filter)}
     margin={{vertical: "0px", horizontal: "medium"}}
-    size="small" />
+    selected={selected}
+  >
+    {filter.name}
+  </OneCategory>
 )
 
 const Filters = ({filterType, allOptions}) => {
-  const { add, remove, clear, activeFilters } = useQueryFilters(filterType);
+  const { t } = useTranslation();
+  const { add, remove, clear, activeFilters } = useQueryFilters(filterType, allOptions);
   return (
     <FiltersLayout>
-      <Button
+      <OneCategory
         onClick={() => add(allOptions)}
-        label="All"
-        plain
         margin={{vertical: "0px", horizontal: "medium"}}
-        size="small"
-      />
+      >
+        {t("filters.all")}
+      </OneCategory>
       {
         allOptions && allOptions.length > 1 ?
         allOptions.map(opt => (
           <OneFilter
-            key={opt}
+            key={opt.slug}
             add={add}
             remove={remove}
-            selected={activeFilters.includes(opt)}
-            filterName={opt}
+            selected={activeFilters.includes(opt.slug)}
+            filter={opt}
           />
         ))
         :
         <Skeleton height={50} width={400}/>
       }
-      <Button
+      <OneCategory
         onClick={() => clear()}
-        label="Clear"
-        plain
         margin={{vertical: "0px", horizontal: "medium"}}
-        size="small"
-      />
+      >
+        {t("filters.clear")}
+      </OneCategory>
     </FiltersLayout>
   )
 }

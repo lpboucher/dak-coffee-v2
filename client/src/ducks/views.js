@@ -31,6 +31,11 @@ import {
     FETCH_PRODUCTS_FAILURE,
 } from './products';
 
+
+import {
+  FETCH_COLLECTIONS_SUCCESS,
+} from './collections';
+
 import {
     FETCH_ARTICLES_FAILURE
 } from './articles';
@@ -118,13 +123,6 @@ export const switchDisplayCurrency = (currency) => (dispatch) => {
 export const trackLocation = (country) => dispatch => {
   dispatch({type: ACTIVATE_LOCATION, payload: country})
 }
-export const openMobileMenu = () => dispatch => {
-    dispatch({type: OPEN_MOBILE})
-}
-
-export const closeMobileMenu = () => dispatch => {
-    dispatch({type: CLOSE_MOBILE})
-}
 
 // new
 export const openModal = () => dispatch => {
@@ -134,6 +132,14 @@ export const openModal = () => dispatch => {
 // new
 export const closeModal = () => dispatch => {
     dispatch({type: CLOSE_MODAL})
+}
+
+export const openMobileMenu = () => dispatch => {
+  dispatch({type: OPEN_MOBILE})
+}
+
+export const closeMobileMenu = () => dispatch => {
+  dispatch({type: CLOSE_MOBILE})
 }
 
 export const addFilters = (dataType, filters) => dispatch => {
@@ -178,7 +184,8 @@ isCartOpen: false,
 isCartLoaded: false,
 filters: {
   products: []
-}
+},
+fetched: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -315,9 +322,14 @@ switch(action.type) {
                 isFetching: true
             }
     case FETCH_CART_SUCCESS:
-    case FETCH_PRODUCTS_SUCCESS:
             return {
                 ...state,
+            }
+    case FETCH_PRODUCTS_SUCCESS:
+    case FETCH_COLLECTIONS_SUCCESS:
+            return {
+                ...state,
+                fetched: [...new Set([...state.fetched, ...action.dataType])]
             }
     case FETCH_PRODUCTS_FAILURE:
     case FETCH_CART_FAILURE:
@@ -333,7 +345,7 @@ switch(action.type) {
           ...state,
           filters: {
             ...state.filters,
-            [action.data]: [...new Set([...state.filters[action.data], ...action.payload])]
+            [action.data]: [...new Set([...state.filters[action.data], ...action.payload.map(f => f.slug)])]
           }
       }
     case REMOVE_FILTERS:
@@ -341,7 +353,7 @@ switch(action.type) {
           ...state,
           filters: {
             ...state.filters,
-            [action.data]: state.filters[action.data].filter(f => f !== action.payload),
+            [action.data]: state.filters[action.data].filter(f => f !== action.payload.slug),
           }
       }
     case CLEAR_FILTERS:
@@ -382,6 +394,7 @@ export const getProcessingText = (state) => state.views.processingText;
 
 export const getLocation = (state) => state.views.clientLocation;
 
+// to be deleted
 export const getMediaSize = (state) => state.browser.mediaType;
 
 export const hasError = (state) => state.views.showError;
@@ -413,4 +426,9 @@ export const isCheckingLoginStatus = (state) => state.views.changingLoginStatus;
 
 export const getActiveFilters = (state, dataType) => state.views.filters[dataType];
 
+export const isDataFetched = (state, dataType) => state.views.fetched.includes(dataType);
+
+export const getAllFetched = (state) => state.views.fetched;
+
+export const getResponsive = (state) => state.browser;
 

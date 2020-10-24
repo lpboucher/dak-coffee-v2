@@ -1,21 +1,41 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import { Box } from 'grommet';
+import { useResponsive } from '../../../hooks/utils/useResponsive';
 
-import {layout} from '../../../../layout';
+import { Box, Heading } from 'grommet';
 
-const ProductsListingLayout = ({children, moreButton, showMore}) => {
+import { layout } from '../../../../layout';
+
+const {
+  categoryFontSize,
+  sectionPadding
+} = layout;
+
+const CappedHeading = styled(Heading)`
+  text-transform: uppercase;
+`;
+
+const ProductsListingLayout = ({children, moreButton, showMore, heading}) => {
+  const { mediaType, greaterThan } = useResponsive();
     return (
     <Box
-      direction="row"
-      justify="around"
       background="mainWhite"
-      pad={{vertical: layout.sectionPadding}}
-      wrap
+      pad={{vertical: greaterThan.small ? sectionPadding : "none"}}
       >
-        {children}
+        {heading &&
+          <Box pad={{bottom: sectionPadding}} margin={{horizontal: 'auto'}}>
+            <CappedHeading level={1} size={layout[`categoryFontSize_${mediaType}`] || categoryFontSize} responsive={false}>{heading}</CappedHeading>
+          </Box>
+        }
+        <Box
+          direction="row"
+          wrap
+        >
+          {children}
+        </Box>
         {showMore &&
-        <Box margin={{horizontal: 'auto'}}>
+        <Box margin={{horizontal: 'auto', vertical: '40px'}}>
           {moreButton}
         </Box>
         }

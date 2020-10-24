@@ -7,6 +7,7 @@ const SliderLayout = ({children, arrows, ...settings}) => {
         speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplaySpeed: 5000,
         nextArrow: arrows ? arrows.next : null,
         prevArrow: arrows ? arrows.prev : null,
         ...settings

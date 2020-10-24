@@ -9,7 +9,7 @@ import {
   clearFilters
 } from '../../../ducks/views';
 
-export const useQueryFilters = (dataType) => {
+export const useQueryFilters = (dataType, all) => {
   const { query, updateQuery, removeQuery } = useQuery("filter");
   const dispatch = useDispatch();
 
@@ -23,7 +23,8 @@ export const useQueryFilters = (dataType) => {
 
   useEffect(() => {
     if (filters && filters.length > 0) {
-      updateQuery(filters);
+      const newFilters = all.filter(one => filters.includes(one.slug)).map(one => one.name);
+      updateQuery(newFilters);
     } else {
       removeQuery()
     }

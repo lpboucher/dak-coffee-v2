@@ -14,6 +14,22 @@ html, body {
   font-family: Montserrat;
 }
 
+.ct-heading {
+  font-size: 14px;
+}
+
+.ct-text {
+  font-size: 12px;
+}
+
+.ct-toast-success {
+  border-left: 3px solid #343434 !important;
+}
+
+.ct-toast-success svg path {
+  fill: #343434 !important;
+}
+
 *,
 *::before,
 *::after {

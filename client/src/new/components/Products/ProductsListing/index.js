@@ -1,5 +1,6 @@
 import React from 'react';
-import { useProductsWithLimit } from '../../../hooks/products/useProducts';
+import { useTranslation } from 'react-i18next';
+import { useCompilationProductsWithLimit } from '../../../hooks/products/useProducts';
 
 import ProductsListingLayout from '../../../layouts/Products/ProductsListing';
 import ProductCard from '../../../components/Products/ProductCard';
@@ -7,9 +8,10 @@ import SkeletonCardList from '../../../components/Share/Skeletons/SkeletonCardLi
 
 import { Button } from 'grommet';
 
-const ProductsListing = ({limit=null}) => {
-  const { sortedProductsIds, activeCount, productCount, showMore } = useProductsWithLimit(limit);
-  const ShowMore = <Button onClick={showMore} primary label="Load More Products" type="button" />
+const ProductsListing = ({compilation, limit=null}) => {
+  const { t } = useTranslation();
+  const { sortedProductsIds, activeCount, productCount, showMore } = useCompilationProductsWithLimit(compilation, limit);
+  const ShowMore = <Button onClick={showMore} primary label={t("load-more")} type="button" />;
   return (
     <>
       { sortedProductsIds && sortedProductsIds.length > 0 ?
@@ -18,8 +20,13 @@ const ProductsListing = ({limit=null}) => {
           moreButton={ShowMore}
           showMore={limit && activeCount < productCount}
         >
-          {sortedProductsIds.map((id, index) => (
-            <ProductCard key={id} id={id} position={index}/>
+          {sortedProductsIds.map(({id, selected}, index) => (
+            <ProductCard
+              key={`${id}${selected ? '_' + selected : ''}`}
+              id={id}
+              position={index}
+              selected={selected ? selected : null}
+            />
           ))}
         </ProductsListingLayout>
       </>

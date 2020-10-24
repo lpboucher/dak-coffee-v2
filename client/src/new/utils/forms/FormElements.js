@@ -9,7 +9,7 @@ export const FormFieldQuantityInput = ({name, ...rest}) => {
     <Field name={name} type="input">
       {({input: {name, value, onChange}}) => (
         <FormQuantityInput direction="row" align="center" justify="between" width={rest.width}>
-          <QuantityButton disabled={value == 1} onClick={() => value != 1 && onChange(value - 1)}>-</QuantityButton>
+          <QuantityButton disabled={value === 1} onClick={() => value !== 1 && onChange(value - 1)}>-</QuantityButton>
           <QuantityInputField
             name={name}
             value={value}
@@ -38,7 +38,7 @@ export const FormFieldRadioButton = ({name, value, label, ...rest}) => {
                   pad="xsmall"
                   width={rest.width}
               >
-                <Text weight="bold">{label}</Text>
+                <Text>{label}</Text>
               </FormRadioButton>
           )}
       </Field>
@@ -48,16 +48,17 @@ export const FormFieldRadioButton = ({name, value, label, ...rest}) => {
 const FormRadioButton = styled(Box)`
     cursor: pointer;
     background-color: ${({checked}) => checked ? '#343434' : 'white'};
-    border: 1px solid #343434;
+    border: 1px solid grey;
     color: ${({checked}) => checked ? '#f7f8f9' : '#343434'};
     margin: 0 12px;
+    letter-spacing: 1px;
 
     &:first-of-type {
         margin-left: 0;
     }
 
     &:hover {
-        background-color: ${({checked}) => !checked ? '#a96c35' : '#343434'};
+        background-color: ${({checked, theme}) => !checked ? theme.global.colors.primary : theme.global.colors.mainDark};
     }
 `
 
@@ -65,7 +66,7 @@ const FormQuantityInput = styled(Box)`
     color: ${({checked}) => checked ? '#f7f8f9' : '#343434'};
     border: 1px solid #343434;
     margin: 0 12px;
-    padding: 6px;
+    padding: 1px 6px;
 
     &:first-of-type {
         margin-left: 0;
@@ -73,14 +74,17 @@ const FormQuantityInput = styled(Box)`
 `
 
 const QuantityInputField = styled.input`
-    line-height: 28px;
+    line-height: 23px;
     border: none;
     text-align: center;
     background: transparent;
+    max-width: 80px;
 `
 
 const QuantityButton = styled.div`
-    font-size: 28px;
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
     cursor: ${({disabled}) => disabled ? 'default': 'pointer'};
     color: ${({disabled}) => disabled ? 'grey': 'black'};
 `
