@@ -13,8 +13,8 @@ const CartWrapper = styled.div`
 `
 
 const CartIcon = styled(Cart)`
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     fill: black;
 `
 

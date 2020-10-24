@@ -1,7 +1,17 @@
 import React from 'react';
-import { Box, Carousel } from 'grommet';
+
+import { ThemeContext, Box, Carousel } from 'grommet';
 
 import { layout } from '../../../layout';
+
+const pointerEvents = {
+  box: {
+    extend: 'pointer-events: none;'
+  },
+  button: {
+    extend: 'pointer-events: auto; text-transform: uppercase;'
+  }
+}
 
 const SliderLayout = ({children, ...settings}) => {
     const slideSettings = {
@@ -11,11 +21,13 @@ const SliderLayout = ({children, ...settings}) => {
   };
   const boxHeight = `calc(85vh - ${layout.topOffset})`;
     return (
-      <Box height={boxHeight}>
-        <Carousel fill {...slideSettings}>
-          {children}
-        </Carousel>
-      </Box>
+      <ThemeContext.Extend value={pointerEvents}>
+        <Box height={boxHeight}>
+          <Carousel fill {...slideSettings}>
+            {children}
+          </Carousel>
+        </Box>
+    </ThemeContext.Extend>
     );
 };
 

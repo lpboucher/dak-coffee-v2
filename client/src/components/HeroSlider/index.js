@@ -48,8 +48,8 @@ const HeroSlider = () => {
               {
                 title: t("slides.limited-edition.title"),
                 text: t("slides.limited-edition.text"),
-                button: <SlideButton onClick={() => history.push("/shop/coffee/connoisseur-coffee")} primary label={t("shop.one")} />,
-                target: "/shop/coffee/connoisseur-coffee"
+                button: <SlideButton onClick={() => history.push("/shop/coffee/connoisseur")} primary label={t("shop.one")} />,
+                target: "/shop/coffee/connoisseur"
               },
             ]}
             slideImg="Heros/fancy_new_mwcomt"
@@ -73,8 +73,8 @@ const HeroSlider = () => {
               {
                 title: t("slides.dak-introduction.title"),
                 text: t("slides.dak-introduction.text"),
-                button: <SlideButton onClick={() => history.push("/shop/coffee/connoisseur-coffee")} primary label={t("shop.all")}/>,
-                target: "/shop/coffee/connoisseur-coffee"
+                button: <SlideButton onClick={() => history.push("/shop/coffee/connoisseur")} primary label={t("shop.all")}/>,
+                target: "/shop/coffee/connoisseur"
               },
             ]}
             slideImg="Heros/Header_NewDAK_aqfvak"

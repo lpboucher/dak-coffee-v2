@@ -88,7 +88,7 @@ export const DakTheme = {
     },
     heading: {
       level: 3,
-      margin: "large"
+      margin: "xsmall"
     }
   },
   button: {
