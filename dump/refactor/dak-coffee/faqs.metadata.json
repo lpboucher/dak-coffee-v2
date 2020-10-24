@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"dak-coffee.faqs"}],"uuid":"ff9952524f0c4aae914e5112b066a75a"}
