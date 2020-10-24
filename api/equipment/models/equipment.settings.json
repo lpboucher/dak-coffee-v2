@@ -1,27 +1,19 @@
 {
   "connection": "default",
-  "collectionName": "subscription",
+  "collectionName": "equipment",
   "info": {
-    "name": "subscription",
-    "description": "Coffee Subscriptions"
+    "name": "equipment"
   },
   "options": {
-    "timestamps": [
-      "createdAt",
-      "updatedAt"
-    ]
+    "increments": true,
+    "timestamps": true
   },
   "attributes": {
     "slug": {
       "type": "string",
       "index": true
     },
-    "images": {
-      "type": "component",
-      "repeatable": false,
-      "component": "images.product-images"
-    },
-    "short": {
+    "name": {
       "type": "component",
       "repeatable": false,
       "component": "translations.name"
@@ -30,6 +22,21 @@
       "type": "component",
       "repeatable": false,
       "component": "translations.description"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": false,
+      "component": "images.product-images"
+    },
+    "details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.description"
+    },
+    "price": {
+      "type": "component",
+      "repeatable": true,
+      "component": "prices.base"
     },
     "type": {
       "type": "enumeration",
@@ -40,12 +47,7 @@
         "subscription"
       ]
     },
-    "price": {
-      "type": "component",
-      "repeatable": true,
-      "component": "prices.price"
-    },
-    "name": {
+    "short": {
       "type": "component",
       "repeatable": false,
       "component": "translations.name"

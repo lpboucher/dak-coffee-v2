@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/categories",
-      "handler": "Category.getAll",
+      "path": "/faqs",
+      "handler": "faq.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/categories/count",
-      "handler": "Category.count",
+      "path": "/faqs/count",
+      "handler": "faq.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/categories/:id",
-      "handler": "Category.findOne",
+      "path": "/faqs/:id",
+      "handler": "faq.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/categories",
-      "handler": "Category.create",
+      "path": "/faqs",
+      "handler": "faq.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/categories/:id",
-      "handler": "Category.update",
+      "path": "/faqs/:id",
+      "handler": "faq.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/categories/:id",
-      "handler": "Category.delete",
+      "path": "/faqs/:id",
+      "handler": "faq.delete",
       "config": {
         "policies": []
       }

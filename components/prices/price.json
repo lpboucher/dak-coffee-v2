@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "components_prices_price",
+  "info": {
+    "name": "price",
+    "icon": "money"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "increments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "prices.options"
+    },
+    "base": {
+      "type": "component",
+      "repeatable": false,
+      "component": "prices.simple-price"
+    }
+  }
+}

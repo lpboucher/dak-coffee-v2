@@ -1,0 +1,19 @@
+{
+  "info": {
+    "name": "product_images",
+    "icon": "images"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "main": {
+      "type": "string"
+    },
+    "thumb": {
+      "type": "string"
+    }
+  },
+  "connection": "default",
+  "collectionName": "components_images_product_images"
+}

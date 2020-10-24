@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "components_translations_names",
+  "info": {
+    "name": "Short_text",
+    "icon": "atlas"
+  },
+  "options": {
+    "timestamps": []
+  },
+  "attributes": {
+    "en": {
+      "type": "string"
+    },
+    "fr": {
+      "type": "string"
+    },
+    "nl": {
+      "type": "string"
+    }
+  }
+}

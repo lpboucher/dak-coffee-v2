@@ -1,0 +1,16 @@
+{
+  "connection": "default",
+  "collectionName": "components_prices_bases",
+  "info": {
+    "name": "Base",
+    "icon": "money-bill-alt"
+  },
+  "options": {},
+  "attributes": {
+    "base": {
+      "type": "component",
+      "repeatable": false,
+      "component": "prices.simple-price"
+    }
+  }
+}

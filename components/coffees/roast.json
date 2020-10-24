@@ -1,0 +1,34 @@
+{
+  "info": {
+    "name": "Roast",
+    "icon": "angry"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "en": {
+      "type": "enumeration",
+      "enum": [
+        "filter",
+        "espresso"
+      ]
+    },
+    "nl": {
+      "type": "enumeration",
+      "enum": [
+        "filter",
+        "espresso"
+      ]
+    },
+    "fr": {
+      "type": "enumeration",
+      "enum": [
+        "filtre",
+        "espresso"
+      ]
+    }
+  },
+  "connection": "default",
+  "collectionName": "components_coffees_roasts"
+}

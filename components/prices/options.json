@@ -1,0 +1,20 @@
+{
+  "connection": "default",
+  "collectionName": "components_prices_options",
+  "info": {
+    "name": "Options",
+    "icon": "bars"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "option": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string",
+      "default": "[+0.00]"
+    }
+  }
+}

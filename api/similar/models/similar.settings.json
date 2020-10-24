@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "similars",
+  "info": {
+    "name": "similar"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "coffees": {
+      "collection": "coffee"
+    },
+    "equipment": {
+      "collection": "equipment"
+    },
+    "merchandises": {
+      "collection": "merchandise"
+    },
+    "product_slug": {
+      "type": "string",
+      "index": true
+    }
+  }
+}

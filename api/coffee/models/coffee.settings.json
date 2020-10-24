@@ -1,0 +1,68 @@
+{
+  "connection": "default",
+  "collectionName": "coffees",
+  "info": {
+    "name": "Coffee"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": false
+  },
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "index": true
+    },
+    "name": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.name"
+    },
+    "short": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.name"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.description"
+    },
+    "roast": {
+      "type": "component",
+      "repeatable": false,
+      "component": "coffees.roast"
+    },
+    "price": {
+      "type": "component",
+      "repeatable": true,
+      "component": "prices.price"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": false,
+      "component": "images.product-images"
+    },
+    "origin": {
+      "type": "component",
+      "repeatable": false,
+      "component": "coffees.origin-characteristics"
+    },
+    "harvest": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.description"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "coffee",
+        "equipment",
+        "merchandise"
+      ]
+    }
+  }
+}

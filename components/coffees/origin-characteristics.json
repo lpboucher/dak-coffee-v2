@@ -1,0 +1,40 @@
+{
+  "connection": "default",
+  "collectionName": "components_coffees_origin_characteristics",
+  "info": {
+    "name": "Origin_characteristics",
+    "icon": "coffee"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "country": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.name"
+    },
+    "altitude": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "lot": {
+      "type": "string"
+    },
+    "variety": {
+      "type": "string"
+    },
+    "tasting_notes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.name"
+    },
+    "process": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.name"
+    }
+  }
+}

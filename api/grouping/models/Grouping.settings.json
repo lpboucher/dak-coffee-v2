@@ -16,8 +16,8 @@
       "type": "string"
     },
     "products": {
-      "collection": "product",
-      "via": "grouping"
+      "via": "grouping",
+      "collection": "product"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "equipment",
+  "collectionName": "products",
   "info": {
     "name": "product",
     "description": "Content type for all products"
@@ -37,9 +37,10 @@
     "main_image": {
       "type": "string"
     },
-    "categories": {
-      "collection": "category",
-      "via": "products"
+    "test": {
+      "type": "component",
+      "repeatable": true,
+      "component": "prices.price"
     }
   }
 }

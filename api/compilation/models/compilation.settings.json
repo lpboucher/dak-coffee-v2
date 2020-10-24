@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "compilations",
+  "info": {
+    "name": "Compilation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "index": true
+    },
+    "coffees": {
+      "collection": "coffee"
+    },
+    "merchandises": {
+      "collection": "merchandise"
+    },
+    "equipment": {
+      "collection": "equipment"
+    },
+    "subscriptions": {
+      "collection": "subscription"
+    }
+  }
+}

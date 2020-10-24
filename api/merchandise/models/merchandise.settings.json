@@ -1,27 +1,19 @@
 {
   "connection": "default",
-  "collectionName": "subscription",
+  "collectionName": "merchandises",
   "info": {
-    "name": "subscription",
-    "description": "Coffee Subscriptions"
+    "name": "Merchandise"
   },
   "options": {
-    "timestamps": [
-      "createdAt",
-      "updatedAt"
-    ]
+    "increments": true,
+    "timestamps": true
   },
   "attributes": {
     "slug": {
       "type": "string",
       "index": true
     },
-    "images": {
-      "type": "component",
-      "repeatable": false,
-      "component": "images.product-images"
-    },
-    "short": {
+    "name": {
       "type": "component",
       "repeatable": false,
       "component": "translations.name"
@@ -31,21 +23,30 @@
       "repeatable": false,
       "component": "translations.description"
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "coffee",
-        "equipment",
-        "merchandise",
-        "subscription"
-      ]
+    "images": {
+      "type": "component",
+      "repeatable": false,
+      "component": "images.product-images"
+    },
+    "details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.description"
     },
     "price": {
       "type": "component",
       "repeatable": true,
-      "component": "prices.price"
+      "component": "prices.base"
     },
-    "name": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "coffee",
+        "merchandise",
+        "subscription"
+      ]
+    },
+    "short": {
       "type": "component",
       "repeatable": false,
       "component": "translations.name"

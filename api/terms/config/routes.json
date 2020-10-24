@@ -18,8 +18,8 @@
     },
     {
       "method": "GET",
-      "path": "/terms/:id",
-      "handler": "Terms.findOne",
+      "path": "/terms/:slug",
+      "handler": "Terms.getTermBySlug",
       "config": {
         "policies": []
       }

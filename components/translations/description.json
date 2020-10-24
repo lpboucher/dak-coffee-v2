@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "components_translations_descriptions",
+  "info": {
+    "name": "Long_text",
+    "icon": "at"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "en": {
+      "type": "text"
+    },
+    "fr": {
+      "type": "text"
+    },
+    "nl": {
+      "type": "text"
+    }
+  }
+}

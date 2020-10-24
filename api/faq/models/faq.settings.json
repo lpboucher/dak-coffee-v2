@@ -1,0 +1,33 @@
+{
+  "info": {
+    "name": "FAQ"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "question": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.name"
+    },
+    "answer": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.description"
+    },
+    "group": {
+      "type": "enumeration",
+      "enum": [
+        "company",
+        "shop",
+        "subscription",
+        "packaging",
+        "environment"
+      ]
+    }
+  },
+  "connection": "default",
+  "collectionName": "faqs"
+}

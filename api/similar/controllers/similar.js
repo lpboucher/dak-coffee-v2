@@ -2,16 +2,17 @@
 const format = require('../../utils/dataFormats');
 
 /**
- * Read the documentation () to implement custom controller functions
+ * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/controllers.html#core-controllers)
+ * to customize this controller
  */
-
 const getAll = async (ctx) => {
   const excludeFields = {
     createdAt: 0,
     updatedAt: 0,
     __v: 0,
+    merchandise: 0,
   };
-  const categories = await strapi.query('category').model
+  const similars = await strapi.query('similar').model
     .find(ctx.query, excludeFields)
     .populate([
       {
@@ -27,8 +28,8 @@ const getAll = async (ctx) => {
         match: { isActive: true },
       },
     ]);
-  const withCombinedProducts = categories.map(category => {
-    return format.combineArray(category, 'products');
+  const withCombinedProducts = similars.map(similar => {
+    return format.combineArray(similar, 'products');
   });
   ctx.send(withCombinedProducts);
 };

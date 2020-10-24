@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/subscriptions",
-      "handler": "Subscription.find",
+      "handler": "Subscription.getSubscriptions",
       "config": {
         "policies": []
       }

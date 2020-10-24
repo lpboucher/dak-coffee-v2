@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/compilations",
+      "handler": "compilation.getAll",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/compilations/count",
+      "handler": "compilation.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/compilations/:slug",
+      "handler": "compilation.getCompilation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/compilations/:slug/products",
+      "handler": "compilation.getCompilationProducts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/compilations",
+      "handler": "compilation.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/compilations/:id",
+      "handler": "compilation.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/compilations/:id",
+      "handler": "compilation.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

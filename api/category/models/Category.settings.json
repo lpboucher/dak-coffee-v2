@@ -12,19 +12,32 @@
     ]
   },
   "attributes": {
+    "display": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.name"
+    },
     "name": {
       "type": "string"
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "index": true
     },
     "products": {
-      "collection": "product",
-      "via": "categories",
-      "dominant": true
+      "collection": "product"
     },
     "order": {
       "type": "integer"
+    },
+    "coffees": {
+      "collection": "coffee"
+    },
+    "merchandises": {
+      "collection": "merchandise"
+    },
+    "equipment": {
+      "collection": "equipment"
     }
   }
 }

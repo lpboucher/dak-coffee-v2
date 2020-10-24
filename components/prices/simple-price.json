@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "components_prices_simple_prices",
+  "info": {
+    "name": "simple_price",
+    "icon": "money-bill"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "value": {
+      "type": "decimal"
+    },
+    "currency": {
+      "type": "string"
+    }
+  }
+}

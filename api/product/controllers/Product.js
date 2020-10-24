@@ -100,5 +100,5 @@ module.exports = {
   getRightRoastProducts,
   getRightRoastCoffeeById
   getProducts,
-  getProduct
+  getProduct,
 };

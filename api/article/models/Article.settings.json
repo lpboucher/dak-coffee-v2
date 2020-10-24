@@ -6,10 +6,7 @@
     "description": "List of blog articles"
   },
   "options": {
-    "timestamps": [
-      "createdAt",
-      "updatedAt"
-    ]
+    "timestamps": false
   },
   "attributes": {
     "title_en": {
