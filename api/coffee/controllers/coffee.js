@@ -104,10 +104,53 @@ const snipcartParser = async (ctx) => {
   ctx.send(data);
 };
 
+const getRightRoastProducts = async (ctx) => {
+  let coffees = await strapi.query('coffee').model.find(ctx.query, {...baseFields, roast: 1, origin: 1, harvest: 1});
+  let sanitized = coffees.map((oneCoffee) => {
+    const coffeeObj = oneCoffee.toObject();
+    const priceInEur = coffeeObj.price.find((onePrice) => onePrice.base.currency === 'eur');
+    return {
+      id: coffeeObj.id,
+      name: coffeeObj.name.en,
+      slug: coffeeObj.slug,
+      permalink: `https://dakcoffeeroasters.com/shop/coffee/${coffeeObj.slug}`,
+      description: coffeeObj.description.en,
+      weight: '250g',
+      stock_status: 'in_stock',
+      price: priceInEur.base.value,
+      regular_price: `€${priceInEur.base.value}`,
+      currency: priceInEur.base.currency
+    };
+  });
+  ctx.send({data: sanitized});
+};
+
+const getRightRoastCoffeeById = async (ctx) => {
+  const { id } = ctx.params;
+  let coffee = await strapi.query('coffee').model.findOne({ _id:id }, {...baseFields, roast: 1, origin: 1, harvest: 1});
+  const coffeeObj = coffee.toObject();
+  const priceInEur = coffeeObj.price.find((onePrice) => onePrice.base.currency === 'eur');
+  let sanitized = {
+    id: coffeeObj.id,
+    name: coffeeObj.name.en,
+    slug: coffeeObj.slug,
+    permalink: `https://dakcoffeeroasters.com/shop/coffee/${coffeeObj.slug}`,
+    description: coffeeObj.description.en,
+    weight: '250g',
+    stock_status: 'in_stock',
+    price: priceInEur.base.value,
+    regular_price: `€${priceInEur.base.value}`,
+    currency: priceInEur.base.currency
+  };
+  ctx.send({data: sanitized});
+};
+
 module.exports = {
   getProductBySlug,
   getProductById,
   getCoffees,
   getAllProducts,
-  snipcartParser
+  snipcartParser,
+  getRightRoastProducts,
+  getRightRoastCoffeeById
 };

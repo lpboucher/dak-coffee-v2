@@ -78,6 +78,22 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/trr/products",
+      "handler": "coffee.getRightRoastProducts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/trr/products/:id",
+      "handler": "coffee.getRightRoastCoffeeById",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
