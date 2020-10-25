@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { useResponsive } from '../../../hooks/utils/useResponsive';
 
-import { Accordion, AccordionPanel } from 'grommet';
+import { Box, Accordion, AccordionPanel } from 'grommet';
 
 import { layout } from '../../../layout';
 
@@ -20,26 +20,20 @@ const Panel = styled(AccordionPanel)`
   }
 `;
 
-const DropDownLayout = ({multi=false, accordion}) => {
+const DropDownLayout = ({accordions = []}) => {
   const { mediaType } = useResponsive();
     return (
-      <>
-      {!multi ?
-      <Accordion>
-        <Panel size={layout[`accordionFontSize_${mediaType}`] || accordionFontSize} label={accordion.title}>
-          {accordion.content}
-        </Panel>
-      </Accordion>
-      :
-      <Accordion>
-        {accordion.map(acc =>
-        <Panel size={layout[`accordionFontSize_${mediaType}`] || accordionFontSize} label={acc.title}>
-          {acc.content}
-        </Panel>
-        )}
-      </Accordion>
-      }
-      </>
+      <Box pad={{horizontal: "small", top: "small"}}>
+        <Accordion>
+          {accordions.map(acc =>
+          <Box key={`${acc.title}`} pad={{top: "medium"}}>
+            <Panel size={layout[`accordionFontSize_${mediaType}`] || accordionFontSize} label={acc.title}>
+              {acc.content}
+            </Panel>
+          </Box>
+          )}
+        </Accordion>
+      </Box>
     );
 };
 

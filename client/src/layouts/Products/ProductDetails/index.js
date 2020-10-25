@@ -5,8 +5,7 @@ import { useResponsive } from '../../../hooks/utils/useResponsive';
 
 import { Box, Heading, Text, Button } from 'grommet';
 
-import SimpleDropdown from '../../../components/Share/Dropdowns/Simple';
-import IconedDropdown from '../../../components/Share/Dropdowns/Iconed';
+import Dropdown from '../../../components/Share/Dropdowns';
 
 import { layout } from '../../../layout';
 
@@ -63,20 +62,7 @@ const ProductDetailsLayout = ({
         <LightText>{description}</LightText>
       </DescBox>
       {form}
-      <Box pad={{horizontal: "small", top: "small"}}>
-        {infoDropdowns.map(oneDropdown =>
-        <Box key={`${oneDropdown.type}-${oneDropdown.title}`} pad={{top: "medium"}}>
-          {oneDropdown.type === "iconed" ?
-          <IconedDropdown
-              title={oneDropdown.title}
-              elements={oneDropdown.content}
-              panelDirection={oneDropdown.direction ? oneDropdown.direction : "column"}/>
-          :
-          <SimpleDropdown title={oneDropdown.title} text={oneDropdown.content} />
-          }
-        </Box>
-        )}
-      </Box>
+      <Dropdown dropdowns={infoDropdowns} />
     </Box>
   );
 };
