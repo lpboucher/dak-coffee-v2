@@ -30,7 +30,7 @@ const getAllProducts = async (ctx) => {
     strapi.query('equipment').model.find(ctx.query, {...baseFields, details: 1}),
     strapi.query('subscription').model.find(ctx.query, {...baseFields}),
   ]);
-  const products = queries.flat().map(one => one.toObject());
+  const products = [].concat(...queries).map(one => one.toObject());
   const result = {
     products: products,
     subscriptions: products[products.length -1]
@@ -89,7 +89,7 @@ const snipcartParser = async (ctx) => {
     strapi.query('equipment').model.find(ctx.query, {...baseFields, details: 1}),
     strapi.query('subscription').model.find(ctx.query, {...baseFields}),
   ]);
-  const data = queries.flat().map(one => {
+  const data = [].concat(...queries).map(one => {
     const product = one.toObject();
     return {
       'id': product._id,
