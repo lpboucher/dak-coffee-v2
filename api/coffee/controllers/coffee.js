@@ -105,7 +105,7 @@ const snipcartParser = async (ctx) => {
 };
 
 const getRightRoastProducts = async (ctx) => {
-  let coffees = await strapi.query('coffee').model.find(ctx.query, {...baseFields, roast: 1, origin: 1, harvest: 1});
+  let coffees = await strapi.query('coffee').model.find({ isActive: true, ...ctx.query }, {...baseFields, roast: 1, origin: 1, harvest: 1});
   let sanitized = coffees.map((oneCoffee) => {
     const coffeeObj = oneCoffee.toObject();
     const priceInEur = coffeeObj.price.find((onePrice) => onePrice.base.currency === 'eur');
