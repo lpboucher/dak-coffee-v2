@@ -22,6 +22,7 @@ const getEquipments = async (ctx) => {
     ...baseFields,
   };
   const equipments = await strapi.query('equipment').model.find(ctx.query, includedFields);
+  console.log(equipments);
   ctx.send({equipment: equipments});
 };
 
