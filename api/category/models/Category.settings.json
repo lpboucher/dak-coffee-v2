@@ -24,9 +24,6 @@
       "type": "string",
       "index": true
     },
-    "products": {
-      "collection": "product"
-    },
     "order": {
       "type": "integer"
     },
