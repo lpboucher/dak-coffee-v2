@@ -22,7 +22,8 @@ import {
   Cinnamon,
   Hazelnut,
   Caramel,
-  Sugar
+  Sugar,
+  Vanilla
 } from '../utils/medallion/FlavorMedallions';
 
 export const FLAVORS = {
@@ -45,7 +46,7 @@ export const FLAVORS = {
   "plum": <Plum width="20px"/>,
   "red grapes": <Grapes width="20px"/>,
   "grapes": <Grapes width="20px"/>,
-  "vanilla": <Grapes width="20px"/>,
+  "vanilla": <Vanilla width="20px"/>,
   "raspberry": <Raspberry width="20px"/>,
   "peach": <Peach width="20px"/>,
   "lemon": <Lemon width="20px"/>,
