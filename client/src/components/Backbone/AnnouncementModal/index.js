@@ -12,7 +12,7 @@ const modalContent = <Newsletter type="modal"/>
 
 const modalHeading = (t) => (
   <>
-    <Heading>{t("promotions.get-%-off", {discount: '10%'})}</Heading>
+    <Heading margin={{bottom: "medium"}}>{t("promotions.get-%-off", {discount: '10%'})}</Heading>
     <Text>{t("promotions.newsletter", {discount: '10%'})}</Text>
   </>
 )
