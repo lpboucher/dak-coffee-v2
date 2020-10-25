@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/equipment",
-      "handler": "equipment.find",
+      "handler": "equipment.getEquipments",
       "config": {
         "policies": []
       }

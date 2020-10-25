@@ -2,7 +2,7 @@
   "connection": "default",
   "collectionName": "equipment",
   "info": {
-    "name": "Equipment"
+    "name": "equipment"
   },
   "options": {
     "increments": true,
