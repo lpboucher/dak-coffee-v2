@@ -24,7 +24,9 @@ switch (action.type) {
     return {
         ...state,
         ...action.payload.reduce((obj, category) => {
-            obj[category.id] = category
+            if (typeof category.products[0] === "string") {
+              obj[category.id] = category
+            }
             return obj
         }, {})
     }
@@ -36,7 +38,7 @@ switch (action.type) {
 const allIds = (state = [], action) => {
     switch (action.type) {
       case FETCH_CATEGORIES_SUCCESS:
-        return action.payload.map(category => category.id)
+        return action.payload.filter(category => typeof category.products[0] === "string").map(category => category.id);
       default:
         return state
     }
