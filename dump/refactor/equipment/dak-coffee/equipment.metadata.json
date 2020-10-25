@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"dak-coffee.equipment"},{"v":{"$numberInt":"2"},"key":{"slug":{"$numberInt":"1"}},"name":"slug_1","ns":"dak-coffee.equipment","background":true}],"uuid":"ab26e721a90a4a5ea210701afe50dfc4"}
