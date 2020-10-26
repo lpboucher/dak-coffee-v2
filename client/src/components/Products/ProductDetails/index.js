@@ -57,6 +57,8 @@ const ProductDetails = ({id}) => {
     [
       {type: "simple", title: t(`dropdown.${type}`), content: longDescription},
     ];
+    // temp button
+    const addLabel = id === "5f972f572c031d3346e8d7f9" ? t(`cart.add`) : t(`cart.pre-order`)
   return (
     <ProductDetailsLayout
       title={displayedTitle}
@@ -108,7 +110,7 @@ const ProductDetails = ({id}) => {
           productId={id}
           selected={values}
           addButton={
-            <AddButton width={layout[`cartButtonWidth_${mediaType}`] || cartButtonWidth} primary label={productAdding ? t(`cart.adding`) : t(`cart.add`)} type="submit"/>
+            <AddButton width={layout[`cartButtonWidth_${mediaType}`] || cartButtonWidth} primary label={productAdding ? t(`cart.adding`) : addLabel} type="submit"/>
           }
         />
         <PriceBox
