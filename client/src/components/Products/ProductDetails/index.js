@@ -58,7 +58,7 @@ const ProductDetails = ({id}) => {
       {type: "simple", title: t(`dropdown.${type}`), content: longDescription},
     ];
     // temp button
-    const addLabel = id === "5f972f572c031d3346e8d7f9" ? t(`cart.add`) : t(`cart.pre-order`)
+    const addLabel = id === "5f972f572c031d3346e8d7f9" ? t(`cart.pre-order`) : t(`cart.add`)
   return (
     <ProductDetailsLayout
       title={displayedTitle}
