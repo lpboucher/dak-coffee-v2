@@ -59,7 +59,7 @@ const ProductDetailsLayout = ({
       <DescBox pad={{horizontal: "small"}} justify="around">
         <SpacedHeading level={1} size={layout[`productNameFontSize_${mediaType}`] || productNameFontSize} responsive={false}>{title}</SpacedHeading>
         <LightText>{staticPrice}</LightText>
-        <LightText>{description}</LightText>
+        <LightText margin={{top: "20px"}}>{description}</LightText>
       </DescBox>
       {form}
       <Dropdown dropdowns={infoDropdowns} />

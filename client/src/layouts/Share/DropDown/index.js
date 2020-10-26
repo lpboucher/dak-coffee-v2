@@ -14,7 +14,12 @@ const {
 const Panel = styled(AccordionPanel)`
   padding: 0 0 10px 0;
 
+  & div {
+    padding-left: 0;
+  }
+
   & h3 {
+    margin-left: 0;
     font-weight: 400;
     font-size: ${({size}) => size};
   }
