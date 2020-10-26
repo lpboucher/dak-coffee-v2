@@ -23,7 +23,8 @@ import {
   Hazelnut,
   Caramel,
   Sugar,
-  Vanilla
+  Vanilla,
+  Chocolate
 } from '../utils/medallion/FlavorMedallions';
 
 export const FLAVORS = {
@@ -32,10 +33,10 @@ export const FLAVORS = {
   "pomegranate": <Pomegranate width="20px"/>,
   "orange blossom": <Orange width="20px"/>,
   "orange": <Orange width="20px"/>,
-  "bakers chocolate": <Pomegranate width="20px"/>,
-  "milk chocolate": <Pomegranate width="20px"/>,
-  "chocolate": <Pomegranate width="20px"/>,
-  "dark chocolate": <Pomegranate width="20px"/>,
+  "bakers chocolate": <Chocolate width="20px"/>,
+  "milk chocolate": <Chocolate width="20px"/>,
+  "chocolate": <Chocolate width="20px"/>,
+  "dark chocolate": <Chocolate width="20px"/>,
   "brown sugar": <Sugar width="20px"/>,
   "hazelnut": <Hazelnut width="20px"/>,
   "honey": <Honey width="20px"/>,
