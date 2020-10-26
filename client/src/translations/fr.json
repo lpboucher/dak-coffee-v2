@@ -26,6 +26,10 @@
     "dak-introduction": {
       "title": "Bringing outstanding flavours to your cup.",
       "text": "Here to make your coffee time memorable."
+    },
+    "new-product": {
+      "title": "Fresh Brew Candle.",
+      "text": "Subtle notes of coffee bean, cranberry, bergamot & cedar wood. Limited quantities available."
     }
   },
   "load-more": "Plus de produits",
@@ -68,6 +72,7 @@
   "cart": {
     "add": "Ajouter au panier",
     "adding": "Ajout...",
+    "pre-order": "Pre-order. Ships from 03/11",
     "added": "Ajouté au panier",
     "items-in-cart": "Items dans le panier:",
     "items-in-cart-mobile": "Items:",
@@ -75,7 +80,8 @@
   },
   "shop": {
     "all": "Voir les cafés",
-    "one": "Voir ce café"
+    "one": "Voir ce café",
+    "pre-order": "Réservez maintenant"
   },
   "promotions": {
     "get-%-off": "Recevez {{discount}} de rabais",

@@ -21,11 +21,15 @@
   "slides": {
     "limited-edition": {
       "title": "Nieuw limited edition.",
-      "text": "Triple Geisha from Colombia, with floral, bergamot, lemon and orange blossom notes"
+      "text": "Triple Geisha from Colombia, with floral, bergamot, lemon and orange blossom notes."
     },
     "dak-introduction": {
       "title": "Bringing outstanding flavours to your cup.",
       "text": "Here to make your coffee time memorable."
+    },
+    "new-product": {
+      "title": "Fresh Brew Candle.",
+      "text": "Subtle notes of coffee bean, cranberry, bergamot & cedar wood. Limited quantities available."
     }
   },
   "load-more": "Laad meer producten",
@@ -68,6 +72,7 @@
   "cart": {
     "add": "In winkelmand",
     "adding": "Toevoegen...",
+    "pre-order": "Pre-order. Ships from 03/11",
     "added": "Toegevoegd.",
     "items-in-cart": "In winkelmand:",
     "items-in-cart-mobile": "Items:",
@@ -75,7 +80,8 @@
   },
   "shop": {
     "all": "Bestel koffies",
-    "one": "Bestel koffie"
+    "one": "Bestel koffie",
+    "pre-order": "Pre-order now"
   },
   "promotions": {
     "get-%-off": "Krijg {{discount}} korting",
