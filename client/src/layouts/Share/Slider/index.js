@@ -1,33 +1,39 @@
 import React from 'react';
+import styled from 'styled-components';
+import Slider from "react-slick";
 
-import { ThemeContext, Box, Carousel } from 'grommet';
+import { Box } from 'grommet';
 
 import { layout } from '../../../layout';
 
-const pointerEvents = {
-  box: {
-    extend: 'pointer-events: none;'
-  },
-  button: {
-    extend: 'pointer-events: auto; text-transform: uppercase;'
+const SliderContainer = styled(Box)`
+  & .slick-slider,
+  & .slick-list,
+  & .slick-track,
+  & .slick-slide,
+  & .slick-slide > div {
+    height: 100%;
   }
-}
+`
 
 const SliderLayout = ({children, ...settings}) => {
     const slideSettings = {
-      controls: "selectors",
-      play: 8000,
+      dots: true,
+      infinite: true,
+      speed: 800,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       ...settings
   };
   const boxHeight = `calc(85vh - ${layout.topOffset})`;
     return (
-      <ThemeContext.Extend value={pointerEvents}>
-        <Box height={boxHeight}>
-          <Carousel fill {...slideSettings}>
-            {children}
-          </Carousel>
-        </Box>
-    </ThemeContext.Extend>
+      <SliderContainer height={boxHeight}>
+        <Slider {...slideSettings}>
+          {children}
+        </Slider>
+      </SliderContainer>
     );
 };
 

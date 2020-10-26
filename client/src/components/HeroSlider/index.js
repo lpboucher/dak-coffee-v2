@@ -28,20 +28,21 @@ const HeroSlider = () => {
       <HeroSliderLayout
         slides={
         [
-          /*<SingleSlideLayout
+          <FullSlideLayout
             key="1"
-            background="#ECEAE5"
+            textColor="black"
             content={[
               {
-                title: "Bringing outstanding flavors to your cup.",
-                text: "Here to make your coffee time memorable.",
-                button: <SlideButton onClick={() => history.push("/shop")} primary label="Shop our coffees" />
+                title: t("slides.new-product.title"),
+                text: t("slides.new-product.text"),
+                button: <SlideButton onClick={() => history.push("/shop/merchandise/fresh-brew")} primary label={t("shop.pre-order")} />,
+                target: "/shop/merchandise/fresh-brew"
               },
             ]}
-            slideImg="Heros/newwebsitelogo_bwydew"
-          />,*/
+            slideImg="Heros/slider_candle2_zyjo08"
+          />,
           <SingleSlideLayout
-            key="1"
+            key="2"
             background="#C08685"
             textColor="white"
             content={[
@@ -67,7 +68,7 @@ const HeroSlider = () => {
             />
           </Box>,*/
           <FullSlideLayout
-            key="2"
+            key="3"
             textColor="white"
             content={[
               {
