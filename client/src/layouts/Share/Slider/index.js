@@ -14,6 +14,10 @@ const SliderContainer = styled(Box)`
   & .slick-slide > div {
     height: 100%;
   }
+
+  & .slick-dots {
+    bottom: -35px;
+  }
 `
 
 const SliderLayout = ({children, ...settings}) => {
