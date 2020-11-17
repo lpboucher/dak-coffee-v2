@@ -6,7 +6,12 @@ const hasFreeOption = (items, orderSummary) => {
 };
 
 const orderHasSubscriptions = (items) => {
-  return items.some(item => item.name === 'The Classics' || item.name === 'The Roaster\'s Choice' || item.name === 'Dak Subscription');
+  return items.some(item =>
+    item.name === 'The Classics' ||
+    item.name === 'The Roaster\'s Choice' ||
+    item.name === 'Dak Subscription' ||
+    item.name === 'Dak Monthly Subscription'
+  );
 };
 
 const getThreshold = (currency, country) => {
