@@ -47,9 +47,9 @@ const ProductDetails = ({id}) => {
     [
       {type: "iconed", title: t(`dropdown.${type}-tasting`), content: tastingNotes, direction: "row" },
       {type: "iconed", title: t(`dropdown.${type}-characteristics`), content: [
-        { icon: <Bean width="36px" />, label: characteristics.bean },
-        { icon: <Altitude width="36px" />, label: characteristics.altitude },
-        {icon: <Packaging width="36px" />, label: characteristics.packaging },
+        { icon: <Bean width="30px" />, label: characteristics.bean },
+        { icon: <Altitude width="30px" />, label: characteristics.altitude },
+        {icon: <Packaging width="30px" />, label: characteristics.packaging },
       ]},
       {type: "simple", title: t(`dropdown.${type}`), content: longDescription}
     ]

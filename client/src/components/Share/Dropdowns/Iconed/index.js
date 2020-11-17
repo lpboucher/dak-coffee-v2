@@ -9,7 +9,7 @@ const IconedDropdown = ({elements, panelDirection="column"}) => {
       {elements.map((el, index) =>
         <Box direction={itemDirection} pad={{horizontal: "10px"}} align="center" key={`icon-${index}`} width="fit-content">
           {el.icon}
-          <Text margin={itemDirection === "row" ? {left: "20px"} : {top: "10px"}} size="small">{el.label}</Text>
+          <Text margin={itemDirection === "row" ? {left: "30px"} : {top: "10px"}} size="small">{el.label}</Text>
         </Box>
       )}
     </Box>
