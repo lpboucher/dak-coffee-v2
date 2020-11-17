@@ -21,7 +21,7 @@ const DetailsHalf = styled(Box)`
 const SingleProductLayout = ({feature, productDetails}) => {
   const { mediaType, lessThan } = useResponsive();
   return (
-    <Box pad={{bottom: "40px"}} direction="row" wrap>
+    <Box pad={{bottom: "60px"}} direction="row" wrap>
         <DetailsHalf
           height={lessThan.small ? productFeatureHeight_extraSmall : productFeatureHeight}
           width={lessThan.medium ? productColumnWidth_small : productColumnWidth}
