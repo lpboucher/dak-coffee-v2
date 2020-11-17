@@ -50,6 +50,10 @@
     "rights": "Dak Coffee Roasters 2020. All rights reserved."
   },
   "contact": {
+    "overlay": {
+      "title": "Contact Us",
+      "text": "Collaboration is key. Whether big or small, we engage in passion-driven partnerships."
+    },
     "general": {
       "name": "Algemene Vragen",
       "description": "We do our best to respond to e-mails wthin 24 hours",

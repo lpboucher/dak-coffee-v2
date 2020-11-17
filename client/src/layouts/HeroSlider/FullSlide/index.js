@@ -34,7 +34,7 @@ const FullSlideLayout = ({content, slideImg, imageFit="cover", background="secon
         <Box key={`itemId-${index}`} pad="medium" fill justify="around">
           <SlideHeading responsive={false} size="xlarge" color={textColor}>{title}</SlideHeading>
           <Text responsive={false} size="xlarge" color={textColor}>{text}</Text>
-          {button}
+          {button && button}
         </Box>
         ))}
       </SliderContent>

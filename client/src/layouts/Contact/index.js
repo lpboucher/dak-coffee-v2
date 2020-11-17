@@ -12,9 +12,9 @@ const {
 const ContactLayout = ({departments}) => {
   const { mediaType } = useResponsive();
   return (
-    <Box background="lightGrey" direction="row" justify="around" wrap>
+    <Box direction="row" justify="around" wrap>
       {departments.map((oneDepartment) =>
-        <Box width={layout[`twoColLayoutWidth_${mediaType}`] || twoColLayoutWidth} pad={mediaType === "medium" ? "large" : "xlarge"} justify="center">
+        <Box width={layout[`twoColLayoutWidth_${mediaType}`] || twoColLayoutWidth} pad={mediaType === "medium" ? "large" : "xlarge"} justify="center" align="center">
           <Heading responsive={false} level={1}>{oneDepartment.name}</Heading>
           <Text responsive={false} margin={{'bottom': 'small'}}><a href={`mailto: ${oneDepartment.email}`}>{oneDepartment.email}</a></Text>
           <Text responsive={false} margin={{'bottom': 'small'}}>{oneDepartment.description}</Text>
