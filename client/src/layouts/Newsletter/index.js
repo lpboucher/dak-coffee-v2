@@ -11,6 +11,8 @@ const {
   newsletterSectionWidth_small,
   newsletterSectionPadding,
   newsletterSectionPadding_small,
+  newsletterButtonMargin,
+  newsletterButtonMargin_small
 } = layout;
 
 export const NewsletterButton = styled(Button)`
@@ -40,6 +42,7 @@ const NewsletterLayout = ({name, email, submitLabel, description}) => {
             type="submit"
             label={submitLabel}
             color="mainWhite"
+            margin={lessThan.large ? newsletterButtonMargin_small : newsletterButtonMargin}
           />
         </Box>
       </Box>

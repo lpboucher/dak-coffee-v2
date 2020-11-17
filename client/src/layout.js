@@ -53,6 +53,8 @@ export const layout = {
   newsletterSectionWidth_small: "100%",
   newsletterSectionPadding: {horizontal: "small", vertical: "medium"},
   newsletterSectionPadding_small: {horizontal: "large", vertical: "large"},
+  newsletterButtonMargin: {vertical: "none", left: "20px", right: "auto"},
+  newsletterButtonMargin_small: "none",
   fullNewsletterWidth: "50%",
   fullNewsletterWidth_small: "100%",
   fullNewsletterWidth_extraSmall: "100%",
