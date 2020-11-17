@@ -113,6 +113,10 @@
       "description": "We believe the only way to identify unique flavors is to continually try new and innovative roasting profiles. For that reason, we are creative with our roasts and also do our best to sample-roast as often as we can!\n\nOnce a week, we order new green coffee samples. These samples are roasted in a very simple manner to limit the effect, the roast might have on the flavor of the origin. After sample-roasting, we conduct regular cupping sessions. Here, the new origin samples are tasted, and we identify the origins we want to order in larger quantities.\n\nIn order to identify the roast profiles that will eventually go on the shelves, we repeat the process of roasting the selected beans. However, this time we let our creativity run wild and test different combinations of roasting lengths, temperatures and airflow, to create unique roasts for specific beverages.\n\nFinally, a final cupping session with the bean in question, roasted in many different ways, allow us to decide on and finalize the roast profile that best highlight the unique flavor profile of its origin."
     }
   },
+  "wholesale": {
+    "title": "Offer Dak to your customers",
+    "description": "We have partnered with many cafes across Europe and North America and always love to see our coffees in new regions/countries. Ordering is simple, with no strings attached:<br>- No minimum order size.<br>- Shipping is free for 20kg+, otherwise we cover 50%.<br>- We roast Tuesdays/Thursdays and ship the following day.<br>- We offer wholesale discounts based on total volume ordered so you can mix and match as you please.<br>To facilitate the ordering process, our new wholesale platform is coming soon.<br>In the meantime, get in touch with us at info@dakcoffeeroasters.com to get the current offer list, prices and to start a conversation!"
+  },
   "altitude": "Altitude of",
   "recyclable-coffee-bags": "Delivered in a 100% recyclable bag and recyclable box"
 }

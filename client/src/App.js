@@ -16,6 +16,7 @@ const TermsPage = lazy(() => import('./pages/Terms'));
 const ShippingPage = lazy(() => import('./pages/Shipping'));
 const BlogPage = lazy(() => import('./pages/Blog'));
 const FAQPage = lazy(() => import('./pages/FAQ'));
+const WholesalePage = lazy(() => import('./pages/Wholesale'));
 
 const App = () => {
   return (
@@ -33,8 +34,8 @@ const App = () => {
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/shipping" component={ShippingPage} />
           <Route path="/blog" component={BlogPage} />
-          {/*<Route path="/wholesale" component={WholesalePage} />
-          <Route path="/blog/:slug" component={ArticlePage} />
+          <Route path="/wholesale" component={WholesalePage} />
+          {/*<Route path="/blog/:slug" component={ArticlePage} />
   <Route path="/subscriptions" component={SubscriptionPage} />*/}
         </Switch>
       </Suspense>
