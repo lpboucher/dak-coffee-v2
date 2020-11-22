@@ -85,6 +85,7 @@
   "shop": {
     "all": "Shop our coffees",
     "one": "Shop this coffee",
+    "product": "Check it out",
     "pre-order": "Pre-order now"
   },
   "promotions": {

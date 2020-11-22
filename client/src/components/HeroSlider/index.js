@@ -35,7 +35,7 @@ const HeroSlider = () => {
               {
                 title: t("slides.new-product.title"),
                 text: t("slides.new-product.text"),
-                button: <SlideButton onClick={() => history.push("/shop/merchandise/fresh-brew")} primary label={t("shop.pre-order")} />,
+                button: <SlideButton onClick={() => history.push("/shop/merchandise/fresh-brew")} primary label={t("shop.product")} />,
                 target: "/shop/merchandise/fresh-brew"
               },
             ]}

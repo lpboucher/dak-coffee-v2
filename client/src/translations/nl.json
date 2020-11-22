@@ -85,6 +85,7 @@
   "shop": {
     "all": "Bestel koffies",
     "one": "Bestel koffie",
+    "product": "Bestel product",
     "pre-order": "Pre-order now"
   },
   "promotions": {

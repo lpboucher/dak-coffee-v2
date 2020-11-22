@@ -85,6 +85,7 @@
   "shop": {
     "all": "Voir les cafés",
     "one": "Voir ce café",
+    "product": "Voir ce produit",
     "pre-order": "Réservez maintenant"
   },
   "promotions": {
