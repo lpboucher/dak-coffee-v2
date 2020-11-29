@@ -41,7 +41,8 @@ const ProductDetails = ({id}) => {
     additionalOptions,
     characteristics,
     longDescription,
-    tastingNotes
+    tastingNotes,
+    slug
   } = useSingleProduct(id);
   const dropdowns = type === "coffee" ?
     [
@@ -58,7 +59,9 @@ const ProductDetails = ({id}) => {
       {type: "simple", title: t(`dropdown.${type}`), content: longDescription},
     ];
     // temp button
-    const addLabel = id === "5f972f572c031d3346e8d7f9" ? t(`cart.pre-order`) : t(`cart.add`)
+    const addLabel = id === "5f972f572c031d3346e8d7f9" ? t(`cart.pre-order`) : t(`cart.add`);
+    const defaultCoffee = type === "coffee" && slug === "test-batch" ? "1kg" : "250g";
+    const defaultQuantity = type === "promo" ? "25€" : defaultCoffee;
   return (
     <ProductDetailsLayout
       title={displayedTitle}
@@ -70,7 +73,7 @@ const ProductDetails = ({id}) => {
   onSubmit={values => console.log(values)}
   initialValues={{
     number: 1,
-    quantity: hasPriceOptions && quantityQuery.length > 0 ? quantityQuery[0] : "250g",
+    quantity: hasPriceOptions && quantityQuery.length > 0 ? quantityQuery[0] : defaultQuantity,
     roast: roastQuery.length > 0 ? roastQuery[0] : null,
   }}
   render={({ values }) => (
