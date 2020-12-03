@@ -27,7 +27,7 @@ const hasGiftCard = (items, callbackType='one') => {
 };
 
 const isGiftCard = (item) => {
-  return item.id === '5fc3be5356dc690e4ddea0ee';
+  return item.id === '5fc9102b62130e5379f0042e';
 };
 
 const getThreshold = (currency, country) => {
