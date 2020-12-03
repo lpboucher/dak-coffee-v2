@@ -29,6 +29,7 @@ const getAllProducts = async (ctx) => {
     strapi.query('merchandise').model.find(ctx.query, {...baseFields, details: 1}),
     strapi.query('equipment').model.find(ctx.query, {...baseFields, details: 1}),
     strapi.query('subscription').model.find(ctx.query, {...baseFields}),
+    strapi.query('promo').model.find(ctx.query, {...baseFields, details: 1}),
   ]);
   const products = [].concat(...queries).map(one => one.toObject());
   const result = {
@@ -74,6 +75,7 @@ const getProductById = async (ctx) => {
     strapi.query('merchandise').model.findOne({ _id:id }, {...baseFields, details: 1}),
     strapi.query('equipment').model.findOne({ _id:id }, {...baseFields, details: 1}),
     strapi.query('subscription').model.findOne({ _id:id }, {...baseFields}),
+    strapi.query('promo').model.findOne({ _id:id }, {...baseFields, details: 1}),
   ]);
   const result = {
     product: queries.find(query => query != null),
@@ -88,6 +90,7 @@ const snipcartParser = async (ctx) => {
     strapi.query('merchandise').model.find(ctx.query, {...baseFields, details: 1}),
     strapi.query('equipment').model.find(ctx.query, {...baseFields, details: 1}),
     strapi.query('subscription').model.find(ctx.query, {...baseFields}),
+    strapi.query('promo').model.find(ctx.query, {...baseFields, details: 1}),
   ]);
   const data = [].concat(...queries).map(one => {
     const product = one.toObject();

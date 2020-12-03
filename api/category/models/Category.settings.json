@@ -35,6 +35,9 @@
     },
     "equipment": {
       "collection": "equipment"
+    },
+    "promos": {
+      "collection": "promo"
     }
   }
 }

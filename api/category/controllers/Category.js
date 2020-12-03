@@ -26,6 +26,10 @@ const getAll = async (ctx) => {
         path: 'merchandises',
         match: { isActive: true },
       },
+      {
+        path: 'promos',
+        match: { isActive: true },
+      },
     ]);
   const withCombinedProducts = categories.map(category => {
     return format.combineArray(category, 'products');
