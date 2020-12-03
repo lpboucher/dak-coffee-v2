@@ -19,6 +19,10 @@
     "log-out": "Déconnexion"
   },
   "slides": {
+    "gift-card": {
+      "title": "Nouveau! Carte-cadeau digitale.",
+      "text": "Offrez du délicieux café à un proche avec notre carte-cadeau digitale."
+    },
     "limited-edition": {
       "title": "Nouvelle Édition Limitée.",
       "text": "Un Triple Geisha de la Colombie avec des saveurs florales, de bergamot, de citron et d'orange."
@@ -87,7 +91,8 @@
     "all": "Voir les cafés",
     "one": "Voir ce café",
     "product": "Voir ce produit",
-    "pre-order": "Réservez maintenant"
+    "pre-order": "Réservez maintenant",
+    "promo": "Voir la carte"
   },
   "promotions": {
     "get-%-off": "Recevez {{discount}} de rabais",

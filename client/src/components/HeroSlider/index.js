@@ -43,17 +43,17 @@ const HeroSlider = () => {
           />,
           <SingleSlideLayout
             key="2"
-            background="#C08685"
-            textColor="white"
+            background="#B2B5A4"
+            textColor="black"
             content={[
               {
-                title: t("slides.limited-edition.title"),
-                text: t("slides.limited-edition.text"),
-                button: <SlideButton onClick={() => history.push("/shop/coffee/connoisseur")} primary label={t("shop.one")} />,
-                target: "/shop/coffee/connoisseur"
+                title: t("slides.gift-card.title"),
+                text: t("slides.gift-card.text"),
+                button: <SlideButton onClick={() => history.push("/shop/promo/gift-card")} primary label={t("shop.promo")} />,
+                target: "/shop/promo/gift-card"
               },
             ]}
-            slideImg="Heros/fancy_new_mwcomt"
+            slideImg="Heros/GiftCard_beige_t3fgte"
           />,
           /*<Box fill direction="row">
             <VideoBox autoPlay muted loop id="stopMotion">

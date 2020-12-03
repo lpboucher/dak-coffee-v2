@@ -19,6 +19,10 @@
     "log-out": "Log out"
   },
   "slides": {
+    "gift-card": {
+      "title": "New! Digital gift card.",
+      "text": "Treat a loved one to come delicious coffee with our e-gift card."
+    },
     "limited-edition": {
       "title": "New limited edition.",
       "text": "Triple Geisha from Colombia, with floral, bergamot, lemon and orange blossom notes."
@@ -87,7 +91,8 @@
     "all": "Shop our coffees",
     "one": "Shop this coffee",
     "product": "Check it out",
-    "pre-order": "Pre-order now"
+    "pre-order": "Pre-order now",
+    "promo": "Shop this gift card"
   },
   "promotions": {
     "get-%-off": "Get {{discount}} Off",
