@@ -1,4 +1,5 @@
 {
   "snipcart": "${process.env.SNIPCART_KEY}",
-  "mailchimp": "${process.env.MAILCHIMP_KEY}"
+  "mailchimp": "${process.env.MAILCHIMP_KEY}",
+  "mailchimpTrans": "${process.env.MAILCHIMP_TRANS_KEY}"
 }
