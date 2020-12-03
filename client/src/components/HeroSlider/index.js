@@ -53,7 +53,7 @@ const HeroSlider = () => {
                 target: "/shop/promo/gift-card"
               },
             ]}
-            slideImg="Heros/GiftCard_beige_t3fgte"
+            slideImg="Heros/GiftCard_beige2_flwgr8"
           />,
           /*<Box fill direction="row">
             <VideoBox autoPlay muted loop id="stopMotion">
