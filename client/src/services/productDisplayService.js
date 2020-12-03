@@ -16,7 +16,7 @@ export const getPriceInCurrency = (priceArr = [], activeCurrency) => {
 }
 
 export const hasPricingOptions = (type) => {
-  return type === "coffee" || type === "subscription";
+  return type === "coffee" || type === "subscription" || type === "promo";
 }
 
 export const getDisplayedProductTitle = ({type, name, origin, slug}, selected) => {
@@ -34,6 +34,9 @@ export const getDisplayedProductTitle = ({type, name, origin, slug}, selected) =
   if (type === 'subscription' && selected) {
     title = selected.split("-")[0] + " " + title;
   }
+  if (type === 'promo') {
+    subtitle += getDisplayedProductDescription(type, slug);
+  }
   return {title, subtitle, helper};
 }
 
@@ -43,6 +46,7 @@ export const getStaticProductPrice = (type, priceObj) => {
     subscription: `${i18n.t("price.from")} ${getDisplayedProductPrice(priceObj)}`,
     equipment: getDisplayedProductPrice(priceObj),
     merchandise: getDisplayedProductPrice(priceObj),
+    promo: `${i18n.t("price.from")} ${getDisplayedProductPrice(priceObj)}`,
   }
   return dict[type] || null;
 }

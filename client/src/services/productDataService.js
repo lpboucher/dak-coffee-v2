@@ -24,6 +24,11 @@ export const getCartProductOptions = (optionObj, type="coffee", selected=null) =
     options["data-item-payment-interval"]="Month";
     options["data-item-payment-interval-count"]="1";
   }
+  if (type === "promo") {
+    options["data-item-custom1-name"] = "Amount";
+    options["data-item-custom1-options"] = increments.map((inc) => `${inc.option}${inc.value}`).join('|');
+    options["data-item-custom1-value"] = selected ? selected.quantity : null;
+  }
   if (selected && selected.number != 1) {
     options["data-item-quantity"] = selected.number;
   }
