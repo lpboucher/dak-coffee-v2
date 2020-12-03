@@ -1,7 +1,7 @@
 'use strict';
 const Mailchimp = require('mailchimp-api-v3');
-const snipcart = require('snipcart-api');
-const CodeGenerator = require('node-code-generator');
+
+const promo = require('../../promo/controllers/promo');
 
 /**
  * A set of functions called "actions" for `Newsletter`
@@ -23,30 +23,11 @@ const add = async (ctx) => {
         }
       }
     });
-    const promoCode = await generateSnipcartPromo();
+    const promoCode = await promo.generateSnipcartPromo('news', 10.0);
     ctx.send({registered: true, promoCode: promoCode});
   } catch(err) {
     ctx.send({error: err.title});
   }
-};
-
-const generateSnipcartPromo = async () => {
-  snipcart.configure('SECRET_API_KEY', strapi.config.currentEnvironment.snipcart);
-
-  const generator = new CodeGenerator();
-  const [ code ] = generator.generateCodes('DAK-***-***', 1, {});
-
-  const discount = await snipcart.api.discounts.create({
-    data: {
-      name: 'Newsletter subscription',
-      trigger: 'Code',
-      code: code,
-      type: 'Rate',
-      rate: 10.0,
-      maxNumberOfUsages: 1
-    }
-  });
-  return discount.data;
 };
 
 module.exports = {
