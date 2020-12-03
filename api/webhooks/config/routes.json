@@ -15,7 +15,14 @@
         "config": {
           "policies": []
         }
+      },
+      {
+        "method": "POST",
+        "path": "/webhooks/custom",
+        "handler": "Webhooks.handleEvent",
+        "config": {
+          "policies": []
+        }
       }
     ]
   }
-  

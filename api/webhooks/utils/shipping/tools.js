@@ -5,6 +5,10 @@ const hasFreeOption = (items, orderSummary) => {
   return orderHasSubscriptions(items) || (total > getThreshold(currency, shipTo));
 };
 
+const hasNoPhysical = (items) => {
+  return hasGiftCard(items, 'all');
+};
+
 const orderHasSubscriptions = (items) => {
   return items.some(item =>
     item.name === 'The Classics' ||
@@ -12,6 +16,18 @@ const orderHasSubscriptions = (items) => {
     item.name === 'Dak Subscription' ||
     item.name === 'Dak Monthly Subscription'
   );
+};
+
+const hasGiftCard = (items, callbackType='one') => {
+  const callback = {
+    one: items.some(item => isGiftCard(item)),
+    all: items.every(item => isGiftCard(item))
+  };
+  return callback[callbackType];
+};
+
+const isGiftCard = (item) => {
+  return item.id === '5fc3be5356dc690e4ddea0ee';
 };
 
 const getThreshold = (currency, country) => {
@@ -53,7 +69,10 @@ const getShippingRateOptions = (currency, country) => {
 
 module.exports = {
   hasFreeOption,
+  hasNoPhysical,
   getFreeShippingOptions,
   getShippingRateOptions,
-  isFromRegion
+  isFromRegion,
+  hasGiftCard,
+  isGiftCard
 };

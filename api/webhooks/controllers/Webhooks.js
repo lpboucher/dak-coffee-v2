@@ -1,5 +1,7 @@
 'use strict';
+const mailchimpTx = require('@mailchimp/mailchimp_transactional');
 const shipTools = require('../utils/shipping/tools');
+const promo = require('../../promo/controllers/promo');
 
 const getTaxes = (ctx) => {
   const orderData = ctx.request.body.content;
@@ -16,6 +18,9 @@ const getShippingRates = (ctx) => {
   const orderData = ctx.request.body.content;
   const summary = { currency: orderData.currency, total: orderData.itemsTotal, shipTo: orderData.shippingAddress.country};
   let rates = [];
+  if (shipTools.hasNoPhysical(orderData.items)) {
+    return {'rates': [{'cost': 0, 'description': 'Digital Product'}]};
+  }
   if (shipTools.hasFreeOption(orderData.items, summary)) {
     rates = [...rates, ...shipTools.getFreeShippingOptions(summary.shipTo)];
   }
@@ -23,9 +28,50 @@ const getShippingRates = (ctx) => {
   return {'rates': rates};
 };
 
+const handleEvent = async (ctx) => {
+  const mailchimp = mailchimpTx(strapi.config.currentEnvironment.mailchimpTrans);
+  const event = ctx.request.body;
+  const { items, user } = event.content;
+
+  switch (event.eventName) {
+    case 'order.completed':
+      if (shipTools.hasGiftCard(items)) {
+        const giftCard = items.find(item => shipTools.isGiftCard(item));
+        const promoCode = await promo.generateSnipcartPromo('gift', giftCard.unitPrice);
+        try {
+          const res = await mailchimp.messages.sendTemplate({
+            template_name: 'gift-card',
+            template_content: [
+              { name: 'name', content: user.billingAddress.fullName },
+              { name: 'code', content: promoCode.code }
+            ],
+            message: {
+              from_email: 'info@dakcoffeeroasters.com',
+              subject: 'DAK Gift Card Code',
+              to: [
+                {email: user.email, type: 'to'}
+              ]
+            }
+          });
+          console.log(res);
+        } catch(err) {
+          if (Array.isArray(err)) {
+            err.map(oneerror => console.log(oneerror.messages));
+          } else {
+            console.log(err);
+          }
+        }
+      }
+      return;
+    default:
+      return;
+  }
+};
+
 module.exports = {
   getShippingRates,
-  getTaxes
+  getTaxes,
+  handleEvent,
 };
 
 const aggregateItemTaxes = (taxPerItem) => {
