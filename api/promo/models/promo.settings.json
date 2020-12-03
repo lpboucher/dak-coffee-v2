@@ -1,0 +1,61 @@
+{
+  "connection": "default",
+  "collectionName": "promos",
+  "info": {
+    "name": "promo"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.name"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.description"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": false,
+      "component": "images.product-images"
+    },
+    "details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.description"
+    },
+    "price": {
+      "type": "component",
+      "repeatable": true,
+      "component": "prices.price"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "coffee",
+        "equipment",
+        "merchandise",
+        "promo"
+      ]
+    },
+    "short": {
+      "type": "component",
+      "repeatable": false,
+      "component": "translations.name"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
