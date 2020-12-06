@@ -7,6 +7,7 @@ const promo = require('../../promo/controllers/promo');
  * A set of functions called "actions" for `Newsletter`
  */
 const add = async (ctx) => {
+  console.log(strapi.config.currentEnvironment.mailchimp);
   const mailchimp = new Mailchimp(strapi.config.currentEnvironment.mailchimp);
   const { name, email, language } = ctx.request.body;
   const listId = 'c1ea6cd510';
