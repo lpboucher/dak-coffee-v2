@@ -54,12 +54,14 @@ const handleEvent = async (ctx) => {
             }
           });
           console.log(res);
+          ctx.status = 200;
         } catch(err) {
           if (Array.isArray(err)) {
             err.map(oneerror => console.log(oneerror.messages));
           } else {
             console.log(err);
           }
+          ctx.throw(400);
         }
       }
       return;
