@@ -19,14 +19,14 @@ const SHIPPING_RATES_BY_REGION = {
   EUR: {
     '0': {'cost': 2.5, 'description': 'NL Shipping'},
     '1': {'cost': 3.75, 'description': 'EU-1 Shipping'},
-    '2': {'cost': 4.75, 'description': 'EU-2 Shipping'},
+    '2': {'cost': 6.95, 'description': 'EU-2 Shipping'},
     '3': {'cost': 5, 'description': 'NA Shipping (ships 1st & 15th)'},
     '4': {'cost': 20, 'description': 'World Shipping'}
   },
   CAD: {
     '0': {'cost': 4, 'description': 'NL Shipping'},
     '1': {'cost': 5.75, 'description': 'EU-1 Shipping'},
-    '2': {'cost': 7, 'description': 'EU-2 Shipping'},
+    '2': {'cost': 10, 'description': 'EU-2 Shipping'},
     '3': {'cost': 7.5, 'description': 'NA Shipping (ships 1st & 15th)'},
     '4': {'cost': 30, 'description': 'World Shipping'}
   },
