@@ -1,3 +1,5 @@
+'use strict';
+const axios = require('axios');
 const shipConstants = require('./constants');
 
 const hasFreeOption = (items, orderSummary) => {
@@ -67,6 +69,31 @@ const getShippingRateOptions = (currency, country) => {
   return [shipConstants.SHIPPING_RATES_BY_REGION[currency.toUpperCase()][getShippingZone(country)]];
 };
 
+const createShippingParcel = async (shippingAddress, email, invoiceNumber) => {
+  return await axios.post(
+    `${shipConstants.SHIPCLOUD_ENDPOINT}/parcels`,
+    {
+      parcel: {
+        name: shippingAddress.fullName,
+        address: shippingAddress.address1,
+        address_2: shippingAddress.address2,
+        city: shippingAddress.city,
+        postal_code: shippingAddress.postalCode,
+        request_label: false,
+        email: email,
+        country: shippingAddress.country,
+        order_number: invoiceNumber,
+      }
+    },
+    {
+      auth: {
+        username: strapi.config.currentEnvironment.sendcloudKey,
+        password: strapi.config.currentEnvironment.sendcloudSecret,
+      }
+    }
+  );
+};
+
 module.exports = {
   hasFreeOption,
   hasNoPhysical,
@@ -74,5 +101,6 @@ module.exports = {
   getShippingRateOptions,
   isFromRegion,
   hasGiftCard,
-  isGiftCard
+  isGiftCard,
+  createShippingParcel
 };

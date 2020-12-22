@@ -1,5 +1,6 @@
 'use strict';
 const snipcart = require('snipcart-api');
+const mailchimpTx = require('@mailchimp/mailchimp_transactional');
 const CodeGenerator = require('node-code-generator');
 
 /**
@@ -42,6 +43,25 @@ const generateSnipcartPromo = async (source, discountAmountOrRate) => {
   return discount.data;
 };
 
+const sendCodeEmail = async (user, promoCode) => {
+  const mailchimp = mailchimpTx(strapi.config.currentEnvironment.mailchimpTrans);
+  return await mailchimp.messages.sendTemplate({
+    template_name: 'gift-card',
+    template_content: [
+      { name: 'name', content: user.billingAddress.fullName },
+      { name: 'code', content: promoCode.code }
+    ],
+    message: {
+      from_email: 'info@dakcoffeeroasters.com',
+      subject: 'DAK Gift Card Code',
+      to: [
+        {email: user.email, type: 'to'}
+      ]
+    }
+  });
+};
+
 module.exports = {
-  generateSnipcartPromo
+  generateSnipcartPromo,
+  sendCodeEmail
 };

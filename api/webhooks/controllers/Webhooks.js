@@ -1,5 +1,4 @@
 'use strict';
-const mailchimpTx = require('@mailchimp/mailchimp_transactional');
 const shipTools = require('../utils/shipping/tools');
 const promo = require('../../promo/controllers/promo');
 
@@ -29,42 +28,38 @@ const getShippingRates = (ctx) => {
 };
 
 const handleEvent = async (ctx) => {
-  const mailchimp = mailchimpTx(strapi.config.currentEnvironment.mailchimpTrans);
   const event = ctx.request.body;
-  const { items, user } = event.content;
+  const { items, user, shippingAddress, invoiceNumber, email } = event.content;
 
   switch (event.eventName) {
+
     case 'order.completed':
       if (shipTools.hasGiftCard(items)) {
         const giftCard = items.find(item => shipTools.isGiftCard(item));
-        const promoCode = await promo.generateSnipcartPromo('gift', giftCard.unitPrice);
         try {
-          const res = await mailchimp.messages.sendTemplate({
-            template_name: 'gift-card',
-            template_content: [
-              { name: 'name', content: user.billingAddress.fullName },
-              { name: 'code', content: promoCode.code }
-            ],
-            message: {
-              from_email: 'info@dakcoffeeroasters.com',
-              subject: 'DAK Gift Card Code',
-              to: [
-                {email: user.email, type: 'to'}
-              ]
-            }
-          });
-          console.log(res);
-          ctx.status = 200;
+          const promoCode = await promo.generateSnipcartPromo('gift', giftCard.unitPrice);
+          await promo.sendCodeEmail(user, promoCode);
         } catch(err) {
           if (Array.isArray(err)) {
             err.map(oneerror => console.log(oneerror.messages));
           } else {
             console.log(err);
           }
-          ctx.throw(400);
+        }
+      }
+      if (shipTools.isFromRegion('EU', shippingAddress.country)) {
+        try {
+          await shipTools.createShippingParcel(shippingAddress, email, invoiceNumber);
+        } catch(err) {
+          if (Array.isArray(err)) {
+            err.map(oneerror => console.log(oneerror.messages));
+          } else {
+            console.log(err);
+          }
         }
       }
       return;
+
     default:
       return;
   }
@@ -76,6 +71,7 @@ module.exports = {
   handleEvent,
 };
 
+// TO DO move to own util file
 const aggregateItemTaxes = (taxPerItem) => {
   return taxPerItem.reduce((taxes, tax) => {
     const existingIndex = taxes.findIndex(i => i.rate === tax.rate);
