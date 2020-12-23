@@ -1,5 +1,6 @@
 {
-  "header-message": "Free shipping in {{region}} on orders of {{threshold}}+",
+  "header-message": "Delivery to UK/Ireland is suspended until further notice",
+  "old-header-message": "Free shipping in {{region}} on orders of {{threshold}}+",
   "menu": "Menu",
   "navigation": {
     "home": "Home",
