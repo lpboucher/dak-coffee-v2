@@ -276,7 +276,7 @@ export const Melon = ({width, color="#FF7761"}) => {
             c3.6,1.1,5.9,5.3,4.9,9.4c0,0,0,0,0,0c-1.3,6-3.2,23.4,3.8,31.2c2.6,3,2.7,7.9,0.1,11C109.4,62.9,107.7,63.7,105.9,63.7z"/>
         </g>
       </g>
-      <ellipse fill={color} cx="144.5" cy="200.5" rx="136.2" ry="144.6"/>
+      <ellipse fill="none" stroke={color} stroke-width="15" cx="144.5" cy="200.5" rx="136.2" ry="144.6"/>
     </svg>
   )
 };
