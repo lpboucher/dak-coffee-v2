@@ -25,7 +25,9 @@ import {
   Sugar,
   Vanilla,
   Chocolate,
-  Guava
+  Guava,
+  Blackberry,
+  Pear
 } from '../utils/medallion/FlavorMedallions';
 
 export const FLAVORS = {
@@ -71,4 +73,6 @@ export const FLAVORS = {
   "bergamot": <Bergamot width="20px"/>,
   "lemon": <Lemon width="20px"/>,
   "guava": <Guava width="20px"/>,
+  "blackberry": <Blackberry width="20px"/>,
+  "pear": <Pear width="20px"/>,
 }
