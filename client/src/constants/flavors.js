@@ -27,7 +27,10 @@ import {
   Chocolate,
   Guava,
   Blackberry,
-  Pear
+  Pear,
+  Pineapple,
+  Mango,
+  Kiwi
 } from '../utils/medallion/FlavorMedallions';
 
 export const FLAVORS = {
@@ -75,4 +78,7 @@ export const FLAVORS = {
   "guava": <Guava width="20px"/>,
   "blackberry": <Blackberry width="20px"/>,
   "pear": <Pear width="20px"/>,
+  "pineapple": <Pineapple width="20px"/>,
+  "mango": <Mango width="20px"/>,
+  "kiwi": <Kiwi width="20px"/>,
 }
