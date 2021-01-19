@@ -30,7 +30,11 @@ import {
   Pear,
   Pineapple,
   Mango,
-  Kiwi
+  Kiwi,
+  Lavender,
+  PassionFruit,
+  BlackCurrant,
+  Watermelon
 } from '../utils/medallion/FlavorMedallions';
 
 export const FLAVORS = {
@@ -81,4 +85,10 @@ export const FLAVORS = {
   "pineapple": <Pineapple width="20px"/>,
   "mango": <Mango width="20px"/>,
   "kiwi": <Kiwi width="20px"/>,
+  "lavender": <Lavender width="20px"/>,
+  "passion fruit": <PassionFruit width="20px"/>,
+  "black currant": <BlackCurrant width="20px"/>,
+  "red currant": <BlackCurrant color="#AF2543" width="20px"/>,
+  "watermelon": <Watermelon width="20px"/>,
+  "nectarine": <Peach width="20px"/>,
 }
