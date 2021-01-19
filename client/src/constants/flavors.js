@@ -91,4 +91,5 @@ export const FLAVORS = {
   "red currant": <BlackCurrant color="#AF2543" width="20px"/>,
   "watermelon": <Watermelon width="20px"/>,
   "nectarine": <Peach width="20px"/>,
+  "violet": <Lavender width="20px"/>,
 }
