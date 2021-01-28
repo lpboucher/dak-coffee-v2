@@ -21,7 +21,7 @@ const Wholesale = () => {
       <TwoColLayout>
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>
           <CloudImage
-            img={`Intros/Ecofriendly2020_2_xlh71n`}
+            img={`Products/Mains/ElLimon_Catalogue_bcsmkl`}
             maxWidth={720}
             fit='cover'
           />
