@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Strawberry = ({width, color="#AD1E51"}) => {
+export const Strawberry = ({width="20px", color="#AD1E51"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M138.2,69.1c1.3,0,2.7,0,4-0.1l2.3-0.1l2.3,0.1c1.3,0.1,2.7,0.1,4,0.1c36.3,0,65.7-26.3,65.7-58.9
@@ -16,7 +16,7 @@ export const Strawberry = ({width, color="#AD1E51"}) => {
   )
 };
 
-export const Rose = ({width, color="#890062"}) => {
+export const Rose = ({width="20px", color="#890062"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M162.6,302.9c-10.5-23.4-56.7-32.8-82.9-36.4l38.3-48.9c0.4,0.3,0.8,0.7,1.2,1c12.7,9.3,28,14.2,43.9,14.1
@@ -37,7 +37,7 @@ export const Rose = ({width, color="#890062"}) => {
   )
 };
 
-export const Raspberry = ({width, color="#C91C56"}) => {
+export const Raspberry = ({width="20px", color="#C91C56"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M282.7,154.5c-8.6-17.4-25.5-29.1-44.9-31.7c-3-21.6-17.9-39.6-39.2-46.8c-2.1-0.7-4.2-1.3-6.3-1.8c0,0,0,0,0,0
@@ -60,7 +60,7 @@ export const Raspberry = ({width, color="#C91C56"}) => {
   )
 };
 
-export const Pomegranate = ({width, color="#A0054B"}) => {
+export const Pomegranate = ({width="20px", color="#A0054B"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M188.4,80.5c3.2-14.4,13.7-26.4,28-31.7l0,0c0.4-0.2,0.8-0.4,1.2-0.7c0.3-0.2,0.6-0.3,0.9-0.5
@@ -81,7 +81,7 @@ export const Pomegranate = ({width, color="#A0054B"}) => {
   )
 };
 
-export const Plum = ({width, color="#60203A"}) => {
+export const Plum = ({width="20px", color="#60203A"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M144.2,71.9c4.2,0,7.5-3.2,7.5-7.1l0,0V21.9c-0.1-3.9-3.6-7-7.7-6.9c-4,0.1-7.2,3.1-7.3,6.9v42.9
@@ -95,7 +95,7 @@ export const Plum = ({width, color="#60203A"}) => {
   )
 };
 
-export const Peach = ({width, color="#FF7761"}) => {
+export const Peach = ({width="20px", color="#FF7761"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M188.3,74.8c4.2-3.4,7.9-7.3,11.2-11.6C217.3,39.6,215,11,214.9,9.8c-0.5-5.5-4.7-9.8-9.7-9.8
@@ -111,7 +111,7 @@ export const Peach = ({width, color="#FF7761"}) => {
   )
 };
 
-export const Orange = ({width, color="#EAAA6A"}) => {
+export const Orange = ({width="20px", color="#EAAA6A"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M144.2,71.9c4.2,0,7.5-3.2,7.5-7.1l0,0V21.9c-0.1-3.9-3.6-7-7.7-6.9c-4,0.1-7.2,3.1-7.3,6.9v42.9
@@ -125,7 +125,7 @@ export const Orange = ({width, color="#EAAA6A"}) => {
   )
 };
 
-export const Lemon = ({width, color="#EDCC40"}) => {
+export const Lemon = ({width="20px", color="#EDCC40"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M171.1,57.4c3.9,1.5,8.2-0.5,9.7-4.4c0,0,0,0,0,0l15.9-42.7c1.4-3.9-0.7-8.2-4.6-9.6c-3.8-1.3-7.9,0.6-9.4,4.3
@@ -146,7 +146,7 @@ export const Lemon = ({width, color="#EDCC40"}) => {
   )
 };
 
-export const Grapes = ({width, color="#593277"}) => {
+export const Grapes = ({width="20px", color="#593277"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M288.6,150.8c0-26.3-23.1-47.7-51.5-47.7c-20,0-37.4,10.7-45.9,26.2c-7.2-15-22.6-25.9-40.8-27.9
@@ -167,7 +167,7 @@ export const Grapes = ({width, color="#593277"}) => {
   )
 };
 
-export const Grapefruit = ({width, color="#FF9C7E"}) => {
+export const Grapefruit = ({width="20px", color="#FF9C7E"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M197.3,10c-3.7-2.2-7.5-4.4-11.3-6.3L179,0.1L0.1,315l6.4,4.5c3.3,2.3,6.7,4.6,10.2,6.6
@@ -182,7 +182,7 @@ export const Grapefruit = ({width, color="#FF9C7E"}) => {
   )
 };
 
-export const Cherries = ({width, color="#91001C"}) => {
+export const Cherries = ({width="20px", color="#91001C"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M264.7,208.8c-11.8-7.8-25.9-9.8-39.9-10.2c-1.9-36.6-12-74.8-28.7-108.2c-13.8-27.6-30.4-48.4-46-57.9
@@ -200,7 +200,7 @@ export const Cherries = ({width, color="#91001C"}) => {
   )
 };
 
-export const Blueberries = ({width, color="#2F4182"}) => {
+export const Blueberries = ({width="20px", color="#2F4182"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -227,7 +227,7 @@ export const Blueberries = ({width, color="#2F4182"}) => {
   )
 };
 
-export const Bergamot = ({width, color="#4A7A46"}) => {
+export const Bergamot = ({width="20px", color="#4A7A46"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M171.1,57.4c3.9,1.5,8.2-0.5,9.7-4.4c0,0,0,0,0,0l15.9-42.7c1.4-3.9-0.7-8.2-4.6-9.6c-3.8-1.3-7.9,0.6-9.4,4.3
@@ -248,7 +248,7 @@ export const Bergamot = ({width, color="#4A7A46"}) => {
   )
 };
 
-export const Apple = ({width, color="#A00440"}) => {
+export const Apple = ({width="20px", color="#A00440"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M102.6,353c12.9,0,25.6-2.4,37.6-7.1c2.8-1.1,5.9-1.1,8.6,0c12,4.7,24.7,7.1,37.6,7.1
@@ -265,7 +265,7 @@ export const Apple = ({width, color="#A00440"}) => {
   )
 };
 
-export const Melon = ({width, color="#FF7761"}) => {
+export const Melon = ({width="20px", color="#FF7761"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -281,7 +281,7 @@ export const Melon = ({width, color="#FF7761"}) => {
   )
 };
 
-export const Coconut = ({width, color="#683814"}) => {
+export const Coconut = ({width="20px", color="#683814"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M246.6,51.7c-56.4-69-147.7-68.9-204.1,0s-56.4,180.7,0,249.7s147.7,68.9,204.1,0
@@ -291,7 +291,7 @@ export const Coconut = ({width, color="#683814"}) => {
   )
 };
 
-export const Hazelnut = ({width, color="#774A0E"}) => {
+export const Hazelnut = ({width="20px", color="#774A0E"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M194.3,56.9c-21.9-8.7-38.6-27.9-45.8-50.8c0-2.2-2-3.8-4.1-3.8c-2,0-4.1,1.6-4.6,3.8
@@ -309,7 +309,7 @@ export const Hazelnut = ({width, color="#774A0E"}) => {
   )
 };
 
-export const Caramel = ({width, color="#BC8E19"}) => {
+export const Caramel = ({width="20px", color="#BC8E19"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M289.2,53.5c0.4-2.4-0.5-4.8-2.4-6.3L228.8,2c-1.9-1.5-4.5-1.8-6.6-0.7c-2.2,1-3.6,3.2-3.7,5.7l-1.8,51.8
@@ -323,7 +323,7 @@ export const Caramel = ({width, color="#BC8E19"}) => {
   )
 };
 
-export const Sugar = ({width, color="#215B0B"}) => {
+export const Sugar = ({width="20px", color="#215B0B"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M237.9,277.7c-19.5-29.5-43-46.7-70-51.1c-25.8-4.2-53.9,3.2-83.4,22.1c-3.1,2-6.1,4-8.9,6l33.9-48
@@ -345,7 +345,7 @@ export const Sugar = ({width, color="#215B0B"}) => {
   )
 };
 
-export const Chocolate = ({width, color="#4C2A23"}) => {
+export const Chocolate = ({width="20px", color="#4C2A23"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M252.3,191.5c4.3,0.5,7.2-4.9,4.3-8.7C217,127.7,215.1,114,208.4,120l-4.3,3.8L119.3,0L2,104.2l84.9,124.4
@@ -359,7 +359,7 @@ export const Chocolate = ({width, color="#4C2A23"}) => {
   )
 };
 
-export const Vanilla = ({width, color="#194715"}) => {
+export const Vanilla = ({width="20px", color="#194715"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -392,7 +392,7 @@ export const Vanilla = ({width, color="#194715"}) => {
   )
 };
 
-export const Cinnamon = ({width, color="#BA6424"}) => {
+export const Cinnamon = ({width="20px", color="#BA6424"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M73.1,22c-26.9,0-48.8,21.9-48.8,48.8s21.9,48.8,48.8,48.8c16.3,0,30.7-8.1,39.6-20.4c0,0,0,0,0,0
@@ -443,7 +443,7 @@ export const Cinnamon = ({width, color="#BA6424"}) => {
   )
 };
 
-export const Honey = ({width, color="#C49445"}) => {
+export const Honey = ({width="20px", color="#C49445"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -476,7 +476,7 @@ export const Honey = ({width, color="#C49445"}) => {
   )
 };
 
-export const Hibiscus = ({width, color="#5B4168"}) => {
+export const Hibiscus = ({width="20px", color="#5B4168"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -685,7 +685,7 @@ export const Hibiscus = ({width, color="#5B4168"}) => {
   )
 };
 
-export const Guava = ({width, color="#97AF3F"}) => {
+export const Guava = ({width="20px", color="#97AF3F"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -702,7 +702,7 @@ export const Guava = ({width, color="#97AF3F"}) => {
   )
 };
 
-export const Blackberry = ({width, color="#360866"}) => {
+export const Blackberry = ({width="20px", color="#360866"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M282.7,154.5c-8.6-17.4-25.5-29.1-44.9-31.7c-3-21.6-17.9-39.6-39.2-46.8c-2.1-0.7-4.2-1.3-6.3-1.8l0,0
@@ -725,7 +725,7 @@ export const Blackberry = ({width, color="#360866"}) => {
   )
 };
 
-export const Pear = ({width, color="#BFAE30"}) => {
+export const Pear = ({width="20px", color="#BFAE30"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -747,7 +747,7 @@ export const Pear = ({width, color="#BFAE30"}) => {
   )
 };
 
-export const Pineapple = ({width, color="#3E9917"}) => {
+export const Pineapple = ({width="20px", color="#3E9917"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -788,7 +788,7 @@ export const Pineapple = ({width, color="#3E9917"}) => {
   )
 };
 
-export const Mango = ({width, color="#E2BC1A"}) => {
+export const Mango = ({width="20px", color="#E2BC1A"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -805,7 +805,7 @@ export const Mango = ({width, color="#E2BC1A"}) => {
   )
 };
 
-export const Kiwi = ({width, color="#4D9324"}) => {
+export const Kiwi = ({width="20px", color="#4D9324"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M144,304.4c-70.2,0-127.2-56.9-127.2-127.2S73.8,50,144,50s127.2,56.9,127.2,127.2
@@ -852,7 +852,7 @@ export const Kiwi = ({width, color="#4D9324"}) => {
   )
 };
 
-export const Watermelon = ({width, color="#9B1247"}) => {
+export const Watermelon = ({width="20px", color="#9B1247"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -864,7 +864,7 @@ export const Watermelon = ({width, color="#9B1247"}) => {
   )
 };
 
-export const BlackCurrant = ({width, color="#210621"}) => {
+export const BlackCurrant = ({width="20px", color="#210621"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <g>
@@ -898,7 +898,7 @@ export const BlackCurrant = ({width, color="#210621"}) => {
   )
 };
 
-export const PassionFruit = ({width, color="#918E13"}) => {
+export const PassionFruit = ({width="20px", color="#918E13"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M114.8,102.8c-1.2-3.1-2.9-7.3-5.1-12c11.3-0.2,22.4-2.4,33-6.2c7.8-2.9,14.9-7.6,20.4-13.9
@@ -946,7 +946,7 @@ export const PassionFruit = ({width, color="#918E13"}) => {
   )
 };
 
-export const Lavender = ({width, color="#8B6CA3"}) => {
+export const Lavender = ({width="20px", color="#8B6CA3"}) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
       <path fill={color} d="M254.9,12.4c-7.3,5-8,18.4-1.6,26.9c1.9,2.6,6.7,6.4,10.7,8.6l7.3,4l1.6-3c2.6-4.7,2.1-19.9-0.7-26.9
@@ -1007,6 +1007,40 @@ export const Lavender = ({width, color="#8B6CA3"}) => {
 	c20-6.7,34.3-13.1,39.6-17.9c6.1-5.6,10.4-15.3,8-18.3C244,247.4,235.3,248.5,228.4,253.2z"/>
 <path fill={color} d="M31.4,298.5C3.7,326.6-8.7,350.6,3.3,352.9c4.7,1,9.3-4.1,16-17.9c5.9-11.9,9-16,22-29.6
 	c14.9-15.4,15.3-16,14-20.6c-0.7-2.7-2.1-4.6-3.6-4.6C50.6,280.4,41.4,288.5,31.4,298.5z"/>
+    </svg>
+  )
+};
+
+export const Figs = ({width="20px", color="#BC6658"}) => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} viewBox="0 0 289 353">
+      <path fill={color} d="M151.2,42c-1.6-2.4-3.9-3.5-6.7-3.5c-2.7,0-5.1,1.2-6.7,3.5L61.8,161.2c-26.3,41.2-18.8,94.5,18,126.7
+        c18.4,16.1,41.6,24.3,64.7,24.3s46.3-8.2,64.7-24.3c36.9-32.2,44.3-85.5,18-126.7L151.2,42z M198.7,276.1
+        c-31,27.1-77.7,27.1-108.3,0c-31-27.1-37.3-71.8-15.3-106.3l69.4-109L214,169.4C235.9,204.3,229.7,249.1,198.7,276.1z M259.9,137.7
+        L170,3.5c-1.6-2.4-3.9-3.5-6.7-3.5h-38c-2.7,0-5.1,1.2-6.7,3.5L29.2,137.7c-38,57.3-28.2,134.5,23.1,180
+        c26.3,23.5,59.2,35.3,92.2,35.3s65.9-11.8,91.8-34.9C287.7,272.6,297.9,194.9,259.9,137.7z M226.1,306.3
+        c-46.3,41.2-116.5,41.2-163.2,0c-45.5-40.4-54.1-109-20.4-159.6l87.1-131h29.8l87.1,131C280.3,197.3,271.6,265.9,226.1,306.3z
+        M152.4,210.2c0,0.4,0,1.2,0,1.6c0,2-0.8,3.9-2.4,5.5c-1.6,1.6-3.5,2.4-5.5,2.4c-2,0-3.9-0.8-5.5-2.4c-1.6-1.6-2.4-3.5-2.4-5.5
+        c0-0.4,0-1.2,0-1.6s0.4-1.2,0.4-1.6s0.4-0.8,0.8-1.2c0.4-0.4,0.4-0.8,0.8-1.2c2.7-2.7,8.2-2.7,11,0c0.4,0.4,0.8,0.8,0.8,1.2
+        c0.4,0.4,0.4,0.8,0.8,1.2C151.6,209.1,152,209.8,152.4,210.2z M113.2,210.2c0,0.4,0,1.2,0,1.6c0,2-0.8,3.9-2.4,5.5
+        c-1.6,1.6-3.5,2.4-5.5,2.4s-3.9-0.8-5.5-2.4c-1.6-1.6-2.4-3.5-2.4-5.5c0-0.4,0-1.2,0-1.6s0.4-1.2,0.4-1.6s0.4-0.8,0.8-1.2
+        c0.4-0.4,0.4-0.8,0.8-1.2c2.7-2.7,8.2-2.7,11,0c0.4,0.4,0.8,0.8,0.8,1.2c0.4,0.4,0.4,0.8,0.8,1.2
+        C112.8,209.1,112.8,209.8,113.2,210.2z M191.6,210.2c0,0.4,0,1.2,0,1.6c0,2-0.8,3.9-2.4,5.5c-1.6,1.6-3.5,2.4-5.5,2.4
+        s-3.9-0.8-5.5-2.4c-1.6-1.6-2.4-3.5-2.4-5.5c0-0.4,0-1.2,0-1.6s0.4-0.8,0.4-1.6c0.4-0.4,0.4-0.8,0.8-1.2c0.4-0.4,0.8-0.8,0.8-1.2
+        c2.7-3.1,8.2-3.1,11,0c0.4,0.4,0.8,0.8,0.8,1.2c0.4,0.4,0.4,0.8,0.8,1.2C191.2,209.4,191.2,209.8,191.6,210.2z M130.4,245.5
+        c1.6,1.6,2.4,3.5,2.4,5.5c0,2-0.8,3.9-2.4,5.5c-1.6,1.6-3.5,2.4-5.5,2.4c-1.2,0-2,0-3.1-0.8c-0.8-0.4-2-0.8-2.7-1.6
+        c-1.2-1.6-2-3.5-2-5.5c0-0.4,0-1.2,0-1.6c0-0.4,0.4-0.8,0.4-1.6c0-0.4,0.4-0.8,0.8-1.2c0.4-0.4,0.4-0.8,0.8-1.2
+        C122.2,242.4,127.7,242.4,130.4,245.5z M169.7,245.5c1.6,1.6,2.4,3.5,2.4,5.5c0,2-0.8,3.9-2.4,5.5c-0.4,0.4-0.8,0.8-1.2,0.8
+        c-0.4,0.4-0.8,0.4-1.2,0.8c-0.4,0-0.8,0.4-1.6,0.4c-0.4,0-1.2,0-1.6,0c-1.2,0-2,0-3.1-0.8c-0.8-0.4-2-0.8-2.4-1.6
+        c-1.6-1.2-2.4-3.1-2.4-5.1c0-2,0.8-3.9,2.4-5.5c2-2,4.7-2.7,7.1-2c0.4,0,0.8,0.4,1.6,0.4c0.4,0.4,0.8,0.4,1.2,0.8
+        C168.9,244.7,169.3,245.1,169.7,245.5z M130.4,167.1c1.6,1.6,2.4,3.5,2.4,5.5c0,2-0.8,3.9-2.4,5.5c-1.6,1.6-3.5,2.4-5.5,2.4
+        c-2,0-3.9-0.8-5.5-2.4c-1.6-1.6-2.4-3.5-2.4-5.5c0-2,0.8-3.9,2.4-5.5C122.2,163.9,127.7,163.9,130.4,167.1z M169.7,167.1
+        c1.6,1.6,2.4,3.5,2.4,5.5c0,0.4,0,1.2,0,1.6s-0.4,0.8-0.4,1.6c0,0.4-0.4,0.8-0.8,1.2c-0.4,0.4-0.8,0.8-0.8,1.2
+        c-2,1.6-3.9,2.4-5.9,2.4c-2,0-3.9-0.8-5.5-2.4c-1.6-1.6-2.4-3.5-2.4-5.5c0-2,0.8-3.9,2.4-5.5c2-2,4.7-2.7,7.1-2
+        c0.4,0,0.8,0.4,1.6,0.4c0.4,0,0.8,0.4,1.2,0.8C168.9,166.3,169.3,166.7,169.7,167.1z M152.4,131.8c0,0.4,0,1.2,0,1.6
+        c0,2-0.8,3.9-2.4,5.5c-1.6,1.6-3.5,2.4-5.5,2.4c-2,0-3.9-0.8-5.5-2.4c-1.6-1.6-2.4-3.5-2.4-5.5c0-0.4,0-1.2,0-1.6s0.4-0.8,0.4-1.6
+        c0-0.4,0.4-0.8,0.8-1.2c0.4-0.4,0.4-0.8,0.8-1.2c2.7-3.1,8.2-3.1,11,0c0.4,0.4,0.8,0.8,0.8,1.2c0.4,0.4,0.4,0.8,0.8,1.2
+        C152,131,152,131.4,152.4,131.8z"/>
     </svg>
   )
 };
