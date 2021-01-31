@@ -21,7 +21,7 @@ const HeroSlider = () => {
         slides={
         [
           <FullSlideLayout
-            key="2"
+            key="1"
             textColor="white"
             content={[
               {
@@ -31,7 +31,7 @@ const HeroSlider = () => {
                 target: "/shop"
               },
             ]}
-            slideImg="Heros/Header2_Website_netfxv"
+            slideImg="Header_Website_kn2g7m"
           />,
           /*<SingleSlideLayout
             key="2"
@@ -58,7 +58,7 @@ const HeroSlider = () => {
                 target: "/shop"
               },
             ]}
-            slideImg="Heros/Header_Website_frfhen"
+            slideImg="Heros/Header2_Website_netfxv"
           />
         ]
       }
