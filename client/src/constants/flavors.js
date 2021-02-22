@@ -35,7 +35,8 @@ import {
   PassionFruit,
   BlackCurrant,
   Watermelon,
-  Figs
+  Figs,
+  Lychee
 } from '../utils/medallion/FlavorMedallions';
 
 export const FLAVORS = {
@@ -94,5 +95,6 @@ export const FLAVORS = {
   "nectarine": <Peach />,
   "violet": <Lavender />,
   "molasses": <Honey color="#783429" />,
-  "figs": <Figs />
+  "figs": <Figs />,
+  "lychee": <Lychee />
 }
