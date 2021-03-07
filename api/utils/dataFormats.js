@@ -32,7 +32,18 @@ const combineFullArray = (collection, key) => {
   return collectionObject;
 };
 
+const groupBy = (array, key) => {
+  return array.reduce((result, currentValue) => {
+    if (!result[currentValue[key]]) {
+      result[currentValue[key]] = [];
+    }
+    result[currentValue[key]].push(currentValue);
+    return result;
+  }, {});
+}
+
 module.exports = {
   combineArray,
   combineFullArray,
+  groupBy
 };
