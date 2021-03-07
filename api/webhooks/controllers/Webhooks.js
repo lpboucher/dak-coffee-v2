@@ -1,6 +1,7 @@
 'use strict';
 const shipTools = require('../utils/shipping/tools');
 const promo = require('../../promo/controllers/promo');
+const groupBy = require('../../utils/dataFormats').groupBy;
 
 const getTaxes = (ctx) => {
   const orderData = ctx.request.body.content;
@@ -58,10 +59,12 @@ const handleEvent = async (ctx) => {
           }
         }
       }
-      return;
+      ctx.response.status = 200;
+      ctx.send({});
 
     default:
-      return;
+      ctx.response.status = 200;
+      ctx.send({});
   }
 };
 
@@ -73,26 +76,33 @@ module.exports = {
 
 // TO DO move to own util file
 const aggregateItemTaxes = (taxPerItem) => {
-  return taxPerItem.reduce((taxes, tax) => {
-    const existingIndex = taxes.findIndex(i => i.rate === tax.rate);
-    if (existingIndex !== -1) {
-      taxes[existingIndex] = {
-        ...taxes[existingIndex],
-        rate: taxes[existingIndex].amount + tax.amount
-      };
-    } else {
-      taxes.push(tax);
-    }
-    return taxes;
-  }, []);
+  let taxes = [];
+  const baseTax = {'includedInPrice': true, 'appliesOnShipping': false};
+  const coffeeTaxTotal = getTaxRateTotal(taxPerItem, 0.09);
+  const otherTaxTotal = getTaxRateTotal(taxPerItem, 0.21);
+  if (coffeeTaxTotal > 0) {
+    taxes.push({'name': '9% VAT (incl.)', 'amount': coffeeTaxTotal, 'rate': 0.09, 'numberForInvoice': 'TAX-COF', ...baseTax})
+  }
+  if (otherTaxTotal > 0) {
+    taxes.push({'name': '21% VAT (incl.)', 'amount': otherTaxTotal, 'rate': 0.21, 'numberForInvoice': 'TAX-PROD', ...baseTax})
+  }
+
+  return taxes;
 };
 
 const getTaxPerItem = ({customFields, totalPrice}) => {
-  if (isCoffeeProduct(customFields)) {
-    return {'name': '9% VAT (incl.)', 'amount': Math.round(0.09 * totalPrice * 100) / 100, 'rate': 0.09, 'numberForInvoice': 'TAX-COF', 'includedInPrice': true, 'appliesOnShipping': false};
-  }
-  return {'name': '21% VAT (incl.)', 'amount': Math.round(0.21 * totalPrice * 100) / 100, 'rate': 0.21, 'numberForInvoice': 'TAX-PROD', 'includedInPrice': true, 'appliesOnShipping': false};
+  const taxRate = isCoffeeProduct(customFields) ? 0.09 : 0.21;
+  return {'amount': Math.round(taxRate * totalPrice * 100) / 100, 'rate': taxRate};
 };
+
+const getTaxRateTotal = (items, rate) => {
+  return items.reduce((total, one) => {
+    if (one.rate === rate) {
+      total += one.amount;
+    }
+    return total;
+  }, 0);
+}
 
 const isTaxCollected = (country) => {
   return shipTools.isFromRegion('EU', country);
