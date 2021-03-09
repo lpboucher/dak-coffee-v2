@@ -30,7 +30,7 @@ const CardContainer = styled(Box)`
   position: relative;
 
   & > ${Feature} {
-      background: #f7f6f4;
+      background: ${({background}) => background};
   }
 
   &:hover {
@@ -49,7 +49,7 @@ const CardContainer = styled(Box)`
 }
 `
 
-const ProductCardLayout = ({feature, info, linkTarget, isClickable, medallion=null}) => {
+const ProductCardLayout = ({feature, info, linkTarget, isClickable, background="#f7f6f4", medallion=null}) => {
   const history = useHistory();
   const { mediaType } = useResponsive();
   return (
@@ -60,7 +60,7 @@ const ProductCardLayout = ({feature, info, linkTarget, isClickable, medallion=nu
       pad="small"
       margin={layout[`cardMargin_${mediaType}`] || cardMargin}
     >
-        <Feature height={cardTop} width="100%" onClick={() => isClickable ? history.push(linkTarget) : null}>
+        <Feature background={background} height={cardTop} width="100%" onClick={() => isClickable ? history.push(linkTarget) : null}>
             {feature}
         </Feature>
         {info &&
