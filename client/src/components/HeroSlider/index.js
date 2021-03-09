@@ -20,18 +20,19 @@ const HeroSlider = () => {
       <HeroSliderLayout
         slides={
         [
-          <FullSlideLayout
-            key="1"
-            textColor="white"
+          <SingleSlideLayout
+            key="2"
+            background="#628082"
+            textColor="black"
             content={[
               {
-                title: t("slides.dak-introduction.title"),
-                text: t("slides.dak-introduction.text"),
-                button: <SlideButton onClick={() => history.push("/shop")} primary label={t("shop.all")}/>,
-                target: "/shop"
+                title: t("slides.limited-edition.title"),
+                text: t("slides.limited-edition.text"),
+                button: <SlideButton onClick={() => history.push("/shop/coffee/alchemist")} primary label={t("shop.one")} />,
+                target: "/shop/coffee/alchemist"
               },
             ]}
-            slideImg="Heros/Header_Website_kn2g7m"
+            slideImg="Heros/21_03_DCR_Illustration_chimie-01_wpzack"
           />,
           /*<SingleSlideLayout
             key="2"
@@ -47,6 +48,19 @@ const HeroSlider = () => {
             ]}
             slideImg="Heros/GiftCard_beige2_flwgr8"
           />,*/
+          <FullSlideLayout
+            key="1"
+            textColor="white"
+            content={[
+              {
+                title: t("slides.dak-introduction.title"),
+                text: t("slides.dak-introduction.text"),
+                button: <SlideButton onClick={() => history.push("/shop")} primary label={t("shop.all")}/>,
+                target: "/shop"
+              },
+            ]}
+            slideImg="Heros/Header_Website_kn2g7m"
+          />,
           <FullSlideLayout
             key="2"
             textColor="white"
