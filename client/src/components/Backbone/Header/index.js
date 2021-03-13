@@ -14,7 +14,7 @@ const {
   logoWidth,
 } = layout;
 
-const Header = () => {
+const Header = ({isTransparent}) => {
   const { mediaType } = useResponsive();
   return (
     <HeaderLayout
@@ -27,6 +27,7 @@ const Header = () => {
       }
       navigation={<Navigation />}
       settings={<SettingMenu />}
+      isTransparent={isTransparent}
     />
   );
 };

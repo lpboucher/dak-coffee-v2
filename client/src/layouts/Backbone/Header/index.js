@@ -8,17 +8,33 @@ import { Header, Box } from 'grommet';
 
 import { layout } from '../../../layout';
 
-const HeaderContainer = styled(Headroom)``
+const HeaderWithHover = styled(Header)`
+  transition: background-color 0.5s ease;
+`
+
+const HeaderContainer = styled(Headroom)`
+    max-height: ${({isTransparent}) => isTransparent ? layout.barHeight : "none"};
+
+    .headroom--unfixed  ${HeaderWithHover} {
+      background: transparent;
+    }
+
+    &:hover ${HeaderWithHover},
+    .headroom--pinned  ${HeaderWithHover} {
+      background: ${({theme}) => theme.global.colors.mainWhite};
+    }
+`
 
 const HeaderLayout = ({
   message,
   logo,
   navigation,
-  settings
+  settings,
+  isTransparent
 }) => {
   const { greaterThan } = useResponsive();
   return (
-    <HeaderContainer>
+    <HeaderContainer isTransparent={isTransparent}>
       <Box width="100%" direction="column">
         <Box
           background="mainDark"
@@ -28,8 +44,7 @@ const HeaderLayout = ({
         >
           {message}
         </Box>
-        <Header
-          background="mainWhite"
+        <HeaderWithHover
           height={layout.navigationHeight}
           pad={{horizontal: layout.baseWrapperPadding}}
         >
@@ -44,7 +59,7 @@ const HeaderLayout = ({
           </Box>
           {greaterThan.medium && navigation}
           {settings}
-        </Header>
+        </HeaderWithHover>
       </Box>
     </HeaderContainer>
   )

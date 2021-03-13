@@ -96,7 +96,7 @@ export const layout = {
     return addPX(this.barHeight, this.navigationHeight)
   },
   get topOffset() {
-    return addPX(this.headerHeight)
+    return addPX(this.barHeight)
   },
   get cardWidth() {
     return subUnits(this.baseCardWidth, addPX(this.cardMargin, this.cardMargin))
