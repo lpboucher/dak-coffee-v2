@@ -19,9 +19,9 @@ const SingleSlideLayout = ({content, slideImg, background="secondary", textColor
     <Box fill direction="row" background={background}>
       <SliderContent width="50%" justify="center" pad="large" order={1}>
         {content.map(({title, text, button}, index) => (
-        <Box key={`itemId-${index}`} pad="medium" fill justify="around">
-          <SlideHeading responsive={false} size="xlarge" color={textColor}>{title}</SlideHeading>
-          <Text responsive={false} size="xlarge" color={textColor}>{text}</Text>
+        <Box key={`itemId-${index}`} pad="medium" justify="around">
+          <SlideHeading responsive={false} size="xlarge" color={textColor} margin={{bottom: "medium"}}>{title}</SlideHeading>
+          <Text responsive={false} size="xlarge" color={textColor} margin={{bottom: "medium"}}>{text}</Text>
           {button}
         </Box>
         ))}

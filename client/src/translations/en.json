@@ -1,5 +1,5 @@
 {
-  "header-message": "Free shipping in {{region}} on orders of {{threshold}}+",
+  "header-message": "Free shipping in {{region}} on orders of {{threshold}}+. We dispatch orders on Tuesday, Thursday mornings.",
   "menu": "Menu",
   "navigation": {
     "home": "Home",
@@ -28,7 +28,7 @@
       "text": "Experimental Natural from Rwanda with intense notes of ripe tropical fruits, honey, dark chocolate."
     },
     "dak-introduction": {
-      "title": "Bringing outstanding flavours to your cup.",
+      "title": "Bringing outstanding flavours to your cup. Here to make your coffee time memorable.",
       "text": "Here to make your coffee time memorable."
     },
     "new-product": {

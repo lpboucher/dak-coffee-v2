@@ -11,6 +11,9 @@ import FullSlideLayout from '../../layouts/HeroSlider/FullSlide';
 
 const SlideButton = styled(Button)`
   width: fit-content;
+  background: #dad7d1;
+  border-color: #dad7d1;
+  color: black;
 `
 
 const HeroSlider = () => {
@@ -18,12 +21,26 @@ const HeroSlider = () => {
   const history = useHistory();
     return (
       <HeroSliderLayout
+        size="100vh"
         slides={
         [
+          <FullSlideLayout
+            key="1"
+            textColor="mainDark"
+            content={[
+              {
+                title: "",
+                text: t("slides.dak-introduction.title"),
+                button: <SlideButton onClick={() => history.push("/shop")} label={t("shop.all")}/>,
+                target: "/shop"
+              },
+            ]}
+            slideImg="Heros/Header_COFFEE4_pkgtbb"
+          />,
           <SingleSlideLayout
             key="2"
             background="#628082"
-            textColor="black"
+            textColor="mainDark"
             content={[
               {
                 title: t("slides.limited-edition.title"),
@@ -48,32 +65,6 @@ const HeroSlider = () => {
             ]}
             slideImg="Heros/GiftCard_beige2_flwgr8"
           />,*/
-          <FullSlideLayout
-            key="1"
-            textColor="white"
-            content={[
-              {
-                title: t("slides.dak-introduction.title"),
-                text: t("slides.dak-introduction.text"),
-                button: <SlideButton onClick={() => history.push("/shop")} primary label={t("shop.all")}/>,
-                target: "/shop"
-              },
-            ]}
-            slideImg="Heros/Header_Website_kn2g7m"
-          />,
-          <FullSlideLayout
-            key="2"
-            textColor="white"
-            content={[
-              {
-                title: t("slides.dak-introduction.title"),
-                text: t("slides.dak-introduction.text"),
-                button: <SlideButton onClick={() => history.push("/shop")} primary label={t("shop.all")}/>,
-                target: "/shop"
-              },
-            ]}
-            slideImg="Heros/Header2_Website_netfxv"
-          />
         ]
       }
       />

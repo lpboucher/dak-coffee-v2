@@ -20,7 +20,7 @@ const SliderContainer = styled(Box)`
   }
 `
 
-const SliderLayout = ({children, ...settings}) => {
+const SliderLayout = ({children, size, ...settings}) => {
     const slideSettings = {
       dots: true,
       infinite: true,
@@ -31,7 +31,7 @@ const SliderLayout = ({children, ...settings}) => {
       slidesToScroll: 1,
       ...settings
   };
-  const boxHeight = `calc(85vh - ${layout.topOffset})`;
+  const boxHeight = `calc(${size} - ${layout.topOffset})`;
     return (
       <SliderContainer height={boxHeight}>
         <Slider {...slideSettings}>

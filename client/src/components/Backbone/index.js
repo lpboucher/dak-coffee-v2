@@ -9,6 +9,7 @@ import SEO from '../../utils/seo/SEO';
 import BackBoneLayout from '../../layouts/Backbone';
 import Header from './Header';
 import HeroSlider from '../../components/HeroSlider';
+import ContactSlider from '../../components/Contact/ContactSlider';
 import Newsletter from '../Newsletter';
 import Footer from './Footer';
 import AnnouncementModal from '../../components/Backbone/AnnouncementModal';
@@ -29,13 +30,17 @@ const BackBone = ({children}) => {
   );
   const { pathname } = useLocation();
 
-  const pageHeader = pathname === "/" ?
-  <>
-    <Header isTransparent />
-    <HeroSlider />
-  </>
-  :
-  <Header isTransparent={false}/>;
+  const pageHeader = {
+    "/": <>
+          <Header isTransparent />
+          <HeroSlider />
+        </>,
+    "/about": <>
+                <Header isTransparent />
+                <ContactSlider />
+              </>
+  };
+  const defaultHeader = <Header isTransparent={false}/>;
 
   return (
     <>
@@ -46,7 +51,7 @@ const BackBone = ({children}) => {
         schema={schema}
       />
       <BackBoneLayout
-        header={pageHeader}
+        header={pageHeader[pathname] || defaultHeader}
         main={children}
         footer={[
           <Newsletter type={pathname === "/subscribe" ? "full" : null}/>,

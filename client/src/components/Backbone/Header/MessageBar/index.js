@@ -8,7 +8,7 @@ const MessageBar = () => {
   const { t } = useTranslation();
   const { location, shippingThreshold } = useLocation();
   return (
-        <Text>
+        <Text size="small">
           {t('header-message', {region: location, threshold: shippingThreshold } )}
         </Text>
   );
