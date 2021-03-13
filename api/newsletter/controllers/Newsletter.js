@@ -8,7 +8,7 @@ const promo = require('../../promo/controllers/promo');
  */
 const add = async (ctx) => {
   const mailchimp = new Mailchimp(strapi.config.currentEnvironment.mailchimp);
-  const { name, email, language } = ctx.request.body;
+  const { email, language } = ctx.request.body;
   const listId = 'c1ea6cd510';
   try {
     await mailchimp.post({
@@ -17,10 +17,6 @@ const add = async (ctx) => {
         'email_address': email,
         'status': 'subscribed',
         'language': language,
-        'merge_fields': {
-          'FNAME': name.split(' ')[0],
-          'LNAME': name.split(' ')[1]
-        }
       }
     });
     const promoCode = await promo.generateSnipcartPromo('news', 10.0);
