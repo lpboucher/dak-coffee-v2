@@ -5,11 +5,13 @@ export const DakTheme = {
         "mainDark": "#343434",
         "mainWhite": "#ffffff",
         'lightGrey': "#f7f8f9",
+        "secondaryGrey": "#dad7d1",
         "primary": "#85955B",
         "secondary": "#eceae5",
         "minor-1": "#efefef",
         "minor-2": "#dddfde",
         "minor-3": "#f7f6f4",
+        "minor-4": "#8d8f7f",
         text: {light: "mainDark", dark: "mainWhite"},
         focus: 'none',
     },
@@ -79,6 +81,16 @@ export const DakTheme = {
     small: {
       size: "10px",
       height: "15px",
+      maxWidth: "100%"
+    },
+    medium: {
+      size: "14px",
+      height: "28px",
+      maxWidth: "100%"
+    },
+    large: {
+      size: "16px",
+      height: "32px",
       maxWidth: "100%"
     },
   },

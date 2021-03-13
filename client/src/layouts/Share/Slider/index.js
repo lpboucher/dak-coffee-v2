@@ -31,9 +31,8 @@ const SliderLayout = ({children, size, ...settings}) => {
       slidesToScroll: 1,
       ...settings
   };
-  const boxHeight = `calc(${size} - ${layout.topOffset})`;
     return (
-      <SliderContainer height={boxHeight}>
+      <SliderContainer height={size}>
         <Slider {...slideSettings}>
           {children}
         </Slider>

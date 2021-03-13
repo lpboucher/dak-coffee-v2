@@ -9,10 +9,10 @@ const {
   twoColLayoutWidth,
 } = layout;
 
-const TwoColLayout = ({children}) => {
+const TwoColLayout = ({children, background="mainWhite"}) => {
   const { mediaType } = useResponsive();
   return (
-    <Box direction="row" wrap>
+    <Box direction="row" wrap background={background}>
       {children.map((oneChild) =>
         <Box width={layout[`twoColLayoutWidth_${mediaType}`] || twoColLayoutWidth} pad="large">
           {oneChild}

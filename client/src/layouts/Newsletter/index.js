@@ -19,9 +19,8 @@ export const NewsletterButton = styled(Button)`
   font-size: 10px;
   line-height: 10px;
   border: ${({isLink}) => isLink ? 'none' : 'inherit'};
-  color: ${({isLink, theme}) => isLink ? theme.global.colors.mainWhite : theme.global.colors.mainDark};
-  background: ${({isLink, theme}) => isLink ? theme.global.colors.mainDark : theme.global.colors.mainWhite};
-  min-width: ${({width}) => width ? width : '200px'};
+  color: ${({isLink, theme}) => theme.global.colors.mainWhite};
+  background: ${({isLink, theme}) => theme.global.colors.mainDark};
   min-height: ${({height}) => height ? height : '40px'};
 `
 
@@ -36,7 +35,6 @@ const NewsletterLayout = ({name, email, submitLabel, description}) => {
           </Text>
         </Box>
         <Box direction="row" width={lessThan.large ? newsletterSectionWidth_small : newsletterSectionWidth} align="center" justify="around" wrap>
-          {name}
           {email}
           <NewsletterButton
             type="submit"

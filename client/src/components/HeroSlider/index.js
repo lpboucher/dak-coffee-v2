@@ -11,9 +11,9 @@ import FullSlideLayout from '../../layouts/HeroSlider/FullSlide';
 
 const SlideButton = styled(Button)`
   width: fit-content;
-  background: #dad7d1;
-  border-color: #dad7d1;
-  color: black;
+  background: ${({theme}) => theme.global.colors.secondaryGrey};
+  border-color: ${({theme}) => theme.global.colors.secondaryGrey};
+  color: ${({theme}) => theme.global.colors.mainDark};;
 `
 
 const HeroSlider = () => {
@@ -21,7 +21,8 @@ const HeroSlider = () => {
   const history = useHistory();
     return (
       <HeroSliderLayout
-        size="100vh"
+      //full or half
+        size="full"
         slides={
         [
           <FullSlideLayout

@@ -8,7 +8,7 @@ const ContactSlider = () => {
   const { t } = useTranslation();
     return (
       <HeroSliderLayout
-      size="80vh"
+      size="half"
         slides={
         [
           <FullSlideLayout

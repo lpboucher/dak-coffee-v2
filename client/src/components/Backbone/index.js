@@ -9,7 +9,8 @@ import SEO from '../../utils/seo/SEO';
 import BackBoneLayout from '../../layouts/Backbone';
 import Header from './Header';
 import HeroSlider from '../../components/HeroSlider';
-import ContactSlider from '../../components/Contact/ContactSlider';
+import AboutSlider from '../../components/About/AboutSlider';
+import Intro from '../../components/About/Intro';
 import Newsletter from '../Newsletter';
 import Footer from './Footer';
 import AnnouncementModal from '../../components/Backbone/AnnouncementModal';
@@ -37,7 +38,8 @@ const BackBone = ({children}) => {
         </>,
     "/about": <>
                 <Header isTransparent />
-                <ContactSlider />
+                <AboutSlider />
+                <Intro />
               </>
   };
   const defaultHeader = <Header isTransparent={false}/>;
@@ -62,6 +64,7 @@ const BackBone = ({children}) => {
           <AnnouncementModal key="modal" />,
           <MobileMenu key="mobileMenu" />
         ]}
+        withBasePadding={pathname !== "/about"}
       />
     </>
   )

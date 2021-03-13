@@ -18,7 +18,7 @@ const About = () => {
   const { mediaType } = useResponsive();
   return (
     <>
-      <TwoColLayout>
+      <TwoColLayout background="minor-3">
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>
           <CloudImage
             img={`Intros/Aboutuswebsite_wiss4b`}
@@ -27,17 +27,23 @@ const About = () => {
           />
         </Box>
         <Box>
-          <Heading level={1}>{t("about.founders.title")}</Heading>
+          {t("about.founders.title").split("<br>").map(founder =>
+            <Heading margin={{bottom: "small"}}level={4}>{founder}</Heading>
+          )}
           {t("about.founders.description").split("<br>").map(para =>
             <Text margin={{top: "medium"}}>{para}</Text>
           )}
         </Box>
       </TwoColLayout>
-      <TwoColLayout>
+      <TwoColLayout background="minor-4">
         <Box>
-          <Heading level={1}>{t("about.coffee.title")}</Heading>
-          {t("about.coffee.description").split("<br>").map(para =>
-            <Text margin={{top: "medium"}}>{para}</Text>
+          <Heading color="mainWhite" level={4}>{t("about.sourcing.title")}</Heading>
+          {t("about.sourcing.description").split("<br>").map(para =>
+            <Text color="mainWhite" margin={{top: "medium"}}>{para}</Text>
+          )}
+          <Heading color="mainWhite" level={4} margin={{top: "medium"}}>{t("about.roasting.title")}</Heading>
+          {t("about.roasting.description").split("<br>").map(para =>
+            <Text color="mainWhite" margin={{top: "medium"}}>{para}</Text>
           )}
         </Box>
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>

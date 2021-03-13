@@ -111,13 +111,18 @@
     "shop": "Online shop"
   },
   "about": {
+    "intro": "Dak Coffee Roasters is based in charming Amsterdam, Netherlands and was founded by two Canadians from Montreal. We select beautiful and unique coffees and carefully roast them to highlight the best flavors they have to offer. We always maintain a selection that includes some funky and experimental coffees along with more classic origins. There is always something to be found, no matter your preferences.",
     "founders": {
-      "title": "Founders",
-      "description": "Dak Coffee Roasters is gevestigd in Amsterdam, Nederland. Op dit moment wordt onze koffie gebrand bij Amsterdam Roasters in Amsterdam Noord, het eerste koffiecollectief in Nederland. Daarnaast werken we samen met partners in Montreal, Canada. Hier werken we aan het optimaliseren van ons verzendproces, zodat we koffie-abonnementen in Noord-Amerika kunnen aanbieden met gratis verzending. Onze vertegenwoordiger Olivier Daigneault is gevestigd in Montreal en is beschikbaar voor koffieproeverijen en distributie."
+      "title": "Louis-Philippe Boucher, Co-Founder & Roaster<br>Veronique Lagarde, Co-Founder",
+      "description": "Hello! This is us, the duo behind Dak Coffee Roasters. Originally from Montreal, Canada, we have been roaming around Europe for over 7 years now.We have lived in different cities and we finally ended up settling in Amsterdam. We are a small team of two, so we handle every  order with care and with a personalised touch.<br>Coffee has always been part of our lives, although our love for specialty coffee has grown exponentially in the past few years. After working many years respectively in Finance & Marketing, we decided to pursue our dream, opening a coffee roastery. Dak was born from true passion for coffee and the desire to embark on a journey of endless discoveries and knowledge.<br>We select our coffees based on their unique & flavoursome tasting profiles, those that score 86+ and of course that are 100% fully traceable. We partner with importers that share our values and we roast each one of our coffees carefully to bring the best flavours they have to offer.<br>Coffee is supposed to be a positive moment in everyone’s daily life, specialty coffee might sound pretentious or exclusive, but we feel everyone should be able to drink specialty coffee so adding fun to all of this is what we are about.<br>Louis-Philippe & Veronique"
     },
-    "coffee": {
-      "title": "Onze koffie",
-      "description": "Goede koffie smaakt nog beter als het ook ethisch verantwoorde koffie is. Daarom hebben we bij DAK alleen partnerships met importeurs die onze waarden delen, werken we samen met exclusieve koffiegebieden* en doen we uitgebreid onderzoek naar de koffieboerderijen.\n\nBovendien betalen we graag iets meer voor onze groene koffiebonen zodat de boeren eerlijk betaald krijgen en onze klanten gegarandeerd de hoogste kwaliteit genieten."
+    "sourcing": {
+      "title": "Sourcing",
+      "description": "We often forget where the things we consume come from, but let us tell you that good coffee tastes even better when it is sourced ethically! We only partner with importers that share our values, work with exclusive lots and do extensive background research on the farms. We are ready to pay a premium price for our green coffee beans to make sure everyone in the supply chain gets their fair share and our customers get the best quality.<br>To make sure our customers can find something they like based on their preferences, but also try something new, we always maintain a selection that includes some funky and experimental coffees along with more classic origins."
+    },
+    "roasting": {
+      "title": "Roasting",
+      "description": "We believe the only way to identify unique flavors is to continually try new and innovative roasting profiles, but also to remain open-minded about new innovations in processing methods, emerging coffee origins and new discoveries in coffee varietal genetics.<br>We roast on an IMF machine that provides a high degree of control and consistency in our roasts. The machine uses a convection system that allows to properly develop coffees in a shorter time. The result is clean, bright and sweet coffees."
     }
   },
   "wholesale": {

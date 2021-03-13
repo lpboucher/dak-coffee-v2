@@ -88,6 +88,8 @@ export const layout = {
   twoColLayoutHeight_extraSmall: "400px",
   socialPad: "medium",
   socialPad_small: "large",
+  fullSliderSpan: "100vh",
+  halfSliderSpan: "80vh",
   //productColumnWidth_small: "100%",
   get productColumnWidth_small() {
     return addPCT(this.productColumnWidth, "50%")
@@ -109,6 +111,12 @@ export const layout = {
   },
   get cardWidth_extraSmall() {
     return subUnits(this.baseCardWidth_extraSmall, addPX(this.cardMargin_extraSmall, this.cardMargin_extraSmall))
+  },
+  get fullSliderHeight() {
+    return subUnits(this.fullSliderSpan, this.topOffset);
+  },
+  get halfSliderHeight() {
+    return subUnits(this.halfSliderSpan, this.topOffset);
   },
   footerNavLinkWidth: "33%",
   footerDescriptionWidth: "33%",

@@ -4,7 +4,7 @@ import { Field } from 'react-final-form';
 import { FormField, TextInput, RadioButton, RadioButtonGroup, CheckBox, Select } from "grommet";
 
 const StyledFormField = styled(FormField)`
-  border-bottom: ${({withBorder}) => withBorder ? '1px solid white' : 'none'};
+  border-bottom: ${({withBorder}) => withBorder ? '0px solid white' : 'none'};
   margin: 20px;
 `;
 

@@ -9,12 +9,13 @@ const BackBoneLayout = ({
   metas = [],
   main,
   footer,
-  layers = []
+  layers = [],
+  withBasePadding = true
 }) => (
   <>
     {header}
     {metas.map((meta, index) => <Fragment key={`meta${index}`}>{meta}</Fragment>)}
-    <Main pad={{horizontal: layout.baseWrapperPadding}}>
+    <Main pad={withBasePadding ? {horizontal: layout.baseWrapperPadding} : "0px"}>
       {main}
     </Main>
     {footer.map((f, index) => <Fragment key={`footer${index}`}>{f}</Fragment>)}

@@ -3,14 +3,6 @@ import IsEmail from 'validator/lib/isEmail'
 export const newsletterValidation = values => {
   const errors = {}
 
-  if (!values.name) {
-    errors.name = 'Required'
-  }
-
-  if (values.name && values.name.split(' ').length < 2) {
-    errors.name = 'Please provide full name'
-  }
-
   if (!values.email) {
     errors.email = 'Required'
   }
