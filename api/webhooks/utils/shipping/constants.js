@@ -33,8 +33,8 @@ const SHIPPING_RATES_BY_REGION = {
 };
 
 const SHIPPING_THRESHOLDS_BY_REGION = {
-  EUR: { NL: 30, EU: 50, NA: 50, World: 70 },
-  CAD: { NL: 45, EU: 75, NA: 75, World: 100 },
+  EUR: { NL: 30, EU: 50, NA: 75, World: 75 },
+  CAD: { NL: 45, EU: 75, NA: 100, World: 100 },
 };
 
 const SHIPCLOUD_ENDPOINT = 'https://panel.sendcloud.sc/api/v2';
