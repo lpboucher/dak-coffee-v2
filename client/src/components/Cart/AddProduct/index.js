@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useAddProductToCart } from '../../../hooks/cart/useCart';
 
+import { BACKEND_URL } from "../../../global";
+
 const AddBox = styled.div``
 
 const AddToCart = ({productId, addButton, selected}) => {
@@ -14,7 +16,7 @@ const AddToCart = ({productId, addButton, selected}) => {
           data-item-id={productId}
           data-item-name={name}
           data-item-price={priceStr}
-          data-item-url={"https://dakcoffeeroasters.com/api/snipcartParser"}
+          data-item-url={`${BACKEND_URL}/snipcartParser`}
           data-item-description={description}
           {...cartOptions}
         >

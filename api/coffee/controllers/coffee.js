@@ -1,4 +1,5 @@
 'use strict';
+const { BACKEND_URL } = require('../../../client/src/global');
 
 const baseFields = {
   slug : 1,
@@ -101,7 +102,7 @@ const snipcartParser = async (ctx) => {
         priceObj[onePrice.base.currency] = Math.round(onePrice.base.value * 100) / 100;
         return priceObj;
       }, {}),
-      'url': 'https://dakcoffeeroasters.com/api/snipcartParser'
+      'url': `${BACKEND_URL}/snipcartParser`
     };
   });
   ctx.send(data);
