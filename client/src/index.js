@@ -1,3 +1,4 @@
+import "core-js/stable";
 import React from 'react';
 import { hydrate, render } from "react-dom";
 import { BrowserRouter as Router } from 'react-router-dom';
