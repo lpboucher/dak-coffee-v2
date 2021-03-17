@@ -1,24 +1,24 @@
 require("babel-register")({
     presets: ["es2015", "react"]
   });
-   
+
   const axios = require("axios");
   const router = require("./sitemap-routes").default;
   const Sitemap = require("react-router-sitemap").default;
-  
+
   async function generateSitemap() {
     try {
-        const res1 = await axios.get("https://dakcoffeeroasters.com/api/products");
-        const products = res1.data;
+        const res1 = await axios.get("https://dakcoffeeroasters.com/api/products/all?isActive=true");
+        const products = res1.data.products;
 
         const res2 = await axios.get("https://dakcoffeeroasters.com/api/articles");
         const articles = res2.data;
-        
+
         let productMap = [];
         let articleMap = [];
-    
+
         for(var i = 0; i < products.length; i++) {
-            productMap.push({ slug: products[i].slug });
+            productMap.push({ model: products[i].type, slug: products[i].slug });
         }
 
         for(var i = 0; i < articles.length; i++) {
@@ -26,7 +26,7 @@ require("babel-register")({
         }
 
         const paramsConfig = {
-            "/shop/:slug": productMap,
+            "/shop/:model/:slug": productMap,
             "/blog/:slug": articleMap,
         };
 
@@ -39,8 +39,8 @@ require("babel-register")({
     } catch (e) {
         console.log(e)
     }
-    
-    
+
+
   }
-  
+
   generateSitemap();
