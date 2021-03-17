@@ -90,20 +90,14 @@ export const switchOption = (type, key) => (dispatch) => {
 
 // new
 export const switchLanguage = (lang=null) => (dispatch) => {
-    if(!lang) {
-        window.Snipcart.setLang(i18n.language);
-        i18n.changeLanguage(i18n.language.substr(0,2));
-        dispatch({type: CHANGE_LANGUAGE_SUCCESS, payload: i18n.language});
-    } else {
-        dispatch({type: CHANGE_LANGUAGE_REQUEST, payload: "loading.language"})
-        try {
-            window.Snipcart.setLang(lang);
-            i18n.changeLanguage(lang);
-            dispatch({type: CHANGE_LANGUAGE_SUCCESS, payload: lang});
-        } catch (err) {
-            console.log(err);
-        }
-    }
+  dispatch({type: CHANGE_LANGUAGE_REQUEST, payload: "loading.language"})
+  try {
+      window.Snipcart.setLang(lang);
+      i18n.changeLanguage(lang);
+      dispatch({type: CHANGE_LANGUAGE_SUCCESS, payload: lang});
+  } catch (err) {
+      console.log(err);
+  }
 }
 
 //new

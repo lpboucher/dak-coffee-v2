@@ -1,5 +1,6 @@
+import i18n from "i18next";
 import { combineReducers } from 'redux';
-import { detectBrowserLocation, getDefaultLocationCurrency } from '../utils/languages/detectLanguage';
+import { LANGUAGE_LIST, detectBrowserLocation, getDefaultLocationCurrency } from '../utils/languages/detectLanguage';
 import { notify } from '../services/notifications';
 
 import { login } from './user';
@@ -22,6 +23,7 @@ export const INITIALIZE_CART_SUCCESS = 'cart/initialize_cart_success';
 //Action Creators
 //new
 export const initializeCart = ({order}) => async (dispatch) => {
+  let switchedLanguage;
   dispatch(trackLocation(await detectBrowserLocation()));
   if (order && order.items.length > 0) {
       dispatch(switchDisplayCurrency(order.currency));
@@ -29,7 +31,15 @@ export const initializeCart = ({order}) => async (dispatch) => {
       dispatch(switchDisplayCurrency(await getDefaultLocationCurrency()));
   }
   dispatch(login());
-  dispatch(switchLanguage());
+  const initialBrowserLang = i18n.language;
+  if (LANGUAGE_LIST.includes(initialBrowserLang)) {
+    switchedLanguage = initialBrowserLang;
+  } else if (LANGUAGE_LIST.includes(initialBrowserLang.substr(0,2))) {
+    switchedLanguage = initialBrowserLang.substr(0,2);
+  } else {
+    switchedLanguage = "en";
+  }
+  dispatch(switchLanguage(switchedLanguage));
   dispatch({ type: INITIALIZE_CART_SUCCESS });
 }
 //new

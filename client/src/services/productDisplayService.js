@@ -82,7 +82,7 @@ export const getLongProductDescription = ({type, ...rest}) => {
 }
 
 export const getTranslatedItem = (obj) => {
-  const lang = i18n.language || i18n.languages[0];
+  const lang = i18n.language || "en";
   return capitalize(obj[lang])
 }
 

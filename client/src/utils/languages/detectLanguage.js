@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const LANGUAGE_LIST = ["en", "fr", "nl"];
+
 export const detectBrowserLocation = async () => {
   try {
     const geo = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.REACT_APP_GEO_KEY}`);
