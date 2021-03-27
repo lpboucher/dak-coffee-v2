@@ -37,7 +37,8 @@ import {
   Watermelon,
   Figs,
   Lychee,
-  Tea
+  Tea,
+  Nougat
 } from '../utils/medallion/FlavorMedallions';
 
 export const FLAVORS = {
