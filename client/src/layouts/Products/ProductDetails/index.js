@@ -39,7 +39,7 @@ const DescBox = styled(Box)`
 `
 
 const SpacedHeading = styled(Heading)`
-  letter-spacing: 1.2px;
+  letter-spacing: 1.1px;
 `
 
 const LightText = styled(Text)`
