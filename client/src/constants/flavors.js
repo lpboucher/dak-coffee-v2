@@ -38,7 +38,8 @@ import {
   Figs,
   Lychee,
   Tea,
-  Nougat
+  Nougat,
+  Marshmallow
 } from '../utils/medallion/FlavorMedallions';
 
 export const FLAVORS = {
@@ -100,5 +101,9 @@ export const FLAVORS = {
   "figs": <Figs />,
   "lychee": <Lychee />,
   "green tea": <Tea />,
-  "nougat": <Nougat />
+  "nougat": <Nougat />,
+  "honeycomb": <Honey />,
+  "cane sugar": <Sugar />,
+  "white flower": <Rose />,
+  "marshmallow": <Marshmallow />
 }
