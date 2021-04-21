@@ -42,7 +42,7 @@ export const cartOpened = () => {
   });
 }
 
-export const orderCompleted = (order) => {
+export const orderCompleted = (order, totalTax) => {
   TagManager.dataLayer({
     dataLayer: {
       event: 'snipcartEvent',
@@ -55,12 +55,12 @@ export const orderCompleted = (order) => {
                   id: order.token,
                   affiliation: 'Website',
                   revenue: order.total,
-                  tax: order.taxesTotal,
-                  shipping: order.shippingInformation.fees,
+                  tax: totalTax,
+                  shipping: order.shippingDetails.cost,
                   invoiceNumber: order.invoiceNumber
               },
               products: createProductsFromItems(order.items),
-              userId: order.user.id
+              userId: order.email
           }
       }
     }

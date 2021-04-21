@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
+import { getTotalTaxesPaid } from "../../utils/taxes/helper";
 
 export const useSnipcartEvents = (updating, update, clear, added, completed) => {
   const dispatch = useDispatch();
@@ -27,10 +28,11 @@ export const useSnipcartEvents = (updating, update, clear, added, completed) => 
         itemRemovedUnSub = window.Snipcart.events.on('item.removed', (item) => {
             dispatch(update());
         });
-        orderCompletedUnSub = window.Snipcart.events.on('order.completed', (data) => {
-            if(data.status === "Processed") {
+        orderCompletedUnSub = window.Snipcart.events.on('cart.confirmed', (cartState) => {
+            // Completed
+            if(cartState.status === 3) {
               dispatch(clear());
-              completed(data);
+              completed(cartState, getTotalTaxesPaid(cartState.taxes.items));
             }
         });
       })
