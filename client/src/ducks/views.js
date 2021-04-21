@@ -77,13 +77,6 @@ export const openCartSummary = (autoClose = false) => {
     //dispatch({type: OPEN_CART})
 }
 
-// new
-export const closeCartSummary = () => {
-    window.Snipcart.api.theme.cart.close();
-    //dispatch({type: CLOSE_CART})
-}
-
-//new
 export const switchOption = (type, key) => (dispatch) => {
   if (type === "language") {
     dispatch(switchLanguage(key))
@@ -93,7 +86,6 @@ export const switchOption = (type, key) => (dispatch) => {
   }
 }
 
-// new
 export const switchLanguage = (lang=null) => (dispatch) => {
   dispatch({type: CHANGE_LANGUAGE_REQUEST, payload: "loading.language"})
   try {
@@ -105,7 +97,6 @@ export const switchLanguage = (lang=null) => (dispatch) => {
   }
 }
 
-//new
 export const switchDisplayCurrency = (currency) => async (dispatch) => {
   dispatch({type: CHANGE_CURRENCY_REQUEST, payload: "loading.currency"})
   try {

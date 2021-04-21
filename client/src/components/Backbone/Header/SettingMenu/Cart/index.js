@@ -6,7 +6,7 @@ import CartLayout from '../../../../../layouts/Backbone/Header/SettingMenu/Cart'
 import ClipLoader from 'react-spinners/ClipLoader';
 
 const Cart = () => {
-  const { adding, isLoaded, open, close, quantity } = useCart();
+  const { adding, isLoaded, open, quantity } = useCart();
   return (
     <>
       {!adding && isLoaded ?
@@ -14,7 +14,6 @@ const Cart = () => {
         quantity={quantity}
         showItems={quantity > 0}
         open={open}
-        close={close}
       />
     :
       <ClipLoader size={20} color='black'/>

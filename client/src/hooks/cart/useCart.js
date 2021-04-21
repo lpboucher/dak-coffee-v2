@@ -1,15 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from "react"
-
-import {
-  fetchOneById
-} from '../../ducks/products';
+import { useSelector } from 'react-redux';
 
 import {
   getCartQuantity,
   getCartTotal,
-  getCartItems,
-  getProductFromCartItem,
   getCartItemToAdd
 } from '../../ducks/cart';
 
@@ -18,13 +11,11 @@ import {
   isCartLoaded,
   isCartOpen,
   openCartSummary,
-  closeCartSummary
 } from '../../ducks/views';
 
 import {
   getDisplayedProductTitle,
   getDisplayedProductDescription,
-  getDisplayedProductPrice,
   getPriceInCurrency
 } from '../../services/productDisplayService';
 
@@ -36,16 +27,13 @@ import {
 import { useCurrency } from '../global/useCurrency';
 
 export const useCart = (id = null) => {
-  const dispatch = useDispatch();
 
   const open = () => openCartSummary();
-  const close = () => closeCartSummary();
 
   const isLoaded = useSelector(state => isCartLoaded(state));
   const { adding, productId } = useSelector(state => isAdding(state));
   const quantity = useSelector(state => getCartQuantity(state));
   const total = useSelector(state => getCartTotal(state));
-  const isOpen = useSelector(state => isCartOpen(state));
 
   let productAdding;
   if (id != null) {
@@ -55,8 +43,6 @@ export const useCart = (id = null) => {
   return {
     isLoaded,
     open,
-    close,
-    isOpen,
     quantity,
     total,
     adding,

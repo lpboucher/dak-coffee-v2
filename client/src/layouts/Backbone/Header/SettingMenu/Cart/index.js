@@ -18,11 +18,10 @@ const CartIcon = styled(Cart)`
     fill: black;
 `
 
-const CartLayout = ({quantity, showItems, open, close}) => {
+const CartLayout = ({quantity, showItems, open}) => {
     return (
         <CartWrapper
             onMouseEnter={() => open()}
-            //onMouseLeave={() => close()}
             aria-controls="example-collapse-text"
             className="snipcart-checkout"
         >
