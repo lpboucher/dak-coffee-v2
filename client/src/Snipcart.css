@@ -1,0 +1,66 @@
+/* snipcart overrides */
+:root {
+    --main-dark: #343434;
+    --light-grey: #f7f8f9;
+    --primary: #85955B;
+    --primary-light: #6bcc7c;
+}
+
+.snipcart-cart-button.snipcart-cart-button--highlight {
+    background: var(--main-dark);
+}
+
+div.snipcart__actions--link,
+button.snipcart__actions--link,
+button.snipcart-discount-box__submit {
+    color: var(--main-dark);
+}
+
+.snipcart-summary-fees__tax-notice > path,
+.snipcart-loading-component .snipcart__icon > path.active,
+.snipcart-loading-overlay--loading > .snipcart-loading-overlay__pending path.active,
+.snipcart-item-quantity__button:focus .snipcart__icon > path {
+    fill: var(--primary);
+}
+
+select.snipcart-form__select:focus,
+.snipcart-item-line__actions > .snipcart__button--icon:active,
+.snipcart-item-line__actions > .snipcart__button--icon:focus,
+li.snipcart-shipping-rates-list-item--highlight,
+div.snipcart-input--icon:focus-within,
+input.snipcart-checkbox:focus + label:before, input.snipcart-checkbox:hover + label:before {
+    border: 1px solid var(--main-dark);
+}
+
+form.snipcart-discount-box__form {
+    border: 1px solid var(--primary);
+}
+
+svg.snipcart__icon--blue-dark path,
+svg.snipcart__icon--blue-light path {
+    fill: var(--main-dark);
+}
+
+div.snipcart-modal,
+div.snipcart-modal__container,
+header.snipcart-cart-header,
+section.snipcart-cart__content,
+div.snipcart-cart--edit section.snipcart-cart__content,
+div.snipcart-cart--edit ul.snipcart-item-list,
+li.snipcart-item-line,
+div.snipcart-cart__secondary-header,
+div.snipcart-cart--edit div.snipcart-cart__footer {
+    background: var(--light-grey);
+    background-color: var(--light-grey);
+}
+
+div.snipcart__box--badge-highlight,
+input.snipcart-form-radio:checked + label:before {
+    background-image: linear-gradient(90deg, var(--primary), var(--primary-light)); ;
+}
+
+input.snipcart-checkbox:checked + label:before {
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    box-shadow: 0 2px 3px rgb(133 149 91 / 30%);
+}
