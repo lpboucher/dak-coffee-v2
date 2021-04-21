@@ -36,7 +36,7 @@ const CartReviewLayout = ({
         <CartReviewWrapper responsive={false} full="horizontal" animation="slide" position="bottom" modal={false}>
           <div
             onMouseEnter={() => openCart()}
-            onMouseLeave={() => closeCart()}
+            //onMouseLeave={() => closeCart()}
             aria-controls="example-collapse-text"
           >
             {cartList}
@@ -47,7 +47,7 @@ const CartReviewLayout = ({
         <CartStatsWrapper responsive={false} background="mainDark" animation="slide" full="horizontal" position="bottom" modal={false}>
           <CartSummary
             onMouseEnter={() => openCart()}
-            onMouseLeave={() => closeCart()}
+            //onMouseLeave={() => closeCart()}
             aria-controls="example-collapse-text"
             className={`${greaterThan.large ? "snipcart-checkout" : ""}`}
           >

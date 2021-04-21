@@ -22,7 +22,7 @@ const CartLayout = ({quantity, showItems, open, close}) => {
     return (
         <CartWrapper
             onMouseEnter={() => open()}
-            onMouseLeave={() => close()}
+            //onMouseLeave={() => close()}
             aria-controls="example-collapse-text"
             className="snipcart-checkout"
         >

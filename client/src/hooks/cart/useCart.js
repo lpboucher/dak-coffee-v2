@@ -38,8 +38,8 @@ import { useCurrency } from '../global/useCurrency';
 export const useCart = (id = null) => {
   const dispatch = useDispatch();
 
-  const open = () => dispatch(openCartSummary());
-  const close = () => dispatch(closeCartSummary());
+  const open = () => openCartSummary();
+  const close = () => closeCartSummary();
 
   const isLoaded = useSelector(state => isCartLoaded(state));
   const { adding, productId } = useSelector(state => isAdding(state));

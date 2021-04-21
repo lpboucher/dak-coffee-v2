@@ -23,7 +23,7 @@ export const NEWSLETTER_FAILURE = 'user/newsletter_failure';
 export const login = () => dispatch => {
     dispatch({ type: LOGIN_REQUEST });
     try {
-        const user = window.Snipcart.api.user.current();
+        const user = window.Snipcart.store.getState().customer;
         dispatch({ type: LOGIN_SUCCESS, payload: user });
     } catch(err) {
         dispatch({ type: LOGIN_FAILURE });
@@ -33,10 +33,12 @@ export const login = () => dispatch => {
 export const logout = () => dispatch => {
     dispatch({ type: LOGOUT_REQUEST });
     try {
-        window.Snipcart.api.user.logout();
-        dispatch({ type: LOGOUT_SUCCESS });
-        dispatch({ type: UPDATE_CART_REQUEST });
-        dispatch({ type: CLEAR_CART_SUCCESS });
+        window.Snipcart.api.customer.signout()
+            .then(() => {
+                dispatch({ type: LOGOUT_SUCCESS });
+                dispatch({ type: UPDATE_CART_REQUEST });
+                dispatch({ type: CLEAR_CART_SUCCESS });
+            })
     } catch(err) {
         dispatch({ type: LOGOUT_FAILURE });
     }
@@ -72,7 +74,6 @@ const user = (state = initialState, action) => {
         case LOGIN_SUCCESS:
             return {
                 ...state,
-                id: action.payload.id,
                 session: action.payload.sessionToken,
                 email: action.payload.email,
             }

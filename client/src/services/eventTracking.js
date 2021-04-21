@@ -35,7 +35,7 @@ export const cartOpened = () => {
       eventAction: 'Cart Opened',
       ecommerce: {
           cartopen: {
-              products: createProductsFromItems(window.Snipcart.api.items.all())
+              products: createProductsFromItems(window.Snipcart.store.getState().cart.items)
           }
       }
     }

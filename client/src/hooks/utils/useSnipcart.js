@@ -3,37 +3,46 @@ import { useDispatch } from 'react-redux';
 
 export const useSnipcartEvents = (updating, update, clear, added, completed) => {
   const dispatch = useDispatch();
+  let itemAddingUnSub;
+  let itemAddedUnSub;
+  let itemUpdatedUnSub;
+  let itemRemovedUnSub;
+  let orderCompletedUnSub;
 
   useEffect(() => {
     if( navigator.userAgent !== 'ReactSnap') {
-      window.Snipcart.subscribe('item.adding', (ev, item, items) => {
-          dispatch(updating(item.id));
-      });
-      window.Snipcart.subscribe('item.added', (item) => {
-          dispatch(update(item));
-          added(item);
-      });
-      window.Snipcart.subscribe('item.updated', (item) => {
-          dispatch(update());
-      });
-      window.Snipcart.subscribe('item.removed', (item) => {
-          dispatch(update());
-      });
-      window.Snipcart.subscribe('order.completed', (data) => {
-          if(data.status === "Processed") {
-            dispatch(clear());
-            completed(data);
-          }
-      });
+      document.addEventListener('snipcart.ready', () => {
+        itemAddingUnSub = window.Snipcart.events.on('item.adding', (item) => {
+            dispatch(updating(item.id));
+        });
+        itemAddedUnSub = window.Snipcart.events.on('item.added', (item) => {
+            console.log("item added", item);
+            dispatch(update(item));
+            added(item);
+        });
+        itemUpdatedUnSub = window.Snipcart.events.on('item.updated', (item) => {
+            console.log("item added, but updated", item);
+            item ? dispatch(update(item)) : dispatch(update());
+        });
+        itemRemovedUnSub = window.Snipcart.events.on('item.removed', (item) => {
+            dispatch(update());
+        });
+        orderCompletedUnSub = window.Snipcart.events.on('order.completed', (data) => {
+            if(data.status === "Processed") {
+              dispatch(clear());
+              completed(data);
+            }
+        });
+      })
     }
 
     return () => {
       if( navigator.userAgent !== 'ReactSnap') {
-        window.Snipcart.unsubscribe('item.added');
-        window.Snipcart.unsubscribe('item.adding');
-        window.Snipcart.unsubscribe('item.updated');
-        window.Snipcart.unsubscribe('item.removed');
-        window.Snipcart.unsubscribe('order.completed');
+        itemAddingUnSub();
+        itemAddedUnSub();
+        itemUpdatedUnSub();
+        itemRemovedUnSub();
+        orderCompletedUnSub();
       }
     };
   }, []);
@@ -41,18 +50,20 @@ export const useSnipcartEvents = (updating, update, clear, added, completed) => 
 
 export const useSnipcartCart = (initialize) => {
   const dispatch = useDispatch();
+  let cartReadyUnSub;
 
   useEffect(() => {
     if( navigator.userAgent !== 'ReactSnap') {
-      window.Snipcart.subscribe('cart.ready', async (data) => {
-        dispatch(await initialize(data))
-      })
-      window.Snipcart.api.configure('show_cart_automatically', false);
+      document.addEventListener('snipcart.ready', () => {
+        cartReadyUnSub = window.Snipcart.events.on('snipcart.initialized', async (data) => {
+          dispatch(await initialize(data))
+        })
+      });
     }
 
     return () => {
       if( navigator.userAgent !== 'ReactSnap') {
-        window.Snipcart.unsubscribe('cart.ready');
+        cartReadyUnSub();
       }
     };
   }, [])
@@ -60,17 +71,18 @@ export const useSnipcartCart = (initialize) => {
 
 export const useSnipcartAuth = (login) => {
   const dispatch = useDispatch();
+  let authSuccessUnSub;
 
   useEffect(() => {
     if( navigator.userAgent !== 'ReactSnap') {
-      window.Snipcart.subscribe('authentication.success', (email) => {
+      authSuccessUnSub = window.Snipcart.events.on('authentication.success', (email) => {
         dispatch(login());
       });
     }
 
     return () => {
       if( navigator.userAgent !== 'ReactSnap') {
-        window.Snipcart.unsubscribe('authentication.success');
+        authSuccessUnSub();
       }
     };
   }, [])

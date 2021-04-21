@@ -69,13 +69,18 @@ export const closeSnipcart = () => dispatch => {
 }
 
 // new
-export const openCartSummary = () => dispatch => {
-    dispatch({type: OPEN_CART})
+export const openCartSummary = (autoClose = false) => {
+    window.Snipcart.api.theme.cart.open();
+    if (autoClose) {
+        setTimeout(window.Snipcart.api.theme.cart.close(), 3000);
+    }
+    //dispatch({type: OPEN_CART})
 }
 
 // new
-export const closeCartSummary = () => dispatch => {
-    dispatch({type: CLOSE_CART})
+export const closeCartSummary = () => {
+    window.Snipcart.api.theme.cart.close();
+    //dispatch({type: CLOSE_CART})
 }
 
 //new
@@ -92,7 +97,7 @@ export const switchOption = (type, key) => (dispatch) => {
 export const switchLanguage = (lang=null) => (dispatch) => {
   dispatch({type: CHANGE_LANGUAGE_REQUEST, payload: "loading.language"})
   try {
-      window.Snipcart.setLang(lang);
+      window.Snipcart.api.session.setLanguage(lang);
       i18n.changeLanguage(lang);
       dispatch({type: CHANGE_LANGUAGE_SUCCESS, payload: lang});
   } catch (err) {
@@ -101,12 +106,16 @@ export const switchLanguage = (lang=null) => (dispatch) => {
 }
 
 //new
-export const switchDisplayCurrency = (currency) => (dispatch) => {
+export const switchDisplayCurrency = (currency) => async (dispatch) => {
   dispatch({type: CHANGE_CURRENCY_REQUEST, payload: "loading.currency"})
   try {
-      const newCurrency = window.Snipcart.api.cart.currency(currency);
-      dispatch({type: CHANGE_CURRENCY_SUCCESS, payload: newCurrency.toUpperCase()})
-      dispatch(fetchCartItems())
+      let newCurrency;
+      window.Snipcart.api.session.setCurrency(currency)
+        .then((_) => {
+            newCurrency = window.Snipcart.store.getState().session.settings.currency;
+            dispatch({type: CHANGE_CURRENCY_SUCCESS, payload: newCurrency.toUpperCase()});
+            dispatch(fetchCartItems());
+        });
   } catch (err) {
       console.log(err)
       dispatch({type: CHANGE_CURRENCY_SUCCESS, payload: 'EUR'})

@@ -6,7 +6,7 @@ import { notify } from '../services/notifications';
 import { login } from './user';
 import { getProduct } from './products';
 import { getSubscription } from './subscriptions';
-import { trackLocation, switchDisplayCurrency, switchLanguage } from './views';
+import { trackLocation, switchDisplayCurrency, switchLanguage, openCartSummary } from './views';
 
 //Action Types
 export const UPDATE_CART_REQUEST = 'cart/update_cart_request';
@@ -22,25 +22,25 @@ export const INITIALIZE_CART_SUCCESS = 'cart/initialize_cart_success';
 
 //Action Creators
 //new
-export const initializeCart = ({order}) => async (dispatch) => {
-  let switchedLanguage;
-  dispatch(trackLocation(await detectBrowserLocation()));
-  if (order && order.items.length > 0) {
-      dispatch(switchDisplayCurrency(order.currency));
-  } else {
-      dispatch(switchDisplayCurrency(await getDefaultLocationCurrency()));
-  }
-  dispatch(login());
-  const initialBrowserLang = i18n.language;
-  if (LANGUAGE_LIST.includes(initialBrowserLang)) {
-    switchedLanguage = initialBrowserLang;
-  } else if (LANGUAGE_LIST.includes(initialBrowserLang.substr(0,2))) {
-    switchedLanguage = initialBrowserLang.substr(0,2);
-  } else {
-    switchedLanguage = "en";
-  }
-  dispatch(switchLanguage(switchedLanguage));
-  dispatch({ type: INITIALIZE_CART_SUCCESS });
+export const initializeCart = ({cart}) => async (dispatch) => {
+    let switchedLanguage;
+    dispatch(trackLocation(await detectBrowserLocation()));
+    if (cart && cart.items.length > 0) {
+        dispatch(switchDisplayCurrency(cart.currency));
+    } else {
+        dispatch(switchDisplayCurrency(await getDefaultLocationCurrency()));
+    }
+    dispatch(login());
+    const initialBrowserLang = i18n.language;
+    if (LANGUAGE_LIST.includes(initialBrowserLang)) {
+        switchedLanguage = initialBrowserLang;
+    } else if (LANGUAGE_LIST.includes(initialBrowserLang.substr(0,2))) {
+        switchedLanguage = initialBrowserLang.substr(0,2);
+    } else {
+        switchedLanguage = "en";
+    }
+    dispatch(switchLanguage(switchedLanguage));
+    dispatch({ type: INITIALIZE_CART_SUCCESS });
 }
 //new
 export const updatingCart = (id) => (dispatch) => {
@@ -48,6 +48,7 @@ export const updatingCart = (id) => (dispatch) => {
 }
 //new add, addtocart action
 export const updateCart = (item) => (dispatch) => {
+    console.log("update cart", item);
     dispatch(fetchCartItems(item, true));
 }
 
@@ -56,7 +57,7 @@ export const updateCartItem = (id, options) => (dispatch) => {
     const { quantity } = options;
     try {
         if (quantity < 1) {dispatch(removeCartItem(id));}
-        else {window.Snipcart.api.items.update(id, options)}
+        else {window.Snipcart.api.cart.items.update({uniqueId: id, ...options})}
         setTimeout(() => dispatch(fetchCartItems()), 1000);
     } catch(err) {
 
@@ -66,8 +67,10 @@ export const updateCartItem = (id, options) => (dispatch) => {
 export const removeCartItem = (id) => (dispatch) => {
     dispatch({ type: UPDATE_CART_REQUEST });
     try {
-        window.Snipcart.api.items.remove(id)
-        setTimeout(() => dispatch(fetchCartItems()), 1000)
+        window.Snipcart.api.cart.items.remove(id)
+            .then((_) => {
+                dispatch(fetchCartItems());
+            })
     } catch(err) {
 
     }
@@ -76,22 +79,11 @@ export const removeCartItem = (id) => (dispatch) => {
 export const fetchCartItems = (newItem=null) => (dispatch) => {
     dispatch({ type: FETCH_CART_REQUEST });
     try {
-        const newCart = window.Snipcart.api.items.all();
-        //newItem && toast.success(`added ${newItem.name} to cart`)
-        newItem && notify.cart.add(newItem);
-        dispatch({ type: FETCH_CART_SUCCESS, payload: newCart });
+        const newCart = window.Snipcart.store.getState().cart.items;
+        newItem && window.Snipcart.api.theme.cart.open();
+        dispatch({ type: FETCH_CART_SUCCESS, payload: newCart.items });
     } catch(err) {
-        //dispatch({ type: FETCH_PRODUCTS_FAILURE});
-    }
-    dispatch({ type: UPDATE_CART_SUCCESS });
-}
-
-export const fetchCartMeta = () => (dispatch) => {
-    dispatch({ type: FETCH_CARTMETA_REQUEST });
-    try {
-        const cartMeta = window.Snipcart.api.cart.get();
-        dispatch({ type: FETCH_CARTMETA_SUCCESS, payload: cartMeta });
-    } catch(err) {
+        console.log(err);
         //dispatch({ type: FETCH_PRODUCTS_FAILURE});
     }
     dispatch({ type: UPDATE_CART_SUCCESS });
@@ -141,26 +133,9 @@ const allIds = (state = allIdsDefault, action) => {
     }
 }
 
-const metaDefault = {};
-const meta = (state = metaDefault, action) => {
-    switch (action.type) {
-        case FETCH_CARTMETA_SUCCESS:
-            return {
-                ...state,
-                shippingCharged: action.payload.shippingCharged,
-                taxes: action.payload.taxesTotal,
-            }
-        case CLEAR_CART_SUCCESS:
-                return metaDefault
-        default:
-            return state
-    }
-}
-
 export default combineReducers({
     byId,
     allIds,
-    meta
 })
 
 //Selectors
