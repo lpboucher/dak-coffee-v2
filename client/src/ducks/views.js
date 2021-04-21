@@ -40,8 +40,6 @@ import {
     FETCH_ARTICLES_FAILURE
 } from './articles';
 
-
-
 export const OPEN_CART = 'views/open_cart';
 export const CLOSE_CART = 'views/close_cart';
 export const SNIP_OPEN = 'views/snip_open';
@@ -60,21 +58,8 @@ export const CLEAR_FILTERS = 'views/clear_filters';
 export const ACTIVATE_LOCATION = 'views/activate_location';
 
 //Action Creators
-export const openSnipcart = () => dispatch => {
-    dispatch({type: SNIP_OPEN})
-}
-
-export const closeSnipcart = () => dispatch => {
-    dispatch({type: SNIP_CLOSE})
-}
-
-// new
-export const openCartSummary = (autoClose = false) => {
+export const openCart = () => {
     window.Snipcart.api.theme.cart.open();
-    if (autoClose) {
-        setTimeout(window.Snipcart.api.theme.cart.close(), 3000);
-    }
-    //dispatch({type: OPEN_CART})
 }
 
 export const switchOption = (type, key) => (dispatch) => {
@@ -150,7 +135,6 @@ export const clearFilters = (dataType) => dispatch => {
 
 //Reducer
 const initialState = {
-isSnipcartModalOpen: false,
 isMobileOpen: false,
 isProcessing: true,
 isModalOpen: false,
@@ -174,7 +158,6 @@ addingToCart: {
   adding: false
 },
 changingLoginStatus: false,
-isCartOpen: false,
 isCartLoaded: false,
 filters: {
   products: []
@@ -184,18 +167,6 @@ fetched: []
 
 export default function reducer(state = initialState, action) {
 switch(action.type) {
-    case OPEN_CART:
-        return {
-            ...state,
-            isCartOpen: true,
-            error: initialState.error
-        };
-    case CLOSE_CART:
-        return {
-            ...state,
-            isCartOpen: false,
-            error: initialState.error
-        };
     case OPEN_MOBILE:
         return {
             ...state,
@@ -300,16 +271,6 @@ switch(action.type) {
             isProcessing: false,
             processingText: "",
             displayLang:  action.payload};
-    case SNIP_OPEN:
-        return {
-            ...state,
-            isSnipcartModalOpen: true,
-        }
-    case SNIP_CLOSE:
-        return {
-            ...state,
-            isSnipcartModalOpen: false,
-        }
     case FETCH_PRODUCTS_REQUEST:
             return {
                 ...state,
@@ -376,8 +337,6 @@ switch(action.type) {
 //Selectors
 export const isModalOpen = (state) => state.views.isModalOpen;
 
-export const isSnipOpen = (state) => state.views.isSnipcartModalOpen;
-
 export const isFetching = (state) => state.views.isFetching;
 
 export const isMobileOpen = (state) => state.views.isMobileOpen;
@@ -412,9 +371,6 @@ export const isCartLoaded = (state) => state.views.isCartLoaded;
 export const getDisplayLang = (state) => state.views.displayLang;
 
 export const getDisplayCurrency = (state) => state.views.displayCurrency;
-
-//to use for bottom of screen pop-up
-export const isCartOpen = (state) => state.views.isCartOpen;
 
 export const isCheckingLoginStatus = (state) => state.views.changingLoginStatus;
 

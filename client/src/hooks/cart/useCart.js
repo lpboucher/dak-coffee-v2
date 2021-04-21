@@ -9,8 +9,7 @@ import {
 import {
   isAdding,
   isCartLoaded,
-  isCartOpen,
-  openCartSummary,
+  openCart,
 } from '../../ducks/views';
 
 import {
@@ -28,7 +27,7 @@ import { useCurrency } from '../global/useCurrency';
 
 export const useCart = (id = null) => {
 
-  const open = () => openCartSummary();
+  const open = () => openCart();
 
   const isLoaded = useSelector(state => isCartLoaded(state));
   const { adding, productId } = useSelector(state => isAdding(state));

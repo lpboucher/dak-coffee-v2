@@ -1,12 +1,11 @@
 import i18n from "i18next";
 import { combineReducers } from 'redux';
-import { LANGUAGE_LIST, detectBrowserLocation, getDefaultLocationCurrency } from '../utils/languages/detectLanguage';
-import { notify } from '../services/notifications';
+import { LANGUAGE_LIST, detectBrowserLocation, getDefaultLocationCurrency } from '../services/languages';
 
 import { login } from './user';
 import { getProduct } from './products';
 import { getSubscription } from './subscriptions';
-import { trackLocation, switchDisplayCurrency, switchLanguage, openCartSummary } from './views';
+import { trackLocation, switchDisplayCurrency, switchLanguage, openCart } from './views';
 
 //Action Types
 export const UPDATE_CART_REQUEST = 'cart/update_cart_request';
@@ -21,7 +20,6 @@ export const PROMO_CART_FAILURE = 'cart/promo_cart_failure';
 export const INITIALIZE_CART_SUCCESS = 'cart/initialize_cart_success';
 
 //Action Creators
-//new
 export const initializeCart = ({cart}) => async (dispatch) => {
     let switchedLanguage;
     dispatch(trackLocation(await detectBrowserLocation()));
@@ -42,45 +40,20 @@ export const initializeCart = ({cart}) => async (dispatch) => {
     dispatch(switchLanguage(switchedLanguage));
     dispatch({ type: INITIALIZE_CART_SUCCESS });
 }
-//new
+
 export const updatingCart = (id) => (dispatch) => {
     dispatch({ type: UPDATE_CART_REQUEST, payload: id });
 }
-//new add, addtocart action
+
 export const updateCart = (item) => (dispatch) => {
-    console.log("update cart", item);
     dispatch(fetchCartItems(item, true));
-}
-
-export const updateCartItem = (id, options) => (dispatch) => {
-    dispatch({ type: UPDATE_CART_REQUEST });
-    const { quantity } = options;
-    try {
-        if (quantity < 1) {dispatch(removeCartItem(id));}
-        else {window.Snipcart.api.cart.items.update({uniqueId: id, ...options})}
-        setTimeout(() => dispatch(fetchCartItems()), 1000);
-    } catch(err) {
-
-    }
-}
-
-export const removeCartItem = (id) => (dispatch) => {
-    dispatch({ type: UPDATE_CART_REQUEST });
-    try {
-        window.Snipcart.api.cart.items.remove(id)
-            .then((_) => {
-                dispatch(fetchCartItems());
-            })
-    } catch(err) {
-
-    }
 }
 
 export const fetchCartItems = (newItem=null) => (dispatch) => {
     dispatch({ type: FETCH_CART_REQUEST });
     try {
         const newCart = window.Snipcart.store.getState().cart.items;
-        newItem && window.Snipcart.api.theme.cart.open();
+        newItem && openCart();
         dispatch({ type: FETCH_CART_SUCCESS, payload: newCart.items });
     } catch(err) {
         console.log(err);
@@ -147,26 +120,6 @@ export const getCartItemToAdd = (state, id) => {
   return getProduct(state, id) || getSubscription(state, id);
 }
 
-export const getProductFromCartItem = (state, id) => {
-  const cartItem = getCartItem(state, id);
-  let product;
-  if (cartItem && !cartItem.isRecurring) {
-      product = getProduct(state, cartItem.id);
-  } else if (cartItem && cartItem.isRecurring) {
-      product = getSubscription(state, cartItem.id);
-  }
-  if (product) {
-      return {
-          id: cartItem.id,
-          name: product.name,
-          price: product.price.map(onePrice => ({...onePrice, unit: cartItem.unitPrice})),
-          total: cartItem.totalPrice,
-          quantity: cartItem.quantity,
-          image: product.images.thumb
-      }
-  }
-}
-
 export const getCartQuantity = (state) => {
   const items = getCartItems(state);
   if (items && items.length > 0) {
@@ -178,19 +131,5 @@ export const getCartTotal = (state) => {
   const items = getCartItems(state);
   if (items && items.length > 0) {
       return items.reduce((sum, id) => sum + getCartItem(state, id)['totalPrice'], 0)
-  }
-}
-
-export const getCartSubTotal = (state) => {
-  const items = getCartItems(state);
-  if (items && items.length > 0) {
-      return items.reduce((sum, id) => sum + getCartItem(state, id)['totalPriceWithoutDiscountsAndTaxes'], 0)
-  }
-}
-
-export const getCartSummary = (state) => {
-  return {
-      total: getCartTotal(state),
-      subTotal: getCartSubTotal(state)
   }
 }
