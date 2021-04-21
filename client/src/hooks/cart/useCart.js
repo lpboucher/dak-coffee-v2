@@ -64,40 +64,6 @@ export const useCart = (id = null) => {
   }
 }
 
-export const useSingleCartItem = (itemId) => {
-  const { currency, toCurrency } = useCurrency();
-  const dispatch = useDispatch();
-  const productItem = useSelector(state => getProductFromCartItem(state, itemId));
-
-  if (productItem && productItem.price) {
-    const priceInCurrency = getPriceInCurrency(productItem.price, currency);
-    var { title } = getDisplayedProductTitle(productItem);
-    var productPrice = getDisplayedProductPrice(priceInCurrency.base);
-    var totalPrice = toCurrency(productItem.total);
-  }
-
-  useEffect(() => {
-    if (!productItem) {
-      dispatch(fetchOneById(itemId));
-    }
-  }, []);
-
-  return {
-    ...productItem,
-    name: title,
-    productPrice,
-    totalPrice
-  }
-}
-
-export const useCartItems = () => {
-  const cartItemIds = useSelector(state => getCartItems(state));
-
-  return {
-    cartItemIds
-  }
-}
-
 export const useAddProductToCart = (productId, selected=null) => {
   const { currency } = useCurrency();
   const productToAdd = useSelector(state => getCartItemToAdd(state, productId));
