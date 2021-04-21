@@ -1,6 +1,7 @@
 /* snipcart overrides */
 :root {
     --main-dark: #343434;
+    --main-white: #ffffff;
     --light-grey: #f7f8f9;
     --primary: #85955B;
     --primary-light: #6bcc7c;
@@ -12,7 +13,9 @@
 
 div.snipcart__actions--link,
 button.snipcart__actions--link,
-button.snipcart-discount-box__submit {
+button.snipcart-discount-box__submit,
+div.snipcart-guest-checkout__link,
+em.snipcart-order__invoice-number--highlight {
     color: var(--main-dark);
 }
 
@@ -27,12 +30,20 @@ select.snipcart-form__select:focus,
 .snipcart-item-line__actions > .snipcart__button--icon:active,
 .snipcart-item-line__actions > .snipcart__button--icon:focus,
 li.snipcart-shipping-rates-list-item--highlight,
+li.snipcart-shipping-rates-list-item:focus-within,
 div.snipcart-input--icon:focus-within,
-input.snipcart-checkbox:focus + label:before, input.snipcart-checkbox:hover + label:before {
+ul.snipcart-typeahead__suggestions,
+div.snipcart-textbox--focus,
+div.snipcart-input:focus-within,
+div.snipcart-form__select:focus,
+div.snipcart-payment-form--focused,
+input.snipcart-checkbox:focus + label:before,
+input.snipcart-checkbox:hover + label:before {
     border: 1px solid var(--main-dark);
 }
 
-form.snipcart-discount-box__form {
+form.snipcart-discount-box__form,
+button.snipcart-discount-box__button:focus {
     border: 1px solid var(--primary);
 }
 
@@ -47,11 +58,19 @@ header.snipcart-cart-header,
 section.snipcart-cart__content,
 div.snipcart-cart--edit section.snipcart-cart__content,
 div.snipcart-cart--edit ul.snipcart-item-list,
-li.snipcart-item-line,
+div.snipcart-cart-summary-side li.snipcart-item-line,
 div.snipcart-cart__secondary-header,
 div.snipcart-cart--edit div.snipcart-cart__footer {
     background: var(--light-grey);
     background-color: var(--light-grey);
+}
+
+li.snipcart-item-line,
+section.snipcart-cart-summary__content,
+div.snipcart__box,
+form.snipcart-form {
+    background: var(--main-white);
+    background-color: var(--main-white);
 }
 
 div.snipcart__box--badge-highlight,
