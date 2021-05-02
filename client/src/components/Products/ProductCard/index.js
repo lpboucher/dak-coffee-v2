@@ -22,7 +22,7 @@ const ProductCard = ({id, selected}) => {
   } = useSingleProduct(id, selected);
   const { productAdding } = useCart(id);
   const linkQuery = {
-    coffee: "?quantity=250g",
+    coffee: `?quantity=${slug === "nitro-coffee-black" ? "6x250ml" : "250g"}`,
     subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`
   }
   const productImage = images && <CloudImage
