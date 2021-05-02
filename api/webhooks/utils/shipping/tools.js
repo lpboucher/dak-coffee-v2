@@ -2,9 +2,9 @@
 const axios = require('axios');
 const shipConstants = require('./constants');
 
-const hasFreeOption = (items, orderSummary) => {
+const hasFreeOption = (items, orderSummary, withColdItem = false) => {
   const { currency, total, shipTo } = orderSummary;
-  return orderHasSubscriptions(items) || (total > getThreshold(currency, shipTo));
+  return orderHasSubscriptions(items) || (total > getThreshold(currency, shipTo, withColdItem));
 };
 
 const hasNoPhysical = (items) => {
@@ -28,26 +28,31 @@ const hasGiftCard = (items, callbackType='one') => {
   return callback[callbackType];
 };
 
+const hasColdBrew = (items, callbackType='one') => {
+  const callback = {
+    one: items.some(item => isColdBrew(item)),
+    all: items.every(item => isColdBrew(item))
+  };
+  return callback[callbackType];
+};
+
 const isGiftCard = (item) => {
   return item.id === '5fc9102b62130e5379f0042e';
 };
 
-const getThreshold = (currency, country) => {
-  let locationCode;
-  const shippingThresholds = {
+const isColdBrew = (item) => {
+  return item.id === '608ebd5c8e9a182d5e36b8d9';
+  // return item.id === '608ebe6970f72e24357e87c7' dev id for cold brew;
+};
+
+const getThreshold = (currency, country, requiresCold = false) => {
+  /*const shippingThresholds = {
     EUR: { NL: 30, EU: 50, NA: 50, World: 70 },
     CAD: { NL: 45, EU: 75, NA: 75, World: 100 },
-  };
-  if (country === 'NL') {
-    locationCode = 'NL';
-  } else if (isFromRegion('EU', country)) {
-    locationCode = 'EU';
-  } else if (isFromRegion('NA', country)) {
-    locationCode = 'NA';
-  } else {
-    locationCode = 'World';
-  }
-  return shippingThresholds[currency.toUpperCase()][locationCode];
+  };*/
+  const thresholds = requiresCold ? shipConstants.SHIPPING_THRESHOLDS_BY_REGION_COLD : shipConstants.SHIPPING_THRESHOLDS_BY_REGION;
+  const locationCode = fromCountryToRegion(country);
+  return thresholds[currency.toUpperCase()][locationCode];
 };
 
 const isFromRegion = (region, country) => {
@@ -65,9 +70,24 @@ const getShippingZone = (country) => {
   return zone ? zone : '4';
 };
 
-const getShippingRateOptions = (currency, country) => {
-  return [shipConstants.SHIPPING_RATES_BY_REGION[currency.toUpperCase()][getShippingZone(country)]];
+const getShippingRateOptions = (currency, country, withColdAddition=false) => {
+  const allRates = withColdAddition ? shipConstants.SHIPPING_RATES_BY_REGION_COLD : shipConstants.SHIPPING_RATES_BY_REGION;
+  return [allRates[currency.toUpperCase()][getShippingZone(country)]];
 };
+
+const fromCountryToRegion = (country) => {
+  let locationCode;
+  if (country === 'NL') {
+    locationCode = 'NL';
+  } else if (isFromRegion('EU', country)) {
+    locationCode = 'EU';
+  } else if (isFromRegion('NA', country)) {
+    locationCode = 'NA';
+  } else {
+    locationCode = 'World';
+  }
+  return locationCode;
+}
 
 const createShippingParcel = async (shippingAddress, email, invoiceNumber) => {
   return await axios.post(
@@ -101,6 +121,8 @@ module.exports = {
   getShippingRateOptions,
   isFromRegion,
   hasGiftCard,
+  hasColdBrew,
   isGiftCard,
+  isColdBrew,
   createShippingParcel
 };

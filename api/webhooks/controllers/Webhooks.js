@@ -1,5 +1,15 @@
 'use strict';
-const shipTools = require('../utils/shipping/tools');
+const {
+  hasNoPhysical,
+  hasFreeOption,
+  hasColdBrew,
+  getFreeShippingOptions,
+  getShippingRateOptions,
+  hasGiftCard,
+  isGiftCard,
+  isFromRegion,
+  createShippingParcel
+} = require('../utils/shipping/tools');
 const promo = require('../../promo/controllers/promo');
 const groupBy = require('../../utils/dataFormats').groupBy;
 
@@ -18,13 +28,15 @@ const getShippingRates = (ctx) => {
   const orderData = ctx.request.body.content;
   const summary = { currency: orderData.currency, total: orderData.itemsTotal, shipTo: orderData.shippingAddress.country};
   let rates = [];
-  if (shipTools.hasNoPhysical(orderData.items)) {
+  if (hasNoPhysical(orderData.items)) {
     return {'rates': [{'cost': 0, 'description': 'Digital Product'}]};
   }
-  if (shipTools.hasFreeOption(orderData.items, summary)) {
-    rates = [...rates, ...shipTools.getFreeShippingOptions(summary.shipTo)];
+
+  if (hasFreeOption(orderData.items, summary, hasColdBrew(orderData.items))) {
+    rates = [...rates, ...getFreeShippingOptions(summary.shipTo)];
   }
-  rates = [...rates, ...shipTools.getShippingRateOptions(summary.currency, summary.shipTo)];
+
+  rates = [...rates, ...getShippingRateOptions(summary.currency, summary.shipTo, hasColdBrew(orderData.items))];
   return {'rates': rates};
 };
 
@@ -35,8 +47,8 @@ const handleEvent = async (ctx) => {
   switch (event.eventName) {
 
     case 'order.completed':
-      if (shipTools.hasGiftCard(items)) {
-        const giftCard = items.find(item => shipTools.isGiftCard(item));
+      if (hasGiftCard(items)) {
+        const giftCard = items.find(item => isGiftCard(item));
         try {
           const promoCode = await promo.generateSnipcartPromo('gift', giftCard.unitPrice);
           await promo.sendCodeEmail(user, promoCode);
@@ -48,9 +60,9 @@ const handleEvent = async (ctx) => {
           }
         }
       }
-      if (shipTools.isFromRegion('EU', shippingAddress.country)) {
+      if (isFromRegion('EU', shippingAddress.country)) {
         try {
-          await shipTools.createShippingParcel(shippingAddress, email, invoiceNumber);
+          await createShippingParcel(shippingAddress, email, invoiceNumber);
         } catch(err) {
           if (Array.isArray(err)) {
             err.map(oneerror => console.log(oneerror.messages));
@@ -105,7 +117,7 @@ const getTaxRateTotal = (items, rate) => {
 }
 
 const isTaxCollected = (country) => {
-  return shipTools.isFromRegion('EU', country);
+  return isFromRegion('EU', country);
 };
 
 const isCoffeeProduct = (itemFields) => {
