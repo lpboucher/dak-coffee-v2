@@ -7,7 +7,7 @@ export const getCartProductPrice = (price) => {
   return JSON.stringify(priceObj);
 }
 
-export const getCartProductOptions = (optionObj, type="coffee", selected=null) => {
+export const getCartProductOptions = (priceString, optionObj, type="coffee", selected=null) => {
   let options = {};
   const { increments } = optionObj;
   if (type === "coffee" || type === "subscription") {
@@ -21,8 +21,11 @@ export const getCartProductOptions = (optionObj, type="coffee", selected=null) =
     options["data-item-custom2-name"] = "Roast";
     options["data-item-custom2-options"] = individualOptions.join('|');
     options["data-item-custom2-value"]= selected ? selected.roast : null;
-    options["data-item-payment-interval"]="Month";
-    options["data-item-payment-interval-count"]="1";
+    options["data-item-selected-plan"]= "monthly-dak-coffee";
+    options["data-plan1-id"] = "monthly-dak-coffee";
+    options["data-plan1-name"] = "Monthly coffee subscription";
+    options["data-plan1-frequency"] = "Monthly";
+    options["data-plan1-interval"] = "1";
   }
   if (type === "promo") {
     options["data-item-custom1-name"] = "Amount";

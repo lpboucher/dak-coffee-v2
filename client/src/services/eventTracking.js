@@ -59,7 +59,7 @@ export const orderCompleted = (order, totalTax) => {
                   shipping: order.shippingDetails.cost,
                   invoiceNumber: order.invoiceNumber
               },
-              products: createProductsFromItems(order.items),
+              products: createProductsFromItems(order.items.items),
               userId: order.email
           }
       }

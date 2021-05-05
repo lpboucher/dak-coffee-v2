@@ -95,15 +95,29 @@ const snipcartParser = async (ctx) => {
   ]);
   const data = [].concat(...queries).map(one => {
     const product = one.toObject();
-    return {
-      'id': product._id,
-      'name': product.name.en,
-      'price': product.price.reduce((priceObj, onePrice) => {
-        priceObj[onePrice.base.currency] = Math.round(onePrice.base.value * 100) / 100;
-        return priceObj;
-      }, {}),
-      'url': `${BACKEND_URL}/snipcartParser`
+    const baseCrawlerResponse = {
+        'id': product._id,
+        'name': product.name.en,
+        'price': product.price.reduce((priceObj, onePrice) => {
+          priceObj[onePrice.base.currency] = Math.round(onePrice.base.value * 100) / 100;
+          return priceObj;
+        }, {}),
+        'url': `${BACKEND_URL}/snipcartParser`
     };
+    const plans = product.type !== "subscription" ? {} : {
+        availablePlans: [
+            {
+                "id": "monthly-dak-coffee",
+                "name": "Monthly coffee subscription",
+                "frequency": "Monthly",
+                "interval": 1,
+            },
+        ]
+    };
+    return {
+        ...baseCrawlerResponse,
+        ...plans
+    }
   });
   ctx.send(data);
 };

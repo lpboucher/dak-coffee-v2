@@ -148,6 +148,11 @@ export const getProductsFromTypes = (state, types) => {
   });
 };
 
+export const getProductTypeFromId = (state, id) => {
+    const product = getProduct(state, id);
+    return product.type === "subscription" ? product.type : "product";
+}
+
 export const getSortedProducts = (state) => {
   const products = getAllSortedProducts(state);
   if (products) {
@@ -163,7 +168,7 @@ export const getSortedProductsFromCollection = (state, collection) => {
   if (foundCollection) {
     return foundCollection.products.map(product =>
       subscriptions.includes(product) ?
-        [{id: product, selected: "espresso-coffee"}, {id: product, selected: "filter-coffee"}]
+        [{id: product, selected: "espresso"}, {id: product, selected: "filter"}]
         :
         {id: product}
     ).flat();

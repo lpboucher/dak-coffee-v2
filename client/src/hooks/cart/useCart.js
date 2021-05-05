@@ -58,7 +58,8 @@ export const useAddProductToCart = (productId, selected=null) => {
     var priceString = getCartProductPrice(productToAdd.price);
     var { title } = getDisplayedProductTitle(productToAdd);
     var translatedDescription = getDisplayedProductDescription(productToAdd.type, productToAdd.slug);
-    var cartOptions = getCartProductOptions(priceInCurrency, productToAdd.type, selected);
+    var cartOptions = getCartProductOptions(priceString, priceInCurrency, productToAdd.type, selected);
+    var thumbnail = productToAdd.images.thumb;
   }
 
   return {
@@ -67,5 +68,6 @@ export const useAddProductToCart = (productId, selected=null) => {
     description: translatedDescription,
     name: title,
     cartOptions,
+    thumbnail,
   }
 }

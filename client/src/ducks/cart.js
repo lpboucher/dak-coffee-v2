@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import { LANGUAGE_LIST, detectBrowserLocation, getDefaultLocationCurrency } from '../services/languages';
 
 import { login } from './user';
-import { getProduct } from './products';
+import { getProduct, getProductTypeFromId } from './products';
 import { getSubscription } from './subscriptions';
 import { trackLocation, switchDisplayCurrency, switchLanguage, openCart } from './views';
 
@@ -41,8 +41,15 @@ export const initializeCart = ({cart}) => async (dispatch) => {
     dispatch({ type: INITIALIZE_CART_SUCCESS });
 }
 
-export const updatingCart = (id) => (dispatch) => {
-    dispatch({ type: UPDATE_CART_REQUEST, payload: id });
+export const updatingCart = (id) => (dispatch, getState) => {
+    if (
+            isCartMixingSubscriptionAndProduct(getState(), id) ||
+            isCartAddingMultiSubscriptions(getState(), id)
+        ) {
+        openCart();
+    } else {
+        dispatch({ type: UPDATE_CART_REQUEST, payload: id });
+    }
 }
 
 export const updateCart = (item) => (dispatch) => {
@@ -116,6 +123,8 @@ export const getCartItem = (state, id) => state.cart.byId[id];
 
 export const getCartItems = (state) => state.cart.allIds;
 
+export const getAllCartItems = (state) => state.cart.allIds.map(id => getCartItem(state, id));
+
 export const getCartItemToAdd = (state, id) => {
   return getProduct(state, id) || getSubscription(state, id);
 }
@@ -132,4 +141,36 @@ export const getCartTotal = (state) => {
   if (items && items.length > 0) {
       return items.reduce((sum, id) => sum + getCartItem(state, id)['totalPrice'], 0)
   }
+}
+
+export const isCartAddingMultiSubscriptions = (state, newId) => {
+    if (hasSubscription(state) && getProductTypeFromId(state, newId) === "subscription") {
+        return true;
+    }
+    return false;
+}
+
+export const isCartMixingSubscriptionAndProduct = (state, newId) => {
+    if (hasSubscription(state) && getProductTypeFromId(state, newId) === "product") {
+        return true;
+    } else if (hasProduct(state) && getProductTypeFromId(state, newId) === "subscription") {
+        return true;
+    }
+    return false;
+}
+
+export const hasSubscription = (state) => {
+    const existingProducts = getCartItems(state);
+    if (existingProducts && existingProducts.length > 0) {
+        return existingProducts.some(productId => getProductTypeFromId(state, productId) === "subscription");
+    }
+    return false;
+}
+
+export const hasProduct = (state) => {
+    const existingProducts = getCartItems(state);
+    if (existingProducts && existingProducts.length > 0) {
+        return existingProducts.some(productId => getProductTypeFromId(state, productId) === "product");
+    }
+    return false;
 }
