@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Backbone from './components/Backbone';
 import './App.css';
-import './snipcart.css';
+import './Snipcart.css';
 
 const HomePage = lazy(() => import('./pages/Home'));
 const ShopPage = lazy(() => import('./pages/Shop'));
