@@ -7,6 +7,10 @@ const hasFreeOption = (items, orderSummary, withColdItem = false) => {
   return orderHasSubscriptions(items) || (total > getThreshold(currency, shipTo, withColdItem));
 };
 
+const hasPickUpOption = (country) => {
+    return country.toLowerCase() === "NL".toLowerCase();
+}
+
 const hasNoPhysical = (items) => {
   return hasGiftCard(items, 'all');
 };
@@ -116,6 +120,7 @@ const createShippingParcel = async (shippingAddress, email, invoiceNumber) => {
 
 module.exports = {
   hasFreeOption,
+  hasPickUpOption,
   hasNoPhysical,
   getFreeShippingOptions,
   getShippingRateOptions,

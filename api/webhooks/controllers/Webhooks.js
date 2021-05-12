@@ -2,6 +2,7 @@
 const {
   hasNoPhysical,
   hasFreeOption,
+  hasPickUpOption,
   hasColdBrew,
   getFreeShippingOptions,
   getShippingRateOptions,
@@ -34,6 +35,10 @@ const getShippingRates = (ctx) => {
 
   if (hasFreeOption(orderData.items, summary, hasColdBrew(orderData.items))) {
     rates = [...rates, ...getFreeShippingOptions(summary.shipTo)];
+  }
+
+  if (hasPickUpOption(summary.shipTo)) {
+    rates = [...rates, {'cost': 0, 'description': 'Pickup at Nieuwendammerdijk 526M-8. Mon/Wed afternoons, 48h after order'}];
   }
 
   rates = [...rates, ...getShippingRateOptions(summary.currency, summary.shipTo, hasColdBrew(orderData.items))];
