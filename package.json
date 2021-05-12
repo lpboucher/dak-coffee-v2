@@ -24,7 +24,7 @@
     "mailchimp-api-v3": "^1.13.1",
     "node-code-generator": "^1.0.3",
     "snipcart-api": "0.0.9",
-    "strapi": "3.0.0-beta.18.3",
+    "strapi": "3.2.5",
     "strapi-admin": "3.0.0-beta.18.3",
     "strapi-connector-mongoose": "3.0.0-beta.18.3",
     "strapi-plugin-content-manager": "3.0.0-beta.18.3",
