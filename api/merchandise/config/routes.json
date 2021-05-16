@@ -47,6 +47,22 @@
       "config": {
         "policies": []
       }
-    }
+    },
+    {
+        "method": "GET",
+        "path": "/wholesale/merchandises",
+        "handler": "merchandise.getWholesaleMerchandise",
+        "config": {
+          "policies": []
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/wholesale/merchandise/:slug",
+        "handler": "merchandise.getOneWholesaleMerchandise",
+        "config": {
+          "policies": []
+        }
+      }
   ]
 }

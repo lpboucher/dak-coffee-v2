@@ -94,6 +94,22 @@
       "config": {
         "policies": []
       }
-    }
+    },
+    {
+        "method": "GET",
+        "path": "/wholesale/coffees",
+        "handler": "coffee.getWholesaleCoffees",
+        "config": {
+          "policies": []
+        }
+    },
+    {
+        "method": "GET",
+        "path": "/wholesale/coffee/:slug",
+        "handler": "coffee.getOneWholesaleCoffee",
+        "config": {
+          "policies": []
+        }
+      }
   ]
 }

@@ -24,6 +24,59 @@ const getCoffees = async (ctx) => {
   ctx.send({coffees: coffees});
 };
 
+const getWholesaleCoffees = async (ctx) => {
+    const includedFields = {
+      ...baseFields,
+      roast : 1,
+      origin : 1,
+      harvest: 1,
+    };
+    const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
+    const returnedCoffees = coffees.map((oneCoffee) => {
+        const coffeeObj = oneCoffee.toObject();
+        return {
+            id: coffeeObj.id,
+            description: coffeeObj.description.en,
+            harvest: coffeeObj.harvest.en,
+            name: coffeeObj.name.en,
+            price: coffeeObj.price[0].base.value,
+            collection: "featured",
+            origin: coffeeObj.origin.country.en,
+            tastingNotes: coffeeObj.origin.tasting_notes.en,
+            process: coffeeObj.origin.process.en,
+            varietal: coffeeObj.variety,
+            slug: coffeeObj.slug
+        }
+    })
+    ctx.send(returnedCoffees);
+};
+
+const getOneWholesaleCoffee = async (ctx) => {
+    const { slug } = ctx.params;
+  const includedFields = {
+      ...baseFields,
+      roast: 1,
+      origin: 1,
+      harvest: 1
+  };
+  const coffee = await strapi.query('coffee').model.findOne({ slug:slug }, includedFields);
+  const coffeeObj = coffee.toObject();
+  const returnedCoffee = {
+        id: coffeeObj.id,
+        description: coffeeObj.description.en,
+        harvest: coffeeObj.harvest.en,
+        name: coffeeObj.name.en,
+        price: coffeeObj.price[0].base.value,
+        collection: "featured",
+        origin: coffeeObj.origin.country.en,
+        tastingNotes: coffeeObj.origin.tasting_notes.en,
+        process: coffeeObj.origin.process.en,
+        varietal: coffeeObj.variety,
+        slug: coffeeObj.slug
+  }
+  ctx.send(returnedCoffee);
+};
+
 const getAllProducts = async (ctx) => {
   const queries = await Promise.all([
     strapi.query('coffee').model.find(ctx.query, {...baseFields, roast: 1, origin: 1, harvest: 1}),
@@ -167,6 +220,8 @@ module.exports = {
   getProductBySlug,
   getProductById,
   getCoffees,
+  getWholesaleCoffees,
+  getOneWholesaleCoffee,
   getAllProducts,
   snipcartParser,
   getRightRoastProducts,
