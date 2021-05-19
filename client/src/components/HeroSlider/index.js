@@ -40,17 +40,17 @@ const HeroSlider = () => {
           />,
           <SingleSlideLayout
             key="2"
-            background="#628082"
+            background="#EFECD9"
             textColor="mainDark"
             content={[
               {
                 title: t("slides.limited-edition.title"),
                 text: t("slides.limited-edition.text"),
-                button: <SlideButton onClick={() => history.push("/shop/coffee/alchemist")} primary label={t("shop.one")} />,
-                target: "/shop/coffee/alchemist"
+                button: <SlideButton onClick={() => history.push("/shop/coffee/nitro-coffee-black")} primary label={t("shop.one-can")} />,
+                target: "/shop/coffee/nitro-coffee-black"
               },
             ]}
-            slideImg="Heros/21_03_DCR_Illustration_chimie-01_wpzack"
+            slideImg="Heros/ColdBrew_webshop_qrvg2u"
           />,
           /*<SingleSlideLayout
             key="2"
