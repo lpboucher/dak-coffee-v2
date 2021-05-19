@@ -38,7 +38,7 @@ const getShippingRates = (ctx) => {
   }
 
   if (hasPickUpOption(summary.shipTo)) {
-    rates = [...rates, {'cost': 0, 'description': 'Pickup at Nieuwendammerdijk 526M-8. Mon/Wed afternoons, 48h after order'}];
+    rates = [...rates, {'cost': 0, 'description': 'Pickup at Nieuwendammerdijk 526M-8. Mon/Wed afternoons, 48h after order'}, {'cost': 3.5, 'description': 'Bike delivery in AMS, MON/WED'}];
   }
 
   rates = [...rates, ...getShippingRateOptions(summary.currency, summary.shipTo, hasColdBrew(orderData.items))];
