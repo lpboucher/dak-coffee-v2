@@ -59,7 +59,8 @@ const ProductDetails = ({id}) => {
       {type: "simple", title: t(`dropdown.${type}`), content: longDescription},
     ];
     // temp button for pre-order cold brew
-    const addLabel = id === "608ebd5c8e9a182d5e36b8d9" ? t(`cart.pre-order`) : t(`cart.add`);
+    //const addLabel = id === "608ebd5c8e9a182d5e36b8d9" ? t(`cart.pre-order`) : t(`cart.add`);
+    const addLabel = t(`cart.add`);
     const defaultCoffee = type === "coffee" && slug === "test-batch" ? "1kg" : "250g";
     const defaultQuantity = type === "promo" ? "25€" : defaultCoffee;
   return (
