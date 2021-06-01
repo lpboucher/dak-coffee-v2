@@ -109,5 +109,7 @@ export const FLAVORS = {
   "marshmallow": <Marshmallow />,
   "black tea": <Tea color="#282627" />,
   "rhubarb": <Rhubarb />,
-  "toffee": <Caramel />
+  "toffee": <Caramel />,
+  "nutella": <Chocolate />,
+  "rose": <Rose />,
 }
