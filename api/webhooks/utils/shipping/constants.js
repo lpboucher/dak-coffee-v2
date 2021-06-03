@@ -50,13 +50,13 @@ const SHIPPING_RATES_BY_REGION_COLD = {
 };
 
 const SHIPPING_THRESHOLDS_BY_REGION = {
-  EUR: { NL: 30, EU: 50, NA: 75, World: 75 },
-  CAD: { NL: 45, EU: 75, NA: 100, World: 100 },
+  EUR: { NL: 30, EU: 50, NA: 75, World: 100 },
+  CAD: { NL: 45, EU: 75, NA: 100, World: 150 },
 };
 
 const SHIPPING_THRESHOLDS_BY_REGION_COLD = {
-  EUR: { NL: 40, EU: 60, NA: 85, World: 85 },
-  CAD: { NL: 60, EU: 90, NA: 120, World: 120 },
+  EUR: { NL: 40, EU: 60, NA: 85, World: 110 },
+  CAD: { NL: 60, EU: 90, NA: 120, World: 160 },
 };
 
 const SHIPCLOUD_ENDPOINT = 'https://panel.sendcloud.sc/api/v2';
