@@ -112,4 +112,6 @@ export const FLAVORS = {
   "toffee": <Caramel />,
   "nutella": <Chocolate />,
   "rose": <Rose />,
+  "tangerine": <Orange />,
+  "cacao nibs": <Chocolate />
 }
