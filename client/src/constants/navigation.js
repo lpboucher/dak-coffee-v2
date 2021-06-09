@@ -33,7 +33,6 @@ export const FOOTER_NAV = [
   {target: "/shop/subscription/dak-subscription?quantity=2x250g", label: "navigation.subscriptions"},
   {target: "/faq", label: "navigation.faq"},
   {target: "/shipping", label: "navigation.shipping"},
-  {target: "/blog", label: "navigation.blog"},
   {target: "/terms", label: "navigation.terms"},
   {target: "/wholesale", label: "navigation.wholesale"},
   {target: "/subscribe", label: "navigation.newsletter"},

@@ -12,6 +12,8 @@ export default (
     <Route path="/terms" />
     <Route path="/privacy" />
     <Route path="/shipping" />
-    <Route path="/blog" />
+    {/*
+        <Route path="/blog" />
+    */}
   </Switch>
 );
