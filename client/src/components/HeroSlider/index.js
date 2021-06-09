@@ -27,7 +27,7 @@ const HeroSlider = () => {
         [
           <FullSlideLayout
             key="1"
-            textColor="mainDark"
+            textColor="mainWhite"
             content={[
               {
                 title: "",
