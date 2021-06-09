@@ -36,7 +36,7 @@ const HeroSlider = () => {
                 target: "/shop"
               },
             ]}
-            slideImg="Heros/Header_COFFEE4_pkgtbb"
+            slideImg="Heros/ColdCanheader_e3an4a"
           />,
           <SingleSlideLayout
             key="2"
