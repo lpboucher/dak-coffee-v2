@@ -44,7 +44,7 @@ const getWholesaleCoffees = async (ctx) => {
             origin: coffeeObj.origin.country.en,
             tastingNotes: coffeeObj.origin.tasting_notes.en,
             process: coffeeObj.origin.process.en,
-            varietal: coffeeObj.variety,
+            varietal: coffeeObj.origin.variety,
             slug: coffeeObj.slug
         }
     })
@@ -71,7 +71,7 @@ const getOneWholesaleCoffee = async (ctx) => {
         origin: coffeeObj.origin.country.en,
         tastingNotes: coffeeObj.origin.tasting_notes.en,
         process: coffeeObj.origin.process.en,
-        varietal: coffeeObj.variety,
+        varietal: coffeeObj.origin.variety,
         slug: coffeeObj.slug
   }
   ctx.send(returnedCoffee);

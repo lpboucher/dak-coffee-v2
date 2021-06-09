@@ -4,7 +4,8 @@ const shipConstants = require('./constants');
 
 const hasFreeOption = (items, orderSummary, withColdItem = false) => {
   const { currency, total, shipTo } = orderSummary;
-  return orderHasSubscriptions(items) || (total > getThreshold(currency, shipTo, withColdItem));
+  return (orderHasSubscriptions(items) && isFromRegion("EU", shipTo)) ||
+        (total > getThreshold(currency, shipTo, withColdItem));
 };
 
 const hasPickUpOption = (country) => {
