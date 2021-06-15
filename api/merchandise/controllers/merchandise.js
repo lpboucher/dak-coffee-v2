@@ -10,12 +10,12 @@ const baseFields = {
     type: 1,
     id: 1,
     isActive: 1
-  };
+};
 
- const getWholesaleMerchandise = async (ctx) => {
+const getWholesaleMerchandise = async (ctx) => {
     const includedFields = {
-      ...baseFields,
-      details: 1,
+        ...baseFields,
+        details: 1,
     };
     const merchandises = await strapi.query('merchandise').model.find(ctx.query, includedFields);
     const returnedMerchandise = merchandises.map((oneMerchandise) => {
@@ -25,30 +25,32 @@ const baseFields = {
             description: merchObj.description.en,
             name: merchObj.name.en,
             price: merchObj.price[0].base.value,
-            collection: "featured",
-            slug: merchObj.slug
-        }
-    })
+            collection: 'featured',
+            slug: merchObj.slug,
+            images: merchObj.images,
+        };
+    });
     ctx.send(returnedMerchandise);
-  };
+};
 
 const getOneWholesaleMerchandise = async (ctx) => {
     const { slug } = ctx.params;
     const includedFields = {
         ...baseFields,
         details: 1,
-      };
-  const merch = await strapi.query('merchandise').model.findOne({ slug:slug }, includedFields);
-  const merchObj = merch.toObject();
-  const returnedMerch = {
+    };
+    const merch = await strapi.query('merchandise').model.findOne({ slug:slug }, includedFields);
+    const merchObj = merch.toObject();
+    const returnedMerch = {
         id: merchObj.id,
         description: merchObj.description.en,
         name: merchObj.name.en,
         price: merchObj.price[0].base.value,
-        collection: "featured",
-        slug: merchObj.slug
-    }
-  ctx.send(returnedMerch);
+        collection: 'featured',
+        slug: merchObj.slug,
+        images: merchObj.images,
+    };
+    ctx.send(returnedMerch);
 };
 
 module.exports = {
