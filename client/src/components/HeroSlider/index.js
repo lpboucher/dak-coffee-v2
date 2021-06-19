@@ -38,7 +38,7 @@ const HeroSlider = () => {
             ]}
             slideImg="Heros/ColdCanheader_e3an4a"
           />,
-          <SingleSlideLayout
+          /*<SingleSlideLayout
             key="2"
             background="#EFECD9"
             textColor="mainDark"
@@ -51,7 +51,7 @@ const HeroSlider = () => {
               },
             ]}
             slideImg="Heros/ColdBrew_webshop_qrvg2u"
-          />,
+          />,*/
           /*<SingleSlideLayout
             key="2"
             background="#B2B5A4"
