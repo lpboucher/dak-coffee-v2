@@ -25,13 +25,29 @@
       }
     },
     {
-      "method": "POST",
-      "path": "/subscriptions",
-      "handler": "Subscription.create",
-      "config": {
-        "policies": []
-      }
-    },
+        "method": "POST",
+        "path": "/subscriptions/delete/:id",
+        "handler": "Subscription.snipcartDelete",
+        "config": {
+          "policies": []
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/subscriptions/pause/:id",
+        "handler": "Subscription.snipcartPause",
+        "config": {
+          "policies": []
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/subscriptions/resume/:id",
+        "handler": "Subscription.snipcartResume",
+        "config": {
+          "policies": []
+        }
+      },
     {
       "method": "PUT",
       "path": "/subscriptions/:id",
