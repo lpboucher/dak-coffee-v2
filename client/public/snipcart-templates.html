@@ -4,6 +4,7 @@
 
     <body>
         <div id="snipcart-templates">
+            <!-- Address Fields -->
             <address-fields>
                 <div class="root">
                     <overridable name="address-fields" section="top"></overridable>
@@ -76,6 +77,54 @@
                     </fieldset>
                 </div>
             </address-fields>
+
+            <!-- Subscription -->
+            <subscription>
+                <div class="snipcart-subscription snipcart__box">
+                    <div class="snipcart-subscription__header">
+                        <!-- Date -->
+                        <div class="snipcart-subscription__header-item">
+                            <div class="snipcart-subscription__header-title">{{ $localize('customer_dashboard.ordered_on') }}</div>
+                            <div>{{ date | date }}</div>
+                        </div>
+                        <!-- Billing date -->
+                        <div class="snipcart-subscription__header-item">
+                            <div v-if="nextBillingDate != null">
+                                <div class="snipcart-subscription__header-title">{{ $localize('customer_dashboard.next_billing_date') }}</div>
+                                <div>{{ nextBillingDate | date }}</div>
+                            </div>
+                        </div>
+                        <!-- Total -->
+                        <div class="snipcart-subscription__header-item">
+                            <div class="snipcart-subscription__header-title">{{ $localize('customer_dashboard.total') }}</div>
+                            <div>{{ total | money(currency) }} ({{ planInterval }})</div>
+                        </div>
+                        <!-- Invoice -->
+                        <div class="snipcart-subscription__header-item">
+                            <div class="snipcart-subscription__header-title">{{ $localize('customer_dashboard.subscription', { invoice_number: invoiceNumber }) }}</div>
+                            <button-link
+                                label="customer_dashboard.view_invoice"
+
+                            ></button-link>
+                        </div>
+                    </div>
+
+                    <!-- Items -->
+                    <div class="snipcart-subscription__product-ctn">
+                        <card-product
+                            v-for="item in providedItems"
+                            v-bind="{...item}"
+                            :key="`${token}:${item.itemKey}`"
+                        >
+                        </card-product>
+                        <div class="subscription-action-buttons">
+                            <button v-if="nextBillingDate == null" @click="updateSubscription(providedItems[0].itemKey, 'resume').then((data => actionFeedback(data)))" class="subscription-action-button--success">Resume</button>
+                            <button v-if="nextBillingDate != null" @click="updateSubscription(providedItems[0].itemKey, 'pause').then((data => actionFeedback(data)))" class="subscription-action-button--warning">Pause</button>
+                            <button @click="updateSubscription(providedItems[0].itemKey, 'delete').then((data => actionFeedback(data)))" class="subscription-action-button--danger">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </subscription>
         </div>
     </body>
 </html>

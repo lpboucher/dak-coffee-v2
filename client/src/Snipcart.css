@@ -83,3 +83,32 @@ input.snipcart-checkbox:checked + label:before {
     background-color: var(--primary);
     box-shadow: 0 2px 3px rgb(133 149 91 / 30%);
 }
+
+div.subscription-action-buttons {
+    display: flex;
+}
+
+div.subscription-action-buttons > button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button.subscription-action-button--success {
+    border: 1px solid var(--primary);
+}
+
+button.subscription-action-button--success:hover {
+    background-color: var(--primary);
+    color: var(--main-white);
+}
+
+button.subscription-action-button--danger,
+button.subscription-action-button--warning {
+    border: 1px solid #dad7d1;
+}
+
+button.subscription-action-button--danger:hover,
+button.subscription-action-button--warning:hover {
+    background-color: #dad7d1;
+}
