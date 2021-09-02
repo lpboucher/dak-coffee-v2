@@ -120,4 +120,5 @@ export const FLAVORS = {
   "blueberry": <Blueberry />,
   "almond": <Almond />,
   "rooibos": <Tea color="#ED4726" />,
+  "lily": <Hibiscus />,
 }
