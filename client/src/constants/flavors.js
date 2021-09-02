@@ -12,7 +12,7 @@ import {
   Grapes,
   Grapefruit,
   Cherries,
-  Blueberries,
+  Blueberry,
   Bergamot,
   Hibiscus,
   Apple,
@@ -113,5 +113,8 @@ export const FLAVORS = {
   "nutella": <Chocolate />,
   "rose": <Rose />,
   "tangerine": <Orange />,
-  "cacao nibs": <Chocolate />
+  "cacao nibs": <Chocolate />,
+  "papaya": <Guava />,
+  "blueberries": <Blueberry />,
+  "blueberry": <Blueberry />,
 }
