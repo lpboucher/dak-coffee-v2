@@ -40,7 +40,8 @@ import {
   Tea,
   Nougat,
   Marshmallow,
-  Rhubarb
+  Rhubarb,
+  Almond,
 } from '../utils/medallion/FlavorMedallions';
 
 export const FLAVORS = {
@@ -117,4 +118,6 @@ export const FLAVORS = {
   "papaya": <Guava />,
   "blueberries": <Blueberry />,
   "blueberry": <Blueberry />,
+  "almond": <Almond />,
+  "rooibos": <Tea color="#ED4726" />,
 }
