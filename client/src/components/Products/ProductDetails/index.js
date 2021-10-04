@@ -27,6 +27,8 @@ const {
 const ProductDetails = ({id}) => {
   const { query: quantityQuery } = useQuery("quantity");
   const { query: roastQuery } = useQuery("roast");
+  const { query: sizeQuery } = useQuery("size");
+  const { query: colorQuery } = useQuery("color");
   const { t } = useTranslation();
   const { mediaType } = useResponsive();
   const { currencySymbol } = useCurrency();
@@ -76,6 +78,8 @@ const ProductDetails = ({id}) => {
     number: 1,
     quantity: hasPriceOptions && quantityQuery.length > 0 ? quantityQuery[0] : defaultQuantity,
     roast: roastQuery.length > 0 ? roastQuery[0] : null,
+    size: sizeQuery.length > 0 ? sizeQuery[0] : null,
+    color: colorQuery.length > 0 ? colorQuery[0] : null,
   }}
   render={({ values }) => (
     <form>
