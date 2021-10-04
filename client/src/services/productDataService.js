@@ -33,11 +33,16 @@ export const getCartProductOptions = (priceString, optionObj, type="coffee", sel
     options["data-item-custom1-value"] = selected ? selected.quantity : null;
   }
   if (type === "clothing") {
-    const sizeOptions = getProductOptions(type).find(opt => opt.name === "clothing");
-    const indiviOptions = sizeOptions.options.map(opt => opt.value);
+    const sizes = getProductOptions(type).find(opt => opt.name === "size");
+    const colors = getProductOptions(type).find(opt => opt.name === "color");
+    const sizeOptions = sizes.options.map(opt => opt.value);
+    const colorOptions = colors.options.map(opt => opt.value);
     options["data-item-custom1-name"] = "Size";
-    options["data-item-custom1-options"] = indiviOptions.join('|');
+    options["data-item-custom1-options"] = sizeOptions.join('|');
     options["data-item-custom1-value"] = selected ? selected.size : null;
+    options["data-item-custom2-name"] = "Color";
+    options["data-item-custom2-options"] = colorOptions.join('|');
+    options["data-item-custom2-value"] = selected ? selected.color : null;
   }
   if (selected && selected.number != 1) {
     options["data-item-quantity"] = selected.number;
