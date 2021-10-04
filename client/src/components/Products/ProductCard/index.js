@@ -23,7 +23,8 @@ const ProductCard = ({id, selected}) => {
   const { productAdding } = useCart(id);
   const linkQuery = {
     coffee: `?quantity=${slug === "nitro-coffee-black" ? "6x250ml" : "250g"}`,
-    subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`
+    subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`,
+    clothing: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`
   }
   const productImage = images && <CloudImage
                           img={`Products/Thumbs/${images.thumb}`}
