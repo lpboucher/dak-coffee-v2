@@ -70,7 +70,7 @@ export const getProductOptions = (type) => {
         },
         { name: "color", options: [
             {label: "Navy", value: "Navy"},
-            {label: "Cream Heather Grey", value: "Cream"},
+            {label: "Cream Grey", value: "Cream"},
           ]
         },
     ]

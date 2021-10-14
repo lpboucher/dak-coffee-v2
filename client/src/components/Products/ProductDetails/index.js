@@ -98,14 +98,14 @@ const ProductDetails = ({id}) => {
         </Box>
       }
       {additionalOptions.map(mainOption =>
-        <Box key={`${mainOption.name}`} pad={{horizontal: "small", top: "medium"}} direction="row" justify="start">
+        <Box key={`${mainOption.name}`} pad={{horizontal: "small", top: "medium"}} wrap direction="row" justify="start">
           {mainOption.options.map(option =>
             <FormFieldRadioButton
             key={`${mainOption.name}_${option.label}`}
             name={mainOption.name}
             value={option.value}
             label={option.label}
-            width="200px"
+            width="150px"
             />
           )}
         </Box>

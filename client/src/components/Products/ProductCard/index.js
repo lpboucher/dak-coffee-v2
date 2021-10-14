@@ -47,7 +47,7 @@ const ProductCard = ({id, selected}) => {
       feature={productImage}
       info={info}
       medallion={medallion}
-      linkTarget={`/shop/${type}/${slug}${linkQuery[type] || ""}`}
+      linkTarget={`/shop/${type === "clothing" || type === "t-shirt" ? "merchandise" : type}/${slug}${linkQuery[type] || ""}`}
       isClickable={true}
       background={slug === "alchemist" ? "#628082" : "#f7f6f4"}
     />

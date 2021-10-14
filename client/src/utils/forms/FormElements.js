@@ -50,7 +50,8 @@ const FormRadioButton = styled(Box)`
     background-color: ${({checked}) => checked ? '#343434' : 'white'};
     border: 1px solid grey;
     color: ${({checked}) => checked ? '#f7f8f9' : '#343434'};
-    margin: 0 12px;
+    margin-right: 24px;
+    margin-bottom: 12px;
     letter-spacing: 1px;
 
     &:first-of-type {
