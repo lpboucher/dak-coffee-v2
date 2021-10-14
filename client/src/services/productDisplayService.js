@@ -73,6 +73,20 @@ export const getProductOptions = (type) => {
             {label: "Cream Grey", value: "Cream"},
           ]
         },
+    ],
+    "t-shirt": [
+        { name: "size", options: [
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Navy", value: "Navy"},
+          ]
+        },
     ]
   }
   return dict[type] || [];
