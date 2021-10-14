@@ -1,5 +1,5 @@
 {
-    "header-message": "Roastery is currently closed. Next roasting/shipping date is October 5th 2021.",
+    "header-message": "Gratis verzending in {{region}} bij orders de {{threshold}}+",
   "menu": "Menu",
   "navigation": {
     "home": "Home",
