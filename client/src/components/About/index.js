@@ -21,7 +21,7 @@ const About = () => {
       <TwoColLayout background="minor-3">
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>
           <CloudImage
-            img={`Intros/Aboutuswebsite_wiss4b`}
+            img={`Intros/IMGL9756-bewerkt_j5avae`}
             maxWidth={720}
             fit='cover'
           />
@@ -48,7 +48,7 @@ const About = () => {
         </Box>
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>
           <CloudImage
-            img={`Intros/Ourcoffee_c8d7oa`}
+            img={`Intros/IMGL9938-bewerkt_if4tlk`}
             maxWidth={720}
             fit='cover'
           />
