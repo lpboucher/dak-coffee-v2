@@ -1,5 +1,5 @@
 {
-    "header-message": "Roastery is closed for the Holidays. Next dispatch date is December 30th.",
+    "header-message": "Gratis verzending in {{region}} bij orders de {{threshold}}+",
   "menu": "Menu",
   "navigation": {
     "home": "Home",
