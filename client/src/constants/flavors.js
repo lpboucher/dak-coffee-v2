@@ -123,4 +123,7 @@ export const FLAVORS = {
   "lily": <Hibiscus />,
   "vanilla cake": <Vanilla />,
   "cherry blossom": <Cherries />,
+  "cocoa": <Chocolate />,
+  "red ripe fruits": <Strawberry />,
+  "red fruits": <Strawberry />,
 }
