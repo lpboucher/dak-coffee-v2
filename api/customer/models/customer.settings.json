@@ -1,0 +1,62 @@
+{
+  "connection": "default",
+  "collectionName": "customers",
+  "info": {
+    "name": "Customer"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "email": {
+      "type": "email",
+      "unique": true,
+      "required": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "business": {
+      "type": "string",
+      "required": true
+    },
+    "sector": {
+      "type": "string",
+      "required": true
+    },
+    "VAT": {
+      "type": "string"
+    },
+    "snipcartCustomerId": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "snipcartSessionToken": {
+      "type": "string"
+    },
+    "isLocked": {
+      "type": "boolean",
+      "default": true
+    },
+    "lastOrderDate": {
+      "type": "date"
+    },
+    "walletValue": {
+      "type": "decimal",
+      "default": 0
+    },
+    "walletDiscountId": {
+      "type": "string"
+    },
+    "walletDiscountCode": {
+      "type": "string"
+    }
+  }
+}

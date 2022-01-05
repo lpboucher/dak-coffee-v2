@@ -1,4 +1,6 @@
 'use strict';
+const format = require('../../utils/dataFormats');
+
 const { BACKEND_URL } = require('../../../client/src/global');
 
 const baseFields = {
@@ -24,12 +26,61 @@ const getCoffees = async (ctx) => {
     ctx.send({coffees: coffees});
 };
 
+const getUpcomingProducts = async (ctx) => {
+    const excludeFields = {
+        Name: 0,
+        Slug: 0,
+        createdAt: 0,
+        updatedAt: 0,
+        __v: 0,
+    };
+    const compilation = await strapi.query('compilation').model
+        .findOne({ slug: 'upcoming' }, excludeFields)
+        .populate([
+            {
+                path: 'coffees',
+            },
+            {
+                path: 'merchandises',
+            },
+        ]);
+    const withProducts = format.combineFullArray(compilation, 'products');
+
+    const returnedCoffees = withProducts.products.map((oneCoffee) => {
+        //const coffeeObj = oneCoffee.toObject();
+        const coffeeObj = oneCoffee;
+        const baseProduct = {
+            id: coffeeObj.id,
+            name: coffeeObj.name.en,
+            collection: 'upcoming',
+            images: coffeeObj.images,
+            slug: coffeeObj.slug
+        };
+
+        const coffeeAddition = coffeeObj.type === 'coffee' ? {
+            origin: coffeeObj.origin.country.en,
+            tastingNotes: coffeeObj.origin.tasting_notes.en,
+            process: coffeeObj.origin.process.en,
+            varietal: coffeeObj.origin.variety,
+            releasedOn: coffeeObj.releasedOn
+        } : {};
+
+        return {
+            ...baseProduct,
+            ...coffeeAddition
+        };
+    });
+    ctx.send(returnedCoffees);
+};
+
 const getWholesaleCoffees = async (ctx) => {
     const includedFields = {
         ...baseFields,
         roast : 1,
         origin : 1,
         harvest: 1,
+        releasedOn: 1,
+        short: 1,
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
     const returnedCoffees = coffees.map((oneCoffee) => {
@@ -37,6 +88,7 @@ const getWholesaleCoffees = async (ctx) => {
         return {
             id: coffeeObj.id,
             description: coffeeObj.description.en,
+            shortDescription: coffeeObj.short.en,
             harvest: coffeeObj.harvest.en,
             name: coffeeObj.name.en,
             price: coffeeObj.price[0].base.value,
@@ -46,7 +98,8 @@ const getWholesaleCoffees = async (ctx) => {
             tastingNotes: coffeeObj.origin.tasting_notes.en,
             process: coffeeObj.origin.process.en,
             varietal: coffeeObj.origin.variety,
-            slug: coffeeObj.slug
+            slug: coffeeObj.slug,
+            releasedOn: coffeeObj.releasedOn,
         };
     });
     ctx.send(returnedCoffees);
@@ -222,6 +275,7 @@ module.exports = {
     getProductBySlug,
     getProductById,
     getCoffees,
+    getUpcomingProducts,
     getWholesaleCoffees,
     getOneWholesaleCoffee,
     getAllProducts,

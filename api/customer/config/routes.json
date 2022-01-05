@@ -1,0 +1,84 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/customers",
+      "handler": "customer.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/customers/count",
+      "handler": "customer.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+        "method": "GET",
+        "path": "/customers/validate/:id",
+        "handler": "customer.checkExistingCustomer",
+        "config": {
+          "policies": []
+        }
+    },
+    {
+      "method": "GET",
+      "path": "/customers/:id",
+      "handler": "customer.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/customers/register",
+      "handler": "customer.createCustomer",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+        "method": "POST",
+        "path": "/customers/login",
+        "handler": "customer.loginCustomer",
+        "config": {
+          "policies": []
+        }
+    },
+    {
+        "method": "POST",
+        "path": "/customers/messages",
+        "handler": "message.processMessage",
+        "config": {
+          "policies": []
+        }
+    },
+    {
+        "method": "PUT",
+        "path": "/customers/orders/:id",
+        "handler": "customer.registerOrder",
+        "config": {
+          "policies": []
+        }
+    },
+    {
+      "method": "PUT",
+      "path": "/customers/:id",
+      "handler": "customer.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/customers/:id",
+      "handler": "customer.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

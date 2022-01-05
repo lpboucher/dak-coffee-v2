@@ -1,5 +1,6 @@
 {
   "snipcart": "${process.env.SNIPCART_KEY}",
+  "snipcartWholesale": "${process.env.SNIPCART_WHOLESALE_KEY}",
   "mailchimp": "${process.env.MAILCHIMP_KEY}",
   "mailchimpTrans": "${process.env.MAILCHIMP_TRANS_KEY}",
   "sendcloudKey": "${process.env.SENDCLOUD_API_KEY}",
