@@ -50,7 +50,7 @@ const ProductCard = ({id, selected}) => {
       medallion={medallion}
       linkTarget={`/shop/${type === "clothing" || type === "t-shirt" ? "merchandise" : type}/${slug}${linkQuery[type] || ""}`}
       isClickable={true}
-      background={slug === "alchemist" ? "#628082" : "#f7f6f4"}
+      background="#f7f6f4"
     />
     :
     <Skeleton height={300} width={400}/>
