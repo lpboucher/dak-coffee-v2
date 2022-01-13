@@ -232,6 +232,30 @@ const snipcartParser = async (ctx) => {
     ctx.send(data);
 };
 
+const wholesaleSnipcartParser = async (ctx) => {
+    const queries = await Promise.all([
+        strapi.query('coffee').model.find(ctx.query, {...baseFields, roast: 1, origin: 1, harvest: 1}),
+        strapi.query('merchandise').model.find(ctx.query, {...baseFields, details: 1}),
+        strapi.query('equipment').model.find(ctx.query, {...baseFields, details: 1}),
+    ]);
+    const data = [].concat(...queries).map(one => {
+        const product = one.toObject();
+        const baseCrawlerResponse = {
+            'id': product._id,
+            'name': product.name.en,
+            'price': product.price.reduce((priceObj, onePrice) => {
+                priceObj[onePrice.base.currency] = Math.round(onePrice.base.value * 100) / 100;
+                return priceObj;
+            }, {}),
+            'url': 'wholesale.dakcoffeeroasters.com/wholesale/snipcartParser'
+        };
+        return {
+            ...baseCrawlerResponse,
+        };
+    });
+    ctx.send(data);
+};
+
 const getRightRoastProducts = async (ctx) => {
     let coffees = await strapi.query('coffee').model.find({ isActive: true, ...ctx.query }, {...baseFields, roast: 1, origin: 1, harvest: 1});
     let sanitized = coffees.map((oneCoffee) => {
@@ -282,6 +306,7 @@ module.exports = {
     getOneWholesaleCoffee,
     getAllProducts,
     snipcartParser,
+    wholesaleSnipcartParser,
     getRightRoastProducts,
     getRightRoastCoffeeById
 };

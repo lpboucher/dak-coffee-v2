@@ -81,6 +81,14 @@
       }
     },
     {
+        "method": "GET",
+        "path": "/wholesale/snipcartParser",
+        "handler": "coffee.wholesaleSnipcartParser",
+        "config": {
+          "policies": []
+        }
+    },
+    {
       "method": "GET",
       "path": "/trr/products",
       "handler": "coffee.getRightRoastProducts",
