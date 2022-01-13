@@ -247,12 +247,13 @@ const wholesaleSnipcartParser = async (ctx) => {
                 priceObj[onePrice.base.currency] = Math.round(onePrice.base.value * 100) / 100;
                 return priceObj;
             }, {}),
-            'url': 'wholesale.dakcoffeeroasters.com/wholesale/snipcartParser'
+            'url': 'https://wholesale.dakcoffeeroasters.com/wholesale/snipcartParser'
         };
         return {
             ...baseCrawlerResponse,
         };
     });
+    console.log(data);
     ctx.send(data);
 };
 
