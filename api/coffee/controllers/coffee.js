@@ -83,7 +83,7 @@ const getWholesaleCoffees = async (ctx) => {
         short: 1,
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
-    const returnedCoffees = coffees.map((oneCoffee) => {
+    const allCoffees = coffees.map((oneCoffee) => {
         const coffeeObj = oneCoffee.toObject();
         return {
             id: coffeeObj.id,
@@ -102,6 +102,8 @@ const getWholesaleCoffees = async (ctx) => {
             releasedOn: coffeeObj.releasedOn,
         };
     });
+
+    const returnedCoffees = allCoffees.filter(({ name }) => !name.includes('(F)'));
     ctx.send(returnedCoffees);
 };
 
