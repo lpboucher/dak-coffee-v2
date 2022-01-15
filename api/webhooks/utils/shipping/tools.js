@@ -18,7 +18,7 @@ const getTotalWeightOfItems = (items) => {
         total += oneItem.quantity * convertWeightStringToNumber(value);
         return total;
     }, 0);
-    console.log('TOTAL WEIGHT', weight);
+
     return weight;
 };
 
@@ -102,7 +102,7 @@ const getShippingZone = (country) => {
 };
 
 const getWholesaleShippingZone = (country) => {
-    const zone = Object.keys(shipConstants.WHOLESALE_SHIPPING_ZONES).find(zone => shipConstants.SHIPPING_ZONES[zone].indexOf(country) !== -1);
+    const zone = Object.keys(shipConstants.WHOLESALE_SHIPPING_ZONES).find(zone => shipConstants.WHOLESALE_SHIPPING_ZONES[zone].indexOf(country) !== -1);
     return zone ? zone : '8';
 };
 

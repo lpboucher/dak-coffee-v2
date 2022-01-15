@@ -253,7 +253,6 @@ const wholesaleSnipcartParser = async (ctx) => {
             ...baseCrawlerResponse,
         };
     });
-    console.log(data);
     ctx.send(data);
 };
 
