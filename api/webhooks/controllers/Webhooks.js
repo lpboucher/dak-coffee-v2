@@ -129,6 +129,8 @@ const getWholesaleShippingRates = (ctx) => {
         discountMultiplier = isFromRegion('EU', shippingTo) ? 0 : 0.5;
     }
 
+    console.log(shippingMethod);
+    console.log(shippingMethod.cost);
     console.log({'rates': [{ ...shippingMethod, 'cost': discountMultiplier * shippingMethod.cost }]});
 
     return {'rates': [{ ...shippingMethod, 'cost': discountMultiplier * shippingMethod.cost }]};
