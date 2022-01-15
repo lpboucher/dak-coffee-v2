@@ -154,5 +154,5 @@ const shouldVATBeCharged = (country, customerVAT) => {
 };
 
 const isCoffeeProduct = (itemFields) => {
-    return itemFields.some(field => field.name === 'Weight');
+    return itemFields.some(field => field.name.toLowerCase() === 'Weight'.toLowerCase());
 };
