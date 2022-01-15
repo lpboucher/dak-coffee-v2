@@ -95,13 +95,13 @@ const getWholesaleTaxes = async (ctx) => {
     try {
         orderingCustomer = await strapi.query('customer').model.findOne({ email:orderData.email });
 
-        console.log('order', orderData.items[0].customFields);
+        console.log('order', orderData.shippingInformation);
     } catch (err) {
         orderingCustomer.VAT = null;
     }
 
     if(shouldVATBeCharged(orderData.billingAddress.country, orderingCustomer.VAT)) {
-        taxes = [...taxes, ...aggregateItemTaxes(orderData.items.map(item => getTaxPerItem(item)), {'includedInPrice': false, 'appliesOnShipping': true})];
+        taxes = [...taxes, ...aggregateItemTaxes(orderData.items.map(item => getTaxPerItem(item)), 0, {'includedInPrice': false, 'appliesOnShipping': false})];
     } else {
         taxes.push({'name': 'No Tax', 'amount': 0, 'rate': 0, 'numberForInvoice': 'TAX-000', 'includedInPrice': true});
     }
@@ -117,10 +117,11 @@ module.exports = {
 };
 
 // TO DO move to own util file
-const aggregateItemTaxes = (taxPerItem, taxOptions = {'includedInPrice': true, 'appliesOnShipping': false}) => {
+const aggregateItemTaxes = (taxPerItem, shippingFees = 0, taxOptions = {'includedInPrice': true, 'appliesOnShipping': false}) => {
     let taxes = [];
+    const shippingTaxTotal = Math.round(0.21 * shippingFees * 100) / 100;
     const coffeeTaxTotal = getTaxRateTotal(taxPerItem, 0.09);
-    const otherTaxTotal = getTaxRateTotal(taxPerItem, 0.21);
+    const otherTaxTotal = getTaxRateTotal(taxPerItem, 0.21) + shippingTaxTotal;
     if (coffeeTaxTotal > 0) {
         taxes.push({'name': '9% VAT (incl.)', 'amount': coffeeTaxTotal, 'rate': 0.09, 'numberForInvoice': 'TAX-COF', ...taxOptions});
     }
