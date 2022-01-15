@@ -94,14 +94,19 @@ const getWholesaleTaxes = async (ctx) => {
 
     try {
         orderingCustomer = await strapi.query('customer').model.findOne({ email:orderData.email });
-
-        console.log('order', orderData.shippingInformation);
     } catch (err) {
         orderingCustomer.VAT = null;
     }
 
     if(shouldVATBeCharged(orderData.billingAddress.country, orderingCustomer.VAT)) {
-        taxes = [...taxes, ...aggregateItemTaxes(orderData.items.map(item => getTaxPerItem(item)), 0, {'includedInPrice': false, 'appliesOnShipping': false})];
+        taxes = [
+            ...taxes,
+            ...aggregateItemTaxes(
+                orderData.items.map(item => getTaxPerItem(item)),
+                orderData.shippingInformation.fees ?? 0,
+                {'includedInPrice': false, 'appliesOnShipping': false}
+            )
+        ];
     } else {
         taxes.push({'name': 'No Tax', 'amount': 0, 'rate': 0, 'numberForInvoice': 'TAX-000', 'includedInPrice': true});
     }
