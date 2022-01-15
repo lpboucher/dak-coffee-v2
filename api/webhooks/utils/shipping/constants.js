@@ -21,7 +21,7 @@ const WHOLESALE_SHIPPING_RATES_BY_REGION = {
     '1': {'cost': 7.5, 'description': 'Benelux Shipping'},
     '2': {'cost': 10, 'description': 'EU-1 Shipping'},
     '3': {'cost': 15, 'description': 'EU-2 Shipping'},
-    '4': {'cost': 16.25, 'description': 'EU-2 Shipping'},
+    '4': {'cost': 16.25, 'description': 'EU-2/UK Shipping'},
     '5': {'cost': 20, 'description': 'EFTA Shipping'},
     '6': {'cost': 25, 'description': 'EU-3 Shipping'},
     '7': {'cost': 40, 'description': 'NA Shipping'},

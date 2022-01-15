@@ -123,12 +123,14 @@ const getWholesaleShippingRates = (ctx) => {
     const shippingMethod = getWholesaleShippingRateOption(shippingTo);
 
     let discountMultiplier = 1;
+    let returnedDescription = shippingMethod.description;
 
     if (hasDiscountedShipping(orderData.items)) {
         discountMultiplier = isFromRegion('EU', shippingTo) ? 0 : 0.5;
+        returnedDescription = `${shippingMethod.description} incl. volume discount`;
     }
 
-    return {'rates': [{ ...shippingMethod, 'cost': discountMultiplier * shippingMethod.cost }]};
+    return {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * shippingMethod.cost }]};
 };
 
 module.exports = {
