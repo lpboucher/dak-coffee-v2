@@ -6,7 +6,7 @@ const {
     hasColdBrew,
     getFreeShippingOptions,
     getShippingRateOptions,
-    getWholesaleShippingRateOptions,
+    getWholesaleShippingRateOption,
     hasGiftCard,
     isGiftCard,
     isFromRegion,
@@ -120,7 +120,7 @@ const getWholesaleShippingRates = (ctx) => {
     const orderData = ctx.request.body.content;
 
     const shippingTo = orderData.shippingAddress.country ? orderData.shippingAddress.country : orderData.billingAddress.country;
-    const shippingMethod = getWholesaleShippingRateOptions(shippingTo);
+    const shippingMethod = getWholesaleShippingRateOption(shippingTo);
 
     let discountMultiplier = 1;
 

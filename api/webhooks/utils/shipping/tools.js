@@ -111,8 +111,8 @@ const getShippingRateOptions = (currency, country, withColdAddition=false) => {
     return [allRates[currency.toUpperCase()][getShippingZone(country)]];
 };
 
-const getWholesaleShippingRateOptions = (country) => {
-    return [shipConstants.WHOLESALE_SHIPPING_RATES_BY_REGION[getWholesaleShippingZone(country)]];
+const getWholesaleShippingRateOption = (country) => {
+    return shipConstants.WHOLESALE_SHIPPING_RATES_BY_REGION[getWholesaleShippingZone(country)];
 };
 
 const fromCountryToRegion = (country) => {
@@ -161,7 +161,7 @@ module.exports = {
     hasNoPhysical,
     getFreeShippingOptions,
     getShippingRateOptions,
-    getWholesaleShippingRateOptions,
+    getWholesaleShippingRateOption,
     isFromRegion,
     isFromNL,
     hasGiftCard,
