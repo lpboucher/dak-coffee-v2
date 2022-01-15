@@ -8,6 +8,28 @@ const hasFreeOption = (items, orderSummary, withColdItem = false) => {
         (total > getThreshold(currency, shipTo, withColdItem));
 };
 
+const hasDiscountedShipping = (items) => {
+    return getTotalWeightOfItems(items) >= shipConstants.WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD;
+};
+
+const getTotalWeightOfItems = (items) => {
+    const weight = items.reduce((total, oneItem) => {
+        const { value } = oneItem.customFields.find((oneField) => oneField.name.toLowerCase() === 'Weight'.toLowerCase());
+        total += oneItem.quantity * convertWeightStringToNumber(value);
+        return total;
+    }, 0);
+    console.log('TOTAL WEIGHT', weight);
+    return weight;
+};
+
+const convertWeightStringToNumber = (weight) => {
+    const isKilos = weight.includes('kg');
+    const rawWeightValue = weight.split(/kg|g/)[0];
+
+    const weightValue = Number.parseInt(rawWeightValue);
+    return isKilos ? weightValue : weightValue / 1000;
+};
+
 const hasPickUpOption = (country) => {
     return isFromNL(country);
 };
@@ -79,9 +101,18 @@ const getShippingZone = (country) => {
     return zone ? zone : '4';
 };
 
+const getWholesaleShippingZone = (country) => {
+    const zone = Object.keys(shipConstants.WHOLESALE_SHIPPING_ZONES).find(zone => shipConstants.SHIPPING_ZONES[zone].indexOf(country) !== -1);
+    return zone ? zone : '8';
+};
+
 const getShippingRateOptions = (currency, country, withColdAddition=false) => {
     const allRates = withColdAddition ? shipConstants.SHIPPING_RATES_BY_REGION_COLD : shipConstants.SHIPPING_RATES_BY_REGION;
     return [allRates[currency.toUpperCase()][getShippingZone(country)]];
+};
+
+const getWholesaleShippingRateOptions = (country) => {
+    return [shipConstants.WHOLESALE_SHIPPING_RATES_BY_REGION[getWholesaleShippingZone(country)]];
 };
 
 const fromCountryToRegion = (country) => {
@@ -125,10 +156,12 @@ const createShippingParcel = async (shippingAddress, email, invoiceNumber) => {
 
 module.exports = {
     hasFreeOption,
+    hasDiscountedShipping,
     hasPickUpOption,
     hasNoPhysical,
     getFreeShippingOptions,
     getShippingRateOptions,
+    getWholesaleShippingRateOptions,
     isFromRegion,
     isFromNL,
     hasGiftCard,

@@ -5,6 +5,31 @@ const SHIPPING_ZONES = {
     '3': ['US', 'CA'],
 };
 
+const WHOLESALE_SHIPPING_ZONES = {
+    '0': ['NL'],
+    '1': ['BE', 'LU'],
+    '2': ['DE', 'FR', 'AT'],
+    '3': ['DK', 'SE', 'HU', 'CZ', 'PL', 'SK', 'SI'],
+    '4': ['PT', 'ES', 'IT', 'LT', 'LV', 'EE', 'GB', 'IE'],
+    '5': ['CH', 'NO'],
+    '6': ['BG', 'RO', 'FI', 'GR', 'CY', 'HR', 'MK', 'MT', 'RU'],
+    '7': ['US', 'CA'],
+};
+
+const WHOLESALE_SHIPPING_RATES_BY_REGION = {
+    '0': {'cost': 0, 'description': 'NL Shipping'},
+    '1': {'cost': 7.5, 'description': 'Benelux Shipping'},
+    '2': {'cost': 10, 'description': 'EU-1 Shipping'},
+    '3': {'cost': 15, 'description': 'EU-2 Shipping'},
+    '4': {'cost': 16.25, 'description': 'EU-2 Shipping'},
+    '5': {'cost': 20, 'description': 'EFTA Shipping'},
+    '6': {'cost': 25, 'description': 'EU-3 Shipping'},
+    '7': {'cost': 40, 'description': 'NA Shipping'},
+    '8': {'cost': 50, 'description': 'World Shipping'}
+};
+
+const WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD = 20;
+
 const COUNTRY_CODES_BY_REGION = {
     EU: ['AT', 'BE', 'BG', 'CH', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK'],
     NA: ['US', 'CA']
@@ -69,5 +94,8 @@ module.exports = {
     SHIPPING_THRESHOLDS_BY_REGION_COLD,
     FREE_SHIPPING_BY_REGION,
     SHIPPING_ZONES,
-    SHIPCLOUD_ENDPOINT
+    SHIPCLOUD_ENDPOINT,
+    WHOLESALE_SHIPPING_ZONES,
+    WHOLESALE_SHIPPING_RATES_BY_REGION,
+    WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD,
 };

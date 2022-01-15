@@ -6,11 +6,13 @@ const {
     hasColdBrew,
     getFreeShippingOptions,
     getShippingRateOptions,
+    getWholesaleShippingRateOptions,
     hasGiftCard,
     isGiftCard,
     isFromRegion,
     isFromNL,
-    createShippingParcel
+    createShippingParcel,
+    hasDiscountedShipping
 } = require('../utils/shipping/tools');
 const promo = require('../../promo/controllers/promo');
 const groupBy = require('../../utils/dataFormats').groupBy;
@@ -114,8 +116,25 @@ const getWholesaleTaxes = async (ctx) => {
     return {'taxes': taxes};
 };
 
+const getWholesaleShippingRates = (ctx) => {
+    const orderData = ctx.request.body.content;
+
+    const shippingTo = orderData.shippingAddress.country ? orderData.shippingAddress.country : orderData.billingAddress.country;
+    const shippingMethod = getWholesaleShippingRateOptions(shippingTo);
+
+    let discountMultiplier = 1;
+
+    if (hasDiscountedShipping(orderData.items)) {
+        console.log('HAS DISCOUNT FOR SHIPPING');
+        discountMultiplier = isFromRegion('EU', shippingTo) ? 0 : 0.5;
+    }
+
+    return { ...shippingMethod, 'cost': discountMultiplier * shippingMethod.cost };
+};
+
 module.exports = {
     getShippingRates,
+    getWholesaleShippingRates,
     getTaxes,
     getWholesaleTaxes,
     handleEvent,
