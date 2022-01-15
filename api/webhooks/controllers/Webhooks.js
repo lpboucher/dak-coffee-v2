@@ -103,7 +103,7 @@ const getWholesaleTaxes = async (ctx) => {
             ...taxes,
             ...aggregateItemTaxes(
                 orderData.items.map(item => getTaxPerItem(item)),
-                orderData.shippingInformation.fees ?? 0,
+                orderData.shippingInformation.fees || 0,
                 {'includedInPrice': false, 'appliesOnShipping': false}
             )
         ];
