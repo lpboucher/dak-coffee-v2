@@ -95,7 +95,7 @@ const getWholesaleTaxes = async (ctx) => {
     try {
         orderingCustomer = await strapi.query('customer').model.findOne({ email:orderData.email });
 
-        console.log('order', orderData.items);
+        console.log('order', orderData.items[0].customFields);
     } catch (err) {
         orderingCustomer.VAT = null;
     }
