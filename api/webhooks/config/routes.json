@@ -18,6 +18,14 @@
       },
       {
         "method": "POST",
+        "path": "/webhooks/wholesale/taxes",
+        "handler": "Webhooks.getWholesaleTaxes",
+        "config": {
+          "policies": []
+        }
+      },
+      {
+        "method": "POST",
         "path": "/webhooks/custom",
         "handler": "Webhooks.handleEvent",
         "config": {
