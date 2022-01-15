@@ -87,13 +87,6 @@ const handleEvent = async (ctx) => {
     }
 };
 
-module.exports = {
-    getShippingRates,
-    getTaxes,
-    getWholesaleTaxes,
-    handleEvent,
-};
-
 const getWholesaleTaxes = async (ctx) => {
     const orderData = ctx.request.body.content;
     let taxes = [];
@@ -114,6 +107,13 @@ const getWholesaleTaxes = async (ctx) => {
     }
 
     return {'taxes': taxes};
+};
+
+module.exports = {
+    getShippingRates,
+    getTaxes,
+    getWholesaleTaxes,
+    handleEvent,
 };
 
 // TO DO move to own util file
