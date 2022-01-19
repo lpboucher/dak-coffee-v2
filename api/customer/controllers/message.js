@@ -1,28 +1,28 @@
 'use strict';
 const mailchimpTx = require('@mailchimp/mailchimp_transactional');
 
+const { INTERNAL_BUSINESS_EMAIL } = require('../../../client/src/global');
+
 const templateDict = {
-    'sample-request': { content: [], subject: 'Sample request'},
-    'product-notification': { content: [], subject: 'Product notification'},
-    'account-unlocked': { content: [], subject: 'Account unlocked'},
-    'access-requested': { content: [], subject: 'Wholesale access'},
+    'sample-request': { contentName: '', subject: 'Sample request'},
+    'product-notification': { contentName: '', subject: 'Product notification'},
+    'account-unlocked': { contentName: '', subject: 'Account unlocked'},
+    'access-requested': { content: '', subject: 'Wholesale access'},
 };
 
 const processMessage = async (ctx) => {
-    const internalBusinessEmail = 'info@dakcoffeeroasters.com';
-    // const internalBusinessEmail = 'louisp.boucher@gmail.com';
-    const { destinationEmail, messageType, isInternal } = ctx.request.body;
-    const destination = isInternal ? internalBusinessEmail : destinationEmail;
+    const { destinationEmail, messageType, isInternal, content } = ctx.request.body;
+    const destination = isInternal ? INTERNAL_BUSINESS_EMAIL : destinationEmail;
 
     console.log(ctx.request.body);
 
     try {
         console.log(destinationEmail, messageType);
         await sendEmail({
-            from: internalBusinessEmail,
+            from: INTERNAL_BUSINESS_EMAIL,
             to: destination,
             template: messageType,
-            content: templateDict[messageType].content,
+            content: [{ name: templateDict[messageType].contentName, content: content }],
             subject: `DAK Coffee Roasters - ${templateDict[messageType].subject}`,
         });
 
