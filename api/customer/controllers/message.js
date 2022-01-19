@@ -4,10 +4,10 @@ const mailchimpTx = require('@mailchimp/mailchimp_transactional');
 const { INTERNAL_BUSINESS_EMAIL } = require('../../../client/src/global');
 
 const templateDict = {
-    'sample-request': { contentName: '', subject: 'Sample request'},
+    'sample-request': { contentName: 'sample-type', subject: 'Sample request'},
     'product-notification': { contentName: '', subject: 'Product notification'},
     'account-unlocked': { contentName: '', subject: 'Account unlocked'},
-    'access-requested': { content: '', subject: 'Wholesale access'},
+    'access-requested': { contentName: '', subject: 'Wholesale access'},
 };
 
 const processMessage = async (ctx) => {
