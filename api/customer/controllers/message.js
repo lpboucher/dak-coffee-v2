@@ -9,10 +9,12 @@ const templateDict = {
 };
 
 const processMessage = async (ctx) => {
-    // const internalBusinessEmail = 'info@dakcoffeeroasters.com';
-    const internalBusinessEmail = 'louisp.boucher@gmail.com';
+    const internalBusinessEmail = 'info@dakcoffeeroasters.com';
+    // const internalBusinessEmail = 'louisp.boucher@gmail.com';
     const { destinationEmail, messageType, isInternal } = ctx.request.body;
     const destination = isInternal ? internalBusinessEmail : destinationEmail;
+
+    console.log(ctx.request.body);
 
     try {
         console.log(destinationEmail, messageType);
