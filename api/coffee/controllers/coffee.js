@@ -82,10 +82,21 @@ const getWholesaleCoffees = async (ctx) => {
         releasedOn: 1,
         short: 1,
         isLowStock: 1,
+        isAvailableAsFilter: 1,
+        isAvailableAsEspresso: 1,
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
     const allCoffees = coffees.map((oneCoffee) => {
         const coffeeObj = oneCoffee.toObject();
+
+        const roastOptions = [];
+        if (coffeeObj.isAvailableAsEspresso === true) {
+            roastOptions.push({name: 'Espresso'});
+        }
+        if (coffeeObj.isAvailableAsFilter === true) {
+            roastOptions.push({name: 'Filter'});
+        }
+
         return {
             id: coffeeObj.id,
             description: coffeeObj.description.en,
@@ -102,6 +113,7 @@ const getWholesaleCoffees = async (ctx) => {
             slug: coffeeObj.slug,
             releasedOn: coffeeObj.releasedOn,
             isLowStock: coffeeObj.isLowStock,
+            roastOptions: roastOptions,
         };
     });
 
@@ -115,10 +127,21 @@ const getOneWholesaleCoffee = async (ctx) => {
         ...baseFields,
         roast: 1,
         origin: 1,
-        harvest: 1
+        harvest: 1,
+        isAvailableAsFilter: 1,
+        isAvailableAsEspresso: 1,
     };
     const coffee = await strapi.query('coffee').model.findOne({ slug:slug }, includedFields);
     const coffeeObj = coffee.toObject();
+
+    const roastOptions = [];
+    if (coffeeObj.isAvailableAsEspresso === true) {
+        roastOptions.push({name: 'Espresso'});
+    }
+    if (coffeeObj.isAvailableAsFilter === true) {
+        roastOptions.push({name: 'Filter'});
+    }
+
     const returnedCoffee = {
         id: coffeeObj.id,
         description: coffeeObj.description.en,
@@ -131,7 +154,8 @@ const getOneWholesaleCoffee = async (ctx) => {
         tastingNotes: coffeeObj.origin.tasting_notes.en,
         process: coffeeObj.origin.process.en,
         varietal: coffeeObj.origin.variety,
-        slug: coffeeObj.slug
+        slug: coffeeObj.slug,
+        roastOptions: roastOptions,
     };
     ctx.send(returnedCoffee);
 };

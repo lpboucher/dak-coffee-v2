@@ -59,6 +59,12 @@
     "isLowStock": {
         "type": "boolean"
     },
+    "isAvailableAsFilter": {
+        "type": "boolean"
+    },
+    "isAvailableAsEspresso": {
+        "type": "boolean"
+    },
     "releasedOn": {
         "type": "date"
     },
