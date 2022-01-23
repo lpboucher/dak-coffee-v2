@@ -81,6 +81,7 @@ const getWholesaleCoffees = async (ctx) => {
         harvest: 1,
         releasedOn: 1,
         short: 1,
+        isLowStock: 1,
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
     const allCoffees = coffees.map((oneCoffee) => {
@@ -100,6 +101,7 @@ const getWholesaleCoffees = async (ctx) => {
             varietal: coffeeObj.origin.variety,
             slug: coffeeObj.slug,
             releasedOn: coffeeObj.releasedOn,
+            isLowStock: coffeeObj.isLowStock,
         };
     });
 

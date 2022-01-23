@@ -56,6 +56,9 @@
     "isActive": {
       "type": "boolean"
     },
+    "isLowStock": {
+        "type": "boolean"
+    },
     "releasedOn": {
         "type": "date"
     },
