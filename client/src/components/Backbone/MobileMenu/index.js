@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMobileMenu } from '../../../hooks/global/useMobileMenu';
 
-import MobileMenuLayout, { MenuLink } from '../../../layouts/Backbone/MobileMenu';
+import MobileMenuLayout, { MenuLink, ExternalMenuLink } from '../../../layouts/Backbone/MobileMenu';
 
 import { MOBILE_NAV } from '../../../constants/navigation';
 
