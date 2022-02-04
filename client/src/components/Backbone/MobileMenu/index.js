@@ -9,8 +9,13 @@ import { MOBILE_NAV } from '../../../constants/navigation';
 const MobileMenu = () => {
   const { t } = useTranslation();
   const { isOpen, setClose } = useMobileMenu();
-  const menuLinks = MOBILE_NAV.map(item =>
-    <MenuLink key={`mobile-to-${item.target}`} to={item.target} onClick={() => setClose()}>{t(item.label)}</MenuLink>
+  const menuLinks = MOBILE_NAV.map(item => {
+        if (item.isExternal === true) {
+            return <ExternalMenuLink key={`internal-to-${item.target}`} href={item.target}>{t(item.label)}</ExternalMenuLink>
+        } else {
+            return <MenuLink key={`internal-to-${item.target}`} to={item.target} onClick={() => setClose()}>{t(item.label)}</MenuLink>
+        }
+    }
   )
   return (
     <MobileMenuLayout

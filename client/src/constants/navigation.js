@@ -34,7 +34,7 @@ export const FOOTER_NAV = [
   {target: "/faq", label: "navigation.faq"},
   {target: "/shipping", label: "navigation.shipping"},
   {target: "/terms", label: "navigation.terms"},
-  {target: "https://wholesale.dakcoffeeroasters.com/auth/register", label: "navigation.wholesale"},
+  {target: "https://wholesale.dakcoffeeroasters.com/auth/register", label: "navigation.wholesale", isExternal: true},
   {target: "/subscribe", label: "navigation.newsletter"},
   {target: "/privacy", label: "navigation.privacy"},
 ];
