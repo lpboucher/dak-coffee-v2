@@ -1,4 +1,5 @@
 'use strict';
+const { convertWeightStringToNumber } = require('../../webhooks/utils/shipping/tools');
 const format = require('../../utils/dataFormats');
 
 const { BACKEND_URL } = require('../../../client/src/global');
@@ -73,6 +74,12 @@ const getUpcomingProducts = async (ctx) => {
     ctx.send(returnedCoffees);
 };
 
+/*
+250g/30%
+250g/45%
+1kg/30%
+1kg/50%
+*/
 const getWholesaleCoffees = async (ctx) => {
     const includedFields = {
         ...baseFields,
@@ -89,6 +96,8 @@ const getWholesaleCoffees = async (ctx) => {
     const allCoffees = coffees.map((oneCoffee) => {
         const coffeeObj = oneCoffee.toObject();
         const priceInEUR = coffeeObj.price.find((p) => p.base.currency.toLowerCase() === 'eur');
+        const volumeOptions = priceInEUR.increments.map((o) => o.option);
+        const modifiers = getDerivedPriceModifiers(volumeOptions, priceInEUR);
 
         const roastOptions = [];
         if (coffeeObj.isAvailableAsEspresso === true) {
@@ -115,6 +124,7 @@ const getWholesaleCoffees = async (ctx) => {
             releasedOn: coffeeObj.releasedOn,
             isLowStock: coffeeObj.isLowStock,
             roastOptions: roastOptions,
+            modifiers: modifiers,
         };
     });
 
@@ -122,6 +132,12 @@ const getWholesaleCoffees = async (ctx) => {
     ctx.send(returnedCoffees);
 };
 
+/*
+250g/30%
+250g/45%
+1kg/30%
+1kg/50%
+*/
 const getOneWholesaleCoffee = async (ctx) => {
     const { slug } = ctx.params;
     const includedFields = {
@@ -135,6 +151,8 @@ const getOneWholesaleCoffee = async (ctx) => {
     const coffee = await strapi.query('coffee').model.findOne({ slug:slug }, includedFields);
     const coffeeObj = coffee.toObject();
     const priceInEUR = coffeeObj.price.find((p) => p.base.currency.toLowerCase() === 'eur'.toLowerCase());
+    const volumeOptions = priceInEUR.increments.map((o) => o.option);
+    const modifiers = getDerivedPriceModifiers(volumeOptions, priceInEUR);
 
 
     const roastOptions = [];
@@ -159,6 +177,7 @@ const getOneWholesaleCoffee = async (ctx) => {
         varietal: coffeeObj.origin.variety,
         slug: coffeeObj.slug,
         roastOptions: roastOptions,
+        modifiers: modifiers,
     };
     ctx.send(returnedCoffee);
 };
@@ -324,6 +343,29 @@ const getRightRoastCoffeeById = async (ctx) => {
         currency: priceInEur.base.currency
     };
     ctx.send({data: sanitized});
+};
+
+const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
+    const discounts = [{name: '30%', value: 0.3}, {name: '45%', value: 0.45}];
+    const basePrice = priceObject.base.value;
+    let modifier;
+    let priceModifiers = [];
+
+    for (let v = 0; v < volumeOptions.length; v++) {
+        for (let d = 0; d < discounts.length; d++) {
+            const index = `${volumeOptions[v]}/${discounts[d].name}`;
+            if (priceObject.increments[v].value === '[+0.00]') {
+                modifier = -(discounts[d].value * basePrice);
+            } else if (v === volumeOptions.length - 1) {
+                const weightAdjustment = convertWeightStringToNumber(volumeOptions[v]) / convertWeightStringToNumber(volumeOptions[0]);
+                const discount = discounts[d].value === discounts[discounts.length - 1].value ? 0.5 : discounts[d].value;
+                modifier = ((1 - discount) * (basePrice * weightAdjustment * 0.9)) - basePrice;
+            }
+            priceModifiers.push({name: index, priceModifier:modifier});
+        }
+    }
+
+    return priceModifiers;
 };
 
 module.exports = {
