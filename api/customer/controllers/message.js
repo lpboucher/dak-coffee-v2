@@ -5,7 +5,7 @@ const { INTERNAL_BUSINESS_EMAIL } = require('../../../client/src/global');
 
 const templateDict = {
     'sample-request': { contentName: 'sample-type', subject: 'Sample request'},
-    'product-notification': { contentName: '', subject: 'Product notification'},
+    'product-notification': { contentName: 'product-name', subject: 'Product notification'},
     'account-unlocked': { contentName: '', subject: 'Account unlocked'},
     'access-requested': { contentName: '', subject: 'Wholesale access'},
 };
@@ -57,7 +57,8 @@ const sendEmail = async ({from = 'info@dakcoffeeroasters.com', to, template, con
             subject: subject,
             to: [
                 {email: to, type: 'to'}
-            ]
+            ],
+            bcc_address: 'info@dakcoffeeroasters.com',
         }
     });
 };

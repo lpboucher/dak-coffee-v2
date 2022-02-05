@@ -88,6 +88,7 @@ const getWholesaleCoffees = async (ctx) => {
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
     const allCoffees = coffees.map((oneCoffee) => {
         const coffeeObj = oneCoffee.toObject();
+        const priceInEUR = coffeeObj.price.find((p) => p.base.currency.toLowercase() === 'eur'.toLowercase());
 
         const roastOptions = [];
         if (coffeeObj.isAvailableAsEspresso === true) {
@@ -103,7 +104,7 @@ const getWholesaleCoffees = async (ctx) => {
             shortDescription: coffeeObj.short.en,
             harvest: coffeeObj.harvest.en,
             name: coffeeObj.name.en,
-            price: coffeeObj.price[0].base.value,
+            price: priceInEUR.base.value,
             collection: 'featured',
             origin: coffeeObj.origin.country.en,
             images: coffeeObj.images,
@@ -133,6 +134,8 @@ const getOneWholesaleCoffee = async (ctx) => {
     };
     const coffee = await strapi.query('coffee').model.findOne({ slug:slug }, includedFields);
     const coffeeObj = coffee.toObject();
+    const priceInEUR = coffeeObj.price.find((p) => p.base.currency.toLowercase() === 'eur'.toLowercase());
+
 
     const roastOptions = [];
     if (coffeeObj.isAvailableAsEspresso === true) {
@@ -147,7 +150,7 @@ const getOneWholesaleCoffee = async (ctx) => {
         description: coffeeObj.description.en,
         harvest: coffeeObj.harvest.en,
         name: coffeeObj.name.en,
-        price: coffeeObj.price[0].base.value,
+        price: priceInEUR.base.value,
         collection: 'featured',
         origin: coffeeObj.origin.country.en,
         images: coffeeObj.images,
