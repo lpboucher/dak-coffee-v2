@@ -21,7 +21,7 @@ const getWholesaleMerchandise = async (ctx) => {
     const merchandises = await strapi.query('merchandise').model.find(ctx.query, includedFields);
     const returnedMerchandise = merchandises.map((oneMerchandise) => {
         const merchObj = oneMerchandise.toObject();
-        const priceInEUR = merchObj.price.find((p) => p.base.currency.toLowercase() === 'eur'.toLowercase());
+        const priceInEUR = merchObj.price.find((p) => p.base.currency.toLowerCase() === 'eur'.toLowerCase());
         return {
             id: merchObj.id,
             description: merchObj.description.en,
@@ -45,7 +45,7 @@ const getOneWholesaleMerchandise = async (ctx) => {
     };
     const merch = await strapi.query('merchandise').model.findOne({ slug:slug }, includedFields);
     const merchObj = merch.toObject();
-    const priceInEUR = merchObj.price.find((p) => p.base.currency.toLowercase() === 'eur'.toLowercase());
+    const priceInEUR = merchObj.price.find((p) => p.base.currency.toLowerCase() === 'eur'.toLowerCase());
     const returnedMerch = {
         id: merchObj.id,
         description: merchObj.description.en,
