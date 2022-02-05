@@ -19,13 +19,13 @@ const WHOLESALE_SHIPPING_ZONES = {
 const WHOLESALE_SHIPPING_RATES_BY_REGION = {
     '0': {'cost': 0, 'description': 'NL Shipping'},
     '1': {'cost': 7.5, 'description': 'Benelux Shipping'},
-    '2': {'cost': 10, 'description': 'EU-1 Shipping'},
+    '2': {'cost': 12, 'description': 'EU-1 Shipping'},
     '3': {'cost': 15, 'description': 'EU-2 Shipping'},
-    '4': {'cost': 16.25, 'description': 'EU-2/UK Shipping'},
+    '4': {'cost': 18, 'description': 'EU-2/UK Shipping'},
     '5': {'cost': 20, 'description': 'EFTA Shipping'},
     '6': {'cost': 25, 'description': 'EU-3 Shipping'},
-    '7': {'cost': 40, 'description': 'NA Shipping'},
-    '8': {'cost': 50, 'description': 'World Shipping'}
+    '7': {'cost': 0, 'description': 'NA Shipping', 'perkilo': 3.25, 'cap': 100},
+    '8': {'cost': 0, 'description': 'World Shipping', 'perkilo': 4.5, 'cap': 150}
 };
 
 const WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD = 20;

@@ -9,7 +9,7 @@ const baseFields = {
     images : 1,
     type: 1,
     id: 1,
-    isActive: 1
+    isActive: 1,
 };
 
 const getWholesaleMerchandise = async (ctx) => {
@@ -17,8 +17,9 @@ const getWholesaleMerchandise = async (ctx) => {
         ...baseFields,
         details: 1,
         type: 1,
+        isAvailableWholesale: 1,
     };
-    const merchandises = await strapi.query('merchandise').model.find(ctx.query, includedFields);
+    const merchandises = await strapi.query('merchandise').model.find({ isAvailableWholesale: true, ...ctx.query}, includedFields);
     const returnedMerchandise = merchandises.map((oneMerchandise) => {
         const merchObj = oneMerchandise.toObject();
         const priceInEUR = merchObj.price.find((p) => p.base.currency.toLowerCase() === 'eur'.toLowerCase());
@@ -31,6 +32,7 @@ const getWholesaleMerchandise = async (ctx) => {
             slug: merchObj.slug,
             images: merchObj.images,
             type: merchObj.type,
+            isAvailableWholesale: merchObj.isAvailableWholesale,
         };
     });
     ctx.send(returnedMerchandise);
@@ -42,6 +44,7 @@ const getOneWholesaleMerchandise = async (ctx) => {
         ...baseFields,
         details: 1,
         type: 1,
+        isAvailableWholesale: 1,
     };
     const merch = await strapi.query('merchandise').model.findOne({ slug:slug }, includedFields);
     const merchObj = merch.toObject();
@@ -55,6 +58,7 @@ const getOneWholesaleMerchandise = async (ctx) => {
         slug: merchObj.slug,
         images: merchObj.images,
         type: merchObj.type,
+        isAvailableWholesale: merchObj.isAvailableWholesale,
     };
     ctx.send(returnedMerch);
 };

@@ -12,7 +12,8 @@ const {
     isFromRegion,
     isFromNL,
     createShippingParcel,
-    hasDiscountedShipping
+    hasDiscountedShipping,
+    getTotalWeightOfItems,
 } = require('../utils/shipping/tools');
 const promo = require('../../promo/controllers/promo');
 const groupBy = require('../../utils/dataFormats').groupBy;
@@ -100,7 +101,9 @@ const getWholesaleTaxes = async (ctx) => {
         orderingCustomer.VAT = null;
     }
 
-    if(shouldVATBeCharged(orderData.billingAddress.country, orderingCustomer.VAT)) {
+    const countryAddress = orderData.billingAddress.country ? orderData.billingAddress.country : orderData.shippingAddress.country;
+
+    if(shouldVATBeCharged(countryAddress, orderingCustomer.VAT)) {
         taxes = [
             ...taxes,
             ...aggregateItemTaxes(
@@ -124,6 +127,13 @@ const getWholesaleShippingRates = (ctx) => {
 
     let discountMultiplier = 1;
     let returnedDescription = shippingMethod.description;
+
+    if (isFromRegion('EU', shippingTo) && hasDiscountedShipping(orderData.items)) {
+        discountMultiplier = 0;
+        returnedDescription = `${shippingMethod.description} incl. volume discount`;
+    } else {
+        shippingMethod.cost = Math.max((getTotalWeightOfItems(orderData.items) * shippingMethod.perkilo), shippingMethod.cap);
+    }
 
     if (hasDiscountedShipping(orderData.items)) {
         discountMultiplier = isFromRegion('EU', shippingTo) ? 0 : 0.5;

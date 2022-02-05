@@ -168,5 +168,7 @@ module.exports = {
     hasColdBrew,
     isGiftCard,
     isColdBrew,
-    createShippingParcel
+    createShippingParcel,
+    convertWeightStringToNumber,
+    getTotalWeightOfItems,
 };

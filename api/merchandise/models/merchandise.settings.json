@@ -56,6 +56,10 @@
     "isActive": {
       "type": "boolean",
       "default": true
-    }
+    },
+    "isAvailableWholesale": {
+        "type": "boolean",
+        "default": false
+      }
   }
 }
