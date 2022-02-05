@@ -11,16 +11,14 @@ const templateDict = {
 };
 
 const processMessage = async (ctx) => {
-    const { destinationEmail, messageType, isInternal, content } = ctx.request.body;
-    const destination = isInternal ? INTERNAL_BUSINESS_EMAIL : destinationEmail;
+    const { destinationEmail, messageType, content } = ctx.request.body;
 
     console.log(ctx.request.body);
 
     try {
-        console.log(destinationEmail, messageType);
         await sendEmail({
             from: INTERNAL_BUSINESS_EMAIL,
-            to: destination,
+            to: destinationEmail,
             template: messageType,
             content: [{ name: templateDict[messageType].contentName, content: content }],
             subject: `DAK Coffee Roasters - ${templateDict[messageType].subject}`,
@@ -46,7 +44,7 @@ Parameter is object of the shape:
     subject: 'The subject',
 }
 */
-const sendEmail = async ({from = 'info@dakcoffeeroasters.com', to, template, content, subject}) => {
+const sendEmail = async ({from = INTERNAL_BUSINESS_EMAIL, to, template, content, subject}) => {
     const mailchimp = mailchimpTx(strapi.config.currentEnvironment.mailchimpTrans);
     console.log('sending to:', to);
     await mailchimp.messages.sendTemplate({
@@ -58,7 +56,7 @@ const sendEmail = async ({from = 'info@dakcoffeeroasters.com', to, template, con
             to: [
                 {email: to, type: 'to'}
             ],
-            bcc_address: 'info@dakcoffeeroasters.com',
+            bcc_address: INTERNAL_BUSINESS_EMAIL,
         }
     });
 };
