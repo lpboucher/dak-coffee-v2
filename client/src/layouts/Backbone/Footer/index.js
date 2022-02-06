@@ -19,6 +19,11 @@ export const FooterLink = styled(Link)`
   width: ${layout.footerNavLinkWidth};
 `
 
+export const ExternalFooterLink = styled.a`
+  font-size: 12px;
+  width: ${layout.footerNavLinkWidth};
+`
+
 const WithOrder = styled(Box)`
   order: ${({order}) => order};
 `

@@ -6,7 +6,7 @@ export const TOP_NAV = [
   {label:"navigation.shop", target: "/shop"},
   //{label:"navigation.subscriptions", target: "/shop/subscription/dak-subscription?quantity=2x250g"},
   {label:"navigation.about", target: "/about"},
-  {label:"navigation.wholesale", target: "https://wholesale.dakcoffeeroasters.com/auth/register"}
+  {label:"navigation.wholesale", target: "https://wholesale.dakcoffeeroasters.com/auth/register", isExternal: true}
 ];
 
 export const MOBILE_NAV = [
