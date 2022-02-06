@@ -7,7 +7,7 @@ const templateDict = {
     'sample-request': { contentName: 'sample-type', subject: 'Sample request'},
     'product-notification': { contentName: 'product-name', subject: 'Product notification'},
     'account-unlocked': { contentName: '', subject: 'Account unlocked'},
-    'access-requested': { contentName: '', subject: 'Wholesale access'},
+    'access-requested': { contentName: 'registration-email', subject: 'Wholesale access'},
 };
 
 const processMessage = async (ctx) => {
