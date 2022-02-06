@@ -297,7 +297,7 @@ const wholesaleSnipcartParser = async (ctx) => {
                 priceObj[onePrice.base.currency] = Math.round(onePrice.base.value * 100) / 100;
                 return priceObj;
             }, {}),
-            'url': 'https://wholesale.dakcoffeeroasters.com/wholesale/snipcartParser'
+            'url': 'https://dakcoffeeroasters.com/api/wholesale/snipcartParser'
         };
         return {
             ...baseCrawlerResponse,
