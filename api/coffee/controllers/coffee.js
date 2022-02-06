@@ -125,6 +125,7 @@ const getWholesaleCoffees = async (ctx) => {
             isLowStock: coffeeObj.isLowStock,
             roastOptions: roastOptions,
             modifiers: modifiers,
+            volumeOptions: volumeOptions.map((opt) => ({name: opt})),
         };
     });
 
@@ -178,6 +179,7 @@ const getOneWholesaleCoffee = async (ctx) => {
         slug: coffeeObj.slug,
         roastOptions: roastOptions,
         modifiers: modifiers,
+        volumeOptions: volumeOptions.map((opt) => ({name: opt})),
     };
     ctx.send(returnedCoffee);
 };
