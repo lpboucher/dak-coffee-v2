@@ -134,7 +134,7 @@ const getWholesaleShippingRates = (ctx) => {
         discountMultiplier = 0;
         returnedDescription = `${shippingMethod.description} incl. volume discount`;
     } else {
-        shippingMethod.cost = Math.max((getTotalWeightOfItems(orderData.items) * shippingMethod.perkilo), shippingMethod.cap);
+        shippingMethod.cost = Math.max((getTotalWeightOfItems(orderData.items) * Number.parseInt(shippingMethod.perkilo)), Number.parseInt(shippingMethod.cap));
     }
 
     if (hasDiscountedShipping(orderData.items)) {
@@ -142,10 +142,10 @@ const getWholesaleShippingRates = (ctx) => {
         returnedDescription = `${shippingMethod.description} incl. volume discount`;
     }
 
-    console.log( discountMultiplier, shippingMethod.cost, discountMultiplier * shippingMethod.cost);
-    console.log( {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * shippingMethod.cost }]});
+    console.log( discountMultiplier, Number.parseInt(shippingMethod.cost), discountMultiplier * Number.parseInt(shippingMethod.cost));
+    console.log( {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * Number.parseInt(shippingMethod.cost) }]});
 
-    return {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * shippingMethod.cost }]};
+    return {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * Number.parseInt(shippingMethod.cost) }]};
 };
 
 module.exports = {
