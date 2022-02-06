@@ -129,23 +129,28 @@ const getWholesaleShippingRates = (ctx) => {
 
     let discountMultiplier = 1;
     let returnedDescription = shippingMethod.description;
+    let calculatedCost;
 
-    if (isFromRegion('EU', shippingTo) && hasDiscountedShipping(orderData.items)) {
+    if (isFromNL(shippingTo)) {
+        calculatedCost = 0;
+    } else if(isFromRegion('EU', shippingTo)) {
+        discountMultiplier = 0;
+        calculatedCost = hasDiscountedShipping(orderData.items) ? 0 : shippingMethod['cost'];
+    } else {
+        calculatedCost = Math.min((getTotalWeightOfItems(orderData.items) * shippingMethod.perkilo), shippingMethod.cap);
+    }
+
+    /*if (isFromRegion('EU', shippingTo) && hasDiscountedShipping(orderData.items)) {
         discountMultiplier = 0;
         returnedDescription = `${shippingMethod.description} incl. volume discount`;
     } else {
-        shippingMethod['cost'] = Math.max((getTotalWeightOfItems(orderData.items) * Number.parseInt(shippingMethod.perkilo)), Number.parseInt(shippingMethod.cap));
-    }
+        shippingMethod['cost'] = Math.min((getTotalWeightOfItems(orderData.items) * Number.parseInt(shippingMethod.perkilo)), Number.parseInt(shippingMethod.cap));
+    }*/
 
-    if (hasDiscountedShipping(orderData.items)) {
-        discountMultiplier = isFromRegion('EU', shippingTo) ? 0 : 0.5;
-        returnedDescription = `${shippingMethod.description} incl. volume discount`;
-    }
+    console.log( discountMultiplier, calculatedCost);
+    console.log( {'rates': [{ 'description': returnedDescription, 'cost': calculatedCost }] });
 
-    console.log( discountMultiplier, +shippingMethod['cost'], discountMultiplier * Number.parseInt(shippingMethod['cost']));
-    console.log( {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * Number.parseInt(shippingMethod['cost']) }]});
-
-    return {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * Number.parseInt(shippingMethod['cost']) }]};
+    return {'rates': [{ 'description': returnedDescription, 'cost': calculatedCost }] };
 };
 
 module.exports = {
