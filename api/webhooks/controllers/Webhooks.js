@@ -120,10 +120,12 @@ const getWholesaleTaxes = async (ctx) => {
 };
 
 const getWholesaleShippingRates = (ctx) => {
+    console.log(ctx.request.body.content);
     const orderData = ctx.request.body.content;
 
     const shippingTo = orderData.shippingAddress.country ? orderData.shippingAddress.country : orderData.billingAddress.country;
     const shippingMethod = getWholesaleShippingRateOption(shippingTo);
+    console.log(shippingMethod);
 
     let discountMultiplier = 1;
     let returnedDescription = shippingMethod.description;
@@ -139,6 +141,8 @@ const getWholesaleShippingRates = (ctx) => {
         discountMultiplier = isFromRegion('EU', shippingTo) ? 0 : 0.5;
         returnedDescription = `${shippingMethod.description} incl. volume discount`;
     }
+
+    console.log( {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * shippingMethod.cost }]});
 
     return {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * shippingMethod.cost }]};
 };
