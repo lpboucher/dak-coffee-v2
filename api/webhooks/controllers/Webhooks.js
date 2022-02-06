@@ -142,6 +142,7 @@ const getWholesaleShippingRates = (ctx) => {
         returnedDescription = `${shippingMethod.description} incl. volume discount`;
     }
 
+    console.log( discountMultiplier, shippingMethod.cost, discountMultiplier * shippingMethod.cost);
     console.log( {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * shippingMethod.cost }]});
 
     return {'rates': [{ 'description': returnedDescription, 'cost': discountMultiplier * shippingMethod.cost }]};
