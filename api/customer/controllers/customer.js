@@ -86,6 +86,7 @@ const registerOrder = async (ctx) => {
     snipcart.configure('SECRET_API_KEY', strapi.config.currentEnvironment.snipcartWholesale);
     const { id } = ctx.params;
     const { walletValue } = ctx.request.body;
+    const newWalletAmount = Math.round(walletValue * 100) / 100;
 
     try {
         const customer = await strapi.query('customer').model.findOne({ email:id });
@@ -97,13 +98,13 @@ const registerOrder = async (ctx) => {
             urlParams: { id: customer.toObject().walletDiscountId },
             data: {
                 ...walletDiscount.data,
-                amount: walletValue,
+                amount: newWalletAmount,
             }
         });
         await strapi.query('customer').update(
             { email:id },
             {
-                walletValue,
+                newWalletAmount,
                 lastOrderDate: new Date(),
             }
         );
