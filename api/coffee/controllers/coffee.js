@@ -97,7 +97,7 @@ const getWholesaleCoffees = async (ctx) => {
         const coffeeObj = oneCoffee.toObject();
         const priceInEUR = coffeeObj.price.find((p) => p.base.currency.toLowerCase() === 'eur');
         const volumeOptions = priceInEUR.increments.map((o) => o.option);
-        const modifiers = getDerivedPriceModifiers(volumeOptions, priceInEUR);
+        // const modifiers = getDerivedPriceModifiers(volumeOptions, priceInEUR);
 
         const roastOptions = [];
         if (coffeeObj.isAvailableAsEspresso === true) {
@@ -124,8 +124,8 @@ const getWholesaleCoffees = async (ctx) => {
             releasedOn: coffeeObj.releasedOn,
             isLowStock: coffeeObj.isLowStock,
             roastOptions: roastOptions,
-            modifiers: modifiers,
-            volumeOptions: volumeOptions.map((opt) => ({name: opt})),
+            // modifiers: modifiers,
+            volumeOptions: getDerivedPriceModifiers(volumeOptions, priceInEUR),
         };
     });
 
@@ -153,7 +153,7 @@ const getOneWholesaleCoffee = async (ctx) => {
     const coffeeObj = coffee.toObject();
     const priceInEUR = coffeeObj.price.find((p) => p.base.currency.toLowerCase() === 'eur'.toLowerCase());
     const volumeOptions = priceInEUR.increments.map((o) => o.option);
-    const modifiers = getDerivedPriceModifiers(volumeOptions, priceInEUR);
+    // const modifiers = getDerivedPriceModifiers(volumeOptions, priceInEUR);
 
 
     const roastOptions = [];
@@ -178,8 +178,8 @@ const getOneWholesaleCoffee = async (ctx) => {
         varietal: coffeeObj.origin.variety,
         slug: coffeeObj.slug,
         roastOptions: roastOptions,
-        modifiers: modifiers,
-        volumeOptions: volumeOptions.map((opt) => ({name: opt})),
+        // modifiers: modifiers,
+        volumeOptions: getDerivedPriceModifiers(volumeOptions, priceInEUR),
     };
     ctx.send(returnedCoffee);
 };
@@ -348,6 +348,29 @@ const getRightRoastCoffeeById = async (ctx) => {
 };
 
 const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
+    const discount = {name: '45%', value: 0.45};
+    const basePrice = priceObject.base.value;
+    let modifier;
+    let priceModifiers = [];
+
+    for (let v = 0; v < volumeOptions.length; v++) {
+        const index = `${volumeOptions[v]}`;
+        if (priceObject.increments[v].value === '[+0.00]') {
+            modifier = -(discount.value * basePrice);
+        } else {
+            const weightAdjustment = convertWeightStringToNumber(volumeOptions[v]) / convertWeightStringToNumber(volumeOptions[0]);
+            const adjustedDiscount = v === volumeOptions.length - 1 ? 0.5 : discount.value;
+            modifier = ((1 - adjustedDiscount) * (basePrice * weightAdjustment)) - basePrice;
+        }
+        priceModifiers.push({name: index, priceModifier: modifier});
+    }
+
+    return priceModifiers;
+};
+
+/* below is the more extended discount structure
+
+const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
     const discounts = [{name: '30%', value: 0.3}, {name: '45%', value: 0.45}];
     const basePrice = priceObject.base.value;
     let modifier;
@@ -369,6 +392,7 @@ const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
 
     return priceModifiers;
 };
+*/
 
 module.exports = {
     getProductBySlug,
