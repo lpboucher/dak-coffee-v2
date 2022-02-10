@@ -28,12 +28,12 @@ const createCustomer = async (ctx) => {
             walletDiscountId: walletDiscount.id,
         });
 
-        await message.sendEmail({
+        /*await message.sendEmail({
             to: newCustomer.email,
             template: 'access-requested',
             content: [{ name: 'registration-email', content: newCustomer.email }],
             subject: 'DAK Coffee Roasters - Wholesale access',
-        });
+        });*/
 
         ctx.send({registered: true});
         ctx.response.status = 201;
