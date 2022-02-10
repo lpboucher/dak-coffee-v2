@@ -101,10 +101,10 @@ const getWholesaleCoffees = async (ctx) => {
 
         const roastOptions = [];
         if (coffeeObj.isAvailableAsEspresso === true) {
-            roastOptions.push({name: 'Espresso'});
+            roastOptions.push({name: 'espresso'});
         }
         if (coffeeObj.isAvailableAsFilter === true) {
-            roastOptions.push({name: 'Filter'});
+            roastOptions.push({name: 'filter'});
         }
 
         return {
@@ -158,10 +158,10 @@ const getOneWholesaleCoffee = async (ctx) => {
 
     const roastOptions = [];
     if (coffeeObj.isAvailableAsEspresso === true) {
-        roastOptions.push({name: 'Espresso'});
+        roastOptions.push({name: 'espresso'});
     }
     if (coffeeObj.isAvailableAsFilter === true) {
-        roastOptions.push({name: 'Filter'});
+        roastOptions.push({name: 'filter'});
     }
 
     const returnedCoffee = {
