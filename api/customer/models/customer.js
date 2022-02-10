@@ -1,5 +1,6 @@
 'use strict';
 // const mailchimpTx = require('@mailchimp/mailchimp_transactional');
+const snipcart = require('snipcart-api');
 
 /**
  * Lifecycle callbacks for the `customer` model.
@@ -41,16 +42,18 @@ module.exports = {
     // Before updating a value.
     // Fired before an `update` query.
     beforeUpdate: async (data) => {
-        let existingValue;
         const updatedValue = data._update;
+        let existingValue;
+        let discountExists = false;
+
         if (updatedValue) {
             existingValue = await strapi.query('customer').findOne({ id: updatedValue.id });
+            discountExists = existingValue.walletDiscountId != null && existingValue.walletDiscountCode != null;
         }
 
-        //console.log('updated', updatedValue);
-        //console.log('existing', existingValue);
+        const preAndPostValuesExist = existingValue != null && updatedValue != null;
 
-        if (existingValue && existingValue.isLocked === true && updatedValue && updatedValue.isLocked === false) {
+        if (preAndPostValuesExist && existingValue.isLocked === true && updatedValue.isLocked === false) {
             console.log('User has been unlocked, should send an email');
             // TODO set template in mailchimp transactional
             /*const mailchimp = mailchimpTx(strapi.config.currentEnvironment.mailchimpTrans);
@@ -68,6 +71,32 @@ module.exports = {
                     ]
                 }
             });*/
+        }
+
+        if (
+            preAndPostValuesExist &&
+            discountExists &&
+            updatedValue.walletValue !== existingValue.walletValue
+        ) {
+            console.log('Wallet value has been updated, updating to snipcart');
+            try {
+                snipcart.configure('SECRET_API_KEY', strapi.config.currentEnvironment.snipcartWholesale);
+
+                const walletDiscount = await snipcart.api.discounts.getOne({
+                    urlParams: { id: existingValue.walletDiscountId }
+                });
+
+                await snipcart.api.discounts.update({
+                    urlParams: { id: existingValue.walletDiscountId },
+                    data: {
+                        ...walletDiscount.data,
+                        amount: updatedValue.walletValue,
+                    }
+                });
+                console.log('discount updated with snipcart');
+            } catch(err) {
+                console.log('error updating discount', err);
+            }
         }
     },
 
