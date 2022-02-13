@@ -9,16 +9,17 @@ const hasFreeOption = (items, orderSummary, withColdItem = false) => {
 };
 
 const hasDiscountedShipping = (items) => {
-    return getTotalWeightOfItems(items) >= shipConstants.WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD;
+    return getTotalWeightOfItems(items, true) >= shipConstants.WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD;
 };
 
-const getTotalWeightOfItems = (items) => {
+const getTotalWeightOfItems = (items, onlyCoffee = false) => {
     const weight = items.reduce((total, oneItem) => {
         const weightField = oneItem.customFields.find((oneField) => oneField.name.toLowerCase() === 'Weight'.toLowerCase());
         if (weightField != null) {
             total += oneItem.quantity * convertWeightStringToNumber(weightField.value);
         } else {
-            total += oneItem.quantity * 0.1;
+            const otherItemWeight = onlyCoffee === false ? oneItem.quantity * 0.1 : 0;
+            total += otherItemWeight;
         }
         return total;
     }, 0);
