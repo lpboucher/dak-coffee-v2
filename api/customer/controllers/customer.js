@@ -104,7 +104,7 @@ const registerOrder = async (ctx) => {
         await strapi.query('customer').update(
             { email:id },
             {
-                newWalletAmount,
+                walletValue: newWalletAmount,
                 lastOrderDate: new Date(),
             }
         );
