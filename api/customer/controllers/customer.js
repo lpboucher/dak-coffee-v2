@@ -17,7 +17,7 @@ const createCustomer = async (ctx) => {
         await strapi.query('customer').create({
             name: newCustomer.contactName,
             business: newCustomer.businessName,
-            email: newCustomer.email,
+            email: newCustomer.email.toLowerCase(),
             password: newCustomer.password,
             sector: newCustomer.sector,
             VAT: newCustomer.vatNumber,
@@ -49,7 +49,7 @@ const loginCustomer = async (ctx) => {
     const { email, password, sessionToken } = ctx.request.body;
 
     try {
-        const customer = await strapi.query('customer').model.findOne({ email:email });
+        const customer = await strapi.query('customer').model.findOne({ email:email.toLowerCase() });
 
         if (!customer) {
             ctx.send({loggedIn: false});
@@ -134,7 +134,7 @@ const checkExistingCustomer = async (ctx) => {
         const beCustomers = await strapi.query('customer').model.find();
         const feCustomers = await snipcart.api.customers.getAll();
 
-        const typeExists = beCustomers.some((oneCustomer) => oneCustomer[type] === id) || feCustomers.data.items.some((oneCustomer) => oneCustomer[type] === id);
+        const typeExists = beCustomers.some((oneCustomer) => oneCustomer[type].toLowerCase() === id.toLowerCase()) || feCustomers.data.items.some((oneCustomer) => oneCustomer[type].toLowerCase() === id.toLowerCase());
         if (typeExists) {
             ctx.send({valueTaken: true});
             ctx.response.status = 200;
