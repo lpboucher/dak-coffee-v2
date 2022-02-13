@@ -14,8 +14,12 @@ const hasDiscountedShipping = (items) => {
 
 const getTotalWeightOfItems = (items) => {
     const weight = items.reduce((total, oneItem) => {
-        const { value } = oneItem.customFields.find((oneField) => oneField.name.toLowerCase() === 'Weight'.toLowerCase());
-        total += oneItem.quantity * convertWeightStringToNumber(value);
+        const weightField = oneItem.customFields.find((oneField) => oneField.name.toLowerCase() === 'Weight'.toLowerCase());
+        if (weightField != null) {
+            total += oneItem.quantity * convertWeightStringToNumber(weightField.value);
+        } else {
+            total += oneItem.quantity * 0.1;
+        }
         return total;
     }, 0);
 
