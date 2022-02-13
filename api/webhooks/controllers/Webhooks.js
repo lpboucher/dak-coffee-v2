@@ -101,19 +101,23 @@ const getWholesaleTaxes = async (ctx) => {
         orderingCustomer.VAT = null;
     }
 
-    const countryAddress = orderData.billingAddress.country ? orderData.billingAddress.country : orderData.shippingAddress.country;
+    if (orderData.billingAddress.country != null && orderData.shippingAddress.country != null) {
+        const countryAddress = orderData.billingAddress.country ? orderData.billingAddress.country : orderData.shippingAddress.country;
 
-    if(shouldVATBeCharged(countryAddress, orderingCustomer.VAT)) {
-        taxes = [
-            ...taxes,
-            ...aggregateItemTaxes(
-                orderData.items.map(item => getTaxPerItem(item)),
-                orderData.shippingInformation.fees || 0,
-                {'includedInPrice': false, 'appliesOnShipping': false}
-            )
-        ];
+        if(shouldVATBeCharged(countryAddress, orderingCustomer.VAT)) {
+            taxes = [
+                ...taxes,
+                ...aggregateItemTaxes(
+                    orderData.items.map(item => getTaxPerItem(item)),
+                    orderData.shippingInformation.fees || 0,
+                    {'includedInPrice': false, 'appliesOnShipping': false}
+                )
+            ];
+        } else {
+            taxes.push({'name': 'No Tax', 'amount': 0, 'rate': 0, 'numberForInvoice': 'TAX-000', 'includedInPrice': true});
+        }
     } else {
-        taxes.push({'name': 'No Tax', 'amount': 0, 'rate': 0, 'numberForInvoice': 'TAX-000', 'includedInPrice': true});
+        taxes.push({'name': 'Calculated at checkout...', 'amount': 0, 'rate': 0, 'numberForInvoice': 'TAX-INV', 'includedInPrice': true});
     }
 
     return {'taxes': taxes};
