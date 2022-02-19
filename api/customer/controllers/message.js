@@ -13,8 +13,6 @@ const templateDict = {
 const processMessage = async (ctx) => {
     const { destinationEmail, messageType, content } = ctx.request.body;
 
-    console.log(ctx.request.body);
-
     try {
         await sendEmail({
             from: INTERNAL_BUSINESS_EMAIL,
@@ -46,7 +44,7 @@ Parameter is object of the shape:
 */
 const sendEmail = async ({from = INTERNAL_BUSINESS_EMAIL, to, template, content, subject}) => {
     const mailchimp = mailchimpTx(strapi.config.currentEnvironment.mailchimpTrans);
-    console.log('sending to:', to);
+
     await mailchimp.messages.sendTemplate({
         template_name: template,
         template_content: content,

@@ -124,35 +124,21 @@ const getWholesaleTaxes = async (ctx) => {
 };
 
 const getWholesaleShippingRates = (ctx) => {
-    console.log(ctx.request.body.content);
     const orderData = ctx.request.body.content;
 
     const shippingTo = orderData.shippingAddress.country ? orderData.shippingAddress.country : orderData.billingAddress.country;
     const shippingMethod = getWholesaleShippingRateOption(shippingTo);
-    console.log(shippingMethod);
 
-    let discountMultiplier = 1;
     let returnedDescription = shippingMethod.description;
     let calculatedCost;
 
     if (isFromNL(shippingTo)) {
         calculatedCost = 0;
     } else if(isFromRegion('EU', shippingTo)) {
-        discountMultiplier = 0;
         calculatedCost = hasDiscountedShipping(orderData.items) ? 0 : shippingMethod['cost'];
     } else {
         calculatedCost = Math.min((getTotalWeightOfItems(orderData.items) * shippingMethod.perkilo), shippingMethod.cap);
     }
-
-    /*if (isFromRegion('EU', shippingTo) && hasDiscountedShipping(orderData.items)) {
-        discountMultiplier = 0;
-        returnedDescription = `${shippingMethod.description} incl. volume discount`;
-    } else {
-        shippingMethod['cost'] = Math.min((getTotalWeightOfItems(orderData.items) * Number.parseInt(shippingMethod.perkilo)), Number.parseInt(shippingMethod.cap));
-    }*/
-
-    console.log( discountMultiplier, calculatedCost);
-    console.log( {'rates': [{ 'description': returnedDescription, 'cost': calculatedCost }] });
 
     return {'rates': [{ 'description': returnedDescription, 'cost': calculatedCost }] };
 };
