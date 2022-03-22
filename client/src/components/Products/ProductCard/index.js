@@ -25,7 +25,9 @@ const ProductCard = ({id, selected}) => {
     coffee: `?quantity=${slug === "honey-yuzu" ? "200g" : "250g"}`,
     subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`,
     clothing: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`,
-    "t-shirt": `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`
+    "t-shirt": `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`,
+    "roasting-tee": `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Opal Grey"}`,
+    "brewing-tee": `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Cream Grey"}`
   }
   const productImage = images && <CloudImage
                           img={`Products/Thumbs/${images.thumb}`}

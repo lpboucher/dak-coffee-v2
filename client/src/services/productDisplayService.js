@@ -87,6 +87,34 @@ export const getProductOptions = (type) => {
             {label: "Navy", value: "Navy"},
           ]
         },
+    ],
+    "roasting-tee": [
+        { name: "size", options: [
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Opal Grey", value: "Opal Grey"},
+          ]
+        },
+    ],
+    "brewing-tee": [
+        { name: "size", options: [
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Cream Grey", value: "Cream Grey"},
+          ]
+        },
     ]
   }
   return dict[type] || [];
