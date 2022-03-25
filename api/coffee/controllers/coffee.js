@@ -200,7 +200,19 @@ const getAllProducts = async (ctx) => {
         strapi.query('subscription').model.find(ctx.query, {...baseFields}),
         strapi.query('promo').model.find(ctx.query, {...baseFields, details: 1}),
     ]);
-    const products = [].concat(...queries).map(one => one.toObject());
+    let products = [].concat(...queries).map(one => one.toObject());
+
+    products = products.map((oneProduct) => {
+        if (oneProduct.type === 'coffee') {
+            const newPrices = oneProduct.price.map((p) => filterPriceOptions(p));
+            return {
+                ...oneProduct,
+                price: newPrices
+            };
+        } else {
+            return oneProduct;
+        }
+    });
     const result = {
         products: products,
         subscriptions: products[products.length -1]
@@ -229,7 +241,15 @@ const getProductBySlug = async (ctx) => {
             ...baseFields
         }
     };
-    const query = await strapi.query(model).model.findOne({ slug:resource }, includedFields[model]);
+    let query = await strapi.query(model).model.findOne({ slug:resource }, includedFields[model]);
+    if (query.type === 'coffee') {
+        const coffeeObj = query.toObject();
+        const newPrices = coffeeObj.price.map((p) => filterPriceOptions(p));
+        query = {
+            ...coffeeObj,
+            price: newPrices
+        };
+    }
     const result = {
         product: query,
         subscription: model === 'subsription' ? query : null
