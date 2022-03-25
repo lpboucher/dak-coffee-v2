@@ -24,10 +24,13 @@ const getCoffees = async (ctx) => {
         harvest: 1,
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
-    console.log(coffees[0].price);
-    console.log(coffees[0].price[0].toObject());
+    coffees.forEach((oneCoffee) => {
+        const coffeeObj = oneCoffee.toObject();
+        console.log(coffeeObj.price);
+        //console.log(coffeeObj.price[0].toObject());
     // const newPrices = coffees[0].price.map((p) => filterPriceOptions(p));
     // console.log(newPrices);
+    });
     ctx.send({coffees: coffees});
 };
 
