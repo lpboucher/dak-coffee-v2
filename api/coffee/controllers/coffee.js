@@ -25,14 +25,15 @@ const getCoffees = async (ctx) => {
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
     console.log(coffees[0]);
-    /*const coffeeWithModifiedPrice = coffees.map((oneCoffee) => {
+    const coffeeWithModifiedPrice = coffees.map((oneCoffee) => {
         const coffeeObj = oneCoffee.toObject();
         const newPrices = coffeeObj.price.map((p) => filterPriceOptions(p));
         return {
             ...coffeeObj,
             price: newPrices
         };
-    });*/
+    });
+    console.log(coffeeWithModifiedPrice[0]);
     ctx.send({coffees: coffees});
 };
 
@@ -399,7 +400,10 @@ const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
 };
 
 const filterPriceOptions = (priceObject, optionToFilter = '150g') => {
-    return priceObject.increments.filter((inc) => inc.option !== optionToFilter);
+    return {
+        ...priceObject,
+        increments: priceObject.increments.filter((inc) => inc.option !== optionToFilter),
+    };
 };
 
 /* below is the more extended discount structure
