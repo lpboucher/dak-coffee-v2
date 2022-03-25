@@ -24,6 +24,7 @@ const getCoffees = async (ctx) => {
         harvest: 1,
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
+    console.log(coffees[0]);
     ctx.send({coffees: coffees});
 };
 
