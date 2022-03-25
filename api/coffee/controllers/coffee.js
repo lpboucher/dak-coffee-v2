@@ -25,8 +25,8 @@ const getCoffees = async (ctx) => {
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
     console.log(coffees[0].price);
-    const newPrices = coffees[0].price.map((p) => filterPriceOptions(p));
-    console.log(newPrices);
+    // const newPrices = coffees[0].price.map((p) => filterPriceOptions(p));
+    // console.log(newPrices);
     ctx.send({coffees: coffees});
 };
 
