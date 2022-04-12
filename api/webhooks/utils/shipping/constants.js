@@ -59,18 +59,18 @@ const SHIPPING_RATES_BY_REGION = {
 
 const SHIPPING_RATES_BY_REGION_COLD = {
     EUR: {
-        '0': {'cost': 7, 'description': 'NL Shipping + cold parcel'},
-        '1': {'cost': 9.75, 'description': 'EU-1 Shipping + cold parcel'},
-        '2': {'cost': 12.50, 'description': 'EU-2 Shipping + cold parcel'},
+        '0': {'cost': 9.5, 'description': 'NL Shipping + cold parcel'},
+        '1': {'cost': 12.25, 'description': 'EU-1 Shipping + cold parcel'},
+        '2': {'cost': 15, 'description': 'EU-2 Shipping + cold parcel'},
         '3': {'cost': 80, 'description': 'NA Shipping + cold parcel'},
         '4': {'cost': 100, 'description': 'World Shipping + cold parcel'}
     },
     CAD: {
-        '0': {'cost': 12, 'description': 'NL Shipping + cold parcel'},
-        '1': {'cost': 16.5, 'description': 'EU-1 Shipping + cold parcel'},
-        '2': {'cost': 21, 'description': 'EU-2 Shipping + cold parcel'},
-        '3': {'cost': 110, 'description': 'NA Shipping + cold parcel'},
-        '4': {'cost': 150, 'description': 'World Shipping + cold parcel'}
+        '0': {'cost': 15, 'description': 'NL Shipping + cold parcel'},
+        '1': {'cost': 19.5, 'description': 'EU-1 Shipping + cold parcel'},
+        '2': {'cost': 24, 'description': 'EU-2 Shipping + cold parcel'},
+        '3': {'cost': 115, 'description': 'NA Shipping + cold parcel'},
+        '4': {'cost': 155, 'description': 'World Shipping + cold parcel'}
     },
 };
 

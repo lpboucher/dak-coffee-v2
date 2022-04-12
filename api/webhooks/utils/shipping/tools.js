@@ -73,7 +73,7 @@ const isGiftCard = (item) => {
 };
 
 const isColdBrew = (item) => {
-    return item.id === '608ebd5c8e9a182d5e36b8d9';
+    return item.id === '608ebd5c8e9a182d5e36b8d9' || item.id === '62554ca03e99af385cd8cced';
     // return item.id === '608ebe6970f72e24357e87c7' dev id for cold brew;
 };
 
