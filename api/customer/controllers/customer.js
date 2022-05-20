@@ -3,6 +3,8 @@ const snipcart = require('snipcart-api');
 const promo = require('../../promo/controllers/promo');
 const message = require('../../customer/controllers/message');
 
+const { INTERNAL_BUSINESS_EMAIL } = require('../../../client/src/global');
+
 /**
  * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/controllers.html#core-controllers)
  * to customize this controller
@@ -28,12 +30,12 @@ const createCustomer = async (ctx) => {
             walletDiscountId: walletDiscount.id,
         });
 
-        /*await message.sendEmail({
-            to: newCustomer.email,
+        await message.sendEmail({
+            to: INTERNAL_BUSINESS_EMAIL,
             template: 'access-requested',
             content: [{ name: 'registration-email', content: newCustomer.email }],
             subject: 'DAK Coffee Roasters - Wholesale access',
-        });*/
+        });
 
         ctx.send({registered: true});
         ctx.response.status = 201;
