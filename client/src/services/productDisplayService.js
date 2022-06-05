@@ -78,7 +78,7 @@ export const getProductOptions = (type) => {
         { name: "size", options: [
             {label: "XS", value: "XS"},
             {label: "S", value: "S"},
-            {label: "M", value: "M"},
+            // {label: "M", value: "M"},
             {label: "L", value: "L"},
             {label: "XL", value: "XL"},
           ]
