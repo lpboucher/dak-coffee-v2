@@ -9,10 +9,10 @@ const WHOLESALE_SHIPPING_ZONES = {
     '0': ['NL'],
     '1': ['BE', 'LU'],
     '2': ['DE', 'FR', 'AT'],
-    '3': ['DK', 'SE', 'HU', 'CZ', 'PL', 'SK', 'SI'],
+    '3': ['DK', 'SE', 'HU', 'CZ', 'PL', 'SK', 'SI', 'RO'],
     '4': ['PT', 'ES', 'IT', 'LT', 'LV', 'EE', 'GB', 'IE'],
     '5': ['CH', 'NO'],
-    '6': ['BG', 'RO', 'FI', 'GR', 'CY', 'HR', 'MK', 'MT', 'RU'],
+    '6': ['BG', 'FI', 'GR', 'CY', 'HR', 'MK', 'MT', 'RU'],
     '7': ['US', 'CA'],
 };
 
