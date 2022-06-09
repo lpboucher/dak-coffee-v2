@@ -69,17 +69,17 @@ const handleEvent = async (ctx) => {
                     }
                 }
             }
-            if (isFromRegion('EU', shippingAddress.country)) {
-                try {
-                    await createShippingParcel(shippingAddress, email, invoiceNumber);
-                } catch(err) {
-                    if (Array.isArray(err)) {
-                        err.map(oneerror => console.log(oneerror.messages));
-                    } else {
-                        console.log(err);
-                    }
+
+            try {
+                await createShippingParcel(shippingAddress, email, invoiceNumber);
+            } catch(err) {
+                if (Array.isArray(err)) {
+                    err.map(oneerror => console.log(oneerror.messages));
+                } else {
+                    console.log(err);
                 }
             }
+
             ctx.response.status = 200;
             ctx.send({});
 
