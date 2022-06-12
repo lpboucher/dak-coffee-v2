@@ -98,7 +98,7 @@ export const getProductOptions = (type) => {
           ]
         },
         { name: "color", options: [
-            {label: "Opal Grey", value: "Opal Grey"},
+            {label: "White", value: "White"},
           ]
         },
     ],
@@ -112,7 +112,7 @@ export const getProductOptions = (type) => {
           ]
         },
         { name: "color", options: [
-            {label: "Cream Grey", value: "Cream Grey"},
+            {label: "White", value: "White"},
           ]
         },
     ]
