@@ -40,12 +40,12 @@ export const SHIPPING_THRESHOLDS = {
     NL: '€30',
     EU: '€50',
     NA: '€75',
-    World: '€100'
+    World: '€120'
   },
   CAD: {
     NL: '$45',
     EU: '$75',
     NA: '$100',
-    World: '$150'
+    World: '$180'
   },
 }
