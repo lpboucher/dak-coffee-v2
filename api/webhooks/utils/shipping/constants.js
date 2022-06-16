@@ -24,8 +24,8 @@ const WHOLESALE_SHIPPING_RATES_BY_REGION = {
     '4': {'cost': 18, 'description': 'EU-2/UK Shipping'},
     '5': {'cost': 20, 'description': 'EFTA Shipping'},
     '6': {'cost': 25, 'description': 'EU-3 Shipping'},
-    '7': {'cost': 0, 'description': 'NA Shipping', 'perkilo': 3.25, 'cap': 100},
-    '8': {'cost': 0, 'description': 'World Shipping', 'perkilo': 4.5, 'cap': 150}
+    '7': {'cost': 0, 'description': 'NA Shipping', 'perkilo': 4, 'cap': 100},
+    '8': {'cost': 0, 'description': 'World Shipping', 'perkilo': 5, 'cap': 150}
 };
 
 const WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD = 20;
