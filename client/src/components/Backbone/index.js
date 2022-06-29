@@ -14,6 +14,7 @@ import Intro from '../../components/About/Intro';
 import Newsletter from '../Newsletter';
 import Footer from './Footer';
 import AnnouncementModal from '../../components/Backbone/AnnouncementModal';
+import MessageModal from '../../components/Backbone/MessageModal';
 import CartReview from '../../components/Backbone/CartReview';
 import MobileMenu from '../../components/Backbone/MobileMenu';
 
@@ -62,6 +63,7 @@ const BackBone = ({children}) => {
         layers={[
           <CartReview key="cart" />,
           <AnnouncementModal key="modal" />,
+          <MessageModal key="message" />,
           <MobileMenu key="mobileMenu" />
         ]}
         withBasePadding={pathname !== "/about"}

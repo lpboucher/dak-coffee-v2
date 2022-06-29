@@ -48,6 +48,8 @@ export const OPEN_MOBILE = 'views/open_mobile';
 export const CLOSE_MOBILE = 'views/close_mobile';
 export const OPEN_MODAL = 'views/open_promo';
 export const CLOSE_MODAL = 'views/close_promo';
+export const OPEN_MESSAGE = 'views/open_message';
+export const CLOSE_MESSAGE = 'views/close_message';
 export const CHANGE_CURRENCY_REQUEST = 'views/change_currency_request';
 export const CHANGE_CURRENCY_SUCCESS = 'views/change_currency_success';
 export const CHANGE_LANGUAGE_REQUEST = 'views/change_language_request';
@@ -113,6 +115,16 @@ export const closeModal = () => dispatch => {
     dispatch({type: CLOSE_MODAL})
 }
 
+// new
+export const openMessage = () => dispatch => {
+    dispatch({type: OPEN_MESSAGE})
+}
+
+// new
+export const closeMessage = () => dispatch => {
+    dispatch({type: CLOSE_MESSAGE})
+}
+
 export const openMobileMenu = () => dispatch => {
   dispatch({type: OPEN_MOBILE})
 }
@@ -138,6 +150,7 @@ const initialState = {
 isMobileOpen: false,
 isProcessing: true,
 isModalOpen: false,
+isMessageOpen: true,
 //to be removed once fetching is specific to products
 isFetching: false,
 processingText: "loading.initial",
@@ -188,6 +201,16 @@ switch(action.type) {
         return {
             ...state,
             isModalOpen: false,
+        };
+    case OPEN_MESSAGE:
+        return {
+            ...state,
+            isMessageOpen: true,
+        };
+    case CLOSE_MESSAGE:
+        return {
+            ...state,
+            isMessageOpen: false,
         };
     case CHANGE_LANGUAGE_REQUEST:
     case CHANGE_CURRENCY_REQUEST:
@@ -336,6 +359,8 @@ switch(action.type) {
 
 //Selectors
 export const isModalOpen = (state) => state.views.isModalOpen;
+
+export const isMessageOpen = (state) => state.views.isMessageOpen;
 
 export const isFetching = (state) => state.views.isFetching;
 
