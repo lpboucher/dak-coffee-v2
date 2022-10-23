@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/subscribe" component={NewsletterPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
-          <Route path="/faq" component={FAQPage} />
+         {/*<Route path="/faq" component={FAQPage} /> */}
           <Route path="/terms" component={TermsPage} />
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/shipping" component={ShippingPage} />

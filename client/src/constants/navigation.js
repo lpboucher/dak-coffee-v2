@@ -31,7 +31,7 @@ export const FOOTER_NAV = [
   {target: "/shop", label: "navigation.shop"},
   {target: "/contact", label: "navigation.contact"},
   //{target: "/shop/subscription/dak-subscription?quantity=2x250g", label: "navigation.subscriptions"},
-  {target: "/faq", label: "navigation.faq"},
+  //{target: "/faq", label: "navigation.faq"},
   {target: "/shipping", label: "navigation.shipping"},
   {target: "/terms", label: "navigation.terms"},
   {target: "https://wholesale.dakcoffeeroasters.com/auth/register", label: "navigation.wholesale", isExternal: true},
