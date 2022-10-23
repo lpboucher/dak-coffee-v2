@@ -75,7 +75,7 @@ const SHIPPING_RATES_BY_REGION_COLD = {
 };
 
 const SHIPPING_THRESHOLDS_BY_REGION = {
-    EUR: { NL: 30, EU: 50, NA: 75, World: 120 },
+    EUR: { NL: 40, EU: 50, NA: 75, World: 120 },
     CAD: { NL: 45, EU: 75, NA: 100, World: 180 },
 };
 

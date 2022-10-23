@@ -37,7 +37,7 @@ export const NA_COUNTRIES = [
 
 export const SHIPPING_THRESHOLDS = {
   EUR: {
-    NL: '€30',
+    NL: '€40',
     EU: '€50',
     NA: '€75',
     World: '€120'
