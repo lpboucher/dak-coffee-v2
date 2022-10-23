@@ -377,6 +377,7 @@ const getRightRoastCoffeeById = async (ctx) => {
 
 const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
     const discount = {name: '45%', value: 0.45};
+    const individualPackagingPrice = 0.65;
     const basePrice = priceObject.base.value;
     const baseWeight = priceObject.increments.find((o) => o.value === '[+0.00]');
     let modifier;
@@ -388,8 +389,12 @@ const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
             modifier = -(discount.value * basePrice);
         } else {
             const weightAdjustment = convertWeightStringToNumber(volumeOptions[v]) / convertWeightStringToNumber(baseWeight.option);
-            const adjustedDiscount = v === volumeOptions.length - 1 ? 0.5 : discount.value;
-            modifier = ((1 - adjustedDiscount) * (basePrice * weightAdjustment)) - basePrice;
+            const signedWeightAdjustment = weightAdjustment < 1 ? (-1 * weightAdjustment) : weightAdjustment;
+            // const adjustedDiscount = v === volumeOptions.length - 1 ? 0.5 : discount.value;
+            const adjustedDiscount = weightAdjustment > 1 ? 0.5 : discount.value;
+            const priceAdjustedForVolumeDiscount = (1 - adjustedDiscount) * (basePrice * weightAdjustment);
+            const packagingPriceAdjustmentForVolume = (signedWeightAdjustment * individualPackagingPrice);
+            modifier = priceAdjustedForVolumeDiscount - packagingPriceAdjustmentForVolume - basePrice;
         }
         priceModifiers.push({name: index, priceModifier: modifier});
     }
