@@ -16,7 +16,9 @@ const HeaderContainer = styled(Headroom)`
     max-height: ${({isTransparent}) => isTransparent ? layout.barHeight : "none"};
 
     .headroom--unfixed  ${HeaderWithHover} {
-      background: transparent;
+        // reactivate if hero image is no longer dark
+      // background: transparent;
+      background: ${({theme}) => theme.global.colors.mainWhite};
     }
 
     &:hover ${HeaderWithHover},
