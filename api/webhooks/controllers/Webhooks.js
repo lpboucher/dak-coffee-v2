@@ -143,9 +143,24 @@ const getWholesaleShippingRates = (ctx) => {
     return {'rates': [{ 'description': returnedDescription, 'cost': calculatedCost }] };
 };
 
+const createShippingLabel = async (ctx) => {
+    const { address, email, invoiceNumber } = ctx.request.body;
+
+    try {
+        await createShippingParcel(address, email, invoiceNumber);
+    } catch(err) {
+        if (Array.isArray(err)) {
+            err.map(oneerror => console.log(oneerror.messages));
+        } else {
+            console.log(err);
+        }
+    }
+};
+
 module.exports = {
     getShippingRates,
     getWholesaleShippingRates,
+    createShippingLabel,
     getTaxes,
     getWholesaleTaxes,
     handleEvent,

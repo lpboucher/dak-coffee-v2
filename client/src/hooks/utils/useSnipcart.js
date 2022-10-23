@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { getTotalTaxesPaid } from "../../utils/taxes/helper";
 
-export const useSnipcartEvents = (updating, update, clear, added, completed) => {
+export const useSnipcartEvents = (updating, update, clear, added, completed, createParcel) => {
   const dispatch = useDispatch();
   let itemAddingUnSub;
   let itemAddedUnSub;
@@ -33,6 +33,10 @@ export const useSnipcartEvents = (updating, update, clear, added, completed) => 
             if(cartState.status === 3) {
               dispatch(clear());
               completed(cartState, getTotalTaxesPaid(cartState.taxes.items));
+            }
+
+            if(cartState.paymentDetails.method = "DeferredPayment") {
+                dispatch(createParcel(cartState.shippingAddress, cartState.email, cartState.invoiceNumber));
             }
         });
       })

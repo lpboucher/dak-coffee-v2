@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSnipcartCart, useSnipcartEvents } from '../../hooks/utils/useSnipcart';
 import { itemAdded, orderCompleted } from '../../services/eventTracking';
-import { initializeCart, updateCart, updatingCart, clearCart } from '../../ducks/cart';
+import { initializeCart, updateCart, updatingCart, clearCart, createShippingLabel } from '../../ducks/cart';
 import { schemaBuilder } from '../../utils/seo/schema';
 
 import SEO from '../../utils/seo/SEO';
@@ -28,7 +28,8 @@ const BackBone = ({children}) => {
     updateCart,
     clearCart,
     itemAdded,
-    orderCompleted
+    orderCompleted,
+    createShippingLabel,
   );
   const { pathname } = useLocation();
 

@@ -147,6 +147,7 @@ const createShippingParcel = async (shippingAddress, email, invoiceNumber) => {
                 request_label: false,
                 email: email,
                 country: shippingAddress.country,
+                telephone: shippingAddress.phone || '',
                 order_number: invoiceNumber,
             }
         },

@@ -10,6 +10,14 @@
       },
       {
         "method": "POST",
+        "path": "/webhooks/shipping/labels",
+        "handler": "Webhooks.createShippingLabel",
+        "config": {
+          "policies": []
+        }
+      },
+      {
+        "method": "POST",
         "path": "/webhooks/wholesale/shipping",
         "handler": "Webhooks.getWholesaleShippingRates",
         "config": {

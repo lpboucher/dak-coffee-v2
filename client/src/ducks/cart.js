@@ -1,4 +1,5 @@
 import i18n from "i18next";
+import axios from 'axios';
 import { combineReducers } from 'redux';
 import { LANGUAGE_LIST, detectBrowserLocation, getDefaultLocationCurrency } from '../services/languages';
 
@@ -18,6 +19,8 @@ export const FETCH_CARTMETA_SUCCESS = 'cart/fetch_cartmeta_success'
 export const CLEAR_CART_SUCCESS = 'cart/clear_cart_success';
 export const PROMO_CART_FAILURE = 'cart/promo_cart_failure';
 export const INITIALIZE_CART_SUCCESS = 'cart/initialize_cart_success';
+export const CREATE_SHIPPING_LABEL_REQUEST = 'cart/create_shipping_label_request';
+export const CREATE_SHIPPING_LABEL_ERROR = 'cart/create_shipping_label_error';
 
 //Action Creators
 export const initializeCart = ({cart}) => async (dispatch) => {
@@ -72,6 +75,22 @@ export const fetchCartItems = (newItem=null) => (dispatch) => {
 export const clearCart = () => (dispatch) => {
     dispatch({ type: CLEAR_CART_SUCCESS })
 }
+
+export const createShippingLabel = (address, email, invoiceNumber) => async dispatch => {
+    dispatch({ type: CREATE_SHIPPING_LABEL_REQUEST });
+    try {
+        await axios.post(
+            `${process.env.REACT_APP_API_PREFIX}/webhooks/shipping/labels`,
+            {
+                address,
+                email,
+                invoiceNumber,
+            }
+        )
+    } catch(err) {
+        dispatch({ type: CREATE_SHIPPING_LABEL_ERROR });
+    }
+  };
 
 const byIdDefault = {};
 //Reducers
