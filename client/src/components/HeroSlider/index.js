@@ -36,7 +36,7 @@ const HeroSlider = () => {
                 target: "/shop"
               },
             ]}
-            slideImg="Heros/Header2_Website_netfxv"
+            slideImg="Heros/NewHeaderWebsite_r03hyu"
           />,
           /*<SingleSlideLayout
             key="2"
