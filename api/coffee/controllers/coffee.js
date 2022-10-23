@@ -22,14 +22,26 @@ const getCoffees = async (ctx) => {
         roast : 1,
         origin : 1,
         harvest: 1,
+        isAvailableAsFilter: 1,
+        isAvailableAsEspresso: 1,
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
     const coffeeWithModifiedPrice = coffees.map((oneCoffee) => {
         const coffeeObj = oneCoffee.toObject();
         const newPrices = coffeeObj.price.map((p) => filterPriceOptions(p));
+
+        const roastOptions = [];
+        if (coffeeObj.isAvailableAsFilter === true) {
+            roastOptions.push('filter');
+        }
+        if (coffeeObj.isAvailableAsEspresso === true) {
+            roastOptions.push('espresso');
+        }
+
         return {
             ...coffeeObj,
-            price: newPrices
+            price: newPrices,
+            roastOptions: roastOptions,
         };
     });
     ctx.send({coffees: coffeeWithModifiedPrice});
@@ -194,7 +206,7 @@ const getOneWholesaleCoffee = async (ctx) => {
 
 const getAllProducts = async (ctx) => {
     const queries = await Promise.all([
-        strapi.query('coffee').model.find(ctx.query, {...baseFields, roast: 1, origin: 1, harvest: 1}),
+        strapi.query('coffee').model.find(ctx.query, {...baseFields, roast: 1, origin: 1, harvest: 1, isAvailableAsFilter: 1, isAvailableAsEspresso: 1}),
         strapi.query('merchandise').model.find(ctx.query, {...baseFields, details: 1}),
         strapi.query('equipment').model.find(ctx.query, {...baseFields, details: 1}),
         strapi.query('subscription').model.find(ctx.query, {...baseFields}),
@@ -205,9 +217,19 @@ const getAllProducts = async (ctx) => {
     products = products.map((oneProduct) => {
         if (oneProduct.type === 'coffee') {
             const newPrices = oneProduct.price.map((p) => filterPriceOptions(p));
+
+            const roastOptions = [];
+            if (oneProduct.isAvailableAsFilter === true) {
+                roastOptions.push('filter');
+            }
+            if (oneProduct.isAvailableAsEspresso === true) {
+                roastOptions.push('espresso');
+            }
+
             return {
                 ...oneProduct,
-                price: newPrices
+                price: newPrices,
+                roastOptions: roastOptions,
             };
         } else {
             return oneProduct;
@@ -227,7 +249,9 @@ const getProductBySlug = async (ctx) => {
             ...baseFields,
             roast: 1,
             origin: 1,
-            harvest: 1
+            harvest: 1,
+            isAvailableAsFilter: 1,
+            isAvailableAsEspresso: 1,
         },
         equipment: {
             ...baseFields,
@@ -245,9 +269,19 @@ const getProductBySlug = async (ctx) => {
     if (model === 'coffee') {
         const coffeeObj = query.toObject();
         const newPrices = coffeeObj.price.map((p) => filterPriceOptions(p));
+
+        const roastOptions = [];
+        if (coffeeObj.isAvailableAsFilter === true) {
+            roastOptions.push('filter');
+        }
+        if (coffeeObj.isAvailableAsEspresso === true) {
+            roastOptions.push('espresso');
+        }
+
         query = {
             ...coffeeObj,
-            price: newPrices
+            price: newPrices,
+            roastOptions: roastOptions,
         };
     }
     const result = {
@@ -260,7 +294,7 @@ const getProductBySlug = async (ctx) => {
 const getProductById = async (ctx) => {
     const { id } = ctx.params;
     const queries = await Promise.all([
-        strapi.query('coffee').model.findOne({ _id:id }, {...baseFields, roast: 1, origin: 1, harvest: 1}),
+        strapi.query('coffee').model.findOne({ _id:id }, {...baseFields, roast: 1, origin: 1, harvest: 1, isAvailableAsFilter: 1, isAvailableAsEspresso: 1}),
         strapi.query('merchandise').model.findOne({ _id:id }, {...baseFields, details: 1}),
         strapi.query('equipment').model.findOne({ _id:id }, {...baseFields, details: 1}),
         strapi.query('subscription').model.findOne({ _id:id }, {...baseFields}),

@@ -122,6 +122,7 @@ export const useSingleProduct = (productId, selected) => {
 
   if (product && product.price) {
     const priceInCurrency = getPriceInCurrency(product.price, currency);
+    var additionalOptions;
     var hasPriceOptions = hasPricingOptions(product.type)
     var { title, subtitle, helper } = getDisplayedProductTitle(product, selected);
     var description = getDisplayedProductDescription(product.short);
@@ -131,7 +132,16 @@ export const useSingleProduct = (productId, selected) => {
     var tastingNotes = getTastingNotesWithMedallion(product);
     var cartPrice = getPriceIncrements(product.type, priceInCurrency);
     var medallion = getMedallion(categories, selected);
-    var additionalOptions = getProductOptions(product.type);
+    var allAdditionalOptions = getProductOptions(product.type);
+    if (product.type === 'coffee') {
+        const roastOptions = allAdditionalOptions.find(opt => opt.name === "roast");
+        const otherOptions = allAdditionalOptions.filter(opt => opt.name !== "roast");
+        const limitedOptions = roastOptions.options.filter(opt => product.roastOptions.includes(opt.value));
+        roastOptions.options = limitedOptions;
+        additionalOptions = [...otherOptions, roastOptions];
+    } else {
+        additionalOptions = allAdditionalOptions;
+    }
     var formattedPrice = getDisplayedProductPrice(priceInCurrency.base);
   }
 

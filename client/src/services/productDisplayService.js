@@ -53,6 +53,13 @@ export const getStaticProductPrice = (type, priceObj) => {
 
 export const getProductOptions = (type) => {
   const dict = {
+    coffee: [
+        { name: "roast", options: [
+            {label: "espresso", value: "espresso"},
+            {label: "filter", value: "filter"},
+          ]
+        },
+      ],
     subscription: [
       { name: "roast", options: [
           {label: "espresso", value: "espresso"},

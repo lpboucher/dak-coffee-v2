@@ -22,7 +22,7 @@ const ProductCard = ({id, selected}) => {
   } = useSingleProduct(id, selected);
   const { productAdding } = useCart(id);
   const linkQuery = {
-    coffee: `?quantity=${slug === "honey-yuzu" ? "200g" : "250g"}`,
+    coffee: `?quantity=${slug === "honey-yuzu" ? "200g" : "250g"}&roast=${selected && selected.roast ? selected.roast : "filter"}`,
     subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`,
     clothing: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`,
     "t-shirt": `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`,

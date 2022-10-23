@@ -7,13 +7,23 @@ export const getCartProductPrice = (price) => {
   return JSON.stringify(priceObj);
 }
 
-export const getCartProductOptions = (priceString, optionObj, type="coffee", selected=null) => {
+export const getCartProductOptions = (priceString, optionObj, type="coffee", selected=null, additionalOptions = []) => {
   let options = {};
   const { increments } = optionObj;
   if (type === "coffee" || type === "subscription") {
     options["data-item-custom1-name"] = "Weight";
     options["data-item-custom1-options"] = increments.map((inc) => `${inc.option}${inc.value}`).join('|');
     options["data-item-custom1-value"] = selected ? selected.quantity : null;
+  }
+  if (type === "coffee") {
+    if (Array.isArray(additionalOptions) && additionalOptions.length > 0) {
+        const roastOptions = getProductOptions(type).find(opt => opt.name === "roast");
+        const individualOptions = roastOptions.options.filter(opt => additionalOptions.includes(opt.value)).map(opt => opt.value);
+        console.log(individualOptions);
+        options["data-item-custom2-name"] = "Roast";
+        options["data-item-custom2-options"] = individualOptions.join('|');
+        options["data-item-custom2-value"]= selected ? selected.roast : additionalOptions[0];
+    }
   }
   if (type === "subscription") {
     const roastOptions = getProductOptions(type).find(opt => opt.name === "roast");

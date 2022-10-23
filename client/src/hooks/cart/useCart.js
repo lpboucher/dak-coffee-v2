@@ -54,11 +54,12 @@ export const useAddProductToCart = (productId, selected=null) => {
   const productToAdd = useSelector(state => getCartItemToAdd(state, productId));
 
   if (productToAdd) {
+    const additionalOptions = productToAdd.roastOptions || null;
     const priceInCurrency = getPriceInCurrency(productToAdd.price, currency);
     var priceString = getCartProductPrice(productToAdd.price);
     var { title } = getDisplayedProductTitle(productToAdd);
     var translatedDescription = getDisplayedProductDescription(productToAdd.type, productToAdd.slug);
-    var cartOptions = getCartProductOptions(priceString, priceInCurrency, productToAdd.type, selected);
+    var cartOptions = getCartProductOptions(priceString, priceInCurrency, productToAdd.type, selected, additionalOptions);
     var thumbnail = productToAdd.images.thumb;
   }
 
