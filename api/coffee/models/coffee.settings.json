@@ -75,6 +75,10 @@
         "equipment",
         "merchandise"
       ]
+    },
+    "usesNewPricing": {
+        "type": "boolean",
+        "default": false
     }
   }
 }
