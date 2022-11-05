@@ -111,6 +111,7 @@ const getWholesaleCoffees = async (ctx) => {
         isLowStock: 1,
         isAvailableAsFilter: 1,
         isAvailableAsEspresso: 1,
+        usesNewPricing: 1,
     };
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
     const allCoffees = coffees.map((oneCoffee) => {
@@ -145,7 +146,7 @@ const getWholesaleCoffees = async (ctx) => {
             isLowStock: coffeeObj.isLowStock,
             roastOptions: roastOptions,
             // modifiers: modifiers,
-            volumeOptions: getDerivedPriceModifiers(volumeOptions, priceInEUR),
+            volumeOptions: coffeeObj.usesNewPricing === true ? getNewDerivedPriceModifiers(volumeOptions, priceInEUR) : getDerivedPriceModifiers(volumeOptions, priceInEUR),
         };
     });
 
@@ -168,6 +169,7 @@ const getOneWholesaleCoffee = async (ctx) => {
         harvest: 1,
         isAvailableAsFilter: 1,
         isAvailableAsEspresso: 1,
+        usesNewPricing: 1,
     };
     const coffee = await strapi.query('coffee').model.findOne({ slug:slug }, includedFields);
     const coffeeObj = coffee.toObject();
@@ -199,7 +201,7 @@ const getOneWholesaleCoffee = async (ctx) => {
         slug: coffeeObj.slug,
         roastOptions: roastOptions,
         // modifiers: modifiers,
-        volumeOptions: getDerivedPriceModifiers(volumeOptions, priceInEUR),
+        volumeOptions: coffeeObj.usesNewPricing === true ? getNewDerivedPriceModifiers(volumeOptions, priceInEUR) : getDerivedPriceModifiers(volumeOptions, priceInEUR),
     };
     ctx.send(returnedCoffee);
 };
@@ -429,6 +431,35 @@ const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
             const priceAdjustedForVolumeDiscount = (1 - adjustedDiscount) * (basePrice * weightAdjustment);
             const packagingPriceAdjustmentForVolume = (signedWeightAdjustment * individualPackagingPrice);
             modifier = priceAdjustedForVolumeDiscount - packagingPriceAdjustmentForVolume - basePrice;
+        }
+        priceModifiers.push({name: index, priceModifier: modifier});
+    }
+
+    return priceModifiers;
+};
+
+const getNewDerivedPriceModifiers = (volumeOptions, priceObject) => {
+    const discount = {name: '45%', value: 0.45};
+    const individualPackagingPrice = 0.75;
+    const largeBagPackagingPrice = 0.4;
+    const basePrice = priceObject.base.value;
+    const baseWeight = priceObject.increments.find((o) => o.value === '[+0.00]');
+    let modifier;
+    let priceModifiers = [];
+
+    for (let v = 0; v < volumeOptions.length; v++) {
+        const index = `${volumeOptions[v]}`;
+        if (priceObject.increments[v].value === baseWeight.value) {
+            modifier = -(discount.value * basePrice);
+        } else {
+            const weightAdjustment = convertWeightStringToNumber(volumeOptions[v]) / convertWeightStringToNumber(baseWeight.option);
+            const signedWeightAdjustment = weightAdjustment < 1 ? (-1 * weightAdjustment) : weightAdjustment;
+            const largeBagAdjustment = weightAdjustment > 1 ? largeBagPackagingPrice : 0;
+            const adjustedDiscount = weightAdjustment > 1 ? 0.5 : discount.value;
+
+            const priceAdjustedForPackaging = (basePrice * weightAdjustment) - (signedWeightAdjustment * individualPackagingPrice) + largeBagAdjustment;
+            const priceAdjustedForVolumeDiscount = (1 - adjustedDiscount) * (priceAdjustedForPackaging);
+            modifier = priceAdjustedForVolumeDiscount - basePrice;
         }
         priceModifiers.push({name: index, priceModifier: modifier});
     }
