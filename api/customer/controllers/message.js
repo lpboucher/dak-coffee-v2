@@ -1,13 +1,13 @@
 'use strict';
 const mailchimpTx = require('@mailchimp/mailchimp_transactional');
 
-const { INTERNAL_BUSINESS_EMAIL } = require('../../../client/src/global');
+const { INTERNAL_EMAILS } = require('../../../client/src/global');
 
 const templateDict = {
-    'sample-request': { contentName: 'sample-type', subject: 'Sample request'},
-    'product-notification': { contentName: 'product-name', subject: 'Product notification'},
-    'account-unlocked': { contentName: '', subject: 'Account unlocked'},
-    'access-requested': { contentName: 'registration-email', subject: 'Wholesale access'},
+    'sample-request': { contentName: 'sample-type', subject: 'Sample request', internalEmailType: 'sales' },
+    'product-notification': { contentName: 'product-name', subject: 'Product notification', internalEmailType: 'sales'},
+    'account-unlocked': { contentName: '', subject: 'Account unlocked', internalEmailType: 'general'},
+    'access-requested': { contentName: 'registration-email', subject: 'Wholesale access', internalEmailType: 'wholesale'},
 };
 
 const processMessage = async (ctx) => {
@@ -15,7 +15,7 @@ const processMessage = async (ctx) => {
 
     try {
         await sendEmail({
-            from: INTERNAL_BUSINESS_EMAIL,
+            from: INTERNAL_EMAILS[templateDict[messageType].internalEmailType],
             to: destinationEmail,
             template: messageType,
             content: [{ name: templateDict[messageType].contentName, content: content }],
@@ -42,7 +42,7 @@ Parameter is object of the shape:
     subject: 'The subject',
 }
 */
-const sendEmail = async ({from = INTERNAL_BUSINESS_EMAIL, to, template, content, subject}) => {
+const sendEmail = async ({from = INTERNAL_EMAILS['general'], to, template, content, subject}) => {
     const mailchimp = mailchimpTx(strapi.config.currentEnvironment.mailchimpTrans);
 
     await mailchimp.messages.sendTemplate({
@@ -54,7 +54,7 @@ const sendEmail = async ({from = INTERNAL_BUSINESS_EMAIL, to, template, content,
             to: [
                 {email: to, type: 'to'}
             ],
-            bcc_address: INTERNAL_BUSINESS_EMAIL,
+            bcc_address: from,
         }
     });
 };
