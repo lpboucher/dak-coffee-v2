@@ -11,7 +11,7 @@ const MessageModalLayout = ({isOpen, close, modalMessage}) => {
         <>
           {isOpen &&
               <Layer onEsc={() => close()} onClickOutside={() => close()} modal position="center">
-                  <Box pad="large" background="mainDark" wrap justify="center">
+                  <Box onClick={() => close()} pad="large" background="mainDark" wrap justify="center">
                       <Box justify="evenly" align="center">
                           {modalMessage}
                       </Box>
