@@ -10,8 +10,8 @@ const MessageModalLayout = ({isOpen, close, modalMessage}) => {
       {// greaterThan.medium &&
         <>
           {isOpen &&
-              <Layer onEsc={() => close()} onClickOutside={() => close()} modal position="center" full>
-                  <Box onClick={() => close()} pad="large" background="mainDark" wrap justify="center">
+              <Layer onEsc={() => close()} onClickOutside={() => close()} modal position="center">
+                  <Box onClick={() => close()} pad="large" background="mainDark" wrap justify="center" flex>
                       <Box justify="evenly" align="center">
                           {modalMessage}
                       </Box>
