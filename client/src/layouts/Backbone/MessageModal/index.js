@@ -7,7 +7,7 @@ const MessageModalLayout = ({isOpen, close, modalMessage}) => {
   const { greaterThan } = useResponsive();
   return (
     <>
-      {greaterThan.medium &&
+      {// greaterThan.medium &&
         <>
           {isOpen &&
               <Layer onEsc={() => close()} onClickOutside={() => close()} modal position="center">
