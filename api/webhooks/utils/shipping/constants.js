@@ -1,9 +1,40 @@
 const SHIPPING_ZONES = {
     '0': ['NL'],
+    '1': ['BE', 'DE'],
+    '2': ['LU', 'FR', 'AT', 'DK'],
+    '3': ['SE', 'HU', 'CZ', 'PL', 'SK', 'SI', 'LV', 'GB'],
+    '4': ['PT', 'ES', 'IT', 'EE', 'IE'],
+    '5': ['CH', 'NO'],
+    '6': ['BG', 'FI', 'GR', 'CY', 'HR', 'LT', 'MK', 'MT', 'RU', 'RO'],
+    '7': ['US', 'CA'],
+};
+/*
+OLD REGIONS FOR SHIPPING
+{
+    '0': ['NL'],
     '1': ['AT', 'BE', 'DE', 'DK', 'LU'],
     '2': ['BG', 'CH', 'CY', 'CZ', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HU', 'HR', 'IE', 'IT', 'LT', 'LV', 'MK', 'MT', 'NO', 'PL', 'PT', 'RO', 'RU', 'SE', 'SK', 'SI'],
     '3': ['US', 'CA'],
-};
+}
+
+OLD RATES FOR SHIPPING
+{
+    EUR: {
+        '0': {'cost': 4.0, 'description': 'NL Shipping'},
+        '1': {'cost': 5.75, 'description': 'EU-1 Shipping'},
+        '2': {'cost': 7.75, 'description': 'EU-2 Shipping'},
+        '3': {'cost': 15, 'description': 'NA Shipping (ships 1st & 15th)'},
+        '4': {'cost': 25, 'description': 'World Shipping'}
+    },
+    CAD: {
+        '0': {'cost': 6, 'description': 'NL Shipping'},
+        '1': {'cost': 8.5, 'description': 'EU-1 Shipping'},
+        '2': {'cost': 11.5, 'description': 'EU-2 Shipping'},
+        '3': {'cost': 20, 'description': 'NA Shipping (ships 1st & 15th)'},
+        '4': {'cost': 40, 'description': 'World Shipping'}
+    },
+}
+*/
 
 const WHOLESALE_SHIPPING_ZONES = {
     '0': ['NL'],
@@ -42,18 +73,26 @@ const FREE_SHIPPING_BY_REGION = {
 
 const SHIPPING_RATES_BY_REGION = {
     EUR: {
-        '0': {'cost': 4.0, 'description': 'NL Shipping'},
-        '1': {'cost': 5.75, 'description': 'EU-1 Shipping'},
-        '2': {'cost': 7.75, 'description': 'EU-2 Shipping'},
-        '3': {'cost': 15, 'description': 'NA Shipping (ships 1st & 15th)'},
-        '4': {'cost': 25, 'description': 'World Shipping'}
+        '0': {'cost': 4.45, 'description': 'NL Shipping'},
+        '1': {'cost': 6.95, 'description': 'EU (BE, DE) Shipping'},
+        '2': {'cost': 8.95, 'description': 'EU-1 Shipping'},
+        '3': {'cost': 10.75, 'description': 'EU-2/UK Shipping'},
+        '4': {'cost': 12, 'description': 'EU-2 Shipping'},
+        '5': {'cost': 15, 'description': 'EFTA Shipping'},
+        '6': {'cost': 19.95, 'description': 'EU-3 Shipping'},
+        '7': {'cost': 20, 'description': 'NA Shipping (ships 1st & 15th)'},
+        '8': {'cost': 25, 'description': 'World Shipping'}
     },
     CAD: {
-        '0': {'cost': 6, 'description': 'NL Shipping'},
-        '1': {'cost': 8.5, 'description': 'EU-1 Shipping'},
-        '2': {'cost': 11.5, 'description': 'EU-2 Shipping'},
-        '3': {'cost': 20, 'description': 'NA Shipping (ships 1st & 15th)'},
-        '4': {'cost': 40, 'description': 'World Shipping'}
+        '0': {'cost': 6.50, 'description': 'NL Shipping'},
+        '1': {'cost': 10, 'description': 'EU (BE, DE) Shipping'},
+        '2': {'cost': 15, 'description': 'EU-1 Shipping'},
+        '3': {'cost': 16, 'description': 'EU-2/UK Shipping'},
+        '4': {'cost': 18, 'description': 'EU-2 Shipping'},
+        '5': {'cost': 24, 'description': 'EFTA Shipping'},
+        '6': {'cost': 30, 'description': 'EU-3 Shipping'},
+        '7': {'cost': 30, 'description': 'NA Shipping (ships 1st & 15th)'},
+        '8': {'cost': 40, 'description': 'World Shipping'}
     },
 };
 
@@ -75,13 +114,23 @@ const SHIPPING_RATES_BY_REGION_COLD = {
 };
 
 const SHIPPING_THRESHOLDS_BY_REGION = {
-    EUR: { NL: 40, EU: 50, NA: 75, World: 120 },
-    CAD: { NL: 45, EU: 75, NA: 100, World: 180 },
+    EUR: {
+        NL: 40,
+        EU: 60,
+        NA: 100,
+        World: 150
+    },
+    CAD: {
+        NL: 60,
+        EU: 90,
+        NA: 150,
+        World: 225
+    },
 };
 
 const SHIPPING_THRESHOLDS_BY_REGION_COLD = {
-    EUR: { NL: 40, EU: 60, NA: 85, World: 110 },
-    CAD: { NL: 60, EU: 90, NA: 120, World: 160 },
+    EUR: { NL: 40, EU: 60, NA: 100, World: 150 },
+    CAD: { NL: 60, EU: 90, NA: 150, World: 225 },
 };
 
 const SHIPCLOUD_ENDPOINT = 'https://panel.sendcloud.sc/api/v2';
