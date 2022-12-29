@@ -40,7 +40,7 @@ const hasPickUpOption = (country) => {
 };
 
 const hasNoPhysical = (items) => {
-    return hasGiftCard(items, 'all');
+    return hasNoShipItem(items, 'all');
 };
 
 const orderHasSubscriptions = (items) => {
@@ -50,6 +50,14 @@ const orderHasSubscriptions = (items) => {
     item.name === 'Dak Subscription' ||
     item.name === 'Dak Monthly Subscription'
     );
+};
+
+const hasNoShipItem = (items, callbackType='one') => {
+    const callback = {
+        one: items.some(item => isNoShipItem(item)),
+        all: items.every(item => isNoShipItem(item))
+    };
+    return callback[callbackType];
 };
 
 const hasGiftCard = (items, callbackType='one') => {
@@ -68,8 +76,12 @@ const hasColdBrew = (items, callbackType='one') => {
     return callback[callbackType];
 };
 
+const isNoShipItem = (item) => {
+    return item.id === shipConstants.GIFT_CARD_ID || shipConstants.PUBLIC_EVENT_ID;
+};
+
 const isGiftCard = (item) => {
-    return item.id === '5fc9102b62130e5379f0042e';
+    return item.id === shipConstants.GIFT_CARD_ID;
 };
 
 const isColdBrew = (item) => {
@@ -170,8 +182,10 @@ module.exports = {
     getWholesaleShippingRateOption,
     isFromRegion,
     isFromNL,
+    hasNoShipItem,
     hasGiftCard,
     hasColdBrew,
+    isNoShipItem,
     isGiftCard,
     isColdBrew,
     createShippingParcel,
