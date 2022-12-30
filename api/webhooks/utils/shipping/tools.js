@@ -77,7 +77,7 @@ const hasColdBrew = (items, callbackType='one') => {
 };
 
 const isNoShipItem = (item) => {
-    return item.id === shipConstants.GIFT_CARD_ID || shipConstants.PUBLIC_EVENT_ID;
+    return item.id === shipConstants.GIFT_CARD_ID || item.id === shipConstants.PUBLIC_EVENT_ID;
 };
 
 const isGiftCard = (item) => {
