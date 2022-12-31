@@ -7,6 +7,7 @@
     "shop": "Shop",
     "subscriptions": "Subscriptions",
     "about": "About",
+    "sustainability": "Sustainability",
     "blog": "Blog",
     "terms": "Terms & Conditions",
     "wholesale": "Wholesale",
@@ -137,6 +138,21 @@
     "team": {
         "title": "The team",
         "description": "Louis-Philippe Boucher - Co-Founder & Head Roaster<br>Veronique Laharde - Co-Founder & Operations Manager<br>Yako Konstantinidis - Head of Coffee & Roaster<br>Cristina Torras Final - Sales & Account Manager<br>Thomas Gallo - Roastery Production Assistant & QC<br>George Konstantinidis - Roastery Production Assistant"
+    }
+  },
+  "sustainability": {
+    "intro": "Sustainability within our business is important and we keep it in mind for every decision we make. Although we are not perfect and we are always learning and evolving, we are committed to do the best we can when it comes to sustainability and transparency. ",
+    "sourcing": {
+        "title": "Coffee sourcing",
+        "description": "We are a relatively small company but establishing strong relationship with partners is a priority to us. When it comes to sourcing, we’ve selected importers and exporters who share the same vision and values as us. In Europe, we partner with the following importers: Nordic Approach, The Coffee Quest and Typica Europe. For exporters, we work with Cultivar in Peru, Primavera in Guatemala, Cata Export in Colombia, Agricafe in Bolivia. The value added by working with these importers and exporters are that they have the capacity and expertise to sustain relationships with producers, to import coffee to Europe with their knowledge on logistics and above all, they are transparent about their pricing."
+    },
+    "packaging": {
+      "title": "Coffee packaging",
+      "description": "As many of you noticed, we changed our packaging in 2022 to boxes. Although this change was not in our initial plan, we decided to move forward with this packaging for several reasons.<br>Once our current stock of 100% recyclable bags is finished, we are looking into producing bags that are smaller, using less material and having the most sustainable material used for coffee bags (while keeping optimal freshness and being food safe). Using boxes allow us to reduce 2 labels / bag (the roast level label and the date label). We are moving to stamps that are easier to use on paper.<br>The paper we decided to use for our boxes is Fuego Matt from Papyrus who also has sustainability in mind and environmental certifications.<br>For local wholesale customers, we offer the possibility to pack coffee in reusable buckets. If you are located in Amsterdam and interested in this scheme, let us know!"
+    },
+    "waste": {
+      "title": "Coffee Waste",
+      "description": "As quality of the green coffee we buy and the quality of the roast we produce are key to our business, we go through testing before releasing every single coffee. This means we can conduct many test roasting batches before we are fully satisfied with the final roast. The test batches never make it to our customers but instead, we blend them all together and put them in kg bags in which thereafter is sold on toogoodtogo at cost price. We’ve sold 793kg of coffee this year through the platform, a win-win for everyone."
     }
   },
   "wholesale": {

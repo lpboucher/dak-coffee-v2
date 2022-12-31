@@ -10,6 +10,7 @@ import BackBoneLayout from '../../layouts/Backbone';
 import Header from './Header';
 import HeroSlider from '../../components/HeroSlider';
 import AboutSlider from '../../components/About/AboutSlider';
+import SustainabilitySlider from '../../components/Sustainability/SustainabilitySlider';
 import Intro from '../../components/About/Intro';
 import Newsletter from '../Newsletter';
 import Footer from './Footer';
@@ -42,7 +43,12 @@ const BackBone = ({children}) => {
                 <Header isTransparent />
                 <AboutSlider />
                 <Intro />
-              </>
+              </>,
+    "/sustainability": <>
+                <Header isTransparent />
+                <SustainabilitySlider />
+                <Intro />
+            </>
   };
   const defaultHeader = <Header isTransparent={false}/>;
 

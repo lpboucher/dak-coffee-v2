@@ -11,6 +11,7 @@ const ShopPage = lazy(() => import('./pages/Shop'));
 const ProductPage = lazy(() => import('./pages/Product'));
 const ContactPage = lazy(() => import('./pages/Contact'));
 const AboutPage = lazy(() => import('./pages/About'));
+const SustainabilityPage = lazy(() => import('./pages/Sustainability'));
 const NewsletterPage = lazy(() => import('./pages/Newsletter'));
 const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const TermsPage = lazy(() => import('./pages/Terms'));
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/shop" component={ShopPage} />
           <Route path="/subscribe" component={NewsletterPage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/sustainability" component={SustainabilityPage} />
           <Route path="/contact" component={ContactPage} />
          {/*<Route path="/faq" component={FAQPage} /> */}
           <Route path="/terms" component={TermsPage} />
