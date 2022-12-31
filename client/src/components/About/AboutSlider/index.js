@@ -20,7 +20,7 @@ const ContactSlider = () => {
                 text: t("slides.dak-introduction.title"),
               },
             ]}
-            slideImg="Heros/Header_cup_s4eorw"
+            slideImg="Heros/HeaderAbout_nclnqv"
           />,
         ]
       }

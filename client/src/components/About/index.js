@@ -57,7 +57,7 @@ const About = () => {
       <TwoColLayout background="minor-3">
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>
           <CloudImage
-            img={`Intros/IMGL9756-bewerkt_j5avae`}
+            img={`Intros/theshowroom_jvvxew`}
             maxWidth={720}
             fit='cover'
           />
@@ -80,7 +80,7 @@ const About = () => {
         </Box>
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>
           <CloudImage
-            img={`Intros/IMGL9938-bewerkt_if4tlk`}
+            img={`Intros/theteam_joqgui`}
             maxWidth={720}
             fit='cover'
           />
