@@ -8,6 +8,7 @@
     "subscriptions": "Subscriptions",
     "about": "About",
     "sustainability": "Sustainability",
+    "showroom": "Showroom",
     "blog": "Blog",
     "terms": "Terms & Conditions",
     "wholesale": "Wholesale",
@@ -154,6 +155,9 @@
       "title": "Coffee Waste",
       "description": "As quality of the green coffee we buy and the quality of the roast we produce are key to our business, we go through testing before releasing every single coffee. This means we can conduct many test roasting batches before we are fully satisfied with the final roast.<br>The test batches never make it to our customers but instead, we blend them all together and put them in kg bags that are then sold on toogoodtogo at cost price. We’ve sold 793kg of coffee this year through the platform, a win-win for everyone."
     }
+  },
+  "showroom": {
+    "intro": "Our showroom is located in the industrial park of Nieuwendammerdijk in Amsterdam Noord next to the roastery.<br>The initial idea of the showroom was to have a dedicated space for our team to do some cuppings and meetings. However, being solely a roastery doesn’t allow us to connect directly with people like a cafe does, so we wanted to have this space to further connections with our customers and partners. We therefore open our showroom doors every week for a few hours for people to come in, taste some coffees and have access to our full retail selection.<br>The showroom was also designed to host coffee-related events such as workshops, seminars and cuppings. You will find below the calendar of upcoming events."
   },
   "wholesale": {
     "title": "Offer Dak to your customers",
