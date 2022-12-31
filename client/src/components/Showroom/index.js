@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ProductsListing from '../../components/Products/ProductsListing';
+
 const Showroom = () => {
   return (
     <>
