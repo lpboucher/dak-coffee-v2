@@ -10,11 +10,9 @@ const BoldText = styled(Paragraph)`
 const TextBoxLayout = ({children, hasSecondaryBackground = false}) => {
     return (
       <Box background={hasSecondaryBackground ? "minor-4" : "secondaryGrey"} pad={{vertical: "7%", horizontal: "20%"}}>
-        {children.map(child =>
-            <BoldText color={hasSecondaryBackground ? "mainWhite" : "mainDark"} size="medium" textAlign="center" alignSelf="center">
-                {child}
-            </BoldText>
-        )}
+        <BoldText size="medium" textAlign="center" alignSelf="center">
+          {children}
+        </BoldText>
       </Box>
     );
 };

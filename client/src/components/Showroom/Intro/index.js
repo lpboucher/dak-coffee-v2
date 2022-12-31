@@ -1,18 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Text } from 'grommet';
-
-import TextBoxLayout from "../../../layouts/Share/TextBox";
+import { Box, Text } from 'grommet';
 
 const Intro = () => {
   const { t } = useTranslation();
   return (
-        <TextBoxLayout>
+    <Box background="secondaryGrey" pad={{vertical: "7%", horizontal: "20%"}}>
           {t('showroom.intro').split("<br>").map(para =>
             <Text margin={{top: "medium"}}>{para}</Text>
           )}
-        </TextBoxLayout>
+    </Box>
   );
 };
 
