@@ -12,6 +12,7 @@ import HeroSlider from '../../components/HeroSlider';
 import AboutSlider from '../../components/About/AboutSlider';
 import SustainabilitySlider from '../../components/Sustainability/SustainabilitySlider';
 import Intro from '../../components/About/Intro';
+import SustainabilityIntro from '../../components/Sustainability/Intro';
 import Newsletter from '../Newsletter';
 import Footer from './Footer';
 import AnnouncementModal from '../../components/Backbone/AnnouncementModal';
@@ -47,7 +48,7 @@ const BackBone = ({children}) => {
     "/sustainability": <>
                 <Header isTransparent />
                 <SustainabilitySlider />
-                <Intro />
+                <SustainabilityIntro />
             </>
   };
   const defaultHeader = <Header isTransparent={false}/>;
@@ -73,7 +74,7 @@ const BackBone = ({children}) => {
           <MessageModal key="message" />,
           <MobileMenu key="mobileMenu" />
         ]}
-        withBasePadding={pathname !== "/about"}
+        withBasePadding={pathname !== "/about" || pathname !== "/sustainability"}
       />
     </>
   )
