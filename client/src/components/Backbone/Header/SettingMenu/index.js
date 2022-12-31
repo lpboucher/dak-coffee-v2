@@ -25,7 +25,8 @@ const Navigation = () => {
   ]
   const allMenuItems = [
     ...baseMenuItems,
-    <OptionSelect key="lang" optionType="language" />,
+    // Remove language menu for now
+    // <OptionSelect key="lang" optionType="language" />,
   ];
   const menuItems = lessThan.large ? baseMenuItems : allMenuItems;
   return (

@@ -24,14 +24,17 @@ export const CREATE_SHIPPING_LABEL_ERROR = 'cart/create_shipping_label_error';
 
 //Action Creators
 export const initializeCart = ({cart}) => async (dispatch) => {
-    let switchedLanguage;
+    // let switchedLanguage;
     dispatch(trackLocation(await detectBrowserLocation()));
+    // default to english
+    dispatch(switchLanguage("en"));
     if (cart && cart.items.length > 0) {
         dispatch(switchDisplayCurrency(cart.currency));
     } else {
         dispatch(switchDisplayCurrency(await getDefaultLocationCurrency()));
     }
     dispatch(login());
+    /* MAINTAIN LOGIC FOR DETECTING/SWITCHING LANGUAGE
     const initialBrowserLang = i18n.language;
     if (LANGUAGE_LIST.includes(initialBrowserLang)) {
         switchedLanguage = initialBrowserLang;
@@ -41,6 +44,7 @@ export const initializeCart = ({cart}) => async (dispatch) => {
         switchedLanguage = "en";
     }
     dispatch(switchLanguage(switchedLanguage));
+    */
     dispatch({ type: INITIALIZE_CART_SUCCESS });
 }
 
