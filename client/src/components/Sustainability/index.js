@@ -44,7 +44,7 @@ const Sustainability = () => {
         </Box>
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>
           <CloudImage
-            img={`Intros/savingcoffee_di6oqj`}
+            img={`Intros/wholesalepicture_rjd4ej`}
             maxWidth={720}
             fit='cover'
           />

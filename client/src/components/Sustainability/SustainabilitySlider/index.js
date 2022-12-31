@@ -20,7 +20,7 @@ const SustainabilitySlider = () => {
                 text: t("slides.dak-introduction.title"),
               },
             ]}
-            slideImg="Heros/HeaderAbout_nclnqv"
+            slideImg="Heros/sustainability_lnwo3y"
           />,
         ]
       }

@@ -21,7 +21,7 @@ const Wholesale = () => {
       <TwoColLayout>
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>
           <CloudImage
-            img={`Intros/bagwebsite_eteg6f`}
+            img={`Intros/wholesalepicture_rjd4ej`}
             maxWidth={720}
             fit='cover'
           />

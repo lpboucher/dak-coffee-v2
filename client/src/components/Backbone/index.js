@@ -15,6 +15,7 @@ import ShowroomSlider from '../../components/Showroom/ShowroomSlider';
 import AboutIntro from '../../components/About/Intro';
 import SustainabilityIntro from '../../components/Sustainability/Intro';
 import ShowroomIntro from '../../components/Showroom/Intro';
+import Rent from '../../components/Showroom/Rent';
 import Newsletter from '../Newsletter';
 import Footer from './Footer';
 import AnnouncementModal from '../../components/Backbone/AnnouncementModal';
@@ -56,6 +57,7 @@ const BackBone = ({children}) => {
                     <Header isTransparent />
                     <ShowroomSlider />
                     <ShowroomIntro />
+                    <Rent />
                 </>
   };
   const defaultHeader = <Header isTransparent={false}/>;

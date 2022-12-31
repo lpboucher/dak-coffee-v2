@@ -20,7 +20,7 @@ const ShowroomSlider = () => {
                 text: t("slides.dak-introduction.title"),
               },
             ]}
-            slideImg="Heros/HeaderAbout_nclnqv"
+            slideImg="Heros/theshowroom_header_bukuub"
           />,
         ]
       }
