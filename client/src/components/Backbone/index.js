@@ -74,7 +74,7 @@ const BackBone = ({children}) => {
           <MessageModal key="message" />,
           <MobileMenu key="mobileMenu" />
         ]}
-        withBasePadding={pathname !== "/about" || pathname !== "/sustainability"}
+        withBasePadding={pathname !== "/about" && pathname !== "/sustainability"}
       />
     </>
   )
