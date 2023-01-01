@@ -38,14 +38,14 @@ export const NA_COUNTRIES = [
 export const SHIPPING_THRESHOLDS = {
   EUR: {
     NL: '€40',
-    EU: '€50',
-    NA: '€75',
-    World: '€120'
+    EU: '€60',
+    NA: '€100',
+    World: '€150'
   },
   CAD: {
-    NL: '$45',
-    EU: '$75',
-    NA: '$100',
-    World: '$180'
+    NL: '$60',
+    EU: '$90',
+    NA: '$150',
+    World: '$225'
   },
 }
