@@ -29,7 +29,8 @@ const generateSnipcartPromo = async (source, discountAmountOrRate) => {
     const baseDiscount = {
         trigger: 'Code',
         code: code,
-        maxNumberOfUsages: 1
+        maxNumberOfUsages: 1,
+        combinable: false,
     };
 
     const typeDiscount = {
