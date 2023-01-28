@@ -149,10 +149,12 @@ const createShippingLabel = async (ctx) => {
     try {
         await createShippingParcel(address, email, invoiceNumber);
     } catch(err) {
+        console.log('ERROR AT createShippingParcel');
         if (Array.isArray(err)) {
             err.map(oneerror => console.log(oneerror.messages));
         } else {
             console.log(err);
+            console.log(err.response.data.error);
         }
     }
 };
