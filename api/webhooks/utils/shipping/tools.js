@@ -147,29 +147,42 @@ const fromCountryToRegion = (country) => {
 };
 
 const createShippingParcel = async (shippingAddress, email, invoiceNumber) => {
-    return await axios.post(
-        `${shipConstants.SHIPCLOUD_ENDPOINT}/parcels`,
-        {
-            parcel: {
-                name: shippingAddress.fullName,
-                address: shippingAddress.address1,
-                address_2: shippingAddress.address2,
-                city: shippingAddress.city,
-                postal_code: shippingAddress.postalCode,
-                request_label: false,
-                email: email,
-                country: shippingAddress.country,
-                telephone: shippingAddress.phone || '',
-                order_number: invoiceNumber,
+    try {
+        return await axios.post(
+            `${shipConstants.SHIPCLOUD_ENDPOINT}/parcels`,
+            {
+                parcel: {
+                    name: shippingAddress.fullName,
+                    address: shippingAddress.address1,
+                    address_2: shippingAddress.address2,
+                    city: shippingAddress.city,
+                    postal_code: shippingAddress.postalCode,
+                    request_label: false,
+                    email: email,
+                    country: shippingAddress.country,
+                    telephone: shippingAddress.phone ?? '',
+                    order_number: invoiceNumber,
+                    country_state: shippingAddress.province ?? '',
+                    customs_shipment_type: 2,
+                    customs_invoice_nr: invoiceNumber,
+                }
+            },
+            {
+                auth: {
+                    username: strapi.config.currentEnvironment.sendcloudKey,
+                    password: strapi.config.currentEnvironment.sendcloudSecret,
+                }
             }
-        },
-        {
-            auth: {
-                username: strapi.config.currentEnvironment.sendcloudKey,
-                password: strapi.config.currentEnvironment.sendcloudSecret,
-            }
+        );
+    } catch (err) {
+        console.log('ERROR AT createShippingParcel');
+        if (Array.isArray(err)) {
+            err.map(oneerror => console.log(oneerror.messages));
+        } else {
+            console.log(err);
+            console.log(err.response.data.error);
         }
-    );
+    }
 };
 
 module.exports = {
