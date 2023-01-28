@@ -45,18 +45,28 @@ Parameter is object of the shape:
 const sendEmail = async ({from = INTERNAL_EMAILS['general'], to, template, content, subject}) => {
     const mailchimp = mailchimpTx(strapi.config.currentEnvironment.mailchimpTrans);
 
-    await mailchimp.messages.sendTemplate({
-        template_name: template,
-        template_content: content,
-        message: {
-            from_email: from,
-            subject: subject,
-            to: [
-                {email: to, type: 'to'}
-            ],
-            bcc_address: from,
+    try {
+        await mailchimp.messages.sendTemplate({
+            template_name: template,
+            template_content: content,
+            message: {
+                from_email: from,
+                subject: subject,
+                to: [
+                    {email: to, type: 'to'}
+                ],
+                bcc_address: from,
+            }
+        });
+    } catch(err) {
+        console.log('ERROR AT sendEmail');
+        if (Array.isArray(err)) {
+            err.map(oneerror => console.log(oneerror.messages));
+        } else {
+            console.log(err);
+            console.log(err.response.data.error);
         }
-    });
+    }
 };
 
 module.exports = {
