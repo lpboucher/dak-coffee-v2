@@ -160,9 +160,9 @@ const createShippingParcel = async (shippingAddress, email, invoiceNumber) => {
                     request_label: false,
                     email: email,
                     country: shippingAddress.country,
-                    telephone: shippingAddress.phone ?? '',
+                    telephone: shippingAddress.phone || '',
                     order_number: invoiceNumber,
-                    country_state: shippingAddress.province ?? '',
+                    country_state: shippingAddress.province || '',
                     customs_shipment_type: 2,
                     customs_invoice_nr: invoiceNumber,
                 }
