@@ -154,13 +154,14 @@ const fromCountryToRegion = (country) => {
 const createShippingParcel = async (shippingAddress, email, invoiceNumber, items = []) => {
     try {
         const requiresState = shippingAddress.country === 'CA' || shippingAddress.country === 'US' || shippingAddress.country === 'IT';
+        const requiresAddress2Placeholder = shippingAddress.address2 == null || shippingAddress.address2 === '';
         return await axios.post(
             `${shipConstants.SHIPCLOUD_ENDPOINT}/parcels`,
             {
                 parcel: {
                     name: shippingAddress.fullName,
                     address: shippingAddress.address1,
-                    address_2: shippingAddress.address2,
+                    address_2: requiresAddress2Placeholder === true ? '-' : shippingAddress.address2,
                     city: shippingAddress.city,
                     postal_code: shippingAddress.postalCode,
                     request_label: false,
