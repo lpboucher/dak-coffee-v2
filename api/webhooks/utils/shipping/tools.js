@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 'use strict';
 const axios = require('axios');
 const shipConstants = require('./constants');
@@ -170,7 +171,7 @@ const createShippingParcel = async (shippingAddress, email, invoiceNumber, items
                     country_state: (requiresState === true ? shippingAddress.province : ''),
                     customs_shipment_type: 2,
                     customs_invoice_nr: invoiceNumber,
-                    parcel_item: buildItemsImportDeclaration(items),
+                    parcel_items: buildItemsImportDeclaration(items),
                     weight: getTotalWeightOfItems(items, true),
                     total_order_value: getTotalOrderValueFromCustomsItems(buildItemsImportDeclaration(items)),
                 }
@@ -234,11 +235,11 @@ const getTotalOrderValueFromCustomsItems = (items) => {
 const generateCustomsItem = (weightString, quantity) => {
     const weightInKgs = convertWeightStringToNumber(weightString);
     return {
-        hs_code: '09012100',
-        weight: weightInKgs,
-        quantity: quantity,
-        description: 'roasted coffee bean bag',
-        origin_country: 'NL',
-        value: weightInKgs >= 1 ? 5 : 3,
+        "hs_code": "09012100",
+        "weight": weightInKgs.toString(),
+        "quantity": quantity,
+        "description":"roasted coffee bean bag",
+        "origin_country":"NL",
+        "value": weightInKgs >= 1 ? 5 : 3,
     };
 };
