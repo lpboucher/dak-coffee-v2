@@ -71,7 +71,7 @@ const handleEvent = async (ctx) => {
             }
 
             try {
-                await createShippingParcel(shippingAddress, email, invoiceNumber);
+                await createShippingParcel(shippingAddress, email, invoiceNumber, items);
             } catch(err) {
                 if (Array.isArray(err)) {
                     err.map(oneerror => console.log(oneerror.messages));
@@ -150,6 +150,12 @@ const createShippingLabel = async (ctx) => {
         (Array.isArray(items)) &&
         (items.length > 0)
     ) ? items : [];
+
+    console.log('RECEIVED ADDRESS:', address);
+    console.log('RECEIVED EMAIL:', email);
+    console.log('RECEIVED INVOICE NUMBER:', invoiceNumber);
+    console.log('RECEIVED ITEMS:', items);
+    console.log('RECEIVED ORDER ITEMS:', orderItems);
 
     try {
         await createShippingParcel(address, email, invoiceNumber, orderItems);

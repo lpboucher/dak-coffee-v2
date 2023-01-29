@@ -152,9 +152,34 @@ const fromCountryToRegion = (country) => {
 };
 
 const createShippingParcel = async (shippingAddress, email, invoiceNumber, items = []) => {
+    console.log('SENDING ADDRESS:', shippingAddress);
+    console.log('SENDING EMAIL:', email);
+    console.log('SENDING INVOICE NUMBER:', invoiceNumber);
+    console.log('SENDING ITEMS:', items);
+    console.log('SENDING ORDER ITEMS:', items);
     try {
         const requiresState = shippingAddress.country === 'CA' || shippingAddress.country === 'US' || shippingAddress.country === 'IT';
         const requiresAddress2Placeholder = shippingAddress.address2 == null || shippingAddress.address2 === '';
+        console.log('PARCEL:', {
+            parcel: {
+                name: shippingAddress.fullName,
+                address: shippingAddress.address1,
+                address_2: requiresAddress2Placeholder === true ? '-' : shippingAddress.address2,
+                city: shippingAddress.city,
+                postal_code: shippingAddress.postalCode,
+                request_label: false,
+                email: email,
+                country: shippingAddress.country,
+                telephone: shippingAddress.phone || '',
+                order_number: invoiceNumber,
+                country_state: (requiresState === true ? shippingAddress.province : ''),
+                customs_shipment_type: 2,
+                customs_invoice_nr: invoiceNumber,
+                parcel_items: buildItemsImportDeclaration(items),
+                weight: getTotalWeightOfItems(items, true),
+                total_order_value: getTotalOrderValueFromCustomsItems(buildItemsImportDeclaration(items)),
+            }
+        });
         return await axios.post(
             `${shipConstants.SHIPCLOUD_ENDPOINT}/parcels`,
             {
