@@ -80,7 +80,7 @@ export const clearCart = () => (dispatch) => {
     dispatch({ type: CLEAR_CART_SUCCESS })
 }
 
-export const createShippingLabel = (address, email, invoiceNumber) => async dispatch => {
+export const createShippingLabel = (address, email, invoiceNumber, items) => async dispatch => {
     dispatch({ type: CREATE_SHIPPING_LABEL_REQUEST });
     try {
         await axios.post(
@@ -89,6 +89,7 @@ export const createShippingLabel = (address, email, invoiceNumber) => async disp
                 address,
                 email,
                 invoiceNumber,
+                items,
             }
         )
     } catch(err) {

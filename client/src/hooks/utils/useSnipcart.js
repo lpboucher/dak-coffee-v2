@@ -35,9 +35,11 @@ export const useSnipcartEvents = (updating, update, clear, added, completed, cre
               completed(cartState, getTotalTaxesPaid(cartState.taxes.items));
             }
 
-            if(cartState.paymentDetails.method = "DeferredPayment") {
+            dispatch(createParcel(cartState.shippingAddress, cartState.email, cartState.invoiceNumber, cartState.items.items))
+
+            /*if(cartState.paymentDetails.method === "DeferredPayment") {
                 dispatch(createParcel(cartState.shippingAddress, cartState.email, cartState.invoiceNumber));
-            }
+            }*/
         });
       })
     }
