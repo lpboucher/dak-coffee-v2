@@ -65,7 +65,15 @@ export const useSnipcartCart = (initialize) => {
       document.addEventListener('snipcart.ready', () => {
         cartReadyUnSub = window.Snipcart.events.on('snipcart.initialized', async (data) => {
           dispatch(await initialize(data))
-        })
+        });
+
+        // change language strings
+        window.Snipcart.api.session.setLanguage("en", {
+            "address_form": {
+                "address1": "Street name, house number",
+                "address2": "Additional address information (Apt, Building)",
+            },
+        });
       });
     }
 
