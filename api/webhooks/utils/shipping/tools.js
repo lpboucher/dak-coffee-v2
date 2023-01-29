@@ -12,9 +12,13 @@ const hasDiscountedShipping = (items) => {
     return getTotalWeightOfItems(items, true) >= shipConstants.WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD;
 };
 
+const getWeightCustomField = (item) => {
+    return item.customFields.find((oneField) => oneField.name.toLowerCase() === 'Weight'.toLowerCase());
+};
+
 const getTotalWeightOfItems = (items, onlyCoffee = false) => {
     const weight = items.reduce((total, oneItem) => {
-        const weightField = oneItem.customFields.find((oneField) => oneField.name.toLowerCase() === 'Weight'.toLowerCase());
+        const weightField = getWeightCustomField(oneItem);
         if (weightField != null) {
             total += oneItem.quantity * convertWeightStringToNumber(weightField.value);
         } else {
@@ -146,8 +150,9 @@ const fromCountryToRegion = (country) => {
     return locationCode;
 };
 
-const createShippingParcel = async (shippingAddress, email, invoiceNumber) => {
+const createShippingParcel = async (shippingAddress, email, invoiceNumber, items = []) => {
     try {
+        const requiresState = shippingAddress.country === 'CA' || shippingAddress.country === 'US' || shippingAddress.country === 'IT';
         return await axios.post(
             `${shipConstants.SHIPCLOUD_ENDPOINT}/parcels`,
             {
@@ -162,9 +167,12 @@ const createShippingParcel = async (shippingAddress, email, invoiceNumber) => {
                     country: shippingAddress.country,
                     telephone: shippingAddress.phone || '',
                     order_number: invoiceNumber,
-                    country_state: shippingAddress.province || '',
+                    country_state: (requiresState === true ? shippingAddress.province : ''),
                     customs_shipment_type: 2,
                     customs_invoice_nr: invoiceNumber,
+                    parcel_item: buildItemsImportDeclaration(items),
+                    weight: getTotalWeightOfItems(items, true),
+                    total_order_value: getTotalOrderValueFromCustomsItems(buildItemsImportDeclaration(items)),
                 }
             },
             {
@@ -204,4 +212,33 @@ module.exports = {
     createShippingParcel,
     convertWeightStringToNumber,
     getTotalWeightOfItems,
+};
+
+const buildItemsImportDeclaration = (items) => {
+    return items.reduce((importProducts, oneItem) => {
+        const weightField = getWeightCustomField(oneItem);
+        if (weightField != null) {
+            importProducts.push(generateCustomsItem(weightField.value, oneItem.quantity));
+        }
+        return importProducts;
+    }, []);
+};
+
+const getTotalOrderValueFromCustomsItems = (items) => {
+    return items.reduce((orderValue, oneItem) => {
+        const totalValueOfItem = oneItem.quantity * oneItem.value;
+        return orderValue + totalValueOfItem;
+    }, 0);
+};
+
+const generateCustomsItem = (weightString, quantity) => {
+    const weightInKgs = convertWeightStringToNumber(weightString);
+    return {
+        hs_code: '09012100',
+        weight: weightInKgs,
+        quantity: quantity,
+        description: 'roasted coffee bean bag',
+        origin_country: 'NL',
+        value: weightInKgs >= 1 ? 5 : 3,
+    };
 };

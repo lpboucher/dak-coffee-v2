@@ -144,10 +144,15 @@ const getWholesaleShippingRates = (ctx) => {
 };
 
 const createShippingLabel = async (ctx) => {
-    const { address, email, invoiceNumber } = ctx.request.body;
+    const { address, email, invoiceNumber, items } = ctx.request.body;
+    const orderItems = (
+        (items != null) &&
+        (Array.isArray(items)) &&
+        (items.length > 0)
+    ) ? items : [];
 
     try {
-        await createShippingParcel(address, email, invoiceNumber);
+        await createShippingParcel(address, email, invoiceNumber, orderItems);
     } catch(err) {
         console.log('ERROR AT createShippingParcel');
         if (Array.isArray(err)) {
