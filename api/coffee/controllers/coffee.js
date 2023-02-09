@@ -28,7 +28,9 @@ const getCoffees = async (ctx) => {
     const coffees = await strapi.query('coffee').model.find(ctx.query, includedFields);
     const coffeeWithModifiedPrice = coffees.map((oneCoffee) => {
         const coffeeObj = oneCoffee.toObject();
-        const newPrices = coffeeObj.price.map((p) => filterPriceOptions(p));
+        // filter if coffee is 150g on wholesale but not website
+        // const newPrices = coffeeObj.price.map((p) => filterPriceOptions(p));
+        const newPrices = coffeeObj.price.map((p) => p);
 
         const roastOptions = [];
         if (coffeeObj.isAvailableAsFilter === true) {
@@ -218,7 +220,9 @@ const getAllProducts = async (ctx) => {
 
     products = products.map((oneProduct) => {
         if (oneProduct.type === 'coffee') {
-            const newPrices = oneProduct.price.map((p) => filterPriceOptions(p));
+            // filter if coffee is 150g on wholesale but not website
+            // const newPrices = coffeeObj.price.map((p) => filterPriceOptions(p));
+            const newPrices = oneProduct.price.map((p) => p);
 
             const roastOptions = [];
             if (oneProduct.isAvailableAsFilter === true) {
@@ -270,7 +274,9 @@ const getProductBySlug = async (ctx) => {
     let query = await strapi.query(model).model.findOne({ slug:resource }, includedFields[model]);
     if (model === 'coffee') {
         const coffeeObj = query.toObject();
-        const newPrices = coffeeObj.price.map((p) => filterPriceOptions(p));
+        // filter if coffee is 150g on wholesale but not website
+        // const newPrices = coffeeObj.price.map((p) => filterPriceOptions(p));
+        const newPrices = coffeeObj.price.map((p) => p);
 
         const roastOptions = [];
         if (coffeeObj.isAvailableAsFilter === true) {
