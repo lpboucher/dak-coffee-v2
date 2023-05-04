@@ -152,7 +152,7 @@ const getWholesaleCoffees = async (ctx) => {
         };
     });
 
-    const returnedCoffees = allCoffees.filter(({ name }) => !name.includes('(F)'));
+    const returnedCoffees = allCoffees.filter(({ name, slug }) => !name.includes('(F)') && slug !== 'mystery-coffee');
     ctx.send(returnedCoffees);
 };
 
