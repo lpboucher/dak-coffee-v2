@@ -129,7 +129,8 @@ const getWholesaleShippingZone = (country) => {
 };
 
 const getShippingRateOptions = (currency, country, withColdAddition=false) => {
-    const allRates = withColdAddition ? shipConstants.SHIPPING_RATES_BY_REGION_COLD : shipConstants.SHIPPING_RATES_BY_REGION;
+    // const allRates = withColdAddition ? shipConstants.SHIPPING_RATES_BY_REGION_COLD : shipConstants.SHIPPING_RATES_BY_REGION;
+    const allRates = shipConstants.SHIPPING_RATES_BY_REGION;
     return [allRates[currency.toUpperCase()][getShippingZone(country)]];
 };
 
