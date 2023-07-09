@@ -10,6 +10,7 @@ const {
     hasGiftCard,
     isGiftCard,
     isFromRegion,
+    isFromVATRegion,
     isFromNL,
     createShippingParcel,
     hasDiscountedShipping,
@@ -210,7 +211,7 @@ const getTaxRateTotal = (items, rate) => {
 };
 
 const isTaxCollected = (country) => {
-    return isFromRegion('EU', country);
+    return isFromVATRegion('EU', country);
 };
 
 const shouldVATBeCharged = (country, customerVAT) => {

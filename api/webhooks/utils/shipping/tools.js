@@ -108,6 +108,10 @@ const isFromRegion = (region, country) => {
     return shipConstants.COUNTRY_CODES_BY_REGION[region].indexOf(country) !== -1;
 };
 
+const isFromVATRegion = (region, country) => {
+    return shipConstants.COUNTRY_CODES_VAT_BY_REGION[region].indexOf(country) !== -1;
+};
+
 const isFromNL = (country) => {
     return country.toLowerCase() === 'NL'.toLowerCase();
 };
@@ -230,6 +234,7 @@ module.exports = {
     getShippingRateOptions,
     getWholesaleShippingRateOption,
     isFromRegion,
+    isFromVATRegion,
     isFromNL,
     hasNoShipItem,
     hasGiftCard,

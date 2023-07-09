@@ -69,6 +69,11 @@ const COUNTRY_CODES_BY_REGION = {
     NA: ['US', 'CA']
 };
 
+const COUNTRY_CODES_VAT_BY_REGION = {
+    EU: ['AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK'],
+    NA: ['US', 'CA', 'CH']
+};
+
 const FREE_SHIPPING_BY_REGION = {
     EU: [{'cost': 0, 'description': 'Free Shipping'}],
     World: [{'cost': 0, 'description': 'Free Shipping (5-15 business days)'}, {'cost': 25, 'description': 'Express (2-5 business days)'}]
@@ -140,6 +145,7 @@ const SHIPCLOUD_ENDPOINT = 'https://panel.sendcloud.sc/api/v2';
 
 module.exports = {
     COUNTRY_CODES_BY_REGION,
+    COUNTRY_CODES_VAT_BY_REGION,
     SHIPPING_RATES_BY_REGION,
     SHIPPING_RATES_BY_REGION_COLD,
     SHIPPING_THRESHOLDS_BY_REGION,
