@@ -42,7 +42,14 @@ export const getCartProductOptions = (priceString, optionObj, type="coffee", sel
     options["data-item-custom1-options"] = increments.map((inc) => `${inc.option}${inc.value}`).join('|');
     options["data-item-custom1-value"] = selected ? selected.quantity : null;
   }
-  if (type === "clothing" || type === "t-shirt" || type === "roasting-tee" || type === "brewing-tee") {
+  if (
+        type === "clothing" ||
+        type === "t-shirt" ||
+        type === "roasting-tee" ||
+        type === "brewing-tee" ||
+        type === "crewneck" ||
+        type === "nitro-crew"
+    ) {
     const sizes = getProductOptions(type).find(opt => opt.name === "size");
     const colors = getProductOptions(type).find(opt => opt.name === "color");
     const sizeOptions = sizes.options.map(opt => opt.value);
