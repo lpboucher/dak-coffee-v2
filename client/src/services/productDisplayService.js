@@ -67,31 +67,65 @@ export const getProductOptions = (type) => {
         ]
       },
     ],
-    clothing: [
+    crewneck: [
         { name: "size", options: [
-            {label: "S", value: "S"},
-            {label: "M", value: "M"},
-            {label: "L", value: "L"},
-            {label: "XL (only in blue)", value: "XL"},
-          ]
-        },
-        { name: "color", options: [
-            {label: "Navy", value: "Navy"},
-            {label: "Cream Grey", value: "Cream"},
-          ]
-        },
-    ],
-    "t-shirt": [
-        { name: "size", options: [
+            {label: "XXS", value: "XXS"},
             {label: "XS", value: "XS"},
             {label: "S", value: "S"},
-            // {label: "M", value: "M"},
+            {label: "M", value: "M"},
             {label: "L", value: "L"},
             {label: "XL", value: "XL"},
           ]
         },
         { name: "color", options: [
-            {label: "Navy", value: "Navy"},
+            {label: "White", value: "White"},
+            {label: "Black", value: "Black"},
+          ]
+        },
+    ],
+    "nitro-crew": [
+        { name: "size", options: [
+            {label: "XXS", value: "XXS"},
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Green", value: "Green"},
+          ]
+        },
+    ],
+    clothing: [
+        { name: "size", options: [
+            {label: "XXS", value: "XXS"},
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "White", value: "Navy"},
+            {label: "Black", value: "Cream"},
+          ]
+        },
+    ],
+    "t-shirt": [
+        { name: "size", options: [
+            {label: "XXS", value: "XXS"},
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "White", value: "White"},
+            {label: "Black", value: "Black"},
           ]
         },
     ],
