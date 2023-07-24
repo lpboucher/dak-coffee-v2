@@ -440,6 +440,15 @@ const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
         }
         priceModifiers.push({name: index, priceModifier: modifier});
     }
+    // 3kg calc
+    const kgweightAdjustment = convertWeightStringToNumber('1kg') / convertWeightStringToNumber(baseWeight.option);
+    const kgpriceAdjustedForPackaging = (basePrice * kgweightAdjustment) - (kgweightAdjustment * individualPackagingPrice) + 0.4;
+    const kgpriceAdjustedForVolumeDiscount = (1 - 0.5) * (kgpriceAdjustedForPackaging);
+    const threekgmodifier = ((kgpriceAdjustedForVolumeDiscount - 1) * 3) - basePrice;
+    priceModifiers.push({
+        name: '3kg',
+        priceModifier: threekgmodifier,
+    });
 
     return priceModifiers;
 };
@@ -469,6 +478,15 @@ const getNewDerivedPriceModifiers = (volumeOptions, priceObject) => {
         }
         priceModifiers.push({name: index, priceModifier: modifier});
     }
+    // 3kg calc
+    const kgweightAdjustment = convertWeightStringToNumber('1kg') / convertWeightStringToNumber(baseWeight.option);
+    const kgpriceAdjustedForPackaging = (basePrice * kgweightAdjustment) - (kgweightAdjustment * individualPackagingPrice) + largeBagPackagingPrice;
+    const kgpriceAdjustedForVolumeDiscount = (1 - 0.5) * (kgpriceAdjustedForPackaging);
+    const threekgmodifier = ((kgpriceAdjustedForVolumeDiscount - 0.8) * 3) - basePrice;
+    priceModifiers.push({
+        name: '3kg',
+        priceModifier: threekgmodifier,
+    });
 
     return priceModifiers;
 };
