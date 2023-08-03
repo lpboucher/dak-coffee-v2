@@ -37,7 +37,7 @@ const BackBone = ({children}) => {
     orderCompleted,
     createShippingLabel,
   );
-    // useFormitable();
+    useFormitable();
   const { pathname } = useLocation();
 
   const pageHeader = {
