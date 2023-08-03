@@ -4,7 +4,7 @@ export const useFormitable = () => {
   useEffect(() => {
     const script = document.createElement('script');
 
-    const scriptString = "
+    const scriptString = `
       (function(d, s, id, h) {
           var ftjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
@@ -16,7 +16,7 @@ export const useFormitable = () => {
       }(document, 'script', 'formitable-sdk', function() {
           FT.load('Analytics');
       }));
-    ";
+    `;
     const scriptText = document.createTextNode(scriptString);
     script.appendChild(scriptText);
 
