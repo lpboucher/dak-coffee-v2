@@ -129,6 +129,7 @@ const getWholesaleCoffees = async (ctx) => {
         if (coffeeObj.isAvailableAsFilter === true) {
             roastOptions.push({name: 'filter'});
         }
+        const with3kg = coffeeObj.id !== '608ebd5c8e9a182d5e36b8d9';
 
         return {
             id: coffeeObj.id,
@@ -148,7 +149,7 @@ const getWholesaleCoffees = async (ctx) => {
             isLowStock: coffeeObj.isLowStock,
             roastOptions: roastOptions,
             // modifiers: modifiers,
-            volumeOptions: coffeeObj.usesNewPricing === true ? getNewDerivedPriceModifiers(volumeOptions, priceInEUR) : getDerivedPriceModifiers(volumeOptions, priceInEUR),
+            volumeOptions: coffeeObj.usesNewPricing === true ? getNewDerivedPriceModifiers(volumeOptions, priceInEUR, with3kg) : getDerivedPriceModifiers(volumeOptions, priceInEUR, with3kg),
         };
     });
 
@@ -187,6 +188,7 @@ const getOneWholesaleCoffee = async (ctx) => {
     if (coffeeObj.isAvailableAsFilter === true) {
         roastOptions.push({name: 'filter'});
     }
+    const with3kg = coffeeObj.id !== '608ebd5c8e9a182d5e36b8d9';
 
     const returnedCoffee = {
         id: coffeeObj.id,
@@ -203,7 +205,7 @@ const getOneWholesaleCoffee = async (ctx) => {
         slug: coffeeObj.slug,
         roastOptions: roastOptions,
         // modifiers: modifiers,
-        volumeOptions: coffeeObj.usesNewPricing === true ? getNewDerivedPriceModifiers(volumeOptions, priceInEUR) : getDerivedPriceModifiers(volumeOptions, priceInEUR),
+        volumeOptions: coffeeObj.usesNewPricing === true ? getNewDerivedPriceModifiers(volumeOptions, priceInEUR, with3kg) : getDerivedPriceModifiers(volumeOptions, priceInEUR, with3kg),
     };
     ctx.send(returnedCoffee);
 };
@@ -417,7 +419,7 @@ const getRightRoastCoffeeById = async (ctx) => {
     ctx.send({data: sanitized});
 };
 
-const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
+const getDerivedPriceModifiers = (volumeOptions, priceObject, with3kg = true) => {
     const discount = {name: '45%', value: 0.45};
     const individualPackagingPrice = 0.65;
     const basePrice = priceObject.base.value;
@@ -441,19 +443,21 @@ const getDerivedPriceModifiers = (volumeOptions, priceObject) => {
         priceModifiers.push({name: index, priceModifier: modifier});
     }
     // 3kg calc
-    const kgweightAdjustment = convertWeightStringToNumber('1kg') / convertWeightStringToNumber(baseWeight.option);
-    const kgpriceAdjustedForPackaging = (basePrice * kgweightAdjustment) - (kgweightAdjustment * individualPackagingPrice) + 0.4;
-    const kgpriceAdjustedForVolumeDiscount = (1 - 0.5) * (kgpriceAdjustedForPackaging);
-    const threekgmodifier = ((kgpriceAdjustedForVolumeDiscount - 1) * 3) - basePrice;
-    priceModifiers.push({
-        name: '3kg',
-        priceModifier: threekgmodifier,
-    });
+    if (with3kg === true) {
+        const kgweightAdjustment = convertWeightStringToNumber('1kg') / convertWeightStringToNumber(baseWeight.option);
+        const kgpriceAdjustedForPackaging = (basePrice * kgweightAdjustment) - (kgweightAdjustment * individualPackagingPrice) + 0.4;
+        const kgpriceAdjustedForVolumeDiscount = (1 - 0.5) * (kgpriceAdjustedForPackaging);
+        const threekgmodifier = ((kgpriceAdjustedForVolumeDiscount - 1) * 3) - basePrice;
+        priceModifiers.push({
+            name: '3kg',
+            priceModifier: threekgmodifier,
+        });
+    }
 
     return priceModifiers;
 };
 
-const getNewDerivedPriceModifiers = (volumeOptions, priceObject) => {
+const getNewDerivedPriceModifiers = (volumeOptions, priceObject, with3kg = true) => {
     const discount = {name: '45%', value: 0.45};
     const individualPackagingPrice = 0.75;
     const largeBagPackagingPrice = 0.4;
@@ -479,14 +483,16 @@ const getNewDerivedPriceModifiers = (volumeOptions, priceObject) => {
         priceModifiers.push({name: index, priceModifier: modifier});
     }
     // 3kg calc
-    const kgweightAdjustment = convertWeightStringToNumber('1kg') / convertWeightStringToNumber(baseWeight.option);
-    const kgpriceAdjustedForPackaging = (basePrice * kgweightAdjustment) - (kgweightAdjustment * individualPackagingPrice) + largeBagPackagingPrice;
-    const kgpriceAdjustedForVolumeDiscount = (1 - 0.5) * (kgpriceAdjustedForPackaging);
-    const threekgmodifier = ((kgpriceAdjustedForVolumeDiscount - 0.8) * 3) - basePrice;
-    priceModifiers.push({
-        name: '3kg',
-        priceModifier: threekgmodifier,
-    });
+    if (with3kg === true) {
+        const kgweightAdjustment = convertWeightStringToNumber('1kg') / convertWeightStringToNumber(baseWeight.option);
+        const kgpriceAdjustedForPackaging = (basePrice * kgweightAdjustment) - (kgweightAdjustment * individualPackagingPrice) + largeBagPackagingPrice;
+        const kgpriceAdjustedForVolumeDiscount = (1 - 0.5) * (kgpriceAdjustedForPackaging);
+        const threekgmodifier = ((kgpriceAdjustedForVolumeDiscount - 0.8) * 3) - basePrice;
+        priceModifiers.push({
+            name: '3kg',
+            priceModifier: threekgmodifier,
+        });
+    }
 
     return priceModifiers;
 };
