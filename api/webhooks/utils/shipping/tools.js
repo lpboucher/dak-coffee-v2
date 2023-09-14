@@ -29,7 +29,7 @@ const getTotalWeightOfItems = (items, onlyCoffee = false) => {
         return total;
     }, 0);
 
-    return weight;
+    return weight.toFixed(2);
 };
 
 const convertWeightStringToNumber = (weight) => {
