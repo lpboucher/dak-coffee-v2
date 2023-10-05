@@ -27,7 +27,7 @@ const ProductCard = ({id, selected}) => {
     clothing: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`,
     crewneck: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "White"}`,
     "nitro-crew": `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Green"}`,
-    "t-shirt": `?size=${selected && selected.size ? selected.size : "M"}&color=${selected && selected.color ? selected.color : "White"}`,
+    "t-shirt": `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "White"}`,
     "roasting-tee": `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Opal Grey"}`,
     "brewing-tee": `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Cream Grey"}`
   }
