@@ -2,8 +2,8 @@ import cogoToast from 'cogo-toast';
 import i18n from "i18next";
 
 const options = {
-  position: 'bottom-right',
-  hideAfter: 3
+  position: 'top-right',
+  hideAfter: 0
 };
 
 export const notify = {
