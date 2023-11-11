@@ -72,8 +72,8 @@ export const getProductOptions = (type) => {
             {label: "XXS", value: "XXS"},
             {label: "XS", value: "XS"},
             {label: "S", value: "S"},
-            {label: "M (only in black)", value: "M"},
-            {label: "L", value: "L"},
+            // {label: "M (only in black)", value: "M"},
+            // {label: "L", value: "L"},
             {label: "XL", value: "XL"},
           ]
         },
@@ -88,7 +88,7 @@ export const getProductOptions = (type) => {
             {label: "XXS", value: "XXS"},
             {label: "XS", value: "XS"},
             {label: "S", value: "S"},
-            {label: "M", value: "M"},
+            // {label: "M", value: "M"},
             // {label: "L", value: "L"},
           ]
         },
