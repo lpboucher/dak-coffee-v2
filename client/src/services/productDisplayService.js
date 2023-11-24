@@ -118,7 +118,7 @@ export const getProductOptions = (type) => {
             {label: "XXS", value: "XXS"},
             {label: "XS", value: "XS"},
             {label: "S (only in white)", value: "S"},
-            {label: "L (only in white)", value: "L"},
+            // {label: "L (only in white)", value: "L"},
             {label: "XL", value: "XL"},
           ]
         },
