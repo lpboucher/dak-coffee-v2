@@ -150,7 +150,7 @@ const initialState = {
 isMobileOpen: false,
 isProcessing: true,
 isModalOpen: false,
-isMessageOpen: true,
+isMessageOpen: false,
 //to be removed once fetching is specific to products
 isFetching: false,
 processingText: "loading.initial",
