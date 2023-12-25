@@ -2,7 +2,7 @@ import React from 'react';
 
 const Logo = ({height, width}) => {
     return (
-      <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 364.95 51.15">
+      <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 364.95 51.15">
       <g id="Laag_1" data-name="Laag 1">
         <g>
           <g>
