@@ -129,7 +129,7 @@ const getWholesaleCoffees = async (ctx) => {
         if (coffeeObj.isAvailableAsFilter === true) {
             roastOptions.push({name: 'filter'});
         }
-        const with3kg = coffeeObj.id !== '608ebd5c8e9a182d5e36b8d9';
+        const with3kg = coffeeObj.id !== '608ebd5c8e9a182d5e36b8d9' && coffeeObj.id !== '646b5bde35223f762cf71d40';
 
         return {
             id: coffeeObj.id,
@@ -188,7 +188,7 @@ const getOneWholesaleCoffee = async (ctx) => {
     if (coffeeObj.isAvailableAsFilter === true) {
         roastOptions.push({name: 'filter'});
     }
-    const with3kg = coffeeObj.id !== '608ebd5c8e9a182d5e36b8d9';
+    const with3kg = coffeeObj.id !== '608ebd5c8e9a182d5e36b8d9' && coffeeObj.id !== '646b5bde35223f762cf71d40';
 
     const returnedCoffee = {
         id: coffeeObj.id,
