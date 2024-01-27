@@ -459,7 +459,7 @@ const getDerivedPriceModifiers = (volumeOptions, priceObject, with3kg = true) =>
 
 const getNewDerivedPriceModifiers = (volumeOptions, priceObject, with3kg = true) => {
     const discount = {name: '45%', value: 0.45};
-    const individualPackagingPrice = 0.75;
+    const individualPackagingPrice = 0.95;
     const largeBagPackagingPrice = 0.4;
     const basePrice = priceObject.base.value;
     const baseWeight = priceObject.increments.find((o) => o.value === '[+0.00]');
