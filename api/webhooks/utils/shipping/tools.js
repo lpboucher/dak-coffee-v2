@@ -3,10 +3,9 @@
 const axios = require('axios');
 const shipConstants = require('./constants');
 
-const hasFreeOption = (items, orderSummary, withColdItem = false) => {
+const hasFreeOption = (orderSummary) => {
     const { currency, total, shipTo } = orderSummary;
-    return (orderHasSubscriptions(items) && isFromRegion('EU', shipTo)) ||
-        (total > getThreshold(currency, shipTo, withColdItem));
+    return (total > getThreshold(currency, shipTo));
 };
 
 const hasDiscountedShipping = (items) => {
@@ -94,14 +93,9 @@ const isColdBrew = (item) => {
     // return item.id === '608ebe6970f72e24357e87c7' dev id for cold brew;
 };
 
-const getThreshold = (currency, country, requiresCold = false) => {
-    /*const shippingThresholds = {
-    EUR: { NL: 30, EU: 50, NA: 50, World: 70 },
-    CAD: { NL: 45, EU: 75, NA: 75, World: 100 },
-  };*/
-    const thresholds = requiresCold ? shipConstants.SHIPPING_THRESHOLDS_BY_REGION_COLD : shipConstants.SHIPPING_THRESHOLDS_BY_REGION;
-    const locationCode = fromCountryToRegion(country);
-    return thresholds[currency.toUpperCase()][locationCode];
+const getThreshold = (currency, country) => {
+    const allThresholds = shipConstants.SHIPPING_THRESHOLDS_BY_REGION;
+    return [allThresholds[currency.toUpperCase()][getShippingZone(country)]];
 };
 
 const isFromRegion = (region, country) => {
@@ -116,30 +110,23 @@ const isFromNL = (country) => {
     return country.toLowerCase() === 'NL'.toLowerCase();
 };
 
-const getFreeShippingOptions = (country) => {
-    return isFromRegion('EU', country) ?
-        shipConstants.FREE_SHIPPING_BY_REGION['EU'] :
-        shipConstants.FREE_SHIPPING_BY_REGION['World'];
+const getFreeShippingOptions = (currency, country, isWholesale = false) => {
+    const rateDict = isWholesale === true ? shipConstants.WHOLESALE_FREE_SHIPPING_BY_REGION : shipConstants.FREE_SHIPPING_BY_REGION[currency.toUpperCase()];
+    return rateDict[getShippingZone(country)];
 };
 
 const getShippingZone = (country) => {
     const zone = Object.keys(shipConstants.SHIPPING_ZONES).find(zone => shipConstants.SHIPPING_ZONES[zone].indexOf(country) !== -1);
-    return zone ? zone : '8';
+    return zone ? zone : '10';
 };
 
-const getWholesaleShippingZone = (country) => {
-    const zone = Object.keys(shipConstants.WHOLESALE_SHIPPING_ZONES).find(zone => shipConstants.WHOLESALE_SHIPPING_ZONES[zone].indexOf(country) !== -1);
-    return zone ? zone : '8';
-};
-
-const getShippingRateOptions = (currency, country, withColdAddition=false) => {
-    // const allRates = withColdAddition ? shipConstants.SHIPPING_RATES_BY_REGION_COLD : shipConstants.SHIPPING_RATES_BY_REGION;
-    const allRates = shipConstants.SHIPPING_RATES_BY_REGION;
-    return [allRates[currency.toUpperCase()][getShippingZone(country)]];
+const getShippingRateOptions = (currency, country, isWholesale = false) => {
+    const rateDict = isWholesale === true ? shipConstants.WHOLESALE_SHIPPING_RATES_BY_REGION : shipConstants.SHIPPING_RATES_BY_REGION[currency.toUpperCase()];
+    return rateDict[getShippingZone(country)];
 };
 
 const getWholesaleShippingRateOption = (country) => {
-    return shipConstants.WHOLESALE_SHIPPING_RATES_BY_REGION[getWholesaleShippingZone(country)];
+    return shipConstants.WHOLESALE_SHIPPING_RATES_BY_REGION[getShippingZone(country)];
 };
 
 const fromCountryToRegion = (country) => {

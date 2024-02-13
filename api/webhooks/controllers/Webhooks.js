@@ -38,10 +38,10 @@ const getShippingRates = (ctx) => {
         return {'rates': [{'cost': 0, 'description': 'Digital Product'}]};
     }
 
-    if (hasFreeOption(orderData.items, summary, hasColdBrew(orderData.items))) {
-        rates = [...getFreeShippingOptions(summary.shipTo)];
+    if (hasFreeOption(summary)) {
+        rates = [...getFreeShippingOptions(summary.currency, summary.shipTo)];
     } else {
-        rates = [...rates, ...getShippingRateOptions(summary.currency, summary.shipTo, hasColdBrew(orderData.items))];
+        rates = [...rates, ...getShippingRateOptions(summary.currency, summary.shipTo)];
     }
 
     return {'rates': rates};
@@ -125,20 +125,18 @@ const getWholesaleShippingRates = (ctx) => {
     const orderData = ctx.request.body.content;
 
     const shippingTo = orderData.shippingAddress.country ? orderData.shippingAddress.country : orderData.billingAddress.country;
-    const shippingMethod = getWholesaleShippingRateOption(shippingTo);
 
-    let returnedDescription = shippingMethod.description;
-    let calculatedCost;
+    let rates = [];
 
-    if (isFromNL(shippingTo)) {
-        calculatedCost = 0;
-    } else if(isFromRegion('EU', shippingTo)) {
-        calculatedCost = hasDiscountedShipping(orderData.items) ? 0 : shippingMethod['cost'];
+    if (isFromRegion('EU', shippingTo)) {
+        rates = hasDiscountedShipping(orderData.items) ? [...getFreeShippingOptions(summary.currency, summary.shipTo, true)] : [...rates, ...getShippingRateOptions(summary.currency, summary.shipTo)];
     } else {
-        calculatedCost = shippingMethod['cost'] + (getTotalWeightOfItems(orderData.items) * shippingMethod['perkilo']);
+        const shippingMethod = getWholesaleShippingRateOption(shippingTo);
+        const calculatedCost = shippingMethod['cost'] + (getTotalWeightOfItems(orderData.items) * shippingMethod['perkilo']);
+        rates = [{ 'description': shippingMethod['description'], 'cost': calculatedCost }];
     }
 
-    return {'rates': [{ 'description': returnedDescription, 'cost': calculatedCost }] };
+    return {'rates': rates};
 };
 
 const createShippingLabel = async (ctx) => {
