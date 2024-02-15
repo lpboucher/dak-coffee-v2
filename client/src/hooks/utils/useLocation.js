@@ -14,15 +14,12 @@ export const useLocation = () => {
   const { currency } = useCurrency();
 
   let loc;
-  if (location === "NL") {
-    loc = location;
-  } else if (EU_COUNTRIES.indexOf(location) !== -1) {
-    loc = "EU";
-  } else if (NA_COUNTRIES.indexOf(location) !== -1) {
-    loc = "NA";
+
+  if (EU_COUNTRIES.indexOf(location) === -1 && NA_COUNTRIES.indexOf(location) === -1) {
+    loc = "World";
   } else {
-    loc = "World"
-  };
+    loc = location;
+  }
 
   return {
     location: loc,
