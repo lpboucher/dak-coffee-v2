@@ -8,8 +8,11 @@ const hasFreeOption = (orderSummary) => {
     return (total > getThreshold(currency, shipTo));
 };
 
-const hasDiscountedShipping = (items) => {
-    return getTotalWeightOfItems(items, true) >= shipConstants.WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD;
+const hasDiscountedShipping = (items, region) => {
+    if (region !== 'EU' && region !== 'NA') {
+        return false;
+    }
+    return getTotalWeightOfItems(items, true) >= shipConstants.WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD[region];
 };
 
 const getWeightCustomField = (item) => {
@@ -98,6 +101,14 @@ const getThreshold = (currency, country) => {
     return [allThresholds[currency.toUpperCase()][getShippingZone(country)]];
 };
 
+const getRegionFromCountry = (country) => {
+    const region = shipConstants.COUNTRY_CODES_BY_REGION[region].find((countryCode) => countryCode === country);
+    if (region == null) {
+        return 'World';
+    }
+    return region;
+};
+
 const isFromRegion = (region, country) => {
     return shipConstants.COUNTRY_CODES_BY_REGION[region].indexOf(country) !== -1;
 };
@@ -125,8 +136,9 @@ const getShippingRateOptions = (currency, country, isWholesale = false) => {
     return rateDict[getShippingZone(country)];
 };
 
-const getWholesaleShippingRateOption = (country) => {
-    return shipConstants.WHOLESALE_SHIPPING_RATES_BY_REGION[getShippingZone(country)];
+const getWholesaleShippingRateOption = (country, withDiscount = false) => {
+    const rateDict = withDiscount === true ? shipConstants.WHOLESALE_FREE_SHIPPING_BY_REGION : shipConstants.SHIPPING_RATES_BY_REGION;
+    return rateDict[getShippingZone(country)];
 };
 
 const fromCountryToRegion = (country) => {
@@ -221,6 +233,7 @@ module.exports = {
     getShippingRateOptions,
     getWholesaleShippingRateOption,
     isFromRegion,
+    getRegionFromCountry,
     isFromVATRegion,
     isFromNL,
     hasNoShipItem,

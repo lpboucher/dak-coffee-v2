@@ -10,6 +10,7 @@ const {
     hasGiftCard,
     isGiftCard,
     isFromRegion,
+    getRegionFromCountry,
     isFromVATRegion,
     isFromNL,
     createShippingParcel,
@@ -129,9 +130,9 @@ const getWholesaleShippingRates = (ctx) => {
     let rates = [];
 
     if (isFromRegion('EU', shippingTo)) {
-        rates = hasDiscountedShipping(orderData.items) ? [...getFreeShippingOptions(summary.currency, summary.shipTo, true)] : [...rates, ...getShippingRateOptions(summary.currency, summary.shipTo)];
+        rates = hasDiscountedShipping(orderData.items, 'EU') ? [...getFreeShippingOptions(summary.currency, summary.shipTo, true)] : [...rates, ...getShippingRateOptions(summary.currency, summary.shipTo)];
     } else {
-        const shippingMethod = getWholesaleShippingRateOption(shippingTo);
+        const shippingMethod = getWholesaleShippingRateOption(shippingTo, hasDiscountedShipping(orderData.items, getRegionFromCountry(summary.shipTo)));
         const calculatedCost = shippingMethod['cost'] + (getTotalWeightOfItems(orderData.items) * shippingMethod['perkilo']);
         rates = [{ 'description': shippingMethod['description'], 'cost': calculatedCost }];
     }
