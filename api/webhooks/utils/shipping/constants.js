@@ -325,6 +325,7 @@ const WHOLESALE_SHIPPING_RATES_BY_REGION = {
         {'cost': 100, 'description': 'DHL Economy'},
         {'cost': 150, 'description': 'DHL Express'},
     ],
+    // CAN ONLY RETURN ONE ELEMENT IN ARRAY FOR NON-EU
     '9': [
         {'cost': 10, 'description': 'DHL Express', 'perkilo': 4.5},
     ],
