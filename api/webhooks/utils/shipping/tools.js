@@ -102,7 +102,7 @@ const getThreshold = (currency, country) => {
 };
 
 const getRegionFromCountry = (country) => {
-    const region = shipConstants.COUNTRY_CODES_BY_REGION[region].find((countryCode) => countryCode === country);
+    const region = Object.keys(shipConstants.COUNTRY_CODES_BY_REGION).find(region => shipConstants.COUNTRY_CODES_BY_REGION[region].includes(country))
     if (region == null) {
         return 'World';
     }
