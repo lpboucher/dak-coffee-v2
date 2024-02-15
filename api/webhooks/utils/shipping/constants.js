@@ -198,34 +198,34 @@ const FREE_SHIPPING_BY_REGION = {
         ],
         '2': [
             {'cost': 0, 'description': 'GLS'},
-            {'cost': 6.3, 'description': 'DHL Economy'},
-            {'cost': 12, 'description': 'DHL Express'},
+            {'cost': 6.25, 'description': 'DHL Economy'},
+            {'cost': 11.95, 'description': 'DHL Express'},
         ],
         '3': [
             {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 5.7, 'description': 'DHL Express'},
+            {'cost': 5.75, 'description': 'DHL Express'},
         ],
         '4': [
             {'cost': 0, 'description': 'GLS'},
-            {'cost': 3, 'description': 'DHL Economy'},
-            {'cost': 4.3, 'description': 'DHL Express'},
+            {'cost': 2.95, 'description': 'DHL Economy'},
+            {'cost': 4.25, 'description': 'DHL Express'},
         ],
         '5': [
             {'cost': 0, 'description': 'GLS'},
-            {'cost': 4, 'description': 'DHL Economy'},
-            {'cost': 6, 'description': 'DHL Express'},
+            {'cost': 3.95, 'description': 'DHL Economy'},
+            {'cost': 5.95, 'description': 'DHL Express'},
         ],
         '6': [
             {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 5, 'description': 'DHL Express'},
+            {'cost': 4.95, 'description': 'DHL Express'},
         ],
         '7': [
             {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 5, 'description': 'DHL Express'},
+            {'cost': 4.95, 'description': 'DHL Express'},
         ],
         '8': [
             {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 5, 'description': 'DHL Express'},
+            {'cost': 4.95, 'description': 'DHL Express'},
         ],
         '9': [
             {'cost': 0, 'description': 'DHL Express'},
@@ -243,34 +243,34 @@ const FREE_SHIPPING_BY_REGION = {
         ],
         '2': [
             {'cost': 0, 'description': 'GLS'},
-            {'cost': 9.5, 'description': 'DHL Economy'},
-            {'cost': 18, 'description': 'DHL Express'},
+            {'cost': 9.95, 'description': 'DHL Economy'},
+            {'cost': 17.95, 'description': 'DHL Express'},
         ],
         '3': [
             {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 9.5, 'description': 'DHL Express'},
+            {'cost': 9.95, 'description': 'DHL Express'},
         ],
         '4': [
             {'cost': 0, 'description': 'GLS'},
-            {'cost': 4.5, 'description': 'DHL Economy'},
-            {'cost': 6.5, 'description': 'DHL Express'},
+            {'cost': 4.95, 'description': 'DHL Economy'},
+            {'cost': 6.95, 'description': 'DHL Express'},
         ],
         '5': [
             {'cost': 0, 'description': 'GLS'},
-            {'cost': 6, 'description': 'DHL Economy'},
-            {'cost': 9, 'description': 'DHL Express'},
+            {'cost': 5.95, 'description': 'DHL Economy'},
+            {'cost': 8.95, 'description': 'DHL Express'},
         ],
         '6': [
             {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 7.5, 'description': 'DHL Express'},
+            {'cost': 7.95, 'description': 'DHL Express'},
         ],
         '7': [
             {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 7.5, 'description': 'DHL Express'},
+            {'cost': 7.95, 'description': 'DHL Express'},
         ],
         '8': [
             {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 7.5, 'description': 'DHL Express'},
+            {'cost': 7.95, 'description': 'DHL Express'},
         ],
         '9': [
             {'cost': 0, 'description': 'DHL Express'},
@@ -291,39 +291,39 @@ const WHOLESALE_SHIPPING_RATES_BY_REGION = {
         {'cost': 0, 'description': 'GLS'},
     ],
     '1': [
-        {'cost': 7.5, 'description': 'GLS'},
+        {'cost': 7.45, 'description': 'GLS'},
     ],
     '2': [
-        {'cost': 12, 'description': 'GLS'},
-        {'cost': 36, 'description': 'DHL Economy'},
-        {'cost': 60, 'description': 'DHL Express'},
+        {'cost': 11.95, 'description': 'GLS'},
+        {'cost': 35.95, 'description': 'DHL Economy'},
+        {'cost': 59.95, 'description': 'DHL Express'},
     ],
     '3': [
-        {'cost': 20, 'description': 'DHL Economy'},
-        {'cost': 50, 'description': 'DHL Express'},
+        {'cost': 19.95, 'description': 'DHL Economy'},
+        {'cost': 49.95, 'description': 'DHL Express'},
     ],
     '4': [
-        {'cost': 20, 'description': 'GLS'},
-        {'cost': 30, 'description': 'DHL Economy'},
-        {'cost': 40, 'description': 'DHL Express'},
+        {'cost': 19.95, 'description': 'GLS'},
+        {'cost': 29.95, 'description': 'DHL Economy'},
+        {'cost': 39.95, 'description': 'DHL Express'},
     ],
     '5': [
         {'cost': 21.95, 'description': 'GLS'},
-        {'cost': 32, 'description': 'DHL Economy'},
-        {'cost': 45, 'description': 'DHL Express'},
+        {'cost': 31.95, 'description': 'DHL Economy'},
+        {'cost': 44.95, 'description': 'DHL Express'},
     ],
     '6': [
-        {'cost': 25, 'description': 'DHL Economy'},
-        {'cost': 40, 'description': 'DHL Express'},
+        {'cost': 24.95, 'description': 'DHL Economy'},
+        {'cost': 39.95, 'description': 'DHL Express'},
     ],
     '7': [
-        {'cost': 25, 'description': 'DHL Economy'},
-        {'cost': 40, 'description': 'DHL Express'},
+        {'cost': 24.95, 'description': 'DHL Economy'},
+        {'cost': 39.95, 'description': 'DHL Express'},
     ],
     '8': [
-        {'cost': 40, 'description': 'UPS'},
-        {'cost': 100, 'description': 'DHL Economy'},
-        {'cost': 150, 'description': 'DHL Express'},
+        {'cost': 39.95, 'description': 'UPS'},
+        {'cost': 99.95, 'description': 'DHL Economy'},
+        {'cost': 149.95, 'description': 'DHL Express'},
     ],
     // CAN ONLY RETURN ONE ELEMENT IN ARRAY FOR NON-EU
     '9': [
@@ -343,17 +343,17 @@ const WHOLESALE_FREE_SHIPPING_BY_REGION = {
     ],
     '2': [
         {'cost': 0, 'description': 'GLS'},
-        {'cost': 24, 'description': 'DHL Economy'},
-        {'cost': 48, 'description': 'DHL Express'},
+        {'cost': 23.95, 'description': 'DHL Economy'},
+        {'cost': 47.95, 'description': 'DHL Express'},
     ],
     '3': [
         {'cost': 0, 'description': 'DHL Economy'},
-        {'cost': 30, 'description': 'DHL Express'},
+        {'cost': 29.95, 'description': 'DHL Express'},
     ],
     '4': [
         {'cost': 0, 'description': 'GLS'},
-        {'cost': 10, 'description': 'DHL Economy'},
-        {'cost': 20, 'description': 'DHL Express'},
+        {'cost': 9.95, 'description': 'DHL Economy'},
+        {'cost': 19.95, 'description': 'DHL Express'},
     ],
     '5': [
         {'cost': 0, 'description': 'GLS'},
@@ -362,16 +362,16 @@ const WHOLESALE_FREE_SHIPPING_BY_REGION = {
     ],
     '6': [
         {'cost': 0, 'description': 'DHL Economy'},
-        {'cost': 15, 'description': 'DHL Express'},
+        {'cost': 14.95, 'description': 'DHL Express'},
     ],
     '7': [
         {'cost': 0, 'description': 'DHL Economy'},
-        {'cost': 15, 'description': 'DHL Express'},
+        {'cost': 14.95, 'description': 'DHL Express'},
     ],
     '8': [
         {'cost': 0, 'description': 'UPS'},
-        {'cost': 60, 'description': 'DHL Economy'},
-        {'cost': 110, 'description': 'DHL Express'},
+        {'cost': 59.95, 'description': 'DHL Economy'},
+        {'cost': 109.95, 'description': 'DHL Express'},
     ],
     '9': [
         {'cost': 10, 'description': 'DHL Express', 'perkilo': 3.0},
