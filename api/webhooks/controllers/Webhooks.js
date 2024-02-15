@@ -124,6 +124,7 @@ const getWholesaleTaxes = async (ctx) => {
 
 const getWholesaleShippingRates = (ctx) => {
     const orderData = ctx.request.body.content;
+    const summary = { currency: orderData.currency, total: orderData.itemsTotal, shipTo: orderData.shippingAddress.country};
 
     const shippingTo = orderData.shippingAddress.country ? orderData.shippingAddress.country : orderData.billingAddress.country;
 
