@@ -133,6 +133,8 @@ const getWholesaleShippingRates = (ctx) => {
     if (isFromRegion('EU', shippingTo)) {
         rates = hasDiscountedShipping(orderData.items, 'EU') ? [...getFreeShippingOptions(summary.currency, summary.shipTo, true)] : [...rates, ...getShippingRateOptions(summary.currency, summary.shipTo, true)];
     } else {
+        console.log(shippingTo);
+        console.log(hasDiscountedShipping(orderData.items, getRegionFromCountry(summary.shipTo)));
         const shippingMethods = getWholesaleShippingRateOption(shippingTo, hasDiscountedShipping(orderData.items, getRegionFromCountry(summary.shipTo)));
         const shippingMethod = shippingMethods[0];
         const calculatedCost = shippingMethod['cost'] + (getTotalWeightOfItems(orderData.items) * shippingMethod['perkilo']);
