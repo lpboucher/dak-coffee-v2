@@ -38,6 +38,18 @@
       "repeatable": true,
       "component": "prices.price"
     },
+    "wholesaleReferenceRRP": {
+      "type": "decimal",
+      "default": 0
+    },
+    "wholesaleReferenceRRPWeight": {
+      "type": "string",
+      "default": "250g"
+    },
+    "wholesaleAvailableWeights": {
+      "type": "string",
+      "default": "250g,1kg,3kg"
+    },
     "images": {
       "type": "component",
       "repeatable": false,
