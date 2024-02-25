@@ -24,7 +24,14 @@ const getTaxes = (ctx) => {
     const orderData = ctx.request.body.content;
     let taxes = [];
     if(!isTaxCollected(orderData.billingAddress.country)) {
-        taxes.push({'name': 'No Tax', 'amount': 0, 'rate': 0, 'numberForInvoice': 'TAX-000', 'includedInPrice': false});
+        // taxes.push({'name': 'No Tax', 'amount': 0, 'rate': 0, 'numberForInvoice': 'TAX-000', 'includedInPrice': false});
+        taxes = [
+            ...taxes,
+            ...aggregateItemTaxes(
+                orderData.items.map(item => getTaxPerItem(item, 0)),
+                0,
+                {'includedInPrice': false, 'appliesOnShipping': false},
+            )];
     } else {
         taxes = [...taxes, ...aggregateItemTaxes(orderData.items.map(item => getTaxPerItem(item)))];
     }
@@ -184,21 +191,30 @@ const aggregateItemTaxes = (taxPerItem, shippingFees = 0, taxOptions = {'include
     const shippingTaxTotal = Math.round(0.21 * shippingFees * 100) / 100;
     const coffeeTaxTotal = getTaxRateTotal(taxPerItem, 0.09);
     const otherTaxTotal = getTaxRateTotal(taxPerItem, 0.21) + shippingTaxTotal;
+    const noTaxTotal = getTaxRateTotal(taxPerItem, 0.00);
     if (coffeeTaxTotal > 0) {
         taxes.push({'name': '9% VAT (incl.)', 'amount': coffeeTaxTotal, 'rate': 0.09, 'numberForInvoice': 'TAX-COF', ...taxOptions});
     }
     if (otherTaxTotal > 0) {
         taxes.push({'name': '21% VAT (incl.)', 'amount': otherTaxTotal, 'rate': 0.21, 'numberForInvoice': 'TAX-PROD', ...taxOptions});
     }
+    if (noTaxTotal > 0) {
+        taxes.push({'name': 'No VAT', 'amount': noTaxTotal, 'rate': 0.00, 'numberForInvoice': 'TAX-000', ...taxOptions});
+    }
 
     return taxes;
 };
 
-const getTaxPerItem = ({customFields, totalPrice}) => {
+// taxOperation is either 0 or 1, 1 by default
+// 0 refers to VAT being subtracted from product price
+const getTaxPerItem = ({customFields, totalPrice}, taxOperation = 1) => {
     const taxRate = isCoffeeProduct(customFields) ? 0.09 : 0.21;
     // calculate item price because vat is included in price
-    const itemNoTaxAmount = totalPrice / (1 + taxRate);
-    return {'amount': Math.round(taxRate * itemNoTaxAmount * 100) / 100, 'rate': taxRate};
+    const itemNoTaxAmount = Math.round((totalPrice / (1 + taxRate)) * 100) / 100;
+    if (taxOperation === 0) {
+        return {'amount': itemNoTaxAmount - totalPrice, 'rate': 0.00};
+    }
+    return {'amount': totalPrice - itemNoTaxAmount, 'rate': taxRate};
 };
 
 const getTaxRateTotal = (items, rate) => {
