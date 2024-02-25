@@ -24,7 +24,7 @@ const getTaxes = (ctx) => {
     const orderData = ctx.request.body.content;
     let taxes = [];
     if(!isTaxCollected(orderData.billingAddress.country)) {
-        taxes.push({'name': 'No Tax', 'amount': 0, 'rate': 0, 'numberForInvoice': 'TAX-000', 'includedInPrice': true});
+        taxes.push({'name': 'No Tax', 'amount': 0, 'rate': 0, 'numberForInvoice': 'TAX-000', 'includedInPrice': false});
     } else {
         taxes = [...taxes, ...aggregateItemTaxes(orderData.items.map(item => getTaxPerItem(item)))];
     }
@@ -196,7 +196,9 @@ const aggregateItemTaxes = (taxPerItem, shippingFees = 0, taxOptions = {'include
 
 const getTaxPerItem = ({customFields, totalPrice}) => {
     const taxRate = isCoffeeProduct(customFields) ? 0.09 : 0.21;
-    return {'amount': Math.round(taxRate * totalPrice * 100) / 100, 'rate': taxRate};
+    // calculate item price because vat is included in price
+    const itemNoTaxAmount = totalPrice / (1 + taxRate);
+    return {'amount': Math.round(taxRate * itemNoTaxAmount * 100) / 100, 'rate': taxRate};
 };
 
 const getTaxRateTotal = (items, rate) => {
