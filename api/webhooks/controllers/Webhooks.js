@@ -199,7 +199,7 @@ const aggregateItemTaxes = (taxPerItem, shippingFees = 0, taxOptions = {'include
     if (otherTaxTotal > 0) {
         taxes.push({'name': '21% VAT (incl.)', 'amount': otherTaxTotal, 'rate': 0.21, 'numberForInvoice': 'TAX-PROD', ...taxOptions});
     }
-    if (noTaxTotal > 0) {
+    if (noTaxTotal < 0) {
         taxes.push({'name': 'No VAT', 'amount': noTaxTotal, 'rate': 0.00, 'numberForInvoice': 'TAX-000', ...taxOptions});
     }
 
@@ -211,11 +211,13 @@ const aggregateItemTaxes = (taxPerItem, shippingFees = 0, taxOptions = {'include
 const getTaxPerItem = ({customFields, totalPrice}, taxOperation = 1) => {
     const taxRate = isCoffeeProduct(customFields) ? 0.09 : 0.21;
     // calculate item price because vat is included in price
-    const itemNoTaxAmount = Math.round((totalPrice / (1 + taxRate)) * 100) / 100;
+    const itemPreTaxAmount = Math.round((totalPrice / (1 + taxRate)) * 100) / 100;
+    console.log('PRE-TAX -------', itemPreTaxAmount);
     if (taxOperation === 0) {
-        return {'amount': itemNoTaxAmount - totalPrice, 'rate': 0.00};
+        console.log('MINUS TAX -------', {'amount': itemPreTaxAmount - totalPrice, 'rate': 0.00});
+        return {'amount': itemPreTaxAmount - totalPrice, 'rate': 0.00};
     }
-    return {'amount': totalPrice - itemNoTaxAmount, 'rate': taxRate};
+    return {'amount': totalPrice - itemPreTaxAmount, 'rate': taxRate};
 };
 
 const getTaxRateTotal = (items, rate) => {
