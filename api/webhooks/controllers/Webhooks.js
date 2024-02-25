@@ -35,6 +35,7 @@ const getTaxes = (ctx) => {
     } else {
         taxes = [...taxes, ...aggregateItemTaxes(orderData.items.map(item => getTaxPerItem(item)))];
     }
+    console.log('TAXES ----------', {'taxes': taxes});
     return {'taxes': taxes};
 };
 
