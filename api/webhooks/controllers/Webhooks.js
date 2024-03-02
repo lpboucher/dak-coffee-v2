@@ -113,7 +113,7 @@ const getWholesaleTaxes = async (ctx) => {
             taxes = [
                 ...taxes,
                 ...aggregateItemTaxes(
-                    orderData.items.map(item => getTaxPerItem(item)),
+                    orderData.items.map(item => getWholesaleTaxPerItem(item)),
                     orderData.shippingInformation.fees || 0,
                     {'includedInPrice': false, 'appliesOnShipping': false}
                 )
@@ -214,6 +214,15 @@ const getTaxPerItem = ({customFields, totalPrice}, taxOperation = 1) => {
         return {'amount': itemPreTaxAmount - totalPrice, 'rate': 0.00};
     }
     return {'amount': totalPrice - itemPreTaxAmount, 'rate': taxRate};
+};
+
+// different function because all VAT is added for wholesale
+const getWholesaleTaxPerItem = ({customFields, totalPrice}) => {
+    const taxRate = isCoffeeProduct(customFields) ? 0.09 : 0.21;
+    // calculate item price because vat is included in price
+    const itemPreTaxAmount = totalPrice;
+    const itemPostTaxAmount = (1 + taxRate) * itemPreTaxAmount;
+    return {'amount': itemPostTaxAmount - itemPreTaxAmount, 'rate': taxRate};
 };
 
 const getTaxRateTotal = (items, rate) => {
