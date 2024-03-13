@@ -119,7 +119,7 @@ export const getProductOptions = (type) => {
             {label: "XS", value: "XS"},
             {label: "S (only in white)", value: "S"},
             // {label: "L (only in white)", value: "L"},
-            {label: "XL", value: "XL"},
+            {label: "XL (only in white)", value: "XL"},
           ]
         },
         { name: "color", options: [
