@@ -102,7 +102,6 @@ const SHIPPING_RATES_BY_REGION = {
             {'cost': 19.95, 'description': 'DHL Express'},
         ],
         '8': [
-            {'cost': 17.95, 'description': 'DHL Economy'},
             {'cost': 19.95, 'description': 'DHL Express'},
         ],
         '9': [
@@ -147,7 +146,6 @@ const SHIPPING_RATES_BY_REGION = {
             {'cost': 29.95, 'description': 'DHL Express'},
         ],
         '8': [
-            {'cost': 26.95, 'description': 'DHL Economy'},
             {'cost': 29.95, 'description': 'DHL Express'},
         ],
         '9': [
@@ -169,7 +167,7 @@ const SHIPPING_THRESHOLDS_BY_REGION = {
         '5': 65,
         '6': 75,
         '7': 75,
-        '8': 75,
+        '8': 85,
         '9': 100,
         '10': 150,
     },
@@ -182,7 +180,7 @@ const SHIPPING_THRESHOLDS_BY_REGION = {
         '5': 95,
         '6': 105,
         '7': 105,
-        '8': 105,
+        '8': 130,
         '9': 150,
         '10': 225,
     },
@@ -224,8 +222,7 @@ const FREE_SHIPPING_BY_REGION = {
             {'cost': 4.95, 'description': 'DHL Express'},
         ],
         '8': [
-            {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 4.95, 'description': 'DHL Express'},
+            {'cost': 0, 'description': 'DHL Express'},
         ],
         '9': [
             {'cost': 0, 'description': 'DHL Express'},
@@ -269,8 +266,7 @@ const FREE_SHIPPING_BY_REGION = {
             {'cost': 7.95, 'description': 'DHL Express'},
         ],
         '8': [
-            {'cost': 0, 'description': 'DHL Economy'},
-            {'cost': 7.95, 'description': 'DHL Express'},
+            {'cost': 0, 'description': 'DHL Express'},
         ],
         '9': [
             {'cost': 0, 'description': 'DHL Express'},
@@ -322,7 +318,6 @@ const WHOLESALE_SHIPPING_RATES_BY_REGION = {
     ],
     '8': [
         {'cost': 39.95, 'description': 'UPS'},
-        {'cost': 99.95, 'description': 'DHL Economy'},
         {'cost': 149.95, 'description': 'DHL Express'},
     ],
     // CAN ONLY RETURN ONE ELEMENT IN ARRAY FOR NON-EU
@@ -370,7 +365,6 @@ const WHOLESALE_FREE_SHIPPING_BY_REGION = {
     ],
     '8': [
         {'cost': 0, 'description': 'UPS'},
-        {'cost': 59.95, 'description': 'DHL Economy'},
         {'cost': 109.95, 'description': 'DHL Express'},
     ],
     '9': [
