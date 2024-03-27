@@ -74,6 +74,7 @@ export const SHIPPING_THRESHOLDS = {
     'SK': '€60',
     'US': '€100',
     'CA': '€100',
+    'IL': '€250',
     'World': '€150',
   },
   CAD: {
@@ -111,6 +112,7 @@ export const SHIPPING_THRESHOLDS = {
     'SK': '$90',
     'US': '$150',
     'CA': '$150',
+    'IL': '$350',
     'World': '$225',
   },
 }
