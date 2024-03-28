@@ -22,7 +22,7 @@ export const getCartProductOptions = (priceString, optionObj, type="coffee", sel
         console.log(individualOptions);
         options["data-item-custom2-name"] = "Roast";
         options["data-item-custom2-options"] = individualOptions.join('|');
-        options["data-item-custom2-value"]= selected ? selected.roast : additionalOptions[0];
+        options["data-item-custom2-value"]= selected ? selected.roast : "";
     }
   }
   if (type === "subscription") {
