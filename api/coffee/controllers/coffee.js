@@ -336,6 +336,12 @@ const snipcartParser = async (ctx) => {
             }, {}),
             'url': `${BACKEND_URL}/snipcartParser`
         };
+        const customFields = product.type !== 'coffee' ? {} : {
+            'customFields': [{
+                'name': "Roast",
+                'required': true,
+            }],
+        };
         const plans = product.type !== 'subscription' ? {} : {
             availablePlans: [
                 {
@@ -348,6 +354,7 @@ const snipcartParser = async (ctx) => {
         };
         return {
             ...baseCrawlerResponse,
+            ...customFields,
             ...plans
         };
     });
