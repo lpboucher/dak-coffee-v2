@@ -23,8 +23,12 @@ export const getCartProductOptions = (priceString, optionObj, type="coffee", sel
         options["data-item-custom2-name"] = "Roast";
         options["data-item-custom2-options"] = individualOptions.join('|');
         options["data-item-custom2-required"]= true;
-        if(selected) {
+        if(selected != null && selected.roast != null) {
           options["data-item-custom2-value"]= selected.roast;
+        } else {
+          options["data-item-custom3-name"] = "Quick-add";
+          options["data-item-custom3-type"] = "hidden";
+          options["data-item-custom3-value"] = "None";
         }
     }
   }
