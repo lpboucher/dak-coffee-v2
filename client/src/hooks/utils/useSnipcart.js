@@ -18,6 +18,17 @@ export const useSnipcartEvents = (updating, update, clear, added, completed, cre
         });
         itemAddedUnSub = window.Snipcart.events.on('item.added', (item) => {
             console.log("item added", item);
+
+            window.Snipcart.store.getState().cart.items.items.forEach((oneItem) => {
+              if (oneItem.id == item.id){
+                oneItem.customFields.forEach((cf) => {
+                  if (cf.name === "Quick-add") {
+                      cf.value = "";
+                  }
+                });
+              }
+            });
+
             dispatch(update(item));
             added(item);
         });
