@@ -54,7 +54,7 @@
   },
   "footer": {
     "description": "Dak Coffee Roasters is a coffee roasting company based in Amsterdam. From farm to cup, we take great pride in celebrating quality coffee.",
-    "rights": "Dak Coffee Roasters 2021. KvK 73670405. All rights reserved."
+    "rights": "Dak Coffee Roasters B.V. 2021. KvK 92174973. All rights reserved."
   },
   "contact": {
     "overlay": {
@@ -140,7 +140,7 @@
     },
     "team": {
         "title": "The team",
-        "description": "Louis-Philippe Boucher - Co-Founder & Head Roaster<br>Veronique Laharde - Co-Founder & Operations Manager<br>Yako Konstantinidis - Head of Coffee & Roaster<br>Cristina Torras Final - Sales & Account Manager<br>Thomas Gallo - Roastery Production Assistant & QC<br>George Konstantinidis - Roastery Production Assistant"
+        "description": "Louis-Philippe Boucher - Co-Founder & Head Roaster<br>Veronique Lagarde - Co-Founder & Operations Manager<br>Yako Konstantinidis - Head of Coffee & Roaster<br>Cristina Torras Final - Sales & Account Manager<br>Thomas Gallo - Roastery Production Assistant & QC<br>George Konstantinidis - Roastery Production Assistant"
     }
   },
   "sustainability": {
