@@ -21,11 +21,11 @@ export const useSnipcartEvents = (updating, update, clear, added, completed, cre
 
             window.Snipcart.store.getState().cart.items.items.forEach((oneItem) => {
               if (oneItem.id == item.id){
-                oneItem.customFields.forEach((cf) => {
-                  if (cf.name === "Quick-add") {
-                      cf.value = "";
-                  }
-                });
+                const roastField =  oneItem.customFields.find((cf) => cf.name === "Roast");
+                const quickAddField =  oneItem.customFields.find((cf) => cf.name === "Quick-add");
+                if (quickAddField != null) {
+                  roastField.value = "";
+                }
               }
             });
 
