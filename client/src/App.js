@@ -12,13 +12,13 @@ const ProductPage = lazy(() => import('./pages/Product'));
 const ContactPage = lazy(() => import('./pages/Contact'));
 const AboutPage = lazy(() => import('./pages/About'));
 const SustainabilityPage = lazy(() => import('./pages/Sustainability'));
-const ShowroomPage = lazy(() => import('./pages/Showroom'));
+// const ShowroomPage = lazy(() => import('./pages/Showroom'));
 const NewsletterPage = lazy(() => import('./pages/Newsletter'));
 const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const TermsPage = lazy(() => import('./pages/Terms'));
 const ShippingPage = lazy(() => import('./pages/Shipping'));
 const BlogPage = lazy(() => import('./pages/Blog'));
-const FAQPage = lazy(() => import('./pages/FAQ'));
+// const FAQPage = lazy(() => import('./pages/FAQ'));
 const WholesalePage = lazy(() => import('./pages/Wholesale'));
 
 const App = () => {
@@ -32,9 +32,9 @@ const App = () => {
           <Route path="/subscribe" component={NewsletterPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/sustainability" component={SustainabilityPage} />
-          <Route path="/showroom" component={ShowroomPage} />
+          {/* <Route path="/showroom" component={ShowroomPage} /> */}
           <Route path="/contact" component={ContactPage} />
-         {/*<Route path="/faq" component={FAQPage} /> */}
+          {/* <Route path="/faq" component={FAQPage} /> */}
           <Route path="/terms" component={TermsPage} />
           <Route path="/privacy" component={PrivacyPage} />
           <Route path="/shipping" component={ShippingPage} />

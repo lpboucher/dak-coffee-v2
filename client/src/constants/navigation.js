@@ -7,7 +7,7 @@ export const TOP_NAV = [
   //{label:"navigation.subscriptions", target: "/shop/subscription/dak-subscription?quantity=2x250g"},
   {label:"navigation.about", target: "/about"},
   {label:"navigation.wholesale", target: "https://wholesale.dakcoffeeroasters.com/auth/register", isExternal: true},
-  {label:"navigation.showroom", target: "/showroom"},
+  //{label:"navigation.showroom", target: "/showroom"},
 ];
 
 export const MOBILE_NAV = [
@@ -32,7 +32,7 @@ export const FOOTER_NAV = [
   {target: "/shop", label: "navigation.shop"},
   {target: "/contact", label: "navigation.contact"},
   {target: "/sustainability", label: "navigation.sustainability"},
-  {target: "/showroom", label: "navigation.showroom"},
+  //{target: "/showroom", label: "navigation.showroom"},
   //{target: "/shop/subscription/dak-subscription?quantity=2x250g", label: "navigation.subscriptions"},
   //{target: "/faq", label: "navigation.faq"},
   {target: "/shipping", label: "navigation.shipping"},
