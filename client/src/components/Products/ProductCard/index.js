@@ -21,10 +21,14 @@ const ProductCard = ({id, selected}) => {
     displayedPrice,
     additionalOptions,
   } = useSingleProduct(id, selected);
-  console.log("LOGGING SINGLE PRODUCT", type,
+  console.log(
+    "LOGGING SINGLE PRODUCT",
+    type,
     displayedTitle,
     additionalOptions,
-    slug);
+    slug,
+    selected,
+  );
   const { productAdding } = useCart(id);
   const linkQuery = {
     coffee: `?quantity=${slug === "honey-yuzu" ? "200g" : "250g"}&roast=${selected && selected.roast ? selected.roast : "filter"}`,
