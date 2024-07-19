@@ -18,8 +18,20 @@ const ProductCard = ({id, selected}) => {
     displayedHelper,
     slug,
     type,
-    displayedPrice
+    displayedPrice,
+    additionalOptions,
   } = useSingleProduct(id, selected);
+  console.log("LOGGING SINGLE PRODUCT", type,
+    staticPrice,
+    cartPrice,
+    displayedTitle,
+    displayedDescription,
+    hasPriceOptions,
+    additionalOptions,
+    characteristics,
+    longDescription,
+    tastingNotes,
+    slug);
   const { productAdding } = useCart(id);
   const linkQuery = {
     coffee: `?quantity=${slug === "honey-yuzu" ? "200g" : "250g"}&roast=${selected && selected.roast ? selected.roast : "filter"}`,
