@@ -20,12 +20,14 @@ const ProductCard = ({id, selected}) => {
     type,
     displayedPrice,
     additionalOptions,
+    cartPrice,
   } = useSingleProduct(id, selected);
   console.log(
     "LOGGING SINGLE PRODUCT",
     type,
     displayedTitle,
     additionalOptions,
+    cartPrice,
     slug,
     selected,
   );
