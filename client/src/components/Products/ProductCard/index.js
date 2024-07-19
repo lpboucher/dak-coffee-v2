@@ -32,7 +32,7 @@ const ProductCard = ({id, selected}) => {
     selected,
   );
   const { productAdding } = useCart(id);
-  const productRoastOptions = additionalOptions.find((option) => option.name === "roast");
+  const productRoastOptions = additionalOptions ? additionalOptions.find((option) => option.name === "roast") : {};
   const linkQuery = {
     coffee: `?quantity=${cartPrice ? Object.keys(cartPrice)[0] : "250g"}&roast=${selected && selected.roast ? selected.roast : productRoastOptions.options[0].value}`,
     subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`,
