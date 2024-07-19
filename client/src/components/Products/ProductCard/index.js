@@ -21,13 +21,16 @@ const ProductCard = ({id, selected}) => {
     displayedPrice,
     additionalOptions,
     cartPrice,
+    hasPriceOptions,
   } = useSingleProduct(id, selected);
   console.log(
     "LOGGING SINGLE PRODUCT",
     type,
     displayedTitle,
     additionalOptions,
+    hasPriceOptions,
     cartPrice,
+    Object.keys(cartPrice)[0],
     slug,
     selected,
   );
@@ -35,7 +38,7 @@ const ProductCard = ({id, selected}) => {
   // const productRoastOptions = additionalOptions ? additionalOptions.find((option) => option.name === "roast") : {};
   const linkQuery = {
     coffee: `?quantity=250g&roast=${selected && selected.roast ? selected.roast : "filter"}`,
-    // coffee: `?quantity=${cartPrice ? Object.keys(cartPrice)[0] : "250g"}&roast=${selected && selected.roast ? selected.roast : productRoastOptions.options[0].value}`,
+    // coffee: `?quantity=${hasPriceOptions === true ? Object.keys(cartPrice)[0] : "250g"}&roast=${selected && selected.roast ? selected.roast : productRoastOptions.options[0].value}`,
     subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`,
     clothing: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`,
     crewneck: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "White"}`,
