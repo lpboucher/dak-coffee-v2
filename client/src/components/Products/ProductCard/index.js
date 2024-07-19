@@ -23,22 +23,10 @@ const ProductCard = ({id, selected}) => {
     cartPrice,
     hasPriceOptions,
   } = useSingleProduct(id, selected);
-  console.log(
-    "LOGGING SINGLE PRODUCT",
-    type,
-    displayedTitle,
-    additionalOptions,
-    hasPriceOptions,
-    cartPrice,
-    slug,
-    selected,
-  );
   const { productAdding } = useCart(id);
   const quantityOptions = hasPriceOptions === true && type === "coffee" ? Object.keys(cartPrice) : ["250g"];
   const productRoastOptions = type === "coffee" && additionalOptions.length > 0 ? additionalOptions.find((option) => option.name === "roast") : {name: "roast", options: [{value: "", label: ""}]};
-  console.log(productRoastOptions, quantityOptions);
   const linkQuery = {
-    // coffee: `?quantity=250g&roast=${selected && selected.roast ? selected.roast : "filter"}`,
     coffee: `?quantity=${quantityOptions[0]}&roast=${selected && selected.roast ? selected.roast : productRoastOptions.options[0].value}`,
     subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`,
     clothing: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`,
