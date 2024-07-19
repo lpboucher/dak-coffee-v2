@@ -319,7 +319,7 @@ const getProductById = async (ctx) => {
 
 const snipcartParser = async (ctx) => {
     const queries = await Promise.all([
-        strapi.query('coffee').model.find(ctx.query, {...baseFields, roast: 1, origin: 1, harvest: 1}),
+        strapi.query('coffee').model.find({ isActive: true, ...ctx.query }, {...baseFields, roast: 1, origin: 1, harvest: 1}),
         strapi.query('merchandise').model.find(ctx.query, {...baseFields, details: 1}),
         strapi.query('equipment').model.find(ctx.query, {...baseFields, details: 1}),
         strapi.query('subscription').model.find(ctx.query, {...baseFields}),
