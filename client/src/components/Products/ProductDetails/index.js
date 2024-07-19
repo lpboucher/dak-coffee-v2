@@ -46,6 +46,17 @@ const ProductDetails = ({id}) => {
     tastingNotes,
     slug
   } = useSingleProduct(id);
+  console.log("LOGGING SINGLE PRODUCT", type,
+    staticPrice,
+    cartPrice,
+    displayedTitle,
+    displayedDescription,
+    hasPriceOptions,
+    additionalOptions,
+    characteristics,
+    longDescription,
+    tastingNotes,
+    slug)
   const dropdowns = type === "coffee" ?
     [
       {type: "iconed", title: t(`dropdown.${type}-tasting`), content: tastingNotes, direction: "row" },
@@ -118,7 +129,12 @@ const ProductDetails = ({id}) => {
           productId={id}
           selected={values}
           addButton={
-            <AddButton width={layout[`cartButtonWidth_${mediaType}`] || cartButtonWidth} primary label={productAdding ? t(`cart.adding`) : addLabel} type="submit"/>
+            <AddButton 
+              width={layout[`cartButtonWidth_${mediaType}`] || cartButtonWidth} 
+              primary
+              label={productAdding ? t(`cart.adding`) : addLabel}
+              type="submit"
+            />
           }
         />
         <PriceBox

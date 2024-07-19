@@ -26,7 +26,7 @@ export const FormFieldQuantityInput = ({name, ...rest}) => {
 
 export const FormFieldRadioButton = ({name, value, label, ...rest}) => {
   return (
-      <Field name={name} type="radio" value={value}>
+      <Field name={name} type="radio" value={value} validate={(values) => console.log(values)}>
           {({input: {name, value, onChange, checked}}) => (
               <FormRadioButton
                   name={name}
