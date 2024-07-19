@@ -32,8 +32,9 @@ const ProductCard = ({id, selected}) => {
     selected,
   );
   const { productAdding } = useCart(id);
+  const productRoastOptions = additionalOptions.find((option) => option.name === "roast");
   const linkQuery = {
-    coffee: `?quantity=${slug === "honey-yuzu" ? "200g" : "250g"}&roast=${selected && selected.roast ? selected.roast : "filter"}`,
+    coffee: `?quantity=${cartPrice ? Object.keys(cartPrice)[0] : "250g"}&roast=${selected && selected.roast ? selected.roast : productRoastOptions.options[0].value}`,
     subscription: `?quantity=2x250g${selected ? "&roast=" + selected.split("-")[0] : ""}`,
     clothing: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "Navy"}`,
     crewneck: `?size=${selected && selected.size ? selected.size : "S"}&color=${selected && selected.color ? selected.color : "White"}`,
