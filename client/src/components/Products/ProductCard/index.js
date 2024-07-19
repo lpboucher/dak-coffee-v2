@@ -30,7 +30,7 @@ const ProductCard = ({id, selected}) => {
     additionalOptions,
     hasPriceOptions,
     cartPrice,
-    Object.keys(cartPrice)[0],
+    // Object.keys(cartPrice)[0],
     slug,
     selected,
   );
