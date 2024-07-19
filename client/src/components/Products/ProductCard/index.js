@@ -22,15 +22,8 @@ const ProductCard = ({id, selected}) => {
     additionalOptions,
   } = useSingleProduct(id, selected);
   console.log("LOGGING SINGLE PRODUCT", type,
-    staticPrice,
-    cartPrice,
     displayedTitle,
-    displayedDescription,
-    hasPriceOptions,
     additionalOptions,
-    characteristics,
-    longDescription,
-    tastingNotes,
     slug);
   const { productAdding } = useCart(id);
   const linkQuery = {
