@@ -71,9 +71,11 @@ const SHIPPING_RATES_BY_REGION = {
     EUR: {
         '0': [
             {'cost': 4.95, 'description': 'GLS'},
+            {'cost': 9.95, 'description': 'DHL Express'},
         ],
         '1': [
             {'cost': 6.95, 'description': 'GLS'},
+            {'cost': 11.95, 'description': 'DHL Express'},
         ],
         '2': [
             {'cost': 7.95, 'description': 'GLS'},
@@ -199,9 +201,11 @@ const FREE_SHIPPING_BY_REGION = {
     EUR: {
         '0': [
             {'cost': 0, 'description': 'GLS'},
+            {'cost': 5, 'description': 'DHL Express'},
         ],
         '1': [
             {'cost': 0, 'description': 'GLS'},
+            {'cost': 5, 'description': 'DHL Express'},
         ],
         '2': [
             {'cost': 0, 'description': 'GLS'},
