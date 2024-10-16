@@ -69,17 +69,18 @@ export const getProductOptions = (type) => {
     ],
     crewneck: [
         { name: "size", options: [
-            {label: "XXS", value: "XXS"},
-            {label: "XS", value: "XS"},
+            // {label: "XXS", value: "XXS"},
+            // {label: "XS", value: "XS"},
             {label: "S", value: "S"},
-            // {label: "M (only in black)", value: "M"},
-            // {label: "L", value: "L"},
-            {label: "XL (only in white)", value: "XL"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
           ]
         },
         { name: "color", options: [
-            {label: "White", value: "White"},
-            {label: "Black", value: "Black"},
+            // {label: "White", value: "White"},
+            // {label: "Black", value: "Black"},
+            {label: "Vintage White", value: "Vintage White"},
           ]
         },
     ],
@@ -115,16 +116,18 @@ export const getProductOptions = (type) => {
     ],
     "t-shirt": [
         { name: "size", options: [
-            {label: "XXS", value: "XXS"},
+            // {label: "XXS", value: "XXS"},
             {label: "XS", value: "XS"},
-            {label: "S (only in white)", value: "S"},
-            // {label: "L (only in white)", value: "L"},
-            {label: "XL (only in white)", value: "XL"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
           ]
         },
         { name: "color", options: [
-            {label: "White", value: "White"},
-            {label: "Black", value: "Black"},
+            // {label: "White", value: "White"},
+            // {label: "Black", value: "Black"},
+            {label: "Vintage White", value: "Vintage White"},
           ]
         },
     ],
