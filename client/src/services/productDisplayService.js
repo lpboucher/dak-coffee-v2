@@ -120,7 +120,7 @@ export const getProductOptions = (type) => {
             {label: "XS", value: "XS"},
             {label: "S", value: "S"},
             {label: "M", value: "M"},
-            {label: "L", value: "L"},
+            // {label: "L", value: "L"},
           ]
         },
         { name: "color", options: [
