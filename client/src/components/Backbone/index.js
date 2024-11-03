@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSnipcartCart, useSnipcartEvents } from '../../hooks/utils/useSnipcart';
 import { useFormitable } from '../../hooks/utils/useFormitable';
+import { useTebi } from '../../hooks/utils/useTebi';
 import { itemAdded, orderCompleted } from '../../services/eventTracking';
 import { initializeCart, updateCart, updatingCart, clearCart, createShippingLabel } from '../../ducks/cart';
 import { schemaBuilder } from '../../utils/seo/schema';
@@ -37,7 +38,10 @@ const BackBone = ({children}) => {
     orderCompleted,
     createShippingLabel,
   );
-    useFormitable();
+
+  // useFormitable();
+  useTebi();
+
   const { pathname } = useLocation();
 
   const pageHeader = {
