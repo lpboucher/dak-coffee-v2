@@ -12,7 +12,8 @@ const hasDiscountedShipping = (items, region) => {
     if (region !== 'EU' && region !== 'NA') {
         return false;
     }
-    return getTotalWeightOfItems(items, true) >= shipConstants.WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD[region];
+    // return getTotalWeightOfItems(items, true) >= shipConstants.WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD[region];
+    return getTotalWeightOfItems(items, true) >= shipConstants.FIXED_WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD;
 };
 
 const getWeightCustomField = (item) => {

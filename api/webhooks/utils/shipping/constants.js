@@ -298,8 +298,10 @@ const FREE_SHIPPING_BY_REGION = {
 
 const WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD = {
     EU: 20,
-    NA: 25,
+    NA: 20,
 };
+
+const FIXED_WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD = 20;
 
 const WHOLESALE_SHIPPING_RATES_BY_REGION = {
     '0': [
@@ -341,13 +343,13 @@ const WHOLESALE_SHIPPING_RATES_BY_REGION = {
     ],
     // CAN ONLY RETURN ONE ELEMENT IN ARRAY FOR NON-EU
     '9': [
-        {'cost': 10, 'description': 'DHL Express', 'perkilo': 4.5},
+        {'cost': 10, 'description': 'DHL Express', 'perkilo': 4.75},
     ],
     '10': [
         {'cost': 30, 'description': 'DHL Express', 'perkilo': 5.5},
     ],
     '11': [
-        {'cost': 10, 'description': 'DHL Express', 'perkilo': 5.5},
+        {'cost': 10, 'description': 'DHL Express', 'perkilo': 5.75},
     ],
 };
 
@@ -390,13 +392,13 @@ const WHOLESALE_FREE_SHIPPING_BY_REGION = {
         {'cost': 109.95, 'description': 'DHL Express'},
     ],
     '9': [
-        {'cost': 10, 'description': 'DHL Express', 'perkilo': 3.0},
+        {'cost': 10, 'description': 'DHL Express', 'perkilo': 2.75},
     ],
     '10': [
         {'cost': 30, 'description': 'DHL Express', 'perkilo': 5.5},
     ],
     '11': [
-        {'cost': 10, 'description': 'DHL Express', 'perkilo': 5.5},
+        {'cost': 10, 'description': 'DHL Express', 'perkilo': 3.75},
     ],
 };
 
@@ -415,6 +417,7 @@ module.exports = {
     SHIPPING_THRESHOLDS_BY_REGION,
     FREE_SHIPPING_BY_REGION,
     WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD,
+    FIXED_WHOLESALE_SHIPPING_DISCOUNT_WEIGHT_THRESHOLD,
     WHOLESALE_SHIPPING_RATES_BY_REGION,
     WHOLESALE_FREE_SHIPPING_BY_REGION,
     GEOAPIFY_QUERY,
