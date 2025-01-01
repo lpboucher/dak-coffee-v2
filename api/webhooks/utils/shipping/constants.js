@@ -70,98 +70,98 @@ const SHIPPING_ZONES = {
 const SHIPPING_RATES_BY_REGION = {
     EUR: {
         '0': [
-            {'cost': 4.95, 'description': 'GLS'},
-            {'cost': 9.95, 'description': 'DHL Express'},
+            {'cost': 5, 'description': 'GLS'},
+            {'cost': 10, 'description': 'DHL Express'},
         ],
         '1': [
-            {'cost': 6.95, 'description': 'GLS'},
-            {'cost': 11.95, 'description': 'DHL Express'},
+            {'cost': 7, 'description': 'GLS'},
+            {'cost': 12, 'description': 'DHL Express'},
         ],
         '2': [
-            {'cost': 7.95, 'description': 'GLS'},
-            {'cost': 14.25, 'description': 'DHL Economy'},
-            {'cost': 19.95, 'description': 'DHL Express'},
+            {'cost': 8, 'description': 'GLS'},
+            {'cost': 14.29, 'description': 'DHL Economy'},
+            {'cost': 20.49, 'description': 'DHL Express'},
         ],
         '3': [
-            {'cost': 12.25, 'description': 'DHL Economy'},
-            {'cost': 17.95, 'description': 'DHL Express'},
+            {'cost': 12.49, 'description': 'DHL Economy'},
+            {'cost': 18.49, 'description': 'DHL Express'},
         ],
         '4': [
-            {'cost': 10.95, 'description': 'GLS'},
-            {'cost': 13.95, 'description': 'DHL Economy'},
-            {'cost': 15.25, 'description': 'DHL Express'},
+            {'cost': 11.15, 'description': 'GLS'},
+            {'cost': 14.15, 'description': 'DHL Economy'},
+            {'cost': 15.49, 'description': 'DHL Express'},
         ],
         '5': [
-            {'cost': 10.95, 'description': 'GLS'},
-            {'cost': 14.95, 'description': 'DHL Economy'},
-            {'cost': 16.95, 'description': 'DHL Express'},
+            {'cost': 11.15, 'description': 'GLS'},
+            {'cost': 15.15, 'description': 'DHL Economy'},
+            {'cost': 17.15, 'description': 'DHL Express'},
         ],
         '6': [
-            {'cost': 17.95, 'description': 'DHL Economy'},
-            {'cost': 19.95, 'description': 'DHL Express'},
+            {'cost': 18.95, 'description': 'DHL Economy'},
+            {'cost': 20.95, 'description': 'DHL Express'},
         ],
         '7': [
-            {'cost': 17.95, 'description': 'DHL Economy'},
-            {'cost': 19.95, 'description': 'DHL Express'},
+            {'cost': 18.95, 'description': 'DHL Economy'},
+            {'cost': 20.95, 'description': 'DHL Express'},
         ],
         '8': [
-            {'cost': 19.95, 'description': 'DHL Express'},
+            {'cost': 20, 'description': 'DHL Express'},
         ],
         '9': [
-            {'cost': 19.95, 'description': 'DHL Express'},
+            {'cost': 20, 'description': 'DHL Express'},
         ],
         '10': [
-            {'cost': 54.95, 'description': 'DHL Express'},
+            {'cost': 55, 'description': 'DHL Express'},
         ],
         '11': [
-            {'cost': 24.95, 'description': 'DHL Express'},
+            {'cost': 25, 'description': 'DHL Express'},
         ],
     },
     CAD: {
         '0': [
-            {'cost': 7.95, 'description': 'GLS'},
+            {'cost': 8.15, 'description': 'GLS'},
         ],
         '1': [
-            {'cost': 10.95, 'description': 'GLS'},
+            {'cost': 11.25, 'description': 'GLS'},
         ],
         '2': [
-            {'cost': 11.95, 'description': 'GLS'},
-            {'cost': 21.25, 'description': 'DHL Economy'},
-            {'cost': 29.95, 'description': 'DHL Express'},
+            {'cost': 12.95, 'description': 'GLS'},
+            {'cost': 22.25, 'description': 'DHL Economy'},
+            {'cost': 30.95, 'description': 'DHL Express'},
         ],
         '3': [
-            {'cost': 19.25, 'description': 'DHL Economy'},
-            {'cost': 24.95, 'description': 'DHL Express'},
-        ],
-        '4': [
-            {'cost': 15.95, 'description': 'GLS'},
-            {'cost': 20.95, 'description': 'DHL Economy'},
-            {'cost': 23.25, 'description': 'DHL Express'},
-        ],
-        '5': [
-            {'cost': 15.95, 'description': 'GLS'},
-            {'cost': 22.95, 'description': 'DHL Economy'},
+            {'cost': 20.25, 'description': 'DHL Economy'},
             {'cost': 25.95, 'description': 'DHL Express'},
         ],
+        '4': [
+            {'cost': 16.95, 'description': 'GLS'},
+            {'cost': 21.95, 'description': 'DHL Economy'},
+            {'cost': 24.25, 'description': 'DHL Express'},
+        ],
+        '5': [
+            {'cost': 16.95, 'description': 'GLS'},
+            {'cost': 23.95, 'description': 'DHL Economy'},
+            {'cost': 26.95, 'description': 'DHL Express'},
+        ],
         '6': [
-            {'cost': 26.95, 'description': 'DHL Economy'},
-            {'cost': 29.95, 'description': 'DHL Express'},
+            {'cost': 27.95, 'description': 'DHL Economy'},
+            {'cost': 30.95, 'description': 'DHL Express'},
         ],
         '7': [
-            {'cost': 26.95, 'description': 'DHL Economy'},
-            {'cost': 29.95, 'description': 'DHL Express'},
+            {'cost': 27.95, 'description': 'DHL Economy'},
+            {'cost': 30.95, 'description': 'DHL Express'},
         ],
         '8': [
-            {'cost': 29.95, 'description': 'DHL Express'},
+            {'cost': 30.95, 'description': 'DHL Express'},
         ],
         '9': [
-            {'cost': 29.95, 'description': 'DHL Express'},
+            {'cost': 30.95, 'description': 'DHL Express'},
         ],
         '10': [
-            {'cost': 72.95, 'description': 'DHL Express'},
+            {'cost': 74.95, 'description': 'DHL Express'},
         ],
         '11': [
-            {'cost': 36.95, 'description': 'DHL Express'},
+            {'cost': 37.95, 'description': 'DHL Express'},
         ],
     },
 };
