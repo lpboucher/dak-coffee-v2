@@ -338,8 +338,7 @@ const WHOLESALE_SHIPPING_RATES_BY_REGION = {
         {'cost': 39.95, 'description': 'DHL Express'},
     ],
     '8': [
-        {'cost': 39.95, 'description': 'UPS'},
-        {'cost': 149.95, 'description': 'DHL Express'},
+        {'cost': 49.95, 'description': 'DHL Express'},
     ],
     // CAN ONLY RETURN ONE ELEMENT IN ARRAY FOR NON-EU
     '9': [
@@ -388,8 +387,7 @@ const WHOLESALE_FREE_SHIPPING_BY_REGION = {
         {'cost': 14, 'description': 'DHL Express'},
     ],
     '8': [
-        {'cost': 0, 'description': 'UPS'},
-        {'cost': 110, 'description': 'DHL Express'},
+        {'cost': 10, 'description': 'DHL Express'},
     ],
     '9': [
         {'cost': 10, 'description': 'DHL Express', 'perkilo': 2.75},
