@@ -22,7 +22,7 @@ export const getCartProductOptions = (priceString, optionObj, type="coffee", sel
         console.log(individualOptions);
         options["data-item-custom2-name"] = "Roast";
         options["data-item-custom2-options"] = individualOptions.join('|');
-        options["data-item-custom2-required"]= true;
+        options["data-item-custom2-required"] = true;
         if(selected != null && selected.roast != null) {
           options["data-item-custom2-value"]= selected.roast;
         } else {
@@ -55,7 +55,15 @@ export const getCartProductOptions = (priceString, optionObj, type="coffee", sel
         type === "roasting-tee" ||
         type === "brewing-tee" ||
         type === "crewneck" ||
-        type === "nitro-crew"
+        type === "nitro-crew" ||
+        type === "anniversary-crewneck" ||
+        type === "anniversary-tshirt" ||
+        type === "anniversary-longsleeve" ||
+        type === "dak-olive" ||
+        type === "dak-t-shirt" ||
+        type === "dak-crewneck" ||
+        type === "dak-hoodie" ||
+        type === "dak-longsleeve"
     ) {
     const sizes = getProductOptions(type).find(opt => opt.name === "size");
     const colors = getProductOptions(type).find(opt => opt.name === "color");

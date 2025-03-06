@@ -157,7 +157,119 @@ export const getProductOptions = (type) => {
             {label: "White", value: "White"},
           ]
         },
-    ]
+      ],
+    "anniversary-crewneck": [
+        { name: "size", options: [
+            // {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Vintage White", value: "Vintage White"},
+          ]
+        },
+      ],
+    "anniversary-tshirt": [
+        { name: "size", options: [
+            // {label: "XS", value: "XS"},
+            // {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Vintage White", value: "Vintage White"},
+          ]
+        },
+      ],
+    "anniversary-longsleeve": [
+        { name: "size", options: [
+            // {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Vintage White", value: "Vintage White"},
+          ]
+        },
+      ],
+    "dak-olive": [
+        { name: "size", options: [
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            // {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Olive", value: "Olive"},
+          ]
+        },
+      ],
+    "dak-t-shirt": [
+        { name: "size", options: [
+            // {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            // {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Black", value: "Black"},
+          ]
+        },
+      ],
+    "dak-crewneck": [
+        { name: "size", options: [
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            // {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Black", value: "Black"},
+          ]
+        },
+      ],
+    "dak-hoodie": [
+        { name: "size", options: [
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Black", value: "Black"},
+          ]
+        },
+      ],
+    "dak-longsleeve": [
+        { name: "size", options: [
+            {label: "XS", value: "XS"},
+            {label: "S", value: "S"},
+            // {label: "M", value: "M"},
+            {label: "L", value: "L"},
+            // {label: "XL", value: "XL"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Black", value: "Black"},
+          ]
+        },
+      ],
   }
   return dict[type] || [];
 }
