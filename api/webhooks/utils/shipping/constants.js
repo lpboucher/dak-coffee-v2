@@ -64,7 +64,7 @@ const SHIPPING_ZONES = {
     '7': ['NO', 'CH'],
     '8': ['CY', 'MT'],
     '9': ['US', 'CA'],
-    '10': ['IL'],
+    '10': ['IL', 'MU'],
 };
 
 const SHIPPING_RATES_BY_REGION = {
