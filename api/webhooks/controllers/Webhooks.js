@@ -40,7 +40,9 @@ const getTaxes = (ctx) => {
 const getShippingRates = (ctx) => {
     const orderData = ctx.request.body.content;
     console.log(orderData);
-    const summary = { currency: orderData.currency, total: orderData.itemsTotal, shipTo: orderData.shippingAddress.country};
+    //tempfix
+    const summary = { currency: orderData.currency, total: orderData.itemsTotal, shipTo: orderData.billingAddress.country};
+    // const summary = { currency: orderData.currency, total: orderData.itemsTotal, shipTo: orderData.shippingAddress.country};
     let rates = [];
     if (hasNoPhysical(orderData.items)) {
         return {'rates': [{'cost': 0, 'description': 'Digital Product'}]};
