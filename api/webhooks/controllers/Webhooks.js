@@ -39,6 +39,7 @@ const getTaxes = (ctx) => {
 
 const getShippingRates = (ctx) => {
     const orderData = ctx.request.body.content;
+    console.log(orderData);
     const summary = { currency: orderData.currency, total: orderData.itemsTotal, shipTo: orderData.shippingAddress.country};
     let rates = [];
     if (hasNoPhysical(orderData.items)) {
@@ -156,11 +157,11 @@ const createShippingLabel = async (ctx) => {
         (items.length > 0)
     ) ? items : [];
 
-    console.log('RECEIVED ADDRESS:', address);
-    console.log('RECEIVED EMAIL:', email);
-    console.log('RECEIVED INVOICE NUMBER:', invoiceNumber);
-    console.log('RECEIVED ITEMS:', items);
-    console.log('RECEIVED ORDER ITEMS:', orderItems);
+    // console.log('RECEIVED ADDRESS:', address);
+    // console.log('RECEIVED EMAIL:', email);
+    // console.log('RECEIVED INVOICE NUMBER:', invoiceNumber);
+    // console.log('RECEIVED ITEMS:', items);
+    // console.log('RECEIVED ORDER ITEMS:', orderItems);
 
     try {
         await createShippingParcel(address, email, invoiceNumber, orderItems);
