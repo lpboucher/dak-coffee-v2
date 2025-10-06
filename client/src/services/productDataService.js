@@ -63,7 +63,8 @@ export const getCartProductOptions = (priceString, optionObj, type="coffee", sel
         type === "dak-t-shirt" ||
         type === "dak-crewneck" ||
         type === "dak-hoodie" ||
-        type === "dak-longsleeve"
+        type === "dak-longsleeve" ||
+        type === "kappy-jacket"
     ) {
     const sizes = getProductOptions(type).find(opt => opt.name === "size");
     const colors = getProductOptions(type).find(opt => opt.name === "color");

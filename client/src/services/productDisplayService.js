@@ -270,6 +270,16 @@ export const getProductOptions = (type) => {
           ]
         },
       ],
+      "kappy-jacket": [
+        { name: "size", options: [
+            {label: "OneSize", value: "OneSize"},
+          ]
+        },
+        { name: "color", options: [
+            {label: "Denim", value: "Denim"},
+          ]
+        },
+      ],
   }
   return dict[type] || [];
 }
