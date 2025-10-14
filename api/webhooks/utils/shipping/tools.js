@@ -129,7 +129,7 @@ const getFreeShippingOptions = (currency, country, isWholesale = false) => {
 
 const getShippingZone = (country) => {
     const zone = Object.keys(shipConstants.SHIPPING_ZONES).find(zone => shipConstants.SHIPPING_ZONES[zone].indexOf(country) !== -1);
-    return zone ? zone : '11';
+    return zone ? zone : '12';
 };
 
 const getShippingRateOptions = (currency, country, isWholesale = false) => {
