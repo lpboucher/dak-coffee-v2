@@ -64,7 +64,7 @@
     "general": {
       "name": "General Inquiries",
       "description": "We do our best to respond to e-mails wthin 24 hours.",
-      "email": "info@dakcoffeeroasters.com"
+      "email": "support@dakcoffeeroasters.com"
     },
     "marketing": {
       "name": "Press & Marketing",
@@ -161,11 +161,11 @@
   },
   "showroom": {
     "intro": "Our showroom is located in the industrial park of Nieuwendammerdijk in Amsterdam Noord next to the roastery.<br>The initial idea of the showroom was to have a dedicated space for our team to do some cuppings and meetings. However, being solely a roastery doesn’t allow us to connect directly with people like a cafe does, so we wanted to have this space to further connections with our customers and partners. We therefore open our showroom doors every week for a few hours for people to come in, taste some coffees and have access to our full retail selection.<br>The showroom was also designed to host coffee-related events such as workshops, seminars and cuppings. You will find below the calendar of upcoming events.",
-    "rent": "On another note, our showroom is available for rent wether it is for cuppings, gatherings, small events or photoshoots. If you wish to rent our space, e-mail us at info@dakcoffeeroasters.com for the rates and availabilities."
+    "rent": "On another note, our showroom is available for rent wether it is for cuppings, gatherings, small events or photoshoots. If you wish to rent our space, e-mail us at showroom@dakcoffeeroasters.com for the rates and availabilities."
   },
   "wholesale": {
     "title": "Offer Dak to your customers",
-    "description": "We have partnered with many cafes across Europe and North America and always love to see our coffees in new regions/countries. Ordering is simple, with no strings attached:<br>- No minimum order size.<br>- Shipping is free for 20kg+ in Europe, otherwise we cover 50%.<br>- We roast Mondays/Wednesdays and ship the following day.<br>- We offer wholesale discounts based on total volume ordered so you can mix and match as you please.<br>To facilitate the ordering process, our new wholesale platform is coming soon.<br>In the meantime, get in touch with us at info@dakcoffeeroasters.com to get the current offer list, prices and to start a conversation!"
+    "description": "We have partnered with many cafes across Europe and North America and always love to see our coffees in new regions/countries. Ordering is simple, with no strings attached:<br>- No minimum order size.<br>- Shipping is free for 20kg+ in Europe, otherwise we cover 50%.<br>- We roast Mondays/Wednesdays and ship the following day.<br>- We offer wholesale discounts based on total volume ordered so you can mix and match as you please.<br>To facilitate the ordering process, our new wholesale platform is coming soon.<br>In the meantime, get in touch with us at wholesale@dakcoffeeroasters.com to get the current offer list, prices and to start a conversation!"
   },
   "altitude": "Altitude of",
   "recyclable-coffee-bags": "Delivered in a 100% recyclable bag and recyclable box"
