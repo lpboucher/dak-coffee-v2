@@ -23,7 +23,7 @@ export const MENU_OPTIONS = {
   ],
   currency: [
     {label: "EU €", key: "EUR"},
-    {label: "CA $", key: "CAD"},
+  //   {label: "CA $", key: "CAD"},
   ]
 }
 

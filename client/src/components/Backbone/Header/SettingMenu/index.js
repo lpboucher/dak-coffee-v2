@@ -21,7 +21,7 @@ const Navigation = () => {
   const baseMenuItems = [
     <Account key="account" />,
     <Cart key="cart" />,
-    <OptionSelect key="curr" optionType="currency" />,
+    // <OptionSelect key="curr" optionType="currency" />,
   ]
   const allMenuItems = [
     ...baseMenuItems,

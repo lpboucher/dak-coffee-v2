@@ -12,7 +12,7 @@ export const detectBrowserLocation = async () => {
 }
 
 export const getDefaultLocationCurrency = async () => {
-    const location = await detectBrowserLocation();
-    if (location === 'US' || location === 'CA') return 'cad';
+    // const location = await detectBrowserLocation();
+    // if (location === 'US' || location === 'CA') return 'cad';
     return 'eur'
 }
