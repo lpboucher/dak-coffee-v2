@@ -54,6 +54,7 @@ const About = () => {
           />
         </Box>
       </TwoColLayout>
+      {/*
       <TwoColLayout background="minor-3">
         <Box height={layout[`twoColLayoutHeight_${mediaType}`] || twoColLayoutHeight}>
           <CloudImage
@@ -71,6 +72,8 @@ const About = () => {
           )}
         </Box>
       </TwoColLayout>
+      */}
+      {/*
       <TwoColLayout background="minor-4">
         <Box>
           <Heading color="mainWhite" level={4}>{t("about.team.title")}</Heading>
@@ -86,6 +89,7 @@ const About = () => {
           />
         </Box>
       </TwoColLayout>
+      */}
     </>
   );
 };
