@@ -1,5 +1,5 @@
 {
-  "header-message": "Due to the holidays, processing times may be longer than usual. Delivery before the holidays cannot be guaranteed for orders placed after (Monday 15th).",
+  "header-message": "Free shipping in {{region}} on orders of {{threshold}}+. We dispatch orders on Tuesday, Wednesday, Thursday mornings.",
   "announcement": "For delivery before Xmas, order before Dec. 17. Roastery will be closed Dec. 19 - Dec. 30",
   "menu": "Menu",
   "navigation": {
