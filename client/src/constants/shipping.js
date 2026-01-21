@@ -72,9 +72,9 @@ export const SHIPPING_THRESHOLDS = {
     'SE': '€65',
     'SI': '€60',
     'SK': '€60',
-    'US': '€100',
-    'CA': '€100',
-    'IL': '€250',
+    'US': '€120',
+    'CA': '€120',
+    'IL': '€150',
     'World': '€150',
   },
   CAD: {
