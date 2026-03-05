@@ -66,6 +66,7 @@ const SHIPPING_ZONES = {
     '9': ['CA'],
     '10': ['US'],
     '11': ['MU'],
+    '12': ['IN', 'KW', 'SA', 'BH', 'AE', 'OM', 'QA'],
 };
 
 const SHIPPING_RATES_BY_REGION = {
@@ -119,6 +120,9 @@ const SHIPPING_RATES_BY_REGION = {
             {'cost': 55, 'description': 'DHL Express'},
         ],
         '12': [
+            {'cost': 45, 'description': 'DHL Express'},
+        ],
+        '13': [
             {'cost': 25, 'description': 'DHL Express'},
         ],
     },
@@ -170,6 +174,9 @@ const SHIPPING_RATES_BY_REGION = {
             {'cost': 74.95, 'description': 'DHL Express'},
         ],
         '12': [
+            {'cost': 55.95, 'description': 'DHL Express'},
+        ],
+        '13': [
             {'cost': 37.95, 'description': 'DHL Express'},
         ],
     },
@@ -189,7 +196,8 @@ const SHIPPING_THRESHOLDS_BY_REGION = {
         '9': 100,
         '10': 120,
         '11': 250,
-        '12': 150,
+        '12': 200,
+        '13': 150,
     },
     CAD: {
         '0': 70,
@@ -204,7 +212,8 @@ const SHIPPING_THRESHOLDS_BY_REGION = {
         '9': 150,
         '10': 180,
         '11': 350,
-        '12': 225,
+        '12': 300,
+        '13': 225,
     },
 };
 
@@ -261,6 +270,9 @@ const FREE_SHIPPING_BY_REGION = {
         '12': [
             {'cost': 0, 'description': 'DHL Express'},
         ],
+        '13': [
+            {'cost': 0, 'description': 'DHL Express'},
+        ],
     },
     CAD: {
         '0': [
@@ -310,6 +322,9 @@ const FREE_SHIPPING_BY_REGION = {
             {'cost': 0, 'description': 'DHL Express'},
         ],
         '12': [
+            {'cost': 0, 'description': 'DHL Express'},
+        ],
+        '13': [
             {'cost': 0, 'description': 'DHL Express'},
         ],
     },
@@ -372,6 +387,9 @@ const WHOLESALE_SHIPPING_RATES_BY_REGION = {
     '12': [
         {'cost': 10, 'description': 'DHL Express', 'perkilo': 5.75},
     ],
+    '13': [
+        {'cost': 10, 'description': 'DHL Express', 'perkilo': 5.75},
+    ],
 };
 
 const WHOLESALE_FREE_SHIPPING_BY_REGION = {
@@ -421,6 +439,9 @@ const WHOLESALE_FREE_SHIPPING_BY_REGION = {
         {'cost': 30, 'description': 'DHL Express', 'perkilo': 5.5},
     ],
     '12': [
+        {'cost': 10, 'description': 'DHL Express', 'perkilo': 3.75},
+    ],
+    '13': [
         {'cost': 10, 'description': 'DHL Express', 'perkilo': 3.75},
     ],
 };
