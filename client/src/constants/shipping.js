@@ -59,6 +59,7 @@ export const SHIPPING_THRESHOLDS = {
     'HR': '€75',
     'HU': '€75',
     'IE': '€65',
+    'IL': '€200',
     'IN': '€200',
     'IT': '€65',
     'KW': '€200',
