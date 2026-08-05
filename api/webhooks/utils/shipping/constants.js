@@ -114,7 +114,7 @@ const SHIPPING_RATES_BY_REGION = {
         ],
         '10': [
             {'cost': 20, 'description': 'DHL Express'},
-            {'cost': 29.95, 'description': 'DHL Express, incl. duties'},
+            // {'cost': 29.95, 'description': 'DHL Express, incl. duties'},
         ],
         '11': [
             {'cost': 55, 'description': 'DHL Express'},
@@ -168,7 +168,7 @@ const SHIPPING_RATES_BY_REGION = {
         ],
         '10': [
             {'cost': 30.95, 'description': 'DHL Express'},
-            {'cost': 45.95, 'description': 'DHL Express, incl. duties'},
+            // {'cost': 45.95, 'description': 'DHL Express, incl. duties'},
         ],
         '11': [
             {'cost': 74.95, 'description': 'DHL Express'},
@@ -262,7 +262,7 @@ const FREE_SHIPPING_BY_REGION = {
         ],
         '10': [
             {'cost': 0, 'description': 'DHL Express'},
-            {'cost': 9.95, 'description': 'DHL Express, incl. duties'},
+            // {'cost': 9.95, 'description': 'DHL Express, incl. duties'},
         ],
         '11': [
             {'cost': 0, 'description': 'DHL Express'},
@@ -316,7 +316,7 @@ const FREE_SHIPPING_BY_REGION = {
         ],
         '10': [
             {'cost': 0, 'description': 'DHL Express'},
-            {'cost': 14.95, 'description': 'DHL Express, incl. duties'},
+            // {'cost': 14.95, 'description': 'DHL Express, incl. duties'},
         ],
         '11': [
             {'cost': 0, 'description': 'DHL Express'},
